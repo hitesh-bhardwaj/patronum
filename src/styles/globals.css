@@ -2,26 +2,207 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+:root{
+  --primary: #1069DF;
+  --white: #ffffff;
+  --sky: #f8f8ff;
+  --black: #000000;
+  --text-body: #3a3a3a;
+  --text-head: #1a1a1a;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+body{
+  background: var(--white);
+  color: var(--text-body);
+  padding-top: 100px;
+  font-family: 'Ageo';
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/*01. Fonts */
+/*==============FONTS===================*/
+@font-face {
+  font-family: 'PlusJakartaSans';
+  src: url('/assets/fonts/PlusJakartaSans/PlusJakartaSans-ExtraLight.woff') format('woff');
+       font-weight: 200;
+       font-display: swap;
+       font-style: normal;
 }
+@font-face {
+  font-family: 'PlusJakartaSans';
+  src: url('/assets/fonts/PlusJakartaSans/PlusJakartaSans-Light.woff') format('woff');
+       font-weight: 300;
+       font-display: swap;
+       font-style: normal;
+}
+@font-face {
+  font-family: 'PlusJakartaSans';
+  src: url('/assets/fonts/PlusJakartaSans/PlusJakartaSans-Regular.woff') format('woff');
+       font-weight: 400;
+       font-display: swap;
+       font-style: normal;
+}
+@font-face {
+  font-family: 'PlusJakartaSans';
+  src: url('/assets/fonts/PlusJakartaSans/PlusJakartaSans-Medium.woff') format('woff');
+       font-weight: 500;
+       font-display: swap;
+       font-style: normal;
+}
+@font-face {
+  font-family: 'PlusJakartaSans';
+  src: url('/assets/fonts/PlusJakartaSans/PlusJakartaSans-SemiBold.woff') format('woff');
+       font-weight: 600;
+       font-display: swap;
+       font-style: normal;
+}
+@font-face {
+  font-family: 'PlusJakartaSans';
+  src: url('/assets/fonts/PlusJakartaSans/PlusJakartaSans-Bold.woff') format('woff');
+       font-weight: 700;
+       font-display: swap;
+       font-style: normal;
+}
+@font-face {
+  font-family: 'PlusJakartaSans';
+  src: url('/assets/fonts/PlusJakartaSans/PlusJakartaSans-ExtraBold.woff') format('woff');
+       font-weight: 800;
+       font-display: swap;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ageo';
+  src: url('/assets/fonts/Ageo/Ageo-Thin.woff') format('woff');
+       font-weight: 200;
+       font-display: swap;
+       font-style: normal;
+}
+@font-face {
+  font-family: 'Ageo';
+  src: url('/assets/fonts/Ageo/Ageo-Light.woff') format('woff');
+       font-weight: 300;
+       font-display: swap;
+       font-style: normal;
+}
+@font-face {
+  font-family: 'Ageo';
+  src: url('/assets/fonts/Ageo/Ageo.woff') format('woff');
+       font-weight: 400;
+       font-display: swap;
+       font-style: normal;
+}
+@font-face {
+  font-family: 'Ageo';
+  src: url('/assets/fonts/Ageo/Ageo-Medium.woff') format('woff');
+       font-weight: 500;
+       font-display: swap;
+       font-style: normal;
+}
+@font-face {
+  font-family: 'Ageo';
+  src: url('/assets/fonts/Ageo/Ageo-SemiBold.woff') format('woff');
+       font-weight: 600;
+       font-display: swap;
+       font-style: normal;
+}
+@font-face {
+  font-family: 'Ageo';
+  src: url('/assets/fonts/Ageo/Ageo-Bold.woff') format('woff');
+       font-weight: 700;
+       font-display: swap;
+       font-style: normal;
+}
+@font-face {
+  font-family: 'Ageo';
+  src: url('/assets/fonts/Ageo/Ageo-ExtraBold.woff') format('woff');
+       font-weight: 800;
+       font-display: swap;
+       font-style: normal;
+}
+
+/*==============FONTS END===================*/
+.logo-container img{
+  width: auto;
+  height: auto;
+}
+.button-style-1{
+  font-weight: 500;
+  font-size: 1.3rem;
+  border: 2px solid var(--primary);
+  border-radius: 50px;
+  padding: 7px 30px;
+  color: var(--primary);
+  transition: all 300ms ease-out;
+}
+
+.button-style-1:hover{
+  color: var(--white);
+  background: var(--primary);
+}
+
+.dropdown-point::after{
+  position: absolute;
+  left: 50%;
+  margin-left: -20px;
+  top: -14px;
+  width: 0;
+  height: 0;
+  content:'';
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid currentColor;
+}
+
+.dropdown-point-2::after{
+  position: absolute;
+  left: 54.5%;
+  margin-left: -20px;
+  top: -14px;
+  width: 0;
+  height: 0;
+  content:'';
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid currentColor;
+}
+
+.banner-circle{
+  position: absolute;
+  border-radius: 50%;
+}
+.banner-circle._c1{
+  width: 280px;
+  height: 280px;
+  background: #0D54B2;
+  z-index: 3;
+}
+.banner-circle._c2{
+  width: 600px;
+  height: 600px;
+  background: #0A438E;
+  z-index: 2;
+}
+.banner-circle._c3{
+  width: 850px;
+  height: 850px;
+  background: #083672;
+  z-index: 1;
+}
+
+/* .banner-circle{
+  position: absolute;
+}
+.banner-circle._c1{
+  width: 60%;
+  z-index: 3;
+}
+.banner-circle._c2{
+  width: 40%;
+  z-index: 2;
+}
+.banner-circle._c3{
+  width: 20%;
+  z-index: 1;
+} */
