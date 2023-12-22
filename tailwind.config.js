@@ -34,6 +34,7 @@ module.exports = {
         '6xl': '46px',
         '7xl': '64px',
         '8xl': '80px',
+        '9xl': '90px',
       },
       borderRadius: {
         '5xl': '30px'

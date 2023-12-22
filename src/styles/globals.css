@@ -9,6 +9,11 @@
   --black: #000000;
   --text-body: #3a3a3a;
   --text-head: #1a1a1a;
+  --gray-100: #f9f9f9;
+  --gray-200: #d9d9d9;
+  --card-sky: #D7E8EE;
+  --card-gray: #D7D7D7;
+  --card-beige: #D9D5BF;
 }
 
 body{
@@ -129,10 +134,10 @@ body{
 }
 .button-style-1{
   font-weight: 500;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   border: 2px solid var(--primary);
   border-radius: 50px;
-  padding: 7px 30px;
+  padding: 10px 40px;
   color: var(--primary);
   transition: all 300ms ease-out;
 }
@@ -140,32 +145,6 @@ body{
 .button-style-1:hover{
   color: var(--white);
   background: var(--primary);
-}
-
-.dropdown-point::after{
-  position: absolute;
-  left: 50%;
-  margin-left: -20px;
-  top: -14px;
-  width: 0;
-  height: 0;
-  content:'';
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-bottom: 20px solid currentColor;
-}
-
-.dropdown-point-2::after{
-  position: absolute;
-  left: 54.5%;
-  margin-left: -20px;
-  top: -14px;
-  width: 0;
-  height: 0;
-  content:'';
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-bottom: 20px solid currentColor;
 }
 
 .banner-circle{
@@ -191,18 +170,34 @@ body{
   z-index: 1;
 }
 
-/* .banner-circle{
-  position: absolute;
+/* Header - Desktop, Start */
+.dropdown-list-hover{
+  transition: all 150ms ease-in-out;
+  padding: 6px 20px;
+  border-radius: 18px;
 }
-.banner-circle._c1{
-  width: 60%;
-  z-index: 3;
+.dropdown-list-hover:hover{
+  background: var(--gray-100);
 }
-.banner-circle._c2{
+.dropdown-list-hover img{
+  transition: all 150ms ease-in-out;
+}
+.dropdown-list-hover:hover img{
+  scale: 0.95;
+  transition: all 150ms ease-in-out;
+}
+.dropdown-list-hover:hover p{
+  color: var(--primary);
+}
+
+/* Homepage Hero - desktop, start */
+.hero-left{
   width: 40%;
-  z-index: 2;
 }
-.banner-circle._c3{
-  width: 20%;
-  z-index: 1;
-} */
+.para-24{
+  font-size: 22px;
+  line-height: 36px;
+}
+
+/* Homepage Hero - desktop, end */
+
