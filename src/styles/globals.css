@@ -7,127 +7,618 @@
   --white: #ffffff;
   --sky: #f8f8ff;
   --black: #000000;
-  --text-body: #3a3a3a;
-  --text-head: #1a1a1a;
+  --text-body: #444444;
+  --text-head: #2a2a2a;
   --gray-100: #f9f9f9;
   --gray-200: #d9d9d9;
   --card-sky: #D7E8EE;
   --card-gray: #D7D7D7;
   --card-beige: #D9D5BF;
+  --transition-1:  all 1.5s cubic-bezier(0.19, 1, 0.22, 1)
 }
 
 body{
   background: var(--white);
   color: var(--text-body);
-  padding-top: 100px;
-  font-family: 'Ageo';
+  font-family: 'Aeonik';
+  width: 100vw;
+  height: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Aeonik';
+}
+
+p{
+  font-family: 'Ageo';
+  font-weight: 500;
+  line-height: 1.5;
+}
+
 /*01. Fonts */
 /*==============FONTS===================*/
-@font-face {
-  font-family: 'PlusJakartaSans';
-  src: url('/assets/fonts/PlusJakartaSans/PlusJakartaSans-ExtraLight.woff') format('woff');
-       font-weight: 200;
-       font-display: swap;
-       font-style: normal;
-}
-@font-face {
-  font-family: 'PlusJakartaSans';
-  src: url('/assets/fonts/PlusJakartaSans/PlusJakartaSans-Light.woff') format('woff');
-       font-weight: 300;
-       font-display: swap;
-       font-style: normal;
-}
-@font-face {
-  font-family: 'PlusJakartaSans';
-  src: url('/assets/fonts/PlusJakartaSans/PlusJakartaSans-Regular.woff') format('woff');
-       font-weight: 400;
-       font-display: swap;
-       font-style: normal;
-}
-@font-face {
-  font-family: 'PlusJakartaSans';
-  src: url('/assets/fonts/PlusJakartaSans/PlusJakartaSans-Medium.woff') format('woff');
-       font-weight: 500;
-       font-display: swap;
-       font-style: normal;
-}
-@font-face {
-  font-family: 'PlusJakartaSans';
-  src: url('/assets/fonts/PlusJakartaSans/PlusJakartaSans-SemiBold.woff') format('woff');
-       font-weight: 600;
-       font-display: swap;
-       font-style: normal;
-}
-@font-face {
-  font-family: 'PlusJakartaSans';
-  src: url('/assets/fonts/PlusJakartaSans/PlusJakartaSans-Bold.woff') format('woff');
-       font-weight: 700;
-       font-display: swap;
-       font-style: normal;
-}
-@font-face {
-  font-family: 'PlusJakartaSans';
-  src: url('/assets/fonts/PlusJakartaSans/PlusJakartaSans-ExtraBold.woff') format('woff');
-       font-weight: 800;
-       font-display: swap;
-       font-style: normal;
-}
 
+/* Ageo */
 @font-face {
   font-family: 'Ageo';
-  src: url('/assets/fonts/Ageo/Ageo-Thin.woff') format('woff');
-       font-weight: 200;
-       font-display: swap;
-       font-style: normal;
-}
-@font-face {
-  font-family: 'Ageo';
-  src: url('/assets/fonts/Ageo/Ageo-Light.woff') format('woff');
-       font-weight: 300;
-       font-display: swap;
-       font-style: normal;
-}
-@font-face {
-  font-family: 'Ageo';
-  src: url('/assets/fonts/Ageo/Ageo.woff') format('woff');
+  src: url('/assets/fonts/Ageo/Ageo.woff2') format('woff2');
        font-weight: 400;
        font-display: swap;
        font-style: normal;
 }
 @font-face {
   font-family: 'Ageo';
-  src: url('/assets/fonts/Ageo/Ageo-Medium.woff') format('woff');
+  src: url('/assets/fonts/Ageo/Ageo-Medium.woff2') format('woff2');
+       font-weight: 500;
+       font-display: swap;
+       font-style: normal;
+}
+
+/* Aeonik */
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/assets/fonts/Aeonik/Aeonik-Light.woff2') format('woff2');
+       font-weight: 300;
+       font-display: swap;
+       font-style: normal;
+}
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/assets/fonts/Aeonik/Aeonik-Regular.woff2') format('woff2');
+       font-weight: 400;
+       font-display: swap;
+       font-style: normal;
+}
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/assets/fonts/Aeonik/Aeonik-Medium.woff2') format('woff2');
        font-weight: 500;
        font-display: swap;
        font-style: normal;
 }
 @font-face {
-  font-family: 'Ageo';
-  src: url('/assets/fonts/Ageo/Ageo-SemiBold.woff') format('woff');
-       font-weight: 600;
+  font-family: 'Aeonik';
+  src: url('/assets/fonts/Aeonik/Aeonik-MediumItalic.woff2') format('woff2');
+       font-weight: 500;
        font-display: swap;
-       font-style: normal;
+       font-style: italic;
 }
 @font-face {
-  font-family: 'Ageo';
-  src: url('/assets/fonts/Ageo/Ageo-Bold.woff') format('woff');
+  font-family: 'Aeonik';
+  src: url('/assets/fonts/Aeonik/Aeonik-Bold.woff2') format('woff2');
        font-weight: 700;
        font-display: swap;
        font-style: normal;
 }
-@font-face {
-  font-family: 'Ageo';
-  src: url('/assets/fonts/Ageo/Ageo-ExtraBold.woff') format('woff');
-       font-weight: 800;
-       font-display: swap;
-       font-style: normal;
-}
-
 /*==============FONTS END===================*/
+.container-lg{
+  width: 90%;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+}
+
+.container{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+section{
+  height: 100%;
+  width: 100%;
+}
+
+.flex-all{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+/* Titles CSS Start Main */
+.title-5xl{
+  font-size: 5.5vw;
+  color: var(--text-body);
+  line-height: 1;
+}
+.title-4xl{
+  font-size: 3.8vw;
+  color: var(--text-head);
+  line-height: 1.3;
+}
+.title-3xl{
+  font-size: 2.4vw;
+}
+.title-2xl{
+  font-size: 2vw;
+}
+
+/* Buttons CSS Start Main */
+.btn-primary{
+  display: block;
+  position: relative;
+  background: var(--text-head);
+  border: 1px solid var(--text-head);
+  border-radius: 100px;
+  padding: 20px 4%;
+  height: 4.2vw;
+  width: 14vw;
+  transition: all .5s ease;
+}
+.btn-primary .btn-bg{
+  position: absolute;
+  height: 2.8vw;
+  width: 2.8vw;
+  background: var(--white);
+  top: 15%;
+  left: 5%;
+  border-radius: 50%;
+  transition: all .5s ease;
+}
+
+.btn-primary:hover .btn-bg{
+  top: 0;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  border-radius: 100px;
+}
+
+.btn-primary div{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-primary .btn-text{
+  color: var(--white);
+  font-size: 1.1vw;
+  font-family: 'Aeonik';
+  font-weight: 400;
+  transition: all .5s ease;
+  padding-right: 20px;
+}
+.btn-primary:hover .btn-text{
+  color: var(--text-head);
+}
+.btn-primary .btn-icon{
+  width: 1vw;
+  overflow: hidden;
+  color: var(--text-head);
+}
+.btn-primary .btn-icon span{
+  width: 200%;
+  display: flex;
+  transform: translateX(-50%);
+  transition: all .5s ease;
+  gap: 5px;
+}
+.btn-primary:hover .btn-icon span{
+  transform: translateX(0%);
+}
+.btn-primary.arrow .btn-icon{
+  width: 1.5vw;
+}
+/* Link Button */
+.link-btn{
+  display: inline-flex;
+  font-size: 1.2vw;
+  align-items: center;
+  font-weight: 500;
+  position: relative;
+  color: var(--text-head);
+  font-family: 'Aeonik';
+}
+
+.link-btn:hover{
+  color: var(--primary);
+}
+
+.link-btn .btn-text{
+  width: 100%;
+  position: relative;
+  transition: var(--transition-1);
+}
+
+.link-btn .btn-text:after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 95%;
+  transform: scaleX(0);
+  transform-origin: center;
+  background: var(--primary);
+  transition: var(--transition-1);
+}
+
+.link-btn:hover .btn-text:after{
+  transform: scaleX(1);
+}
+
+.link-btn .btn-images{
+  width: 2vw;
+  overflow: hidden;
+}
+.link-btn .btn-images div{
+  display: inline-flex;
+  gap: 5px;
+  width: 200%;
+  transition: var(--transition-1);
+  transform: translateX(-50%);
+}
+.link-btn:hover .btn-images div{
+  transform: translateX(0%);
+}
+.link-btn svg{
+  width: 1.5vw;
+}
+
+/* Button CSS Main END */
+
+/*================ IndexPage CSS START Main============= */
+
+/* Hero Section - 1920 */
+#hero{
+  height: 100vh;
+  width: 100vw;
+}
+.hero-left{
+  width: 50%;
+}
+.Your{
+  margin-bottom: 1.5vw;
+}
+.hero-right{
+  width: 40%;
+  text-align: end;
+}
+.google-logo-hero{
+  height: auto;
+  width: 95%;
+}
+.hero-para{
+  font-size: 1.25vw;
+  width: 24vw;
+  font-weight: 500;
+}
+.hero-img{
+  width: 32vw;
+  height: auto;
+}
+
+/* Hero Section - 1920 End - Index*/
+
+/* Features Section - 1920 Start - Index*/
+
+.content{
+  padding: 5vw 0;
+}
+.features-top{
+  margin-bottom: 4vw;
+}
+.features-left{
+  width: 35%;
+}
+.feat-head{
+  font-size: 1.25vw;
+  font-weight: 500;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 2.5vw;
+}
+.feat-head span{
+  background: black;
+  height: 1px;
+  width: 100%;
+  margin-top: 5px;
+}
+.features-right{
+  width: 58%;
+  padding-top: 1vw;
+}
+.feat-accordion-item{
+  border-top: 1px solid var(--text-head);
+  padding: 2vw 20px;
+  position: relative;
+  cursor: pointer;
+}
+.feat-accordion-item:nth-child(6){
+  border-bottom: 1px solid var(--text-head);
+}
+.feat-accordion-item.open h3{
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+.feat-accordion-item .accordion-content{
+  height: 0;
+  overflow: hidden;
+  transition: var(--transition-1);
+}
+.feat-accordion-item.open .accordion-content{
+  height: 18.2vw;
+} 
+.content-p{
+  color: var(--text-body);
+  font-size: 1.15vw;
+  line-height: 1.5;
+}
+.feat-accordion-btn{
+  position: absolute;
+  width: 3vw;
+  height: 3vw;
+  background-color: #FDFDFD;
+  right: 10px;
+  top: 2.5vw;
+  border: 1px solid #E2E2E2;
+  border-radius: 100%;
+  transition: all 0.3s ease;
+}
+.feat-accordion-btn .plus,
+.feat-accordion-btn .minus{
+  font-size: 2.5vw;
+  line-height: 0;
+  font-weight: 400;
+  color: var(--text-head);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: -8%;
+  transition: all 0.3s ease;
+}
+.feat-accordion-btn:hover{
+  background-color: var(--gray-200);
+}
+.feat-accordion-item.open .feat-accordion-btn{
+  background-color: var(--text-head);
+}
+.feat-accordion-item.open .feat-accordion-btn .plus{
+  opacity: 0;
+}
+.feat-accordion-item.open .feat-accordion-btn .minus{
+  color: white;
+}
+.accordion-img{
+  position: absolute;
+  z-index: 9;
+  left: -68%;
+  top: 30vh;
+}
+.accordion-img img{
+  width: 90%;
+}
+/* Features Section - 1920 End - Index*/
+
+/* Use Cases Section - 1920 Start - Index*/
+.use-cases-top{
+  margin-bottom: 4vw;
+}
+.use-cases-button{
+  margin-bottom: 3vw;
+}
+.use-cases-list li{
+  font-size: 1.25vw;
+  font-weight: 400;
+  font-family: 'Aeonik';
+  color: var(--text-head);
+  position: relative;
+  transition: var(--transition-1);
+}
+.use-cases-list li.active{
+  color: var(--primary);
+  transition: var(--transition-1);
+}
+.use-cases-list li::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: var(--primary);
+  transition: var(--transition-1);
+  scale: 0;
+}
+.use-cases-list li.active::after{
+  scale: 1;
+}
+
+.useCases-Container{
+  width: 100%;
+  overflow: hidden;
+}
+.useCases-items{
+  display: inline-flex;
+  width: 500%;
+  align-items: center;
+}
+
+.useCase-item{
+  padding: 2vw 2vw;
+}
+.useCase-item-left{
+  width: 40%;
+}
+.useCase-item-left img{
+  width: 100%;
+  height: auto;
+}
+.useCase-item-right{
+  width: 43%;
+}
+
+/* Use Cases Section - 1920 End - Index*/
+/* Pricing Section - 1920 Start - Index*/
+
+.pricing-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.pricing-card h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.pricing-card .price {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.pricing-card button {
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Pricing Section - 1920 End - Index*/
+
+/* About Section - 1920 Start - Index*/
+.para-italic{
+  font-size: 1.3vw;
+  font-weight: 500;
+  font-family: 'Aeonik';
+  font-style: italic;
+}
+.about-right{
+  width: 35%;
+  text-align: right;
+}
+.about-right img{
+  width: 100%;
+  height: 100%;
+}
+/* About Section - 1920 End - Index*/
+
+/* Blogs Section - 1920 Start - Index*/
+.blogs-top{
+  margin-bottom: 4vw;
+}
+.blog-card-wrapper{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1.5vw;
+}
+.blog-card{
+  border: 1px solid #e8e8e8;
+  background-color: white;
+  border-radius: 16px;
+  padding-bottom: 4vw;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.blog-card:hover .blog-card-title{
+  color: var(--primary);
+}
+.blog-card-image{
+  width: 100%;
+  height: 30vh;
+  overflow: hidden;
+}
+.blog-card-image img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.blog-card-details{
+  padding: 0 20px;
+}
+.blog-card-author{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.blog-card-author .head,
+.blog-card-author .date{
+  font-size: 16px;
+  font-family: 'Ageo';
+  font-weight: 500;
+}
+.blog-card-title{
+  font-size: 1.2vw;
+  color: var(--text-head);
+  margin-bottom: 50px;
+  transition: 0.3s;
+}
+
+/* Blogs Section - 1920 End - Index*/
+
+/* FAQs Section - 1920 Start - Index*/
+.faq-wrapper{
+  width: 100%;
+}
+.faq-item{
+  width: 100%;
+  border-top: 1px solid var(--text-head);
+  padding: 2vw 20px;
+  position: relative;
+  cursor: pointer;
+}
+.faq-item:nth-child(4){
+  border-bottom: 1px solid var(--text-head);
+}
+.faq-item.open h3{
+  color: var(--primary);
+  transition: 0.3s;
+}
+.faq-item .faq-item-content{
+  width: 85%;
+}
+.faq-item .faq-content{
+  height: 0;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.faq-item.open .faq-content{
+  height: 6vw;
+}
+.faq-item .faq-arrow{
+  position: absolute;
+  right: 3vw;
+  top: 2.5vw;
+}
+.faq-item .faq-arrow img{
+  width: 2vw;
+  transition: 0.3s;
+}
+.faq-item.open .faq-arrow img{
+  transform: rotate(-45deg);
+}
+
+/* FAQs Section - 1920 End - Index*/
+
+/*===================== IndexPage CSS END Main ===================*/
+
 .logo-container img{
   width: auto;
   height: auto;
@@ -191,9 +682,6 @@ body{
 }
 
 /* Homepage Hero - desktop, start */
-.hero-left{
-  width: 40%;
-}
 .para-24{
   font-size: 22px;
   line-height: 36px;

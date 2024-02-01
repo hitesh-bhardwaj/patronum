@@ -12,13 +12,13 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'head': 'PlusJakartaSans',
+        'head': 'Aeonik',
         'body': 'Ageo',
       },
       colors: {
         'primary': '#1069DF',
-        'body': '#3a3a3a',
-        'head': '#1a1a1a',
+        'body': '#444444',
+        'head': '#2a2a2a',
         'sky': '#f8f8ff',
       },
       boxShadow: {
