@@ -1,6 +1,10 @@
 import '@/styles/globals.css'
 import { DefaultSeo } from "next-seo";
 
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/scrollbar';
+
 export default function App({ Component, pageProps }) {
   return(
     <>

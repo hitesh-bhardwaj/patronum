@@ -7,6 +7,8 @@ import UseCases from '@/components/HomePage/UseCases';
 import BLogs from '@/components/HomePage/Blogs';
 import Faqs from '@/components/HomePage/Faqs';
 import Pricing from '@/components/HomePage/Pricing';
+import Testimonial from '@/components/HomePage/Testimonial';
+import Footer from '@/components/extra/Footer';
 
 export default function Home() {
 
@@ -18,9 +20,10 @@ export default function Home() {
         <UseCases />
         <Pricing />
         <About />
+        <Testimonial />
         <BLogs />
         <Faqs />
-        <div className='h-screen w-screen' />
+        <Footer />
       </main>
     </>
   );

@@ -33,7 +33,7 @@ h1,h2,h3,h4,h5,h6{
 
 p{
   font-family: 'Ageo';
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.5;
 }
 
@@ -140,6 +140,9 @@ section{
 }
 .title-2xl{
   font-size: 2vw;
+}
+.title-xl{
+  font-size: 1.88vw;
 }
 
 /* Buttons CSS Start Main */
@@ -330,7 +333,7 @@ section{
   margin-top: 5px;
 }
 .features-right{
-  width: 58%;
+  width: 55%;
   padding-top: 1vw;
 }
 .feat-accordion-item{
@@ -466,42 +469,178 @@ section{
 
 /* Use Cases Section - 1920 End - Index*/
 /* Pricing Section - 1920 Start - Index*/
-
-.pricing-card {
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 8px;
+.pricing-card-wrapper{
+  display: grid;
+  grid-template-columns: 32% 32% 32%;
+  justify-content: space-between;
+  gap: 1.5vw;
+  margin-bottom: 3.5vw;
+}
+.pricing-card{
+  background: #FDFDFD;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #e8e8e8;
+  border-radius: 16px;
+  padding: 15%;
+}
+.pricing-image{
+  width: 100%;
+  height: 50%;
+  margin-bottom: 2.5vw;
   text-align: center;
 }
-
-.pricing-card h2 {
-  font-size: 24px;
+.pricing-image img{
+  width: 100%;
+  height: 100%;
+}
+.pricing-category{
+  font-size: 1.88vw;
+  color: var(--primary);
   margin-bottom: 20px;
 }
-
-.pricing-card ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 20px;
+.pricing-price{
+  color: #1a1a1a;
+  line-height: 1;
+}
+.pricing-price .currency{
+  font-size: 1vw;
+}
+.pricing-price .price{
+  font-size: 3.5vw;
+  font-weight: 500;
+}
+.pricing-type{
+  font-size: 1vw;
+  color: #666666;
+}
+.pricing-link{
+  margin-top: 1.8vw;
 }
 
-.pricing-card .price {
-  font-size: 20px;
-  margin-bottom: 20px;
+.pricing-selectors{
+  margin-bottom: 2.5vw;
 }
 
-.pricing-card button {
-  background-color: blue;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 20px;
+.pricing-selector-type{
+  font-size: 18px;
+  color: #A9A9A9;
+  transition: 0.3s;
+}
+.pricing-selector-type.active{
+  color: black;
+}
+.pricing-toggle{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+/* toggle switch */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 30px;
+  transition:all 0.3s;
+  border: 1px solid #CDDEF5;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
   cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #F9FBFF;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 3px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  transition:all 0.3s ease;
+}
+
+input:checked + .slider:before {
+  transform: translateX(39px);
+  transition:all 0.3s ease;
+}
+
+/* Drop down */
+.custom-dropdown {
+  position: relative;
+  width: 100px;
+}
+
+.custom-dropdown .selected-option {
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 1px solid #EEEEEE;
+  border-radius: 100px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  font-weight: 500;
+  font-family: 'Aeonik';
+  font-size: 18px;
+}
+
+.custom-dropdown .arrow{
+  transition: 0.3s;
+}
+.custom-dropdown .arrow img{
+  width: 12px;
+  height: 12px;
+}
+
+.custom-dropdown .arrow.open{
+  transform: rotate(180deg);
+  transition: 0.3s;
+}
+
+.custom-dropdown .options {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+.custom-dropdown .option {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.custom-dropdown .option:hover {
+  background-color: #f0f0f0;
 }
 
 /* Pricing Section - 1920 End - Index*/
 
-/* About Section - 1920 Start - Index*/
+/* About Section - 1920 Start -Index*/
 .para-italic{
   font-size: 1.3vw;
   font-weight: 500;
@@ -517,6 +656,72 @@ section{
   height: 100%;
 }
 /* About Section - 1920 End - Index*/
+
+/* Testimonial Section - 1920 Start - Index*/
+
+.testimonial-card{
+  width: 100%;
+  background: #FDFDFD;
+  border: 1px solid #e2e2e2;
+  border-radius: 16px;
+  padding: 1.5vw 2vw;
+  height: 28vw;
+  margin-bottom: 5vw;
+}
+
+.testicard-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.testi-quote-icon{
+  width: 3.2vw ;
+  margin-bottom: 1vw;
+  object-fit: contain ;
+}
+.testimonial-para{
+  font-size: 1vw;
+  text-align: left;
+  margin-bottom: 4vw;
+}
+.testi-details{
+  border-top: 1px solid #A5A5A5;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 20px 0px 0px 10px;
+  gap: 1.5vw;
+  text-align: left;
+}
+.testi-client-image{
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  overflow: hidden;
+  width: 5vw;
+  height: 5vw;
+}
+
+.testi-client-image img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  height: 100%;
+}
+
+/* Testimonial Section - 1920 End - Index*/
 
 /* Blogs Section - 1920 Start - Index*/
 .blogs-top{
@@ -616,6 +821,84 @@ section{
 }
 
 /* FAQs Section - 1920 End - Index*/
+
+/*===================== Footer CSS Main Start===================*/
+
+.footer{
+  width: 100%;
+  background-color: #0F68DE;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+  margin-top: 10vw;
+  overflow: hidden;
+  padding-top: 6vw;
+  color: #ffffff;
+}
+.footer-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 3vw;
+}
+.footer-top-left{
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+}
+.footer-logo{
+  width: 60%;
+}
+.footer-top-left p{
+  font-size: 1.2vw;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 0.5vw;
+}
+.footer-iso img{
+  width: 15%;
+}
+.footer-award img{
+  width: 18%;
+}
+.footer-award img:last-child{
+  width: auto;
+  height: auto;
+}
+
+.footer-top-right{
+  width: 30%;
+  padding-top: 2vw;
+}
+
+.footer-top-right-top{
+  display: flex;
+  gap: 4vw;
+  justify-content: flex-start;
+  text-align: left;
+}
+.footer-link-head{
+  font-size: 1.3vw;
+  font-weight: 500;
+  font-family: 'Aeonik';
+  margin-bottom: 20px;
+}
+.footer-links li a{
+  font-size: 1.1vw;
+  font-family: 'Aeonik';
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+.social-links{
+  margin-top: 2.5vw;
+}
+.social-links ul{
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.5vw;
+  align-items: center;
+}
+/*===================== Footer CSS Main END===================*/
 
 /*===================== IndexPage CSS END Main ===================*/
 
