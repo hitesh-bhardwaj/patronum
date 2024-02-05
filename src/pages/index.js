@@ -26,7 +26,7 @@ export default function Home() {
         <Faqs />
         <Footer />
       </main>
-      <Background />
+      {/* <Background /> */}
     </>
   );
-}
+} 
