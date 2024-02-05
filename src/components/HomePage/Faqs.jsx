@@ -58,7 +58,7 @@ export default function Faqs(){
                                         </div>
                                     </div>
                                     <div className='faq-arrow'>
-                                        <img src="/assets/icons/faq-arrow.svg"/>
+                                        <img src="/assets/icons/faq-arrow.svg" alt='arrow icon'/>
                                     </div>
                                 </div>
                             ))}

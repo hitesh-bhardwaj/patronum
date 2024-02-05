@@ -116,6 +116,10 @@ section{
   width: 100%;
 }
 
+main{
+  background: #ffffffb5;
+}
+
 .flex-all{
   display: flex;
   justify-content: space-between;
@@ -690,7 +694,7 @@ input:checked + .slider:before {
   border-top: 1px solid #A5A5A5;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   padding: 20px 0px 0px 10px;
   gap: 1.5vw;
   text-align: left;
@@ -716,8 +720,6 @@ input:checked + .slider:before {
 
 .swiper-slide {
   text-align: center;
-  font-size: 18px;
-  background: #fff;
   height: 100%;
 }
 
@@ -972,3 +974,27 @@ input:checked + .slider:before {
 
 /* Homepage Hero - desktop, end */
 
+
+/* Root Definations */
+:root {
+  /* --color-bg1: #090425;
+  --color-bg2: #140950; */
+  --color1: 18, 113, 255;
+  --color2: 221, 74, 255;
+  --color3: 100, 220, 255;
+  --color4: 200, 50, 50;
+  --color5: 180, 180, 50;
+  --color-interactive: 140, 100, 255;
+  --circle-size: 70%;
+  --blending: hard-light;
+}
+/* Gradient Canvas */
+#gradient-canvas {
+  width:100vw;
+  height:100vh;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}

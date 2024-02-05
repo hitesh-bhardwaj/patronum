@@ -9,6 +9,7 @@ import Faqs from '@/components/HomePage/Faqs';
 import Pricing from '@/components/HomePage/Pricing';
 import Testimonial from '@/components/HomePage/Testimonial';
 import Footer from '@/components/extra/Footer';
+import Background from '@/components/Background';
 
 export default function Home() {
 
@@ -25,6 +26,7 @@ export default function Home() {
         <Faqs />
         <Footer />
       </main>
+      <Background />
     </>
   );
 }
