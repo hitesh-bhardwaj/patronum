@@ -8,13 +8,15 @@ import BLogs from '@/components/HomePage/Blogs';
 import Faqs from '@/components/HomePage/Faqs';
 import Pricing from '@/components/HomePage/Pricing';
 import Testimonial from '@/components/HomePage/Testimonial';
-import Footer from '@/components/extra/Footer';
+import Footer from '@/components/Footer';
 import Background from '@/components/Background';
+import Header from '@/components/Header';
 
 export default function Home() {
 
   return (
     <>
+      <Header />
       <main>
         <Hero />
         <Features />
@@ -25,8 +27,8 @@ export default function Home() {
         <BLogs />
         <Faqs />
         <Footer />
+        <Background />
       </main>
-      {/* <Background /> */}
     </>
   );
 } 

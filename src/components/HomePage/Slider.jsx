@@ -15,7 +15,7 @@ export default function Slider() {
         {
           content: "Working with the Patronum and the team was quick and simple. They took my initial designs and created an extremely attractive and engaging email signature.",
           clientImage: "/assets/testimonial/client-2.png",
-          clientName: "Juan Marquez",
+          clientName: "John Knot",
           clientCompany: "Zola Systems Limited"
         },
         {
@@ -39,7 +39,7 @@ export default function Slider() {
           {
             content: "Working with the Patronum and the team was quick and simple. They took my initial designs and created an extremely attractive and engaging email signature.",
             clientImage: "/assets/testimonial/client-2.png",
-            clientName: "Juan Marquez",
+            clientName: "John Knot",
             clientCompany: "Zola Systems Limited"
           },
           {

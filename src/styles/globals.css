@@ -14,7 +14,8 @@
   --card-sky: #D7E8EE;
   --card-gray: #D7D7D7;
   --card-beige: #D9D5BF;
-  --transition-1:  all 1.5s cubic-bezier(0.19, 1, 0.22, 1)
+  --transition-1:  all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+  --transition-2: transform .75s cubic-bezier(.19,1,.22,1);
 }
 
 body{
@@ -93,6 +94,7 @@ p{
        font-style: normal;
 }
 /*==============FONTS END===================*/
+
 .container-lg{
   width: 90%;
   padding-left: 25px;
@@ -100,6 +102,7 @@ p{
   margin-left: auto;
   margin-right: auto;
   height: 100%;
+  max-width: 100% !important;
 }
 
 .container{
@@ -109,6 +112,7 @@ p{
   height: 100%;
   padding-left: 50px;
   padding-right: 50px;
+  max-width: 100% !important;
 }
 
 section{
@@ -150,6 +154,22 @@ main{
 }
 
 /* Buttons CSS Start Main */
+.button-style-1{
+  font-weight: 400;
+  font-size: 1.1vw;
+  font-family: 'Aeonik';
+  border: 2px solid var(--text-head);
+  border-radius: 50px;
+  padding: 15px 30px;
+  color: var(--text-head);
+  transition: all 300ms ease-out;
+}
+.button-style-1:hover{
+  color: var(--white);
+  background: var(--text-head);
+}
+
+/* Main button */
 .btn-primary{
   display: block;
   position: relative;
@@ -276,6 +296,133 @@ main{
 
 /* Button CSS Main END */
 
+/*================ Header CSS START Main============= */
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 100;
+  background: #ffffffdb;
+  backdrop-filter: blur(15px);
+  height: 100px;
+}
+
+.header-container{
+  width: 90%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container img{
+  width: 100%;
+  height: auto;
+}
+.navbar-list {
+  display: flex;
+  align-items: center;
+  gap: 3vw;
+  font-family: 'Ageo';
+  font-weight: 500;
+}
+.nav-list-item>a{
+  font-size: 1.1vw;
+  color: var(--text-body);
+  transition: all 0.3s ease;
+  position: relative;
+}
+.nav-list-item>a svg{
+  width: 0.7vw;
+  display: inline-block;
+  margin-left: 5px;
+  margin-bottom: 2px;
+}
+.nav-list-item>a::before{
+  content: '';
+  height: 100px;
+  background: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.nav-list-item>a::after{
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  background: var(--primary);
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: var(--transition-2);
+}
+.nav-list-item:hover>a::after{
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.nav-list-item:hover>a{
+  color: var(--primary);
+}
+
+/* Nav Dropdown */
+.nav-dropdown{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 100px;
+  background: #ffffff;
+  backdrop-filter: blur(100px);
+  border-top: 2px solid var(--gray-100);
+}
+
+.nav-dropdown-list{
+  position: relative;
+  width: 85%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 2vw 0;
+  justify-items: center;
+  row-gap: 2vw;
+}
+
+.nav-drop-list-hover{
+  transition: all 0.3s ease;
+  padding: 6px 20px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+.nav-drop-list-hover:hover{
+  background: var(--gray-100);
+}
+.nav-drop-list-hover img{
+  width: auto;
+  transition: all 0.3s ease;
+}
+.nav-drop-list-hover:hover img{
+  scale: 0.95;
+}
+
+.nav-drop-title{
+  font-size: 1.2vw;
+  color: var(--text-head);
+  font-weight: 500;
+}
+.nav-drop-text{
+  font-size: 16px;
+}
+
+/*================ Header CSS STOP Main============= */
+
+
 /*================ IndexPage CSS START Main============= */
 
 /* Hero Section - 1920 */
@@ -348,10 +495,6 @@ main{
 }
 .feat-accordion-item:nth-child(6){
   border-bottom: 1px solid var(--text-head);
-}
-.feat-accordion-item.open h3{
-  color: var(--primary);
-  transition: all 0.3s ease;
 }
 .feat-accordion-item .accordion-content{
   height: 0;
@@ -713,13 +856,17 @@ input:checked + .slider:before {
   object-fit: cover;
 }
 
-.swiper {
-  width: 100%;
-  height: 100%;
+.testi-client-name{
+  font-size: 1.1vw;
+}
+.testi-client-details p{
+  font-size: 16px;
+  font-family: 'Aeonik';
+  color: #444444;
 }
 
-.swiper-slide {
-  text-align: center;
+.swiper {
+  width: 100%;
   height: 100%;
 }
 
@@ -904,25 +1051,6 @@ input:checked + .slider:before {
 
 /*===================== IndexPage CSS END Main ===================*/
 
-.logo-container img{
-  width: auto;
-  height: auto;
-}
-.button-style-1{
-  font-weight: 500;
-  font-size: 1.5rem;
-  border: 2px solid var(--primary);
-  border-radius: 50px;
-  padding: 10px 40px;
-  color: var(--primary);
-  transition: all 300ms ease-out;
-}
-
-.button-style-1:hover{
-  color: var(--white);
-  background: var(--primary);
-}
-
 .banner-circle{
   position: absolute;
   border-radius: 50%;
@@ -946,36 +1074,6 @@ input:checked + .slider:before {
   z-index: 1;
 }
 
-/* Header - Desktop, Start */
-.dropdown-list-hover{
-  transition: all 150ms ease-in-out;
-  padding: 6px 20px;
-  border-radius: 18px;
-}
-.dropdown-list-hover:hover{
-  background: var(--gray-100);
-}
-.dropdown-list-hover img{
-  transition: all 150ms ease-in-out;
-}
-.dropdown-list-hover:hover img{
-  scale: 0.95;
-  transition: all 150ms ease-in-out;
-}
-.dropdown-list-hover:hover p{
-  color: var(--primary);
-}
-
-/* Homepage Hero - desktop, start */
-.para-24{
-  font-size: 22px;
-  line-height: 36px;
-}
-
-/* Homepage Hero - desktop, end */
-
-
-/* Root Definations */
 :root {
   /* --color-bg1: #090425;
   --color-bg2: #140950; */

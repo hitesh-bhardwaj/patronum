@@ -3,29 +3,29 @@ import styles from '@/styles/background.module.css'
 
 export default function Background(){
     
-    useEffect(() => {
-        const interBubble = document.querySelector(`.${styles.interactive}`);
-        let curX = 0;
-        let curY = 0;
-        let tgX = 0;
-        let tgY = 0;
+    // useEffect(() => {
+    //     const interBubble = document.querySelector(`.${styles.interactive}`);
+    //     let curX = 0;
+    //     let curY = 0;
+    //     let tgX = 0;
+    //     let tgY = 0;
     
-        function move() {
-          curX += (tgX - curX) / 30;
-          curY += (tgY - curY) / 30;
-          interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
-          requestAnimationFrame(() => {
-            move();
-          });
-        }
+    //     function move() {
+    //       curX += (tgX - curX) / 30;
+    //       curY += (tgY - curY) / 30;
+    //       interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+    //       requestAnimationFrame(() => {
+    //         move();
+    //       });
+    //     }
     
-        window.addEventListener('mousemove', (event) => {
-          tgX = event.clientX;
-          tgY = event.clientY;
-        });
+    //     window.addEventListener('mousemove', (event) => {
+    //       tgX = event.clientX;
+    //       tgY = event.clientY;
+    //     });
     
-        move();
-      }, []);
+    //     move();
+    //   }, []);
 
     return(
         <>
