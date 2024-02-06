@@ -72,7 +72,7 @@ export default function Features(){
 
                             <div className="features-right">
 
-                                <div className="feat-accordions relative">
+                                <div className="feat-accordions">
 
                                     {accordionData.map((item, index) => (
                                         <div className={`feat-accordion-item ${index === accordionOpen ? 'open' : ''}`} key={index}>

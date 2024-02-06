@@ -1,11 +1,30 @@
 import '@/styles/globals.css'
 import { DefaultSeo } from "next-seo";
+import { useEffect } from 'react';
 
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/scrollbar';
 
+import '@/styles/gradient.css';
+
 export default function App({ Component, pageProps }) {
+
+  // Scroll to top on reload
+  useEffect(() => {
+    // Scroll to top after a delay of 100ms on reload
+    const scrollToTop = () => {
+      setTimeout(() => {
+        window.scrollTo({ top: 0 });
+      }, 1);
+    };
+    scrollToTop();
+    // Clean up any resources if necessary
+    return () => {
+      // Clean-up code here, if needed
+    };
+  }, []);
+
   return(
     <>
       <DefaultSeo  

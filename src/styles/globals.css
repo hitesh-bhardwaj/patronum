@@ -344,7 +344,7 @@ section{
 }
 .nav-list-item>a::before{
   content: '';
-  height: 100px;
+  height: 70px;
   background: none;
   position: absolute;
   left: 0;
@@ -553,11 +553,14 @@ section{
 .accordion-img{
   position: absolute;
   z-index: 9;
-  left: -68%;
+  left: 0%;
   top: 30vh;
+  width: 30%;
 }
+
 .accordion-img img{
   width: 90%;
+  height: auto;
 }
 /* Features Section - 1920 End - Index*/
 
@@ -963,10 +966,6 @@ input:checked + .slider:before {
 }
 .faq-item:nth-child(4){
   border-bottom: 1px solid var(--text-head);
-}
-.faq-item.open h3{
-  color: var(--primary);
-  transition: 0.3s;
 }
 .faq-item .faq-item-content{
   width: 85%;
