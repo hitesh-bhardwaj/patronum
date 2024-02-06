@@ -16,24 +16,24 @@
   
   .bouncing-blob--blue {
     /* background: #0e09af7e; */
-    background-image: url('/assets/gradient/blue.png');
+    background-image: url('/assets/gradient/blue.webp');
   }
   
   .bouncing-blob--white {
     /* background: #ffffff; */
     z-index: 2;
     width: 25vw;
-    background-image: url('/assets/gradient/white.png');
+    background-image: url('/assets/gradient/white.webp');
   }
   
   .bouncing-blob--purple {
     /* background: #8c4bf5aa; */
-    background-image: url('/assets/gradient/purple.png');
+    background-image: url('/assets/gradient/purple.webp');
   }
   
   .bouncing-blob--pink {
     /* background: #1ea9ff50; */
-    background-image: url('/assets/gradient/pink.png');
+    background-image: url('/assets/gradient/pink.webp');
   }
   
   .bouncing-blobs-container {
