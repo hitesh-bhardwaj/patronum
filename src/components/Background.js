@@ -11,8 +11,8 @@ export default function Background(){
         let tgY = 0;
     
         function move() {
-          curX += (tgX - curX) / 30;
-          curY += (tgY - curY) / 30;
+          curX += (tgX - curX) / 20;
+          curY += (tgY - curY) / 20;
           interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
           requestAnimationFrame(() => {
             move();

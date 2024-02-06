@@ -120,10 +120,6 @@ section{
   width: 100%;
 }
 
-main{
-  background: #ffffffb5;
-}
-
 .flex-all{
   display: flex;
   justify-content: space-between;
@@ -142,6 +138,7 @@ main{
   font-size: 3.8vw;
   color: var(--text-head);
   line-height: 1.3;
+  margin-bottom: 5vw;
 }
 .title-3xl{
   font-size: 2.4vw;
@@ -303,9 +300,13 @@ main{
   left: 0;
   width: 100vw;
   z-index: 100;
+  height: 100px;
+  transition: background-color 0.3s ease;
+}
+
+.scrolled {
   background: #ffffffdb;
   backdrop-filter: blur(15px);
-  height: 100px;
 }
 
 .header-container{
@@ -375,10 +376,14 @@ main{
   position: absolute;
   width: 100%;
   left: 0;
-  top: 100px;
+  top: 0;
+  padding-top: 100px;
   background: #ffffff;
-  backdrop-filter: blur(100px);
   border-top: 2px solid var(--gray-100);
+  z-index: -1;
+  box-shadow: 1px 1px 10px #00000010;
+  border-end-start-radius: 20px;
+  border-end-end-radius: 20px;
 }
 
 .nav-dropdown-list{
@@ -615,6 +620,7 @@ main{
 }
 
 /* Use Cases Section - 1920 End - Index*/
+
 /* Pricing Section - 1920 Start - Index*/
 .pricing-card-wrapper{
   display: grid;
@@ -634,6 +640,19 @@ main{
   border-radius: 16px;
   padding: 15%;
 }
+
+.pricing-card {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
 .pricing-image{
   width: 100%;
   height: 50%;
@@ -686,19 +705,16 @@ main{
   justify-content: space-between;
   gap: 10px;
 }
+
 /* toggle switch */
 .toggle-switch {
   position: relative;
   display: inline-block;
   width: 70px;
   height: 30px;
-  transition:all 0.3s;
-  border: 1px solid #CDDEF5;
-  border-radius: 100px;
-  overflow: hidden;
 }
 
-.toggle-switch input {
+.toggle-switch input { 
   opacity: 0;
   width: 0;
   height: 0;
@@ -712,6 +728,10 @@ main{
   right: 0;
   bottom: 0;
   background-color: #F9FBFF;
+  -webkit-transition: .3s;
+  transition: .3s;
+  border: 1px solid #CDDEF5;
+  border-radius: 30px;
 }
 
 .slider:before {
@@ -719,16 +739,19 @@ main{
   content: "";
   height: 22px;
   width: 22px;
-  left: 4px;
+  left: 3px;
   bottom: 3px;
-  background-color: var(--primary);
+  background-color: white;
+  -webkit-transition: .3s;
+  transition: .3s;
+  background: #1069DF;
   border-radius: 50%;
-  transition:all 0.3s ease;
 }
 
 input:checked + .slider:before {
-  transform: translateX(39px);
-  transition:all 0.3s ease;
+  -webkit-transform: translateX(40px);
+  -ms-transform: translateX(40px);
+  transform: translateX(40px);
 }
 
 /* Drop down */
@@ -1083,16 +1106,6 @@ input:checked + .slider:before {
   --color4: 200, 50, 50;
   --color5: 180, 180, 50;
   --color-interactive: 140, 100, 255;
-  --circle-size: 70%;
+  --circle-size: 90%;
   --blending: hard-light;
-}
-/* Gradient Canvas */
-#gradient-canvas {
-  width:100vw;
-  height:100vh;
-  position: fixed;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-  z-index: -1;
 }

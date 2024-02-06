@@ -8,8 +8,28 @@ const Header = () => {
     const [isUsecasesDropdownOpen, setUsecasesDropdownOpen] = useState(false);
     const [isResourcesDropdownOpen, setResourcesDropdownOpen] = useState(false);
 
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.pageYOffset;
+            if (scrollTop > 20) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+
   return (
-    <header className='header'>
+    <header className={isScrolled ? 'header scrolled' : 'header'}>
         <div className='header-container'>
             <div className='logo-container'>
                 <a href='/'>

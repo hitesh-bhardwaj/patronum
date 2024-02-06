@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const PricingCard = ({ category, isAnnual, selectedCurrency, pricingImage }) => {
+  
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    setIsVisible(true); // Ensure the pricing card is initially visible
+  }, []);
+
   // Prices (monthly and annual) for each category and currency
   const prices = {
     Education: {
@@ -24,7 +31,7 @@ const PricingCard = ({ category, isAnnual, selectedCurrency, pricingImage }) => 
   };
 
   return (
-    <div className='pricing-card'>
+    <div className={`pricing-card ${isVisible ? 'fade-in' : 'fade-out'}`}>
       <div className='pricing-image'>
         <img src={pricingImage} />
       </div>

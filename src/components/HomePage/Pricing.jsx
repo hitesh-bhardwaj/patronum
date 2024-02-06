@@ -16,10 +16,10 @@ const PricingPage = () => {
 
     const ToggleSwitch = ({ isAnnual, onToggle }) => {
         return (
-          <label className="toggle-switch">
-            <input type="checkbox" checked={isAnnual} onChange={onToggle} />
-            <span className="slider round"></span>
-          </label>
+            <label className="toggle-switch">
+                <input type="checkbox" checked={isAnnual} onChange={onToggle} />
+                <span className="slider"></span>
+            </label>
         );
       };
   
@@ -83,7 +83,6 @@ const PricingPage = () => {
                                     </a>
                                 </div>
                             </div>
-
                     </div>
                 </div>
             </section>
