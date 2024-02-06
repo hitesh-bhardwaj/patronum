@@ -1,3 +1,4 @@
+'use client'
 import Hero from '@/components/HomePage/Hero';
 import Features from '@/components/HomePage/Features';
 import About from '@/components/HomePage/About';

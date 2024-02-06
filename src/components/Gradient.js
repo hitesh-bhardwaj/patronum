@@ -1,4 +1,3 @@
-'use client'
 import { useEffect, useState } from "react";
 
 export default function Gradient() {
@@ -26,7 +25,7 @@ export default function Gradient() {
 
     useEffect(() => {
         // Adjust maxSpeed based on isScrolling state
-        setMaxSpeed(isScrolling ? 5.5 : 3.5);
+        setMaxSpeed(isScrolling ? 5 : 3.5);
 
         const MIN_SPEED = 1.5;
 
