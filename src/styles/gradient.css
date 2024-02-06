@@ -1,5 +1,5 @@
 .bouncing-blob {
-    width: 32vw;
+    width: 40vw;
     aspect-ratio: 1;
     border-radius: 50%;
     will-change: transform;
@@ -9,24 +9,31 @@
     left: 0;
     transform-origin: left top;
     transition: all 1s ease;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
   }
   
   .bouncing-blob--blue {
-    background: #0e09af7e;
+    /* background: #0e09af7e; */
+    background-image: url('/assets/gradient/blue.png');
   }
   
   .bouncing-blob--white {
-    background: #ffffff;
+    /* background: #ffffff; */
     z-index: 2;
-    width: 15vw;
+    width: 25vw;
+    background-image: url('/assets/gradient/white.png');
   }
   
   .bouncing-blob--purple {
-    background: #8c4bf5aa;
+    /* background: #8c4bf5aa; */
+    background-image: url('/assets/gradient/purple.png');
   }
   
   .bouncing-blob--pink {
-    background: #1ea9ff50;
+    /* background: #1ea9ff50; */
+    background-image: url('/assets/gradient/pink.png');
   }
   
   .bouncing-blobs-container {
