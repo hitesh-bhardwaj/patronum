@@ -7,23 +7,28 @@ import 'swiper/css/free-mode';
 import 'swiper/css/scrollbar';
 
 import '@/styles/gradient.css';
+import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
 
 export default function App({ Component, pageProps }) {
 
-  // Scroll to top on reload
+  // const lenis = useLenis(({ scroll }) => {
+  //   // called every scroll
+  // })
+
   useEffect(() => {
-    // Scroll to top after a delay of 100ms on reload
-    const scrollToTop = () => {
-      setTimeout(() => {
-        window.scrollTo({ top: 0 });
-      }, 1);
+    // Scroll to the top when the component mounts or when the route changes
+    const handleRouteChange = () => {
+        window.scrollTo(0, 0)
     };
-    scrollToTop();
-    // Clean up any resources if necessary
+
+    // Attach the event listener for route changes
+    window.addEventListener("beforeunload", handleRouteChange);
+
+    // Remove the event listener when the component is unmounted
     return () => {
-      // Clean-up code here, if needed
+      window.removeEventListener("beforeunload", handleRouteChange);
     };
-  }, []);
+  }, []); // Empty dependency array ensures the effect runs only once on mount
 
   return(
     <>
@@ -42,7 +47,9 @@ export default function App({ Component, pageProps }) {
         }
         ]}
       />
-      <Component {...pageProps} />
+      <ReactLenis root>
+        <Component {...pageProps} />
+      </ReactLenis>
     </>
   ); 
 }

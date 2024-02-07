@@ -676,10 +676,11 @@ section{
 }
 .useCase-item-left{
   width: 40%;
+  height: 24vw;
 }
 .useCase-item-left img{
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 .useCase-item-right{
   width: 43%;

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.8.8",
+    "@studio-freight/react-lenis": "^0.0.43",
     "framer-motion": "^10.16.16",
     "gsap": "^3.12.5",
     "next": "14.0.4",
