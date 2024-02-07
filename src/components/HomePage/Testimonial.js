@@ -4,8 +4,8 @@ export default function Testimonial(){
     return(
         <>
             <section id="testimonial">
-                <div className="container">
-                    <div className="content">
+                <div className="content">
+                    <div className="container">
                         <div className="testimonial-top mb-[4vw]">
                             <h5 className="title-4xl">
                                 <span>
@@ -17,9 +17,9 @@ export default function Testimonial(){
                                 </span>
                             </h5>
                         </div>
-                        <>
-                            <Slider />   
-                        </>
+                    </div>
+                    <div className="testi-slider">
+                        <Slider />
                     </div>
                 </div>
             </section>        

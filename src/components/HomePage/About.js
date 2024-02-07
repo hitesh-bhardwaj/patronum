@@ -5,7 +5,7 @@ export default function About() {
             <div className="container">
                 <div className="content flex-all">
                     <div className="about-left w-[37%]">
-                        <h2 className="title-4xl mb-10"> 
+                        <h2 className="title-4xl"> 
                             Why Patronum
                         </h2>
                         <p className="para-italic mb-10">

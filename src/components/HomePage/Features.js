@@ -1,4 +1,8 @@
-import { useState } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { useEffect, useState } from 'react';
+
+gsap.registerEffect(ScrollTrigger);
 
 export default function Features(){
 
@@ -45,6 +49,27 @@ export default function Features(){
         }
     ];
 
+    useEffect(() => {
+        let ctx = gsap.context(() => {
+          let brandImagePin = document.getElementById("left-section");
+          let brandImageNotPin = document.getElementById("right-section");
+          ScrollTrigger.create({
+            trigger: brandImagePin,
+            start: "top 15%",
+            endTrigger: brandImageNotPin,
+            end: "bottom 92%",
+            // the nect line (with the arrow function) is 'a functional value' () =>
+            // end: () => `${brandImageNotPin.offsetHeight - brandImagePin.offsetHeight}px 20%`,
+            // this line ensures the functional value gets recalculated on resize
+            invalidateOnRefresh: true,
+            pin: brandImagePin,
+            // pinSpacing: true,
+            // markers: true,
+          });
+        });
+        return () => ctx.revert();
+      });
+
     return(
         <>
             <section id="features">
@@ -57,8 +82,8 @@ export default function Features(){
                                 <span>Admins & Professionals</span>
                             </h2>
                         </div>
-                        <div className="features-bottom relative flex justify-between items-start">
-                            <div className="features-left">
+                        <div className="features-bottom relative flex justify-between items-start" id='main-features-container'>
+                            <div className="features-left" id='left-section'>
                                 <h3 className="feat-head">
                                     Features
                                     <span />
@@ -68,9 +93,12 @@ export default function Features(){
                                         Streamline Google Workspace Management by automating User Onboarding & Offboarding, Email Signature Management, Contact Sharing, Google Drive Management, Backups, and much more.
                                     </span>
                                 </p>
+                                <div className='accordion-img'>
+                                    <img src='/assets/home/features-1.svg'/>
+                                </div>  
                             </div>
 
-                            <div className="features-right">
+                            <div className="features-right" id='right-section'>
 
                                 <div className="feat-accordions">
 
@@ -110,9 +138,7 @@ export default function Features(){
                                         </div>
                                     ))}     
 
-                                    <div className='accordion-img'>
-                                        <img src='/assets/home/features-1.svg'/>
-                                    </div>        
+                                          
                                 </div> 
                             
                             </div>

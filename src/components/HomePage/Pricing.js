@@ -30,7 +30,7 @@ const PricingPage = () => {
                     <div className='content'>
 
                         <div className='pricing-head'>
-                            <h3 className='title-4xl mb-[4vw]'>Plans & Pricing</h3>
+                            <h3 className='title-4xl'>Plans & Pricing</h3>
                         </div>
 
                         <div className='pricing-main'>
@@ -43,7 +43,7 @@ const PricingPage = () => {
                                     </span>
                                     <ToggleSwitch isAnnual={isAnnual} onToggle={handleToggle} />
                                     <span className={`pricing-selector-type ${isAnnual ? 'active' : '' }`}>
-                                        Annually
+                                        Yearly
                                     </span>
                                 </div>
                                 

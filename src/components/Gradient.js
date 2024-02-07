@@ -25,7 +25,7 @@ export default function Gradient() {
 
     useEffect(() => {
         // Adjust maxSpeed based on isScrolling state
-        setMaxSpeed(isScrolling ? 5 : 3.5);
+        setMaxSpeed(isScrolling ? 4 : 3);
 
         const MIN_SPEED = 1.5;
 
@@ -95,14 +95,14 @@ export default function Gradient() {
     }, [isScrolling]); // Depend on isScrolling to re-initialize blobs when it changes
 
     return (
-        <div class="bouncing-blobs-container">
-            <div class="bouncing-blobs-glass"></div>
-            <div class="bouncing-blobs">
-                <div class="bouncing-blob bouncing-blob--blue"></div>
-                <div class="bouncing-blob bouncing-blob--white"></div>
-                <div class="bouncing-blob bouncing-blob--purple"></div>
-                <div class="bouncing-blob bouncing-blob--white"></div>
-                <div class="bouncing-blob bouncing-blob--pink"></div>
+        <div className="bouncing-blobs-container">
+            <div className="bouncing-blobs-glass"></div>
+            <div className="bouncing-blobs">
+                <div className="bouncing-blob bouncing-blob--blue"></div>
+                <div className="bouncing-blob bouncing-blob--white"></div>
+                <div className="bouncing-blob bouncing-blob--purple"></div>
+                <div className="bouncing-blob bouncing-blob--white"></div>
+                <div className="bouncing-blob bouncing-blob--pink"></div>
             </div>
         </div>
     );

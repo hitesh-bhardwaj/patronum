@@ -53,18 +53,17 @@ export default function Slider() {
               clientImage: "/assets/testimonial/client-4.png",
               clientName: "Dominik Kugelmann",
               clientCompany: "CEO - 22d consulting"
-            }
+            },
       ];
 
     return (
       <>
         <Swiper
-            slidesPerView={3}
-            spaceBetween={60}
+            slidesPerView={4}
+            spaceBetween={30}
             freeMode={true}
-            scrollbar={{
-                hide: true,
-            }}
+            grabCursor={true}
+            scrollbar={{ draggable: true }}
             modules={[Scrollbar, FreeMode]}
             className="mySwiper"
         >
@@ -78,6 +77,7 @@ export default function Slider() {
                     />
                 </SwiperSlide>
             ))}
+            <SwiperSlide />
         </Swiper>
       </>
     );

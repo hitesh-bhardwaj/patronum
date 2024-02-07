@@ -4,7 +4,7 @@ export default function Hero(){
     return(
         <>
             <section id="hero">
-                <div className="container-lg">
+                <div className="container-lg relative">
                     <div className="px-[4vw] flex-all">
                         <div className="hero-left flex flex-col gap-y-10">
                             <h1 className='title-5xl'>
@@ -52,6 +52,11 @@ export default function Hero(){
                                 title='patronum dashboard showcase'
                             />
                         </div>
+                    </div>
+                    <div className="scroll-down-btn">
+                        <a href="#features">
+                            <img src="/assets/icons/arrow-down-big.svg" alt="arrow down icon" title="down arrow"/>
+                        </a>
                     </div>
                 </div>
             </section>

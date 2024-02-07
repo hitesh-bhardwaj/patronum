@@ -9,7 +9,6 @@ export default function UseCases() {
 
     const panelsSectionRef = useRef(null);
     const panelsContainerRef = useRef(null);
-    let tween = useRef();
 
     useEffect(() => {
         let ctx = gsap.context(() => {
@@ -21,7 +20,7 @@ export default function UseCases() {
                     trigger: "#use-cases",
                     pin: true,
                     scrub: 1,
-                    start: 'top -=25%',
+                    start: '18% top',
                     end: '+=3500',
                     snap: {
                         snapTo: 1 / (sections.length - 1),

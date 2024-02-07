@@ -16,6 +16,7 @@
   --card-beige: #D9D5BF;
   --transition-1:  all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
   --transition-2: transform .75s cubic-bezier(.19,1,.22,1);
+  --transition-btn: all .45s cubic-bezier(.785,.135,.15,.86);
 }
 
 body{
@@ -26,6 +27,7 @@ body{
   height: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  padding-top: 20px;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -115,6 +117,18 @@ p{
   max-width: 100% !important;
 }
 
+@media screen and (max-width: 1536px) {
+  .container{
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+    max-width: 100% !important;
+  }
+}
+
 section{
   height: 100%;
   width: 100%;
@@ -152,15 +166,16 @@ section{
 
 /* Buttons CSS Start Main */
 .button-style-1{
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.1vw;
   font-family: 'Aeonik';
   border: 2px solid var(--text-head);
   border-radius: 50px;
-  padding: 15px 30px;
+  padding: 1vw 1.8vw;
   color: var(--text-head);
   transition: all 300ms ease-out;
 }
+
 .button-style-1:hover{
   color: var(--white);
   background: var(--text-head);
@@ -175,8 +190,8 @@ section{
   border-radius: 100px;
   padding: 20px 4%;
   height: 4.2vw;
-  width: 14vw;
-  transition: all .5s ease;
+  width: 15vw;
+  transition: var(--transition-btn);
 }
 .btn-primary .btn-bg{
   position: absolute;
@@ -186,9 +201,8 @@ section{
   top: 15%;
   left: 5%;
   border-radius: 50%;
-  transition: all .5s ease;
+  transition: var(--transition-btn);
 }
-
 .btn-primary:hover .btn-bg{
   top: 0;
   height: 100%;
@@ -208,10 +222,10 @@ section{
 }
 .btn-primary .btn-text{
   color: var(--white);
-  font-size: 1.1vw;
+  font-size: 1.2vw;
   font-family: 'Aeonik';
   font-weight: 400;
-  transition: all .5s ease;
+  transition: var(--transition-btn);
   padding-right: 20px;
 }
 .btn-primary:hover .btn-text{
@@ -226,8 +240,8 @@ section{
   width: 200%;
   display: flex;
   transform: translateX(-50%);
-  transition: all .5s ease;
-  gap: 5px;
+  transition: var(--transition-btn);
+  gap: 8px;
 }
 .btn-primary:hover .btn-icon span{
   transform: translateX(0%);
@@ -310,7 +324,7 @@ section{
 }
 
 .header-container{
-  width: 90%;
+  width: 88%;
   height: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -327,12 +341,12 @@ section{
   display: flex;
   align-items: center;
   gap: 3vw;
-  font-family: 'Ageo';
+  font-family: 'Aeonik';
   font-weight: 500;
 }
 .nav-list-item>a{
   font-size: 1.1vw;
-  color: var(--text-body);
+  color: var(--text-head);
   transition: all 0.3s ease;
   position: relative;
 }
@@ -421,6 +435,7 @@ section{
   color: var(--text-head);
   font-weight: 500;
 }
+
 .nav-drop-text{
   font-size: 16px;
 }
@@ -441,10 +456,6 @@ section{
 .Your{
   margin-bottom: 1.5vw;
 }
-.hero-right{
-  width: 40%;
-  text-align: end;
-}
 .google-logo-hero{
   height: auto;
   width: 95%;
@@ -454,10 +465,55 @@ section{
   width: 24vw;
   font-weight: 500;
 }
+.hero-right{
+  width: 40%;
+  text-align: end;
+  position: relative;
+}
+.hero-right::before {
+  content: "";
+  position: absolute;
+  height: 45%;
+  width: 81%;
+  background: white;
+  top: 26%;
+  left: 10%;
+}
 .hero-img{
   width: 32vw;
-  height: auto;
+  height: 100%;
+  mix-blend-mode: darken;
 }
+.scroll-down-btn{
+  position: absolute;
+  border: 2px solid var(--text-head);
+  bottom: 4%;
+  left: 6%;
+  border-radius: 50%;
+  transition: 0.3s;
+  height: 5vw;
+  width: 5vw;
+}
+.scroll-down-btn a{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.scroll-down-btn img{
+  width: 1.3vw;
+  height: 1.3vw;
+  transition: 0.3s;
+}
+.scroll-down-btn:hover{
+  background: var(--primary);
+  border-color: var(--primary);
+}
+.scroll-down-btn:hover img{
+  filter: invert(1) brightness(2);
+}
+
 
 /* Hero Section - 1920 End - Index*/
 
@@ -509,6 +565,13 @@ section{
 .feat-accordion-item.open .accordion-content{
   height: 18.2vw;
 } 
+
+@media screen and (max-width: 1536px) {
+  .feat-accordion-item.open .accordion-content{
+    height: 19.2vw;
+  } 
+}
+
 .content-p{
   color: var(--text-body);
   font-size: 1.15vw;
@@ -527,7 +590,7 @@ section{
 }
 .feat-accordion-btn .plus,
 .feat-accordion-btn .minus{
-  font-size: 2.5vw;
+  font-size: 2vw;
   line-height: 0;
   font-weight: 400;
   color: var(--text-head);
@@ -555,7 +618,7 @@ section{
   z-index: 9;
   left: 0%;
   top: 30vh;
-  width: 30%;
+  width: 23vw;
 }
 
 .accordion-img img{
@@ -625,6 +688,16 @@ section{
 /* Use Cases Section - 1920 End - Index*/
 
 /* Pricing Section - 1920 Start - Index*/
+#pricing{
+  background-image: url(/assets/home/pricing-bg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: center;
+  background-position-y: -20vh;
+}
+.pricing-head .title-4xl{
+  margin-bottom: 3vw;
+}
 .pricing-card-wrapper{
   display: grid;
   grid-template-columns: 32% 32% 32%;
@@ -643,22 +716,12 @@ section{
   border-radius: 16px;
   padding: 15%;
 }
-
 .pricing-card {
   transition: opacity 0.5s ease-in-out;
 }
-
-.fade-in {
-  opacity: 1;
-}
-
-.fade-out {
-  opacity: 0;
-}
-
 .pricing-image{
   width: 100%;
-  height: 50%;
+  height: 10.5vw;
   margin-bottom: 2.5vw;
   text-align: center;
 }
@@ -687,7 +750,7 @@ section{
   color: #666666;
 }
 .pricing-link{
-  margin-top: 1.8vw;
+  margin-top: 1.5vw;
 }
 
 .pricing-selectors{
@@ -695,7 +758,7 @@ section{
 }
 
 .pricing-selector-type{
-  font-size: 18px;
+  font-size: 1.2vw;
   color: #A9A9A9;
   transition: 0.3s;
 }
@@ -713,8 +776,8 @@ section{
 .toggle-switch {
   position: relative;
   display: inline-block;
-  width: 70px;
-  height: 30px;
+  width: 4.1vw;
+  height: 1.9vw;
 }
 
 .toggle-switch input { 
@@ -740,10 +803,11 @@ section{
 .slider:before {
   position: absolute;
   content: "";
-  height: 22px;
-  width: 22px;
-  left: 3px;
-  bottom: 3px;
+  height: 1.4vw;
+  width: 1.4vw;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
   background-color: white;
   -webkit-transition: .3s;
   transition: .3s;
@@ -752,20 +816,18 @@ section{
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(40px);
-  -ms-transform: translateX(40px);
-  transform: translateX(40px);
+  transform: translate(160%, -50%);
 }
 
 /* Drop down */
 .custom-dropdown {
   position: relative;
-  width: 100px;
+  width: 5.5vw;
 }
 
 .custom-dropdown .selected-option {
   cursor: pointer;
-  padding: 10px 20px;
+  padding: 0.8vw 1vw;
   border: 1px solid #EEEEEE;
   border-radius: 100px;
   background-color: #fff;
@@ -814,6 +876,9 @@ input:checked + .slider:before {
 /* Pricing Section - 1920 End - Index*/
 
 /* About Section - 1920 Start -Index*/
+.about-left .title-4xl{
+  margin-bottom: 2vw;
+}
 .para-italic{
   font-size: 1.3vw;
   font-weight: 500;
@@ -833,7 +898,7 @@ input:checked + .slider:before {
 /* Testimonial Section - 1920 Start - Index*/
 
 .testimonial-card{
-  width: 100%;
+  width: 95%;
   background: #FDFDFD;
   border: 1px solid #e2e2e2;
   border-radius: 16px;
@@ -883,10 +948,10 @@ input:checked + .slider:before {
 }
 
 .testi-client-name{
-  font-size: 1.1vw;
+  font-size: 1.2vw;
 }
 .testi-client-details p{
-  font-size: 16px;
+  font-size: 0.8vw;
   font-family: 'Aeonik';
   color: #444444;
 }
@@ -895,12 +960,34 @@ input:checked + .slider:before {
   width: 100%;
   height: 100%;
 }
+.swiper-slide:first-child{
+  margin-left: 13vw;
+}
+.swiper-slide:last-child{
+  margin-right: 13vw !important;
+}
+.swiper-horizontal > .swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal{
+  width: 85% !important;
+  left: 50% !important;
+  transform: translateX(-50%);
+  background: #E8E8E8;
+  height: 3px !important;
+}
+.swiper-scrollbar-drag{
+  background-color: #2a2a2a !important;
+  height: 5px !important;
+  top: -1px !important;
+}
+
 
 /* Testimonial Section - 1920 End - Index*/
 
 /* Blogs Section - 1920 Start - Index*/
 .blogs-top{
   margin-bottom: 4vw;
+}
+.blogs-top .title-4xl{
+  margin-bottom: 1.5vw;
 }
 .blog-card-wrapper{
   display: grid;
