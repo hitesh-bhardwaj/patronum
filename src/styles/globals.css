@@ -154,6 +154,10 @@ section{
   line-height: 1.3;
   margin-bottom: 5vw;
 }
+.title-4xl span{
+  overflow: hidden;
+  line-height: inherit;
+}
 .title-3xl{
   font-size: 2.4vw;
 }
@@ -169,16 +173,20 @@ section{
   font-weight: 500;
   font-size: 1.1vw;
   font-family: 'Aeonik';
-  border: 2px solid var(--text-head);
+  border: 2px solid var(--primary);
   border-radius: 50px;
   padding: 1vw 1.8vw;
-  color: var(--text-head);
+  color: var(--primary);
   transition: all 300ms ease-out;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
 }
 
 .button-style-1:hover{
   color: var(--white);
-  background: var(--text-head);
+  background: var(--primary);
 }
 
 /* Main button */

@@ -6,7 +6,9 @@ export default function About() {
                 <div className="content flex-all">
                     <div className="about-left w-[37%]">
                         <h2 className="title-4xl"> 
-                            Why Patronum
+                            <span>
+                                Why Patronum
+                            </span>
                         </h2>
                         <p className="para-italic mb-10">
                             Ever felt overwhelmed managing Google Workspace? We get it!
