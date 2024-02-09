@@ -1,12 +1,19 @@
 import '@/styles/globals.css'
 import { DefaultSeo } from "next-seo";
 import { useEffect } from 'react';
+import dynamic from 'next/dynamic';
 
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/scrollbar';
 
 import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
+
+// Import the Background component dynamically
+const BackgroundWithNoSSR = dynamic(() => import('@/components/Background'), {
+  ssr: false, // This will only import Background on the client-side
+  loading: () => <p>Loading background...</p>, // Optional loading component
+});
 
 export default function App({ Component, pageProps }) {
 
@@ -49,6 +56,7 @@ export default function App({ Component, pageProps }) {
       <ReactLenis root>
         <Component {...pageProps} />
       </ReactLenis>
+      <BackgroundWithNoSSR />
     </>
   ); 
 }
