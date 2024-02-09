@@ -8,12 +8,12 @@ import Pricing from '@/components/HomePage/Pricing';
 import Testimonial from '@/components/HomePage/Testimonial';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import Gradient from '@/components/Gradient';
 
 import gsap from 'gsap';
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useEffect } from "react";
 import SplitType from "split-type";
+import Background from '@/components/Background';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,6 +47,7 @@ export default function Home() {
     <>
       <Header />
       <main>
+      <Background />
         <Hero />
         <Features />
         <UseCases />
@@ -57,7 +58,6 @@ export default function Home() {
         <Faqs />
         <Footer />
       </main>
-      <Gradient />
     </>
   );
 } 

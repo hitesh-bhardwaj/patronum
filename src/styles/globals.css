@@ -30,6 +30,26 @@ body{
   padding-top: 20px;
 }
 
+/* Background Canvas */
+.canvas-container{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+#gradient-canvas {
+  width: 100%;
+  height: 100%;
+  opacity: 0.25;
+  --gradient-color-4: #b2ffee;
+  --gradient-color-2: #ffffff;
+  --gradient-color-3: #6ec3f4;
+  --gradient-color-1: #ffffff;
+}
+
 h1,h2,h3,h4,h5,h6{
   font-family: 'Aeonik';
 }
@@ -203,10 +223,10 @@ section{
 }
 .btn-primary .btn-bg{
   position: absolute;
-  height: 2.8vw;
-  width: 2.8vw;
+  height: 2.3vw;
+  width: 2.3vw;
   background: var(--white);
-  top: 15%;
+  top: 20%;
   left: 5%;
   border-radius: 50%;
   transition: var(--transition-btn);
@@ -257,6 +277,69 @@ section{
 .btn-primary.arrow .btn-icon{
   width: 1.5vw;
 }
+
+
+/* Button 3 */
+.p1 {
+  font-size: max(12px,min(20px,1.8rem));
+}
+.h-85 {
+  height: 8.5rem;
+}
+.bg-yellow {
+  background-color: #fff555;
+}
+.px-40 {
+  padding-left: 2.6rem;
+  padding-right: 2.6rem;
+}
+.w-15 {
+  width: 1rem;
+}
+.h-15{
+  height: 1rem;
+}
+.btn__circle[data-v-f4363f2a] {
+  -webkit-clip-path: inset(1.5rem 2rem 1.5rem calc(100% - 7.5rem) round 4.25rem);
+  clip-path: inset(1.25rem 1.5rem 1.25rem calc(100% - 5rem) round 4.25rem);
+}
+@media (hover: hover) and (pointer: fine){
+  .btn__circle[data-v-f4363f2a] {
+      transition: transform .45s cubic-bezier(.785,.135,.15,.86),-webkit-clip-path .65s cubic-bezier(.785,.135,.15,.86);
+      transition: clip-path .45s cubic-bezier(.785,.135,.15,.86),transform .65s cubic-bezier(.785,.135,.15,.86);
+      transition: clip-path .45s cubic-bezier(.785,.135,.15,.86),transform .65s cubic-bezier(.785,.135,.15,.86),-webkit-clip-path .65s cubic-bezier(.785,.135,.15,.86);
+  }
+  .btn__path[data-v-f4363f2a]:first-child {
+    transition-delay: .1s;
+  }
+  .btn__path[data-v-f4363f2a] {
+    transition: transform .45s cubic-bezier(.785,.135,.15,.86);
+  }
+  .btn__path[data-v-f4363f2a]:last-child {
+    transform: translateX(-100%);
+    transition-delay: 0s;
+  }
+
+  .btn:hover .btn__circle[data-v-f4363f2a] {
+    -webkit-clip-path: inset(0 round 4.25rem);
+    clip-path: inset(0 round 4.25rem);
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn:hover .btn__path[data-v-f4363f2a]:first-child {
+  transform: translateX(100%);
+  transition-delay: 0s;
+}
+
+.btn:hover .btn__path[data-v-f4363f2a]:last-child {
+  transform: translateX(0);
+  transition-delay: .1s;
+}
+}
+
+
+
 /* Link Button */
 .link-btn{
   display: inline-flex;

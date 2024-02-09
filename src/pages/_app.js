@@ -6,7 +6,6 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/scrollbar';
 
-import '@/styles/gradient.css';
 import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
 
 export default function App({ Component, pageProps }) {
