@@ -1,10 +1,8 @@
-
 /*
 *   WebGl Gradient Animation
 *   ScrollObserver functionality to disable animation when not scrolled into view has been disabled and 
 *   commented out for now.
 */
-
 
 //Converting colors to proper format
 function normalizeColor(hexCode) {
@@ -265,8 +263,6 @@ function normalizeColor(hexCode) {
     }
   }
   
-  
-  
   //Sets initial properties
   function e(object, propertyName, val) {
     return propertyName in object ? Object.defineProperty(object, propertyName, {
@@ -507,8 +503,7 @@ export class Gradient {
   * Here are some default property values you can change anytime:
   * Amplitude:    Gradient.amp = 0
   * Colors:       Gradient.sectionColors (if you change colors, use normalizeColor(#hexValue)) before you assign it.
-  *
-  *
+  
   * Useful functions
   * Gradient.toggleColor(index)
   * Gradient.updateFrequency(freq)

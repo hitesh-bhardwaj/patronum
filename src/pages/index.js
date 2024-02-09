@@ -1,3 +1,5 @@
+'use client'
+
 import Hero from '@/components/HomePage/Hero';
 import Features from '@/components/HomePage/Features';
 import About from '@/components/HomePage/About';
@@ -47,7 +49,6 @@ export default function Home() {
     <>
       <Header />
       <main>
-      <Background />
         <Hero />
         <Features />
         <UseCases />
@@ -58,6 +59,7 @@ export default function Home() {
         <Faqs />
         <Footer />
       </main>
+      <Background />
     </>
   );
 } 
