@@ -1,5 +1,3 @@
-'use client'
-
 import Hero from '@/components/HomePage/Hero';
 import Features from '@/components/HomePage/Features';
 import About from '@/components/HomePage/About';
@@ -13,9 +11,9 @@ import Footer from '@/components/Footer';
 
 import gsap from 'gsap';
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { useEffect } from "react";
-import SplitType from "split-type";
-import Background from '@/components/Background';
+// import { useEffect } from "react";
+// import SplitType from "split-type";
+// import Background from '@/components/Background';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -59,7 +57,7 @@ export default function Home() {
         <Faqs />
         <Footer />
       </main>
-      <Background />
+      {/* <Background /> */}
     </>
   );
 } 
