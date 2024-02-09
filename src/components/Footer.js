@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-
 const Footer = () => {
 
     return(
@@ -11,20 +9,20 @@ const Footer = () => {
                         <div className="footer-top">
     
                         <div className="footer-top-left">
-                            <img className="footer-logo" src="/logo-white.svg" alt="patronum logo" title="patronum logo"/>
+                            <img className="footer-logo" loading='lazy' src="/logo-white.svg" alt="patronum logo" title="patronum logo"/>
                             <p>Your Google Workspace Manager Providing a better way to manage your Google Workspace.</p>
 
                             <div className='flex gap-6 footer-iso'>
-                                <img src='/assets/footer/ISO-1.svg' alt='ISO Certficates'/>
-                                <img src='/assets/footer/ISO-2.svg' alt='ISO Certficates'/>
-                                <img src='/assets/footer/ISO-3.svg' alt='ISO Certficates'/>
-                                <img src='/assets/footer/ISO-4.svg' alt='ISO Certficates'/>
+                                <img src='/assets/footer/ISO-1.svg' loading='lazy' alt='ISO Certficates'/>
+                                <img src='/assets/footer/ISO-2.svg' loading='lazy' alt='ISO Certficates'/>
+                                <img src='/assets/footer/ISO-3.svg' loading='lazy' alt='ISO Certficates'/>
+                                <img src='/assets/footer/ISO-4.svg' loading='lazy' alt='ISO Certficates'/>
                             </div>
 
                             <div className='flex gap-6 footer-award'>
-                                <img src="/assets/footer/award-2.png" alt="Award for best ease of use image" title="Award for best ease of use image"/>
-                                <img src="/assets/footer/award-1.png" alt="Award for best value image" title="Award for best value image"/>
-                                <img src="/assets/footer/google-partner-white.svg" alt="Patronum Google Patrner" title="Patronum Google Patrner"/>
+                                <img loading='lazy' src="/assets/footer/award-2.png" alt="Award for best ease of use image" title="Award for best ease of use image"/>
+                                <img loading='lazy' src="/assets/footer/award-1.png" alt="Award for best value image" title="Award for best value image"/>
+                                <img loading='lazy' src="/assets/footer/google-partner-white.svg" alt="Patronum Google Patrner" title="Patronum Google Patrner"/>
                             </div>
                         </div>
 

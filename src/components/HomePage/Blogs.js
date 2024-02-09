@@ -21,7 +21,7 @@ export default function BLogs() {
                             <div className="blog-card hover:shadow-lg">
                                 <div href="#" className="blog-card-content">
                                     <div className="blog-card-image">
-                                        <img src="/assets/home/blog-1.webp" alt="blog image" title="blog image"/>
+                                        <img src="/assets/home/blog-1.webp" loading="lazy" alt="blog image" title="blog image"/>
                                     </div>
                                     <div className="blog-card-details">
                                         <div className="blog-card-author">
@@ -51,7 +51,7 @@ export default function BLogs() {
                             <div className="blog-card hover:shadow-lg">
                                 <div href="#" className="blog-card-content">
                                     <div className="blog-card-image">
-                                        <img src="/assets/home/blog-2.webp" alt="blog image" title="blog image"/>
+                                        <img src="/assets/home/blog-2.webp" loading="lazy" alt="blog image" title="blog image"/>
                                     </div>
                                     <div className="blog-card-details">
                                         <div className="blog-card-author">
@@ -81,7 +81,7 @@ export default function BLogs() {
                             <div className="blog-card hover:shadow-lg">
                                 <div href="#" className="blog-card-content">
                                     <div className="blog-card-image">
-                                        <img src="/assets/home/blog-3.webp" alt="blog image" title="blog image"/>
+                                        <img src="/assets/home/blog-3.webp" loading="lazy" alt="blog image" title="blog image"/>
                                     </div>
                                     <div className="blog-card-details">
                                         <div className="blog-card-author">

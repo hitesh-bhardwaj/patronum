@@ -34,7 +34,7 @@ export default function About() {
                         </a>
                     </div>
                     <div className="about-right w-[40%]">
-                        <img src="/assets/home/about.svg" alt="about patronum" title="about patronum image"/>
+                        <img src="/assets/home/about.svg" loading="lazy" alt="about patronum" title="about patronum image"/>
                     </div>
                 </div>
             </div>

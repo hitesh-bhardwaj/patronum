@@ -42,11 +42,8 @@ export default function Hero(){
                         </div>
                         
                         <div className="hero-right">
-                            <Image 
+                            <img
                                 src="/assets/home/hero-animation.gif"
-                                height={600}
-                                width={600}
-                                priority={true}
                                 className='hero-img'
                                 alt='patronum dashboard showcase'
                                 title='patronum dashboard showcase'

@@ -33,7 +33,7 @@ const PricingCard = ({ category, isAnnual, selectedCurrency, pricingImage }) => 
   return (
     <div className={`pricing-card ${isVisible ? 'fade-in' : 'fade-out'}`}>
       <div className='pricing-image'>
-        <img src={pricingImage} alt='Price Category Image' title='Patronum Pricing'/>
+        <img src={pricingImage} alt='Price Category Image' loading='lazy' title='Patronum Pricing'/>
       </div>
       <h4 className='pricing-category'>{category}</h4>
       <p className='pricing-price'> 
