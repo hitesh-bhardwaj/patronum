@@ -48,9 +48,9 @@ export default function Faqs(){
                             {faqData.map((item, index) => (
                                 <div onClick={() => toggleAccordion(index)} className={`faq-item ${index === accordionOpen ? 'open' : ''}`} key={index}>
                                     <div className="faq-item-content">
-                                        <h3 className="title-2xl pb-2">
+                                        <h6 className="title-2xl pb-2">
                                             {item.title}
-                                        </h3>
+                                        </h6>
                                         <div className="faq-content">
                                             <p className="content-p my-6">
                                                 <span>{item.content}</span>

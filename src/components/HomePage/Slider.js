@@ -8,49 +8,49 @@ export default function Slider() {
     const data = [
         {
           content: "Managing Google Workspace can be a daunting task for some companies. The team at Patronum took something that is quite tedious and complex for most people to do and made it as simple as it gets. Implementing our email signature.",
-          clientImage: "/assets/testimonial/client-1.png",
+          clientImage: "/assets/testimonial/client-1.webp",
           clientName: "Bhaskar Varshney",
           clientCompany: "Enigma Digital Consulting"
         },
         {
           content: "Working with the Patronum and the team was quick and simple. They took my initial designs and created an extremely attractive and engaging email signature.",
-          clientImage: "/assets/testimonial/client-2.png",
+          clientImage: "/assets/testimonial/client-2.webp",
           clientName: "John Knot",
           clientCompany: "Zola Systems Limited"
         },
         {
             content: "Working with the Patronum and the team was quick and simple. They took my initial designs and created an extremely attractive and engaging email signature for my business and also several promotional campaigns. 5 stars!!",
-            clientImage: "/assets/testimonial/client-3.png",
+            clientImage: "/assets/testimonial/client-3.webp",
             clientName: "Juan Marquez",
             clientCompany: "Risk Optics"
           },
           {
             content: "Being a Patronum partner is a really great opportunity to offer our clients a top-class Workspace management tool, that works really well with our Workspace consulting offering.",
-            clientImage: "/assets/testimonial/client-4.png",
+            clientImage: "/assets/testimonial/client-4.webp",
             clientName: "Dominik Kugelmann",
             clientCompany: "CEO - 22d consulting"
           },
           {
             content: "Managing Google Workspace can be a daunting task for some companies. The team at Patronum took something that is quite tedious and complex for most people to do and made it as simple as it gets. Implementing our email signature.",
-            clientImage: "/assets/testimonial/client-1.png",
+            clientImage: "/assets/testimonial/client-1.webp",
             clientName: "Bhaskar Varshney",
             clientCompany: "Enigma Digital Consulting"
           },
           {
             content: "Working with the Patronum and the team was quick and simple. They took my initial designs and created an extremely attractive and engaging email signature.",
-            clientImage: "/assets/testimonial/client-2.png",
+            clientImage: "/assets/testimonial/client-2.webp",
             clientName: "John Knot",
             clientCompany: "Zola Systems Limited"
           },
           {
               content: "Working with the Patronum and the team was quick and simple. They took my initial designs and created an extremely attractive and engaging email signature for my business and also several promotional campaigns. 5 stars!!",
-              clientImage: "/assets/testimonial/client-3.png",
+              clientImage: "/assets/testimonial/client-3.webp",
               clientName: "Juan Marquez",
               clientCompany: "Risk Optics"
             },
             {
               content: "Being a Patronum partner is a really great opportunity to offer our clients a top-class Workspace management tool, that works really well with our Workspace consulting offering.",
-              clientImage: "/assets/testimonial/client-4.png",
+              clientImage: "/assets/testimonial/client-4.webp",
               clientName: "Dominik Kugelmann",
               clientCompany: "CEO - 22d consulting"
             },
@@ -88,7 +88,7 @@ export default function Slider() {
         <div className='testimonial-card'>
             <div className='testicard-content'>
                 <div>
-                    <img src='/assets/icons/quote-icon.png' alt='quote icon' className='testi-quote-icon'/>
+                    <img src='/assets/icons/quote-icon.webp' alt='quote icon' className='testi-quote-icon'/>
                     <p className='testimonial-para'>
                         {content}
                     </p>

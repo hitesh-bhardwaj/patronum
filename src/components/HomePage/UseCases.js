@@ -62,30 +62,30 @@ export default function UseCases() {
                 <div className="container">
                     <div className="content overflow-hidden">
                         <div className="use-cases-top">
-                            <h3 className="title-4xl">
+                            <h2 className="title-4xl">
                                 <span>Master Challenges</span> 
                                 <br />
                                 <span>Across Your Organisation</span>
-                            </h3>
+                            </h2>
                         </div>
 
                         <div id="useCase-Scroll">
                             <div className="use-cases-button">
                                 <ul className="use-cases-list flex-all">
                                     <li className="" data-section="useCase-1">
-                                        <a className="anchor" >For Business</a>
+                                        <p className="anchor" >For Business</p>
                                     </li>
                                     <li className="" data-section="useCase-2">
-                                        <a className="anchor" >For Human Resources</a>
+                                        <p className="anchor" >For Human Resources</p>
                                     </li>
                                     <li className="" data-section="useCase-3">
-                                        <a className="anchor" >For Sales & Marketing</a>
+                                        <p className="anchor" >For Sales & Marketing</p>
                                     </li>
                                     <li className="" data-section="useCase-4">
-                                        <a className="anchor" >For Education</a>
+                                        <p className="anchor" >For Education</p>
                                     </li>
                                     <li className="" data-section="useCase-5">
-                                        <a className="anchor" >For Users</a>
+                                        <p className="anchor" >For Users</p>
                                     </li>
                                 </ul>
                             </div>
@@ -96,7 +96,7 @@ export default function UseCases() {
 
                                     <div className="useCase-item flex-all" id="useCase-1">
                                         <div className="useCase-item-left">
-                                            <img src="/assets/home/UseCase-1.svg"/>
+                                            <img src="/assets/home/UseCase-1.svg" alt="use cases image" title="use case of patronum"/>
                                         </div>
                                         <div className="useCase-item-right">
                                             <h4 className="title-3xl mb-10">
@@ -130,7 +130,7 @@ export default function UseCases() {
 
                                     <div className="useCase-item flex-all" id="useCase-2">
                                         <div className="useCase-item-left">
-                                            <img src="/assets/home/UseCase-2.svg"/>
+                                            <img src="/assets/home/UseCase-2.svg" alt="use cases image" title="use case of patronum"/>
                                         </div>
                                         <div className="useCase-item-right">
                                             <h4 className="title-3xl mb-10">
@@ -162,7 +162,7 @@ export default function UseCases() {
 
                                     <div className="useCase-item flex-all" id="useCase-3">
                                         <div className="useCase-item-left">
-                                            <img src="/assets/home/UseCase-3.svg"/>
+                                            <img src="/assets/home/UseCase-3.svg" alt="use cases image" title="use case of patronum"/>
                                         </div>
                                         <div className="useCase-item-right">
                                             <h4 className="title-3xl mb-10">
@@ -194,7 +194,7 @@ export default function UseCases() {
 
                                     <div className="useCase-item flex-all" id="useCase-4">
                                         <div className="useCase-item-left">
-                                            <img src="/assets/home/UseCase-4.svg"/>
+                                            <img src="/assets/home/UseCase-4.svg" alt="use cases image" title="use case of patronum"/>
                                         </div>
                                         <div className="useCase-item-right">
                                             <h4 className="title-3xl mb-10">
@@ -226,7 +226,7 @@ export default function UseCases() {
 
                                     <div className="useCase-item flex-all" id="useCase-5">
                                         <div className="useCase-item-left">
-                                            <img src="/assets/home/UseCase-5.svg"/>
+                                            <img src="/assets/home/UseCase-5.svg" alt="use cases image" title="use case of patronum"/>
                                         </div>
                                         <div className="useCase-item-right">
                                             <h4 className="title-3xl mb-10">

@@ -7,7 +7,7 @@ export default function Testimonial(){
                 <div className="content">
                     <div className="container">
                         <div className="testimonial-top mb-[4vw]">
-                            <h5 className="title-4xl">
+                            <h2 className="title-4xl">
                                 <span>
                                     Client Speak: 
                                 </span>
@@ -15,7 +15,7 @@ export default function Testimonial(){
                                 <span>
                                     Real Stories, Real Impact!
                                 </span>
-                            </h5>
+                            </h2>
                         </div>
                     </div>
                     <div className="testi-slider">

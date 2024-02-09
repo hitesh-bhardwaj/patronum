@@ -5,11 +5,11 @@ export default function BLogs() {
                 <div className="container">
                     <div className="content">
                         <div className="blogs-top">
-                            <h5 className="title-4xl mb-8">
+                            <h2 className="title-4xl mb-8">
                                 <span>
                                     Our Latest Blogs
                                 </span>
-                            </h5>
+                            </h2>
                             <p className="content-p w-[40%]">
                                 <span>
                                     Discover a World of Knowledge with Expert Tips, In-Depth Tricks, Latest News, and Comprehensive Resources for Mastering Google Workspace.
@@ -21,11 +21,11 @@ export default function BLogs() {
                             <div className="blog-card hover:shadow-lg">
                                 <div href="#" className="blog-card-content">
                                     <div className="blog-card-image">
-                                        <img src="/assets/home/blog-1.png" alt="blog image" title="blog image"/>
+                                        <img src="/assets/home/blog-1.webp" alt="blog image" title="blog image"/>
                                     </div>
                                     <div className="blog-card-details">
                                         <div className="blog-card-author">
-                                            <h6 className="head">By Paul Lees</h6>
+                                            <p className="head">By Paul Lees</p>
                                             <p className="date">November 9, 2023</p>
                                         </div>
                                             <h5 className="blog-card-title">
@@ -51,12 +51,12 @@ export default function BLogs() {
                             <div className="blog-card hover:shadow-lg">
                                 <div href="#" className="blog-card-content">
                                     <div className="blog-card-image">
-                                        <img src="/assets/home/blog-2.png" alt="blog image" title="blog image"/>
+                                        <img src="/assets/home/blog-2.webp" alt="blog image" title="blog image"/>
                                     </div>
                                     <div className="blog-card-details">
                                         <div className="blog-card-author">
-                                            <h6>By Paul Lees</h6>
-                                            <span>November 9, 2023</span>
+                                            <p className="head">By Paul Lees</p>
+                                            <p className="date">November 9, 2023</p>
                                         </div>
                                         <h5 className="blog-card-title">
                                             The Role of Automated File Unsharing in Preventing Data Breaches
@@ -81,12 +81,12 @@ export default function BLogs() {
                             <div className="blog-card hover:shadow-lg">
                                 <div href="#" className="blog-card-content">
                                     <div className="blog-card-image">
-                                        <img src="/assets/home/blog-3.png" alt="blog image" title="blog image"/>
+                                        <img src="/assets/home/blog-3.webp" alt="blog image" title="blog image"/>
                                     </div>
                                     <div className="blog-card-details">
                                         <div className="blog-card-author">
-                                            <h6>By Paul Lees</h6>
-                                            <span>November 9, 2023</span>
+                                            <p className="head">By Paul Lees</p>
+                                            <p className="date">November 9, 2023</p>
                                         </div>
                                         <h5 className="blog-card-title">
                                             A Deep Dive into Google Contacts: Best Practices for Organizing and Sharing

@@ -94,7 +94,7 @@ export default function Features(){
                                     </span>
                                 </p>
                                 <div className='accordion-img'>
-                                    <img src='/assets/home/features-1.svg'/>
+                                    <img src='/assets/home/features-1.svg' alt='features image'/>
                                 </div>  
                             </div>
 

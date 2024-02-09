@@ -16,8 +16,8 @@ const PricingPage = () => {
 
     const ToggleSwitch = ({ isAnnual, onToggle }) => {
         return (
-            <label className="toggle-switch">
-                <input type="checkbox" checked={isAnnual} onChange={onToggle} />
+            <label className="toggle-switch" aria-label="Annual/Monthly Price Toggle">
+                <input type="checkbox" checked={isAnnual} onChange={onToggle} aria-label="Annually or Monthly"/>
                 <span className="slider"></span>
             </label>
         );
@@ -30,7 +30,7 @@ const PricingPage = () => {
                     <div className='content'>
 
                         <div className='pricing-head'>
-                            <h3 className='title-4xl'>Plans & Pricing</h3>
+                            <h2 className='title-4xl'>Plans & Pricing</h2>
                         </div>
 
                         <div className='pricing-main'>

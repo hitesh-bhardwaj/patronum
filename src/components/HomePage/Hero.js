@@ -46,7 +46,7 @@ export default function Hero(){
                                 src="/assets/home/hero-animation.gif"
                                 height={600}
                                 width={600}
-                                priority={false}
+                                priority={true}
                                 className='hero-img'
                                 alt='patronum dashboard showcase'
                                 title='patronum dashboard showcase'
