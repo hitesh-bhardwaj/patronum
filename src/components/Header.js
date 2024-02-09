@@ -46,17 +46,22 @@ const Header = () => {
             <nav className='navbar'>
                 <ul className='navbar-list'>
                     <li className='nav-list-item'>
-                        <a href='/about'>About</a>
-                    </li>
-                    <li className='nav-list-item'
-                        onMouseEnter={() => setFeaturesDropdownOpen(true)}
-                        onMouseLeave={() => setFeaturesDropdownOpen(false)}
-                        >
-                        <a href='/features' className=''>Features
-                            <svg viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 1L6.5 6.5L12 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
+                        <a href='/about'>
+                            <span>
+                                About
+                            </span>
                         </a>
+                    </li>
+                        <li className='nav-list-item'
+                            onMouseEnter={() => setFeaturesDropdownOpen(true)}
+                            onMouseLeave={() => setFeaturesDropdownOpen(false)}
+                            >
+                            <a href='/features' className='dropdown'>
+                                <span>Features</span>
+                                <svg viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L6.5 6.5L12 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                            </a>
                             {isFeaturesDropdownOpen && (
                                 <motion.div 
                                     initial={{ y: -30, opacity: 0 }}
@@ -130,13 +135,16 @@ const Header = () => {
                                     </ul>
                                 </motion.div>
                             )}
-                    </li>
+                        </li>
 
                     <li className='nav-list-item' 
                         onMouseEnter={() => setUsecasesDropdownOpen(true)}
                         onMouseLeave={() => setUsecasesDropdownOpen(false)}
                         >
-                        <a href='/use-cases' className=''>Use Cases
+                        <a href='/use-cases' className='dropdown'>
+                            <span>
+                               Use Cases
+                            </span>
                             <svg className='' viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1 1L6.5 6.5L12 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                             </svg>
@@ -207,13 +215,20 @@ const Header = () => {
                             )}
                     </li>
                     <li className='nav-list-item'>
-                        <a className='' href='/pricing'>Pricing</a>
+                        <a className='' href='/pricing'>
+                            <span>
+                                Pricing
+                            </span>
+                        </a>
                     </li>
                     <li className='nav-list-item' 
                         onMouseEnter={() => setResourcesDropdownOpen(true)}
                         onMouseLeave={() => setResourcesDropdownOpen(false)}
                         >
-                        <a href='/resources' className=''>Resources
+                        <a href='/resources' className='dropdown'>
+                            <span>
+                                Resources
+                            </span>
                             <svg className='' viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1 1L6.5 6.5L12 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                             </svg>
@@ -333,17 +348,25 @@ const Header = () => {
                                     </div> */}
                                 </motion.div>
                             )}
+                        </li>
+                    <li className='nav-list-item'>
+                        <a className='' href='/partners'>
+                            <span>
+                                Partners
+                            </span>
+                        </a>
                     </li>
                     <li className='nav-list-item'>
-                        <a className='' href='/partners'>Partners</a>
-                    </li>
-                    <li className='nav-list-item'>
-                        <a className='' href='/support'>Support</a>
+                        <a className='' href='/support'>
+                            <span>
+                                Support
+                            </span>
+                        </a>
                     </li>
                 </ul>
             </nav>
             <div>
-                <a href="#" className='button-style-1'>
+                <a href="#" className='button-style-1 z-1 relative'>
                     <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clipPath="url(#clip0_2103_37341)">
                             <path d="M21 18.9768C20.9616 19.1084 20.9287 19.24 20.8904 19.3661C20.5834 20.3475 19.6899 20.9945 18.6155 21C15.9624 21.0055 13.3148 21 10.6617 21C7.94832 21 5.22944 21 2.51605 21C0.981206 21 0 20.0186 0 18.4888C0 16.2298 0 13.9708 0 11.7118C0 10.8619 0.778387 10.2971 1.55129 10.5713C2.05012 10.7468 2.33516 11.1854 2.33516 11.794C2.33516 13.4444 2.33516 15.0948 2.33516 16.7397C2.33516 17.0139 2.32968 17.288 2.34064 17.5622C2.36805 18.1708 2.83399 18.6368 3.44792 18.6642C3.51919 18.6697 3.59593 18.6697 3.66719 18.6697C8.2224 18.6697 12.7776 18.6697 17.3383 18.6752C17.7768 18.6752 18.1441 18.571 18.4236 18.2201C18.621 17.9679 18.6648 17.6828 18.6648 17.3702C18.6594 15.5005 18.6594 13.6363 18.6648 11.7666C18.6648 10.977 19.2733 10.4123 19.9914 10.5219C20.5286 10.6042 20.8301 10.9551 21 11.4431C21 13.9434 21 16.4601 21 18.9768Z" fill="currentColor"/>

@@ -59,8 +59,8 @@ export default function UseCases() {
     return (
         <>
             <section id="use-cases" ref={panelsSectionRef}>
-                <div className="container">
-                    <div className="content overflow-hidden">
+                <div className="content">
+                    <div className="container overflow-hidden">
                         <div className="use-cases-top">
                             <h2 className="title-4xl">
                                 <span>Master Challenges</span> 
@@ -69,31 +69,34 @@ export default function UseCases() {
                             </h2>
                         </div>
 
-                        <div id="useCase-Scroll">
-                            <div className="use-cases-button">
-                                <ul className="use-cases-list flex-all">
-                                    <li className="" data-section="useCase-1">
-                                        <p className="anchor" >For Business</p>
-                                    </li>
-                                    <li className="" data-section="useCase-2">
-                                        <p className="anchor" >For Human Resources</p>
-                                    </li>
-                                    <li className="" data-section="useCase-3">
-                                        <p className="anchor" >For Sales & Marketing</p>
-                                    </li>
-                                    <li className="" data-section="useCase-4">
-                                        <p className="anchor" >For Education</p>
-                                    </li>
-                                    <li className="" data-section="useCase-5">
-                                        <p className="anchor" >For Users</p>
-                                    </li>
-                                </ul>
-                            </div>
+                        <div className="use-cases-button">
+                            <ul className="use-cases-list flex-all">
+                                <li className="" data-section="useCase-1">
+                                    <p className="anchor" >For Business</p>
+                                </li>
+                                <li className="" data-section="useCase-2">
+                                    <p className="anchor" >For Human Resources</p>
+                                </li>
+                                <li className="" data-section="useCase-3">
+                                    <p className="anchor" >For Sales & Marketing</p>
+                                </li>
+                                <li className="" data-section="useCase-4">
+                                    <p className="anchor" >For Education</p>
+                                </li>
+                                <li className="" data-section="useCase-5">
+                                    <p className="anchor" >For Users</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
+
+                        <div id="useCase-Scroll">
                             <div className="useCases-Container" ref={panelsContainerRef} id="panels">
                                 
                                 <div className="useCases-items" id="panels-container">
-
+                                    
+                                    {/* Use Cases Item 1 */}
                                     <div className="useCase-item flex-all" id="useCase-1">
                                         <div className="useCase-item-left">
                                             <img src="/assets/home/UseCase-1.svg" loading="lazy" alt="use cases image" title="use case of patronum"/>
@@ -128,6 +131,7 @@ export default function UseCases() {
                                         </div>
                                     </div>
 
+                                    {/* Use Cases Item 2 */}
                                     <div className="useCase-item flex-all" id="useCase-2">
                                         <div className="useCase-item-left">
                                             <img src="/assets/home/UseCase-2.svg" loading="lazy" alt="use cases image" title="use case of patronum"/>
@@ -160,6 +164,7 @@ export default function UseCases() {
                                         </div>
                                     </div>
 
+                                    {/* Use Cases Item 3 */}
                                     <div className="useCase-item flex-all" id="useCase-3">
                                         <div className="useCase-item-left">
                                             <img src="/assets/home/UseCase-3.svg" loading="lazy" alt="use cases image" title="use case of patronum"/>
@@ -192,6 +197,7 @@ export default function UseCases() {
                                         </div>
                                     </div>
 
+                                    {/* Use Cases Item 4 */}
                                     <div className="useCase-item flex-all" id="useCase-4">
                                         <div className="useCase-item-left">
                                             <img src="/assets/home/UseCase-4.svg" loading="lazy" alt="use cases image" title="use case of patronum"/>
@@ -224,6 +230,7 @@ export default function UseCases() {
                                         </div>
                                     </div>
 
+                                    {/* Use Cases Item 5 */}
                                     <div className="useCase-item flex-all" id="useCase-5">
                                         <div className="useCase-item-left">
                                             <img src="/assets/home/UseCase-5.svg" loading="lazy" alt="use cases image" title="use case of patronum"/>
@@ -258,7 +265,6 @@ export default function UseCases() {
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </section>    
         </>

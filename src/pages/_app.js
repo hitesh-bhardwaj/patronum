@@ -8,6 +8,7 @@ import 'swiper/css/free-mode';
 import 'swiper/css/scrollbar';
 
 import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
+import Script from 'next/script';
 
 // Import the Background component dynamically
 const BackgroundWithNoSSR = dynamic(() => import('@/components/Background'), {
