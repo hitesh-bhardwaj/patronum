@@ -15,6 +15,14 @@ export default function UseCases() {
 
             const sections = gsap.utils.toArray(".useCase-item");
 
+            var height = window.innerHeight;
+            function resize() {
+                height = window.innerHeight;
+            }
+
+            ScrollTrigger.addEventListener("refreshInit", resize);
+            resize();
+
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: "#use-cases",
@@ -27,6 +35,7 @@ export default function UseCases() {
                         inertia: false,
                         duration: {min: 0.3, max: 0.3}
                     },
+                    invalidateOnRefresh: true,
                     // markers: true,
                 }
             });

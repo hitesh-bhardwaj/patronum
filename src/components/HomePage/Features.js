@@ -1,74 +1,78 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-gsap.registerEffect(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
+
+const accordionData = [
+    {
+        title: 'Onboarding & Offboarding',
+        content: 'Provisioning and deprovisioning users within Google Workspace can be time-consuming and costly. Let Patronum fully automate all the administrator and user tasks to ensure an effective and secure process.',
+        more: 'Provisioning and deprovisioning users within Google Workspace can be time-consuming and costly. Let Patronum fully automate all the administrator.'
+    },
+    {
+        title: 'File Unsharing & Compliances',
+        content: 'With Patronum you can automatically unshare Google Files reducing your organisations exposure. Quickly and easily set up policies that automate the clean up of file sharing with external organisations.',
+        more: 'With Patronum you can automatically unshare Google Files reducing your organisations exposure. Quickly and easily set up policies that automate.'
+    },
+    {
+        title: 'Contact Sharing',
+        content: 'Patronum is the only enterprise-ready contact sharing application for Google Workspace. Allow your users to share their specific contacts via labels, while giving administrators enhanced visibility and management of the whole process.',
+        more: 'Patronum is the only enterprise-ready contact sharing application for Google Workspace. Allow your users to share their specific contacts.'
+    },
+    {
+        title: 'Email Signature Management',
+        content: 'With Patronum you can automatically unshare Google Files reducing your organisations exposure. Quickly and easily set up policies that automate the clean up of file sharing with external organisations.',
+        more: 'With Patronum you can automatically unshare Google Files reducing your organisations exposure. Quickly and easily set up policies that automate.'
+    },
+    {
+        title: 'Google Drive Management',
+        content: "Maintain the integrity and security of your organization's data with Patronum. Our platform provides administrators with comprehensive control over users' files and folders, enhancing the management of Google Drive within Google Workspace.",
+        more: 'Patronum provides an intuitive way for administrators to oversee and manage the vast amount of data stored in Google Drive and simplifies the complexities of file management,'
+    },
+    {
+        title: 'Google Workspace Backup',
+        content: "Experience the world's fastest backup solution, meticulously designed for Google Workspace. Patronum Backup offers unparalleled high-frequency backups, ensuring your Google data is always secure and recoverable.",
+        more: "With Patronum, your Google Workspace data is not just backed up; it's bulletproof. Secure Your Google Workspace leveraging the most advanced."
+    }
+];  
 
 export default function Features(){
 
-    const [accordionOpen, setAccordionOpen] = useState(0); // State to manage open accordion item
+    const [accordionOpen, setAccordionOpen] = useState(0); 
+    const scrollTriggerRef = useRef(); 
 
     const toggleAccordion = (index) => {
         if (accordionOpen === index) {
-            setAccordionOpen(null); // Close accordion if already open
+            setAccordionOpen(null); 
         } else {
-            setAccordionOpen(index); // Open accordion
+            setAccordionOpen(index); 
         }
+
+        setTimeout(() => {
+            ScrollTrigger.refresh();
+        }, 510); 
     };
 
-    const accordionData = [
-        {
-            title: 'Onboarding & Offboarding',
-            content: 'Provisioning and deprovisioning users within Google Workspace can be time-consuming and costly. Let Patronum fully automate all the administrator and user tasks to ensure an effective and secure process.',
-            more: 'Provisioning and deprovisioning users within Google Workspace can be time-consuming and costly. Let Patronum fully automate all the administrator.'
-        },
-        {
-            title: 'File Unsharing & Compliances',
-            content: 'With Patronum you can automatically unshare Google Files reducing your organisations exposure. Quickly and easily set up policies that automate the clean up of file sharing with external organisations.',
-            more: 'With Patronum you can automatically unshare Google Files reducing your organisations exposure. Quickly and easily set up policies that automate.'
-        },
-        {
-            title: 'Contact Sharing',
-            content: 'Patronum is the only enterprise-ready contact sharing application for Google Workspace. Allow your users to share their specific contacts via labels, while giving administrators enhanced visibility and management of the whole process.',
-            more: 'Patronum is the only enterprise-ready contact sharing application for Google Workspace. Allow your users to share their specific contacts.'
-        },
-        {
-            title: 'Email Signature Management',
-            content: 'With Patronum you can automatically unshare Google Files reducing your organisations exposure. Quickly and easily set up policies that automate the clean up of file sharing with external organisations.',
-            more: 'With Patronum you can automatically unshare Google Files reducing your organisations exposure. Quickly and easily set up policies that automate.'
-        },
-        {
-            title: 'Google Drive Management',
-            content: "Maintain the integrity and security of your organization's data with Patronum. Our platform provides administrators with comprehensive control over users' files and folders, enhancing the management of Google Drive within Google Workspace.",
-            more: 'Patronum provides an intuitive way for administrators to oversee and manage the vast amount of data stored in Google Drive and simplifies the complexities of file management,'
-        },
-        {
-            title: 'Google Workspace Backup',
-            content: "Experience the world's fastest backup solution, meticulously designed for Google Workspace. Patronum Backup offers unparalleled high-frequency backups, ensuring your Google data is always secure and recoverable.",
-            more: "With Patronum, your Google Workspace data is not just backed up; it's bulletproof. Secure Your Google Workspace leveraging the most advanced."
-        }
-    ];
-
     useEffect(() => {
-        let ctx = gsap.context(() => {
-          let brandImagePin = document.getElementById("left-section");
-          let brandImageNotPin = document.getElementById("right-section");
-          ScrollTrigger.create({
+        let brandImagePin = document.getElementById("left-section");
+        let brandImageNotPin = document.getElementById("right-section");
+
+        scrollTriggerRef.current = ScrollTrigger.create({
             trigger: brandImagePin,
             start: "top 15%",
             endTrigger: brandImageNotPin,
-            end: "bottom 92%",
-            // the nect line (with the arrow function) is 'a functional value' () =>
-            // end: () => `${brandImageNotPin.offsetHeight - brandImagePin.offsetHeight}px 20%`,
-            // this line ensures the functional value gets recalculated on resize
-            invalidateOnRefresh: true,
+            end: 'bottom bottom',
+            invalidateOnRefresh: true, 
             pin: brandImagePin,
-            // pinSpacing: true,
-            // markers: true,
-          });
+            pinSpacing: true,
+            markers: false,
         });
-        return () => ctx.revert();
-      });
+
+        return () => {
+            scrollTriggerRef.current.kill();
+        };
+    }, []); 
 
     return(
         <>
@@ -137,12 +141,8 @@ export default function Features(){
 
                                         </div>
                                     ))}     
-
-                                          
                                 </div> 
-                            
                             </div>
-
                         </div>
                     </div>
                 </div>

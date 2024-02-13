@@ -1,7 +1,12 @@
+import FooterContact from "./FooterContact";
+
 const Footer = () => {
 
     return(
-        <div id="footer">
+        <footer id="footer">
+
+            <FooterContact />
+
             <div className="footer">
                 <div className="container">
                     <div className='footer-main w-full h-full'>
@@ -140,7 +145,7 @@ const Footer = () => {
                 </div>
             </div>
             </div>
-        </div>
+        </footer>
     )
 }
 
