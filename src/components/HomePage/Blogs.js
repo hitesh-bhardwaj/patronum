@@ -111,17 +111,17 @@ export default function BLogs() {
                         </div>
 
                         <div className="section-btn-container">
-                            <a data-v-f4363f2a href="/contact" className="btn inline-flex items-center px-10 h-24 relative w-full max-w-[18rem] rounded-full is-default-scale is-default-clip is-default-circle bg-black text-white">
-                                <span data-v-f4363f2a className="p1 font-medium leading-none">
+                            <a href="/blogs" className="btn">
+                                <span data-primary className="btn-text">
                                     View All Blogs
                                 </span>
-                                <div data-v-f4363f2a aria-hidden="true" className="btn__circle absolute inset-[-1px] rounded-full flex items-center p1 font-medium leading-none px-40 z-2 bg-white text-black">
-                                    <div data-v-f4363f2a className="px-[1px] w-full flex justify-between items-center">
-                                    View All Blogs
-                                    <svg data-v-f4363f2a viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-15 w-15 overflow-hidden">
-                                        <path data-v-f4363f2a fillRule="evenodd" clipRule="evenodd" d="M3.82475e-07 5.625L7.625 5.625L4.125 9.125L5 10L10 5L5 -4.37114e-07L4.125 0.874999L7.625 4.375L4.91753e-07 4.375L3.82475e-07 5.625Z" className="btn__path fill-current" />
-                                        <path data-v-f4363f2a fillRule="evenodd" clipRule="evenodd" d="M3.82475e-07 5.625L7.625 5.625L4.125 9.125L5 10L10 5L5 -4.37114e-07L4.125 0.874999L7.625 4.375L4.91753e-07 4.375L3.82475e-07 5.625Z" className="btn__path fill-current" />
-                                    </svg>
+                                <div aria-hidden="true" className="btn-circle">
+                                    <div className="btn-circle-text">
+                                        Get Started
+                                        <svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" className="btn-icon">
+                                            <path data-v-f4363f2a fillRule="evenodd" clipRule="evenodd" d="M3.82475e-07 5.625L7.625 5.625L4.125 9.125L5 10L10 5L5 -4.37114e-07L4.125 0.874999L7.625 4.375L4.91753e-07 4.375L3.82475e-07 5.625Z" className="btn-path fill-current" />
+                                            <path data-v-f4363f2a fillRule="evenodd" clipRule="evenodd" d="M3.82475e-07 5.625L7.625 5.625L4.125 9.125L5 10L10 5L5 -4.37114e-07L4.125 0.874999L7.625 4.375L4.91753e-07 4.375L3.82475e-07 5.625Z" className="btn-path fill-current" />
+                                        </svg>
                                     </div>
                                 </div>
                             </a>

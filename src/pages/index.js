@@ -8,7 +8,6 @@ import Pricing from '@/components/HomePage/Pricing';
 import Testimonial from '@/components/HomePage/Testimonial';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import FooterContact from '@/components/Footer/FooterContact';
 
 export default function Home() {
 
