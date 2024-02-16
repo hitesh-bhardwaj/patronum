@@ -1,5 +1,4 @@
 import gsap from "gsap";
-// import DrawSVGPlugin from "gsap-trial/dist/DrawSVGPlugin";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import react, { useEffect } from "react"
 import SplitType from "split-type";
@@ -35,32 +34,20 @@ export default function Hero(){
                 opacity: 1,
                 ease: "power2.out",
             }, '-=2')
+            .to(".hero-svg-circle",{
+                strokeDasharray: "310% 300%",
+                duration: 1.5,
+                ease: "power2.out",
+            }, '-=2')
+            .to(".scroll-down-btn img",{
+                opacity: 1,
+                duration: 0.2
+            }, '-=2');
         });
         return () => ctx.revert();
     }, []);
 
-    // useEffect(() => {
-    //     const headings = document.querySelectorAll('.text-anim');
-    
-    //     headings.forEach((heading) => {
-    //       let ctx = gsap.context(() => {
-    //         const textAnim = new SplitType(heading, {types: 'words'});
-    //         let animWord = heading.querySelectorAll('.word');
-    
-    //         gsap.from(animWord, {
-    //           scrollTrigger: {
-    //             trigger: heading,
-    //             start: 'top 70%',
-    //           },
-    //           duration: 0.5,
-    //           yPercent: 100,
-    //           ease: 'Power1.in',
-    //           stagger: 0.1,
-    //         });
-    //       });
-    //       return () => ctx.revert();
-    //     });
-    //   }, []);
+
 
     return(
         <>
@@ -122,10 +109,13 @@ export default function Hero(){
                     </div>
                     <div className="scroll-down-btn">
                         <a href="#features">
-                            {/* <svg width="86" height="86" viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="43" cy="43" r="42" stroke="#2A2A2A" strokeWidth="2"/>
-                            </svg> */}
-                            <img src="/assets/icons/arrow-down-big.svg" alt="arrow down icon" title="down arrow"/>
+                            <svg width="86" height="86" viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle className="hero-svg-circle" cx="43" cy="43" r="42" stroke="currentColor" strokeWidth="2"/>
+                            </svg>
+                            <span className="block absolute h-[1.3vw] w-[1vw] overflow-hidden">
+                                <img src="/assets/icons/arrow-down-big.svg" alt="arrow down icon" title="down arrow"/>
+                                <img src="/assets/icons/arrow-down-big.svg" alt="arrow down icon" title="down arrow"/>
+                            </span>
                         </a>
                     </div>
                 </div>

@@ -1,8 +1,28 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import gsap from 'gsap';
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Header = () => {
+
+    useEffect(() => {
+        let ctx = gsap.context(() => {
+
+            const headerAnim = document.querySelectorAll(".header-anim");
+
+            const tl = gsap.timeline();
+            tl.from(headerAnim, 1.2,{
+                y: -50,
+                opacity: 0,
+                stagger: 0.05,
+                ease: 'power2.out',
+            }, '+=2');
+        });
+        return () => ctx.revert();
+    }, []);
 
     const [isFeaturesDropdownOpen, setFeaturesDropdownOpen] = useState(false);
     const [isUsecasesDropdownOpen, setUsecasesDropdownOpen] = useState(false);
@@ -33,6 +53,7 @@ const Header = () => {
             <div className='logo-container'>
                 <a href='/'>
                     <Image 
+                        className='header-anim'
                         src="/logo.svg"
                         width={200}
                         height={200}
@@ -47,9 +68,11 @@ const Header = () => {
                 <ul className='navbar-list'>
                     <li className='nav-list-item'>
                         <a href='/about'>
-                            <span>
-                                About
-                            </span>
+                            <div className='header-anim'>
+                                <span>
+                                    About
+                                </span>
+                            </div>
                         </a>
                     </li>
                         <li className='nav-list-item'
@@ -57,10 +80,14 @@ const Header = () => {
                             onMouseLeave={() => setFeaturesDropdownOpen(false)}
                             >
                             <a href='/features' className='dropdown'>
-                                <span>Features</span>
-                                <svg viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 1L6.5 6.5L12 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
+                                <div className='header-anim'>
+                                    <span>
+                                        Features
+                                    </span>
+                                    <svg viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L6.5 6.5L12 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                    </svg>
+                                </div>
                             </a>
                             {isFeaturesDropdownOpen && (
                                 <motion.div 
@@ -142,12 +169,14 @@ const Header = () => {
                         onMouseLeave={() => setUsecasesDropdownOpen(false)}
                         >
                         <a href='/use-cases' className='dropdown'>
-                            <span>
-                               Use Cases
-                            </span>
-                            <svg className='' viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 1L6.5 6.5L12 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
+                            <div className='header-anim'>
+                                <span>
+                                    Use Cases
+                                </span>
+                                <svg viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L6.5 6.5L12 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                            </div>
                         </a>
                             {isUsecasesDropdownOpen && (
                                 <motion.div 
@@ -216,9 +245,11 @@ const Header = () => {
                     </li>
                     <li className='nav-list-item'>
                         <a className='' href='/pricing'>
-                            <span>
-                                Pricing
-                            </span>
+                            <div className='header-anim'>
+                                <span>
+                                    Pricing
+                                </span>
+                            </div>
                         </a>
                     </li>
                     <li className='nav-list-item' 
@@ -226,12 +257,14 @@ const Header = () => {
                         onMouseLeave={() => setResourcesDropdownOpen(false)}
                         >
                         <a href='/resources' className='dropdown'>
-                            <span>
-                                Resources
-                            </span>
-                            <svg className='' viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 1L6.5 6.5L12 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
+                            <div className='header-anim'>
+                                <span>
+                                    Resources
+                                </span>
+                                <svg viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L6.5 6.5L12 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                            </div>
                         </a>
                             {isResourcesDropdownOpen && (
                                 <motion.div 
@@ -351,21 +384,25 @@ const Header = () => {
                         </li>
                     <li className='nav-list-item'>
                         <a className='' href='/partners'>
-                            <span>
-                                Partners
-                            </span>
+                            <div className='header-anim'>
+                                <span>
+                                    Partners
+                                </span>
+                            </div>
                         </a>
                     </li>
                     <li className='nav-list-item'>
                         <a className='' href='/support'>
-                            <span>
-                                Support
-                            </span>
+                            <div className='header-anim'>
+                                <span>
+                                    Support
+                                </span>
+                            </div>
                         </a>
                     </li>
                 </ul>
             </nav>
-            <div>
+            <div className='header-anim'>
                 <a href="/contact" className="btn-2">
                     <div className="btn-label">Install Patronum</div>
                     <div className="btn-circle">

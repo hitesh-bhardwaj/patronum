@@ -583,14 +583,16 @@ section{
 }
 .scroll-down-btn{
   position: absolute;
-  border: 2px solid var(--text-head);
   bottom: 4%;
   left: 6%;
   border-radius: 50%;
   transition: 0.3s;
-  height: 5vw;
-  width: 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: all .65s cubic-bezier(.785,.135,.15,.86);
 }
+
 .scroll-down-btn a{
   width: 100%;
   height: 100%;
@@ -598,17 +600,26 @@ section{
   justify-content: center;
   align-items: center;
 }
+.hero-svg-circle{
+  height: 5vw;
+  width: 5vw;
+  stroke-dasharray: 0% 300%;
+}
 .scroll-down-btn img{
+  opacity: 0;
   width: 1.3vw;
   height: 1.3vw;
-  transition: 0.3s;
+  margin-bottom: 2px;
+  transform: translateY(-110%);
+  transition: all .65s cubic-bezier(.785,.135,.15,.86);
+}
+.scroll-down-btn:hover img{
+  transform: translateY(0%);
+  filter: invert(1) brightness(2);
 }
 .scroll-down-btn:hover{
   background: var(--primary);
-  border-color: var(--primary);
-}
-.scroll-down-btn:hover img{
-  filter: invert(1) brightness(2);
+  color: var(--primary);
 }
 
 .hero-anim{
@@ -628,6 +639,9 @@ section{
 .hero-para span .word{
   transform: translateY(100%);
   opacity: 0;
+}
+
+.hero-svg-circle{
 }
 
 /* Hero Section - 1920 End - Index*/

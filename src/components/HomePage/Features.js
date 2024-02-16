@@ -80,7 +80,7 @@ export default function Features(){
                 <div className="container">
                     <div className="content">
                         <div className="features-top">
-                            <h2 className="title-4xl">
+                            <h2 className="title-4xl text-anim">
                                 <span>Empowering IT </span>
                                 <br />
                                 <span>Admins & Professionals</span>
