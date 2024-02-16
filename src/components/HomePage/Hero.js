@@ -1,4 +1,67 @@
+import gsap from "gsap";
+// import DrawSVGPlugin from "gsap-trial/dist/DrawSVGPlugin";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import react, { useEffect } from "react"
+import SplitType from "split-type";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Hero(){
+
+    useEffect(() => {
+        let ctx = gsap.context(() => {
+
+            const text = new SplitType('.hero-para', {types: 'words'});
+            const heroPara = document.querySelectorAll('.hero-para span .word');
+            const heroAnim = document.querySelectorAll(".hero-anim .span");
+
+            const tl = gsap.timeline();
+            tl.to(heroAnim, 1,{
+                y: 0,
+                stagger: 0.2,
+                ease: 'power2.out',
+            }, '+=2').to(heroPara, 0.4,{
+                y: 0,
+                opacity: 1,
+                duration: 0.4,
+                ease: "Power2.out",
+                stagger: 0.025,
+            }, '-=0.8').from('.hero-button-anim', 1, {
+                y: 30,
+                opacity: 0,
+                ease: "power2.out",
+            }, '-=0.5').to('.hero-img', 3,{
+                scale: 1,
+                opacity: 1,
+                ease: "power2.out",
+            }, '-=2')
+        });
+        return () => ctx.revert();
+    }, []);
+
+    // useEffect(() => {
+    //     const headings = document.querySelectorAll('.text-anim');
+    
+    //     headings.forEach((heading) => {
+    //       let ctx = gsap.context(() => {
+    //         const textAnim = new SplitType(heading, {types: 'words'});
+    //         let animWord = heading.querySelectorAll('.word');
+    
+    //         gsap.from(animWord, {
+    //           scrollTrigger: {
+    //             trigger: heading,
+    //             start: 'top 70%',
+    //           },
+    //           duration: 0.5,
+    //           yPercent: 100,
+    //           ease: 'Power1.in',
+    //           stagger: 0.1,
+    //         });
+    //       });
+    //       return () => ctx.revert();
+    //     });
+    //   }, []);
+
     return(
         <>
             <section id="hero">
@@ -6,14 +69,23 @@ export default function Hero(){
                     <div className="px-[4vw] flex-all">
                         <div className="hero-left flex flex-col gap-y-10">
                             <h1 className='title-5xl'>
-                                <div className='Your'>Your</div>
-                                <img
-                                    src="/assets/home/google-workspace.svg"
-                                    alt='Google Logo'
-                                    title='Google Logo'
-                                    className='google-logo-hero'
-                                />
-                                <div className=''>Manager</div>
+                                <div className='hero-anim Your'>
+                                    <span className="span">Your</span>
+                                </div>
+                                <div className="hero-anim">
+                                    <img
+                                        src="/assets/home/google-workspace.svg"
+                                        alt='Google Logo'
+                                        title='Google Logo'
+                                        className='google-logo-hero span'
+                                    />
+                                </div>
+                                
+                                <div className='hero-anim'>
+                                    <span className="span">
+                                        Manager
+                                    </span>
+                                </div>
                             </h1>
                             <p className="hero-para">
                                 <span>
@@ -21,7 +93,7 @@ export default function Hero(){
                                 </span>
                             </p>
 
-                            <a href="#" className="btn">
+                            <a href="#" className="btn hero-button-anim">
                                 <span data-primary className="btn-text">
                                     Watch Demo
                                 </span>
@@ -45,10 +117,14 @@ export default function Hero(){
                                 alt='patronum dashboard showcase'
                                 title='patronum dashboard showcase'
                             />
+                            <span className="hero-img-bg" />
                         </div>
                     </div>
                     <div className="scroll-down-btn">
                         <a href="#features">
+                            {/* <svg width="86" height="86" viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="43" cy="43" r="42" stroke="#2A2A2A" strokeWidth="2"/>
+                            </svg> */}
                             <img src="/assets/icons/arrow-down-big.svg" alt="arrow down icon" title="down arrow"/>
                         </a>
                     </div>

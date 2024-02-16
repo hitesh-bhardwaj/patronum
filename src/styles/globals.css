@@ -16,7 +16,7 @@
   --card-beige: #D9D5BF;
   --transition-1:  all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
   --transition-2: transform .75s cubic-bezier(.19,1,.22,1);
-  --transition-btn: all .45s cubic-bezier(.785,.135,.15,.86);
+  --transition-btn: all .65s cubic-bezier(.785,.135,.15,.86);
 }
 
 body{
@@ -190,6 +190,9 @@ section{
 }
 
 /* Buttons CSS Start Main */
+.section-btn-container{
+ text-align: center;
+}
 /* Main button */
 .btn{
   display: inline-flex;
@@ -395,14 +398,14 @@ section{
   left: 0;
   width: 100vw;
   z-index: 100;
-  height: 100px;
+  /* height: 100px; */
+  padding: 0.8vw 0;
   transition: all 0.2s ease;
 }
 
 .scrolled {
   background: #ffffffdb;
   backdrop-filter: blur(15px);
-  /* border-bottom: 1px solid #d6d6d6; */
   box-shadow: 1px 1px 10px #00000020;
 }
 
@@ -544,9 +547,9 @@ section{
 .hero-left{
   width: 50%;
 }
-.Your{
+/* .Your{
   margin-bottom: 1.5vw;
-}
+} */
 .google-logo-hero{
   height: auto;
   width: 95%;
@@ -561,19 +564,22 @@ section{
   text-align: end;
   position: relative;
 }
-.hero-right::before {
-  content: "";
+.hero-img-bg {
   position: absolute;
   height: 45%;
   width: 81%;
   background: white;
   top: 26%;
   left: 10%;
+  z-index: -1;
+  scale: 0;
 }
 .hero-img{
   width: 32vw;
   height: 100%;
   mix-blend-mode: darken;
+  scale: 0;
+  opacity: 0;
 }
 .scroll-down-btn{
   position: absolute;
@@ -605,6 +611,24 @@ section{
   filter: invert(1) brightness(2);
 }
 
+.hero-anim{
+  overflow: hidden;
+  line-height: 1;
+}
+.hero-anim .span{
+  display: block;
+  line-height: 1.3;
+  margin-top: -1vw;
+  transform: translateY(100%);
+}
+.google-logo-hero.span{
+  margin-top: unset;
+  display: block;
+}
+.hero-para span .word{
+  transform: translateY(100%);
+  opacity: 0;
+}
 
 /* Hero Section - 1920 End - Index*/
 
@@ -1169,6 +1193,8 @@ input:checked + .slider:before {
 
 /* FAQs Section - 1920 End - Index*/
 
+/*================ IndexPage CSS END MAIN============= */
+/*  */
 /*===================== Footer CSS Main Start===================*/
 
 .footer{
@@ -1327,41 +1353,3 @@ input:checked + .slider:before {
   width: 90%;
 }
 /*===================== Footer CSS Main END===================*/
-
-/*===================== IndexPage CSS END Main ===================*/
-
-.banner-circle{
-  position: absolute;
-  border-radius: 50%;
-}
-.banner-circle._c1{
-  width: 280px;
-  height: 280px;
-  background: #0D54B2;
-  z-index: 3;
-}
-.banner-circle._c2{
-  width: 600px;
-  height: 600px;
-  background: #0A438E;
-  z-index: 2;
-}
-.banner-circle._c3{
-  width: 850px;
-  height: 850px;
-  background: #083672;
-  z-index: 1;
-}
-
-:root {
-  /* --color-bg1: #090425;
-  --color-bg2: #140950; */
-  --color1: 18, 113, 255;
-  --color2: 221, 74, 255;
-  --color3: 100, 220, 255;
-  --color4: 200, 50, 50;
-  --color5: 180, 180, 50;
-  --color-interactive: 140, 100, 255;
-  --circle-size: 90%;
-  --blending: hard-light;
-}
