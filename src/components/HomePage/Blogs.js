@@ -18,6 +18,7 @@ export default function BLogs() {
                         </div>
                         <div className="blog-card-wrapper mb-16 fadeUpMulties">
 
+                        <div className="blog-cards">
                             <div className="blog-card hover:shadow-lg">
                                 <div href="#" className="blog-card-content">
                                     <div className="blog-card-image">
@@ -47,7 +48,9 @@ export default function BLogs() {
                                     </div>
                                 </div>
                             </div>
-
+                        </div>
+                            
+                        <div className="blog-cards">
                             <div className="blog-card hover:shadow-lg">
                                 <div href="#" className="blog-card-content">
                                     <div className="blog-card-image">
@@ -77,7 +80,9 @@ export default function BLogs() {
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
+                        <div className="blog-cards">
                             <div className="blog-card hover:shadow-lg">
                                 <div href="#" className="blog-card-content">
                                     <div className="blog-card-image">
@@ -107,6 +112,7 @@ export default function BLogs() {
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
                         </div>
 

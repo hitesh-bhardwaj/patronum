@@ -68,22 +68,22 @@ export default function Home() {
       }, []);
 
       useEffect(() => {
-        const fadeUpsMulties = document.querySelectorAll('.fadeUpsMulties > div');
+        const fadeUpsMultis = document.querySelectorAll('.pricing-card-wrapper .pricing-card, .swiper-wrapper .swiper-slide, .blog-card-wrapper .blog-cards');
     
         let ctx = gsap.context(() => {
-          fadeUpsMulties.forEach((fadeUpMulti) => {
+          fadeUpsMultis.forEach((fadeUpMulti) => {
             gsap.fromTo(
               fadeUpMulti,
               {
                 opacity: 0,
-                y: 50,
+                y: 70,
               },
               {
                 opacity: 1,
                 y: 0,
-                duration: 0.6,
-                stagger: 0.05,
-                ease: 'Power3.out',
+                duration: 0.8,
+                stagger: 0.1,
+                ease: 'Power1.out',
                 scrollTrigger: {
                   trigger: fadeUpMulti,
                   start: 'top 80%',

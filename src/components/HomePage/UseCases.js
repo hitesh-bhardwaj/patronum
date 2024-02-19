@@ -120,7 +120,7 @@ export default function UseCases() {
                         <div id="useCase-Scroll">
                             <div className="useCases-Container" ref={panelsContainerRef} id="panels">
                                 
-                                <div className="useCases-items" id="panels-container">
+                                <div className="useCases-items fadeUp" id="panels-container">
                                     
                                     {/* Use Cases Item 1 */}
                                     <div className="useCase-item flex-all" id="useCase-1">
