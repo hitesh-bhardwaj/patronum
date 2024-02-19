@@ -7,7 +7,7 @@ export default function Testimonial(){
                 <div className="content">
                     <div className="container">
                         <div className="testimonial-top mb-[4vw]">
-                            <h2 className="title-4xl">
+                            <h2 className="title-4xl text-anim">
                                 <span>
                                     Client Speak: 
                                 </span>

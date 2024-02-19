@@ -37,7 +37,7 @@ export default function Faqs(){
                 <div className="container">
                     <div className="content">
                         <div className="features-top">
-                            <h2 className="title-4xl">
+                            <h2 className="title-4xl text-anim">
                                 <span>Frequently </span>
                                 <br />
                                 <span>Asked Questions</span>
@@ -45,8 +45,10 @@ export default function Faqs(){
                         </div>
 
                         <div className='faq-wrapper'>
+                            <span className='h-[1px] bg-[#1a1a1a] w-full lineDraw block'/>
                             {faqData.map((item, index) => (
-                                <div onClick={() => toggleAccordion(index)} className={`faq-item ${index === accordionOpen ? 'open' : ''}`} key={index}>
+                                <>
+                                <div onClick={() => toggleAccordion(index)} className={`faq-item scaleAnim ${index === accordionOpen ? 'open' : ''}`} key={index}>
                                     <div className="faq-item-content">
                                         <h6 className="title-2xl pb-2">
                                             {item.title}
@@ -61,10 +63,12 @@ export default function Faqs(){
                                         <img src="/assets/icons/faq-arrow.svg" alt='arrow icon'/>
                                     </div>
                                 </div>
+                                <span className='h-[1px] bg-[#1a1a1a] w-full lineDraw block'/>
+                                </>
                             ))}
                         
                             <div className="section-btn-container mt-16">
-                                <a href="/faqs" className="btn">
+                                <a href="/faqs" className="btn fadeUp">
                                     <span data-primary className="btn-text">
                                         View All FAQs
                                     </span>

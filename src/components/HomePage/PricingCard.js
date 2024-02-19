@@ -73,7 +73,7 @@ const getCurrencySymbol = (currency) => {
     case 'AUD':
       return 'A$';
     default:
-      return '';
+      return '$';
   }
 };
 

@@ -5,19 +5,19 @@ export default function About() {
             <div className="container">
                 <div className="content flex-all">
                     <div className="about-left w-[37%]">
-                        <h2 className="title-4xl"> 
+                        <h2 className="title-4xl textAnim"> 
                             <span>
-                                Why Patronum
+                                Why Patronum?
                             </span>
                         </h2>
-                        <p className="para-italic mb-10">
+                        <p className="para-italic mb-10 fadeUp">
                             Ever felt overwhelmed managing Google Workspace? We get it!
                         </p>
-                        <p className="content-p mb-14">
+                        <p className="content-p mb-14 fadeUp">
                             As seasoned Google Workspace Managers ourselves, we understand the complexities and time constraints of managing an extensive digital workspace. That's precisely why we created Patronum - to transform the IT department's wish list into a robust reality.
                         </p>
 
-                            <a href="/about" className="btn">
+                            <a href="/about" className="btn fadeUp">
                                 <span data-primary className="btn-text">
                                     Get Started
                                 </span>
@@ -31,10 +31,9 @@ export default function About() {
                                     </div>
                                 </div>
                             </a>
-
                     </div>
                     <div className="about-right w-[40%]">
-                        <img src="/assets/home/about.svg" loading="lazy" alt="about patronum" title="about patronum image"/>
+                        <img className="fadeRight" src="/assets/home/about.svg" loading="lazy" alt="about patronum" title="about patronum image"/>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-// import required modules
 import { FreeMode, Scrollbar } from 'swiper/modules';
 
 export default function Slider() {
@@ -68,7 +67,7 @@ export default function Slider() {
             className="mySwiper"
         >
             {data.map((testimonial, index) => (
-                <SwiperSlide key={index}>
+                <SwiperSlide key={index} className='fadeUpsMulties'>
                     <TestimonialCard
                         content={testimonial.content}
                         clientImage={testimonial.clientImage}

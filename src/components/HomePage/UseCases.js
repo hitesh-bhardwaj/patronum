@@ -1,9 +1,8 @@
 import gsap from "gsap";
-import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useEffect, useRef } from "react";
 
-gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
 export default function UseCases() {
 
@@ -33,10 +32,9 @@ export default function UseCases() {
                     snap: {
                         snapTo: 1 / (sections.length - 1),
                         inertia: false,
-                        duration: {min: 0.3, max: 0.3}
+                        duration: {min: 0.3, max: 0.8}
                     },
                     invalidateOnRefresh: true,
-                    // markers: true,
                 }
             });
 
@@ -53,7 +51,7 @@ export default function UseCases() {
                 start: "left 80%",
                 end: "right 80%",
                 containerAnimation: tl,
-                // markers: true,
+                markers: false,
                 id: `section-${i+1}`,
                 onToggle: () => {
                 relatedLink.classList.toggle('active')
@@ -65,13 +63,32 @@ export default function UseCases() {
         return () => ctx.revert();
     }, []);
 
+    useEffect(() => {
+        let ctx = gsap.context(() => {
+            const UseCaseList = document.querySelectorAll('.use-cases-list li')
+
+            gsap.to(UseCaseList, {
+                scrollTrigger: {
+                    trigger: '.use-cases-list',
+                    start: 'top 80%',
+                },
+                y: 0,
+                opacity: 1,
+                duration: 0.5,
+                stagger: 0.1,
+                ease: 'power2.out'
+            });
+        });
+        return () => ctx.revert();
+    }, []);
+
     return (
         <>
             <section id="use-cases" ref={panelsSectionRef}>
                 <div className="content">
                     <div className="container overflow-hidden">
                         <div className="use-cases-top">
-                            <h2 className="title-4xl">
+                            <h2 className="title-4xl text-anim">
                                 <span>Master Challenges</span> 
                                 <br />
                                 <span>Across Your Organisation</span>

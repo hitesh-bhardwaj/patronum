@@ -5,12 +5,12 @@ export default function BLogs() {
                 <div className="container">
                     <div className="content">
                         <div className="blogs-top">
-                            <h2 className="title-4xl mb-8">
+                            <h2 className="title-4xl mb-8 text-anim">
                                 <span>
                                     Our Latest Blogs
                                 </span>
                             </h2>
-                            <p className="content-p w-[40%]">
+                            <p className="content-p w-[40%] fadeUp">
                                 <span>
                                     Discover a World of Knowledge with Expert Tips, In-Depth Tricks, Latest News, and Comprehensive Resources for Mastering Google Workspace.
                                 </span>
@@ -18,7 +18,7 @@ export default function BLogs() {
                         </div>
                         <div className="blog-card-wrapper mb-16">
 
-                            <div className="blog-card hover:shadow-lg">
+                            <div className="blog-card hover:shadow-lg fadeUp">
                                 <div href="#" className="blog-card-content">
                                     <div className="blog-card-image">
                                         <img src="/assets/home/blog-1.webp" loading="lazy" alt="blog image" title="blog image"/>
@@ -48,7 +48,7 @@ export default function BLogs() {
                                 </div>
                             </div>
 
-                            <div className="blog-card hover:shadow-lg">
+                            <div className="blog-card hover:shadow-lg fadeUp">
                                 <div href="#" className="blog-card-content">
                                     <div className="blog-card-image">
                                         <img src="/assets/home/blog-2.webp" loading="lazy" alt="blog image" title="blog image"/>
@@ -78,7 +78,7 @@ export default function BLogs() {
                                 </div>
                             </div>
 
-                            <div className="blog-card hover:shadow-lg">
+                            <div className="blog-card hover:shadow-lg fadeUp">
                                 <div href="#" className="blog-card-content">
                                     <div className="blog-card-image">
                                         <img src="/assets/home/blog-3.webp" loading="lazy" alt="blog image" title="blog image"/>
@@ -111,7 +111,7 @@ export default function BLogs() {
                         </div>
 
                         <div className="section-btn-container">
-                            <a href="/blogs" className="btn">
+                            <a href="/blogs" className="btn fadeUp">
                                 <span data-primary className="btn-text">
                                     View All Blogs
                                 </span>

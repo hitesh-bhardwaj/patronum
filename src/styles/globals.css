@@ -173,7 +173,7 @@ section{
 /* Titles CSS Start Main */
 .title-5xl{
   font-size: 5.5vw;
-  color: var(--text-body);
+  color: #414141;
   line-height: 1;
 }
 .title-4xl{
@@ -210,7 +210,7 @@ section{
   width: 100%;
   max-width: 14vw;
   border-radius: 1000px;
-  background: black;
+  background: var(--text-head);
   color: white;
   font-size: 1.05vw;
   font-weight: 500;
@@ -225,7 +225,7 @@ section{
   padding: 0 1.8vw;
   z-index: 2;
   background-color: white;
-  color: black;
+  color: var(--text-head);
   transition: all .45s cubic-bezier(.785,.135,.15,.86);
 }
 .btn .btn-circle-text{
@@ -472,7 +472,7 @@ section{
   left: 0;
   background: var(--primary);
   width: 100%;
-  height: 2px;
+  height: 1.5px;
   transform: scaleX(0);
   transform-origin: right;
   transition: var(--transition-2);
@@ -607,25 +607,21 @@ section{
   align-items: center;
 }
 .hero-svg-circle{
-  height: 5vw;
-  width: 5vw;
+  height: 4.5vw;
+  width: 4.5vw;
+  stroke-width: 1.5px;
   stroke-dasharray: 0% 300%;
 }
 .scroll-down-btn img{
   opacity: 0;
-  width: 1.3vw;
-  height: 1.3vw;
+  width: 1.25vw;
+  height: 1.25vw;
   margin-bottom: 2px;
   transform: translateY(-110%);
   transition: all .45s cubic-bezier(.785,.135,.15,.86);
 }
 .scroll-down-btn:hover img{
   transform: translateY(0%);
-  filter: invert(1) brightness(2);
-}
-.scroll-down-btn:hover{
-  background: var(--primary);
-  color: var(--primary);
 }
 
 .hero-anim{
@@ -744,12 +740,20 @@ section{
   left: 0%;
   top: 30vh;
   width: 23vw;
+  opacity: 0;
+  scale: 0.8;
+}
+
+.accordion-img.featImgAnim{
+  opacity: 1;
+  scale: 1;
+  transition: all 0.6s ease;
 }
 
 .accordion-img img{
   width: 90%;
   height: auto;
-  animation: featImgAnim 0.5s ease forwards;
+  /* animation: featImgAnim 0.5s ease forwards; */
 }
 
 @keyframes featImgAnim {
@@ -779,6 +783,8 @@ section{
   color: var(--text-head);
   position: relative;
   transition: var(--transition-1);
+  opacity: 0;
+  transform: translateY(50px);
 }
 .use-cases-list li.active{
   color: var(--primary);
@@ -1185,13 +1191,9 @@ input:checked + .slider:before {
 }
 .faq-item{
   width: 100%;
-  border-top: 1px solid var(--text-head);
   padding: 2vw 20px;
   position: relative;
   cursor: pointer;
-}
-.faq-item:nth-child(4){
-  border-bottom: 1px solid var(--text-head);
 }
 .faq-item .faq-item-content{
   width: 85%;
@@ -1255,34 +1257,39 @@ input:checked + .slider:before {
   top: 0;
 }
 .footer-contact__content .left{
-  padding: 8vw 0;
+  padding: 9vw 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 0.5vw;
+  gap: 0.8vw;
   position: relative;
   z-index: 1;
 }
 .footer-contact__content .right{
   position: relative;
-  width: 35%;
+  width: 36.5%;
   height: 100%;
 }
 .footer-lottie{
   width: 100%;
   position: absolute;
   right: -8vw;
-  top: -14.8vw;
+  top: -15.8vw;
+}
+@media screen and (max-width: 1920px) {
+  .footer-lottie{
+    top: -15.2vw;
+  }
 }
 @media screen and (max-width: 1536px) {
   .footer-lottie{
-    top: -15.8vw;
+    top: -16.8vw;
   }
 }
 @media screen and (max-width: 1440px) {
   .footer-lottie{
-    top: -15.5vw;
+    top: -16.6vw;
   }
 }
 @media screen and (max-width: 1367px) {
@@ -1365,6 +1372,23 @@ input:checked + .slider:before {
   font-family: 'Aeonik';
   font-weight: 400;
   letter-spacing: 0.5px;
+  position: relative;
+}
+.footer-links li a::after{
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  background: white;
+  width: 100%;
+  height: 1.5px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: var(--transition-2);
+}
+.footer-links li a:hover::after{
+  transform: scaleX(1);
+  transform-origin: left;
 }
 .social-links{
   margin-top: 2.5vw;

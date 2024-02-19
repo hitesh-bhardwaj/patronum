@@ -3,7 +3,7 @@ import PricingCard from './PricingCard';
 import CustomDropdown from './DropDown';
 
 const PricingPage = () => {
-    const [isAnnual, setIsAnnual] = useState(false);
+    const [isAnnual, setIsAnnual] = useState(true);
     const [selectedCurrency, setSelectedCurrency] = useState('USD');
   
     const handleToggle = () => {
@@ -30,14 +30,18 @@ const PricingPage = () => {
                     <div className='content'>
 
                         <div className='pricing-head'>
-                            <h2 className='title-4xl'>Plans & Pricing</h2>
+                            <h2 className='title-4xl text-anim'>
+                                <span>
+                                    Plans & Pricing
+                                </span>
+                            </h2>
                         </div>
 
                         <div className='pricing-main'>
                         
                             <div className='pricing-selectors flex-all'>
                                 
-                                <div className='pricing-toggle'>
+                                <div className='pricing-toggle fadeUp'>
                                     <span className={`pricing-selector-type ${isAnnual ? '' : 'active' }`}>
                                         Monthly
                                     </span>
@@ -47,7 +51,7 @@ const PricingPage = () => {
                                     </span>
                                 </div>
                                 
-                                <div>
+                                <div className='fadeUp relative z-10'>
                                     <CustomDropdown
                                         options={['USD', 'GBP', 'EUR', 'AUD']}
                                         value={selectedCurrency}
@@ -56,7 +60,7 @@ const PricingPage = () => {
                                 </div>
                             </div>
 
-                            <div className='pricing-card-wrapper'>
+                            <div className='pricing-card-wrapper fadeUpsMulties'>
                                 <PricingCard category="Education" isAnnual={isAnnual} selectedCurrency={selectedCurrency} pricingImage='/assets/pricing/education.svg'/>
                                 <PricingCard category="Non-Profit" isAnnual={isAnnual} selectedCurrency={selectedCurrency} pricingImage='/assets/pricing/non-profit.svg'/>
                                 <PricingCard category="Business" isAnnual={isAnnual} selectedCurrency={selectedCurrency} pricingImage='/assets/pricing/business.svg'/>
@@ -64,7 +68,7 @@ const PricingPage = () => {
                         </div>
 
                         <div className="section-btn-container">
-                            <a href="/pricing" className="btn">
+                            <a href="/pricing" className="btn fadeUp">
                                 <span data-primary className="btn-text">
                                     Detailed Pricing
                                 </span>

@@ -54,10 +54,67 @@ export default function Home() {
               {
                 opacity: 1,
                 y: 0,
-                duration: 0.4,
+                duration: 0.6,
+                stagger: 0.05,
                 ease: 'Power3.out',
                 scrollTrigger: {
                   trigger: fadeUp,
+                  start: 'top 80%',
+                },
+              }
+            );
+          });
+        });
+        return () => ctx.revert();
+      }, []);
+
+      useEffect(() => {
+        const fadeUpsMulties = document.querySelectorAll('.fadeUpsMulties > div');
+    
+        let ctx = gsap.context(() => {
+          fadeUpsMulties.forEach((fadeUpMulti) => {
+            gsap.fromTo(
+              fadeUpMulti,
+              {
+                opacity: 0,
+                y: 50,
+              },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+                stagger: 0.05,
+                ease: 'Power3.out',
+                scrollTrigger: {
+                  trigger: fadeUpMulti,
+                  start: 'top 80%',
+                },
+              }
+            );
+          });
+        });
+        return () => ctx.revert();
+      }, []);
+
+      useEffect(() => {
+        const fadeRights = document.querySelectorAll('.fadeRight');
+    
+        let ctx = gsap.context(() => {
+          fadeRights.forEach((fadeRight) => {
+            gsap.fromTo(
+              fadeRight,
+              {
+                opacity: 0,
+                x: 100,
+              },
+              {
+                opacity: 1,
+                x: 0,
+                duration: 0.6,
+                stagger: 0.05,
+                ease: 'Power3.out',
+                scrollTrigger: {
+                  trigger: fadeRight,
                   start: 'top 80%',
                 },
               }
@@ -101,21 +158,19 @@ export default function Home() {
             gsap.fromTo(
               scaleAnim,
               {
-                scaleX: 1.2,
+                scale: 1.2,
                 opacity: 0,
                 transformOrigin: 'center'
               },
               {
-                scaleX: 1,
+                scale: 1,
                 opacity: 1,
                 duration: 1,
                 ease: 'Power4.out',
                 scrollTrigger: {
                   trigger: scaleAnim,
                   start: 'top bottom',
-                  end: 'bottom 80%',
-                  // scrub: true,
-                  // markers: true,
+                  end: 'bottom 85%',
                 },
               }
             );

@@ -18,14 +18,14 @@ export default function FooterContact() {
                     <div className="footer-contact__content">
                         <span className="footer-contact-bg" />
                         <div className="left">
-                            <h2 className="title-4xl">
+                            <h2 className="title-4xl text-anim">
                                 Get More From Patronum.
                             </h2>
-                            <p className="content-p">
+                            <p className="content-p fadeUp">
                                 Talk to our experts and see how Patronum makes Google Workspace work for you.
                             </p>
-                            <div className="footer-cta-container">
 
+                            <div className="footer-cta-container fadeUp">
                                 <a href="#" className="btn">
                                     <span className="btn-text">
                                         Watch Demo
@@ -41,7 +41,7 @@ export default function FooterContact() {
                                     </div>
                                 </a>
 
-                                <a data-secondary href="/contact" className="btn">
+                                <a data-secondary href="/contact" className="btn fadeUp">
                                     <span className="btn-text">
                                         Install Patronum
                                     </span>
@@ -62,9 +62,11 @@ export default function FooterContact() {
                                     </div>
                                 </a>
                             </div>
+
                         </div>
+
                         <div className="right">
-                            <div className="footer-lottie">
+                            <div className="footer-lottie fadeRight">
                                 <Lottie 
                                     options={defaultOptions}
                                     height={852}
