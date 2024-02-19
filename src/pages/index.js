@@ -29,7 +29,7 @@ export default function Home() {
             gsap.from(animWord, {
               scrollTrigger: {
                 trigger: heading,
-                start: 'top 70%',
+                start: 'top 80%',
               },
               duration: 0.6,
               yPercent: 100,
@@ -55,7 +55,6 @@ export default function Home() {
                 opacity: 1,
                 y: 0,
                 duration: 0.6,
-                stagger: 0.05,
                 ease: 'Power3.out',
                 scrollTrigger: {
                   trigger: fadeUp,
@@ -115,7 +114,7 @@ export default function Home() {
                 ease: 'Power3.out',
                 scrollTrigger: {
                   trigger: fadeRight,
-                  start: 'top 80%',
+                  start: 'top 85%',
                 },
               }
             );
@@ -141,7 +140,7 @@ export default function Home() {
                 ease: 'Power4.out',
                 scrollTrigger: {
                   trigger: lineDraw,
-                  start: 'top 80%',
+                  start: 'top 90%',
                 },
               }
             );
@@ -165,7 +164,7 @@ export default function Home() {
               {
                 scale: 1,
                 opacity: 1,
-                duration: 1,
+                duration: 0.8,
                 ease: 'Power4.out',
                 scrollTrigger: {
                   trigger: scaleAnim,
