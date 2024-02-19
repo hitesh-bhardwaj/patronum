@@ -14,12 +14,12 @@ const Header = () => {
             const headerAnim = document.querySelectorAll(".header-anim");
 
             const tl = gsap.timeline();
-            tl.from(headerAnim, 1.2,{
+            tl.from(headerAnim, 1,{
                 y: -50,
                 opacity: 0,
                 stagger: 0.05,
                 ease: 'power2.out',
-            }, '+=2');
+            }, '+=2.2');
         });
         return () => ctx.revert();
     }, []);
@@ -59,7 +59,7 @@ const Header = () => {
                         height={200}
                         alt='Patronum Logo'
                         title='Patronum Logo'
-                        priority={true}
+                        priority={false}
                     />
                 </a>
             </div>

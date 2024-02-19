@@ -380,7 +380,7 @@ export class Gradient {
                         value: Math.sin(this.angle) / Math.cos(this.angle)
                     }),
                     offsetTop: new this.minigl.Uniform({
-                        value: -.5
+                        value: 10
                     }),
                     offsetBottom: new this.minigl.Uniform({
                         value: -.5
@@ -393,10 +393,10 @@ export class Gradient {
                         value: this.amp
                     }),
                     noiseSpeed: new this.minigl.Uniform({
-                        value: 10
+                        value: 30
                     }),
                     noiseFlow: new this.minigl.Uniform({
-                        value: 3
+                        value: 0.1
                     }),
                     noiseSeed: new this.minigl.Uniform({
                         value: this.seed
@@ -427,19 +427,19 @@ export class Gradient {
                     type: "vec2"
                 }),
                 noiseSpeed: new this.minigl.Uniform({
-                    value: 11 + .3 * e
+                    value: 11 + 0.3 * e
                 }),
                 noiseFlow: new this.minigl.Uniform({
-                    value: 6.5 + .3 * e
+                    value: 6.5 + .5 * e
                 }),
                 noiseSeed: new this.minigl.Uniform({
                     value: this.seed + 10 * e
                 }),
                 noiseFloor: new this.minigl.Uniform({
-                    value: .1
+                    value: 0.2
                 }),
                 noiseCeil: new this.minigl.Uniform({
-                    value: .63 + .07 * e
+                    value: 0.67 + .01 * e
                 })
             },
             type: "struct"

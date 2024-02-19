@@ -16,7 +16,7 @@
   --card-beige: #D9D5BF;
   --transition-1:  all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
   --transition-2: transform .75s cubic-bezier(.19,1,.22,1);
-  --transition-btn: all .65s cubic-bezier(.785,.135,.15,.86);
+  --transition-btn: all .45s cubic-bezier(.785,.135,.15,.86);
 }
 
 body{
@@ -28,6 +28,8 @@ body{
   overflow-x: hidden;
   scroll-behavior: smooth;
   padding-top: 20px;
+  font-size-adjust: inherit;
+  font-kerning: none;
 }
 
 /* Background Canvas */
@@ -43,16 +45,16 @@ body{
 #gradient-canvas {
   width: 100%;
   height: 100%;
-  opacity: 0.2;
-  /* --gradient-color-4: #b2ffee; */
-  --gradient-color-1: #fffffe;
-  --gradient-color-2: #fffffd;
+  opacity: 0.3;
+  --gradient-color-1: #ffffff;
+  --gradient-color-2: #ffffff;
   --gradient-color-3: #6ec3f4;
-  --gradient-color-4: #fffffa;
+  --gradient-color-4: #ffffff;
 }
 
 h1,h2,h3,h4,h5,h6{
   font-family: 'Aeonik';
+  font-kerning: normal;
 }
 
 p{
@@ -83,35 +85,40 @@ p{
 /* Aeonik */
 @font-face {
   font-family: 'Aeonik';
-  src: url('/assets/fonts/Aeonik/Aeonik-Light.woff2') format('woff2');
+  src: url('/assets/fonts/Aeonik/Aeonik-Light.otf') format('otf');
+  /* src: url('/assets/fonts/Aeonik/Aeonik-Light.woff2') format('woff2'); */
        font-weight: 300;
        font-display: swap;
        font-style: normal;
 }
 @font-face {
   font-family: 'Aeonik';
-  src: url('/assets/fonts/Aeonik/Aeonik-Regular.woff2') format('woff2');
+  src: url('/assets/fonts/Aeonik/Aeonik-Regular.otf') format('otf');
+  /* src: url('/assets/fonts/Aeonik/Aeonik-Regular.woff2') format('woff2'); */
        font-weight: 400;
        font-display: swap;
        font-style: normal;
 }
 @font-face {
   font-family: 'Aeonik';
-  src: url('/assets/fonts/Aeonik/Aeonik-Medium.woff2') format('woff2');
+  src: url('/assets/fonts/Aeonik/Aeonik-Medium.otf') format('otf');
+  /* src: url('/assets/fonts/Aeonik/Aeonik-Medium.woff2') format('woff2'); */
        font-weight: 500;
        font-display: swap;
        font-style: normal;
 }
 @font-face {
   font-family: 'Aeonik';
-  src: url('/assets/fonts/Aeonik/Aeonik-MediumItalic.woff2') format('woff2');
+  src: url('/assets/fonts/Aeonik/Aeonik-MediumItalic.otf') format('otf');
+  /* src: url('/assets/fonts/Aeonik/Aeonik-MediumItalic.woff2') format('woff2'); */
        font-weight: 500;
        font-display: swap;
        font-style: italic;
 }
 @font-face {
   font-family: 'Aeonik';
-  src: url('/assets/fonts/Aeonik/Aeonik-Bold.woff2') format('woff2');
+  src: url('/assets/fonts/Aeonik/Aeonik-Bold.otf') format('otf');
+  /* src: url('/assets/fonts/Aeonik/Aeonik-Bold.woff2') format('woff2'); */
        font-weight: 700;
        font-display: swap;
        font-style: normal;
@@ -172,12 +179,12 @@ section{
 .title-4xl{
   font-size: 3.8vw;
   color: var(--text-head);
-  line-height: 1.3;
+  line-height: 1.1;
   margin-bottom: 5vw;
 }
-.title-4xl span{
+.title-4xl.text-anim span{
   overflow: hidden;
-  line-height: inherit;
+  line-height: 1.2;
 }
 .title-3xl{
   font-size: 2.4vw;
@@ -219,7 +226,7 @@ section{
   z-index: 2;
   background-color: white;
   color: black;
-  transition: all .65s cubic-bezier(.785,.135,.15,.86);
+  transition: all .45s cubic-bezier(.785,.135,.15,.86);
 }
 .btn .btn-circle-text{
   padding: 0 2px 0 0;
@@ -234,7 +241,7 @@ section{
   overflow: hidden;
 }
 .btn .btn-icon .btn-path{
-  transition: transform .65s cubic-bezier(.785,.135,.15,.86);
+  transition: transform .45s cubic-bezier(.785,.135,.15,.86);
   transform-origin: center center;
 }
 .btn .btn-icon .btn-path:first-child{
@@ -296,7 +303,7 @@ section{
 }
 .btn-2 .btn-label {
   transform: translateX(0);
-  transition: transform .65s cubic-bezier(.785,.135,.15,.86);
+  transition: transform .45s cubic-bezier(.785,.135,.15,.86);
 }
 .btn-2 .btn-circle {
   display: flex;
@@ -311,14 +318,14 @@ section{
   background-color: white;
   color: var(--primary);
   clip-path: circle(0 at 50% 50%);
-  transition: clip-path .65s cubic-bezier(.785,.135,.15,.86);
+  transition: clip-path .45s cubic-bezier(.785,.135,.15,.86);
 }
 .btn-2 .btn-icon{
   height: 0.8vw;
   width: 0.8vw;
   overflow: hidden;
   transform: translateY(-110%) scale(0);
-  transition: transform .65s cubic-bezier(.785,.135,.15,.86);
+  transition: transform .45s cubic-bezier(.785,.135,.15,.86);
 }
 
 .btn-2:hover .btn-label{
@@ -398,13 +405,12 @@ section{
   left: 0;
   width: 100vw;
   z-index: 100;
-  /* height: 100px; */
   padding: 0.8vw 0;
-  transition: all 0.2s ease;
+  transition: all 300ms ease;
 }
 
 .scrolled {
-  background: #ffffffdb;
+  background: #ffffffbf;
   backdrop-filter: blur(15px);
   box-shadow: 1px 1px 10px #00000020;
 }
@@ -578,7 +584,7 @@ section{
   width: 32vw;
   height: 100%;
   mix-blend-mode: darken;
-  scale: 0;
+  scale: 0.5;
   opacity: 0;
 }
 .scroll-down-btn{
@@ -590,7 +596,7 @@ section{
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: all .65s cubic-bezier(.785,.135,.15,.86);
+  transform: all .45s cubic-bezier(.785,.135,.15,.86);
 }
 
 .scroll-down-btn a{
@@ -611,7 +617,7 @@ section{
   height: 1.3vw;
   margin-bottom: 2px;
   transform: translateY(-110%);
-  transition: all .65s cubic-bezier(.785,.135,.15,.86);
+  transition: all .45s cubic-bezier(.785,.135,.15,.86);
 }
 .scroll-down-btn:hover img{
   transform: translateY(0%);
@@ -641,9 +647,6 @@ section{
   opacity: 0;
 }
 
-.hero-svg-circle{
-}
-
 /* Hero Section - 1920 End - Index*/
 
 /* Features Section - 1920 Start - Index*/
@@ -667,7 +670,7 @@ section{
   gap: 15px;
   margin-bottom: 2.5vw;
 }
-.feat-head span{
+.feat-head .featured-line{
   background: black;
   height: 1px;
   width: 100%;
@@ -678,13 +681,9 @@ section{
   padding-top: 1vw;
 }
 .feat-accordion-item{
-  border-top: 1px solid var(--text-head);
   padding: 2vw 20px;
   position: relative;
   cursor: pointer;
-}
-.feat-accordion-item:nth-child(6){
-  border-bottom: 1px solid var(--text-head);
 }
 .feat-accordion-item .accordion-content{
   height: 0;
@@ -750,7 +749,20 @@ section{
 .accordion-img img{
   width: 90%;
   height: auto;
+  animation: featImgAnim 0.5s ease forwards;
 }
+
+@keyframes featImgAnim {
+  0% {
+      opacity: 0;
+      transform: scale(1.2); /* Adjust as needed */
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
 /* Features Section - 1920 End - Index*/
 
 /* Use Cases Section - 1920 Start - Index*/

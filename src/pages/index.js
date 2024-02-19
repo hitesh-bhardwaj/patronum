@@ -18,28 +18,111 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
 
-      // useEffect(() => {
-      //   const headings = document.querySelectorAll('.text-anim');
+      useEffect(() => {
+        const headings = document.querySelectorAll('.text-anim');
     
-      //   headings.forEach((heading) => {
-      //     let ctx = gsap.context(() => {
-      //       const textAnim = new SplitType(heading, {types: 'words'});
-      //       let animWord = heading.querySelectorAll('.word');
+        headings.forEach((heading) => {
+          let ctx = gsap.context(() => {
+            const textAnim = new SplitType(heading, {types: 'words'});
+            let animWord = heading.querySelectorAll('.word');
     
-      //       gsap.from(animWord, {
-      //         scrollTrigger: {
-      //           trigger: heading,
-      //           start: 'top 70%',
-      //         },
-      //         duration: 0.5,
-      //         yPercent: 100,
-      //         ease: 'Power1.in',
-      //         stagger: 0.1,
-      //       });
-      //     });
-      //     return () => ctx.revert();
-      //   });
-      // }, []);
+            gsap.from(animWord, {
+              scrollTrigger: {
+                trigger: heading,
+                start: 'top 70%',
+              },
+              duration: 0.6,
+              yPercent: 100,
+              stagger: 0.04,
+            });
+          });
+          return () => ctx.revert();
+        });
+      }, []);
+
+      useEffect(() => {
+        const fadeUps = document.querySelectorAll('.fadeUp');
+    
+        let ctx = gsap.context(() => {
+          fadeUps.forEach((fadeUp) => {
+            gsap.fromTo(
+              fadeUp,
+              {
+                opacity: 0,
+                y: 50,
+              },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.4,
+                ease: 'Power3.out',
+                scrollTrigger: {
+                  trigger: fadeUp,
+                  start: 'top 80%',
+                },
+              }
+            );
+          });
+        });
+        return () => ctx.revert();
+      }, []);
+
+      useEffect(() => {
+        const lineDraws = document.querySelectorAll('.lineDraw');
+    
+        let ctx = gsap.context(() => {
+          lineDraws.forEach((lineDraw) => {
+            gsap.fromTo(
+              lineDraw,
+              {
+                scaleX: 0,
+                transformOrigin: 'left'
+              },
+              {
+                scaleX: 1,
+                duration: 1,
+                ease: 'Power4.out',
+                scrollTrigger: {
+                  trigger: lineDraw,
+                  start: 'top 80%',
+                },
+              }
+            );
+          });
+        });
+        return () => ctx.revert();
+      }, []);
+
+      useEffect(() => {
+        const scaleAnims = document.querySelectorAll('.scaleAnim');
+    
+        let ctx = gsap.context(() => {
+          scaleAnims.forEach((scaleAnim) => {
+            gsap.fromTo(
+              scaleAnim,
+              {
+                scaleX: 1.2,
+                opacity: 0,
+                transformOrigin: 'center'
+              },
+              {
+                scaleX: 1,
+                opacity: 1,
+                duration: 1,
+                ease: 'Power4.out',
+                scrollTrigger: {
+                  trigger: scaleAnim,
+                  start: 'top bottom',
+                  end: 'bottom 80%',
+                  // scrub: true,
+                  // markers: true,
+                },
+              }
+            );
+          });
+        });
+        return () => ctx.revert();
+      }, []);
 
   return (
     <>

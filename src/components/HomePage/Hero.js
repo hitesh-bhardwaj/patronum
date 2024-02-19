@@ -15,9 +15,9 @@ export default function Hero(){
             const heroAnim = document.querySelectorAll(".hero-anim .span");
 
             const tl = gsap.timeline();
-            tl.to(heroAnim, 1,{
+            tl.to(heroAnim, 0.8,{
                 y: 0,
-                stagger: 0.2,
+                stagger: 0.3,
                 ease: 'power2.out',
             }, '+=2').to(heroPara, 0.4,{
                 y: 0,
@@ -25,24 +25,24 @@ export default function Hero(){
                 duration: 0.4,
                 ease: "Power2.out",
                 stagger: 0.025,
-            }, '-=0.8').from('.hero-button-anim', 1, {
+            }, '-=0.8').from('.hero-button-anim', 0.5, {
                 y: 30,
                 opacity: 0,
                 ease: "power2.out",
-            }, '-=0.5').to('.hero-img', 3,{
+            }, '-=0.5').to('.hero-img', 1.5,{
                 scale: 1,
                 opacity: 1,
                 ease: "power2.out",
-            }, '-=2')
+            }, '-=1.2')
             .to(".hero-svg-circle",{
                 strokeDasharray: "310% 300%",
-                duration: 1.5,
+                duration: 1,
                 ease: "power2.out",
-            }, '-=2')
+            }, '-=1')
             .to(".scroll-down-btn img",{
                 opacity: 1,
-                duration: 0.2
-            }, '-=2');
+                duration: 0.4
+            }, '-=1');
         });
         return () => ctx.revert();
     }, []);
