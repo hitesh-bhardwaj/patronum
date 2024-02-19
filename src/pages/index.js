@@ -49,7 +49,7 @@ export default function Home() {
               fadeUp,
               {
                 opacity: 0,
-                y: 50,
+                y: 40,
               },
               {
                 opacity: 1,
@@ -58,7 +58,7 @@ export default function Home() {
                 ease: 'Power3.out',
                 scrollTrigger: {
                   trigger: fadeUp,
-                  start: 'top 80%',
+                  start: 'top 85%',
                 },
               }
             );
