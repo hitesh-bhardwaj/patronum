@@ -86,7 +86,7 @@ p{
 @font-face {
   font-family: 'Aeonik';
   src: url('/assets/fonts/Aeonik/Aeonik-Light.otf') format('otf');
-  /* src: url('/assets/fonts/Aeonik/Aeonik-Light.woff2') format('woff2'); */
+  src: url('/assets/fonts/Aeonik/Aeonik-Light.woff2') format('woff2');
        font-weight: 300;
        font-display: swap;
        font-style: normal;
@@ -94,7 +94,7 @@ p{
 @font-face {
   font-family: 'Aeonik';
   src: url('/assets/fonts/Aeonik/Aeonik-Regular.otf') format('otf');
-  /* src: url('/assets/fonts/Aeonik/Aeonik-Regular.woff2') format('woff2'); */
+  src: url('/assets/fonts/Aeonik/Aeonik-Regular.woff2') format('woff2');
        font-weight: 400;
        font-display: swap;
        font-style: normal;
@@ -102,7 +102,7 @@ p{
 @font-face {
   font-family: 'Aeonik';
   src: url('/assets/fonts/Aeonik/Aeonik-Medium.otf') format('otf');
-  /* src: url('/assets/fonts/Aeonik/Aeonik-Medium.woff2') format('woff2'); */
+  src: url('/assets/fonts/Aeonik/Aeonik-Medium.woff2') format('woff2');
        font-weight: 500;
        font-display: swap;
        font-style: normal;
@@ -110,7 +110,7 @@ p{
 @font-face {
   font-family: 'Aeonik';
   src: url('/assets/fonts/Aeonik/Aeonik-MediumItalic.otf') format('otf');
-  /* src: url('/assets/fonts/Aeonik/Aeonik-MediumItalic.woff2') format('woff2'); */
+  src: url('/assets/fonts/Aeonik/Aeonik-MediumItalic.woff2') format('woff2');
        font-weight: 500;
        font-display: swap;
        font-style: italic;
@@ -118,7 +118,7 @@ p{
 @font-face {
   font-family: 'Aeonik';
   src: url('/assets/fonts/Aeonik/Aeonik-Bold.otf') format('otf');
-  /* src: url('/assets/fonts/Aeonik/Aeonik-Bold.woff2') format('woff2'); */
+  src: url('/assets/fonts/Aeonik/Aeonik-Bold.woff2') format('woff2');
        font-weight: 700;
        font-display: swap;
        font-style: normal;
