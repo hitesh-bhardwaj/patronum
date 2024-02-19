@@ -16,9 +16,9 @@ export default function BLogs() {
                                 </span>
                             </p>
                         </div>
-                        <div className="blog-card-wrapper mb-16">
+                        <div className="blog-card-wrapper mb-16 fadeUpMulties">
 
-                            <div className="blog-card hover:shadow-lg fadeUp">
+                            <div className="blog-card hover:shadow-lg">
                                 <div href="#" className="blog-card-content">
                                     <div className="blog-card-image">
                                         <img src="/assets/home/blog-1.webp" loading="lazy" alt="blog image" title="blog image"/>
@@ -48,7 +48,7 @@ export default function BLogs() {
                                 </div>
                             </div>
 
-                            <div className="blog-card hover:shadow-lg fadeUp">
+                            <div className="blog-card hover:shadow-lg">
                                 <div href="#" className="blog-card-content">
                                     <div className="blog-card-image">
                                         <img src="/assets/home/blog-2.webp" loading="lazy" alt="blog image" title="blog image"/>
@@ -78,7 +78,7 @@ export default function BLogs() {
                                 </div>
                             </div>
 
-                            <div className="blog-card hover:shadow-lg fadeUp">
+                            <div className="blog-card hover:shadow-lg">
                                 <div href="#" className="blog-card-content">
                                     <div className="blog-card-image">
                                         <img src="/assets/home/blog-3.webp" loading="lazy" alt="blog image" title="blog image"/>

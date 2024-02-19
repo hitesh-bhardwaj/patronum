@@ -60,7 +60,7 @@ const PricingPage = () => {
                                 </div>
                             </div>
 
-                            <div className='pricing-card-wrapper fadeUpsMulties'>
+                            <div className='pricing-card-wrapper'>
                                 <PricingCard category="Education" isAnnual={isAnnual} selectedCurrency={selectedCurrency} pricingImage='/assets/pricing/education.svg'/>
                                 <PricingCard category="Non-Profit" isAnnual={isAnnual} selectedCurrency={selectedCurrency} pricingImage='/assets/pricing/non-profit.svg'/>
                                 <PricingCard category="Business" isAnnual={isAnnual} selectedCurrency={selectedCurrency} pricingImage='/assets/pricing/business.svg'/>
