@@ -54,7 +54,7 @@ export default function App({ Component, pageProps }) {
         }
         ]}
       />
-      <ReactLenis root options={{ duration: 3, lerp: 0.2 }}>
+      <ReactLenis root options={{ lerp: 0.1 }}>
         <Component {...pageProps} />
       </ReactLenis>
       <BackgroundWithNoSSR />

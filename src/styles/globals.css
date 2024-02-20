@@ -431,9 +431,9 @@ section{
 }
 
 .scrolled {
-  background: #ffffffbf;
-  backdrop-filter: blur(15px);
-  box-shadow: 1px 1px 10px #00000020;
+  background: #ffffffa3;
+  backdrop-filter: blur(12px);
+  box-shadow: 1px 1px 10px #00000010;
 }
 
 .header-container{
@@ -973,8 +973,6 @@ section{
   right: 0;
   bottom: 0;
   background-color: #F9FBFF;
-  -webkit-transition: .3s;
-  transition: .3s;
   border: 1px solid #CDDEF5;
   border-radius: 30px;
 }
@@ -987,15 +985,14 @@ section{
   left: 5%;
   top: 50%;
   transform: translateY(-50%);
+  transition: all 0.3s ease-out;
   background-color: white;
-  -webkit-transition: .3s;
-  transition: .3s;
   background: #1069DF;
   border-radius: 50%;
 }
-
-input:checked + .slider:before {
+.toggle-switch input:checked + .slider:before {
   transform: translate(160%, -50%);
+  transition: all 0.3s ease-out;
 }
 
 /* Drop down */
@@ -1406,6 +1403,11 @@ input:checked + .slider:before {
   margin-bottom: 20px;
   letter-spacing: 1px;
 }
+.footer-links .py-2{
+  padding-top: 0.35vw;
+  padding-bottom: 0.35vw;
+}
+
 .footer-links li a{
   font-size: 1.1vw;
   font-family: 'Aeonik';
@@ -1440,5 +1442,10 @@ input:checked + .slider:before {
 }
 .social-links ul li a img{
   width: 90%;
+}
+@media screen and (max-width: 1650px) {
+  .social-links ul li a img{
+    width: 80%;
+  }  
 }
 /*===================== Footer CSS Main END===================*/

@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PricingCard from './PricingCard';
 
-import gsap from "gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
 const Pricing = () => {
     const [isAnnual, setIsAnnual] = useState(true);
     const [selectedCurrency, setSelectedCurrency] = useState('USD');
@@ -18,14 +13,14 @@ const Pricing = () => {
         setSelectedCurrency(currency);
       };
 
-    const ToggleSwitch = ({ isAnnual, onToggle }) => {
+    const ToggleSwitch = ({ onToggle }) => {
         return (
             <label className="toggle-switch" aria-label="Annual/Monthly Price Toggle">
                 <input type="checkbox" checked={isAnnual} onChange={onToggle} aria-label="Annually or Monthly"/>
                 <span className="slider"></span>
             </label>
         );
-      };
+    };
 
       const CustomDropdown = ({ options, onChange, value }) => {
         const [isOpen, setIsOpen] = useState(false);
