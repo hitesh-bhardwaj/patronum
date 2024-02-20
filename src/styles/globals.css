@@ -626,9 +626,11 @@ section{
   justify-content: center;
   align-items: center;
 }
-.hero-svg-circle{
-  height: 4.5vw;
+.scroll-down-btn a>svg{
   width: 4.5vw;
+  height: 4.5vw;
+}
+.hero-svg-circle{
   stroke-width: 1.5px;
   stroke-dasharray: 0% 300%;
 }
@@ -745,7 +747,7 @@ section{
 
 .feat-accordion-btn .plus, .feat-accordion-btn .minus{
   background: var(--text-head);
-  height: 4px;
+  height: 5%;
   width: 40%;
   position: absolute;
   transition: all 0.3s ease;
@@ -851,7 +853,6 @@ section{
 
 .useCase-item{
   padding: 2vw 12vw;
-  scale: 0.9;
 }
 .useCase-item-left{
   width: 40%;
@@ -1015,35 +1016,39 @@ input:checked + .slider:before {
   color: black;
   font-weight: 500;
   font-family: 'Aeonik';
-  font-size: 18px;
+  font-size: 1vw;
 }
 
 .custom-dropdown .arrow{
   transition: 0.3s;
 }
-.custom-dropdown .arrow img{
-  width: 12px;
-  height: 12px;
+.custom-dropdown .arrow svg{
+  width: 0.7vw;
+  height: 0.7vw;
 }
 
 .custom-dropdown .arrow.open{
   transform: rotate(180deg);
-  transition: 0.3s;
+  transition: 0.5s ease-out;
 }
 
 .custom-dropdown .options {
   position: absolute;
-  top: 30px;
+  top: 100%;
   left: 0;
   width: 100%;
   background-color: #fff;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  z-index: 1000;
+  border-radius: 30px;
+  z-index: 10;
+  overflow: hidden;
+  color: var(--primary);
+  font-size: 1vw;
+  transition: all 0.5s ease-out;
 }
 
 .custom-dropdown .option {
-  padding: 8px;
+  padding: 8px 1vw;
   cursor: pointer;
 }
 

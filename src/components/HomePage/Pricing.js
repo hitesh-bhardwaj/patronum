@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import PricingCard from './PricingCard';
-import CustomDropdown from './DropDown';
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const PricingPage = () => {
+const Pricing = () => {
     const [isAnnual, setIsAnnual] = useState(true);
     const [selectedCurrency, setSelectedCurrency] = useState('USD');
   
@@ -25,6 +24,45 @@ const PricingPage = () => {
                 <input type="checkbox" checked={isAnnual} onChange={onToggle} aria-label="Annually or Monthly"/>
                 <span className="slider"></span>
             </label>
+        );
+      };
+
+      const CustomDropdown = ({ options, onChange, value }) => {
+        const [isOpen, setIsOpen] = useState(false);
+      
+        const handleToggle = () => {
+          setIsOpen(!isOpen);
+        };
+      
+        const handleSelectOption = (option) => {
+          onChange(option);
+          setIsOpen(false);
+        };
+      
+        return (
+          <div className="custom-dropdown">
+            <div className="selected-option" onClick={handleToggle}>
+              {value}
+              <span className={`arrow ${isOpen ? 'open' : ''}`}>
+                <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L6.5 6.5L12 1" stroke="#1069df" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </span>
+            </div>
+            {isOpen && (
+              <div className="options">
+                {options.map((option, index) => (
+                  <div
+                    key={index}
+                    className="option"
+                    onClick={() => handleSelectOption(option)}
+                  >
+                    {option}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         );
       };
   
@@ -46,7 +84,7 @@ const PricingPage = () => {
                         
                             <div className='pricing-selectors flex-all'>
                                 
-                                <div className='pricing-toggle fadeUp'>
+                                <div className='pricing-toggle'>
                                     <span className={`pricing-selector-type ${isAnnual ? '' : 'active' }`}>
                                         Monthly
                                     </span>
@@ -56,7 +94,7 @@ const PricingPage = () => {
                                     </span>
                                 </div>
                                 
-                                <div className='fadeUp relative z-10'>
+                                <div className='relative z-10'>
                                     <CustomDropdown
                                         options={['USD', 'GBP', 'EUR', 'AUD']}
                                         value={selectedCurrency}
@@ -73,7 +111,7 @@ const PricingPage = () => {
                         </div>
 
                         <div className="section-btn-container">
-                            <a href="/pricing" className="btn fadeUp">
+                            <a href="/pricing" className="btn">
                                 <span data-primary className="btn-text">
                                     Detailed Pricing
                                 </span>
@@ -91,11 +129,8 @@ const PricingPage = () => {
                     </div>
                 </div>
             </section>
-            
       </>
     );
   };
   
-  export default PricingPage;
-
-
+  export default Pricing;
