@@ -53,7 +53,7 @@ export default function App({ Component, pageProps }) {
         }
         ]}
       />
-      <ReactLenis root>
+      <ReactLenis root options={{duration: 2}}>
         <Component {...pageProps} />
       </ReactLenis>
       <BackgroundWithNoSSR />
