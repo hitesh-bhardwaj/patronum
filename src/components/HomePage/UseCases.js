@@ -72,7 +72,6 @@ export default function UseCases() {
                     trigger: '.use-cases-list',
                     start: 'top 80%',
                 },
-                y: 0,
                 opacity: 1,
                 duration: 0.5,
                 stagger: 0.1,

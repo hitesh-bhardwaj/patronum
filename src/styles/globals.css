@@ -879,7 +879,6 @@ section{
   position: relative;
   transition: var(--transition-1);
   opacity: 0;
-  transform: translateY(50px);
 }
 .use-cases-list li p{
   font-size: 1.25vw;
