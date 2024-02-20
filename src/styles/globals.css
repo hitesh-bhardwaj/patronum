@@ -800,6 +800,9 @@ section{
 /* Features Section - 1920 End - Index*/
 
 /* Use Cases Section - 1920 Start - Index*/
+#use-cases .content{
+  padding-bottom: 0;
+}
 .use-cases-top{
   margin-bottom: 4vw;
 }

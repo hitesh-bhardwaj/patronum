@@ -27,8 +27,9 @@ export default function UseCases() {
                     trigger: "#use-cases",
                     pin: true,
                     scrub: 1,
-                    start: '18% top',
+                    start: '15% top',
                     end: '+=3500',
+                    markers: true,
                     snap: {
                         snapTo: 1 / (sections.length - 1),
                         inertia: false,
