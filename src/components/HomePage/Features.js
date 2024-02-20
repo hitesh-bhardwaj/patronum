@@ -139,8 +139,8 @@ export default function Features(){
                                                 </div>
                                             </div>
                                             <div onClick={() => toggleAccordion(index)} className="feat-accordion-btn">
-                                                <span className="plus">+</span>
-                                                <span className="minus">-</span>
+                                                <span className="plus"/>
+                                                <span className="minus"/>
                                             </div>
                                         </div>
                                         <span className='h-[1px] w-full bg-[#1a1a1a] block lineDraw'/>

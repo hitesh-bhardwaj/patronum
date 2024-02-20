@@ -55,7 +55,9 @@ h1,h2,h3,h4,h5,h6{
   font-family: 'Aeonik';
   text-rendering: geometricPrecision;
 }
-
+a{
+  text-rendering: geometricPrecision;
+}
 p{
   font-family: 'Ageo';
   font-weight: 400;
@@ -261,7 +263,7 @@ section{
 
 /* Button Secondary */
 .btn[data-secondary]{
-  background: white;
+  background: none;
   color: var(--primary);
   border: 1px solid var(--primary);
 }
@@ -283,6 +285,25 @@ section{
 }
 .btn:hover .btn-icon[data-second-install] .btn-path:last-child{
   transform: translateY(120%) scale(0.5);
+}
+
+
+/* Button Secondary Header */
+.btn.header-btn{
+  padding: 0 1vw;
+  height: 3.8vw;
+  width: 13vw;
+  background: none;
+}
+.btn.header-btn .btn-circle{
+  padding: 0 1vw;
+  clip-path: inset(0.6vw 0.7vw 0.6vw calc(100% - 3.3vw) round 4vw);
+}
+.btn.header-btn .btn-circle-text{
+  padding: 0 0.55vw 0 0;
+}
+.btn.header-btn:hover .btn-circle{
+  clip-path: inset(0 round 4vw);
 }
 
 
@@ -584,8 +605,8 @@ section{
   width: 32vw;
   height: 100%;
   mix-blend-mode: darken;
-  scale: 0.5;
   opacity: 0;
+  transform: translateX(100px);
 }
 .scroll-down-btn{
   position: absolute;
@@ -598,7 +619,6 @@ section{
   align-items: center;
   transform: all .45s cubic-bezier(.785,.135,.15,.86);
 }
-
 .scroll-down-btn a{
   width: 100%;
   height: 100%;
@@ -612,16 +632,23 @@ section{
   stroke-width: 1.5px;
   stroke-dasharray: 0% 300%;
 }
-.scroll-down-btn img{
-  opacity: 0;
-  width: 1.25vw;
-  height: 1.25vw;
-  margin-bottom: 2px;
-  transform: translateY(-110%);
-  transition: all .45s cubic-bezier(.785,.135,.15,.86);
+.scroll-down-btn-img {
+  height: 1.3vw;
+  overflow: hidden;
+  stroke-width: 0;
 }
-.scroll-down-btn:hover img{
-  transform: translateY(0%);
+.scroll-down-btn-img g{
+  transform-origin: center;
+  transition: var(--transition-btn);
+}
+.scroll-down-btn-img .first-path{
+  transform: translateY(-110%) scale(0);
+}
+.scroll-down-btn:hover .scroll-down-btn-img .first-path{
+  transform: translateY(0%) scale(1);
+}
+.scroll-down-btn:hover .scroll-down-btn-img .second-path{
+  transform: translateY(110%) scale(0);
 }
 
 .hero-anim{
@@ -711,29 +738,32 @@ section{
   border: 1px solid #E2E2E2;
   border-radius: 100%;
   transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.feat-accordion-btn .plus,
-.feat-accordion-btn .minus{
-  font-size: 2vw;
-  line-height: 0;
-  font-weight: 400;
-  color: var(--text-head);
+
+.feat-accordion-btn .plus, .feat-accordion-btn .minus{
+  background: var(--text-head);
+  height: 4px;
+  width: 40%;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-top: -8%;
   transition: all 0.3s ease;
 }
+
+.feat-accordion-btn .plus {
+  rotate: 90deg;
+}
+
 .feat-accordion-item.open .feat-accordion-btn{
   background-color: var(--text-head);
+  border-color: var(--text-head);
 }
-.feat-accordion-item.open .feat-accordion-btn .plus{
-  opacity: 0;
-}
+
 .feat-accordion-item.open .feat-accordion-btn .minus{
-  color: white;
+  background: white;
 }
+
 .accordion-img{
   position: absolute;
   z-index: 9;
@@ -777,14 +807,15 @@ section{
   margin-bottom: 3vw;
 }
 .use-cases-list li{
-  font-size: 1.25vw;
-  font-weight: 400;
-  font-family: 'Aeonik';
   color: var(--text-head);
   position: relative;
   transition: var(--transition-1);
   opacity: 0;
   transform: translateY(50px);
+}
+.use-cases-list li p{
+  font-size: 1.25vw;
+  font-family: 'Aeonik';
 }
 .use-cases-list li.active{
   color: var(--primary);
@@ -817,6 +848,7 @@ section{
 
 .useCase-item{
   padding: 2vw 12vw;
+  scale: 0.9;
 }
 .useCase-item-left{
   width: 40%;
@@ -861,9 +893,7 @@ section{
   border-radius: 16px;
   padding: 15%;
 }
-.pricing-card {
-  transition: opacity 0.5s ease-in-out;
-}
+
 .pricing-image{
   width: 100%;
   height: 10.5vw;

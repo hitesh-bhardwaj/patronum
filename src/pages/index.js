@@ -68,32 +68,88 @@ export default function Home() {
       }, []);
 
       useEffect(() => {
-        const fadeUpsMultis = document.querySelectorAll('.pricing-card-wrapper .pricing-card, .swiper-wrapper .swiper-slide, .blog-card-wrapper .blog-cards');
+        const pricingCards = document.querySelectorAll('.pricing-card-wrapper .pricing-card');
+        // Ensure GSAP library is imported and available
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".pricing-card-wrapper",
+                start: "top 85%",
+                // end: "bottom bottom",
+                // toggleActions: "play none none reverse"
+            }
+        });
     
-        let ctx = gsap.context(() => {
-          fadeUpsMultis.forEach((fadeUpMulti) => {
-            gsap.fromTo(
-              fadeUpMulti,
-              {
+        tl.fromTo(
+            pricingCards,
+            {
                 opacity: 0,
-                y: 70,
-              },
-              {
+                y: 100,
+            },
+            {
                 opacity: 1,
                 y: 0,
-                duration: 0.8,
-                stagger: 0.1,
-                ease: 'Power1.out',
-                scrollTrigger: {
-                  trigger: fadeUpMulti,
-                  start: 'top 80%',
-                },
-              }
-            );
-          });
-        });
-        return () => ctx.revert();
-      }, []);
+                duration: 0.6,
+                stagger: 0.1, // Adjust stagger timing as needed
+                ease: 'Power2.out',
+            }
+        );
+    }, []);
+
+    useEffect(() => {
+      const blogCards = document.querySelectorAll('.blog-card-wrapper .blog-cards');
+      // Ensure GSAP library is imported and available
+      let tl = gsap.timeline({
+          scrollTrigger: {
+              trigger: ".blog-card-wrapper",
+              start: "top 85%",
+              // end: "bottom bottom",
+              // toggleActions: "play none none reverse"
+          }
+      });
+  
+      tl.fromTo(
+          blogCards,
+          {
+              opacity: 0,
+              y: 100,
+          },
+          {
+              opacity: 1,
+              y: 0,
+              duration: 0.6,
+              stagger: 0.1, // Adjust stagger timing as needed
+              ease: 'Power2.out',
+          }
+      );
+  }, []);
+
+    useEffect(() => {
+      const testicard = document.querySelectorAll('.testi-slider .swiper-wrapper');
+      // Ensure GSAP library is imported and available
+      let tl = gsap.timeline({
+          scrollTrigger: {
+              trigger: ".swiper-wrapper",
+              start: "top 90%",
+              // end: "bottom bottom",
+              // toggleActions: "play none none reverse"
+          }
+      });
+  
+      tl.fromTo(
+          testicard,
+          {
+              opacity: 0,
+              x: 200,
+          },
+          {
+              opacity: 1,
+              x: 0,
+              duration: 0.6,
+              stagger: 0.1, // Adjust stagger timing as needed
+              ease: 'Power1.out',
+          }
+      );
+    }, []);
 
       useEffect(() => {
         const fadeRights = document.querySelectorAll('.fadeRight');

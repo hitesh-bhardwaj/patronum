@@ -1,6 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PricingCard from './PricingCard';
 import CustomDropdown from './DropDown';
+
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const PricingPage = () => {
     const [isAnnual, setIsAnnual] = useState(true);
