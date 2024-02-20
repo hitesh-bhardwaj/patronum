@@ -16,7 +16,7 @@ export default function Hero(){
                 y: 0,
                 stagger: 0.3,
                 ease: 'power2.out',
-            }, '+=2').to(heroPara, 0.4,{
+            }, '+=5.5').to(heroPara, 0.4,{
                 y: 0,
                 opacity: 1,
                 duration: 0.4,

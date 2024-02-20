@@ -174,9 +174,12 @@ section{
 
 /* Titles CSS Start Main */
 .title-5xl{
-  font-size: 5.5vw;
+  font-size: 5vw;
   color: #414141;
   line-height: 1;
+}
+.title-5xl .hero-anim .span{
+  line-height: 1.5;
 }
 .title-4xl{
   font-size: 3.8vw;
@@ -419,6 +422,64 @@ section{
 
 /* Button CSS Main END */
 
+
+/*================ Preloader CSS START Main============= */
+.preloader{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+}
+.preloader-overlay{
+  background: var(--primary);
+  height: 100%;
+  width: 100%;
+}
+.preloader-text{
+  font-size: 2vw;
+  font-family: 'Aeonik';
+  font-weight: 400;
+  text-rendering: geometricPrecision;
+  color: white;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 45%;
+  height: 10%;
+}
+.preload-para{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.5vw;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+}
+.preload-para span{
+  display: block;
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.preload-img-span{
+  width: 14vw;
+  height: auto;
+}
+.preloader-img{
+  width: 13.5vw;
+  position: absolute;
+  left: 37.4%;
+  top: 44.6%;
+  transform: translateY(100%);
+  opacity: 0;
+}
+
 /*================ Header CSS START Main============= */
 .header{
   position: fixed;
@@ -445,7 +506,9 @@ section{
   justify-content: space-between;
   align-items: center;
 }
-
+.logo-container{
+  width: 11.5vw;
+}
 .logo-container img{
   width: 100%;
   height: auto;
@@ -579,7 +642,7 @@ section{
 } */
 .google-logo-hero{
   height: auto;
-  width: 95%;
+  width: 100%;
 }
 .hero-para{
   font-size: 1.25vw;

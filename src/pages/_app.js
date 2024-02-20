@@ -17,10 +17,6 @@ const BackgroundWithNoSSR = dynamic(() => import('@/components/Background'), {
 
 export default function App({ Component, pageProps }) {
 
-  // const lenis = useLenis(({ scroll }) => {
-  //   // called every scroll
-  // })
-
   useEffect(() => {
     // Scroll to the top when the component mounts or when the route changes
     const handleRouteChange = () => {
@@ -50,6 +46,13 @@ export default function App({ Component, pageProps }) {
         additionalLinkTags={[{
           rel: 'icon',
           href: '/favicon.png',
+        },
+        {
+          rel: 'preload',
+          href: '/assets/fonts/Aeonik/Aeonik-Regular.woff2',
+          as: 'font',
+          type: 'woff2',
+          crossOrigin: 'anonymous'
         }
         ]}
       />

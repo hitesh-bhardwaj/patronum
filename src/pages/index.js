@@ -13,6 +13,7 @@ import Pricing from '@/components/HomePage/Pricing';
 import Testimonial from '@/components/HomePage/Testimonial';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import PreLoader from "@/components/PreLoader";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -236,6 +237,7 @@ export default function Home() {
 
   return (
     <>
+      <PreLoader />
       <Header />
       <main>
         <Hero />

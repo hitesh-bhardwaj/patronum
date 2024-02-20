@@ -16,7 +16,7 @@ const Header = () => {
                 opacity: 0,
                 stagger: 0.05,
                 ease: 'power2.out',
-            }, '+=2.2');
+            }, '+=6.5');
         });
         return () => ctx.revert();
     }, []);
@@ -50,7 +50,7 @@ const Header = () => {
             <div className='logo-container'>
                 <a href='/'>
                     <Image 
-                        className='header-anim'
+                        className=''
                         src="/logo.svg"
                         width={200}
                         height={200}
