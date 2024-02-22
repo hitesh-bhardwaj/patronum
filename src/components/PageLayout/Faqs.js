@@ -1,0 +1,103 @@
+import { useState } from 'react';
+
+export default function Faqs(){
+
+    const [accordionOpen, setAccordionOpen] = useState(0); // State to manage open accordion item
+
+    const toggleAccordion = (index) => {
+        if (accordionOpen === index) {
+            setAccordionOpen(null); // Close accordion if already open
+        } else {
+            setAccordionOpen(index); // Open accordion
+        }
+    };
+
+    const faqData = [
+        {
+            id: '01',
+            title: 'Can Patronum handle role-based access control during onboarding?',
+            content: 'Yes, Patronum can manage role-based access control during onboarding. It assigns Google Workspace access and permissions based on specific job roles or departments, ensuring that each user has the appropriate level.',
+        },
+        {
+            id: '02',
+            title: 'What is automated user onboarding and offboarding in Google Workspace?',
+            content: 'Yes, Patronum can manage role-based access control during onboarding. It assigns Google Workspace access and permissions based on specific job roles or departments, ensuring that each user has the appropriate level.',
+        },
+        {
+            id: '03',
+            title: 'How does Patronum ensure security during the offboarding process?',
+            content: 'Yes, Patronum can manage role-based access control during onboarding. It assigns Google Workspace access and permissions based on specific job roles or departments, ensuring that each user has the appropriate level.',
+        },
+        {
+            id: '04',
+            title: 'Is it possible to customise onboarding workflows with Patronum?',
+            content: 'Yes, Patronum can manage role-based access control during onboarding. It assigns Google Workspace access and permissions based on specific job roles or departments, ensuring that each user has the appropriate level.',
+        }
+    ];
+
+    return(
+        <>
+        <section id="features">
+            <div className="container">
+                <div className="content">
+                    <div className="section-head">
+                        <h2 className="title-4xl text-anim">
+                            <span>Frequently </span>
+                            <br />
+                            <span>Asked Questions</span>
+                        </h2>
+                    </div>
+
+                    <div className='faq-wrapper'>
+                        <span className='h-[1px] bg-[#1a1a1a] w-full lineDraw block'/>
+                        {faqData.map((item, index) => (
+                            <>
+                            <div onClick={() => toggleAccordion(index)} className={`faq-item scaleAnim ${index === accordionOpen ? 'open' : ''}`} key={index}>
+                                <div className="faq-item-content features">
+                                    <div className='faq-number'>
+                                        <span className='aeonik'>
+                                            {item.id}
+                                        </span>
+                                    </div>
+                                    <div className='faq-main-content'>
+                                        <h6 className="title-2xl pb-2">
+                                            {item.title}
+                                        </h6>
+                                        <div className="faq-content">
+                                            <p className="content-p my-6">
+                                                <span>{item.content}</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='faq-arrow'>
+                                    <img src="/assets/icons/faq-arrow.svg" alt='arrow icon'/>
+                                </div>
+                            </div>
+                            <span className='h-[1px] bg-[#1a1a1a] w-full lineDraw block'/>
+                            </>
+                        ))}
+                    
+                        <div className="section-btn-container mt-16">
+                            <a href="/faqs" className="btn fadeUp">
+                                <span data-primary className="btn-text">
+                                    View All FAQ's
+                                </span>
+                                <div aria-hidden="true" className="btn-circle">
+                                    <div className="btn-circle-text">
+                                        View All FAQ's
+                                        <svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" className="btn-icon">
+                                            <path data-v-f4363f2a fillRule="evenodd" clipRule="evenodd" d="M3.82475e-07 5.625L7.625 5.625L4.125 9.125L5 10L10 5L5 -4.37114e-07L4.125 0.874999L7.625 4.375L4.91753e-07 4.375L3.82475e-07 5.625Z" className="btn-path fill-current" />
+                                            <path data-v-f4363f2a fillRule="evenodd" clipRule="evenodd" d="M3.82475e-07 5.625L7.625 5.625L4.125 9.125L5 10L10 5L5 -4.37114e-07L4.125 0.874999L7.625 4.375L4.91753e-07 4.375L3.82475e-07 5.625Z" className="btn-path fill-current" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </>
+    )
+}

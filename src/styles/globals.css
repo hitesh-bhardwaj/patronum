@@ -1295,6 +1295,27 @@ section{
 .faq-item .faq-item-content{
   width: 85%;
 }
+.faq-item .faq-item-content.features{
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+  gap: 2.5vw;
+}
+.faq-item-content .faq-number{
+  font-size: 1vw;
+  font-weight: 400;
+  border: 1px solid var(--text-head);
+  border-radius: 50%;
+  width: 2.3vw;
+  height: 2.3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.7vw;
+}
+.faq-main-content{
+  width: 90%;
+}
 .faq-item .faq-content{
   height: 0;
   overflow: hidden;
@@ -1572,6 +1593,7 @@ section{
   font-family: 'Aeonik';
   text-rendering: geometricPrecision;
   font-size: 2.2vw;
+  font-weight: 400;
   color: var(--text-head);
 }
 .about-lists {
@@ -1584,6 +1606,7 @@ section{
   font-size: 1.5vw;
   line-height: 1.7;
   margin-left: 2vw;
+  text-rendering: geometricPrecision;
 }
 
 .about-bottom{
@@ -1629,6 +1652,7 @@ section{
   font-weight: 400;
   width: 80%;
   line-height: 1.35;
+  margin-bottom: 3vw;
 }
 
 /* Mission Card */
@@ -1675,17 +1699,18 @@ section{
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid var(--gray-200);
-  border-left: 1px solid var(--gray-200);
+  border-bottom: 1px solid #c2c2c2;
+  border-left: 1px solid #c2c2c2;
   width: 100%;
   height: 9vw;
 }
 .media-logo:nth-child(1), .media-logo:nth-child(2), .media-logo:nth-child(3){
-  border-top: 1px solid var(--gray-200);
+  border-top: 1px solid #c2c2c2;
 }
 .media-logo:nth-child(3), .media-logo:nth-child(6){
-  border-right: 1px solid var(--gray-200);
+  border-right: 1px solid #c2c2c2;
 }
+
 
 /* Advantage Card */
 .advantage-cards{
@@ -1723,10 +1748,10 @@ section{
 .future-card{
   width: 33%;
   padding: 5% 3%;
-  border-right: 1px solid var(--gray-200);
+  border-right: 1px solid #c2c2c2;
 }
 .future-card:first-child{
-  border-left: 1px solid var(--gray-200);
+  border-left: 1px solid #c2c2c2;
 }
 .future-card .img{
   width: 5vw;
@@ -1747,3 +1772,37 @@ section{
   margin: 1.5vw 0 2vw;
 }
 /*===================== About Page CSS Main END===================*/
+
+/*===================== Features Page CSS Main START===================*/
+.featuresPage-top{
+  margin-top: 2vw;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.featuresPage-top .para{
+  width: 40%;
+  font-size: 1.6vw;
+  color: var(--text-head);
+  margin-top: 1vw;
+}
+.features-main .section-list-body{
+  padding: 6% 2% 12%;
+}
+.features-main .section-list-body:last-child{
+  padding: 6% 2% 6%;
+}
+.features-main .section-list-body-right .content-p{
+  margin-bottom: 2vw;
+}
+.features-main .section-list-body-right .section-list-button{
+  padding-top: 2vw;
+}
+.features-main .section-list-body{
+  align-items: flex-start;
+}
+.features-main .section-list-body-left{
+  padding-top: 2.5vw;
+  width: 36%;
+}
+/*===================== Features Page CSS Main END===================*/
