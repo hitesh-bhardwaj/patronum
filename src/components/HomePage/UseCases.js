@@ -86,7 +86,7 @@ export default function UseCases() {
             <section id="use-cases" ref={panelsSectionRef}>
                 <div className="content">
                     <div className="container overflow-hidden">
-                        <div className="use-cases-top">
+                        <div className="section-head">
                             <h2 className="title-4xl text-anim">
                                 <span>Master Challenges</span> 
                                 <br />

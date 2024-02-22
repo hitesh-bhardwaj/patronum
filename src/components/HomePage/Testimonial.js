@@ -6,7 +6,7 @@ export default function Testimonial(){
             <section id="testimonial">
                 <div className="content">
                     <div className="container">
-                        <div className="testimonial-top mb-[4vw]">
+                        <div className="section-head">
                             <h2 className="title-4xl text-anim">
                                 <span>
                                     Client Speak: 

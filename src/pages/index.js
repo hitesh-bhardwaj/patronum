@@ -248,8 +248,8 @@ export default function Home() {
         <Testimonial />
         <BLogs />
         <Faqs />
-        <Footer />
       </main>
+      <Footer />
     </>
   );
 } 

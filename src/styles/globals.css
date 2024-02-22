@@ -11,9 +11,7 @@
   --text-head: #2a2a2a;
   --gray-100: #f9f9f9;
   --gray-200: #d9d9d9;
-  --card-sky: #D7E8EE;
   --card-gray: #D7D7D7;
-  --card-beige: #D9D5BF;
   --transition-1:  all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
   --transition-2: transform .75s cubic-bezier(.19,1,.22,1);
   --transition-btn: all .45s cubic-bezier(.785,.135,.15,.86);
@@ -60,9 +58,9 @@ a{
 }
 p{
   font-family: 'Ageo';
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
-  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
 }
 
 /*01. Fonts */
@@ -185,7 +183,7 @@ section{
   font-size: 3.8vw;
   color: var(--text-head);
   line-height: 1.1;
-  margin-bottom: 5vw;
+  font-weight: 400;
 }
 .title-4xl.text-anim span{
   overflow: hidden;
@@ -199,6 +197,15 @@ section{
 }
 .title-xl{
   font-size: 1.88vw;
+}
+
+.aeonik{
+  font-family: 'Aeonik';
+  text-rendering: geometricPrecision;
+}
+
+.section-head{
+  margin-bottom: 5vw;
 }
 
 /* Buttons CSS Start Main */
@@ -676,11 +683,9 @@ section{
   bottom: 4%;
   left: 6%;
   border-radius: 50%;
-  transition: 0.3s;
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: all .45s cubic-bezier(.785,.135,.15,.86);
 }
 .scroll-down-btn a{
   width: 100%;
@@ -742,9 +747,6 @@ section{
 .content{
   padding: 5vw 0;
 }
-.features-top{
-  margin-bottom: 4vw;
-}
 .features-left{
   width: 35%;
 }
@@ -792,6 +794,7 @@ section{
   color: var(--text-body);
   font-size: 1.15vw;
   line-height: 1.5;
+  font-weight: 500;
 }
 .feat-accordion-btn{
   position: absolute;
@@ -867,9 +870,6 @@ section{
 /* Use Cases Section - 1920 Start - Index*/
 #use-cases .content{
   padding-bottom: 0;
-}
-.use-cases-top{
-  margin-bottom: 4vw;
 }
 .use-cases-button{
   margin-bottom: 3vw;
@@ -1226,7 +1226,7 @@ section{
 
 /* Blogs Section - 1920 Start - Index*/
 .blogs-top{
-  margin-bottom: 4vw;
+  margin-bottom: 5vw;
 }
 .blogs-top .title-4xl{
   margin-bottom: 1.5vw;
@@ -1511,3 +1511,239 @@ section{
   }  
 }
 /*===================== Footer CSS Main END===================*/
+
+/*===================== About Page CSS Main START===================*/
+#pageHero{
+  height: 75vh;
+  width: 100%;
+  position: relative;
+}
+.page-hero-flex{
+  padding-top: 10%;
+  margin-bottom: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72%;
+}
+.hero-hr{
+  height: 1px;
+  background: #1A1A1A;
+  width: 105%;
+  margin-left: -2.5%;
+  display: block;
+}
+.page-hero-left{
+  width: 60%;
+}
+.page-hero-left .title-4xl {
+  margin-bottom: 1.5vw;
+}
+.page-hero-left .hero-para{
+  width: 60%;
+}
+.page-hero-right{
+  width: 35%;
+  text-align: center;
+}
+.page-hero-img img{
+  width: 100%;
+  height: 100%;
+}
+.scroll-down-btn[data-page-hero]{
+  position: unset;
+  width: fit-content;
+  height: fit-content;
+  margin-top: 2.5vw;
+}
+.scroll-down-btn[data-page-hero] .hero-svg-circle{
+  stroke-dasharray: 310% 300%;
+}
+
+
+.about-top{
+  padding-top: 2.5vw;
+  display: block;
+}
+.section-head-sm{
+  margin-bottom: 2.5vw;
+}
+.para-lg{
+  font-family: 'Aeonik';
+  text-rendering: geometricPrecision;
+  font-size: 2.2vw;
+  color: var(--text-head);
+}
+.about-lists {
+  width: 85%;
+}
+.about-lists li{
+  list-style: number;
+  font-family: 'Ageo';
+  font-weight: 500;
+  font-size: 1.5vw;
+  line-height: 1.7;
+  margin-left: 2vw;
+}
+
+.about-bottom{
+  padding: 10vw 0 5vw;
+}
+
+.section-list-hr{
+  height: 2px;
+  width: 100%;
+  background: #1A1A1A;
+  display: block;
+}
+.section-list-head .title-3xl{
+  font-weight: 500;
+  color: #2a2a2a;
+  padding: 1.5vw 1vw;
+}
+.section-list-body{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 6% 5% 12%;
+}
+.section-list-item:nth-child(even) .section-list-body{
+  flex-direction: row-reverse;
+}
+.section-list-body-left{
+  width: 35%;
+}
+.section-list-body-left img{
+  width: 100%;
+  height: 100%;
+}
+.section-list-body-right{
+  width: 42%;
+}
+
+/* Section Break Main*/
+.section-break-text{
+  font-size: 3.85vw;
+  color: #2A2A2A;
+  font-weight: 400;
+  width: 80%;
+  line-height: 1.35;
+}
+
+/* Mission Card */
+.mission-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+.mission-card {
+  width: 29vw;
+  padding-top: 1vw;
+}
+.mission-card img{
+  width: 2.8vw;
+  margin-bottom: 1vw;
+}
+.mission-card .title{
+  font-size: 2.2vw;
+  line-height: 1.3;
+  margin-bottom: 2vw;
+}
+.mission-card .content-p{
+  line-height: 1.6;
+}
+.mission-bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10% 0;
+}
+
+/* Media Logos */
+.media-logos{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 73%;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-between;
+  margin-bottom: 8%;
+}
+
+.media-logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--gray-200);
+  border-left: 1px solid var(--gray-200);
+  width: 100%;
+  height: 9vw;
+}
+.media-logo:nth-child(1), .media-logo:nth-child(2), .media-logo:nth-child(3){
+  border-top: 1px solid var(--gray-200);
+}
+.media-logo:nth-child(3), .media-logo:nth-child(6){
+  border-right: 1px solid var(--gray-200);
+}
+
+/* Advantage Card */
+.advantage-cards{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.advantage-card{
+  width: 40%;
+  margin-bottom: 5vw;
+}
+.advantage-card img{
+  width: 14.5vw;
+  height: 14.5vw;
+  margin-bottom: 1.5vw;
+}
+.advantage-card .title{
+  font-size: 2.2vw;
+  width: 91%;
+  line-height: 1.3;
+  margin-bottom: 2vw;
+}
+
+
+/* Patronum-future */
+.patronum-future .container-lg{
+  width: 85%;
+}
+.patronum-future-bottom {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.future-card{
+  width: 33%;
+  padding: 5% 3%;
+  border-right: 1px solid var(--gray-200);
+}
+.future-card:first-child{
+  border-left: 1px solid var(--gray-200);
+}
+.future-card .img{
+  width: 5vw;
+  height: 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--text-head);
+  border-radius: 50%;
+  padding: 1vw;
+}
+.future-card .content-p{
+  font-size: 1vw;
+}
+.future-card .title{
+  font-size: 2vw;
+  color: var(--text-head);
+  margin: 1.5vw 0 2vw;
+}
+/*===================== About Page CSS Main END===================*/

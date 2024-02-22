@@ -36,7 +36,7 @@ export default function Faqs(){
             <section id="features">
                 <div className="container">
                     <div className="content">
-                        <div className="features-top">
+                        <div className="section-head">
                             <h2 className="title-4xl text-anim">
                                 <span>Frequently </span>
                                 <br />

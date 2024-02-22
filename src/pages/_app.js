@@ -51,7 +51,6 @@ export default function App({ Component, pageProps }) {
           rel: 'preload',
           href: '/assets/fonts/Aeonik/Aeonik-Regular.woff2',
           as: 'font',
-          type: 'woff2',
           crossOrigin: 'anonymous'
         }
         ]}
