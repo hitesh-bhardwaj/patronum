@@ -1,0 +1,22 @@
+[
+    {
+        "id": "01",
+        "title": "Can Patronum handle role-based access control during onboarding?",
+        "content": "Yes, Patronum can manage role-based access control during onboarding. It assigns Google Workspace access and permissions based on specific job roles or departments, ensuring that each user has the appropriate level."
+    },
+    {
+        "id": "02",
+        "title": "What is automated user onboarding and offboarding in Google Workspace?",
+        "content": "Yes, Patronum can manage role-based access control during onboarding. It assigns Google Workspace access and permissions based on specific job roles or departments, ensuring that each user has the appropriate level."
+    },
+    {
+        "id": "03",
+        "title": "How does Patronum ensure security during the offboarding process?",
+        "content": "Yes, Patronum can manage role-based access control during onboarding. It assigns Google Workspace access and permissions based on specific job roles or departments, ensuring that each user has the appropriate level."
+    },
+    {
+        "id": "04",
+        "title": "Is it possible to customise onboarding workflows with Patronum?",
+        "content": "Yes, Patronum can manage role-based access control during onboarding. It assigns Google Workspace access and permissions based on specific job roles or departments, ensuring that each user has the appropriate level."
+    }
+]

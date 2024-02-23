@@ -1,7 +1,8 @@
-import Faqs from "@/components/PageLayout/Faqs";
-import Testimonial from "@/components/HomePage/Testimonial";
+import Faqs from "@/components/PageComponents/FeaturesPage/Faq";
+import Testimonial from "@/components/PageLayout/Testimonial";
 import PageLayout from "@/components/PageLayout";
 import SectionTitle from "@/components/PageLayout/SectionTitle";
+import FeatureCard from "@/components/PageLayout/FeatureCard";
 
 const featuresData = [
     {
@@ -57,53 +58,6 @@ const featuresData = [
 
 export default function Features(){
 
-    const FeatureCard = ( {featTitle, featImg, featPara1, featPara2, featLink} ) => {
-        return ( 
-            <>
-                <div className="section-list-item">
-                    <div className="section-list-head">
-                        <span className="section-list-hr"/>
-                        <h3 className="title-3xl">
-                            <span>
-                                {featTitle}
-                            </span>
-                        </h3>
-                        <span className="section-list-hr"/>
-                    </div>
-                    <div className="section-list-body">
-                        <div className="section-list-body-right">
-                            <p className="content-p">
-                                {featPara1}
-                            </p>
-                            <p className="content-p">
-                                {featPara2}
-                            </p>
-                            <div className="section-list-button">
-                                <a href={featLink} className="btn">
-                                    <span data-primary className="btn-text">
-                                        Learn More
-                                    </span>
-                                    <div aria-hidden="true" className="btn-circle">
-                                        <div className="btn-circle-text">
-                                            Learn More
-                                            <svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" className="btn-icon">
-                                                <path data-v-f4363f2a fillRule="evenodd" clipRule="evenodd" d="M3.82475e-07 5.625L7.625 5.625L4.125 9.125L5 10L10 5L5 -4.37114e-07L4.125 0.874999L7.625 4.375L4.91753e-07 4.375L3.82475e-07 5.625Z" className="btn-path fill-current" />
-                                                <path data-v-f4363f2a fillRule="evenodd" clipRule="evenodd" d="M3.82475e-07 5.625L7.625 5.625L4.125 9.125L5 10L10 5L5 -4.37114e-07L4.125 0.874999L7.625 4.375L4.91753e-07 4.375L3.82475e-07 5.625Z" className="btn-path fill-current" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div className="section-list-body-left">
-                            <img loading="lazy" src={featImg} alt={featTitle} title={featTitle}/>
-                        </div>
-                    </div>
-                </div>
-            </>
-        )
-    }
-
     return (
         <>
             <PageLayout 
@@ -117,7 +71,7 @@ export default function Features(){
                         <div className="content">
                             <div className="featuresPage-top">
                                 <SectionTitle sectionTitle1='Features' sectionPara="Transform your Google Workspace experience with Patronum, the ultimate solution to your onboarding nightmares, permission hassles, and data compliance woes. " />
-                                <div className="para">
+                                <div className="paraSectionHead">
                                     <p className="aeonik font-[400]">Transform your Google Workspace experience with Patronum, the ultimate solution to your onboarding nightmares, permission hassles, and data compliance woes. Patronum is designed to streamline the management of Google Workspace.</p>
                                 </div>
                             </div>
