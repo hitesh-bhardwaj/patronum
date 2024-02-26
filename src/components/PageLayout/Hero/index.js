@@ -32,7 +32,7 @@ export default function Hero( {pageTitle1, pageTitle2, pagePara, imgSrc} ){
                             <span className="hero-hr"/>
 
                             <div data-page-hero className="scroll-down-btn">
-                                <a href="#second-section">
+                                <a href="#second-section" aria-label="Scroll Down to see more">
                                     <svg width="86" height="86" viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle className="hero-svg-circle" cx="43" cy="43" r="42" stroke="currentColor" strokeWidth="2"/>
                                     </svg>

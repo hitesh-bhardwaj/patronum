@@ -12,7 +12,6 @@ const Header = () => {
 
             const tl = gsap.timeline();
             tl.from(headerAnim, 1,{
-                // y: -50,
                 opacity: 0,
                 stagger: 0.05,
                 ease: 'power2.out',

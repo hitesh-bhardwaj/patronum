@@ -3,6 +3,7 @@ import FeatureDetailCard from "@/components/PageComponents/FeaturesPage/FeatureD
 import FeatureDetailInfo from "@/components/PageComponents/FeaturesPage/FeatureDetailInfo";
 import FeatureDetailTitle from "@/components/PageComponents/FeaturesPage/FeatureDetailTitle";
 import PageLayout from "@/components/PageLayout";
+import InstallBlackButton from "@/components/PageLayout/Button/InstallBlackButton";
 import SectionBreak from "@/components/PageLayout/SectionBreak";
 import SectionTitle from "@/components/PageLayout/SectionTitle";
 import VideoPlayer from "@/components/PageLayout/VideoPlayer";
@@ -160,6 +161,10 @@ export default function FeatureDetail(){
                                         img={featureDetail.img}
                                     />
                                 ))}
+                            </div>
+
+                            <div className="section-btn-container">
+                                <InstallBlackButton link="#" btnText="Install Patronum"/>
                             </div>
                         </div>
                     </div>    

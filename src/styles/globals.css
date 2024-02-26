@@ -217,7 +217,7 @@ section{
   display: inline-flex;
   align-items: center;
   padding: 0 1.8vw;
-  height: 4.65vw;
+  height: 4.2vw;
   position: relative;
   width: 100%;
   max-width: 14vw;
@@ -226,22 +226,23 @@ section{
   color: white;
   font-size: 1.05vw;
   font-weight: 500;
+  text-rendering: geometricPrecision;
 }
 .btn .btn-circle{
-  clip-path: inset(1vw 1vw 1vw calc(100% - 3.8vw) round 4vw);
+  clip-path: inset(0.8vw 0.9vw 0.8vw calc(100% - 3.7vw) round 4vw);
   position: absolute;
   inset: -1px;
   border-radius: 1000px;
   display: flex;
   align-items: center;
-  padding: 0 1.8vw;
+  padding: 0 1.85vw;
   z-index: 2;
   background-color: white;
   color: var(--text-head);
   transition: all .45s cubic-bezier(.785,.135,.15,.86);
 }
 .btn .btn-circle-text{
-  padding: 0 2px 0 0;
+  padding: 0 1px 0 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -282,7 +283,7 @@ section{
   color: white;
 }
 .btn[data-secondary] .btn-circle{
-  clip-path: inset(1vw 1vw 1vw calc(100% - 3.7vw) round 4vw);
+  clip-path: inset(0.7vw 0.9vw 0.7vw calc(100% - 3.7vw) round 4vw);
 }
 .btn[data-secondary]:hover .btn-circle{
   clip-path: inset(0 round 4vw);
@@ -310,7 +311,7 @@ section{
   clip-path: inset(0.6vw 0.7vw 0.6vw calc(100% - 3.3vw) round 4vw);
 }
 .btn.header-btn .btn-circle-text{
-  padding: 0 0.55vw 0 0;
+  padding: 0 0.56vw 0 0;
 }
 .btn.header-btn:hover .btn-circle{
   clip-path: inset(0 round 4vw);
@@ -380,6 +381,7 @@ section{
   position: relative;
   color: var(--text-head);
   font-family: 'Aeonik';
+  gap: 0.5vw;
 }
 
 .link-btn:hover{
@@ -746,6 +748,9 @@ section{
 
 .content{
   padding: 5vw 0;
+}
+.content-2{
+  padding: 7vw 0;
 }
 .features-left{
   width: 35%;
@@ -1860,16 +1865,27 @@ section{
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: FadeIn 0.3s ease;
 }
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .video-modal-overlay .modal{
   width: 80%;
   height: 80%;
+  transition: all 0.3s ease-in;
 }
 .video-modal-overlay .modal-close{
   position: absolute;
   right: 6vw;
-  top: 5vw;
-  background: #0e0e0e69;
+  top: 3vw;
+  background: #ffffff;
   height: 3vw;
   width: 3vw;
   border-radius: 50%;
@@ -1878,11 +1894,17 @@ section{
   align-items: center;
 }
 .video-modal-overlay .modal-close .modal-btn{
-  width: 1.5vw;
-  height: 0.15vw;
-  background: white;
+  width: 40%;
+  height: 3%;
+  background: rgb(0, 0, 0);
   display: block;
   position: absolute;
+  transition: scale 0.3s ease;
+}
+.video-modal-overlay .modal-close:hover .modal-btn{
+  rotate: 180deg;
+  transition: all 0.3s ease;
+  scale: 0.9;
 }
 .video-modal-overlay .modal-close .close-plus{
   transform: rotate(45deg);
@@ -1946,6 +1968,7 @@ section{
   justify-content: space-between;
   gap: 3.5vw;
   margin-top: 8vw;
+  margin-bottom: 4vw;
 }
 .feature-detail-card{
   background: #FDFDFD;
@@ -1957,7 +1980,7 @@ section{
   align-items: center;
   flex-direction: column;
 }
-.feature-detail-card .number{
+.cards-num{
   border: 1px solid var(--text-head);
   border-radius: 50%;
   height: 2.1vw;
@@ -2007,3 +2030,103 @@ section{
 /* =====================Use Cases Page CSS Main END====================================== */
 
 
+/* =====================Use Cases Detail Page CSS Main START====================================== */
+.useCases-Info{
+  margin-top: 3vw;
+}
+.useCases-Info .section-list-body{
+  padding: 6% 1% 6%;
+}
+
+/* =====================Use Cases Detail Page CSS Main END====================================== */
+
+.legal-cards-wrapper{
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5vw;
+}
+.legal-card{
+  display: grid;
+  grid-template-rows: auto 17vw auto;
+  width: 45%;
+  border: 1px solid #e2e2e2;
+  border-radius: 10px;
+  background: rgba(250, 250, 250, 0.34);
+  padding: 1.4vw 1vw;
+  height: 100%;
+}
+.legal-card .img{
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.legal-card .img img{
+  width: 60%;
+}
+.hr-1p{
+  height: 1px;
+  width: 100%;
+  display: block;
+  background: #1a1a1a;
+}
+.legal-card .info .title-2xl {
+  margin: 1vw 0;
+  padding: 0 7.5vw 0 0.8vw;
+  line-height: 1.2;
+}
+.legal-card .info .link-btn{
+  margin: 1.5vw 1vw;
+}
+
+.partner-card-link {
+  margin-top: 8vw;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.partner-card{
+  text-align: center;
+  width: 30%;
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5vw;
+}
+.partner-card img{
+  width: 28%;
+  height: 5.5vw;
+}
+.partner-info-wrapper{
+  margin-top: 5vw;
+}
+.partner-info-wrapper .section-list-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8vw;
+}
+
+.partner-info-wrapper .section-list-head .cards-num{
+  margin: 0;
+  width: 3vw;
+  height: 3vw;
+  font-size: 1.2vw;
+}
+.partner-info-wrapper .section-list-head .title-3xl{
+  font-weight: 400;
+  padding: 0vw;
+}
+.partner-info-wrapper .section-list-body{
+  padding: 4vw 1vw 8vw;
+}
+.partner-info-wrapper .section-list-body-left{
+  width: 26%;
+}
+.partner-info-wrapper .section-list-item:last-child .section-list-body{
+  padding-bottom: 0;
+}
