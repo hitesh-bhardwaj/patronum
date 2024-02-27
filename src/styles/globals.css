@@ -381,7 +381,7 @@ section{
   position: relative;
   color: var(--text-head);
   font-family: 'Aeonik';
-  gap: 0.5vw;
+  gap: 0.2vw;
 }
 
 .link-btn:hover{
@@ -1398,31 +1398,31 @@ section{
   width: 100%;
   position: absolute;
   right: -8vw;
-  top: -15.8vw;
+  top: -16.6vw;
 }
 @media screen and (max-width: 1920px) {
   .footer-lottie{
-    top: -15.2vw;
+    top: -15.5vw;
   }
 }
 @media screen and (max-width: 1536px) {
   .footer-lottie{
-    top: -16.8vw;
+    top: -17vw;
   }
 }
 @media screen and (max-width: 1440px) {
   .footer-lottie{
-    top: -16.6vw;
+    top: -16.85vw;
   }
 }
 @media screen and (max-width: 1367px) {
   .footer-lottie{
-    top: -15vw;
+    top: -16.7vw;
   }
 }
 @media screen and (max-width: 1280px) {
   .footer-lottie{
-    top: -14.7vw;
+    top: -16.5vw;
   }
 }
 .footer-lottie>div{
@@ -1660,6 +1660,11 @@ section{
   width: 81%;
   line-height: 1.35;
   margin-bottom: 3vw;
+}
+
+.section-break-text.small{
+  margin-bottom: 0;
+  width: 65%;
 }
 
 /* Mission Card */
@@ -2130,3 +2135,77 @@ section{
 .partner-info-wrapper .section-list-item:last-child .section-list-body{
   padding-bottom: 0;
 }
+
+/* Resources Page CSS Main Start */
+
+.cards-wrapper{
+  margin-top: 5vw;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.cards-wrapper.webinar{
+  row-gap: 5vw;
+}
+
+.cards-wrapper.guide{
+  row-gap: 2vw;
+}
+
+.cards-wrapper.case-studies{
+  row-gap: 4vw;
+}
+
+
+/* Resources Page CSS Main END */
+
+.product-video-card{
+  display: grid;
+  grid-template-rows: auto auto auto;
+  width: 32%;
+  border: 1px solid #e2e2e2;
+  border-radius: 10px;
+  background: rgba(250, 250, 250, 0.34);
+  padding: 1.4vw 1vw;
+  height: 100%;
+}
+.product-video-card .img{
+  position: relative;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 4vw;
+}
+.product-video-card .img img{
+  width: 65%;
+}
+.product-video-card .video-tutorial-play-button{
+  width: 3vw;
+  height: 3vw;
+  left: 5%;
+  bottom: -20%;
+}
+.hr-1p{
+  height: 1px;
+  width: 100%;
+  display: block;
+  background: #1a1a1a;
+}
+.product-video-card .info .title-2xl {
+  margin: 1vw 0;
+  padding: 0 2vw 0 0.8vw;
+  line-height: 1.2;
+  font-size: 1.67vw;
+  text-transform: capitalize;
+}
+.product-video-card .info .link-btn{
+  margin: 2vw 1vw 1vw;
+}
+
+/* Product Card */

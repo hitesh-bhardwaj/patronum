@@ -137,7 +137,6 @@ export default function Partners() {
                             />
 
                             <div className="partner-info-wrapper">
-                                {/* map partner info using partenr details */}
                                 {partnerDetails.map((item, index) => (
                                     <PartnerCard 
                                         key={index}

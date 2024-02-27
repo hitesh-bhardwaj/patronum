@@ -1,6 +1,6 @@
 import PrimaryButton from "../Button/PrimaryButton";
 
-const FeatureCard = ( {featTitle, featImg, featPara1, featPara2, featLink} ) => {
+const FeatureCard = ( {featTitle, featImg, featPara1, featPara2, featLink, btnText} ) => {
     return ( 
         <>
             <div className="section-list-item">
@@ -22,7 +22,7 @@ const FeatureCard = ( {featTitle, featImg, featPara1, featPara2, featLink} ) => 
                             {featPara2}
                         </p>
                         <div className="section-list-button">
-                            <PrimaryButton link={featLink} btnText="Learn More"/>
+                            <PrimaryButton link={featLink} btnText={btnText}/>
                         </div>
                     </div>
                     <div className="section-list-body-left">

@@ -90,6 +90,7 @@ export default function Features(){
                                     featPara2={feature.para2}
                                     featImg={feature.img}
                                     featLink={feature.link}
+                                    btnText="Learn More"
                                 />
                             ))}
                         </div>

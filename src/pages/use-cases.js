@@ -2,7 +2,7 @@ import Faqs from "@/components/PageComponents/FeaturesPage/Faq";
 import Testimonial from "@/components/PageLayout/Testimonial";
 import PageLayout from "@/components/PageLayout";
 import FeatureCard from "@/components/PageLayout/FeatureCard";
-import SectionBreak from "@/components/PageLayout/SectionBreak";
+import SectionBreakSmall from "@/components/PageLayout/SectionBreakSmall";
 
 const useCasesData = [
     {
@@ -59,11 +59,9 @@ export default function UseCases(){
                 pagePara={"The only tool you'll ever need to streamline your Google Workspace management."} 
                 imgSrc={'useCases.svg'}>
 
-                <div id="second-section" className="use-case-second-section">
-                    <SectionBreak 
+                    <SectionBreakSmall 
                         sectionBreakText="Patronum gives you full control over how Google Workspace is managed with intelligent automation and delegation"
                     />
-                </div>
 
                 <section className="features-main useCases-main">
                     <div className="container">
@@ -76,6 +74,7 @@ export default function UseCases(){
                                     featPara2={useCase.para2}
                                     featImg={useCase.img}
                                     featLink={useCase.link}
+                                    btnText="Learn More"
                                 />
                             ))}
                         </div>

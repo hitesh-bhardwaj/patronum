@@ -6,17 +6,17 @@ const UseCasesInfo = [
     {
         id: "01",
         para: "“Patronum is a real game-changer when it comes to Google Workspace administration.” Alexis Trabuchet, IT Manager, Fintecture explained, “With Patronum we can completely automate the user on and offboarding with policies that you can apply organization-wide.",
-        img: "/assets/useCases/Business/main-1.svg",
+        img: "/assets/useCases/business/main-1.svg",
     },
     {
         id: "02",
         para: "For large enterprises Patronum is a Google Workspace productivity suite for IT professionals who need to implement strategic policies. Many tasks can either be automated by dedicated IT staff in centralized support and/or delegated to knowledgable non-IT managers. These include Google Drive Management, Contact Sharing and Email Signature Management. With subsidiaries or franchises, pre-agreed Patronum policies enable IT professionals to set up a tailored Google Workspace environment quickly.",
-        img: "/assets/useCases/Business/main-2.svg",
+        img: "/assets/useCases/business/main-2.svg",
     },
     {
         id: "03",
         para: "For small to medium enterprise (SME) Patronum’s intuitive interface is ideal for busy executives, who may not have a detailed knowledge of Google, but want a better way to manage Google Workspace. These include Google Drive management with automated file unsharing and compliance.",
-        img: "/assets/useCases/Business/main-3.svg",
+        img: "/assets/useCases/business/main-3.svg",
     }
 ]
 
