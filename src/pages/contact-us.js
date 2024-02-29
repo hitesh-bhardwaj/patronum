@@ -1,3 +1,4 @@
+import ContactForm from "@/components/Forms/ContactForm";
 import PageLayout from "@/components/PageLayout";
 
 export default function ContactUs(){
@@ -59,7 +60,10 @@ export default function ContactUs(){
                                             </ul>
                                         </div>
                                     </div>
-                                    <div>
+                                    <div className="w-1/2 h-full">
+                                        <div className="bg-[#FDFDFD] rounded-[15px] px-[4vw] py-[4vw]">
+                                            <ContactForm />
+                                        </div>
                                     </div>
                                 </div>
 

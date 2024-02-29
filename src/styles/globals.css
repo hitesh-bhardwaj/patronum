@@ -15,6 +15,30 @@
   --transition-1:  all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
   --transition-2: transform .75s cubic-bezier(.19,1,.22,1);
   --transition-btn: all .45s cubic-bezier(.785,.135,.15,.86);
+
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 4.8% 95.9%;
+  --secondary-foreground: 240 5.9% 10%;
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --ring: 240 10% 3.9%;
+  --radius: 0.5rem;
+}
+
+.text-destructive {
+  color: hsl(var(--destructive));
 }
 
 body{
@@ -2209,3 +2233,44 @@ section{
 }
 
 /* Product Card */
+
+/* 1920 Contact Us Form START*/
+.contact-form{
+  width: 100%;
+  font-family: 'Aeonik';
+  text-rendering: geometricPrecision;
+}
+.contact-form .required label{
+  position: relative;
+}
+.contact-form .required label:after{
+  content:"*";
+  color: var(--primary);
+}
+.contact-form .required label.text-destructive:after{
+  color: currentColor;
+}
+
+.contact-form>div{
+  margin-bottom: 3.5vw !important;
+  margin-top: 0 !important;
+}
+.contact-form>div.mobile{
+  margin-bottom: 1.7vw !important;
+}
+.contact-form>div.terms{
+  margin-bottom: 0 !important;
+}
+.submit-button{
+  font-size: 1.25vw !important;
+  height: 4vw;
+  width: 14vw;
+  margin-top: 3vw !important;
+}
+
+.PhoneInput button{
+  border-color: #2a2a2a;
+  border-radius: 100px;
+  height: 1.7vw;
+}
+/* 1920 Contact Us Form END*/

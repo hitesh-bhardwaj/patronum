@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/scrollbar';
+// import '@/styles/phone-number.css'
 
 import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
 
