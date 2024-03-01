@@ -6,9 +6,11 @@ import dynamic from 'next/dynamic';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/scrollbar';
-// import '@/styles/phone-number.css'
 
 import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
+import { ModalProvider } from '@/components/InstallModal/ModelContext';
+import InstallModal from '@/components/InstallModal';
+import DemoModal from '@/components/InstallModal/DemoModal';
 
 // Import the Background component dynamically
 const BackgroundWithNoSSR = dynamic(() => import('@/components/Background'), {
@@ -56,8 +58,12 @@ export default function App({ Component, pageProps }) {
         }
         ]}
       />
-      <ReactLenis root options={{duration: 2}}>
-        <Component {...pageProps} />
+      <ReactLenis root options={{duration: 1.6}}>
+        <ModalProvider>
+          <Component {...pageProps} />
+          <InstallModal />
+          <DemoModal />
+        </ModalProvider>
       </ReactLenis>
       <BackgroundWithNoSSR />
     </>

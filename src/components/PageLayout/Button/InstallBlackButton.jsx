@@ -1,6 +1,15 @@
-const InstallBlackButton = ({link, btnText}) => {
+import { useModal } from "@/components/InstallModal/ModelContext";
+
+const InstallBlackButton = ({btnText}) => {
+
+    const { openModal } = useModal();
+
+    const openContactModal = () => {
+        openModal('contact');
+    };
+
     return(
-        <a href={link} className="btn fadeUp">
+        <button onClick={openContactModal} className="btn fadeUp" aria-label="pop-up form open">
             <span data-primary className="btn-text">
                 {btnText}
             </span>
@@ -19,7 +28,7 @@ const InstallBlackButton = ({link, btnText}) => {
                     </svg>
                 </div>
             </div>
-        </a>
+        </button>
     )
 }
 

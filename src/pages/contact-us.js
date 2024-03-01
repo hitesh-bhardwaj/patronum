@@ -60,8 +60,11 @@ export default function ContactUs(){
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="w-1/2 h-full">
-                                        <div className="bg-[#FDFDFD] rounded-[15px] px-[4vw] py-[4vw]">
+                                    <div className="w-[54.1%] h-full">
+                                        <div className="bg-[#FDFDFD] rounded-[15px] px-[11%] py-[7.6%] border-[#E2E2E2] border">
+                                            <h4 className="aeonik text-[2.5vw] mb-[10%]">
+                                                Lorem Ipsum Dolor
+                                            </h4>
                                             <ContactForm />
                                         </div>
                                     </div>

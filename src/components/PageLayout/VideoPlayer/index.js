@@ -38,20 +38,20 @@ const VideoPlayer = ( {videoId} ) => {
                             <img src="/assets/icons/play.svg" alt="Play Video"/>
                         </button>
                     </div>
+                    {/* {modalOpen && ( */}
+                        <div className={`video-modal-overlay ${modalOpen ? 'show' : 'hide'}`} onClick={handleModalClick}>
+                            <div className="modal">
+                                <VideoEmbed videoId={videoId} />
+                                <button className="modal-close" onClick={closeModal} aria-label="Close Video Modal">
+                                    <span className="close-plus modal-btn"/>
+                                    <span className="close-minus modal-btn"/>
+                                </button>
+                            </div>
+                        </div>
+                    {/* )} */}
                 </div>
             </div>
         </section>
-        {modalOpen && (
-            <div className="video-modal-overlay" onClick={handleModalClick}>
-                <div className="modal">
-                    <VideoEmbed videoId={videoId} />
-                    <button className="modal-close" onClick={closeModal} aria-label="Close Video Modal">
-                        <span className="close-plus modal-btn"/>
-                        <span className="close-minus modal-btn"/>
-                    </button>
-                </div>
-            </div>
-        )}
     </>
   );
 };

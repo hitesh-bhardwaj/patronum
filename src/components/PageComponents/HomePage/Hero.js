@@ -1,8 +1,15 @@
+import { useModal } from "@/components/InstallModal/ModelContext";
 import gsap from "gsap";
 import react, { useEffect } from "react"
 import SplitType from "split-type";
 
 export default function Hero(){
+    
+    const { openModal } = useModal();
+
+    const openVideoModal = () => {
+        openModal('video');
+    }
 
     useEffect(() => {
         let ctx = gsap.context(() => {
@@ -78,11 +85,11 @@ export default function Hero(){
                                 </span>
                             </p>
 
-                            <a href="#" className="btn hero-button-anim">
+                            <button onClick={openVideoModal} className="btn hero-button-anim">
                                 <span data-primary className="btn-text">
                                     Watch Demo
                                 </span>
-                                <div aria-hidden="true" className="btn-circle">
+                                <div aria-hidden="true" className="btn-circle demo">
                                     <div className="btn-circle-text">
                                         Watch Demo
                                         <svg viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg" className="btn-icon">
@@ -91,7 +98,7 @@ export default function Hero(){
                                         </svg>
                                     </div>
                                 </div>
-                            </a>
+                            </button>
 
                         </div>
                         

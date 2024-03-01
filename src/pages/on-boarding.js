@@ -164,7 +164,7 @@ export default function FeatureDetail(){
                             </div>
 
                             <div className="section-btn-container">
-                                <InstallBlackButton link="#" btnText="Install Patronum"/>
+                                <InstallBlackButton btnText="Install Patronum"/>
                             </div>
                         </div>
                     </div>    

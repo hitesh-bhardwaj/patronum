@@ -1,8 +1,18 @@
 import Lottie from "react-lottie";
 import animationData from '@/lotties/rocket.json';
-import PrimaryButton from "../PageLayout/Button/PrimaryButton";
+import { useModal } from "../InstallModal/ModelContext";
 
 export default function FooterContact() {
+
+    const { openModal } = useModal();
+
+    const openContactModal = () => {
+        openModal('contact');
+    };
+
+    const openVideoModal = () => {
+        openModal('video');
+    };
 
     const defaultOptions = {
         loop: true,
@@ -27,9 +37,22 @@ export default function FooterContact() {
                             </p>
 
                             <div className="footer-cta-container fadeUp">
-                                <PrimaryButton link="#" btnText="Watch Demo"/>
+                                <button onClick={openVideoModal} className="btn hero-button-anim">
+                                    <span data-primary className="btn-text">
+                                        Watch Demo
+                                    </span>
+                                    <div aria-hidden="true" className="btn-circle demo">
+                                        <div className="btn-circle-text">
+                                            Watch Demo
+                                            <svg viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg" className="btn-icon">
+                                                <path d="M1.21809 0C1.35452 0 1.49094 0 1.63711 0C2.16333 0.105559 2.64082 0.326273 3.08908 0.623757C6.96748 3.24354 10.8459 5.85372 14.7145 8.4735C14.9094 8.60785 15.1141 8.75179 15.2797 8.92453C15.9326 9.57707 16.186 10.3352 15.8547 11.2276C15.65 11.7842 15.231 12.1681 14.7438 12.4943C10.8459 15.1237 6.95773 17.7531 3.05984 20.3633C2.70903 20.6032 2.29975 20.7855 1.89048 20.9199C1.1109 21.1694 0.428768 20.8239 0.175405 20.0562C0.0584683 19.7107 0.0194894 19.3365 0.0194894 18.9718C0 13.3196 0 7.66742 0 2.02481C0 1.89046 0 1.75612 0.00974472 1.61217C0.0487236 0.758105 0.409278 0.268695 1.21809 0Z" className="btn-path fill-current"/>
+                                                <path d="M1.21809 0C1.35452 0 1.49094 0 1.63711 0C2.16333 0.105559 2.64082 0.326273 3.08908 0.623757C6.96748 3.24354 10.8459 5.85372 14.7145 8.4735C14.9094 8.60785 15.1141 8.75179 15.2797 8.92453C15.9326 9.57707 16.186 10.3352 15.8547 11.2276C15.65 11.7842 15.231 12.1681 14.7438 12.4943C10.8459 15.1237 6.95773 17.7531 3.05984 20.3633C2.70903 20.6032 2.29975 20.7855 1.89048 20.9199C1.1109 21.1694 0.428768 20.8239 0.175405 20.0562C0.0584683 19.7107 0.0194894 19.3365 0.0194894 18.9718C0 13.3196 0 7.66742 0 2.02481C0 1.89046 0 1.75612 0.00974472 1.61217C0.0487236 0.758105 0.409278 0.268695 1.21809 0Z" className="btn-path fill-current"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </button>
                                 
-                                <a data-secondary href="/contact" className="btn fadeUp">
+                                <button data-secondary aria-label="pop-up form open button" className="btn fadeUp" onClick={openContactModal}>
                                     <span className="btn-text">
                                         Install Patronum
                                     </span>
@@ -48,7 +71,7 @@ export default function FooterContact() {
                                             </svg>
                                         </div>
                                     </div>
-                                </a>
+                                </button>
                             </div>
 
                         </div>
