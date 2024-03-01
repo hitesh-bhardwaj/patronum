@@ -113,7 +113,7 @@ export default function Hero(){
                         </div>
                     </div>
                     <div className="scroll-down-btn">
-                        <a href="#features">
+                        <a href="#features" aria-label="scroll down button">
                             <svg width="86" height="86" viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle className="hero-svg-circle" cx="43" cy="43" r="42" stroke="currentColor" strokeWidth="2"/>
                             </svg>

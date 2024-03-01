@@ -89,7 +89,7 @@ export default function PreLoader() {
                         <span>Saviour!</span>
                     </div>
                 </div>
-                <img src="/logo-white.svg" className="preloader-img"/>
+                <img src="/logo-white.svg" className="preloader-img" alt="preloader-logo"/>
             </div>
         </>
     )
