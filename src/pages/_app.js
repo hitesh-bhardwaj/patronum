@@ -13,10 +13,10 @@ import InstallModal from '@/components/InstallModal';
 import DemoModal from '@/components/InstallModal/DemoModal';
 
 // Import the Background component dynamically
-const BackgroundWithNoSSR = dynamic(() => import('@/components/Background'), {
-  ssr: false, // This will only import Background on the client-side
-  loading: () => <p>Loading background...</p>, // Optional loading component
-});
+// const BackgroundWithNoSSR = dynamic(() => import('@/components/Background'), {
+//   ssr: false, // This will only import Background on the client-side
+//   loading: () => <p>Loading background...</p>, // Optional loading component
+// });
 
 export default function App({ Component, pageProps }) {
 
@@ -65,7 +65,7 @@ export default function App({ Component, pageProps }) {
           <DemoModal />
         </ModalProvider>
       </ReactLenis>
-      <BackgroundWithNoSSR />
+      {/* <BackgroundWithNoSSR /> */}
     </>
   ); 
 }
