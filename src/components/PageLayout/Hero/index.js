@@ -1,4 +1,5 @@
-export default function Hero( {pageTitle1, pageTitle2, pagePara, imgSrc} ){
+export default function Hero( {pageTitle1, pageTitle2, pagePara, imgSrc, lenis} ){
+
     return(
         <>
             <section id="pageHero">

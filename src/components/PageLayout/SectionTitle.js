@@ -5,14 +5,20 @@ export default function SectionTitle( {sectionTitle1, sectionTitle2, sectionPara
                     <span>
                         {sectionTitle1}
                      </span>
-                     <br />
-                     <span>
-                        {sectionTitle2}
-                     </span>
+                    {sectionTitle2 && (
+                        <>
+                            <br />
+                            <span>
+                                {sectionTitle2}
+                            </span>
+                        </>
+                     )}
                 </h2>
-                <p className="content-p w-[25vw]">
+                {sectionPara && (
+                    <p className="content-p w-[25vw]">
                     {sectionPara}
-                </p>
+                    </p>
+                )}
             </div>
     )
 }

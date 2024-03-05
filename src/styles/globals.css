@@ -51,7 +51,7 @@ body{
   scroll-behavior: smooth;
   padding-top: 20px;
   font-kerning: normal;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 /* Background Canvas */
@@ -2443,3 +2443,65 @@ section{
   margin-bottom: 0 !important;
 }
 /* 1920 Contact Us Form END*/
+
+/* Blogs Start Main */
+.cat-btn button{
+  border-radius: 1000px;
+  padding: 0.5vw 1.5vw;
+  min-width: 5vw;
+  border: 1px solid #E2E2E2;
+  background-color: #FDFDFD;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 1.1vw;
+  color: var(--text-head);
+  transition: all 0.150s ease-in;
+}
+.blog-cati-button li:last-child{
+  display: none;
+}
+.cat-btn button:hover{
+  background: var(--text-head);
+  color: white;
+}
+.cat-btn button.active{
+  background: var(--text-head);
+  color: white;
+  border-color: var(--text-head);
+}
+
+.blog-main-container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5vw;
+}
+.blog-card-main{
+  height: 100%;
+  display: block;
+}
+.image-box-blog{
+  height: 20vw;
+  width: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  overflow: hidden;
+}
+.blog-para p{
+  font-family: 'Ageo';
+  text-rendering: geometricPrecision;
+  font-weight: 500;
+  font-size: 1.05vw;
+  line-height: 1.2;
+  letter-spacing: 0.1px;
+  color: var(--text-body);
+}
+.no-blog-msg{
+  text-align: center;
+  width: 80vw;
+  vertical-align: middle;
+  font-size: 1.1vw;
+  font-weight: 500;
+  padding-top: 20vh;
+}
+/* Blogs END Main */

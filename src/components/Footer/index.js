@@ -62,7 +62,7 @@ const Footer = () => {
                                             </a>
                                         </li>
                                         <li className="py-2">
-                                            <a href="/help.patronum.io" className="text-xl">
+                                            <a href="https://help.patronum.io" className="text-xl">
                                                 Help
                                             </a>
                                         </li>
@@ -73,27 +73,27 @@ const Footer = () => {
                                     <h6 className="footer-link-head fadeUp">Other Links</h6>
                                     <ul className='footer-links fadeUp'>
                                         <li className="py-2">
-                                            <a href="/blog" className="text-xl">
+                                            <a href="/about" className="text-xl">
                                                 About
                                             </a>
                                         </li>
                                         <li className="py-2">
-                                            <a href="/guides" className="text-xl">
+                                            <a href="/pricing" className="text-xl">
                                                 Pricing
                                             </a>
                                         </li>
                                         <li className="py-2">
-                                            <a href="/case-studies" className="text-xl">
+                                            <a href="/partner-with-us" className="text-xl">
                                                 Partners
                                             </a>
                                         </li>
                                         <li className="py-2">
-                                            <a href="/ebooks" className="text-xl">
+                                            <a href="/support" className="text-xl">
                                                 Support
                                             </a>
                                         </li>
                                         <li className="py-2">
-                                            <a href="/webinars" className="text-xl">
+                                            <a href="/contact-us" className="text-xl">
                                                 Contact
                                             </a>
                                         </li>
@@ -104,27 +104,27 @@ const Footer = () => {
                             <div className='social-links fadeUp'>
                                 <ul className=''>
                                     <li>
-                                        <a href='#'>
+                                        <a href='https://www.facebook.com/patronum.io' target="_blank">
                                             <img src='/assets/footer/facebook.svg' alt='social icons'/>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href='#'>
+                                        <a href='https://www.linkedin.com/company/wearepatronum/' target="_blank">
                                             <img src='/assets/footer/linkedin.svg' alt='social icons'/>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href='#'>
+                                        <a href='https://twitter.com/Patronum_io' target="_blank">
                                             <img src='/assets/footer/twitter.svg' alt='social icons'/>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href='#'>
+                                        <a href='https://www.instagram.com/patronum.io/' target="_blank">
                                             <img src='/assets/footer/instagram.svg' alt='social icons'/>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href='#'>
+                                        <a href='https://www.youtube.com/@wearepatronum' target="_blank">
                                             <img src='/assets/footer/youtube.svg' alt='social icons'/>
                                         </a>
                                     </li>

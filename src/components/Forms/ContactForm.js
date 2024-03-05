@@ -125,6 +125,7 @@ export default function ContactForm() {
             )}
         />
 
+        {/* Phone Input Field */}
         <FormField
             control={form.control}
             name="phone"
@@ -133,7 +134,6 @@ export default function ContactForm() {
                     <FormLabel className="text-left">Mobile Number</FormLabel>
                     <FormControl className="w-full">
                         <PhoneInput 
-                            countryCallingCodeEditable={false}
                             international
                             defaultCountry="US"
                             placeholder="Enter Mobile Number" 

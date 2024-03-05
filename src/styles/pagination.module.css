@@ -1,0 +1,79 @@
+.pagiContainer{
+    margin-top: 5vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.pagiMain{
+    background-color: white;
+    border: 1px solid #e8e8e8;
+    border-radius: 1000px;
+    align-items: center;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5% 4%;
+}
+.pagiButtons{
+    width: 3vw;
+    height: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 300ms ease;
+    border-radius: 50%;
+}
+.pagiButtons img{
+    width: 22%;
+}
+.pagiButtons.previous img{
+    margin-right: 1px;
+}
+.pagiButtons.next img{
+    margin-left: 3px;
+}
+.pagiList {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+}
+.pagiList li{
+    font-family: 'Ageo';
+    text-rendering: geometricPrecision;
+    font-weight: 500;
+    font-size: 1.1vw;
+    color: var(--text-head);
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.pagiList li a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 300ms ease;
+}
+
+.pagiList li span{
+    margin-top: 2px;
+}
+
+.pagiList li.active{
+    color: white;
+    background: var(--text-head);
+}
+.pagiButtons.disabled{
+    pointer-events: none;
+    opacity: 0.5;
+}
+.pagiButtons:hover, .pagiList li a:hover{
+    background: #e8e8e8;
+}

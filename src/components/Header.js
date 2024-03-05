@@ -277,7 +277,7 @@ const Header = () => {
                                     className='nav-dropdown'>
                                     <ul className='nav-dropdown-list'>
                                         <li className='nav-drop-list-item'>
-                                            <a href='/blogs' className='nav-drop-list-hover'>
+                                            <a href='/blog' className='nav-drop-list-hover'>
                                                 <img src='/assets/menu/resource-blog.png' alt='features icon' title='features icon'/>
                                                 <div>
                                                     <p className='nav-drop-title'>Blog</p>
