@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import PageLayout from "@/components/PageLayout";
 import { getPaginatedPosts, sortStickyPosts } from '@/lib/posts';
 import { getCategories } from '@/lib/categories';
