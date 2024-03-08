@@ -1,0 +1,84 @@
+.blogContent h2:hover .anchor {
+    visibility: visible;
+}
+  
+.anchor {
+    float: left;
+    margin-left: -30px;
+    padding-right: 8px;
+}
+  
+.anchor:before {
+    visibility: hidden;
+    color: gray;
+    content: '#'
+}
+  
+.blogContent{
+    width: 80%;
+    padding-left: 5%;
+}
+
+.blogContent h2:hover .anchor:before {
+    visibility: visible;
+}
+
+.blogContent h2{
+    font-size: 2.3vw;
+    font-weight: 400;
+    color: #2a2a2a;
+    padding-top: 10px;
+    scroll-behavior: smooth;
+    scroll-margin-top: 7vw;
+} 
+
+.blogContent h2 strong{
+    font-weight: 400;
+}
+
+.blogContent p{
+    font-size: 1.15vw;
+    font-family: 'Ageo';
+    text-rendering: geometricPrecision;
+    font-weight: 500;
+    line-height: 1.7;
+    letter-spacing: 0.5px;
+    margin: 3.5% 0;
+}
+
+.blogContent p:first-child{
+    margin-top: 0;
+}
+
+.blogContent ul{
+    margin-left: 1.5vw;
+}
+
+.blogContent ul li{
+    font-family: 'Ageo';
+    text-rendering: geometricPrecision;
+    font-weight: 500;
+    font-size: 1.15vw;
+    letter-spacing: 0.5px;
+    line-height: 1.7;
+    color: #4a4a4a;
+    list-style: disc;
+    margin: 2% 0;
+}
+
+.blogContent ul li strong{
+    font-family: 'Ageo' !important;
+    text-rendering: geometricPrecision !important;
+    font-weight: 600 !important;
+    color: #2a2a2a !important;
+}
+
+.blogContent figure {
+    margin: 12% 0;
+}
+
+.blogContent img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}

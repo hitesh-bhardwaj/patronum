@@ -35,7 +35,7 @@ export default function BLogs() {
                                                 A Deep Dive into Google Contacts: Best Practices for Organizing and Sharing
                                             </h5>
                                         <a href="#" className="link-btn">
-                                            <span className="btn-text">Learn More</span>
+                                            <span className="btn-text">Read More</span>
                                             <span className="btn-images">
                                                 <div>
                                                     <svg className="" viewBox="0 0 38 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -67,7 +67,7 @@ export default function BLogs() {
                                             The Role of Automated File Unsharing in Preventing Data Breaches
                                         </h5>
                                         <a href="#" className="link-btn">
-                                            <span className="btn-text">Learn More</span>
+                                            <span className="btn-text">Read More</span>
                                             <span className="btn-images">
                                                 <div>
                                                     <svg className="" viewBox="0 0 38 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -99,7 +99,7 @@ export default function BLogs() {
                                             A Deep Dive into Google Contacts: Best Practices for Organizing and Sharing
                                         </h5>
                                         <a href="#" className="link-btn">
-                                            <span className="btn-text">Learn More</span>
+                                            <span className="btn-text">Read More</span>
                                             <span className="btn-images">
                                                 <div>
                                                     <svg className="" viewBox="0 0 38 21" fill="none" xmlns="http://www.w3.org/2000/svg">

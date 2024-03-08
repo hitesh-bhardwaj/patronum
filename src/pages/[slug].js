@@ -1,63 +1,165 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { format } from 'date-fns';
-
-// import BlogInfo from "@/components/WpBlogs/BlogInfo";
-// import RelatedPosts from '@/components/WpBlogs/RelatedPosts';
 
 import { getApolloClient } from '@/lib/apollo-client';
 import { QUERY_ALL_POST_SLUGS } from '@/data/posts';
-import { getPostBySlug, getAllPosts } from '@/lib/posts';
+import { getPostBySlug, getHomePagePosts } from '@/lib/posts';
+import BlogLayout from "@/components/PageComponents/BlogPage/BlogLayout";
 
-function PostDetail({ post, allPosts }) {
+import { unified } from 'unified';
+import rehypeParse from 'rehype-parse';
+import rehypeStringify from 'rehype-stringify';
+import { visit } from 'unist-util-visit';
+import parameterize from 'parameterize';
+
+import styles from '@/styles/blog.module.css';
+
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import  ScrollToPlugin  from 'gsap/dist/ScrollToPlugin';
+import RelatedPosts from "@/components/PageComponents/BlogPage/RelatedPosts";
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+function PostDetail({ post, recentPosts }) {
+
+  const handleSmoothScroll = (e, targetId) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    const targetPosition = targetElement.offsetTop;
+        gsap.to(window, {
+            duration: 1.5,
+            scrollTo: {y: targetPosition, offsetY: 130, autoKill: true},
+            ease: "power3.inOut",
+        });
+      };    
+
+  if (globalThis.innerWidth>1024) {
+    // Section Pinnnig
+    useEffect(() => {
+      let ctx = gsap.context(() => {
+        let brandImagePin = document.getElementById("table-of-content");
+        let brandImageNotPin = document.getElementById("blog-content");
+        ScrollTrigger.create({
+          trigger: brandImagePin,
+          start: "top 18%",
+          endTrigger: brandImageNotPin,
+          end: "bottom 80%",
+          invalidateOnRefresh: true,
+          pin: brandImagePin,
+          markers: false,
+        });
+      });
+      return () => ctx.revert();
+    });
+
+    useEffect(() => {
+      let ctx = gsap.context(() => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: '#blog-content',
+            start: 'top 18%',
+            end: 'bottom 80%',
+            scrub: 1,
+            markers: false,
+          },
+        });
+
+        tl.to('#toc-bar', {
+          height: '100%',
+          duration: 1,
+        })
+      });
+      return () => ctx.revert();
+    })
+  }
 
   if (!post) {
     return <div>Loading...</div>;
   }
 
-  const formattedDate = format(new Date(post.date), 'dd/MM/yyyy');
+  const formattedDate = format(new Date(post.date), 'MMMM dd, yyyy');
+
+  const toc = [];
+
+  const content = unified()
+    .use(rehypeParse, {
+      fragment: true,
+    })
+    .use(() => {
+      return (tree) => {
+        visit(tree, 'element', function (node) {
+          if ( node.tagName === 'h2' ) {
+            const id = parameterize(node.children[0].children[0].value);
+            node.properties.id = id;
+
+            toc.push({
+              id,
+              title: node.children[0].children[0].value,
+            });
+
+            node.children.unshift({
+              type: 'element',
+              properties: {
+                href: `#${id}`,
+                class: styles.anchor,
+                'aria-hidden': 'true'
+              },
+              tagName: 'a',
+              type: 'element'
+            });
+          }
+        });
+        return;
+      };
+    })
+    .use(rehypeStringify)
+    .processSync(post.content)
+    .toString();
 
 return (
       <>
-        <main>
-            
-            <div className="b__dt-main">
-              
-              <div
-                className="b__dt-head-contain"
-                data-cursor-size="10px"
-                data-cursor-text="">
-                <h1 data-jelly id='blog'>{post.title}</h1>
-              </div>
+      <BlogLayout
+        postTitle={post.title}
+        postAuthor={post.author.name}
+        postDate={formattedDate}
+        shareLink={post.slug}
+        featImg={post.featuredImage.sourceUrl}
+      >
 
-              <div className="b__dt-main-blog" id="main-blog-container">
-                
-               {/* <div className="b__dt-auth" id="left-section">
-                 <BlogInfo avatar={post.author.avatar.url} author={post.author.name} date={formattedDate} shareLink={post.slug} />
-               </div> */}
-
-               <div 
-                className="b__dt-content" 
-                id="right-section"
-                >
-                <div 
-                dangerouslySetInnerHTML={{
-                  __html: post.content,
-                }}/> 
-
-                <div className="blog__dt-tags">
-                  {post.tags && post.tags.edges.map(({ node }) => (
-                    <h4 key={node.name} className="blog__dt-tag">
-                      {node.name}
-                    </h4>
-                  ))} 
-                </div>
-              </div>
+      <section className="container">
+        <div className="content">
+          <div className="flex w-full justify-between items-start" id="blog-container">
+            <div className="w-[20%] -ml-[2vw] relative" id="table-of-content"> 
+              <span className="absolute h-[98%] block w-1.5 bg-[#E9E9E9] overflow-hidden -left-8 rounded -top-[1.5%]">
+                <span className="w-full h-[2%] bg-head block rounded origin-top" id="toc-bar"/>
+              </span>
+              <ul>
+                {toc.map(({ id, title}) => {
+                  return (
+                    <li key={id} className="mb-[1.2vw]">
+                      <a href={`#${id}`} onClick={(e) => handleSmoothScroll(e, id)} className="leading-[1] text-body aeonik text-[0.94vw] hover:text-primary active:font-medium active:text-head transition-all">
+                        { title }
+                      </a>
+                    </li>
+                  )
+                })}
+              </ul>
             </div>
+            <div 
+              dangerouslySetInnerHTML={{
+                __html: content,
+              }}
+              id="blog-content"
+              className={styles.blogContent}
+            />
           </div>
+        </div>
+      </section>
 
-          {/* <RelatedPosts posts={allPosts} currentCategory={post.categories[0].name} currentSlug={post.slug} /> */}
-    
-      </main>    
+        <RelatedPosts sectionTitle={'Related Blogs'} recentPosts={recentPosts} currentSlug={post.slug} />
+
+      </BlogLayout>
     </>
   );
 }
@@ -88,7 +190,9 @@ export async function getStaticProps({ params }) {
     const { slug } = params;
     const { post } = await getPostBySlug(slug);
 
-    const { posts: allPosts } = await getAllPosts();
+    const recentPosts = await getHomePagePosts();
+
+    // const { posts: allPosts } = await getAllPosts();
 
     if (!post) {
       // If the requested post is not found, return a 404 response
@@ -100,7 +204,7 @@ export async function getStaticProps({ params }) {
     return {
       props: {
         post,
-        allPosts,
+        recentPosts,
       },
       revalidate: 10,
     };
@@ -110,20 +214,9 @@ export async function getStaticProps({ params }) {
     return {
       props: {
         post: null, // Use null instead of undefined
-        allPosts: [],
+        recentPosts: [],
       },
       revalidate: 10,
     };
   }
 }
-
-
-
-
-
-
-
-
-
-
-

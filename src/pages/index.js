@@ -14,10 +14,13 @@ import Testimonial from '@/components/PageLayout/Testimonial';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PreLoader from "@/components/PreLoader";
+import RelatedPosts from "@/components/PageComponents/BlogPage/RelatedPosts";
+
+import { getHomePagePosts } from '@/lib/posts';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Home() {
+export default function Home( { recentPosts } ) {
 
       useEffect(() => {
         const headings = document.querySelectorAll('.text-anim');
@@ -246,10 +249,26 @@ export default function Home() {
         <Pricing />
         <About />
         <Testimonial />
-        <BLogs />
+        <RelatedPosts 
+          sectionPara={"Discover a World of Knowledge with Expert Tips, In-Depth Tricks, Latest News, and Comprehensive Resources for Mastering Google Workspace."} 
+          recentPosts={recentPosts} 
+          sectionTitle={"Our Latest Blogs"}
+          />
         <Faqs />
       </main>
       <Footer />
     </>
   );
 } 
+
+export async function getStaticProps() {
+
+  const recentPosts = await getHomePagePosts();
+
+  return {
+    props: {
+      recentPosts,
+    },
+    revalidate: 10,
+  };
+}

@@ -24,6 +24,14 @@ export const POST_FIELDS = gql`
         sourceUrl
       }
     }
+    author {
+      node {
+        name
+        avatar {
+          url
+        }
+      }
+    }
     tags {
       edges {
         node {
@@ -105,7 +113,7 @@ export const QUERY_ALL_POSTS = gql`
               id
             }
           }
-          modified
+          date
         }
       }
     }
@@ -430,21 +438,22 @@ export const QUERY_ALL_POST_SLUGS = gql`
 
 export const GET_HOME_PAGE_POSTS = gql`
   query postsforHomePage {
-    posts(first: 3) {
+    posts(first: 4) {
       nodes {
-        categories {
-          nodes {
-            name
-            slug
-          }
-        }
         featuredImage {
           node {
             sourceUrl
           }
         }
+        id
+        author {
+          node {
+            name
+          }
+        }
         slug
         title
+        date
       }
     }
   }

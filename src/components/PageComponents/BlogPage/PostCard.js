@@ -31,11 +31,13 @@ const PostCard = ({ post = {} }) => {
                             {post.title}
                         </span>
                     </h3>
-                    <div dangerouslySetInnerHTML={{
+                    {(post.excerpt) && (
+                        <div dangerouslySetInnerHTML={{
                         __html: post.excerpt,
                         }} 
                         className='mb-[2vw] blog-para'
-                    />
+                        />
+                    )}
                 </div>
                 <div className='mt-[1.3vw] mb-[0.5vw]'>
                     <button aria-label='Read More About the Blog' className="link-btn">
