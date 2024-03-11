@@ -29,6 +29,7 @@
     "cmdk": "^0.2.1",
     "country-flag-icons": "^1.5.4",
     "date-fns": "^3.0.6",
+    "formidable": "^3.5.1",
     "framer-motion": "^10.16.16",
     "gsap": "^3.12.5",
     "input-format": "^0.3.9",

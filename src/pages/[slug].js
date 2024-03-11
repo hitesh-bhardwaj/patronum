@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { format } from 'date-fns';
 
 import { getApolloClient } from '@/lib/apollo-client';
@@ -89,15 +89,27 @@ function PostDetail({ post, recentPosts }) {
     .use(() => {
       return (tree) => {
         visit(tree, 'element', function (node) {
-          if ( node.tagName === 'h2' ) {
-            const id = parameterize(node.children[0].children[0].value);
+          if (node.tagName === 'h2') {
+            // Function to extract text in a flexible manner
+            const extractText = (node) => {
+              if (node.children && node.children[0].type === 'text') {
+                return node.children[0].value;
+              } else if (node.children && node.children[0].children && node.children[0].children[0].type === 'text') {
+                return node.children[0].children[0].value;
+              }
+              return ""; // Return an empty string or any default value you see fit
+            };
+    
+            const textContent = extractText(node);
+            const id = parameterize(textContent);
+    
             node.properties.id = id;
-
+    
             toc.push({
               id,
-              title: node.children[0].children[0].value,
+              title: textContent,
             });
-
+    
             node.children.unshift({
               type: 'element',
               properties: {
@@ -138,7 +150,7 @@ return (
                 {toc.map(({ id, title}) => {
                   return (
                     <li key={id} className="mb-[1.2vw]">
-                      <a href={`#${id}`} onClick={(e) => handleSmoothScroll(e, id)} className="leading-[1] text-body aeonik text-[0.94vw] hover:text-primary active:font-medium active:text-head transition-all">
+                      <a href={`#${id}`} onClick={(e) => handleSmoothScroll(e, id)} className="leading-[1] text-head aeonik text-[0.94vw] hover:text-primary transition-all">
                         { title }
                       </a>
                     </li>
