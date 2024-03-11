@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { format } from 'date-fns';
 
 import { getApolloClient } from '@/lib/apollo-client';
@@ -23,6 +23,9 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 function PostDetail({ post, recentPosts }) {
 
+  const [activeSection, setActiveSection] = useState(null);
+  const [readingProgress, setReadingProgress] = useState(0);
+
   const handleSmoothScroll = (e, targetId) => {
     e.preventDefault();
     const targetElement = document.getElementById(targetId);
@@ -33,46 +36,6 @@ function PostDetail({ post, recentPosts }) {
             ease: "power3.inOut",
         });
       };    
-
-  if (globalThis.innerWidth>1024) {
-    // Section Pinnnig
-    useEffect(() => {
-      let ctx = gsap.context(() => {
-        let brandImagePin = document.getElementById("table-of-content");
-        let brandImageNotPin = document.getElementById("blog-content");
-        ScrollTrigger.create({
-          trigger: brandImagePin,
-          start: "top 18%",
-          endTrigger: brandImageNotPin,
-          end: "bottom 80%",
-          invalidateOnRefresh: true,
-          pin: brandImagePin,
-          markers: false,
-        });
-      });
-      return () => ctx.revert();
-    });
-
-    useEffect(() => {
-      let ctx = gsap.context(() => {
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: '#blog-content',
-            start: 'top 18%',
-            end: 'bottom 80%',
-            scrub: 1,
-            markers: false,
-          },
-        });
-
-        tl.to('#toc-bar', {
-          height: '100%',
-          duration: 1,
-        })
-      });
-      return () => ctx.revert();
-    })
-  }
 
   if (!post) {
     return <div>Loading...</div>;
@@ -92,12 +55,35 @@ function PostDetail({ post, recentPosts }) {
           if (node.tagName === 'h2') {
             // Function to extract text in a flexible manner
             const extractText = (node) => {
-              if (node.children && node.children[0].type === 'text') {
+              // Check if the direct child exists and is of type text
+              if (node.children?.[0]?.type === 'text') {
                 return node.children[0].value;
-              } else if (node.children && node.children[0].children && node.children[0].children[0].type === 'text') {
+              } 
+              // Check if there's a nested child of type text
+              else if (node.children?.[0]?.children?.[0]?.type === 'text') {
                 return node.children[0].children[0].value;
               }
-              return ""; // Return an empty string or any default value you see fit
+              // Safely handle cases where the expected structure is missing
+              else {
+                // Recursively search for text in deeper nested structures
+                let foundText = null;
+                const findTextRecursively = (node) => {
+                  if(node.type === 'text') {
+                    foundText = node.value;
+                    return;
+                  }
+                  if(node.children) {
+                    for(let child of node.children) {
+                      findTextRecursively(child);
+                      if(foundText) break; // Exit if text is found
+                    }
+                  }
+                };
+            
+                findTextRecursively(node);
+            
+                return foundText || ""; // Return found text or default to empty string if none found
+              }
             };
     
             const textContent = extractText(node);
@@ -128,6 +114,80 @@ function PostDetail({ post, recentPosts }) {
     .use(rehypeStringify)
     .processSync(post.content)
     .toString();
+
+    if (globalThis.innerWidth>1024) {
+      // Section Pinnnig
+      useEffect(() => {
+        let ctx = gsap.context(() => {
+          let brandImagePin = document.getElementById("table-of-content");
+          let brandImageNotPin = document.getElementById("blog-content");
+          ScrollTrigger.create({
+            trigger: brandImagePin,
+            start: "top 18%",
+            endTrigger: brandImageNotPin,
+            end: "bottom 80%",
+            invalidateOnRefresh: true,
+            pin: brandImagePin,
+            markers: false,
+          });
+        });
+        return () => ctx.revert();
+      });
+  
+      useEffect(() => {
+        let ctx = gsap.context(() => {
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: '#blog-content',
+              start: 'top 18%',
+              end: 'bottom 80%',
+              scrub: 1,
+              markers: false,
+            },
+          });
+  
+          tl.to('#toc-bar', {
+            height: '100%',
+            duration: 1,
+          })
+        });
+        return () => ctx.revert();
+      });
+  
+      // useEffect(() => {
+      //   toc.forEach((section) => {
+      //     ScrollTrigger.create({
+      //       trigger: `#${section.id}`,
+      //       start: "top center",
+      //       end: "bottom center",
+      //       onEnter: () => setActiveSection(section.id),
+      //       onEnterBack: () => setActiveSection(section.id),
+      //     });
+      //   });
+      
+      //   return () => {
+      //     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      //   };
+      // }, [toc]); // Dependency array includes toc to ensure triggers are set up after TOC is defined
+  
+      // useEffect(() => {
+      //   const updateProgress = () => {
+      //     const scrollPosition = window.scrollY;
+      //     const windowHeight = window.innerHeight;
+      //     const docHeight = document.body.offsetHeight;
+      
+      //     const totalDocScrollLength = docHeight - windowHeight;
+      //     const scrollPercentage = (scrollPosition / totalDocScrollLength);
+      
+      //     setScrollProgress(scrollPercentage * 100);
+      //   };
+      
+      //   window.addEventListener('scroll', updateProgress);
+      
+      //   return () => window.removeEventListener('scroll', updateProgress);
+      // }, []);
+    
+    }
 
 return (
       <>
