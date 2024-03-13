@@ -18,6 +18,12 @@ import DemoModal from '@/components/InstallModal/DemoModal';
 //   loading: () => <p>Loading background...</p>, // Optional loading component
 // });
 
+// Import the Background component dynamically
+const BackgroundWithNoSSR = dynamic(() => import('@/components/Pixi'), {
+  ssr: false, // This will only import Background on the client-side
+  loading: () => <p>Loading background...</p>, // Optional loading component
+});
+
 export default function App({ Component, pageProps }) {
 
   useEffect(() => {
@@ -65,7 +71,7 @@ export default function App({ Component, pageProps }) {
           <DemoModal />
         </ModalProvider>
       </ReactLenis>
-      {/* <BackgroundWithNoSSR /> */}
+      <BackgroundWithNoSSR />
     </>
   ); 
 }
