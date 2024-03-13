@@ -2,14 +2,25 @@ import { useModal } from "@/components/InstallModal/ModelContext";
 import gsap from "gsap";
 import react, { useEffect } from "react"
 import SplitType from "split-type";
+import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 export default function Hero(){
-    
+
     const { openModal } = useModal();
 
     const openVideoModal = () => {
         openModal('video');
     }
+
+    const handleSmoothScroll = () => {
+        gsap.to(window, {
+            duration: 1.5,
+            scrollTo: {y: "#features", offsetY: 50},
+            ease: "power3.inOut",
+        });
+    }; 
 
     useEffect(() => {
         let ctx = gsap.context(() => {
@@ -51,8 +62,6 @@ export default function Hero(){
         });
         return () => ctx.revert();
     }, []);
-
-
 
     return(
         <>
@@ -113,7 +122,7 @@ export default function Hero(){
                         </div>
                     </div>
                     <div className="scroll-down-btn">
-                        <a href="#features" aria-label="scroll down button">
+                        <button className="scroll-down-a" onClick={handleSmoothScroll} aria-label="Scroll Down">
                             <svg width="86" height="86" viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle className="hero-svg-circle" cx="43" cy="43" r="42" stroke="currentColor" strokeWidth="2"/>
                             </svg>
@@ -129,7 +138,7 @@ export default function Hero(){
                                     </g>
                                 </svg>
                             </span>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </section>
