@@ -1542,7 +1542,7 @@ section{
 
 .footer-contact{
   margin-top: 10vw;
-  background-color: #fdfdfd;
+  /* background-color: #fdfdfd; */
   height: 100%;
 }
 .footer-contact__content{
