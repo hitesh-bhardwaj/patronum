@@ -1,6 +1,6 @@
-import Lottie from "react-lottie";
-import animationData from '@/lotties/rocket.json';
+import React from "react";
 import { useModal } from "../InstallModal/ModelContext";
+import { Player } from '@lottiefiles/react-lottie-player';
 
 export default function FooterContact() {
 
@@ -13,15 +13,6 @@ export default function FooterContact() {
     const openVideoModal = () => {
         openModal('video');
     };
-
-    const defaultOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: animationData,
-        rendererSettings: {
-          preserveAspectRatio: "xMidYMid slice"
-        }
-      };
 
     return(
             <div className="footer-contact">
@@ -78,11 +69,11 @@ export default function FooterContact() {
 
                         <div className="right">
                             <div className="footer-lottie fadeRight">
-                                <Lottie 
-                                    options={defaultOptions}
-                                    height={852}
-                                    width={652}
-                                />
+                            <Player
+                                autoplay
+                                loop
+                                src="/assets/lotties/rocket-final.json"
+                            />
                             </div>
                         </div>
                     </div>

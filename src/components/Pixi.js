@@ -21,67 +21,81 @@ export default function Pixi() {
             
             // Create a new simplex noise instance
             const simplex = new SimplexNoise();
+
+            // Function to get color from CSS custom properties
+            const getColorFromCSSVar = (varName) => {
+                const color = getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
+                // Convert the color from CSS format (hex, rgb) to a hexadecimal number PixiJS can use
+                return PIXI.utils.string2hex(color);
+            };
+
+            // Define orb colors using CSS custom properties
+            const colors = [
+                getColorFromCSSVar('--orb-color-1'),
+                getColorFromCSSVar('--orb-color-2'),
+                getColorFromCSSVar('--orb-color-3')
+            ];
             
             // ColorPalette class
-            class ColorPalette {
-                constructor() {
-                this.setColors();
-                this.setCustomProperties();
-                }
+            // class ColorPalette {
+            //     constructor() {
+            //     this.setColors();
+            //     this.setCustomProperties();
+            //     }
             
-                setColors() {
-                // pick a random hue somewhere between 220 and 360
-                this.hue = ~~random(220, 360);
-                this.complimentaryHue1 = this.hue + 30;
-                this.complimentaryHue2 = this.hue + 60;
-                // define a fixed saturation and lightness
-                this.saturation = 95;
-                this.lightness = 60;
+            //     setColors() {
+            //     // pick a random hue somewhere between 220 and 360
+            //     this.hue = ~~random(220, 360);
+            //     this.complimentaryHue1 = this.hue + 30;
+            //     this.complimentaryHue2 = this.hue + 60;
+            //     // define a fixed saturation and lightness
+            //     this.saturation = 95;
+            //     this.lightness = 60;
             
-                // define a base color
-                this.baseColor = hsl(this.hue, this.saturation, this.lightness);
-                // define a complimentary color, 30 degress away from the base
-                this.complimentaryColor1 = hsl(
-                    this.complimentaryHue1,
-                    this.saturation,
-                    this.lightness
-                );
-                // define a second complimentary color, 60 degrees away from the base
-                this.complimentaryColor2 = hsl(
-                    this.complimentaryHue2,
-                    this.saturation,
-                    this.lightness
-                );
+            //     // define a base color
+            //     this.baseColor = hsl(this.hue, this.saturation, this.lightness);
+            //     // define a complimentary color, 30 degress away from the base
+            //     this.complimentaryColor1 = hsl(
+            //         this.complimentaryHue1,
+            //         this.saturation,
+            //         this.lightness
+            //     );
+            //     // define a second complimentary color, 60 degrees away from the base
+            //     this.complimentaryColor2 = hsl(
+            //         this.complimentaryHue2,
+            //         this.saturation,
+            //         this.lightness
+            //     );
             
-                // store the color choices in an array so that a random one can be picked later
-                this.colorChoices = [
-                    this.baseColor,
-                    this.complimentaryColor1,
-                    this.complimentaryColor2
-                ];
-                }
+            //     // store the color choices in an array so that a random one can be picked later
+            //     this.colorChoices = [
+            //         this.baseColor,
+            //         this.complimentaryColor1,
+            //         this.complimentaryColor2
+            //     ];
+            //     }
             
-                randomColor() {
-                // pick a random color
-                return this.colorChoices[~~random(0, this.colorChoices.length)].replace(
-                    "#",
-                    "0x"
-                );
-                }
+            //     randomColor() {
+            //     // pick a random color
+            //         return this.colorChoices[~~random(0, this.colorChoices.length)].replace(
+            //             "#",
+            //             "0x"
+            //         );
+            //     }
             
-                setCustomProperties() {
-                // set CSS custom properties so that the colors defined here can be used throughout the UI
-                document.documentElement.style.setProperty("--hue", this.hue);
-                document.documentElement.style.setProperty(
-                    "--hue-complimentary1",
-                    this.complimentaryHue1
-                );
-                document.documentElement.style.setProperty(
-                    "--hue-complimentary2",
-                    this.complimentaryHue2
-                );
-                }
-            }
+            //     setCustomProperties() {
+            //         // set CSS custom properties so that the colors defined here can be used throughout the UI
+            //         document.documentElement.style.setProperty("--hue", this.hue);
+            //         document.documentElement.style.setProperty(
+            //             "--hue-complimentary1",
+            //             this.complimentaryHue1
+            //         );
+            //         document.documentElement.style.setProperty(
+            //             "--hue-complimentary2",
+            //             this.complimentaryHue2
+            //         );
+            //     }
+            // }
             
             // Orb class
             class Orb {
@@ -106,7 +120,7 @@ export default function Pixi() {
                 this.xOff = random(0, 1000);
                 this.yOff = random(0, 1000);
                 // how quickly the noise/self similar random values step through time
-                this.inc = 0.002;
+                this.inc = 0.001;
             
                 // PIXI.Graphics is used to draw 2d primitives (in this case a circle) to the canvas
                 this.graphics = new PIXI.Graphics();
@@ -193,13 +207,15 @@ export default function Pixi() {
             app.stage.filters = [new KawaseBlurFilter(50, 10, true)];
             
             // Create colour palette
-            const colorPalette = new ColorPalette();
+            // const colorPalette = new ColorPalette();
             
             // Create orbs
             const orbs = [];
             
-            for (let i = 0; i < 3; i++) {
-                const orb = new Orb(colorPalette.randomColor());
+            for (let i = 0; i < 2; i++) {
+                // const orb = new Orb(colorPalette.randomColor());
+
+                const orb = new Orb(colors[i]);
             
                 app.stage.addChild(orb.graphics);
             

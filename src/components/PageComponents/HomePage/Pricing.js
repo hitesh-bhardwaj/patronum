@@ -6,7 +6,7 @@ import { Switch } from "@/components/ui/switch"
 
 const Pricing = () => {
     const [isAnnual, setIsAnnual] = useState(true);
-    const [selectedCurrency, setSelectedCurrency] = useState('USD $');
+    const [selectedCurrency, setSelectedCurrency] = useState('$ USD');
   
     const handleToggle = () => {
       setIsAnnual(!isAnnual);
@@ -52,7 +52,7 @@ const Pricing = () => {
                               
                                 <div className='relative z-10'>
                                     <PriceDropDown
-                                        options={['USD $', 'GBP £', 'EUR €', 'AUD A$']}
+                                        options={['$ USD', '£ GBP', '€ EUR', 'A$ AUD']}
                                         value={selectedCurrency}
                                         onChange={handleCurrencyChange}
                                     />

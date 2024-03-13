@@ -45,9 +45,9 @@
 
 /* Background CSS START*/
 :root {
-  --base: hsl(var(--hue), 95%, 50%);
-  --complimentary1: hsl(var(--hue-complimentary1), 95%, 50%);
-  --complimentary2: hsl(var(--hue-complimentary2), 95%, 50%);
+  --orb-color-1: #80c6ff; /* Red */
+  --orb-color-2: #7af8ff; /* Green */
+  --orb-color-3: #00aaff; /* Blue */
 }
 .orb-canvas {
   position: fixed;
@@ -981,6 +981,7 @@ section{
   display: flex;
   justify-content: center;
   align-items: center;
+  pointer-events: none;
 }
 
 .feat-accordion-btn .plus, .feat-accordion-btn .minus{
@@ -1044,7 +1045,7 @@ section{
   padding-bottom: 0;
 }
 .use-cases-button{
-  margin-bottom: 3vw;
+  margin-bottom: 2vw;
 }
 .use-cases-list li{
   color: var(--text-head);
@@ -1091,18 +1092,18 @@ section{
 }
 
 .useCase-item{
-  padding: 0vw 12vw 2vw;
+  padding: 0vw 13vw 2vw;
 }
 .use_case_content{
-  background: #FDFDFD;
-  border: 1px solid #e2e2e2;
-  border-radius: 20px;
+  background: #fefefe;
+  box-shadow: 1px 1px 20px #00000010;
+  border-radius: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100%;
   width: 100%;
-  padding: 6% 5%;
+  padding: 6.5% 5%;
 }
 .useCase-item-left{
   width: 35%;
@@ -1547,7 +1548,7 @@ section{
 .footer-contact__content{
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   position: relative;
 }
 .footer-contact-bg{
@@ -1572,44 +1573,14 @@ section{
 }
 .footer-contact__content .right{
   position: relative;
-  width: 36.5%;
+  width: 35%;
   height: 100%;
+  margin-right: -7%;
 }
 .footer-lottie{
   width: 100%;
-  position: absolute;
-  right: -8vw;
-  top: -16.6vw;
 }
-@media screen and (max-width: 1920px) {
-  .footer-lottie{
-    top: -15.5vw;
-  }
-}
-@media screen and (max-width: 1536px) {
-  .footer-lottie{
-    top: -17vw;
-  }
-}
-@media screen and (max-width: 1440px) {
-  .footer-lottie{
-    top: -16.85vw;
-  }
-}
-@media screen and (max-width: 1367px) {
-  .footer-lottie{
-    top: -16.7vw;
-  }
-}
-@media screen and (max-width: 1280px) {
-  .footer-lottie{
-    top: -16.5vw;
-  }
-}
-.footer-lottie>div{
-  width: 100% !important;
-  height: auto !important;
-}
+
 .footer-contact__content .left .title-4xl{
   margin: 0;
 }

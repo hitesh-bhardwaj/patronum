@@ -9,37 +9,43 @@ const accordionData = [
         title: 'Onboarding & Offboarding',
         content: 'Provisioning and deprovisioning users within Google Workspace can be time-consuming and costly. Let Patronum fully automate all the administrator and user tasks to ensure an effective and secure process.',
         more: 'Provisioning and deprovisioning users within Google Workspace can be time-consuming and costly. Let Patronum fully automate all the administrator.',
-        img: 'assets/home/features-1.svg'
+        img: 'assets/home/features-1.svg',
+        link: '/on-boarding',
     },
     {
         title: 'File Unsharing & Compliances',
         content: 'With Patronum you can automatically unshare Google Files reducing your organisations exposure. Quickly and easily set up policies that automate the clean up of file sharing with external organisations.',
         more: 'With Patronum you can automatically unshare Google Files reducing your organisations exposure. Quickly and easily set up policies that automate.',
-        img: 'assets/home/features-2.svg'
+        img: 'assets/home/features-2.svg',
+        link: '/google-drive-compliance',
     },
     {
         title: 'Contact Sharing',
         content: 'Patronum is the only enterprise-ready contact sharing application for Google Workspace. Allow your users to share their specific contacts via labels, while giving administrators enhanced visibility and management of the whole process.',
         more: 'Patronum is the only enterprise-ready contact sharing application for Google Workspace. Allow your users to share their specific contacts.',
-        img: 'assets/home/features-3.svg'
+        img: 'assets/home/features-3.svg',
+        link: '/contact-sharing',
     },
     {
         title: 'Email Signature Management',
         content: 'With Patronum you can automatically unshare Google Files reducing your organisations exposure. Quickly and easily set up policies that automate the clean up of file sharing with external organisations.',
         more: 'With Patronum you can automatically unshare Google Files reducing your organisations exposure. Quickly and easily set up policies that automate.',
-        img: 'assets/home/features-4.svg'
+        img: 'assets/home/features-4.svg',
+        link: '/email-signature-management',
     },
     {
         title: 'Google Drive Management',
         content: "Maintain the integrity and security of your organization's data with Patronum. Our platform provides administrators with comprehensive control over users' files and folders, enhancing the management of Google Drive within Google Workspace.",
         more: 'Patronum provides an intuitive way for administrators to oversee and manage the vast amount of data stored in Google Drive and simplifies the complexities of file management.',
-        img: 'assets/home/features-5.svg'
+        img: 'assets/home/features-5.svg',
+        link: '/google-drive-management',
     },
     {
         title: 'Google Workspace Backup',
         content: "Experience the world's fastest backup solution, meticulously designed for Google Workspace. Patronum Backup offers unparalleled high-frequency backups, ensuring your Google data is always secure and recoverable.",
         more: "With Patronum, your Google Workspace data is not just backed up; it's bulletproof. Secure Your Google Workspace leveraging the most advanced.",
-        img: 'assets/home/features-6.svg'
+        img: 'assets/home/features-6.svg',
+        link: '/google-workspace-backup',
     }
 ];  
 
@@ -123,7 +129,7 @@ export default function Features(){
                                                         <br />
                                                         <span>{item.more}</span>
                                                     </p>
-                                                    <a href="#" className="link-btn">
+                                                    <a href={item.link} className="link-btn">
                                                         <span className="btn-text">Learn More</span>
                                                         <span className="btn-images">
                                                             <div>
@@ -138,7 +144,7 @@ export default function Features(){
                                                     </a>
                                                 </div>
                                             </div>
-                                            <div onClick={() => toggleAccordion(index)} className="feat-accordion-btn">
+                                            <div className="feat-accordion-btn">
                                                 <span className="plus"/>
                                                 <span className="minus"/>
                                             </div>

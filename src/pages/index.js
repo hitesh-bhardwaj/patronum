@@ -16,7 +16,6 @@ import PreLoader from "@/components/PreLoader";
 import RelatedPosts from "@/components/PageComponents/BlogPage/RelatedPosts";
 
 import { getHomePagePosts } from '@/lib/posts';
-import UseCase2 from "@/components/PageComponents/HomePage/UseCase2";
 
 gsap.registerPlugin(ScrollTrigger);
 
