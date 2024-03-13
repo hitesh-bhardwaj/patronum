@@ -1,5 +1,4 @@
 "use client";
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -59,15 +58,14 @@ export default function ContactForm() {
                 <p><strong>Email:</strong> ${data.email}</p>
                 <p><strong>Company Name:</strong> ${data.company}</p>
                 <p><strong>Phone Number:</strong> ${data.phone}</p>
+                <p><strong>Terms Agreement:</strong> ${data.terms ? 'Agreed' : 'Not Agreed'}</p>
             `;
-
-            // <p><strong>Terms Agreement:</strong> ${data.terms ? 'Agreed' : 'Not Agreed'}</p>
 
             // Make a POST request to your API route
             const response = await axios.post('/api/send-email', {
                 message: message, // Pass the formatted message to the API
             });
-            // console.log('Email sent:', response.data);
+            
             form.reset();
             setSubmitting(false);
             setSubmissionSuccess(true);

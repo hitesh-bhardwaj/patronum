@@ -1,7 +1,7 @@
 import react, { useState } from "react";
 import VideoEmbed from "./VideoEmbed";
 
-const VideoPlayer = ( {videoId} ) => {
+const VideoPlayer = ( {videoId, videoCover} ) => {
     const [modalOpen, setModalOpen] = useState(false);
 
     const openModal = () => {
@@ -26,7 +26,7 @@ const VideoPlayer = ( {videoId} ) => {
                     <div className="feature-tutorial-video">
                         <img
                             className="h-full w-full object-contain"
-                            src="/assets/features/onboarding/video-cover.png"
+                            src={videoCover}
                             alt="feature-tutorial"
                             loading="lazy"
                         />

@@ -1,0 +1,131 @@
+.pricingCard {
+    background: #FDFDFD;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid #e8e8e8;
+    border-radius: 16px;
+    padding: 14% 10% 10%;
+}  
+.pricingImage{
+    width: 100%;
+    height: 9vw;
+    margin-bottom: 1.8vw;
+    text-align: center;
+}
+.pricingImage img{
+    width: 100%;
+    height: 100%;
+}
+.pricingCategory{
+    font-size: 2vw;
+    color: var(--primary);
+    text-align: left;
+}
+.hr{
+    height: 1px;
+    width: 100%;
+    display: block;
+    background-color: #C5C5C5;
+    margin: 1.8vw 0;
+}
+.featureList h4{
+    color: #2A2A2A;
+    font-size: 1.25vw;
+    line-height: 2.5;
+}
+.featureList h4::before{
+    content: "✓";
+    font-size: 1vw;
+    margin-right: 1vw;
+}
+.pricingPrice{
+    color: #1a1a1a;
+    font-size: 1.45vw;
+    font-weight: 600;
+    line-height: 1;
+}
+.pricingType{
+    font-weight: 400;
+    color: #999999;
+}
+.pricingLink{
+    margin-top: 1.5vw;
+}
+  
+.pricingSelectors{
+    margin-bottom: 2.5vw;
+}
+  
+.pricingSelectorType{
+    font-size: 1.2vw;
+    color: #A9A9A9;
+    transition: 0.3s;
+}
+.pricingSelectorType.active{
+    color: black;
+}
+.pricingToggle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
+/* Features */
+.wrapper{
+    width: 100%;
+}
+.featureItem{
+    width: 100%;
+    padding: 2vw 20px;
+    position: relative;
+    cursor: pointer;
+  }
+  .featureItem .featureItemContent{
+    width: 85%;
+  }
+  .featureItem .featureItemContent.features{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2.5vw;
+  }
+  .featureMainContent{
+    width: 90%;
+  }
+  .content{
+    font-size: 1.3vw;
+    color: #2A2A2A;
+    margin: 10px 0;
+  }
+  .content span::before{
+    content: "•";
+    margin-right: 0.8vw;
+    margin-left: 10px;
+  }
+  .contentHead{
+    font-size: 2.5vw;
+    font-weight: 500;
+    color: #616161;
+    padding-bottom: 10px;
+  }
+  .featureItem .featureContent{
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  .featureItem.open .featureContent{
+    height: 14vw;
+  }
+  .featureItem .featureImg{
+    position: absolute;
+    right: 3vw;
+    top: 2.5vw;
+  }
+  .featureItem .featureImg img{
+    width: 3.5vw;
+    transition: 0.3s;
+  }

@@ -24,7 +24,6 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 function PostDetail({ post, recentPosts }) {
 
   const [activeSection, setActiveSection] = useState(null);
-  const [readingProgress, setReadingProgress] = useState(0);
 
   const handleSmoothScroll = (e, targetId) => {
     e.preventDefault();
@@ -91,10 +90,14 @@ function PostDetail({ post, recentPosts }) {
     
             node.properties.id = id;
     
-            toc.push({
-              id,
-              title: textContent,
-            });
+            if (id && textContent) {
+              toc.push({
+                id,
+                title: textContent,
+              });
+            } else {
+              console.error(`Invalid section generated`, { id, title: textContent });
+            }
     
             node.children.unshift({
               type: 'element',
@@ -133,7 +136,7 @@ function PostDetail({ post, recentPosts }) {
         });
         return () => ctx.revert();
       });
-  
+
       useEffect(() => {
         let ctx = gsap.context(() => {
           const tl = gsap.timeline({
@@ -153,7 +156,10 @@ function PostDetail({ post, recentPosts }) {
         });
         return () => ctx.revert();
       });
-  
+
+
+      // To make section id's Active
+      
       // useEffect(() => {
       //   toc.forEach((section) => {
       //     ScrollTrigger.create({
@@ -169,23 +175,6 @@ function PostDetail({ post, recentPosts }) {
       //     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
       //   };
       // }, [toc]); // Dependency array includes toc to ensure triggers are set up after TOC is defined
-  
-      // useEffect(() => {
-      //   const updateProgress = () => {
-      //     const scrollPosition = window.scrollY;
-      //     const windowHeight = window.innerHeight;
-      //     const docHeight = document.body.offsetHeight;
-      
-      //     const totalDocScrollLength = docHeight - windowHeight;
-      //     const scrollPercentage = (scrollPosition / totalDocScrollLength);
-      
-      //     setScrollProgress(scrollPercentage * 100);
-      //   };
-      
-      //   window.addEventListener('scroll', updateProgress);
-      
-      //   return () => window.removeEventListener('scroll', updateProgress);
-      // }, []);
     
     }
 
@@ -206,16 +195,15 @@ return (
               <span className="absolute h-[98%] block w-1.5 bg-[#E9E9E9] overflow-hidden -left-8 rounded -top-[1.5%]">
                 <span className="w-full h-[2%] bg-head block rounded origin-top" id="toc-bar"/>
               </span>
+              {/* Update TOC rendering to indicate the active section */}
               <ul>
-                {toc.map(({ id, title}) => {
-                  return (
-                    <li key={id} className="mb-[1.2vw]">
-                      <a href={`#${id}`} onClick={(e) => handleSmoothScroll(e, id)} className="leading-[1] text-head aeonik text-[0.94vw] hover:text-primary transition-all">
-                        { title }
-                      </a>
-                    </li>
-                  )
-                })}
+                {toc.map(({ id, title }) => (
+                  <li key={id} className={`mb-[1.2vw] ${id === activeSection ? 'toc-active' : ''}`}>
+                    <a href={`#${id}`} onClick={(e) => handleSmoothScroll(e, id)} className="leading-[1] text-head aeonik text-[0.94vw] hover:text-primary transition-all">
+                      {title}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
             <div 

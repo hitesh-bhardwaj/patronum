@@ -113,7 +113,7 @@ export default function FeatureDetail(){
                 imgSrc={'feature-onboarding.svg'}
                 >
 
-                <VideoPlayer videoId="POIX6FiWaN0" />
+                <VideoPlayer videoId="POIX6FiWaN0" videoCover={"/assets/features/onboarding/video-cover.png"}/>
 
                 <FeatureDetailTitle
                     sectionTitle1="Onboarding & Offboarding"    

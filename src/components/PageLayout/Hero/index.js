@@ -1,4 +1,18 @@
-export default function Hero( {pageTitle1, pageTitle2, pagePara, imgSrc, lenis} ){
+import gsap from "gsap"
+import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin"
+
+gsap.registerPlugin(ScrollToPlugin);
+
+
+export default function Hero( {pageTitle1, pageTitle2, pagePara, imgSrc} ){
+
+    const handleSmoothScroll = () => {
+        gsap.to(window, {
+            duration: 1.5,
+            scrollTo: {y: "#second-section", offsetY: 50},
+            ease: "power3.inOut",
+        });
+    }; 
 
     return(
         <>
@@ -33,7 +47,7 @@ export default function Hero( {pageTitle1, pageTitle2, pagePara, imgSrc, lenis} 
                             <span className="hero-hr"/>
 
                             <div data-page-hero className="scroll-down-btn">
-                                <a href="#second-section" aria-label="Scroll Down to see more">
+                                <button className="scroll-down-a" onClick={handleSmoothScroll}  aria-label="Scroll Down">
                                     <svg width="86" height="86" viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle className="hero-svg-circle" cx="43" cy="43" r="42" stroke="currentColor" strokeWidth="2"/>
                                     </svg>
@@ -49,7 +63,7 @@ export default function Hero( {pageTitle1, pageTitle2, pagePara, imgSrc, lenis} 
                                             </g>
                                         </svg>
                                     </span>
-                                </a>
+                                </button>
                             </div>
                 </div>
             </section>

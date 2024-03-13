@@ -7,7 +7,6 @@ import Hero from '@/components/PageComponents/HomePage/Hero';
 import Features from '@/components/PageComponents/HomePage/Features';
 import About from '@/components/PageComponents/HomePage/About';
 import UseCases from '@/components/PageComponents/HomePage/UseCases';
-import BLogs from '@/components/PageComponents/HomePage/Blogs';
 import Faqs from '@/components/PageComponents/HomePage/Faqs';
 import Pricing from '@/components/PageComponents/HomePage/Pricing';
 import Testimonial from '@/components/PageLayout/Testimonial';
@@ -17,6 +16,7 @@ import PreLoader from "@/components/PreLoader";
 import RelatedPosts from "@/components/PageComponents/BlogPage/RelatedPosts";
 
 import { getHomePagePosts } from '@/lib/posts';
+import UseCase2 from "@/components/PageComponents/HomePage/UseCase2";
 
 gsap.registerPlugin(ScrollTrigger);
 

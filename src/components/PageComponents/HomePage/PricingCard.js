@@ -11,22 +11,22 @@ const PricingCard = ({ category, isAnnual, selectedCurrency, pricingImage }) => 
   // Prices (monthly and annual) for each category and currency
   const prices = {
     Education: {
-      USD: { monthly: "0.17", annual: "2.00" },
-      GBP: { monthly: '0.13', annual: '1.50' },
-      EUR: { monthly: '0.15', annual: '1.80' },
-      AUD: { monthly: '0.24', annual: '2.80' }
+      "USD $": { monthly: "0.17", annual: "2.00" },
+      "GBP £": { monthly: '0.13', annual: '1.50' },
+      "EUR €": { monthly: '0.15', annual: '1.80' },
+      "AUD A$": { monthly: '0.24', annual: '2.80' }
     },
     'Non-Profit': {
-      USD: { monthly: "0.17", annual: "2.00" },
-      GBP: { monthly: '0.13', annual: '1.50' },
-      EUR: { monthly: '0.15', annual: '1.80' },
-      AUD: { monthly: '0.24', annual: '2.80' }
+      "USD $": { monthly: "0.17", annual: "2.00" },
+      "GBP £": { monthly: '0.13', annual: '1.50' },
+      "EUR €": { monthly: '0.15', annual: '1.80' },
+      "AUD A$": { monthly: '0.24', annual: '2.80' }
     },
     Business: {
-      USD: { monthly: '0.67', annual: '8.00' },
-      GBP: { monthly: '0.50', annual: '6.00' },
-      EUR: { monthly: '0.59', annual: '7.00' },
-      AUD: { monthly: '0.92', annual: '11.0' }
+      "USD $": { monthly: '0.67', annual: '8.00' },
+      "GBP £": { monthly: '0.50', annual: '6.00' },
+      "EUR €": { monthly: '0.59', annual: '7.00' },
+      "AUD A$": { monthly: '0.92', annual: '11.0' }
     }
   };
 
