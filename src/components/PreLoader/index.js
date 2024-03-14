@@ -186,8 +186,8 @@ export default function PreLoader() {
                 </div>
                 <div className="loadingCounter translate-y-[60vh]">
                   <div className="text-[10vw] relative leading-[0.8] opacity-0 counterLoaderMain">
-                    <span ref={counterRef}>00</span>
                     {/* <span className="text-[4vw] absolute -right-[30%] top-[12%]">%</span> */}
+                    <span ref={counterRef}>00</span>
                   </div>
                 </div>
               </div>
