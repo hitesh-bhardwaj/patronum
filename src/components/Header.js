@@ -22,7 +22,7 @@ const Header = () => {
                 opacity: 0,
                 stagger: 0.05,
                 ease: 'power2.out',
-            }, '+=6.5');
+            }, '+=5.5');
         });
         return () => ctx.revert();
     }, []);

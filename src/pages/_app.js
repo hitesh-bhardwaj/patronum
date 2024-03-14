@@ -19,10 +19,10 @@ import DemoModal from '@/components/InstallModal/DemoModal';
 // });
 
 // Import the Background component dynamically
-const BackgroundWithNoSSR = dynamic(() => import('@/components/Pixi'), {
-  ssr: false, // This will only import Background on the client-side
-  loading: () => <p>Loading background...</p>, // Optional loading component
-});
+// const BackgroundWithNoSSR = dynamic(() => import('@/components/Pixi'), {
+//   ssr: false, // This will only import Background on the client-side
+//   loading: () => <p>Loading background...</p>, // Optional loading component
+// });
 
 export default function App({ Component, pageProps }) {
 
@@ -43,7 +43,7 @@ export default function App({ Component, pageProps }) {
 
   return(
     <>
-      <DefaultSeo  
+      <DefaultSeo
         title='Patronum - Best Platform for Google Workspace Management'
         description='Patronum provides a better way to Google Workspace Management. Patronum fully automates all the admin and user tasks to ensure an effective and secure process.'
         additionalMetaTags={[{
@@ -64,6 +64,7 @@ export default function App({ Component, pageProps }) {
         }
         ]}
       />
+      
       <ReactLenis root options={{duration: 0.8}}>
         <ModalProvider>
           <Component {...pageProps} />
@@ -71,7 +72,7 @@ export default function App({ Component, pageProps }) {
           <DemoModal />
         </ModalProvider>
       </ReactLenis>
-      <BackgroundWithNoSSR />
+      {/* <BackgroundWithNoSSR /> */}
     </>
   ); 
 }
