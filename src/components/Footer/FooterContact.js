@@ -1,6 +1,8 @@
 import React from "react";
 import { useModal } from "../InstallModal/ModelContext";
-import { Player } from '@lottiefiles/react-lottie-player';
+import Lottie from 'react-lottie-player';
+
+import AnimationData from '@/lotties/rocket-final.json';
 
 export default function FooterContact() {
 
@@ -69,11 +71,12 @@ export default function FooterContact() {
 
                         <div className="right">
                             <div className="footer-lottie fadeRight">
-                            <Player
-                                autoplay
-                                loop
-                                src="/assets/lotties/rocket-final.json"
-                            />
+                                <Lottie
+                                    play
+                                    loop
+                                    animationData={AnimationData}
+                                    style={{ width: 600, height: 600 }}
+                                />
                             </div>
                         </div>
                     </div>
