@@ -386,7 +386,7 @@ const Header = () => {
                             )}
                         </li>
                     <li className='nav-list-item'>
-                        <a className='' href='/partners'>
+                        <a className='' href='/partner-with-us'>
                             <div className='header-anim'>
                                 <span>
                                     Partners

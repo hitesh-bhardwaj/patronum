@@ -99,7 +99,7 @@ export default function Partners() {
                                     <p className="content-p">
                                         If you're currently selling and supporting Google Workspace, partnering with Patronum can help you deliver even more value and service to your clients.
                                     </p>
-                                    <LinkButton link="#" btnText="Become a Partner"/>
+                                    <LinkButton link="/become-a-partner" btnText="Become a Partner"/>
                                 </div>
 
                                 <div className="partner-card">
@@ -110,7 +110,7 @@ export default function Partners() {
                                     <p className="content-p">
                                         Does your customer need Patronum? As a Patronum reseller partner or a referral source, you can register opportunities for your customers through our website.
                                     </p>
-                                    <LinkButton link="#" btnText="Register an Opportunity"/>
+                                    <LinkButton link="/register-an-opportunity" btnText="Register an Opportunity"/>
                                 </div>
 
                                 <div className="partner-card">
@@ -120,14 +120,14 @@ export default function Partners() {
                                     </h3>
                                     <p className="content-p">
                                         Even if you're not a Patronum reseller partner, you can still refer a customer and earn commission on a completed sale. We welcome referrals from anyone.                                    </p>
-                                    <LinkButton link="#" btnText="Refer a Customer"/>
+                                    <LinkButton link="/refer-a-customer" btnText="Refer a Customer"/>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <section id="second-section">
+                <section id="">
                     <div className="container">
                         <div className="content">
                             <SectionTitle

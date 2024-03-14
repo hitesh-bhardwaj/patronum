@@ -13,24 +13,27 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import Link from "next/link";
+import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { PhoneInput } from "../ui/phone-input";
 import { isValidPhoneNumber } from "react-phone-number-input";
 
+import Link from "next/link";
 import { useState } from 'react';
 import axios from 'axios';
 
 const formSchema = z.object({
     name: z.string().min(1, {message: "Name is required."}),
     email: z.string().min(1, {message: "Email is required."}).email({message: "Invalid email format."}),
-    company: z.string().min(1, "Company Name is required."),
-    phone: z.string().refine(isValidPhoneNumber, "Invalid phone number."),
-    terms: z.boolean().refine(value => value === true, "You must agree to the terms."),
+    company: z.string().min(1, {message: "Company Name is required."}),
+    country: z.string().min(1, {message: "Country is required."}),
+    phone: z.string().refine(isValidPhoneNumber, {message: "Invalid phone number."}),
+    textarea: z.string().min(1, {message: "Message is Required."}),
+    terms: z.boolean().refine(value => value === true, {message: "You must agree to the terms."}),
 });
 
 // Update the ContactForm component
-export default function ContactForm() {
+export default function BecomePartnerForm() {
 
     const [submitting, setSubmitting] = useState(false);
     const [submissionError, setSubmissionError] = useState(null);
@@ -42,6 +45,8 @@ export default function ContactForm() {
         name: "",
         email: "",
         company: "",
+        country: "",
+        textarea: "",
         phone: "",
         terms: false,
         },
@@ -53,25 +58,26 @@ export default function ContactForm() {
 
             // Format the email message
             const message = `
-                <h1>New Contact Form Submission</h1>
+                <h1><strong>Become Partner Form Submission</strong></h1>
                 <p><strong>Name:</strong> ${data.name}</p>
                 <p><strong>Email:</strong> ${data.email}</p>
-                <p><strong>Company Name:</strong> ${data.company}</p>
+                <p><strong>Organisation Name:</strong> ${data.company}</p>
+                <p><strong>Country:</strong> ${data.country}</p>
                 <p><strong>Phone Number:</strong> ${data.phone}</p>
+                <p><strong>Message:</strong> ${data.textarea}</p>
                 <p><strong>Terms Agreement:</strong> ${data.terms ? 'Agreed' : 'Not Agreed'}</p>
             `;
 
             // Make a POST request to your API route
             const response = await axios.post('/api/send-email', {
                 message: message, // Pass the formatted message to the API
-                subject: "Contact Form Submission",
+                subject: "Become Partner Form",
             });
             
             form.reset();
             setSubmitting(false);
             setSubmissionSuccess(true);
         } catch (error) {
-            // console.error('Error sending email:', error);
             setSubmitting(false);
             setSubmissionError('Error sending email. Please try again later.');
         }
@@ -95,6 +101,37 @@ export default function ContactForm() {
             </FormItem>
           )}
         />
+
+        {/* Company field */}
+        <FormField 
+            control={form.control}
+            name="company"
+            render= {({ field }) => (
+                <FormItem className="required">
+                    <FormLabel>Organisation Name</FormLabel>
+                    <FormControl>
+                        <Input placeholder="Enter Organisation Name" {...field}/>
+                    </FormControl>
+                    <FormMessage />
+                </FormItem>
+            )}
+        />
+
+        {/* Company field */}
+        <FormField 
+            control={form.control}
+            name="country"
+            render= {({ field }) => (
+                <FormItem className="required">
+                    <FormLabel>Country</FormLabel>
+                    <FormControl>
+                        <Input placeholder="Enter Country" {...field}/>
+                    </FormControl>
+                    <FormMessage />
+                </FormItem>
+            )}
+        />
+
         {/* Email field */}
         <FormField 
             control={form.control}
@@ -109,28 +146,14 @@ export default function ContactForm() {
                 </FormItem>
             )}
         />
-        {/* Company field */}
-        <FormField 
-            control={form.control}
-            name="company"
-            render= {({ field }) => (
-                <FormItem className="required">
-                    <FormLabel>Company Name</FormLabel>
-                    <FormControl>
-                        <Input placeholder="Enter Company Name" {...field}/>
-                    </FormControl>
-                    <FormMessage />
-                </FormItem>
-            )}
-        />
 
         {/* Phone Input Field */}
         <FormField
             control={form.control}
             name="phone"
             render={({ field }) => (
-                <FormItem className="flex flex-col items-start required mobile">
-                    <FormLabel className="text-left">Mobile Number</FormLabel>
+                <FormItem className="flex flex-col items-start required">
+                    <FormLabel className="text-left">Phone Number</FormLabel>
                     <FormControl className="w-full">
                         <PhoneInput 
                             international
@@ -138,6 +161,21 @@ export default function ContactForm() {
                             placeholder="Enter Mobile Number" 
                             {...field} 
                         />
+                    </FormControl>
+                    <FormMessage />
+                </FormItem>
+            )}
+        />
+
+        {/* Email field */}
+        <FormField 
+            control={form.control}
+            name="textarea"
+            render= {({ field }) => (
+                <FormItem className="required mobile">
+                    <FormLabel>Your Message</FormLabel>
+                    <FormControl>
+                        <Textarea placeholder="Type Your Message Here." className="resize-none" {...field}/>
                     </FormControl>
                     <FormMessage />
                 </FormItem>
@@ -166,15 +204,14 @@ export default function ContactForm() {
             </FormItem>
           )}
         />
-        {/* Submit button */}
-        {/* <Button type="submit">Submit</Button> */}
 
+        {/* Submit button */}
         <Button type="submit" disabled={submitting}>
             {submitting ? 'Submitting...' : 'Submit'}
         </Button>
-        {submissionError && <p className="text-red-500">{submissionError}</p>}
+        {submissionError && <p className="text-red-500 text-[1vw]">{submissionError}</p>}
         {submissionSuccess && (
-            <p className="text-green-500">Email sent successfully!</p>
+            <p className="text-green-500 text-[1vw]">Email sent successfully!</p>
         )}
       </form>
     </Form>

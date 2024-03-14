@@ -15,14 +15,14 @@ export default async (req, res) => {
   if (req.method === "POST") {
     try {
 
-    const message = req.body.message;
+      const { message, subject } = req.body;
 
       // Define email data
       const mailOptions = {
         from: emailform,
         to: emailform,
-        subject: "PopUp Form Response",
-        text: message, // You can customize the email message here
+        subject: subject || "Form Response", // Set default subject or use the provided subject
+        html: message, // Set the html field to the HTML message
       };
 
       // Send the email
