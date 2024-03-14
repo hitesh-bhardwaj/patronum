@@ -168,19 +168,6 @@ export default function PreLoader() {
       display: "none",
       visibility: "hidden"
     });
-    // tl.to(".loaderLogoMain", {
-    //   y: "-8.2vw",
-    //   duration: 5,
-    //   ease: "circ"
-    // }, "-=5")
-    // tl.to(".loaderBgMain", {
-    //   top: '100%',
-    //   duration: 1,
-    //   ease: 'power3.in',
-    // }, "-=0.6")
-    // tl.to(".loaderLogoMain", {
-    //   opacity: 0,
-    // })
 
     return () => {
       tl.kill(); // Kill the timeline on component unmount
@@ -197,10 +184,10 @@ export default function PreLoader() {
                 <div className="w-[11.5vw] h-[3vw]">
                   <img src="/logo-white.svg" className="w-[11.5vw] top-[80%] opacity-0 loaderLogoMain absolute" alt="Patronum Logo" ref={loaderLogo}/>
                 </div>
-                <div className="loadingCounter mr-[4%] translate-y-[60vh]">
+                <div className="loadingCounter translate-y-[60vh]">
                   <div className="text-[10vw] relative leading-[0.8] opacity-0 counterLoaderMain">
                     <span ref={counterRef}>00</span>
-                    <span className="text-[4vw] absolute -right-[30%] top-[12%]">%</span>
+                    {/* <span className="text-[4vw] absolute -right-[30%] top-[12%]">%</span> */}
                   </div>
                 </div>
               </div>
