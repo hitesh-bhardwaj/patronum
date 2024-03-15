@@ -4,7 +4,7 @@ export default function FeatureDetailTitle( {sectionTitle1, sectionTitle2, secti
             <div className="container">
                 <div className="content">
                     <div className="sectionTitle">
-                        <h2 className="title-4xl">
+                        <h2 className="title-4xl text-anim">
                             <span>
                                 {sectionTitle1}
                             </span>
@@ -16,14 +16,16 @@ export default function FeatureDetailTitle( {sectionTitle1, sectionTitle2, secti
                     </div>
                     <div className="flex items-start justify-between">
                         <div>
-                            <p className="content-p mt-[1vw] w-[30.7vw]">
+                            <p className="content-p mt-[1vw] w-[30.7vw] fadeUp">
                                 {sectionPara}
                             </p>
                         </div>
                         <div className="paraSectionHead">
-                            <p className="aeonik font-[400]">
-                                {sectionParaBig}
-                            </p>
+                            <p className="aeonik font-[400] text-anim-2">
+                                <span>
+                                    {sectionParaBig}
+                                </span>
+                            </p>    
                         </div>
                     </div>
                 </div>

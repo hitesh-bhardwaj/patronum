@@ -23,7 +23,9 @@ export default function FooterContact() {
                         <span className="footer-contact-bg" />
                         <div className="left">
                             <h2 className="title-4xl text-anim">
-                                Get More From Patronum.
+                                <span>
+                                    Get More From Patronum.
+                                </span>
                             </h2>
                             <p className="content-p fadeUp">
                                 Talk to our experts and see how Patronum makes Google Workspace work for you.
@@ -75,7 +77,7 @@ export default function FooterContact() {
                                     play
                                     loop
                                     animationData={AnimationData}
-                                    style={{ width: 600, height: 600 }}
+                                    style={{ width: "27vw", height: "auto" }}
                                 />
                             </div>
                         </div>

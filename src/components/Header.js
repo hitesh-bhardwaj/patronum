@@ -1,31 +1,14 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import gsap from 'gsap';
 import { useModal } from './InstallModal/ModelContext';
 
 const Header = () => {
-
     const { openModal } = useModal();
 
     const openContactModal = () => {
         openModal('contact');
     };
-
-    useEffect(() => {
-        let ctx = gsap.context(() => {
-
-            const headerAnim = document.querySelectorAll(".header-anim");
-
-            const tl = gsap.timeline();
-            tl.from(headerAnim, 1,{
-                opacity: 0,
-                stagger: 0.05,
-                ease: 'power2.out',
-            }, '+=5.5');
-        });
-        return () => ctx.revert();
-    }, []);
 
     const [isFeaturesDropdownOpen, setFeaturesDropdownOpen] = useState(false);
     const [isUsecasesDropdownOpen, setUsecasesDropdownOpen] = useState(false);
@@ -259,7 +242,7 @@ const Header = () => {
                         onMouseEnter={() => setResourcesDropdownOpen(true)}
                         onMouseLeave={() => setResourcesDropdownOpen(false)}
                         >
-                        <a href='/resources' className='dropdown'>
+                        <a href='#' className='dropdown'>
                             <div className='header-anim'>
                                 <span>
                                     Resources
@@ -331,7 +314,7 @@ const Header = () => {
                                             </a>
                                         </li>
                                         <li className='nav-drop-list-item'>
-                                            <a href='/community' className='nav-drop-list-hover'>
+                                            <a href='https://community.patronum.io' target='_blank' className='nav-drop-list-hover'>
                                                 <img src='/assets/menu/resource-community.png' alt='features icon' title='features icon'/>
                                                 <div>
                                                     <p className='nav-drop-title'>Community</p>
@@ -340,7 +323,7 @@ const Header = () => {
                                             </a>
                                         </li>
                                         <li className='nav-drop-list-item'>
-                                            <a href='/help' className='nav-drop-list-hover'>
+                                            <a href='https://help.patronum.com' target='_blank' className='nav-drop-list-hover'>
                                                 <img src='/assets/menu/resource-help.png' alt='features icon' title='features icon'/>
                                                 <div>
                                                     <p className='nav-drop-title'>Help</p>

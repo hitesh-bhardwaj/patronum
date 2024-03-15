@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import FaqItem from '@/components/PageLayout/FaqItem'; 
 import faqData from './faqData.json'; 
 import PrimaryButton from '@/components/PageLayout/Button/PrimaryButton';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Faqs = () => {
     const [accordionOpen, setAccordionOpen] = useState(0);
@@ -9,6 +13,37 @@ const Faqs = () => {
     const toggleAccordion = (index) => {
         setAccordionOpen(index === accordionOpen ? null : index);
     };
+
+    useEffect(() => {
+        const scaleAnims = document.querySelectorAll('.scaleAnim');
+    
+        let ctx = gsap.context(() => {
+          scaleAnims.forEach((scaleAnim) => {
+            gsap.fromTo(
+              scaleAnim,
+              {
+                scale: 1.1,
+                y: 40,
+                opacity: 0,
+                transformOrigin: 'bottom center'
+              },
+              {
+                y: 0,
+                scale: 1,
+                opacity: 1,
+                duration: 0.8,
+                ease: 'Power4.out',
+                scrollTrigger: {
+                  trigger: scaleAnim,
+                  start: 'top bottom',
+                  end: 'bottom 85%',
+                },
+              }
+            );
+          });
+        });
+        return () => ctx.revert();
+      }, []);
 
     return (
         <>

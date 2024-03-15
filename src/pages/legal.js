@@ -6,7 +6,7 @@ export default function Legal() {
 
     const LegalCard = ({link, img, title, id}) => {
         return (
-            <div className="legal-card">
+            <div className="legal-card fadeUp">
                 <div className="cards-num">
                     <span className="aeonik">
                         {id}
@@ -37,7 +37,7 @@ export default function Legal() {
                 pageTitle1="Legal"
                 pagePara="The only tool you'll ever need to streamline your Google Workspace management."
                 imgSrc="legal.svg"
-            > 
+                > 
 
                 <section id="second-section">
                     <div className="container">
@@ -47,8 +47,10 @@ export default function Legal() {
                                     sectionTitle1="Lorem"
                                     sectionTitle2="Lorem Ipsum"
                                 />
-                                <p className="content-p w-1/3 mt-[1vw]">
-                                    Transform your Google Workspace experience with Patronum, the ultimate solution to your onboarding nightmares, permission hassles, and data compliance woes. Patronum is designed to streamline the management of Google Workspace.
+                                <p className="content-p w-1/3 mt-[1vw] text-anim-2">
+                                    <span>
+                                        Transform your Google Workspace experience with Patronum, the ultimate solution to your onboarding nightmares, permission hassles, and data compliance woes. Patronum is designed to streamline the management of Google Workspace.
+                                    </span>
                                 </p>
                             </div>
                         </div>
@@ -93,12 +95,13 @@ export default function Legal() {
                                     id={"06"}
                                     title={"Cookie Policy"}
                                     img={"cookie-policy"}
-                                    link="/cookie-policy"
+                                    link="#"
                                 />
                                 <LegalCard 
                                     id={"07"}
                                     title={"Anti-slavery and Human Trafficking Statement"}
                                     img={"/anti-slavery-and-human-trafficking"}
+                                    link="#"
                                 />
                             </div>
                         </div>

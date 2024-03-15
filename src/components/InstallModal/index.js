@@ -16,7 +16,7 @@ export default function InstallModal() {
     return (
         <>
             <div id="install-modal" className={`install-modal-overlay ${modalOpen ? 'show' : 'hide'}`} onClick={handleModalClick}>
-                <div className="install-modal-container relative py-[4%] px-[9.5%]">
+                <div className="install-modal-container relative py-[4%] px-[9.5%] overflow-hidden">
                     <div className="flex justify-between items-start relative z-10">
                         <div className="install-left text-left flex flex-col justify-between h-full items-start">
                             <p className="aeonik title-4xl text-head">
@@ -43,7 +43,7 @@ export default function InstallModal() {
                             </span>
                         </button>
                     </div>
-                    <img className="install-backdrop" src="/assets/contact/backdrop.png"/>
+                    <img className="install-backdrop absolute right-0 bottom-0 w-1/2" loading="lazy" src="/assets/contact/backdrop.png"/>
                 </div>
             </div>
         </>

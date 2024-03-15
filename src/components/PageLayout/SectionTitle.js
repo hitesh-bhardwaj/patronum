@@ -1,7 +1,8 @@
 export default function SectionTitle( {sectionTitle1, sectionTitle2, sectionPara} ) {
+
     return (
             <div className="sectionTitle">
-                <h2 className="title-4xl mb-8">
+                <h2 className="title-4xl mb-8 text-anim">
                     <span>
                         {sectionTitle1}
                      </span>
@@ -15,7 +16,7 @@ export default function SectionTitle( {sectionTitle1, sectionTitle2, sectionPara
                      )}
                 </h2>
                 {sectionPara && (
-                    <p className="content-p w-[25vw]">
+                    <p className="content-p w-[25vw] fadeUp">
                     {sectionPara}
                     </p>
                 )}

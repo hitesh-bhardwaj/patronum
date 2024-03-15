@@ -105,8 +105,6 @@ export default function Home( { recentPosts } ) {
           scrollTrigger: {
               trigger: ".blog-card-wrapper",
               start: "top 85%",
-              // end: "bottom bottom",
-              // toggleActions: "play none none reverse"
           }
       });
   
@@ -125,34 +123,6 @@ export default function Home( { recentPosts } ) {
           }
       );
   }, []);
-
-    useEffect(() => {
-      const testicard = document.querySelectorAll('.testi-slider .swiper-wrapper');
-      // Ensure GSAP library is imported and available
-      let tl = gsap.timeline({
-          scrollTrigger: {
-              trigger: ".swiper-wrapper",
-              start: "top 90%",
-              // end: "bottom bottom",
-              // toggleActions: "play none none reverse"
-          }
-      });
-  
-      tl.fromTo(
-          testicard,
-          {
-              opacity: 0,
-              x: 200,
-          },
-          {
-              opacity: 1,
-              x: 0,
-              duration: 0.6,
-              stagger: 0.1, // Adjust stagger timing as needed
-              ease: 'Power1.out',
-          }
-      );
-    }, []);
 
       useEffect(() => {
         const fadeRights = document.querySelectorAll('.fadeRight');
@@ -216,11 +186,13 @@ export default function Home( { recentPosts } ) {
             gsap.fromTo(
               scaleAnim,
               {
-                scale: 1.2,
+                scale: 1.1,
+                y: 40,
                 opacity: 0,
-                transformOrigin: 'center'
+                transformOrigin: 'bottom center'
               },
               {
+                y: 0,
                 scale: 1,
                 opacity: 1,
                 duration: 0.8,

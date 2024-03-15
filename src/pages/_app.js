@@ -7,7 +7,7 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/scrollbar';
 
-import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
+import { ReactLenis } from '@studio-freight/react-lenis'
 import { ModalProvider } from '@/components/InstallModal/ModelContext';
 import InstallModal from '@/components/InstallModal';
 import DemoModal from '@/components/InstallModal/DemoModal';
@@ -72,7 +72,7 @@ export default function App({ Component, pageProps }) {
           <DemoModal />
         </ModalProvider>
       </ReactLenis>
-      <BackgroundWithNoSSR />
+     <BackgroundWithNoSSR />
     </>
   ); 
 }

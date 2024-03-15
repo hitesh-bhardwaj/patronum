@@ -58,6 +58,7 @@
   pointer-events: none;
   z-index: -1;
 }
+
 /* Background CSS END*/
 
 .text-destructive {
@@ -67,6 +68,10 @@
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
 body{
@@ -242,10 +247,6 @@ section{
   color: var(--text-head);
   line-height: 1.1;
   font-weight: 400;
-}
-.title-4xl.text-anim span{
-  overflow: hidden;
-  line-height: 1.2;
 }
 .title-3xl{
   font-size: 2.4vw;
@@ -896,7 +897,7 @@ section{
 }
 .hero-anim .span{
   display: block;
-  line-height: 1.3;
+  line-height: 1.5;
   margin-top: -1vw;
   transform: translateY(100%);
 }
@@ -1092,7 +1093,7 @@ section{
 }
 
 .useCase-item{
-  padding: 0vw 13vw 2vw;
+  padding: 2vw 13vw 2vw;
 }
 .use_case_content{
   background: #fefefe;
@@ -1101,9 +1102,9 @@ section{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
+  height: 32vw;
   width: 100%;
-  padding: 6.5% 5%;
+  padding: 0% 5%;
 }
 .useCase-item-left{
   width: 35%;
@@ -1707,7 +1708,7 @@ section{
 .hero-hr{
   height: 1px;
   background: #1A1A1A;
-  width: 105%;
+  width: 0;
   margin-left: -2.5%;
   display: block;
 }
@@ -1718,6 +1719,8 @@ section{
   margin-bottom: 1.5vw;
 }
 .page-hero-left .hero-para{
+  transform: translateY(50px);
+  opacity: 0;
   width: 60%;
 }
 .page-hero-right{
@@ -1734,8 +1737,25 @@ section{
   height: fit-content;
   margin-top: 2.5vw;
 }
-.scroll-down-btn[data-page-hero] .hero-svg-circle{
-  stroke-dasharray: 310% 300%;
+
+/* Page Animations Hero */
+.page-hero-anim{
+  line-height: 0.5;
+}
+.page-hero-anim .span{
+  overflow: hidden;
+  line-height: 1.2;
+}
+.page-hero-anim span .word{
+  transform: translateY(100%);
+}
+
+.title-4xl.text-anim span{
+  overflow: hidden;
+  line-height: 1.2;
+}
+.title-4xl.text-anim {
+  line-height: 0.5;
 }
 
 

@@ -60,7 +60,7 @@ const Pricing = () => {
 
                         <div className='pricing-main'>
                         
-                            <div className='pricing-selectors flex-all'>
+                            <div className='pricing-selectors flex-all fadeUp'>
                               
                               <div className="pricing-toggle">
                                   <span className={`pricing-selector-type ${isAnnual ? '' : 'active' }`}>
@@ -87,7 +87,7 @@ const Pricing = () => {
                                 </div>
                             </div>
 
-                            <div className='pricing-card-wrapper'>
+                            <div className='pricing-card-wrapper fadeUp'>
                                 <PricingCard 
                                     category="Education" 
                                     isAnnual={isAnnual} 

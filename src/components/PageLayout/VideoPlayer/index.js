@@ -23,7 +23,7 @@ const VideoPlayer = ( {videoId, videoCover} ) => {
         <section className="feature-detail-video" id="second-section">
             <div className="container-lg">
                 <div className="content">
-                    <div className="feature-tutorial-video">
+                    <div className="feature-tutorial-video fadeUp">
                         <img
                             className="h-full w-full object-contain"
                             src={videoCover}

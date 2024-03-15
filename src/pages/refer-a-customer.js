@@ -24,7 +24,7 @@ export default function Partners() {
                                 />
 
                                 <div className="w-[50%] h-full">
-                                    <div className="bg-[#FDFDFD] rounded-[15px] px-[11%] py-[7.6%] border-[#E2E2E2] border">
+                                    <div className="bg-[#FDFDFD] rounded-[15px] px-[11%] py-[7.6%] border-[#E2E2E2] border fadeUp">
                                         <ReferCustomerForm />
                                     </div>
                                 </div>

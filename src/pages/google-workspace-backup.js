@@ -168,7 +168,7 @@ export default function FeatureDetail(){
 
                             <div class="backup-tab">
                             {/* <!--Table Card 1--> */}
-                                <div class="backup-tab-card tab-card-1">
+                                <div class="backup-tab-card tab-card-1 fadeLeft">
                                     <div></div>
                                     <div>
                                         <h5>Product &amp; Technology</h5>	
@@ -188,7 +188,7 @@ export default function FeatureDetail(){
                                 </div>
 				
                                 {/* <!--Table Card 2--> */}
-                                <div class="backup-tab-card table-1">
+                                <div class="backup-tab-card table-1 fadeUp">
                                     <div class="tab-card-row-1">
                                         <img 
                                             src="/assets/features/google-workspace-backup/compare-1.png"
@@ -223,7 +223,7 @@ export default function FeatureDetail(){
                                 </div>
 				
                                 {/* <!--Table Card 3--> */}
-                                <div class="backup-tab-card table-2">
+                                <div class="backup-tab-card table-2 fadeUp">
                                     <div class="tab-card-row-1">
                                         <img 
                                             src="/assets/features/google-workspace-backup/compare-2.png"
@@ -258,7 +258,7 @@ export default function FeatureDetail(){
                                 </div>
 				
                                 {/* <!--Table Card 4--> */}
-                                <div class="backup-tab-card table-3">
+                                <div class="backup-tab-card table-3 fadeUp">
                                     <div class="tab-card-row-1">
                                         <h4>
                                             Legacy Google Workspace Backup
@@ -288,7 +288,7 @@ export default function FeatureDetail(){
                                 </div>
 				
                                 {/* <!--Table Card 5--> */}
-                                <div class="backup-tab-card active table-4">
+                                <div class="backup-tab-card active table-4 fadeUp">
                                     <div class="tab-card-row-1">
                                             <img 
                                                 src="/assets/features/google-workspace-backup/compare-p.png"

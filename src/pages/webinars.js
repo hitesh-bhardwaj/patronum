@@ -5,7 +5,7 @@ export default function Webinars(){
 
     const WebinarCard = ( { imgSrc, title, para, link } ) => {
         return (
-            <div className="webinar-card hover:shadow-lg duration-300 w-[47%] overflow-hidden rounded-[10px] h-full border border-[#e8e8e8]">
+            <div className="fadeUp webinar-card hover:shadow-lg duration-300 w-[47%] overflow-hidden rounded-[10px] h-full border border-[#e8e8e8]">
                 <div className="image-container w-full h-[65%]">
                     <img src={imgSrc} className="h-full w-full object-cover" alt="Webinar Image" title="Webinar Image"/>
                 </div>
@@ -38,7 +38,7 @@ export default function Webinars(){
                     <section id="second-section">
                         <div className="container">
                             <div className="content-2">
-                                <h2 className="title-4xl">
+                                <h2 className="title-4xl text-anim">
                                     <span>
                                         Explore Our
                                     </span>

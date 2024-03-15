@@ -5,7 +5,7 @@ export default function ProductVideos(){
 
     const VideoCard = ({link, imgSrc, title, id}) => {
         return (
-            <div className="product-video-card hover:shadow-lg duration-300">
+            <div className="fadeUp product-video-card hover:shadow-lg duration-300">
                 <div className="cards-num">
                     <span className="aeonik">
                         {id}
@@ -46,9 +46,9 @@ export default function ProductVideos(){
                     <section id="second-section">
                         <div className="container">
                             <div className="content-2">
-                                <h2 className="title-4xl">
+                                <h2 className="title-4xl text-anim">
                                     <span>
-                                        Videos
+                                        Product Videos
                                     </span>
                                 </h2>
 

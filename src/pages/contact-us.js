@@ -14,19 +14,32 @@ export default function ContactUs(){
                             <div className="content-2">
                                 <div className="flex items-start justify-between">
                                     <div>
-                                        <div className="">
-                                            <h2 className="title-4xl mb-[2vw]">
+                                        <div className="section-head">
+                                            <h2 className="title-4xl mb-[2vw] text-anim">
                                                 <span>
                                                     Get In Touch
                                                 </span>
                                             </h2>
-                                            <p className="content-p w-[21vw]">
-                                                Patronum redefines user lifecycle management by providing a consistent and unified experience.
-                                            </p>
+                                            <div className="contact-information">
+                                                    <p className="text-[1.25vw] w-[70%] text-head flex items-start mb-[2vw] fadeUp">
+                                                        <span className="mt-[0.45vw] mr-[10px] w-[1vw]">
+                                                            <img className="w-full h-full" src="/assets/contact/location.svg" loading="lazy"/>
+                                                        </span>
+                                                        <span>Mill B, Colne Road, Huddersfield, HD1 3AG United Kingdom</span>
+                                                    </p>
+                                                    <p className="text-[1.25vw] w-[70%] text-head flex items-start mb-[1vw] fadeUp">
+                                                        <span className="mt-[0.45vw] mr-[10px] w-[1vw]">
+                                                            <img className="w-full h-full" src="/assets/contact/phone.svg" loading="lazy"/>
+                                                        </span>
+                                                        <a href="tel:+441617682192">
+                                                            <span>+44 161 768 2192</span>
+                                                        </a>
+                                                    </p>
+                                            </div>
                                         </div>
                                         <div className="social-media-icons mt-[3vw]">
-                                            <h3 className="text-[1.5vw] text-black Aeonik font-medium mb-[1.5vw]">Find Us</h3>
-                                            <ul className="inline-flex justify-between w-[78%] items-center">
+                                            <h3 className="text-[1.5vw] text-black Aeonik font-medium mb-[1.5vw] fadeUp">Find Us</h3>
+                                            <ul className="inline-flex justify-between w-[78%] items-center fadeUp">
                                                 <li className="w-[2vw]">
                                                     <a href="#" className="text-black h-full w-full">
                                                         <svg className="w-[1.8vw] h-[1.8vw]" viewBox="0 0 15 29" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -61,7 +74,7 @@ export default function ContactUs(){
                                         </div>
                                     </div>
                                     <div className="w-[54.1%] h-full">
-                                        <div className="bg-[#FDFDFD] rounded-[15px] px-[11%] py-[7.6%] border-[#E2E2E2] border">
+                                        <div className="bg-[#FDFDFD] rounded-[15px] px-[11%] py-[7.6%] border-[#E2E2E2] border fadeUp">
                                             <h4 className="aeonik text-[2.5vw] mb-[10%]">
                                                 Lorem Ipsum Dolor
                                             </h4>

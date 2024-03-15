@@ -1,7 +1,7 @@
 const FeatureDetailCard  = ({id, img, title, content}) => {
     return (
         <>
-            <div className="feature-detail-card">
+            <div className="feature-detail-card fadeUp">
                 <div className="text-left w-full">
                     <div className="cards-num">
                         <span className="aeonik">

@@ -5,7 +5,7 @@ export default function CaseStudies(){
 
     const CaseStudiesCard = ( {imgSrc, title, para, link } ) => {
         return (
-            <div className="guide-card hover:shadow-lg duration-300 w-[47%] overflow-hidden rounded-[18px] h-full border border-[#e8e8e8] bg-white">
+            <div className="fadeUp guide-card hover:shadow-lg duration-300 w-[47%] overflow-hidden rounded-[18px] h-full border border-[#e8e8e8] bg-white">
                 <div className="image-container w-full h-[50%]">
                     <img src={imgSrc} className="h-full w-full object-cover" alt="Webinar Image" title="Webinar Image"/>
                 </div>
@@ -37,7 +37,7 @@ export default function CaseStudies(){
                     <section id="second-section">
                         <div className="container">
                             <div className="content-2">
-                                <h2 className="title-4xl">
+                                <h2 className="title-4xl text-anim">
                                     <span>
                                         Our Guides
                                     </span>

@@ -42,26 +42,26 @@ export default function Partners() {
             <>
                 <div className="section-list-item">
                     <div className="section-list-head">
-                        <div className="cards-num">
+                        <div className="cards-num fadeLeft">
                             <span>
                                 {id}
                             </span>
                         </div>
-                        <h3 className="title-3xl">
+                        <h3 className="title-3xl fadeRight">
                             <span>
                                 {title}
                             </span>
                         </h3>
                     </div>
-                    <span className="hr-1p"/>
+                    <span className="hr-1p lineDraw"/>
                     <div className="section-list-body">
                         <div className="section-list-body-right">
-                            <p className="content-p">
+                            <p className="content-p fadeUp">
                                 {para}
                             </p>
                         </div>
                         <div className="section-list-body-left">
-                            <img loading="lazy" src={imgSrc} alt={title} title={title}/>
+                            <img loading="lazy" className="fadeUp" src={imgSrc} alt={title} title={title}/>
                         </div>
                     </div>
                 </div>
@@ -86,12 +86,14 @@ export default function Partners() {
                                     sectionTitle1="Partner"
                                     sectionTitle2="With Patronum"
                                 />
-                                <p className="content-p w-1/3 mt-[1vw]">
-                                    Transform your Google Workspace experience with Patronum, the ultimate solution to your onboarding nightmares, permission hassles, and data compliance woes. Patronum is designed to streamline the management of Google Workspace.
+                                <p className="content-p w-1/3 mt-[1vw] text-anim-2">
+                                    <span>
+                                        Transform your Google Workspace experience with Patronum, the ultimate solution to your onboarding nightmares, permission hassles, and data compliance woes. Patronum is designed to streamline the management of Google Workspace.
+                                    </span>
                                 </p>
                             </div>
                             <div className="partner-card-link">
-                                <div className="partner-card">
+                                <div className="partner-card fadeUp">
                                     <img className="img" src="/assets/partners/icon-1.svg" alt="become-partner" title="Become Partner" />
                                     <h3 className="title-2xl">
                                         Become a Partner
@@ -102,7 +104,7 @@ export default function Partners() {
                                     <LinkButton link="/become-a-partner" btnText="Become a Partner"/>
                                 </div>
 
-                                <div className="partner-card">
+                                <div className="partner-card fadeUp">
                                     <img className="img" src="/assets/partners/icon-2.svg" alt="register-an-opportunity" title="Register an opportunity" />
                                     <h3 className="title-2xl">
                                         Register an Opportunity
@@ -113,7 +115,7 @@ export default function Partners() {
                                     <LinkButton link="/register-an-opportunity" btnText="Register an Opportunity"/>
                                 </div>
 
-                                <div className="partner-card">
+                                <div className="partner-card fadeUp">
                                     <img className="img" src="/assets/partners/icon-3.svg" alt="refer-customer" title="Refer a Customer" />
                                     <h3 className="title-2xl">
                                         Refer a Customer

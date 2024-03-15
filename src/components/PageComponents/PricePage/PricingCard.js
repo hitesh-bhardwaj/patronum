@@ -32,7 +32,7 @@ const PricingCard = ({ features, category, isAnnual, selectedCurrency, pricingIm
   };
 
   return (
-    <div className={styles.pricingCard}>
+    <div className={`${styles.pricingCard} fadeUp`}>
       <div className={styles.pricingImage}>
         <img src={pricingImage} alt='Price Category Image' loading='lazy' title='Patronum Pricing'/>
       </div>

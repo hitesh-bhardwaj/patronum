@@ -5,7 +5,7 @@ export default function Ebooks(){
 
     const EbookCard = ( {imgSrc, title, para, link } ) => {
         return (
-            <div className="guide-card hover:shadow-lg duration-300 w-[31.5%] overflow-hidden rounded-[18px] h-full">
+            <div className="fadeUp guide-card hover:shadow-lg duration-300 w-[31.5%] overflow-hidden rounded-[18px] h-full">
                 <div className="image-container w-full h-[50%]">
                     <img src={imgSrc} className="h-full w-full object-cover" alt="Webinar Image" title="Webinar Image"/>
                 </div>
@@ -37,7 +37,7 @@ export default function Ebooks(){
                     <section id="second-section">
                         <div className="container">
                             <div className="content-2">
-                                <h2 className="title-4xl">
+                                <h2 className="title-4xl text-anim">
                                     <span>
                                         Our Ebooks
                                     </span>

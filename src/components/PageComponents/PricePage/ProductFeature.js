@@ -127,7 +127,7 @@ const ProductFeatures = () => {
                         <div className={styles.wrapper}>
                             {features.map((item, index) => (
                                 <>
-                                    <div onClick={() => toggleAccordion(index)} className={`${styles.featureItem} ${index === isOpen ? `${styles.open}` : ''}`} key={index}>
+                                    <div onClick={() => toggleAccordion(index)} className={`${styles.featureItem} scaleAnim ${index === isOpen ? `${styles.open}` : ''}`} key={index}>
                                         <div className={`${styles.featureItemContent} ${styles.features}`}>
                                             <div className={styles.featureMainContent}>
                                                 <h5 className={styles.contentHead}>

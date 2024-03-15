@@ -8,9 +8,9 @@ export default function About(){
         return ( 
             <>
                 <div className="mission-card">
-                    <img src={`/assets/about/${missionImg}`} alt="mission icon"/>
-                    <h4 className="title">{missionTitle}</h4>
-                    <p className="content-p">{missionPara}</p>
+                    <img className="fadeIn" src={`/assets/about/${missionImg}`} alt="mission icon"/>
+                    <h4 className="title text-anim-2">{missionTitle}</h4>
+                    <p className="content-p fadeUp">{missionPara}</p>
                 </div>
             </>
         )
@@ -20,9 +20,9 @@ export default function About(){
         return ( 
             <>
                 <div className="advantage-card">
-                    <img src={`/assets/about/${advantageImg}`} alt="advantage image"/>
-                    <h5 className="title">{advantageTitle}</h5>
-                    <p className="content-p">{advantagePara}</p>
+                    <img className="fadeIn" src={`/assets/about/${advantageImg}`} alt="advantage image"/>
+                    <h5 className="title text-anim-2">{advantageTitle}</h5>
+                    <p className="content-p fadeUp">{advantagePara}</p>
                 </div>
             </>
         )
@@ -32,11 +32,11 @@ export default function About(){
         return ( 
             <>
                 <div className="future-card">
-                    <div className="img">
+                    <div className="img fadeUp">
                         <img src={`/assets/about/${futureImg}`} alt="Patronum Future Image"/>
                     </div>
-                    <h5 className="title">{futureTitle}</h5>
-                    <p className="content-p">{futurePara}</p>
+                    <h5 className="title text-anim-2">{futureTitle}</h5>
+                    <p className="content-p fadeUp">{futurePara}</p>
                 </div>
             </>
         )
@@ -54,16 +54,16 @@ export default function About(){
                         <div className="content">
                             <div className="about-top">
                                 <div className="section-head-sm">
-                                    <h2 className="title-4xl">
+                                    <h2 className="title-4xl text-anim">
                                         <span>
                                             Patronum
                                         </span>
                                     </h2>
-                                    <p className="para-lg">
+                                    <p className="para-lg fadeUp">
                                         (Noun - Latin)
                                     </p>
                                 </div>
-                                <div className="">
+                                <div className="fadeUp">
                                     <ul className="about-lists">
                                         <li>Accusative singular of patrōnus.</li>
                                         <li>A protector, guardian, defender, patron – a person who protects or defends something.</li>
@@ -74,7 +74,7 @@ export default function About(){
 
                             <div className="about-bottom">
                                 <div className="flex justify-between items-end">
-                                    <div className="genesis-left xl:w-[34%]">
+                                    <div className="genesis-left xl:w-[34%] fadeUp">
                                         <img src="/assets/about/genesis.svg" className="w-full h-full" loading="preload" alt="about-patronum" title="about patronum"/>
                                     </div>
                                     <div className="xl:w-[38%]">
@@ -87,7 +87,7 @@ export default function About(){
                                                  of Patronum
                                             </span>
                                         </h2>
-                                        <p className="content-p">
+                                        <p className="content-p fadeUp">
                                             In 2008, Paul Lees, CEO of Bespin Labs, set out on a mission to revolutionize the management of cloud-based software solutions. With a deep understanding of the complexities organizations face in managing IT systems and cloud-based software, he envisioned a platform that would simplify these processes and enhance efficiency and security. This vision materialized into Patronum, a platform meticulously engineered to automate and refine the management of Google Workspace (formerly G Suite). Patronum was not just a product; it was a paradigm shift designed to enhance operational efficiency and fortify the security of Google Workspace environments globally.
                                         </p>
                                     </div>
@@ -105,20 +105,20 @@ export default function About(){
 
                                 <div className="section-list-item">
                                     <div className="section-list-head">
-                                        <span className="section-list-hr"/>
-                                        <h3 className="title-3xl">
+                                        <span className="section-list-hr lineDraw"/>
+                                        <h3 className="title-3xl fadeIn">
                                             <span>
                                                 Patronum: A Guardian in the Cloud
                                             </span>
                                         </h3>
-                                        <span className="section-list-hr"/>
+                                        <span className="section-list-hr lineDraw"/>
                                     </div>
                                     <div className="section-list-body">
-                                        <div className="section-list-body-left">
+                                        <div className="section-list-body-left fadeUp">
                                             <img loading="lazy" src="/assets/about/about-1.svg" alt="about-patronum" title="Patronum: A Guardian in the Cloud"/>
                                         </div>
                                         <div className="section-list-body-right">
-                                            <p className="content-p">
+                                            <p className="content-p fadeUp">
                                                 The name 'Patronum', rooted in Latin, translates to a protector, guardian, or defender. This nomenclature is a testament to the platform's fundamental purpose: to serve as a steadfast guardian for organizations' Google Workspace environments. Patronum is an indispensable ally for IT administrators, ensuring the fluid and secure management of Google Workspace users. Patronum's role is particularly crucial during the critical phases of onboarding, transitioning, and offboarding, where Patronum guarantees that these processes are executed with seamless precision and utmost security.
                                             </p>
                                         </div>
@@ -127,19 +127,19 @@ export default function About(){
 
                                 <div className="section-list-item">
                                     <div className="section-list-head">
-                                        <span className="section-list-hr"/>
-                                        <h3 className="title-3xl">
+                                        <span className="section-list-hr lineDraw"/>
+                                        <h3 className="title-3xl fadeIn">
                                             <span>
                                                 Revolutionizing Google Workspace Management
                                             </span>
                                         </h3>
-                                        <span className="section-list-hr"/>
+                                        <span className="section-list-hr lineDraw"/>
                                     </div>
                                     <div className="section-list-body">
-                                        <div className="section-list-body-left">
+                                        <div className="section-list-body-left fadeUp">
                                             <img loading="lazy" src="/assets/about/about-2.svg" alt="about-patronum" title="Patronum: A Guardian in the Cloud"/>
                                         </div>
-                                        <div className="section-list-body-right">
+                                        <div className="section-list-body-right fadeUp">
                                             <p className="content-p">
                                                 Patronum's journey began with a clear goal: to transform the way organizations manage their Google Workspace environments. Recognizing the complexities and time-consuming nature of manual administration, Patronum introduced a suite of tools designed to automate these tasks. This automation not only saves time but also significantly reduces the margin for error, ensuring a more secure and reliable management process.
                                             </p>
@@ -190,7 +190,7 @@ export default function About(){
                                     sectionPara="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text." 
                                 />
                             </div>
-                            <div className="media-logos">
+                            <div className="media-logos fadeUp">
                                 <div className="media-logo">
                                     <img src="/assets/about/associated-press.png" alt="associated-press-logo" title="Featured in Associated Press."/>
                                 </div>
@@ -260,7 +260,7 @@ export default function About(){
                                     sectionPara="Give your users a consistent, and unified experience within their Google Workspace while at the same time reduce IT spend managing users and resources." 
                                 />
                             </div>
-                            <div className="patronum-future-bottom">
+                            <div className="patronum-future-bottom fadeUp">
                                 <FutureCard 
                                     futureImg="future-1.png"
                                     futureTitle="Continuous Innovation"
