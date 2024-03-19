@@ -65,7 +65,7 @@ export default function App({ Component, pageProps }) {
         ]}
       />
       
-      <ReactLenis root options={{duration: 0.8}}>
+      <ReactLenis root options={{ duration: 0.8 }}>
         <ModalProvider>
           <Component {...pageProps} />
           <InstallModal />

@@ -44,7 +44,7 @@ const PricingCard = ({ features, category, isAnnual, selectedCurrency, pricingIm
         ))}
       </div>
       <span className={styles.hr}/>
-      <div className='flex justify-between items-center w-full'>
+      <div className='flex justify-between items-center w-full lg:mt-0 mt-[5vw]'>
             <p className={styles.pricingPrice}> 
                 <span >{getCurrencySymbol(selectedCurrency)} </span>
                 <span >{isAnnual ? prices[category][selectedCurrency].annual : prices[category][selectedCurrency].monthly}</span>

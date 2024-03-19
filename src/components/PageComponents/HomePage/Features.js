@@ -51,6 +51,8 @@ const accordionData = [
 
 export default function Features(){
 
+    const isMobileDevice = globalThis.innerWidth <= 1024; // Check if the screen width is less than or equal to 1024
+
     const [accordionOpen, setAccordionOpen] = useState(0); 
     const scrollTriggerRef = useRef(); 
 
@@ -65,21 +67,25 @@ export default function Features(){
         let brandImagePin = document.getElementById("left-section");
         let brandImageNotPin = document.getElementById("right-section");
 
-        scrollTriggerRef.current = ScrollTrigger.create({
-            trigger: brandImagePin,
-            start: "top 15%",
-            endTrigger: brandImageNotPin,
-            end: 'bottom bottom',
-            invalidateOnRefresh: true, 
-            pin: brandImagePin,
-            pinSpacing: true,
-            markers: false,
-        });
+        if (!isMobileDevice) { // Check if it's not a mobile device
+            scrollTriggerRef.current = ScrollTrigger.create({
+                trigger: brandImagePin,
+                start: "top 15%",
+                endTrigger: brandImageNotPin,
+                end: 'bottom bottom',
+                invalidateOnRefresh: true,
+                pin: brandImagePin,
+                pinSpacing: true,
+                markers: false,
+            });
+        }
 
         return () => {
-            scrollTriggerRef.current.kill();
+            if (!isMobileDevice && scrollTriggerRef.current) {
+                scrollTriggerRef.current.kill();
+            }
         };
-    }, []); 
+    }, [isMobileDevice]);
 
     return(
         <>
@@ -93,8 +99,8 @@ export default function Features(){
                                 <span>Admins & Professionals</span>
                             </h2>
                         </div>
-                        <div className="features-bottom relative flex justify-between items-start" id='main-features-container'>
-                            <div className="features-left" id='left-section'>
+                        <div className="features-bottom relative lg:flex block justify-between items-start" id='main-features-container'>
+                            <div className="features-left lg:w-[35%] w-full" id='left-section'>
                                 <h3 className="feat-head">
                                     <span className='fadeUp'>Features</span>
                                     <span className='featured-line lineDraw'/>
@@ -104,26 +110,29 @@ export default function Features(){
                                         Streamline Google Workspace Management by automating User Onboarding & Offboarding, Email Signature Management, Contact Sharing, Google Drive Management, Backups, and much more.
                                     </span>
                                 </p>
-                                 {accordionData.map((item, index) => (
-                                    <div className={`accordion-img ${index === accordionOpen ? 'featImgAnim' : ''}`} key={index}>
-                                        <img src={item.img} alt={`Feature ${index + 1}`} />
-                                    </div>
-                                ))}
+                                    {accordionData.map((item, index) => (
+                                        <div className={`accordion-img ${index === accordionOpen ? 'featImgAnim' : ''}`} key={index}>
+                                            <img src={item.img} alt={`Feature ${index + 1}`} />
+                                        </div>
+                                    ))}
                             </div>
 
-                            <div className="features-right" id='right-section'>
+                            <div className="features-right lg:w-[55%] w-full lg:pt-[1vw] pt-[10vw]" id='right-section'>
 
                                 <div className="feat-accordions">
                                     <span className='h-[1px] w-full bg-[#1a1a1a] block lineDraw'/>
                                     {accordionData.map((item, index) => (
                                         <>
                                         <div className={`feat-accordion-item scaleAnim ${index === accordionOpen ? 'open' : ''}`} key={index} onClick={() => toggleAccordion(index)}>
-                                            <div className="w-[85%]">
+                                            <div className="lg:w-[85%] w-[95%]">
                                                 <h3 className="title-3xl pb-2">
                                                     {item.title}
                                                 </h3>
                                                 <div className="accordion-content">
-                                                    <p className="content-p my-6">
+                                                    <p className="content-p lg:my-6 my-[3vw]">
+                                                        <span className='w-full flex justify-center mb-[10vw] mt-[5vw] lg:hidden'>
+                                                            <img className='w-[70%]' src={item.img} alt="feature image"/>
+                                                        </span>
                                                         <span>{item.content}</span>
                                                         <br />
                                                         <br />

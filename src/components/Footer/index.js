@@ -134,13 +134,13 @@ const Footer = () => {
                         </div>
                 </div>
 
-                <div className="py-10 px-10 fadeUp">
-                    <p className="text-center font-[400] text-[0.84vw]">Bespin Labs Limited is registered with the Information Commissioners Office in relation to the processing of personal information (registration number: ZA686937). Bespin Labs Limited is incorporated in England and Wales (company number: 11068628). Our registered office is First Floor Office Suite, Mill B Colne Road Buildings, Colne Road, Huddersfield, United Kingdom, HD1 3AG</p>
+                <div className="py-10 lg:px-10 px-0 fadeUp">
+                    <p className="text-center font-[400] lg:text-[0.84vw] text-[3vw]">Bespin Labs Limited is registered with the Information Commissioners Office in relation to the processing of personal information (registration number: ZA686937). Bespin Labs Limited is incorporated in England and Wales (company number: 11068628). Our registered office is First Floor Office Suite, Mill B Colne Road Buildings, Colne Road, Huddersfield, United Kingdom, HD1 3AG</p>
                 </div>
                 
                 <span className="drawLine h-[1px] bg-white/50 w-full block"/>
 
-                <div className="py-6 text-[0.9vw] flex justify-between text-center text-[aeonik] tracking-[0.5px]">
+                <div className="py-6 lg:text-[0.9vw] text-[2.5vw] flex justify-between text-center text-[aeonik] tracking-[0.5px]">
                     <span>© 2024 <a href="www.bespinlabs.com" target="_blank" className="relative after:absolute after:bg-white after:h-[1px] after:left-0 after:bottom-[-2px] after:scale-0 hover:after:scale-100 after:duration-300 after:w-full">Bespin Labs Ltd.</a> All rights reserved.</span>
                     <a href='https://weareenigma.com' target="_blank" title="We Create Magic">By: <span className="relative after:absolute after:bg-white after:h-[1px] after:left-0 after:bottom-[-2px] after:scale-0 hover:after:scale-100 after:duration-300 after:w-full">Enigma</span></a>
                 </div>

@@ -42,12 +42,17 @@ export default function Legal() {
                 <section id="second-section">
                     <div className="container">
                         <div className="content-2">
-                            <div className="flex items-start justify-between">
-                                <SectionTitle 
-                                    sectionTitle1="Lorem"
-                                    sectionTitle2="Lorem Ipsum"
-                                />
-                                <p className="content-p w-1/3 mt-[1vw] text-anim-2">
+                            <div className="lg:flex items-start justify-between">
+                                <h2 className="title-4xl text-anim">
+                                    <span>
+                                        Lorem
+                                    </span>
+                                    <br />
+                                    <span>
+                                        Lorem Ipsum
+                                    </span>
+                                </h2>
+                                <p className="content-p lg:w-1/3 w-[95%] lg:mt-[1vw] mt-[5vw] text-anim-2">
                                     <span>
                                         Transform your Google Workspace experience with Patronum, the ultimate solution to your onboarding nightmares, permission hassles, and data compliance woes. Patronum is designed to streamline the management of Google Workspace.
                                     </span>

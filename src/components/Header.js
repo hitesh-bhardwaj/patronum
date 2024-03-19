@@ -45,12 +45,15 @@ const Header = () => {
                         height={200}
                         alt='Patronum Logo'
                         title='Patronum Logo'
-                        priority={false}
+                        priority={true}
                     />
                 </a>
             </div>
 
             <nav className='navbar'>
+                <div className='lg:hidden block md:w-[5vw] w-[7vw]'>
+                    <img className='w-full h-auto' src='/assets/menu/menu-icon.svg' alt='menu-icon'/>
+                </div>
                 <ul className='navbar-list'>
                     <li className='nav-list-item'>
                         <a href='/about'>
@@ -388,7 +391,7 @@ const Header = () => {
                     </li>
                 </ul>
             </nav>
-            <div className='header-anim'>
+            <div className='header-anim hidden lg:block'>
                 <button data-secondary className="btn header-btn" onClick={openContactModal}>
                     <span className="btn-text">
                         Install Patronum

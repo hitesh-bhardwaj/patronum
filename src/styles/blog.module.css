@@ -82,3 +82,39 @@
     object-fit: cover;
     border-radius: 20px;
 }
+
+
+/* Media 1024px */
+@media screen and (max-width: 1024px) {
+    .blogContent{
+        width: 100%;
+        padding: 0 5%;
+    }
+    .blogContent h2{
+        font-size: 5vw;
+    }
+    .blogContent p{
+        font-size: 3.5vw;
+        line-height: 1.5;
+        letter-spacing: 0;
+    }
+    .blogContent ul li{
+        font-size: 3.5vw;
+    }
+    .blogContent img{
+        border-radius: 1rem;
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    .blogContent h2{
+        font-size: 6vw;
+    }
+    .blogContent p{
+        font-size: 4.2vw;
+    }
+    .blogContent ul li{
+        font-size: 4.2vw;
+    }
+}

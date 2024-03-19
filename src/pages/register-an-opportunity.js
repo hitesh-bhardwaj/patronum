@@ -16,14 +16,14 @@ export default function Partners() {
                 <section id="second-section">
                     <div className="container">
                         <div className="content-2">
-                            <div className="flex items-start justify-between">
+                            <div className="lg:flex items-start justify-between">
                                 <SectionTitle
                                     sectionTitle1="Register"
                                     sectionTitle2="An Opportunity"
                                     sectionPara="Does your customer need Patronum? As a Patronum reseller partner or a referral source, you can register opportunities for your customers through our website."
                                 />
 
-                                <div className="w-[50%] h-full">
+                                <div className="lg:w-[50%] w-full h-full">
                                     <div className="bg-[#FDFDFD] rounded-[15px] px-[11%] py-[7.6%] border-[#E2E2E2] border fadeUp">
                                         <RegisterOpportunityForm />
                                     </div>

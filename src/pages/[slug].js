@@ -189,7 +189,7 @@ return (
       >
 
       <section className="container">
-        <div className="content">
+        <div className="content blog-content">
           <div className="flex w-full justify-between items-start" id="blog-container">
             <div className="w-[20%] -ml-[2vw] relative" id="table-of-content"> 
               <span className="absolute h-[98%] block w-1.5 bg-[#E9E9E9] overflow-hidden -left-8 rounded -top-[1.5%]">
@@ -197,13 +197,20 @@ return (
               </span>
               {/* Update TOC rendering to indicate the active section */}
               <ul>
-                {toc.map(({ id, title }) => (
+                {toc.slice(0, 10).map(({ id, title }) => (
+                  <li key={id} className={`mb-[1.2vw] ${id === activeSection ? 'toc-active' : ''}`}>
+                      <a href={`#${id}`} onClick={(e) => handleSmoothScroll(e, id)} className="leading-[1] text-head aeonik text-[0.94vw] hover:text-primary transition-all">
+                          {title}
+                      </a>
+                  </li>
+                ))}
+                {/* {toc.map(({ id, title }) => (
                   <li key={id} className={`mb-[1.2vw] ${id === activeSection ? 'toc-active' : ''}`}>
                     <a href={`#${id}`} onClick={(e) => handleSmoothScroll(e, id)} className="leading-[1] text-head aeonik text-[0.94vw] hover:text-primary transition-all">
                       {title}
                     </a>
                   </li>
-                ))}
+                ))} */}
               </ul>
             </div>
             <div 

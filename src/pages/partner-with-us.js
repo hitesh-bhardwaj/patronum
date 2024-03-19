@@ -81,17 +81,23 @@ export default function Partners() {
                 <section id="second-section">
                     <div className="container">
                         <div className="content-2">
-                            <div className="flex items-start justify-between">
-                                <SectionTitle
-                                    sectionTitle1="Partner"
-                                    sectionTitle2="With Patronum"
-                                />
-                                <p className="content-p w-1/3 mt-[1vw] text-anim-2">
+                            <div className="lg:flex items-start justify-between">
+                                <h2 className="title-4xl text-anim">
+                                    <span>
+                                        Partner
+                                    </span>
+                                    <br />
+                                    <span>
+                                        With Patronum
+                                    </span>
+                                </h2>
+                                <p className="content-p lg:w-1/3 w-[95%] lg:mt-[1vw] mt-[5vw] text-anim-2">
                                     <span>
                                         Transform your Google Workspace experience with Patronum, the ultimate solution to your onboarding nightmares, permission hassles, and data compliance woes. Patronum is designed to streamline the management of Google Workspace.
                                     </span>
                                 </p>
                             </div>
+                            
                             <div className="partner-card-link">
                                 <div className="partner-card fadeUp">
                                     <img className="img" src="/assets/partners/icon-1.svg" alt="become-partner" title="Become Partner" />

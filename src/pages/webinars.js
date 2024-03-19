@@ -9,8 +9,8 @@ export default function Webinars(){
                 <div className="image-container w-full h-[65%]">
                     <img src={imgSrc} className="h-full w-full object-cover" alt="Webinar Image" title="Webinar Image"/>
                 </div>
-                <div className="text-container px-[8%] py-[4%] pb-[6%] flex flex-col gap-[1.2vw]">
-                    <h3 className="text-[1.57vw]">
+                <div className="text-container px-[8%] py-[4%] pb-[6%] flex flex-col lg:gap-[1.2vw] gap-[4vw]">
+                    <h3 className="lg:text-[1.57vw] text-[6vw] leading-[1.4]">
                         {title}
                     </h3>
                     <p className="content-p text-[#444444]">
@@ -32,7 +32,7 @@ export default function Webinars(){
         <>
             <PageLayout
                 pageTitle1={'Webinars'} 
-                pagePara={"View our latest webinars and videos, or register for upcoming content to hear from industry experts and business leaders on a range of value-driven topics"} 
+                pagePara={"View our latest webinars and videos, or register for upcoming content to hear from industry experts."} 
                 imgSrc={'webinars.svg'}>
 
                     <section id="second-section">

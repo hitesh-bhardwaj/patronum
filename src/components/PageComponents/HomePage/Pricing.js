@@ -32,7 +32,7 @@ const Pricing = () => {
 
                         <div className='pricing-main'>
                         
-                            <div className='pricing-selectors flex-all'>
+                            <div className='pricing-selectors flex items-center justify-between w-full'>
                               
                               <div className="pricing-toggle">
                                   <span className={`pricing-selector-type ${isAnnual ? '' : 'active' }`}>

@@ -24,7 +24,7 @@ export default function FooterContact() {
                         <div className="left">
                             <h2 className="title-4xl text-anim">
                                 <span>
-                                    Get More From Patronum.
+                                    Get More from Patronum.
                                 </span>
                             </h2>
                             <p className="content-p fadeUp">
@@ -68,11 +68,10 @@ export default function FooterContact() {
                                     </div>
                                 </button>
                             </div>
-
                         </div>
 
                         <div className="right">
-                            <div className="footer-lottie fadeRight">
+                            <div className="footer-lottie fadeUp">
                                 <Lottie
                                     play
                                     loop

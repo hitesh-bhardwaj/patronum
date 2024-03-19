@@ -64,6 +64,16 @@ export default function Slider() {
             grabCursor={true}
             scrollbar={{ draggable: true }}
             modules={[Scrollbar, FreeMode]}
+            breakpoints={{
+              300: {
+                slidesPerView: 1.2,
+                spaceBetween: 10,
+              },
+              1024: {
+                slidesPerView: 4.2,
+                spaceBetween: 30,
+              },
+            }}
             className="mySwiper"
         >
             {data.map((testimonial, index) => (

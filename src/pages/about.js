@@ -73,20 +73,22 @@ export default function About(){
                             </div>
 
                             <div className="about-bottom">
-                                <div className="flex justify-between items-end">
-                                    <div className="genesis-left xl:w-[34%] fadeUp">
+                                <div className="flex lg:justify-end justify-start w-full">
+                                    <h2 className="title-4xl text-anim lg:mb-[2.5vw] mb-[10vw] lg:w-[38%]">
+                                        <span>
+                                            The Genesis 
+                                        </span>
+                                        <br />
+                                        <span>
+                                         of Patronum
+                                            </span>
+                                    </h2>
+                                </div>
+                                <div className="flex lg:justify-between items-center lg:items-end lg:flex-row flex-col lg:gap-0 gap-[10vw]">
+                                    <div className="genesis-left lg:w-[34%] w-[80%] fadeUp">
                                         <img src="/assets/about/genesis.svg" className="w-full h-full" loading="preload" alt="about-patronum" title="about patronum"/>
                                     </div>
-                                    <div className="xl:w-[38%]">
-                                        <h2 className="title-4xl text-anim xl:mb-[3.5vw]">
-                                            <span>
-                                                The Genesis 
-                                            </span>
-                                            <br />
-                                            <span>
-                                                 of Patronum
-                                            </span>
-                                        </h2>
+                                    <div className="lg:w-[38%] w-[95%]">
                                         <p className="content-p fadeUp">
                                             In 2008, Paul Lees, CEO of Bespin Labs, set out on a mission to revolutionize the management of cloud-based software solutions. With a deep understanding of the complexities organizations face in managing IT systems and cloud-based software, he envisioned a platform that would simplify these processes and enhance efficiency and security. This vision materialized into Patronum, a platform meticulously engineered to automate and refine the management of Google Workspace (formerly G Suite). Patronum was not just a product; it was a paradigm shift designed to enhance operational efficiency and fortify the security of Google Workspace environments globally.
                                         </p>

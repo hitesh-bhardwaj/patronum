@@ -129,3 +129,56 @@
     width: 3.5vw;
     transition: 0.3s;
   }
+
+
+/* =======================900px Start============================== */
+  /* Price Card */
+@media screen and (max-width: 900px) {
+  .pricingCard{
+    margin-bottom: 10vw;
+  }
+  .pricingImage{
+    height: 35vw;
+    margin-bottom: 6vw;
+  }
+  .featureList h4{
+    font-size: 4.5vw;
+  }
+  .featureList h4:before{
+    font-size: 3.5vw;
+    margin-right: 4vw;
+  }
+  .pricingCategory{
+    font-size: 7vw;
+    margin-bottom: 4vw;
+  }
+  .pricingPrice{
+    font-size: 5vw;
+  }
+
+  /* Features */
+  .featureItem{
+    padding: 4vw;
+  }
+  .contentHead{
+    font-size: 5vw;
+  }
+  .featureItem .featureImg {
+    top: 5vw;
+  }
+  .featureItem .featureImg img{
+    width: 8vw;
+  }
+  .content{
+    font-size: 4vw;
+    margin: 2.5vw 0;
+  }
+  .content span::before{
+    margin-right: 2vw;
+    margin-left: 2vw;
+  }
+  .featureItem.open .featureContent{
+    height: 50vw;
+  }
+}
+/* =======================900px End============================== */

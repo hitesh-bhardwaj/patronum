@@ -5,8 +5,8 @@ export default function About() {
       <>
         <section id="about">
             <div className="container">
-                <div className="content flex-all">
-                    <div className="about-left w-[37%]">
+                <div className="content flex justify-between items-center w-full h-full lg:flex-row flex-col-reverse lg:gap-unset gap-[10vw]">
+                    <div className="about-left lg:w-[37%] w-full lg:text-left text-center">
                         <h2 className="title-4xl textAnim"> 
                             <span>
                                 Why Patronum?
@@ -22,8 +22,8 @@ export default function About() {
                         <PrimaryButton link="/about" btnText="Get Started"/>
 
                     </div>
-                    <div className="about-right w-[40%]">
-                        <img className="fadeRight" src="/assets/home/about.svg" loading="lazy" alt="about patronum" title="about patronum image"/>
+                    <div className="about-right lg:w-[35%] w-[75%] lg:text-right text-center">
+                        <img className="fadeRight w-full h-full" src="/assets/home/about.svg" loading="lazy" alt="about patronum" title="about patronum image"/>
                     </div>
                 </div>
             </div>

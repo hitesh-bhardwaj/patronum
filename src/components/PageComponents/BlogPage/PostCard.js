@@ -8,7 +8,7 @@ const PostCard = ({ post = {} }) => {
 
   return (
     <>
-        <Link href={`/${post.slug}`} className='blog-card-main hover:shadow-lg duration-300 border rounded-[15px] bg-white border-[#e8e8e8] group'>
+        <Link href={`/${post.slug}`} className='blog-card-main hover:shadow-lg duration-300 border rounded-[15px] bg-white border-[#e8e8e8] group relative'>
             <div className='image-box-blog'>
                 {featuredImage && (
                     <img
@@ -20,13 +20,13 @@ const PostCard = ({ post = {} }) => {
                     />
                 )}
             </div>
-            <div className='px-[2.5vw] py-[1.2vw]'>
-                <div className='flex justify-between align-center text-[1.15vw] mb-[1vw]'>
+            <div className='px-[2.5vw] md:py-[1.2vw] py-[3vw] lg:h-auto md:h-[35vw] h-auto'>
+                <div className='flex justify-between align-center lg:text-[1.15vw] lg:mb-[1vw] md:text-[2vw] text-[4vw] mb-[5vw]'>
                     <p>By {post.author.name}</p>
                     <p>{formattedDate}</p>
                 </div>
-                <div className='border-b border-[#C5C5C5]'>
-                    <h3 className='aeonik group-hover:text-primary duration-300 text-head text-[1.56vw] leading-[1.3] font-regular mb-[1.2vw]'>
+                <div className='lg:border-b lg:border-[#C5C5C5]'>
+                    <h3 className='aeonik group-hover:text-primary duration-300 text-head lg:text-[1.56vw] md:text-[2.8vw] text-[5vw] leading-[1.3] font-regular lg:mb-[1.2vw] md:mb-[5vw] mb-[15vw]'>
                         <span>
                             {post.title}
                         </span>
@@ -39,7 +39,7 @@ const PostCard = ({ post = {} }) => {
                         />
                     )}
                 </div>
-                <div className='mt-[1.3vw] mb-[0.5vw]'>
+                <div className='lg:mt-[1.3vw] lg:mb-[0.5vw] lg:static md:absolute bottom-[4vw] static'>
                     <button aria-label='Read More About the Blog' className="link-btn">
                         <span className="btn-text">Read More</span>
                         <span className="btn-images">

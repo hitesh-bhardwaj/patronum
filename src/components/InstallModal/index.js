@@ -30,7 +30,7 @@ export default function InstallModal() {
                             <ContactForm />
                         </div>
                     </div>
-                    <div className="absolute top-[3%] right-[3%]">
+                    <div className="absolute lg:top-[3%] lg:right-[3%] top-[2vw] right-[5%]">
                         <button aria-label="Pop Up Form Close Button" className="en-btn en-btn_cta -intro -tertiary aeonik" style={{pointerEvents: 'auto'}} onClick={closeModal}>
                             <span className="en-btn_cta-border" style={{translate: 'none', rotate: 'none', scale: 'none', willChange: 'auto', transform: 'translate(0px, 0px)', opacity: '1'}}/>
                             <span className="en-btn_cta-ripple">

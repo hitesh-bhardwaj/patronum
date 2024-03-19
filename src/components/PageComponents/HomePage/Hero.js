@@ -82,9 +82,9 @@ export default function Hero(){
         <>
             <section id="hero">
                 <div className="container-lg relative">
-                    <div className="px-[4vw] flex-all">
-                        <div className="hero-left flex flex-col gap-y-10">
-                            <h1 className='title-5xl'>
+                    <div className="lg:px-[4vw] flex-all">
+                        <div className="lg:w-1/2 w-full flex flex-col lg:gap-y-10 gap-y-[7vw] lg:pt-0 md:pt-[20vw] pt-[25vw]">
+                            <h1 className='title-5xl lg:block hidden'>
                                 <div className='hero-anim Your'>
                                     <span className="span">Your</span>
                                 </div>
@@ -101,6 +101,28 @@ export default function Hero(){
                                     <span className="span">
                                         Manager
                                     </span>
+                                </div>
+                            </h1>
+                            <h1 className='title-5xl lg:hidden block'>
+                                <div className="flex flex-col gap-y-[2vw]">
+                                    <div className="hero-anim flex items-end gap-x-[2vw] w-full">
+                                        <span className="span">
+                                            Your
+                                        </span>
+                                        <span className="md:w-[45%] w-[50%] mt-[1.5vw] span">
+                                            <img className="w-full google" src="/assets/home/google.svg" alt="hero image" />
+                                        </span>
+                                    </div>
+                                    <div className="hero-anim">
+                                        <span className="md:w-[70%] w-[80%] mt-[1.5vw] span">
+                                            <img className="w-full" src="/assets/home/workspace.svg" alt="hero image"/>
+                                        </span>
+                                    </div>
+                                    <div className="hero-anim">
+                                        <span className="span manager">
+                                            Manager
+                                        </span>
+                                    </div>
                                 </div>
                             </h1>
                             <p className="hero-para">

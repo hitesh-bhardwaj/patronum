@@ -216,7 +216,7 @@ export default function Home( { recentPosts } ) {
       <main>
         <Hero />
         <Features />
-        <UseCases />
+        {/* <UseCases /> */}
         <Pricing />
         <About />
         <Testimonial />

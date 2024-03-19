@@ -77,3 +77,46 @@
 .pagiButtons:hover, .pagiList li a:hover{
     background: #e8e8e8;
 }
+
+
+/* 900 px */
+@media screen and (max-width: 1024px) {
+    .pagiContainer{
+        margin-top: 10vw;
+    }
+    .pagiMain{
+        width: 70%;
+        padding: 2% 4%;
+    }
+    .pagiButtons img{
+        width: 40%;
+    }
+    .pagiList li {
+        height: 6vw;
+        width: 6vw;
+        font-size: 3.5vw;
+    }
+}
+
+/* 640px */
+@media screen and (max-width: 640px) {
+    .pagiContainer{
+        margin-top: 10vw;
+    }
+    .pagiMain{
+        width: 100%;
+        padding: 4% 7%;
+    }
+    .pagiButtons img{
+        width: 40%;
+    }
+    .pagiList li {
+        height: 8vw;
+        width: 8vw;
+        font-size: 4vw;
+    }
+    .pagiButtons{
+        width: 5vw;
+        height: 5vw;
+    }
+}

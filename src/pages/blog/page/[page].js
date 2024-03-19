@@ -34,11 +34,12 @@ export default function Blog({ posts, pagination, categories }) {
                   </span>
                 </h4>
               </div>
-              <div className="w-[105%] ml-[-2.5%]">
+
+              <div className="lg:w-[105%] lg:ml-[-2.5%] ml-0 w-full">
                 <CategoryList categories={categories} activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
               </div>
 
-              <div className='blog-main-container mt-[5vw]'>
+              <div className='blog-main-container lg:mt-[5vw] mt-[10vw]'>
                 {posts.map((post) => {
                   return (
                     <PostCard key={post.slug} post={post} />

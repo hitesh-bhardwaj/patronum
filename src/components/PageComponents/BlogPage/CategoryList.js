@@ -5,7 +5,7 @@ const CategoryList = ({ categories, activeCategory, setActiveCategory }) => {
   const filteredCategories = categoriesArray.filter((category) => category.name !== 'All');
 
   return (
-    <ul className='blog-cati-button flex flex-wrap justify-between'>
+    <ul className='blog-cati-button flex flex-wrap lg:justify-between lg:gap-0 gap-[2vw]'>
       <li key="all">
         <Link href="/blog" className='cat-btn'>
           <button 

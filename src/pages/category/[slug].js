@@ -35,7 +35,7 @@ const Category = ({ category, posts, categories }) => {
                   </h4>
                 </div>
 
-                <div className="w-[105%] ml-[-2.5%]">
+                <div className="lg:w-[105%] lg:ml-[-2.5%] ml-0 w-full">
                     <CategoryList categories={categories} activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
                 </div>
 
@@ -45,24 +45,6 @@ const Category = ({ category, posts, categories }) => {
             </div>
           </section>
         </PageLayout>
-
-      <main>
-        <section className='blogs-sub-section'>
-          <div className='blogs-heading' data-cursor-size='10px' data-cursor-text=''>
-            <h1 id='blog'>
-              <span>{` ${category.name} Blogs`}</span>
-            </h1>
-          </div>
-
-          <div id='fadeUp'>
-            <CategoryList categories={categories} activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
-          </div>
-
-          <CategoryPosts posts={posts} />
-        </section>
-
-        {/* ======================== Footer END ====================== */}
-      </main>
     </>
   );
 }

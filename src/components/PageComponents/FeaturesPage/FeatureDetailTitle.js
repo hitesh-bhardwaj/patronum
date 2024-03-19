@@ -14,9 +14,9 @@ export default function FeatureDetailTitle( {sectionTitle1, sectionTitle2, secti
                             </span>
                         </h2>
                     </div>
-                    <div className="flex items-start justify-between">
+                    <div className="lg:flex items-start justify-between block">
                         <div>
-                            <p className="content-p mt-[1vw] w-[30.7vw] fadeUp">
+                            <p className="content-p lg:mt-[1vw] mt-[5vw] lg:mb-0 mb-[10vw] lg:w-[30.7vw] w-full fadeUp">
                                 {sectionPara}
                             </p>
                         </div>
