@@ -117,14 +117,14 @@ export default function Features(){
                                     ))}
                             </div>
 
-                            <div className="features-right lg:w-[55%] w-full lg:pt-[1vw] pt-[10vw]" id='right-section'>
+                            <div className="features-right lg:w-[55%] w-full lg:pt-[1vw] pt-[16vw]" id='right-section'>
 
                                 <div className="feat-accordions">
                                     <span className='h-[1px] w-full bg-[#1a1a1a] block lineDraw'/>
                                     {accordionData.map((item, index) => (
                                         <>
                                         <div className={`feat-accordion-item scaleAnim ${index === accordionOpen ? 'open' : ''}`} key={index} onClick={() => toggleAccordion(index)}>
-                                            <div className="lg:w-[85%] w-[95%]">
+                                            <div className="lg:w-[85%] w-[90%]">
                                                 <h3 className="title-3xl pb-2">
                                                     {item.title}
                                                 </h3>
