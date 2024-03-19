@@ -33,7 +33,7 @@ const FeaturedPost = ({ post }) => {
                         </a>
                     </div>
 
-                    <div className='lg:w-[43.5%] w-full p-[2vw]'>
+                    <div className='lg:w-[43.5%] w-full lg:p-0 p-[2vw]'>
                         <div className='flex lg:w-[70%] w-full items-center text-[#444444] lg:text-[1.15vw] text-[4vw] justify-between lg:mb-[1vw] mb-[3vw] lg:mt-0 mt-[3vw]'>
                             <p>By {post.author.name}</p>
                             <p>{formattedDate}</p>

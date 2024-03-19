@@ -2703,6 +2703,18 @@ section{
   color: var(--primary);
   transition: all 0.3s ease-in;
 }
+.toc_ul_list li{
+  display: none;
+}
+.toc_ul_list li:nth-child(1),
+.toc_ul_list li:nth-child(2),
+.toc_ul_list li:nth-child(3),
+.toc_ul_list li:nth-child(4),
+.toc_ul_list li:nth-child(5),
+.toc_ul_list li:nth-child(6),
+.toc_ul_list li:nth-child(7){
+  display: block;
+}
 /* Blogs END Main */
 
 /*=========================Media Queries ==============================*/

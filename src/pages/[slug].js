@@ -196,21 +196,14 @@ return (
                 <span className="w-full h-[2%] bg-head block rounded origin-top" id="toc-bar"/>
               </span>
               {/* Update TOC rendering to indicate the active section */}
-              <ul>
-                {toc.slice(0, 10).map(({ id, title }) => (
+              <ul className="toc_ul_list">
+                {toc.map(({ id, title }) => (
                   <li key={id} className={`mb-[1.2vw] ${id === activeSection ? 'toc-active' : ''}`}>
                       <a href={`#${id}`} onClick={(e) => handleSmoothScroll(e, id)} className="leading-[1] text-head aeonik text-[0.94vw] hover:text-primary transition-all">
                           {title}
                       </a>
                   </li>
                 ))}
-                {/* {toc.map(({ id, title }) => (
-                  <li key={id} className={`mb-[1.2vw] ${id === activeSection ? 'toc-active' : ''}`}>
-                    <a href={`#${id}`} onClick={(e) => handleSmoothScroll(e, id)} className="leading-[1] text-head aeonik text-[0.94vw] hover:text-primary transition-all">
-                      {title}
-                    </a>
-                  </li>
-                ))} */}
               </ul>
             </div>
             <div 
