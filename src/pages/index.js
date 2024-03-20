@@ -16,6 +16,7 @@ import PreLoader from "@/components/PreLoader";
 import RelatedPosts from "@/components/PageComponents/BlogPage/RelatedPosts";
 
 import { getHomePagePosts } from '@/lib/posts';
+import UseCasesMobile from "@/components/PageComponents/HomePage/UseCasesMobile";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -216,7 +217,8 @@ export default function Home( { recentPosts } ) {
       <main>
         <Hero />
         <Features />
-        {/* <UseCases /> */}
+        <UseCases />
+        <UseCasesMobile />
         <Pricing />
         <About />
         <Testimonial />

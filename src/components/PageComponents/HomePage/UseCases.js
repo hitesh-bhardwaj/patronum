@@ -7,111 +7,113 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 export default function UseCases() {
 
-    useEffect(() => {
+    if (globalThis.innerWidth > 1024) {
+        useEffect(() => {
             let ctx = gsap.context(() => {
-            const sectionLength = document.getElementsByClassName('useCase-item').length;
-            const foc_container = document.querySelector('.useCases-items');
-            const newWidth = sectionLength * 100;
-            foc_container.style.width = newWidth + "%";
-            const foc_sections = gsap.utils.toArray(".useCases-items .useCase-item");
-        
-            const navbarLinks = document.querySelectorAll(".use-cases-list li a");
-            const sections = gsap.utils.toArray('.useCase-item');
+                const sectionLength = document.getElementsByClassName('useCase-item').length;
+                const foc_container = document.querySelector('.useCases-items');
+                const newWidth = sectionLength * 100;
+                foc_container.style.width = newWidth + "%";
+                const foc_sections = gsap.utils.toArray(".useCases-items .useCase-item");
             
-            const scrollTween = gsap.timeline({
-                scrollTrigger: {
-                    trigger: "#use-cases",
-                    pin: true,
-                    scrub: 1,
-                    start: '20% top',
-                    markers: false,
-                    snap: {
-                        snapTo: 1 / (foc_sections.length - 1),
-                        inertia: false,
-                        duration: {min: 0.1, max: 1}
-                    },
-                    end: "+=" + (foc_container.offsetWidth - innerWidth),
-                    invalidateOnRefresh: true,
-                }
-            });
-
-            scrollTween.to(sections, {
-                xPercent: -100 * (sections.length - 1),
-                ease: 'none',
-            });
-    
-            sections.forEach((section, i) => {
-    
-                let relatedLink = document.querySelector(`[data-section="${section.id}"]`);
+                const navbarLinks = document.querySelectorAll(".use-cases-list li a");
+                const sections = gsap.utils.toArray('.useCase-item');
                 
-                ScrollTrigger.create({
-                    trigger: section,
-                    start: "left 90%",
-                    end: "right 90%",
-                    containerAnimation: scrollTween,
-                    markers: false,
-                    id: `section-${i+1}`,
-                    onToggle: self => { // Use self to access trigger element within onToggle
-                    const currentActive = document.querySelector('.use-cases-list .active');
-                    if (self.isActive) {
-                        relatedLink.classList.add('active');
-                        if (currentActive && currentActive !== relatedLink) {
-                        currentActive.classList.remove('active');
-                        }
-                    } else {
-                        relatedLink.classList.remove('active');
+                const scrollTween = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: "#use-cases",
+                        pin: true,
+                        scrub: 1,
+                        start: '20% top',
+                        markers: false,
+                        snap: {
+                            snapTo: 1 / (foc_sections.length - 1),
+                            inertia: false,
+                            duration: {min: 0.1, max: 1}
+                        },
+                        end: "+=" + (foc_container.offsetWidth - innerWidth),
+                        invalidateOnRefresh: true,
                     }
+                });
+
+                scrollTween.to(sections, {
+                    xPercent: -100 * (sections.length - 1),
+                    ease: 'none',
+                });
+        
+                sections.forEach((section, i) => {
+        
+                    let relatedLink = document.querySelector(`[data-section="${section.id}"]`);
+                    
+                    ScrollTrigger.create({
+                        trigger: section,
+                        start: "left 90%",
+                        end: "right 90%",
+                        containerAnimation: scrollTween,
+                        markers: false,
+                        id: `section-${i+1}`,
+                        onToggle: self => { // Use self to access trigger element within onToggle
+                        const currentActive = document.querySelector('.use-cases-list .active');
+                        if (self.isActive) {
+                            relatedLink.classList.add('active');
+                            if (currentActive && currentActive !== relatedLink) {
+                            currentActive.classList.remove('active');
+                            }
+                        } else {
+                            relatedLink.classList.remove('active');
+                        }
+                        },
+                    });
+                });
+        
+                navbarLinks.forEach(anchor => {
+                    anchor.addEventListener("click", function(e) {
+                        e.preventDefault();
+                        let targetElem = document.querySelector(e.target.getAttribute("href")),
+                            y = targetElem;
+                        if (targetElem && foc_container.isSameNode(targetElem.parentElement)) {
+                            // Ensure scrollTrigger and its properties are defined
+                            if (scrollTween.scrollTrigger && 'end' in scrollTween.scrollTrigger && 'start' in scrollTween.scrollTrigger) {
+                                let totalScroll = scrollTween.scrollTrigger.end - scrollTween.scrollTrigger.start,
+                                    totalMovement = (foc_sections.length - 1) * targetElem.offsetWidth;
+                                y = Math.round(scrollTween.scrollTrigger.start + (targetElem.offsetLeft / totalMovement) * totalScroll);
+                            }
+                            gsap.to(window, {
+                                scrollTo: {
+                                    y: y,
+                                    autoKill: false
+                                },
+                                duration: 1
+                            });
+                        }
+                    });
+                });
+            });
+            return () => ctx.revert();
+        }, []);
+
+        useEffect(() => {
+            let ctx = gsap.context(() => {
+                const UseCaseList = document.querySelectorAll('.use-cases-list li')
+
+                gsap.to(UseCaseList, {
+                    scrollTrigger: {
+                        trigger: '.use-cases-list',
+                        start: 'top 80%',
                     },
+                    opacity: 1,
+                    duration: 0.5,
+                    stagger: 0.1,
+                    ease: 'power2.out'
                 });
             });
-    
-            navbarLinks.forEach(anchor => {
-                anchor.addEventListener("click", function(e) {
-                    e.preventDefault();
-                    let targetElem = document.querySelector(e.target.getAttribute("href")),
-                        y = targetElem;
-                    if (targetElem && foc_container.isSameNode(targetElem.parentElement)) {
-                        // Ensure scrollTrigger and its properties are defined
-                        if (scrollTween.scrollTrigger && 'end' in scrollTween.scrollTrigger && 'start' in scrollTween.scrollTrigger) {
-                            let totalScroll = scrollTween.scrollTrigger.end - scrollTween.scrollTrigger.start,
-                                totalMovement = (foc_sections.length - 1) * targetElem.offsetWidth;
-                            y = Math.round(scrollTween.scrollTrigger.start + (targetElem.offsetLeft / totalMovement) * totalScroll);
-                        }
-                        gsap.to(window, {
-                            scrollTo: {
-                                y: y,
-                                autoKill: false
-                            },
-                            duration: 1
-                        });
-                    }
-                });
-            });
-        });
-        return () => ctx.revert();
-    }, []);
-
-    useEffect(() => {
-        let ctx = gsap.context(() => {
-            const UseCaseList = document.querySelectorAll('.use-cases-list li')
-
-            gsap.to(UseCaseList, {
-                scrollTrigger: {
-                    trigger: '.use-cases-list',
-                    start: 'top 80%',
-                },
-                opacity: 1,
-                duration: 0.5,
-                stagger: 0.1,
-                ease: 'power2.out'
-            });
-        });
-        return () => ctx.revert();
-    }, []);
+            return () => ctx.revert();
+        }, []);
+    }
 
     return (
         <>
-            <section id="use-cases">
+            <section id="use-cases" className="lg:block hidden">
                 <div className="content">
                     <div className="container overflow-hidden">
                         <div className="section-head">
@@ -203,7 +205,7 @@ export default function UseCases() {
                                                     <span>
                                                         With Patronum you can automatically unshare Google Files reducing your organisations exposure. Quickly and easily set up policies that automate.                                        </span>
                                                 </p>
-                                                <a href="#" className="link-btn">
+                                                <a href="/patronum-for-hr" className="link-btn">
                                                     <span className="btn-text">Learn More</span>
                                                     <span className="btn-images">
                                                         <div>
@@ -238,7 +240,7 @@ export default function UseCases() {
                                                     <span>
                                                         Patronum is the only enterprise-ready contact sharing application for Google Workspace. Allow your users to share their specific contacts.                                        </span>
                                                 </p>
-                                                <a href="#" className="link-btn">
+                                                <a href="/patronum-for-sales-marketing" className="link-btn">
                                                     <span className="btn-text">Learn More</span>
                                                     <span className="btn-images">
                                                         <div>
@@ -273,7 +275,7 @@ export default function UseCases() {
                                                     <span>
                                                         With Patronum you can automatically unshare Google Files reducing your organisations exposure. Quickly and easily set up policies that automate.                                        </span>
                                                 </p>
-                                                <a href="#" className="link-btn">
+                                                <a href="/patronum-for-education" className="link-btn">
                                                     <span className="btn-text">Learn More</span>
                                                     <span className="btn-images">
                                                         <div>
@@ -308,7 +310,7 @@ export default function UseCases() {
                                                     <span>
                                                         Even in small organizations, it’s often difficult to connect with the right people. Patronum gives your organization instant access to your internal staff list via contact sharing.                                        </span>
                                                 </p>
-                                                <a href="#" className="link-btn">
+                                                <a href="/patronum-for-users" className="link-btn">
                                                     <span className="btn-text">Learn More</span>
                                                     <span className="btn-images">
                                                         <div>

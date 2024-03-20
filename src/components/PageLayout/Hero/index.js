@@ -11,7 +11,7 @@ export default function Hero( {pageTitle1, pageTitle2, pagePara, imgSrc} ){
     const handleSmoothScroll = () => {
         gsap.to(window, {
             duration: 1.5,
-            scrollTo: {y: "#second-section", offsetY: 50},
+            scrollTo: {y: "#second-section", offsetY: 30},
             ease: "power3.inOut",
         });
     }; 
@@ -26,7 +26,7 @@ export default function Hero( {pageTitle1, pageTitle2, pagePara, imgSrc} ){
                 opacity: 0,
                 stagger: 0.05,
                 ease: 'power2.out',
-            }, '+=1');
+            });
         });
         return () => ctx.revert();
     }, []);

@@ -738,6 +738,7 @@ section{
 }
 
 /* Nav Dropdown */
+
 .nav-dropdown{
   position: absolute;
   width: 100%;
@@ -3596,6 +3597,32 @@ section{
   .cards-wrapper.case-studies{
     display: block;
   }
+
+  /* Use Cases Mobile 900px*/
+  .UseCaseSwiper .swiper-wrapper {
+    padding-top: 5.5%;
+  }
+  .UseCaseSwiper .swiper-slide {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+  .UseCaseSwiper .swiper-button-prev, .swiper-button-next{
+    top: 7.8% !important;
+    color: var(--text-head) !important;
+  }
+  .UseCaseSwiper .swiper-button-prev:after, .swiper-button-next:after{
+    font-size: 4.5vw !important;
+  }
+  .UseCaseSwiper .swiper-button-prev {
+    left: 10%;
+  }
+  .UseCaseSwiper .swiper-button-next {
+    right: 10%;
+  }
+  #use-cases-mobile .section-head{
+    margin-bottom: 10vw;
+  }
+
 }
 /* =======================900px End============================== */
 
@@ -3793,6 +3820,20 @@ section{
     .title-3xl{
       font-size: 6vw;
     }
+
+  /* Use Cases Mobile 640px*/
+  .UseCaseSwiper .swiper-button-prev, .swiper-button-next{
+    top: 6.5% !important;
+  }
+  .UseCaseSwiper .swiper-button-prev:after, .swiper-button-next:after{
+    font-size: 5.5vw !important;
+  }
+  .UseCaseSwiper .swiper-button-prev {
+    left: 8%;
+  }
+  .UseCaseSwiper .swiper-button-next {
+    right: 8%;
+  }
 }
 
 /* =======================480px End============================== */
