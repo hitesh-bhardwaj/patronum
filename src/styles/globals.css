@@ -45,10 +45,11 @@
 
 /* Background CSS START*/
 :root {
-  --orb-color-1: #80c6ff; /* Red */
-  --orb-color-2: #7af8ff; /* Green */
-  --orb-color-3: #00aaff; /* Blue */
+  --orb-color-1: #c2ddff; /* Red */
+  --orb-color-2: #d6d9ff; /* Green */
+  --orb-color-3: #ff4d00; /* Blue */
 }
+
 .orb-canvas {
   position: fixed;
   top: 0;

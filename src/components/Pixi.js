@@ -114,7 +114,7 @@ export default function Pixi() {
                 this.fill = fill;
             
                 // the original radius of the orb, set relative to window height
-                this.radius = random(window.innerHeight / 6, window.innerHeight / 3);
+                this.radius = random(window.innerHeight / 5, window.innerHeight / 3);
             
                 // starting points in "time" for the noise/self similar random values
                 this.xOff = random(0, 1000);
@@ -131,20 +131,20 @@ export default function Pixi() {
                     "resize",
                     debounce(() => {
                     this.bounds = this.setBounds();
-                    }, 500)
+                    }, 1000)
                 );
                 }
             
                 setBounds() {
                 // how far from the { x, y } origin can each orb move
                 const maxDist =
-                    window.innerWidth < 1000 ? window.innerWidth / 1 : window.innerWidth / 3.5;
+                    window.innerWidth < 1800 ? window.innerWidth / 1 : window.innerWidth / 1.75;
                 // the { x, y } origin for each orb (the bottom right of the screen)
-                const originX = window.innerWidth / 1.5;
+                const originX = window.innerWidth / 2;
                 const originY =
                     window.innerWidth < 1000
                     ? window.innerHeight
-                    : window.innerHeight / 1.375;
+                    : window.innerHeight / 1.75;
             
                 // allow each orb to move x distance away from it's x / y origin
                 return {
