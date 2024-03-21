@@ -11,8 +11,8 @@ export default function FeatureDetailInfo( {featureDetailInfoTitle, imgSrc, feat
                     <span className="section-list-hr lineDraw"/>
                 </div>
                 <div className="section-list-body">
-                    <div className="section-list-body-left fadeUp">
-                        <img className="" loading="lazy" src={imgSrc} alt={featureDetailInfoTitle} title={featureDetailInfoTitle}/>
+                    <div className="section-list-body-left">
+                        <img className="fadeUp" src={imgSrc} alt={featureDetailInfoTitle} title={featureDetailInfoTitle}/>
                     </div>
                     <div className="section-list-body-right">
                         <p className="content-p fadeUp">

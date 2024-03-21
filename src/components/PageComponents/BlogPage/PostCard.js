@@ -8,7 +8,7 @@ const PostCard = ({ post = {} }) => {
 
   return (
     <>
-        <Link href={`/${post.slug}`} className='blog-card-main hover:shadow-lg duration-300 border rounded-[15px] bg-white border-[#e8e8e8] group relative'>
+        <Link href={`/${post.slug}`} className='blog-card-main hover:shadow-lg duration-300 border rounded-[15px] bg-white border-[#e8e8e8] group relative fadeUp'>
             <div className='image-box-blog'>
                 {featuredImage && (
                     <img

@@ -29,7 +29,7 @@ export default function Blogs( { posts, featuredPost, pagination, categories } )
                     <div className="container">
                         <div className="content">
                             <div className='section-head'>
-                                <h4 className='title-4xl'>
+                                <h4 className='title-4xl text-anim'>
                                     <span>
                                         Explore Our
                                     </span>

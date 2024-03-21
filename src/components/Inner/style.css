@@ -1,0 +1,15 @@
+.inner{
+    background-color: transparent;
+}
+.inner .page{
+        background-color: transparent;
+    }
+.inner .slide{
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background-color: #1069df;
+        z-index: 1;
+    }

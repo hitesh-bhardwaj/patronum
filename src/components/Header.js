@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useModal } from './InstallModal/ModelContext';
+import Link from 'next/link';
 
 const Header = () => {
     const { openModal } = useModal();
@@ -38,7 +39,7 @@ const Header = () => {
         <header className={isScrolled ? 'header scrolled' : 'header'}>
             <div className='header-container'>
                 <div className='logo-container'>
-                    <a href='/'>
+                    <Link href='/' scroll={false} key={'index'}>
                         <Image 
                             className=''
                             src="/logo.svg"
@@ -48,7 +49,7 @@ const Header = () => {
                             title='Patronum Logo'
                             priority={true}
                         />
-                    </a>
+                    </Link>
                 </div>
 
                 <div 
@@ -61,19 +62,19 @@ const Header = () => {
                     
                     <ul className='navbar-list'>
                         <li className='nav-list-item'>
-                            <a href='/about'>
+                            <Link href='/about' scroll={false} key={"about"}>
                                 <div className='header-anim'>
                                     <span>
                                         About
                                     </span>
                                 </div>
-                            </a>
+                            </Link>
                         </li>
                         <li className='nav-list-item'
                             onMouseEnter={() => setFeaturesDropdownOpen(true)}
                             onMouseLeave={() => setFeaturesDropdownOpen(false)}
                         >
-                            <a href='/features' className='dropdown'>
+                            <Link href='/features' className='dropdown' scroll={false} key={'features'}>
                                 <div className='header-anim'>
                                     <span>
                                         Features
@@ -82,76 +83,76 @@ const Header = () => {
                                         <path d="M1 1L6.5 6.5L12 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
                                 </div>
-                            </a>
+                            </Link>
                                 {isFeaturesDropdownOpen && (
                                     <motion.div 
                                         initial={{ y: -30, opacity: 0 }}
-                                        animate={{ opacity: isFeaturesDropdownOpen ? 1 : 0 , visibility: isFeaturesDropdownOpen ? 'visible' : 'invisible'}}
-                                        transition={{ duration: 0.4 }}
+                                        animate={{ y: 0, opacity: 1 }}
+                                        transition={{ duration: 0.4 }} 
                                         className='nav-dropdown'>
                                         <ul className='nav-dropdown-list'>
                                             <li className='nav-drop-list-item'>
-                                                <a href='/on-boarding' className='nav-drop-list-hover'>
+                                                <Link href='/on-boarding' className='nav-drop-list-hover' scroll={false} key={'on-boarding'}>
                                                     <img loading='lazy' src='/assets/menu/onboarding.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Onboarding</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <a href='/google-workspace-backup' className='nav-drop-list-hover'>
+                                                <Link href='/google-workspace-backup' className='nav-drop-list-hover' scroll={false} key={'google-workspace-backup'}>
                                                     <img loading='lazy' src='/assets/menu/workspace-backup.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Workspace Backup</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <a href='/email-signature-management' className='nav-drop-list-hover'>
+                                                <Link href='/email-signature-management' className='nav-drop-list-hover' scroll={false} key={'email-signature-management'}>
                                                     <img loading='lazy' src='/assets/menu/email-signature.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Email Signature</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <a href='/google-drive-compliance' className='nav-drop-list-hover'>
+                                                <Link href='/google-drive-compliance' className='nav-drop-list-hover' scroll={false} key={'google-drive-compliance'}>
                                                     <img loading='lazy' src='/assets/menu/file-sharing.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>File Unsharing</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <a href='/google-contact-sharing' className='nav-drop-list-hover'>
+                                                <Link href='/google-contact-sharing' className='nav-drop-list-hover' scroll={false} key={'google-contact-sharing'}>
                                                     <img loading='lazy' src='/assets/menu/contact-sharing.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Contact Sharing</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <a href='/organisational-chart' className='nav-drop-list-hover'>
+                                                <Link href='/organisational-chart' className='nav-drop-list-hover' scroll={false} key={'organisational-chart'}>
                                                     <img loading='lazy' src='/assets/menu/organisational-chart.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Organisational Chart</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <a href='/google-drive-management' className='nav-drop-list-hover'>
+                                                <Link href='/google-drive-management' className='nav-drop-list-hover' scroll={false} key={'google-drive-management'}>
                                                     <img loading='lazy' src='/assets/menu/drive-management.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Drive Management</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
-                                                </a>
+                                                </Link>
                                             </li>
                                         </ul>
                                     </motion.div>
@@ -162,7 +163,7 @@ const Header = () => {
                             onMouseEnter={() => setUsecasesDropdownOpen(true)}
                             onMouseLeave={() => setUsecasesDropdownOpen(false)}
                             >
-                            <a href='/use-cases' className='dropdown'>
+                            <Link href='/use-cases' className='dropdown' scroll={false} key={'use-cases'}>
                                 <div className='header-anim'>
                                     <span>
                                         Use Cases
@@ -171,7 +172,7 @@ const Header = () => {
                                         <path d="M1 1L6.5 6.5L12 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                     </svg>
                                 </div>
-                            </a>
+                            </Link>
                                 {isUsecasesDropdownOpen && (
                                     <motion.div 
                                         initial={{ y: -30, opacity: 0 }}
@@ -180,77 +181,77 @@ const Header = () => {
                                         className='nav-dropdown'>
                                     <ul className='nav-dropdown-list'>
                                             <li className='nav-drop-list-item'>
-                                                <a href='/patronum-for-business' className='nav-drop-list-hover'>
+                                                <Link href='/patronum-for-business' className='nav-drop-list-hover' scroll={false} key={'patronum-for-business'}>
                                                     <img loading='lazy' src='/assets/menu/use-case-business.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>For Business</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <a href='/patronum-for-education' className='nav-drop-list-hover'>
+                                                <Link href='/patronum-for-education' className='nav-drop-list-hover' scroll={false} key={'patronum-for-education'}>
                                                     <img loading='lazy' src='/assets/menu/use-case-education.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>For Education</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <a href='/patronum-for-hr' className='nav-drop-list-hover'>
+                                                <Link href='/patronum-for-hr' className='nav-drop-list-hover' scroll={false} key={'patronum-for-hr'}>
                                                     <img loading='lazy' src='/assets/menu/use-case-hr.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>For HR</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <a href='/patronum-for-users' className='nav-drop-list-hover'>
+                                                <Link href='/patronum-for-users' className='nav-drop-list-hover' scroll={false} key={'patronum-for-users'}>
                                                     <img loading='lazy' src='/assets/menu/use-case-users.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>For Users</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <a href='/patronum-for-sales-marketing' className='nav-drop-list-hover'>
+                                                <Link href='/patronum-for-sales-marketing' className='nav-drop-list-hover' scroll={false} key={'patronum-for-sales-marketing'}>
                                                     <img loading='lazy' src='/assets/menu/use-case-sales.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>For Sales & Marketing</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <a href='/patronum-for-it-admins' className='nav-drop-list-hover'>
+                                                <Link href='/patronum-for-it-admins' className='nav-drop-list-hover' scroll={false} key={'patronum-for-it-admins'}>
                                                     <img loading='lazy' src='/assets/menu/use-case-admin.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>For IT Admins</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
-                                                </a>
+                                                </Link>
                                             </li>
                                         </ul>
                                     </motion.div>
                                 )}
                         </li>
                         <li className='nav-list-item'>
-                            <a className='' href='/pricing'>
+                            <Link className='' href='/pricing' scroll={false} key={'pricing'}>
                                 <div className='header-anim'>
                                     <span>
                                         Pricing
                                     </span>
                                 </div>
-                            </a>
+                            </Link>
                         </li>
                         <li className='nav-list-item' 
                             onMouseEnter={() => setResourcesDropdownOpen(true)}
                             onMouseLeave={() => setResourcesDropdownOpen(false)}
                             >
-                            <a href='#' className='dropdown'>
+                            <Link href='#' className='dropdown'>
                                 <div className='header-anim'>
                                     <span>
                                         Resources
@@ -259,7 +260,7 @@ const Header = () => {
                                         <path d="M1 1L6.5 6.5L12 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                     </svg>
                                 </div>
-                            </a>
+                            </Link>
                                 {isResourcesDropdownOpen && (
                                     <motion.div 
                                         initial={{ y: -30, opacity: 0 }}
@@ -268,107 +269,107 @@ const Header = () => {
                                         className='nav-dropdown'>
                                         <ul className='nav-dropdown-list'>
                                             <li className='nav-drop-list-item'>
-                                                <a href='/blog' className='nav-drop-list-hover'>
+                                                <Link href='/blog' className='nav-drop-list-hover' scroll={false} key={'blog'}>
                                                     <img loading='lazy' src='/assets/menu/resource-blog.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Blog</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <a href='/guides' className='nav-drop-list-hover'>
+                                                <Link href='/guides' className='nav-drop-list-hover' scroll={false} key={'guides'}>
                                                     <img loading='lazy' src='/assets/menu/resource-guide.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Guides</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <a href='/ebooks' className='nav-drop-list-hover'>
+                                                <Link href='/ebooks' className='nav-drop-list-hover' scroll={false} key={'ebooks'}>
                                                     <img loading='lazy' src='/assets/menu/resource-ebook.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Ebooks</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <a href='/webinars' className='nav-drop-list-hover'>
+                                                <Link href='/webinars' className='nav-drop-list-hover' scroll={false} key={'webinars'}>
                                                     <img loading='lazy' src='/assets/menu/resource-webinar.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Webinars</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <a href='/case-studies' className='nav-drop-list-hover'>
+                                                <Link href='/case-studies' className='nav-drop-list-hover' scroll={false} key={'case-studies'}>
                                                     <img loading='lazy' src='/assets/menu/resource-case-study.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Case Studies</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <a href='/product-videos' className='nav-drop-list-hover'>
+                                                <Link href='/product-videos' className='nav-drop-list-hover' scroll={false} key={'product-videos'}>
                                                     <img loading='lazy' src='/assets/menu/resource-product-videos.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Product Videos</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <a href='https://community.patronum.io' target='_blank' className='nav-drop-list-hover'>
+                                                <Link href='https://community.patronum.io' target='_blank' className='nav-drop-list-hover'>
                                                     <img loading='lazy' src='/assets/menu/resource-community.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Community</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <a href='https://help.patronum.com' target='_blank' className='nav-drop-list-hover'>
+                                                <Link href='https://help.patronum.com' target='_blank' className='nav-drop-list-hover'>
                                                     <img loading='lazy' src='/assets/menu/resource-help.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Help</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <a href='/legal' className='nav-drop-list-hover'>
+                                                <Link href='/legal' className='nav-drop-list-hover' scroll={false} key={'legal'}>
                                                     <img loading='lazy' src='/assets/menu/resource-legal.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Legal</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
-                                                </a>
+                                                </Link>
                                             </li>
                                         </ul>
                                     </motion.div>
                                 )}
                             </li>
                         <li className='nav-list-item'>
-                            <a className='' href='/partner-with-us'>
+                            <Link className='' href='/partner-with-us' scroll={false} key={'partner-with-us'}>
                                 <div className='header-anim'>
                                     <span>
                                         Partners
                                     </span>
                                 </div>
-                            </a>
+                            </Link>
                         </li>
                         <li className='nav-list-item'>
-                            <a className='' href='/support'>
+                            <Link className='' href='/support' scroll={false} key={'support'}>
                                 <div className='header-anim'>
                                     <span>
                                         Support
                                     </span>
                                 </div>
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </nav>
@@ -406,264 +407,276 @@ const Header = () => {
             }`}
             aria-label="Sidenav"
             >
-            <div className="overflow-y-auto pb-10 pt-10 h-full w-full bg-white md:border-l border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+            <div className="overflow-y-auto pb-10 pt-10 h-full w-full bg-white md:border-l border-gray-200">
                 <div onClick={() => setSideNavOpen(false)} id='sidenav-close-btn' className='absolute top-6 right-6'>
-                    <button className='py-2 px-4 text-xl rounded-full leading-[1] border border-black'>
+                    <button className='md:py-2 md:px-4 md:text-xl py-1 px-3 text-lg rounded-full leading-[1] border border-black'>
                         <span>Close</span>
                     </button>
                 </div>
                 <ul className="my-12">
-                    <li>
-                        <a href="/about" className="flex items-center py-4 px-4 text-2xl font-normal text-gray-900  hover:bg-gray-100 group">
+                    <li className='px-4'>
+                        <Link href="/about" className="flex items-center py-4 text-2xl font-normal text-gray-900 border-b" aria-label='About' scroll={false} key={'about'}>
                             <span className="ml-3">About</span>
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <div className='flex justify-between'>
-                            <a href="/features" className="flex items-center w-[80%] py-4 px-4 text-2xl font-normal text-gray-900  hover:bg-gray-100 group">
-                                <span className="ml-3">Features</span>
-                            </a>
-                            <button onClick={() => setFeaturesDropdownOpen(!isFeaturesDropdownOpen)} type="button" className="flex items-center justify-center py-4 w-[20%] text-base font-normal text-gray-900  transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-pages" data-collapse-toggle="dropdown-pages">
-                                <svg aria-hidden="true" className="w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
-                            </button>
+                        <div className='px-4'>
+                            <div className='flex justify-between border-b'>
+                                <Link href="/features" className="flex items-center w-[80%] py-4 text-2xl font-normal text-gray-900" aria-label='Features' scroll={false} key={'features'}>
+                                    <span className="ml-3">Features</span>
+                                </Link>
+                                <button onClick={() => setFeaturesDropdownOpen(!isFeaturesDropdownOpen)} type="button" className={`flex items-center justify-center py-4 w-[20%] text-base font-normal text-gray-900 transition ${isFeaturesDropdownOpen ? "-rotate-90" : "rotate-0"}`} aria-label='Open Features Dropdown'>
+                                    <svg aria-hidden="true" className="w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path>
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
-                        <ul id="dropdown-features" className={`py-4 px-4 space-y-4 bg-gray-100 transition-all duration-300 ${isFeaturesDropdownOpen ? "block scale-y-100" : "hidden scale-y-0" }`}>
+                        <ul id="dropdown-features" className={`py-4 px-4 space-y-4 bg-gray-100 transition-all duration-300 ${isFeaturesDropdownOpen ? "block" : "hidden" }`} aria-hidden="true">
                             <li className=''>
-                                <a href='/on-boarding' className='py-2 px-4 rounded flex gap-4 items-center'>
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/onboarding.png' alt='features icon' title='features icon'/>
+                                <Link href='/on-boarding' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Onboarding' scroll={false} key={'on-boarding'}>
+                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/onboarding.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Onboarding</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
                                     </div>
-                                </a>
+                                </Link>
                             </li>
                             <li className=''>
-                                <a href='/google-workspace-backup' className='py-2 px-4 rounded flex gap-4 items-center'>
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/workspace-backup.png' alt='features icon' title='features icon'/>
+                                <Link href='/google-workspace-backup' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Workspace Backup' scroll={false} key={'google-workspace-backup'}>
+                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/workspace-backup.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Workspace Backup</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
                                     </div>
-                                </a>
+                                </Link>
                             </li>
                             <li className=''>
-                                <a href='/email-signature-management' className='py-2 px-4 rounded flex gap-4 items-center'>
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/email-signature.png' alt='features icon' title='features icon'/>
+                                <Link href='/email-signature-management' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Email Signature' scroll={false} key={'email-signature-management'}>
+                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/email-signature.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Email Signature</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
                                     </div>
-                                </a>
+                                </Link>
                             </li>
                             <li className=''>
-                                <a href='/google-drive-compliance' className='py-2 px-4 rounded flex gap-4 items-center'>
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/file-sharing.png' alt='features icon' title='features icon'/>
+                                <Link href='/google-drive-compliance' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - File Unsharing' scroll={false} key={'google-drive-compliance'}>
+                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/file-sharing.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>File Unsharing</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
                                     </div>
-                                </a>
+                                </Link>
                             </li>
                             <li className=''>
-                                <a href='/google-contact-sharing' className='py-2 px-4 rounded flex gap-4 items-center'>
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/contact-sharing.png' alt='features icon' title='features icon'/>
+                                <Link href='/google-contact-sharing' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Contact Sharing' scroll={false} key={'google-contact-sharing'}>
+                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/contact-sharing.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Contact Sharing</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
                                     </div>
-                                </a>
+                                </Link>
                             </li>
                             <li className=''>
-                                <a href='/organisational-chart' className='py-2 px-4 rounded flex gap-4 items-center'>
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/organisational-chart.png' alt='features icon' title='features icon'/>
+                                <Link href='/organisational-chart' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Organisational Chart' scroll={false} key={'organisational-chart'}>
+                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/organisational-chart.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Organisational Chart</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
                                     </div>
-                                </a>
+                                </Link>
                             </li>
                             <li className=''>
-                                <a href='/google-drive-management' className='py-2 px-4 rounded flex gap-4 items-center'>
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/drive-management.png' alt='features icon' title='features icon'/>
+                                <Link href='/google-drive-management' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Google Drive Management' scroll={false} key={'google-drive-management'}>
+                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/drive-management.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Drive Management</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
                                     </div>
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <div className='flex justify-between'>
-                        <a href="/use-cases" className="flex w-[80%] items-center py-4 px-4 text-2xl font-normal text-gray-900  hover:bg-gray-100 group">
-                                <span className="ml-3">Use Cases</span>
-                            </a>
-                            <button onClick={() => setUsecasesDropdownOpen(!isUsecasesDropdownOpen)} type="button" className="flex items-center justify-center py-4 w-[20%] text-base font-normal text-gray-900  transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-pages" data-collapse-toggle="dropdown-pages">
-                                <svg aria-hidden="true" className="w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
-                            </button>
+                        <div className='px-4'>
+                            <div className='flex justify-between border-b'>
+                                <Link href="/use-cases" className="flex w-[80%] items-center py-4 text-2xl font-normal text-gray-900" aria-label='Use Cases' scroll={false} key={'use-cases'}>
+                                    <span className="ml-3">Use Cases</span>
+                                </Link>
+                                <button onClick={() => setUsecasesDropdownOpen(!isUsecasesDropdownOpen)} type="button" className={`flex items-center justify-center py-4 w-[20%] text-base font-normal text-gray-900 transition ${isUsecasesDropdownOpen ? "-rotate-90" : "rotate-0"}`} aria-label='Open UseCases Dropdown'>
+                                    <svg aria-hidden="true" className="w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path>
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
-                        <ul id="dropdown-usecases" className={`py-4 px-4 space-y-4 bg-gray-100 ${isUsecasesDropdownOpen ? "block" : "hidden" }`}>
+                        <ul id="dropdown-usecases" className={`py-4 px-4 space-y-4 bg-gray-100 ${isUsecasesDropdownOpen ? "block" : "hidden" }`} aria-hidden="true">
                             <li className=''>
-                                <a href='/patronum-for-business' className='py-2 px-4 rounded flex gap-4 items-center'>
+                                <Link href='/patronum-for-business' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Business' scroll={false} key={'patronum-for-business'}>
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/use-case-business.png' alt='use cases icon' title='use cases icon'/>
                                     <div>
                                         <p className='text-xl font-500'>For Business</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
                                     </div>
-                                </a>
+                                </Link>
                             </li>
                             <li className=''>
-                                <a href='/patronum-for-education' className='py-2 px-4 rounded flex gap-4 items-center'>
+                                <Link href='/patronum-for-education' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Education' scroll={false} key={'patronum-for-education'}>
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/use-case-education.png' alt='use cases icon' title='use cases icon'/>
                                     <div>
                                         <p className='text-xl font-500'>For Education</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
                                     </div>
-                                </a>
+                                </Link>
                             </li>
                             <li className=''>
-                                <a href='/patronum-for-hr' className='py-2 px-4 rounded flex gap-4 items-center'>
+                                <Link href='/patronum-for-hr' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For HR' scroll={false} key={'patronum-for-hr'}>
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/use-case-hr.png' alt='use cases icon' title='use cases icon'/>
                                     <div>
                                         <p className='text-xl font-500'>For HR</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
                                     </div>
-                                </a>
+                                </Link>
                             </li>
                             <li className=''>
-                                <a href='/patronum-for-users' className='py-2 px-4 rounded flex gap-4 items-center'>
+                                <Link href='/patronum-for-users' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Users' scroll={false} key={'patronum-for-users'}>
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/use-case-users.png' alt='use cases icon' title='use cases icon'/>
                                     <div>
                                         <p className='text-xl font-500'>For Users</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
                                     </div>
-                                </a>
+                                </Link>
                             </li>
                             <li className=''>
-                                <a href='/patronum-for-sales-marketing' className='py-2 px-4 rounded flex gap-4 items-center'>
+                                <Link href='/patronum-for-sales-marketing' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Sales & Marketing' scroll={false} key={'patronum-for-sales-marketing'}>
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/use-case-sales.png' alt='use cases icon' title='use cases icon'/>
                                     <div>
                                         <p className='text-xl font-500'>For Sales & Marketing</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
                                     </div>
-                                </a>
+                                </Link>
                             </li>
                             <li className=''>
-                                <a href='/patronum-for-it-admins' className='py-2 px-4 rounded flex gap-4 items-center'>
+                                <Link href='/patronum-for-it-admins' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For IT Admins' scroll={false} key={'patronum-for-it-admins'}>
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/use-case-admin.png' alt='use cases icon' title='use cases icon'/>
                                     <div>
                                         <p className='text-xl font-500'>For IT Admins</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
                                     </div>
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#" className="flex items-center py-4 px-4 text-2xl font-normal text-gray-900  hover:bg-gray-100 group">
+                    <li className='px-4'>
+                        <Link href="#" className="flex items-center py-4 border-b text-2xl font-normal text-gray-900" aria-label='Pricing' scroll={false} key={'pricing'}>
                             <span className="ml-3">Pricing</span>
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <button onClick={() => setResourcesDropdownOpen(!isResourcesDropdownOpen)} type="button" className="flex items-center py-4 px-4 w-full text-2xl font-normal text-gray-900  transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-authentication" data-collapse-toggle="dropdown-authentication">
-                            <span className="flex-1 ml-3 text-left w-4/5 whitespace-nowrap">Resources</span>
-                            <span className='w-1/5 flex items-center justify-center'>
-                                <svg aria-hidden="true" className="ml-8 w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
-                            </span>
-                        </button>
-                        <ul id="dropdown-resources" className={`py-4 px-4 space-y-4 bg-gray-100 ${isResourcesDropdownOpen ? "block" : "hidden" }`}>
+                        <div className='px-4'>
+                            <button onClick={() => setResourcesDropdownOpen(!isResourcesDropdownOpen)} type="button" className="flex items-center py-4 border-b w-full text-2xl font-normal text-gray-900" aria-label='Open Resources Dropdown'>
+                                <span className="flex-1 ml-3 text-left w-4/5 whitespace-nowrap">Resources</span>
+                                <span className='w-1/5 flex items-center justify-center'>
+                                    <svg aria-hidden="true" className={`w-7 h-7 transition ${isResourcesDropdownOpen ? "-rotate-90" : "rotate-0"}`} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path>
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+                        <ul id="dropdown-resources" className={`py-4 px-4 space-y-4 bg-gray-100 ${isResourcesDropdownOpen ? "block" : "hidden" }`} aria-hidden="true">
                             <li className=''>
-                                <a href='/blog' className='py-2 px-4 rounded flex gap-4 items-center'>
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-blog.png' alt='features icon' title='features icon'/>
+                                <Link href='/blog' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Blog' scroll={false} key={'blog'}>
+                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-blog.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Blog</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
                                     </div>
-                                </a>
+                                </Link>
                             </li>
                             <li className=''>
-                                <a href='/guides' className='py-2 px-4 rounded flex gap-4 items-center'>
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-guide.png' alt='features icon' title='features icon'/>
+                                <Link href='/guides' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Guides' scroll={false} key={'guides'}>
+                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-guide.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Guides</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
                                     </div>
-                                </a>
+                                </Link>
                             </li>
                             <li className=''>
-                                <a href='/ebooks' className='py-2 px-4 rounded flex gap-4 items-center'>
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-ebook.png' alt='features icon' title='features icon'/>
+                                <Link href='/ebooks' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Ebooks' scroll={false} key={'ebooks'}>
+                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-ebook.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Ebooks</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
                                     </div>
-                                </a>
+                                </Link>
                             </li>
                             <li className=''>
-                                <a href='/webinars' className='py-2 px-4 rounded flex gap-4 items-center'>
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-webinar.png' alt='features icon' title='features icon'/>
+                                <Link href='/webinars' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Webinars' scroll={false} key={'webinars'}>
+                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-webinar.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Webinars</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
                                     </div>
-                                </a>
+                                </Link>
                             </li>
                             <li className=''>
-                                <a href='/case-studies' className='py-2 px-4 rounded flex gap-4 items-center'>
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-case-study.png' alt='features icon' title='features icon'/>
+                                <Link href='/case-studies' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Case Studies' scroll={false} key={'case-studies'}>
+                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-case-study.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Case Studies</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
                                     </div>
-                                </a>
+                                </Link>
                             </li>
                             <li className=''>
-                                <a href='/product-videos' className='py-2 px-4 rounded flex gap-4 items-center'>
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-product-videos.png' alt='features icon' title='features icon'/>
+                                <Link href='/product-videos' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Product Videos' scroll={false} key={'product-videos'}>
+                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-product-videos.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Product Videos</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
                                     </div>
-                                </a>
+                                </Link>
                             </li>
                             <li className=''>
-                                <a href='https://community.patronum.io' className='py-2 px-4 rounded flex gap-4 items-center'>
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-community.png' alt='features icon' title='features icon'/>
+                                <Link href='https://community.patronum.io' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Community'>
+                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-community.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Community</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
                                     </div>
-                                </a>
+                                </Link>
                             </li>
                             <li className=''>
-                                <a href='https://help.patronum.com' className='py-2 px-4 rounded flex gap-4 items-center'>
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-help.png' alt='features icon' title='features icon'/>
+                                <Link href='https://help.patronum.com' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Help'>
+                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-help.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Help</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
                                     </div>
-                                </a>
+                                </Link>
                             </li>
                             <li className=''>
-                                <a href='/legal' className='py-2 px-4 rounded flex gap-4 items-center'>
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-legal.png' alt='features icon' title='features icon'/>
+                                <Link href='/legal' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Legal' scroll={false} key={'legal'}>
+                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-legal.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Legal</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
                                     </div>
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="/partner-with-us" className="flex items-center py-4 px-4 text-2xl font-normal text-gray-900  hover:bg-gray-100 group">
+                    <li className='px-4'>
+                        <Link href="/partner-with-us" className="flex items-center py-4 border-b text-2xl font-normal text-gray-900" scroll={false} key={'partner-with-us'}>
                             <span className="ml-3">Partners</span>
-                        </a>
+                        </Link>
                     </li>
-                    <li>
-                        <a href="/support" className="flex items-center py-4 px-4 text-2xl font-normal text-gray-900  hover:bg-gray-100 group">
+                    <li className='px-4'>
+                        <Link href="/support" className="flex items-center py-4 border-b text-2xl font-normal text-gray-900" scroll={false} key={'Support'}>
                             <span className="ml-3">Support</span>
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </div>

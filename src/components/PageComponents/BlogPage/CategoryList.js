@@ -6,7 +6,7 @@ const CategoryList = ({ categories, activeCategory, setActiveCategory }) => {
 
   return (
     <ul className='blog-cati-button flex flex-wrap lg:justify-between lg:gap-0 gap-[2vw]'>
-      <li key="all">
+      <li key="all" className='fadeUp'>
         <Link href="/blog" className='cat-btn'>
           <button 
             className={activeCategory === 'all' ? 'active' : ''}
@@ -19,7 +19,7 @@ const CategoryList = ({ categories, activeCategory, setActiveCategory }) => {
         </Link>
       </li>
       {filteredCategories.map((category) => (
-        <li key={category.slug}>
+        <li key={category.slug} className='fadeUp'>
           <Link href={`/category/${category.slug}`} className='cat-btn'>
             <button
               className={activeCategory === category.name ? 'active' : ''}

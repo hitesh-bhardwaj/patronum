@@ -8,30 +8,34 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Testimonial() {
 
     useEffect(() => {
-        const testicard = document.querySelectorAll('.testi-slider .swiper-wrapper');
+        let ctx = gsap.context(() => {
+
+            const testicard = document.querySelectorAll('.testi-slider .mySwiper');
+            
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".testi-slider",
+                    start: "top 90%",
+                }
+            });
         
-        let tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".swiper-wrapper",
-                start: "top 90%",
-            }
+            tl.fromTo(
+                testicard,
+                {
+                    opacity: 0,
+                    x: 200,
+                },
+                {
+                    opacity: 1,
+                    x: 0,
+                    duration: 0.6,
+                    stagger: 0.1,
+                    ease: 'Power1.out',
+                }
+            );
         });
-    
-        tl.fromTo(
-            testicard,
-            {
-                opacity: 0,
-                x: 200,
-            },
-            {
-                opacity: 1,
-                x: 0,
-                duration: 0.6,
-                stagger: 0.1, // Adjust stagger timing as needed
-                ease: 'Power1.out',
-            }
-        );
-      }, []);
+        return () => ctx.revert();
+    }, []);
 
     return(
         <>

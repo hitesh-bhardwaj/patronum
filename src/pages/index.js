@@ -18,6 +18,9 @@ import RelatedPosts from "@/components/PageComponents/BlogPage/RelatedPosts";
 import { getHomePagePosts } from '@/lib/posts';
 import UseCasesMobile from "@/components/PageComponents/HomePage/UseCasesMobile";
 
+import { motion } from "framer-motion";
+import Inner from "@/components/Inner";
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home( { recentPosts } ) {
@@ -211,7 +214,7 @@ export default function Home( { recentPosts } ) {
       }, []);
 
   return (
-    <>
+    <Inner>
       <PreLoader />
       <Header />
       <main>
@@ -230,7 +233,7 @@ export default function Home( { recentPosts } ) {
         <Faqs />
       </main>
       <Footer />
-    </>
+    </Inner>
   );
 } 
 

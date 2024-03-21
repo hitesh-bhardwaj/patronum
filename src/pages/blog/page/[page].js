@@ -24,7 +24,7 @@ export default function Blog({ posts, pagination, categories }) {
           <div className="container">
             <div className="content-2">
               <div className='section-head'>
-                <h4 className='title-4xl'>
+                <h4 className='title-4xl text-anim'>
                   <span>
                     Explore Our
                   </span>

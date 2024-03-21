@@ -32,33 +32,35 @@ export default function Hero(){
             const tl = gsap.timeline();
             tl.to(heroAnim, 0.8,{
                 y: 0,
-                stagger: 0.3,
+                stagger: 0.1,
                 ease: 'power2.out',
-            }, '+=6').to(heroPara, 0.4,{
+            }, '+=6')
+            .to(heroPara, 0.4,{
                 y: 0,
                 opacity: 1,
-                duration: 0.4,
                 ease: "Power2.out",
-                stagger: 0.025,
-            }, '-=0.8').from('.hero-button-anim', 0.5, {
+                stagger: 0.01,
+            }, '-=0.8')
+            .from('.hero-button-anim', 0.8, {
                 y: 30,
                 opacity: 0,
                 ease: "power2.out",
-            }, '-=0.5').to('.hero-img', 1.5,{
-                x: 0,
-                opacity: 1,
-                ease: "power2.out",
-            }, '-=1.2')
+            }, '-=0.8')
             .to(".hero-svg-circle",{
                 strokeDasharray: "310% 300%",
                 duration: 1.5,
                 ease: "power2.out",
-            }, '-=1')
+            }, '-=0.8')
             .from(".scroll-down-btn-img",{
                 y: -10, 
                 opacity: 0,
-                duration: 0.7
-            }, '-=0.4');
+                duration: 0.8
+            }, '-=0.5')
+            .to('.hero-img', 2,{
+                x: 0,
+                opacity: 1,
+                ease: "expo.out",
+            }, '-=2');
         });
         return () => ctx.revert();
     }, []);
@@ -73,7 +75,7 @@ export default function Hero(){
                 opacity: 0,
                 stagger: 0.05,
                 ease: 'power2.out',
-            }, '+=5.8');
+            }, '+=6');
         });
         return () => ctx.revert();
     }, []);

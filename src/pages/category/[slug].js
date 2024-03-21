@@ -24,7 +24,7 @@ const Category = ({ category, posts, categories }) => {
             <div className="container">
               <div className="content-2">
                 <div className='section-head'>
-                  <h4 className='title-4xl'>
+                  <h4 className='title-4xl text-anim'>
                     <span>
                       {category.name}
                     </span>

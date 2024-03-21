@@ -1,22 +1,14 @@
 import '@/styles/globals.css'
+import '@/styles/styles.css'
 import { DefaultSeo } from "next-seo";
-import { useEffect } from 'react';
 import dynamic from 'next/dynamic';
 
-import 'swiper/css';
-import 'swiper/css/free-mode';
-import 'swiper/css/scrollbar';
-
-import { ReactLenis } from '@studio-freight/react-lenis'
+import { ReactLenis } from '@studio-freight/react-lenis';
 import { ModalProvider } from '@/components/InstallModal/ModelContext';
 import InstallModal from '@/components/InstallModal';
 import DemoModal from '@/components/InstallModal/DemoModal';
 
-// Import the Background component dynamically
-// const BackgroundWithNoSSR = dynamic(() => import('@/components/Background'), {
-//   ssr: false, // This will only import Background on the client-side
-//   loading: () => <p>Loading background...</p>, // Optional loading component
-// });
+import { AnimatePresence } from 'framer-motion'
 
 // Import the Background component dynamically
 const BackgroundWithNoSSR = dynamic(() => import('@/components/Pixi'), {
@@ -24,22 +16,7 @@ const BackgroundWithNoSSR = dynamic(() => import('@/components/Pixi'), {
   loading: () => <p>Loading background...</p>, // Optional loading component
 });
 
-export default function App({ Component, pageProps }) {
-
-  useEffect(() => {
-    // Scroll to the top when the component mounts or when the route changes
-    const handleRouteChange = () => {
-        window.scrollTo(0, 0)
-    };
-
-    // Attach the event listener for route changes
-    window.addEventListener("beforeunload", handleRouteChange);
-
-    // Remove the event listener when the component is unmounted
-    return () => {
-      window.removeEventListener("beforeunload", handleRouteChange);
-    };
-  }, []); // Empty dependency array ensures the effect runs only once on mount
+export default function App({ Component, pageProps, router }) {
 
   return(
     <>
@@ -65,14 +42,16 @@ export default function App({ Component, pageProps }) {
         ]}
       />
       
-      <ReactLenis root options={{ duration: 0.8 }}>
-        <ModalProvider>
-          <Component {...pageProps} />
-          <InstallModal />
-          <DemoModal />
-        </ModalProvider>
-      </ReactLenis>
-     <BackgroundWithNoSSR />
+        <ReactLenis root options={{ duration: 0.8 }}>
+          <ModalProvider>
+            <AnimatePresence mode="wait" initial={false} onExitComplete={() => window.scrollTo(0, 0)}>
+              <Component {...pageProps} key={router.asPath}/>
+            </AnimatePresence>
+            <InstallModal />
+            <DemoModal />
+          </ModalProvider>
+        </ReactLenis>
+      <BackgroundWithNoSSR />
     </>
   ); 
 }

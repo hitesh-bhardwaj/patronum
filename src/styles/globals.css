@@ -71,6 +71,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   width: -webkit-fill-available;
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .lenis.lenis-stopped {
@@ -85,7 +86,7 @@ body{
   height: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  padding-top: 20px;
+  /* padding-top: 20px; */
   font-kerning: normal;
   overflow-x: hidden;
 }
@@ -2848,9 +2849,6 @@ section{
 .feat-head{
   font-size: 4.5vw;
   margin: 8vw 0;
-}
-.feat-head .featured-line{
-  width: 50%;
 }
 .content-p{
   font-size: 4vw;

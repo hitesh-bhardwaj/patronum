@@ -14,13 +14,13 @@ const FeaturedPost = ({ post }) => {
         <div className="container">
             <div className='content-2'>
                 <div className='section-head'>
-                    <h2 className='title-4xl'>
+                    <h2 className='title-4xl text-anim'>
                         <span>
                             Featured Blog
                         </span>
                     </h2>
                 </div>
-                <div className='lg:flex lg:justify-between lg:items-start block' id='fadeUp'>
+                <div className='lg:flex lg:justify-between lg:items-start block fadeUp' id='fadeUp'>
                     <div className='lg:w-[53%] w-full overflow-hidden rounded-xl'>
                         <a href={`/${post.slug}`}>
                             <img

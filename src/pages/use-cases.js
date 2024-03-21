@@ -2,7 +2,14 @@ import Faqs from "@/components/PageComponents/FeaturesPage/Faq";
 import Testimonial from "@/components/PageLayout/Testimonial";
 import PageLayout from "@/components/PageLayout";
 import FeatureCard from "@/components/PageLayout/FeatureCard";
+
+import SplitType from "split-type";
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
+import { useEffect } from "react";
 import SectionBreakSmall from "@/components/PageLayout/SectionBreakSmall";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const useCasesData = [
     {
@@ -49,7 +56,31 @@ const useCasesData = [
     }
 ];
 
-export default function UseCases(){
+export default function UseCases() {
+
+    useEffect(() => {
+        let ctx = gsap.context(() => {
+        const sectionBreakAnimations = document.querySelectorAll('.section-break-text');
+        sectionBreakAnimations.forEach((sectionBreakAnimation) => {
+            const sectionBreakAnim = new SplitType(sectionBreakAnimation, {types: 'word char'});
+            let sectionBreakAnimWord = sectionBreakAnimation.querySelectorAll('.char');
+
+            gsap.from(sectionBreakAnimWord, {
+            scrollTrigger: {
+                trigger: sectionBreakAnimation,
+                start: 'top 80%',
+                scrub: 1,
+                end: 'bottom 30%'
+            },
+            duration: 0.8,
+            opacity: 0.2,
+            stagger: 0.1,
+            ease: 'expo.out'
+            });
+        });
+    });
+    return () => ctx.revert();
+    }, []);
 
     return (
         <>
@@ -59,9 +90,9 @@ export default function UseCases(){
                 pagePara={"The only tool you'll ever need to streamline your Google Workspace management."} 
                 imgSrc={'useCases.svg'}>
 
-                    <SectionBreakSmall 
-                        sectionBreakText="Patronum gives you full control over how Google Workspace is managed with intelligent automation and delegation"
-                    />
+                <SectionBreakSmall 
+                    sectionBreakText={"Patronum gives you full control over how Google Workspace is managed with intelligent automation and delegation"}
+                />
 
                 <section className="features-main useCases-main">
                     <div className="container">

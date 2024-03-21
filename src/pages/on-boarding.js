@@ -173,7 +173,6 @@ export default function FeatureDetail(){
                 <Faqs />
 
             </PageLayout>
-
         </>
     )
 }
