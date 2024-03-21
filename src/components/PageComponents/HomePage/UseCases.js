@@ -230,7 +230,7 @@ export default function UseCases() {
                                             </div>
                                             <div className="useCase-item-right">
                                                 <h4 className="title-3xl mb-10">
-                                                    <span>Patronum for Sales & Marketing</span>
+                                                    <span>For Sales & Marketing</span>
                                                 </h4>
                                                 <p className="content-p mb-10">
                                                     <span>
