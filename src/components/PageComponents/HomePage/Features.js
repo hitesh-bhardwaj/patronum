@@ -112,7 +112,7 @@ export default function Features(){
                                 </p>
                                     {accordionData.map((item, index) => (
                                         <div className={`accordion-img ${index === accordionOpen ? 'featImgAnim' : ''}`} key={index}>
-                                            <img src={item.img} alt={`Feature ${index + 1}`} />
+                                            <img src={item.img} alt={`Feature ${index + 1}`} loading='lazy'/>
                                         </div>
                                     ))}
                             </div>
@@ -131,7 +131,7 @@ export default function Features(){
                                                 <div className="accordion-content">
                                                     <p className="content-p lg:my-6 my-[3vw]">
                                                         <span className='w-full flex justify-center mb-[10vw] mt-[5vw] lg:hidden'>
-                                                            <img className='w-[70%]' src={item.img} alt="feature image"/>
+                                                            <img className='w-[70%]' src={item.img} alt="feature image" loading='lazy'/>
                                                         </span>
                                                         <span>{item.content}</span>
                                                         <br />
