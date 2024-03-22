@@ -113,7 +113,7 @@ body{
   height: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  /* padding-top: 20px; */
+  padding-top: 20px;
   font-kerning: normal;
   overflow-x: hidden;
 }
