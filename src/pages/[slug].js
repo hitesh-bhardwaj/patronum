@@ -191,7 +191,7 @@ return (
       <section className="container">
         <div className="content blog-content">
           <div className="flex w-full justify-between items-start" id="blog-container">
-            <div className="w-[20%] -ml-[2vw] relative" id="table-of-content"> 
+            <div className="w-[20%] -ml-[2vw] relative fadeUp" id="table-of-content"> 
               <span className="absolute h-[98%] block w-1.5 bg-[#E9E9E9] overflow-hidden -left-8 rounded -top-[1.5%]">
                 <span className="w-full h-[2%] bg-head block rounded origin-top" id="toc-bar"/>
               </span>
@@ -210,7 +210,7 @@ return (
               dangerouslySetInnerHTML={{
                 __html: content,
               }}
-              id="blog-content"
+              id="blog-content fadeUp"
               className={styles.blogContent}
             />
           </div>

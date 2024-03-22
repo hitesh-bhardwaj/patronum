@@ -2,72 +2,233 @@ import PageLayout from "@/components/PageLayout";
 import LinkButton from "@/components/PageLayout/Button/LinkButton";
 import SectionTitle from "@/components/PageLayout/SectionTitle";
 
-export default function Partners() {
+import { useEffect } from "react";
+import gsap from "gsap"
+import SplitType from "split-type";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-    const partnerDetails = [
-        {
-            id: "01",
-            title: "Sales Support",
-            para: "At Patronum, we’re committed to providing personalised support to our clients and partners. As a partner you will be given access to exclusive pricing and annual repeating revenue. Whether you need assistance with sales or presales technical issues, or simply want a team member to join your meeting, we’re here to help in any way possible.",
-            img: "/assets/partners/sales-support.svg"
-        },
-        {
-            id: "02",
-            title: "Leads",
-            para: "If we find we are speaking with one of your customers or require a local point of contact, we’ll be sure to reach out to you to get you engaged. At Patronum, we value our partnerships and believe in working closely with our resellers to ensure our clients receive the best service possible.",
-            img: "/assets/partners/leads.svg"
-        },
-        {
-            id: "03",
-            title: "Training And Technical Support",
-            para: "Patronum is designed to be intuitive and user-friendly, with a number of instructional videos available to help you get started. However, we understand that everybody has unique needs, and we’re here to provide support wherever it’s needed to ensure that your entire team is up to speed with Patronum.",
-            img: "/assets/partners/training-and-technical-support.svg"
-        },
-        {
-            id: "04",
-            title: "Avoid Google Apps Manager (GAM)",
-            para: "If your organization has a technical expert who uses GAM, partnering with Patronum can save you time and effort by avoiding the need to set up a GAM client, create and test command scripts, and mitigate any risks of potential damage to your client’s Workspace environment.",
-            img: "/assets/partners/avoid-gam.svg"
-        },
-        {
-            id: "05",
-            title: "Patronum Community",
-            para: "At Patronum, we believe that feedback is crucial to improving our solutions and providing the best possible service to our partners and clients. Whether you have ideas for improving our software or simply want to share your thoughts on your experience working with us, we’re always eager to hear from you.",
-            img: "/assets/partners/patronum-community.svg"
-        },
-    ]
+gsap.registerPlugin(ScrollTrigger);
 
-    const PartnerCard = ( { title, id, imgSrc, para } ) => {
-        return (
-            <>
-                <div className="section-list-item">
-                    <div className="section-list-head">
-                        <div className="cards-num fadeLeft">
-                            <span>
-                                {id}
-                            </span>
-                        </div>
-                        <h3 className="title-3xl fadeRight">
-                            <span>
-                                {title}
-                            </span>
-                        </h3>
+const partnerDetails = [
+    {
+        id: "01",
+        title: "Sales Support",
+        para: "At Patronum, we’re committed to providing personalised support to our clients and partners. As a partner you will be given access to exclusive pricing and annual repeating revenue. Whether you need assistance with sales or presales technical issues, or simply want a team member to join your meeting, we’re here to help in any way possible.",
+        img: "/assets/partners/sales-support.svg"
+    },
+    {
+        id: "02",
+        title: "Leads",
+        para: "If we find we are speaking with one of your customers or require a local point of contact, we’ll be sure to reach out to you to get you engaged. At Patronum, we value our partnerships and believe in working closely with our resellers to ensure our clients receive the best service possible.",
+        img: "/assets/partners/leads.svg"
+    },
+    {
+        id: "03",
+        title: "Training And Technical Support",
+        para: "Patronum is designed to be intuitive and user-friendly, with a number of instructional videos available to help you get started. However, we understand that everybody has unique needs, and we’re here to provide support wherever it’s needed to ensure that your entire team is up to speed with Patronum.",
+        img: "/assets/partners/training-and-technical-support.svg"
+    },
+    {
+        id: "04",
+        title: "Avoid Google Apps Manager (GAM)",
+        para: "If your organization has a technical expert who uses GAM, partnering with Patronum can save you time and effort by avoiding the need to set up a GAM client, create and test command scripts, and mitigate any risks of potential damage to your client’s Workspace environment.",
+        img: "/assets/partners/avoid-gam.svg"
+    },
+    {
+        id: "05",
+        title: "Patronum Community",
+        para: "At Patronum, we believe that feedback is crucial to improving our solutions and providing the best possible service to our partners and clients. Whether you have ideas for improving our software or simply want to share your thoughts on your experience working with us, we’re always eager to hear from you.",
+        img: "/assets/partners/patronum-community.svg"
+    },
+]
+
+const PartnerCard = ( { title, id, imgSrc, para } ) => {
+    return (
+        <>
+            <div className="section-list-item">
+                <div className="section-list-head">
+                    <div className="cards-num fadeRight">
+                        <span>
+                            {id}
+                        </span>
                     </div>
-                    <span className="hr-1p lineDraw"/>
-                    <div className="section-list-body">
-                        <div className="section-list-body-right">
-                            <p className="content-p fadeUp">
-                                {para}
-                            </p>
-                        </div>
-                        <div className="section-list-body-left">
-                            <img loading="lazy" className="fadeUp" src={imgSrc} alt={title} title={title}/>
-                        </div>
+                    <h3 className="title-3xl fadeLeft">
+                        <span>
+                            {title}
+                        </span>
+                    </h3>
+                </div>
+                <span className="hr-1p lineDraw"/>
+                <div className="section-list-body">
+                    <div className="section-list-body-right">
+                        <p className="content-p fadeUp">
+                            {para}
+                        </p>
+                    </div>
+                    <div className="section-list-body-left">
+                        <img loading="lazy" className="fadeUp" src={imgSrc} alt={title} title={title}/>
                     </div>
                 </div>
-            </>
-        )
-    }
+            </div>
+        </>
+    )
+}
+
+export default function Partners() {
+
+    useEffect(() => {
+        const sHeadings = document.querySelectorAll('.text-anim-2');
+    
+        sHeadings.forEach((sHeading) => {
+          let ctx = gsap.context(() => {
+            const textAnim2 = new SplitType(sHeading, {types: 'words'});
+            let animWord2 = sHeading.querySelectorAll('.word');
+    
+            gsap.from(animWord2, {
+              scrollTrigger: {
+                trigger: sHeading,
+                start: 'top 80%',
+              },
+              duration: 0.5,
+              yPercent: 100,
+              opacity: 0,
+              stagger: 0.01,
+            });
+          });
+          return () => ctx.revert();
+        });
+      }, []);
+
+    useEffect(() => {
+        const headings = document.querySelectorAll('.text-anim');
+    
+        headings.forEach((heading) => {
+          let ctx = gsap.context(() => {
+            const textAnim = new SplitType(heading, {types: 'words'});
+            let animWord = heading.querySelectorAll('.word');
+    
+            gsap.from(animWord, {
+              scrollTrigger: {
+                trigger: heading,
+                start: 'top 80%',
+              },
+              duration: 0.8,
+              yPercent: 100,
+              stagger: 0.02,
+            });
+          });
+          return () => ctx.revert();
+        });
+      }, []);
+
+      useEffect(() => {
+        const fadeUps = document.querySelectorAll('.fadeUp');
+    
+        let ctx = gsap.context(() => {
+          fadeUps.forEach((fadeUp) => {
+            gsap.fromTo(
+              fadeUp,
+              {
+                opacity: 0,
+                y: 50,
+              },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+                ease: 'Power3.out',
+                scrollTrigger: {
+                  trigger: fadeUp,
+                  start: 'top 85%',
+                },
+              }
+            );
+          });
+        });
+        return () => ctx.revert();
+      }, []);
+
+      useEffect(() => {
+        const lineDraws = document.querySelectorAll('.lineDraw');
+    
+        let ctx = gsap.context(() => {
+          lineDraws.forEach((lineDraw) => {
+            gsap.fromTo(
+              lineDraw,
+              {
+                scaleX: 0,
+                transformOrigin: 'left'
+              },
+              {
+                scaleX: 1,
+                duration: 2,
+                ease: 'expo.out',
+                scrollTrigger: {
+                  trigger: lineDraw,
+                  start: 'top 90%',
+                },
+              }
+            );
+          });
+        });
+        return () => ctx.revert();
+      }, []);
+
+      useEffect(() => {
+        const fadeLefts = document.querySelectorAll('.fadeLeft');
+    
+        let ctx = gsap.context(() => {
+            fadeLefts.forEach((fadeLeft) => {
+            gsap.fromTo(
+                fadeLeft,
+              {
+                opacity: 0,
+                x: -50,
+              },
+              {
+                opacity: 1,
+                x: 0,
+                duration: 0.6,
+                stagger: 0.05,
+                ease: 'Power3.out',
+                scrollTrigger: {
+                  trigger: fadeLeft,
+                  start: 'top 85%',
+                },
+              }
+            );
+          });
+        });
+        return () => ctx.revert();
+      }, []);
+
+      useEffect(() => {
+        const fadeRights = document.querySelectorAll('.fadeRight');
+    
+        let ctx = gsap.context(() => {
+          fadeRights.forEach((fadeRight) => {
+            gsap.fromTo(
+              fadeRight,
+              {
+                opacity: 0,
+                x: 50,
+              },
+              {
+                opacity: 1,
+                x: 0,
+                duration: 0.6,
+                stagger: 0.05,
+                ease: 'Power3.out',
+                scrollTrigger: {
+                  trigger: fadeRight,
+                  start: 'top 85%',
+                },
+              }
+            );
+          });
+        });
+        return () => ctx.revert();
+      }, []);
 
     return (
         <>

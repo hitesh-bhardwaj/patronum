@@ -6,27 +6,85 @@ import {
     TwitterShareButton,
     WhatsappShareButton
   } from 'next-share';
+import Stairs from '@/components/Stairs';
+
+import { useEffect } from "react";
+import gsap from "gsap"
+import SplitType from "split-type";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function BlogLayout( { children, postTitle, postAuthor, postDate, shareLink, featImg } ) {
+
+    useEffect(() => {
+        const headings = document.querySelectorAll('.text-anim');
+    
+        headings.forEach((heading) => {
+          let ctx = gsap.context(() => {
+            const textAnim = new SplitType(heading, {types: 'words'});
+            let animWord = heading.querySelectorAll('.word');
+    
+            gsap.from(animWord, {
+              scrollTrigger: {
+                trigger: heading,
+                start: 'top 80%',
+              },
+              duration: 0.8,
+              yPercent: 100,
+              stagger: 0.02,
+            });
+          });
+          return () => ctx.revert();
+        });
+      }, []);
+
+    useEffect(() => {
+        const fadeUps = document.querySelectorAll('.fadeUp');
+    
+        let ctx = gsap.context(() => {
+          fadeUps.forEach((fadeUp) => {
+            gsap.fromTo(
+              fadeUp,
+              {
+                opacity: 0,
+                y: 50,
+              },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+                ease: 'Power3.out',
+                scrollTrigger: {
+                  trigger: fadeUp,
+                  start: 'top 85%',
+                },
+              }
+            );
+          });
+        });
+        return () => ctx.revert();
+      }, []);
+
     return(
-        <>
+        <Stairs>
             <Header />
             <main>
                 <section id="blog-hero">
                     <div className="w-[88%] mx-auto">
                         <div className="content blog-content-1">
                             <div className="lg:w-[88%] w-full mx-auto lg:mt-[6.5vw] md:mt-[3vw] mt-[6vw] lg:mb-[4vw] mb-[6vw]">
-                                <h1 className="lg:text-[3.4vw] md:text-[5vw] text-[7vw] leading-[1.2] text-center text-head lg:mb-[2vw] mb-[4vw]">
+                                <h1 className="lg:text-[3.4vw] md:text-[5vw] text-[7vw] leading-[1.2] text-center text-head lg:mb-[2vw] mb-[4vw] fadeUp">
                                     <span>
                                         {postTitle}
                                     </span>
                                 </h1>
                                 <div className="lg:text-[1.15vw] md:text-[2.5vw] md:flex items-center justify-between lg:w-[70%] w-[90%] mx-auto md:mb-0">
-                                    <div className="flex items-center justify-between gap-[2vw] md:mb-0 mb-[3vw]">
+                                    <div className="flex items-center justify-between gap-[2vw] md:mb-0 mb-[3vw] fadeUp">
                                         <p>By {postAuthor}</p>
                                         <p>{postDate}</p>
                                     </div>
-                                    <div className="flex md:items-center items-end justify-between gap-[2vw]">
+                                    <div className="flex md:items-center items-end justify-between gap-[2vw] fadeUp">
                                         <p>Share Article</p>
                                         <div className="flex items-start justify-center lg:gap-[1vw] md:gap-[2vw] gap-[3vw]">
                                             
@@ -65,7 +123,7 @@ export default function BlogLayout( { children, postTitle, postAuthor, postDate,
                                     </div>
                                 </div>
                             </div>
-                            <div className="featured-image overflow-hidden lg:rounded-3xl rounded-2xl lg:h-[35vw] h-[full]">
+                            <div className="featured-image overflow-hidden lg:rounded-3xl rounded-2xl lg:h-[35vw] h-[full] fadeUp">
                                 <img className="w-full h-full object-cover object-center" src={featImg} alt={`${postTitle} image`} title={`${postTitle} image`} />
                             </div>
                         </div>
@@ -74,6 +132,6 @@ export default function BlogLayout( { children, postTitle, postAuthor, postDate,
                 {children}
             </main>
             <Footer />
-        </>
+        </Stairs>
     )
 }

@@ -6,7 +6,7 @@ const FeatureCard = ( {featTitle, featImg, featPara1, featPara2, featLink, btnTe
             <div className="section-list-item">
                 <div className="section-list-head">
                     <span className="section-list-hr lineDraw"/>
-                    <h3 className="title-3xl fadeIn">
+                    <h3 className="title-3xl fadeRight">
                         <span>
                             {featTitle}
                         </span>

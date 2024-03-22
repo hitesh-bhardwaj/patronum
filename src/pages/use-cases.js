@@ -2,12 +2,12 @@ import Faqs from "@/components/PageComponents/FeaturesPage/Faq";
 import Testimonial from "@/components/PageLayout/Testimonial";
 import PageLayout from "@/components/PageLayout";
 import FeatureCard from "@/components/PageLayout/FeatureCard";
+import SectionBreakSmall from "@/components/PageLayout/SectionBreakSmall";
 
 import SplitType from "split-type";
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 import { useEffect } from "react";
-import SectionBreakSmall from "@/components/PageLayout/SectionBreakSmall";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,31 +56,110 @@ const useCasesData = [
     }
 ];
 
-export default function UseCases() {
+export default function useCases(){
 
     useEffect(() => {
-        let ctx = gsap.context(() => {
-        const sectionBreakAnimations = document.querySelectorAll('.section-break-text');
-        sectionBreakAnimations.forEach((sectionBreakAnimation) => {
-            const sectionBreakAnim = new SplitType(sectionBreakAnimation, {types: 'word char'});
-            let sectionBreakAnimWord = sectionBreakAnimation.querySelectorAll('.char');
-
-            gsap.from(sectionBreakAnimWord, {
-            scrollTrigger: {
-                trigger: sectionBreakAnimation,
+        const headings = document.querySelectorAll('.text-anim');
+    
+        headings.forEach((heading) => {
+          let ctx = gsap.context(() => {
+            const textAnim = new SplitType(heading, {types: 'words'});
+            let animWord = heading.querySelectorAll('.word');
+    
+            gsap.from(animWord, {
+              scrollTrigger: {
+                trigger: heading,
                 start: 'top 80%',
-                scrub: 1,
-                end: 'bottom 30%'
-            },
-            duration: 0.8,
-            opacity: 0.2,
-            stagger: 0.1,
-            ease: 'expo.out'
+              },
+              duration: 0.8,
+              yPercent: 100,
+              stagger: 0.02,
             });
+          });
+          return () => ctx.revert();
         });
-    });
-    return () => ctx.revert();
-    }, []);
+      }, []);
+
+      useEffect(() => {
+        const fadeUps = document.querySelectorAll('.fadeUp');
+    
+        let ctx = gsap.context(() => {
+          fadeUps.forEach((fadeUp) => {
+            gsap.fromTo(
+              fadeUp,
+              {
+                opacity: 0,
+                y: 50,
+              },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+                ease: 'Power3.out',
+                scrollTrigger: {
+                  trigger: fadeUp,
+                  start: 'top 85%',
+                },
+              }
+            );
+          });
+        });
+        return () => ctx.revert();
+      }, []);
+
+      useEffect(() => {
+        const fadeRights = document.querySelectorAll('.fadeRight');
+    
+        let ctx = gsap.context(() => {
+          fadeRights.forEach((fadeRight) => {
+            gsap.fromTo(
+              fadeRight,
+              {
+                opacity: 0,
+                x: 50,
+              },
+              {
+                opacity: 1,
+                x: 0,
+                duration: 0.6,
+                stagger: 0.05,
+                ease: 'Power3.out',
+                scrollTrigger: {
+                  trigger: fadeRight,
+                  start: 'top 85%',
+                },
+              }
+            );
+          });
+        });
+        return () => ctx.revert();
+      }, []);
+
+      useEffect(() => {
+        const lineDraws = document.querySelectorAll('.lineDraw');
+    
+        let ctx = gsap.context(() => {
+          lineDraws.forEach((lineDraw) => {
+            gsap.fromTo(
+              lineDraw,
+              {
+                scaleX: 0,
+                transformOrigin: 'left'
+              },
+              {
+                scaleX: 1,
+                duration: 2,
+                ease: 'expo.out',
+                scrollTrigger: {
+                  trigger: lineDraw,
+                  start: 'top 90%',
+                },
+              }
+            );
+          });
+        });
+        return () => ctx.revert();
+      }, []);
 
     return (
         <>

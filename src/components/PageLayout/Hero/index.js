@@ -1,7 +1,10 @@
+import { useEffect } from "react";
 import gsap from "gsap"
-import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin"
+import SplitType from "split-type";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
 
-gsap.registerPlugin(ScrollToPlugin);
+gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
 export default function Hero( {pageTitle1, pageTitle2, pagePara, imgSrc} ){
 
@@ -12,6 +15,65 @@ export default function Hero( {pageTitle1, pageTitle2, pagePara, imgSrc} ){
           ease: "power3.inOut",
       });
     };
+
+    useEffect(() => {
+        let ctx = gsap.context(() => {
+
+            const headerAnim = document.querySelectorAll(".header-anim");
+
+            const tl = gsap.timeline();
+            tl.from(headerAnim, 1,{
+                opacity: 0,
+                stagger: 0.05,
+                ease: 'power2.out',
+            }, '+=0.5');
+        });
+        return () => ctx.revert();
+    }, []);
+
+    useEffect(() => {
+        let ctx = gsap.context(() => {
+  
+            const heroPara = document.querySelector('.hero-para');
+            const title = new SplitType('.page-hero-anim', {types: 'words'});
+            const titleAnim = document.querySelectorAll('.page-hero-anim span .word');
+  
+            const tl = gsap.timeline({
+                defaults: {
+                    ease: "power2.out"
+                }
+            });
+  
+            tl.to(titleAnim, 0.8,{
+                y: 0,
+                stagger: 0.02,
+            }, '+=0.5')
+            tl.to(heroPara, 0.8,{
+                y: 0,
+                opacity: 1,
+            }, '-=0.5')
+            .from('.page-hero-img', 1,{
+                y: 50,
+                opacity: 0,
+            }, '-=1')
+            .to(".hero-hr" ,{
+                width: "105%",
+                duration: 2,
+                ease: "expo.out"
+            }, "-=0.8")
+            .to(".hero-svg-circle",{
+                strokeDasharray: "310% 300%",
+                duration: 1.2,
+            }, '-=1.8')
+            .from(".scroll-down-btn-img",{
+                y: -10, 
+                opacity: 0,
+                duration: 0.7
+            }, '-=0.6');
+            
+        });
+        return () => ctx.revert();
+      }, []);
 
     return(
         <>

@@ -3,7 +3,7 @@ export default function FeatureDetailInfo( {featureDetailInfoTitle, imgSrc, feat
         <>
             <div className="section-list-item">
                 <div className="section-list-head">
-                    <h3 className="title-3xl fadeIn">
+                    <h3 className="title-3xl fadeRight">
                         <span>
                             {featureDetailInfoTitle}
                         </span>
