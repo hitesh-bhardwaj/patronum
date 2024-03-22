@@ -93,7 +93,9 @@ const Header = () => {
                                         <ul className='nav-dropdown-list'>
                                             <li className='nav-drop-list-item'>
                                                 <Link href='/on-boarding' className='nav-drop-list-hover' >
-                                                    <img loading='lazy' src='/assets/menu/onboarding.png' alt='features icon' title='features icon'/>
+                                                    <div className='img'>
+                                                        <img loading='lazy' src='/assets/menu/onboarding.svg' alt='features icon' title='features icon'/>
+                                                    </div>
                                                     <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>User Management</p>
                                                         <p className='nav-drop-text'>Automated User Onboarding & Offboarding</p>
@@ -102,7 +104,9 @@ const Header = () => {
                                             </li>
                                             <li className='nav-drop-list-item'>
                                                 <Link href='/email-signature-management' className='nav-drop-list-hover' >
-                                                    <img loading='lazy' src='/assets/menu/email-signature.png' alt='features icon' title='features icon'/>
+                                                    <div className='img'>
+                                                        <img loading='lazy' src='/assets/menu/email-signature.svg' alt='features icon' title='features icon'/>
+                                                    </div>
                                                     <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>Email Signatures</p>
                                                         <p className='nav-drop-text'>Centrally Managed Gmail Email Signatures</p>
@@ -111,7 +115,9 @@ const Header = () => {
                                             </li>
                                             <li className='nav-drop-list-item'>
                                                 <Link href='/google-workspace-backup' className='nav-drop-list-hover' >
-                                                    <img loading='lazy' src='/assets/menu/workspace-backup.png' alt='features icon' title='features icon'/>
+                                                    <div className='img'>
+                                                        <img loading='lazy' src='/assets/menu/workspace-backup.svg' alt='features icon' title='features icon'/>
+                                                    </div>
                                                     <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>Workspace Backup</p>
                                                         <p className='nav-drop-text'>Best-in-Class Full Fidelity Backups</p>
@@ -120,7 +126,9 @@ const Header = () => {
                                             </li>
                                             <li className='nav-drop-list-item'>
                                                 <Link href='/google-drive-management' className='nav-drop-list-hover' >
-                                                    <img loading='lazy' src='/assets/menu/drive-management.png' alt='features icon' title='features icon'/>
+                                                    <div className='img'>
+                                                        <img loading='lazy' src='/assets/menu/drive-management.svg' alt='features icon' title='features icon'/>
+                                                    </div>
                                                     <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>Google Drive Management</p>
                                                         <p className='nav-drop-text'>Manage, Update, or Move User Files</p>
@@ -129,7 +137,9 @@ const Header = () => {
                                             </li>
                                             <li className='nav-drop-list-item'>
                                                 <Link href='/google-drive-compliance' className='nav-drop-list-hover' >
-                                                    <img loading='lazy' src='/assets/menu/file-sharing.png' alt='features icon' title='features icon'/>
+                                                    <div className='img'>
+                                                        <img loading='lazy' src='/assets/menu/file-sharing.svg' alt='features icon' title='features icon'/>
+                                                    </div>
                                                     <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>File Unsharing</p>
                                                         <p className='nav-drop-text'>Automatically Unshare file & Stay Compliant</p>
@@ -138,7 +148,9 @@ const Header = () => {
                                             </li>
                                             <li className='nav-drop-list-item'>
                                                 <Link href='/google-contact-sharing' className='nav-drop-list-hover'>
-                                                    <img loading='lazy' src='/assets/menu/contact-sharing.png' alt='features icon' title='features icon'/>
+                                                    <div className='img'>
+                                                        <img loading='lazy' src='/assets/menu/contact-sharing.svg' alt='features icon' title='features icon'/>
+                                                    </div>
                                                     <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>Contact Sharing</p>
                                                         <p className='nav-drop-text'>Seemless & Secure Contact Sharing</p>
@@ -147,7 +159,9 @@ const Header = () => {
                                             </li>
                                             <li className='nav-drop-list-item'>
                                                 <Link href='/organisational-chart' className='nav-drop-list-hover' >
-                                                    <img loading='lazy' src='/assets/menu/organisational-chart.png' alt='features icon' title='features icon'/>
+                                                    <div className='img'>
+                                                        <img loading='lazy' src='/assets/menu/organisational-chart.svg' alt='features icon' title='features icon'/>
+                                                    </div>
                                                     <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>Organisational Chart</p>
                                                         <p className='nav-drop-text'>Locate & view organisation hierarchy</p>
