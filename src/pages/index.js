@@ -214,7 +214,6 @@ export default function Home( { recentPosts } ) {
 
   return (
     <>
-      <Stairs>
         <PreLoader />
         <Header />
         <main>
@@ -233,7 +232,6 @@ export default function Home( { recentPosts } ) {
           <Faqs />
         </main>
         <Footer />
-      </Stairs>
     </>  
   );
 } 

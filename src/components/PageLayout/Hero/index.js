@@ -26,7 +26,7 @@ export default function Hero( {pageTitle1, pageTitle2, pagePara, imgSrc} ){
                 opacity: 0,
                 stagger: 0.05,
                 ease: 'power2.out',
-            }, '+=0.5');
+            }, '+=1.2');
         });
         return () => ctx.revert();
     }, []);
@@ -47,7 +47,7 @@ export default function Hero( {pageTitle1, pageTitle2, pagePara, imgSrc} ){
             tl.to(titleAnim, 0.8,{
                 y: 0,
                 stagger: 0.02,
-            }, '+=0.5')
+            }, '+=1.2')
             tl.to(heroPara, 0.8,{
                 y: 0,
                 opacity: 1,

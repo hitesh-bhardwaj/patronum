@@ -39,7 +39,7 @@ const Header = () => {
         <header className={isScrolled ? 'header scrolled' : 'header'}>
             <div className='header-container'>
                 <div className='logo-container'>
-                    <Link href='/' scroll={false} key={'index'}>
+                    <Link href='/'>
                         <Image 
                             className=''
                             src="/logo.svg"
@@ -62,7 +62,7 @@ const Header = () => {
                     
                     <ul className='navbar-list'>
                         <li className='nav-list-item'>
-                            <Link href='/about' scroll={false} key={"about"}>
+                            <Link href='/about' >
                                 <div className='header-anim'>
                                     <span>
                                         About
@@ -74,7 +74,7 @@ const Header = () => {
                             onMouseEnter={() => setFeaturesDropdownOpen(true)}
                             onMouseLeave={() => setFeaturesDropdownOpen(false)}
                         >
-                            <Link href='/features' className='dropdown' scroll={false} key={'features'}>
+                            <Link href='/features' className='dropdown' >
                                 <div className='header-anim'>
                                     <span>
                                         Features
@@ -92,7 +92,7 @@ const Header = () => {
                                         className='nav-dropdown'>
                                         <ul className='nav-dropdown-list'>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='/on-boarding' className='nav-drop-list-hover' scroll={false} key={'on-boarding'}>
+                                                <Link href='/on-boarding' className='nav-drop-list-hover' >
                                                     <img loading='lazy' src='/assets/menu/onboarding.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Onboarding</p>
@@ -101,7 +101,7 @@ const Header = () => {
                                                 </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='/google-workspace-backup' className='nav-drop-list-hover' scroll={false} key={'google-workspace-backup'}>
+                                                <Link href='/google-workspace-backup' className='nav-drop-list-hover' >
                                                     <img loading='lazy' src='/assets/menu/workspace-backup.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Workspace Backup</p>
@@ -110,7 +110,7 @@ const Header = () => {
                                                 </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='/email-signature-management' className='nav-drop-list-hover' scroll={false} key={'email-signature-management'}>
+                                                <Link href='/email-signature-management' className='nav-drop-list-hover' >
                                                     <img loading='lazy' src='/assets/menu/email-signature.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Email Signature</p>
@@ -119,7 +119,7 @@ const Header = () => {
                                                 </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='/google-drive-compliance' className='nav-drop-list-hover' scroll={false} key={'google-drive-compliance'}>
+                                                <Link href='/google-drive-compliance' className='nav-drop-list-hover' >
                                                     <img loading='lazy' src='/assets/menu/file-sharing.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>File Unsharing</p>
@@ -128,7 +128,7 @@ const Header = () => {
                                                 </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='/google-contact-sharing' className='nav-drop-list-hover' scroll={false} key={'google-contact-sharing'}>
+                                                <Link href='/google-contact-sharing' className='nav-drop-list-hover'>
                                                     <img loading='lazy' src='/assets/menu/contact-sharing.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Contact Sharing</p>
@@ -137,7 +137,7 @@ const Header = () => {
                                                 </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='/organisational-chart' className='nav-drop-list-hover' scroll={false} key={'organisational-chart'}>
+                                                <Link href='/organisational-chart' className='nav-drop-list-hover' >
                                                     <img loading='lazy' src='/assets/menu/organisational-chart.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Organisational Chart</p>
@@ -146,7 +146,7 @@ const Header = () => {
                                                 </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='/google-drive-management' className='nav-drop-list-hover' scroll={false} key={'google-drive-management'}>
+                                                <Link href='/google-drive-management' className='nav-drop-list-hover' >
                                                     <img loading='lazy' src='/assets/menu/drive-management.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Drive Management</p>
@@ -163,7 +163,7 @@ const Header = () => {
                             onMouseEnter={() => setUsecasesDropdownOpen(true)}
                             onMouseLeave={() => setUsecasesDropdownOpen(false)}
                             >
-                            <Link href='/use-cases' className='dropdown' scroll={false} key={'use-cases'}>
+                            <Link href='/use-cases' className='dropdown' >
                                 <div className='header-anim'>
                                     <span>
                                         Use Cases
@@ -181,7 +181,7 @@ const Header = () => {
                                         className='nav-dropdown'>
                                     <ul className='nav-dropdown-list'>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='/patronum-for-business' className='nav-drop-list-hover' scroll={false} key={'patronum-for-business'}>
+                                                <Link href='/patronum-for-business' className='nav-drop-list-hover' >
                                                     <img loading='lazy' src='/assets/menu/use-case-business.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>For Business</p>
@@ -190,7 +190,7 @@ const Header = () => {
                                                 </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='/patronum-for-education' className='nav-drop-list-hover' scroll={false} key={'patronum-for-education'}>
+                                                <Link href='/patronum-for-education' className='nav-drop-list-hover' >
                                                     <img loading='lazy' src='/assets/menu/use-case-education.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>For Education</p>
@@ -199,7 +199,7 @@ const Header = () => {
                                                 </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='/patronum-for-hr' className='nav-drop-list-hover' scroll={false} key={'patronum-for-hr'}>
+                                                <Link href='/patronum-for-hr' className='nav-drop-list-hover' >
                                                     <img loading='lazy' src='/assets/menu/use-case-hr.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>For HR</p>
@@ -208,7 +208,7 @@ const Header = () => {
                                                 </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='/patronum-for-users' className='nav-drop-list-hover' scroll={false} key={'patronum-for-users'}>
+                                                <Link href='/patronum-for-users' className='nav-drop-list-hover' >
                                                     <img loading='lazy' src='/assets/menu/use-case-users.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>For Users</p>
@@ -217,7 +217,7 @@ const Header = () => {
                                                 </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='/patronum-for-sales-marketing' className='nav-drop-list-hover' scroll={false} key={'patronum-for-sales-marketing'}>
+                                                <Link href='/patronum-for-sales-marketing' className='nav-drop-list-hover' >
                                                     <img loading='lazy' src='/assets/menu/use-case-sales.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>For Sales & Marketing</p>
@@ -226,7 +226,7 @@ const Header = () => {
                                                 </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='/patronum-for-it-admins' className='nav-drop-list-hover' scroll={false} key={'patronum-for-it-admins'}>
+                                                <Link href='/patronum-for-it-admins' className='nav-drop-list-hover' >
                                                     <img loading='lazy' src='/assets/menu/use-case-admin.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>For IT Admins</p>
@@ -239,7 +239,7 @@ const Header = () => {
                                 )}
                         </li>
                         <li className='nav-list-item'>
-                            <Link className='' href='/pricing' scroll={false} key={'pricing'}>
+                            <Link className='' href='/pricing' >
                                 <div className='header-anim'>
                                     <span>
                                         Pricing
@@ -269,7 +269,7 @@ const Header = () => {
                                         className='nav-dropdown'>
                                         <ul className='nav-dropdown-list'>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='/blog' className='nav-drop-list-hover' scroll={false} key={'blog'}>
+                                                <Link href='/blog' className='nav-drop-list-hover' >
                                                     <img loading='lazy' src='/assets/menu/resource-blog.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Blog</p>
@@ -278,7 +278,7 @@ const Header = () => {
                                                 </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='/guides' className='nav-drop-list-hover' scroll={false} key={'guides'}>
+                                                <Link href='/guides' className='nav-drop-list-hover' >
                                                     <img loading='lazy' src='/assets/menu/resource-guide.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Guides</p>
@@ -287,7 +287,7 @@ const Header = () => {
                                                 </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='/ebooks' className='nav-drop-list-hover' scroll={false} key={'ebooks'}>
+                                                <Link href='/ebooks' className='nav-drop-list-hover' >
                                                     <img loading='lazy' src='/assets/menu/resource-ebook.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Ebooks</p>
@@ -296,7 +296,7 @@ const Header = () => {
                                                 </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='/webinars' className='nav-drop-list-hover' scroll={false} key={'webinars'}>
+                                                <Link href='/webinars' className='nav-drop-list-hover' >
                                                     <img loading='lazy' src='/assets/menu/resource-webinar.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Webinars</p>
@@ -305,7 +305,7 @@ const Header = () => {
                                                 </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='/case-studies' className='nav-drop-list-hover' scroll={false} key={'case-studies'}>
+                                                <Link href='/case-studies' className='nav-drop-list-hover' >
                                                     <img loading='lazy' src='/assets/menu/resource-case-study.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Case Studies</p>
@@ -314,7 +314,7 @@ const Header = () => {
                                                 </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='/product-videos' className='nav-drop-list-hover' scroll={false} key={'product-videos'}>
+                                                <Link href='/product-videos' className='nav-drop-list-hover' >
                                                     <img loading='lazy' src='/assets/menu/resource-product-videos.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Product Videos</p>
@@ -341,7 +341,7 @@ const Header = () => {
                                                 </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='/legal' className='nav-drop-list-hover' scroll={false} key={'legal'}>
+                                                <Link href='/legal' className='nav-drop-list-hover' >
                                                     <img loading='lazy' src='/assets/menu/resource-legal.png' alt='features icon' title='features icon'/>
                                                     <div>
                                                         <p className='nav-drop-title'>Legal</p>
@@ -354,7 +354,7 @@ const Header = () => {
                                 )}
                             </li>
                         <li className='nav-list-item'>
-                            <Link className='' href='/partner-with-us' scroll={false} key={'partner-with-us'}>
+                            <Link className='' href='/partner-with-us' >
                                 <div className='header-anim'>
                                     <span>
                                         Partners
@@ -363,7 +363,7 @@ const Header = () => {
                             </Link>
                         </li>
                         <li className='nav-list-item'>
-                            <Link className='' href='/support' scroll={false} key={'support'}>
+                            <Link className='' href='/support' >
                                 <div className='header-anim'>
                                     <span>
                                         Support
@@ -415,14 +415,14 @@ const Header = () => {
                 </div>
                 <ul className="my-12">
                     <li className='px-4'>
-                        <Link href="/about" className="flex items-center py-4 text-2xl font-normal text-gray-900 border-b" aria-label='About' scroll={false} key={'about'}>
+                        <Link href="/about" className="flex items-center py-4 text-2xl font-normal text-gray-900 border-b" aria-label='About' >
                             <span className="ml-3">About</span>
                         </Link>
                     </li>
                     <li>
                         <div className='px-4'>
                             <div className='flex justify-between border-b'>
-                                <Link href="/features" className="flex items-center w-[80%] py-4 text-2xl font-normal text-gray-900" aria-label='Features' scroll={false} key={'features'}>
+                                <Link href="/features" className="flex items-center w-[80%] py-4 text-2xl font-normal text-gray-900" aria-label='Features' >
                                     <span className="ml-3">Features</span>
                                 </Link>
                                 <button onClick={() => setFeaturesDropdownOpen(!isFeaturesDropdownOpen)} type="button" className={`flex items-center justify-center py-4 w-[20%] text-base font-normal text-gray-900 transition ${isFeaturesDropdownOpen ? "-rotate-90" : "rotate-0"}`} aria-label='Open Features Dropdown'>
@@ -434,7 +434,7 @@ const Header = () => {
                         </div>
                         <ul id="dropdown-features" className={`py-4 px-4 space-y-4 bg-gray-100 transition-all duration-300 ${isFeaturesDropdownOpen ? "block" : "hidden" }`} aria-hidden="true">
                             <li className=''>
-                                <Link href='/on-boarding' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Onboarding' scroll={false} key={'on-boarding'}>
+                                <Link href='/on-boarding' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Onboarding' >
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/onboarding.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Onboarding</p>
@@ -443,7 +443,7 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li className=''>
-                                <Link href='/google-workspace-backup' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Workspace Backup' scroll={false} key={'google-workspace-backup'}>
+                                <Link href='/google-workspace-backup' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Workspace Backup' >
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/workspace-backup.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Workspace Backup</p>
@@ -452,7 +452,7 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li className=''>
-                                <Link href='/email-signature-management' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Email Signature' scroll={false} key={'email-signature-management'}>
+                                <Link href='/email-signature-management' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Email Signature' >
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/email-signature.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Email Signature</p>
@@ -461,7 +461,7 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li className=''>
-                                <Link href='/google-drive-compliance' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - File Unsharing' scroll={false} key={'google-drive-compliance'}>
+                                <Link href='/google-drive-compliance' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - File Unsharing' >
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/file-sharing.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>File Unsharing</p>
@@ -470,7 +470,7 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li className=''>
-                                <Link href='/google-contact-sharing' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Contact Sharing' scroll={false} key={'google-contact-sharing'}>
+                                <Link href='/google-contact-sharing' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Contact Sharing' >
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/contact-sharing.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Contact Sharing</p>
@@ -479,7 +479,7 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li className=''>
-                                <Link href='/organisational-chart' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Organisational Chart' scroll={false} key={'organisational-chart'}>
+                                <Link href='/organisational-chart' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Organisational Chart' >
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/organisational-chart.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Organisational Chart</p>
@@ -488,7 +488,7 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li className=''>
-                                <Link href='/google-drive-management' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Google Drive Management' scroll={false} key={'google-drive-management'}>
+                                <Link href='/google-drive-management' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Google Drive Management' >
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/drive-management.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Drive Management</p>
@@ -501,7 +501,7 @@ const Header = () => {
                     <li>
                         <div className='px-4'>
                             <div className='flex justify-between border-b'>
-                                <Link href="/use-cases" className="flex w-[80%] items-center py-4 text-2xl font-normal text-gray-900" aria-label='Use Cases' scroll={false} key={'use-cases'}>
+                                <Link href="/use-cases" className="flex w-[80%] items-center py-4 text-2xl font-normal text-gray-900" aria-label='Use Cases' >
                                     <span className="ml-3">Use Cases</span>
                                 </Link>
                                 <button onClick={() => setUsecasesDropdownOpen(!isUsecasesDropdownOpen)} type="button" className={`flex items-center justify-center py-4 w-[20%] text-base font-normal text-gray-900 transition ${isUsecasesDropdownOpen ? "-rotate-90" : "rotate-0"}`} aria-label='Open UseCases Dropdown'>
@@ -513,7 +513,7 @@ const Header = () => {
                         </div>
                         <ul id="dropdown-usecases" className={`py-4 px-4 space-y-4 bg-gray-100 ${isUsecasesDropdownOpen ? "block" : "hidden" }`} aria-hidden="true">
                             <li className=''>
-                                <Link href='/patronum-for-business' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Business' scroll={false} key={'patronum-for-business'}>
+                                <Link href='/patronum-for-business' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Business' >
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/use-case-business.png' alt='use cases icon' title='use cases icon'/>
                                     <div>
                                         <p className='text-xl font-500'>For Business</p>
@@ -522,7 +522,7 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li className=''>
-                                <Link href='/patronum-for-education' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Education' scroll={false} key={'patronum-for-education'}>
+                                <Link href='/patronum-for-education' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Education' >
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/use-case-education.png' alt='use cases icon' title='use cases icon'/>
                                     <div>
                                         <p className='text-xl font-500'>For Education</p>
@@ -531,7 +531,7 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li className=''>
-                                <Link href='/patronum-for-hr' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For HR' scroll={false} key={'patronum-for-hr'}>
+                                <Link href='/patronum-for-hr' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For HR' >
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/use-case-hr.png' alt='use cases icon' title='use cases icon'/>
                                     <div>
                                         <p className='text-xl font-500'>For HR</p>
@@ -540,7 +540,7 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li className=''>
-                                <Link href='/patronum-for-users' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Users' scroll={false} key={'patronum-for-users'}>
+                                <Link href='/patronum-for-users' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Users' >
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/use-case-users.png' alt='use cases icon' title='use cases icon'/>
                                     <div>
                                         <p className='text-xl font-500'>For Users</p>
@@ -549,7 +549,7 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li className=''>
-                                <Link href='/patronum-for-sales-marketing' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Sales & Marketing' scroll={false} key={'patronum-for-sales-marketing'}>
+                                <Link href='/patronum-for-sales-marketing' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Sales & Marketing' >
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/use-case-sales.png' alt='use cases icon' title='use cases icon'/>
                                     <div>
                                         <p className='text-xl font-500'>For Sales & Marketing</p>
@@ -558,7 +558,7 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li className=''>
-                                <Link href='/patronum-for-it-admins' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For IT Admins' scroll={false} key={'patronum-for-it-admins'}>
+                                <Link href='/patronum-for-it-admins' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For IT Admins' >
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/use-case-admin.png' alt='use cases icon' title='use cases icon'/>
                                     <div>
                                         <p className='text-xl font-500'>For IT Admins</p>
@@ -569,7 +569,7 @@ const Header = () => {
                         </ul>
                     </li>
                     <li className='px-4'>
-                        <Link href="#" className="flex items-center py-4 border-b text-2xl font-normal text-gray-900" aria-label='Pricing' scroll={false} key={'pricing'}>
+                        <Link href="#" className="flex items-center py-4 border-b text-2xl font-normal text-gray-900" aria-label='Pricing' >
                             <span className="ml-3">Pricing</span>
                         </Link>
                     </li>
@@ -586,7 +586,7 @@ const Header = () => {
                         </div>
                         <ul id="dropdown-resources" className={`py-4 px-4 space-y-4 bg-gray-100 ${isResourcesDropdownOpen ? "block" : "hidden" }`} aria-hidden="true">
                             <li className=''>
-                                <Link href='/blog' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Blog' scroll={false} key={'blog'}>
+                                <Link href='/blog' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Blog' >
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-blog.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Blog</p>
@@ -595,7 +595,7 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li className=''>
-                                <Link href='/guides' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Guides' scroll={false} key={'guides'}>
+                                <Link href='/guides' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Guides' >
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-guide.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Guides</p>
@@ -604,7 +604,7 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li className=''>
-                                <Link href='/ebooks' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Ebooks' scroll={false} key={'ebooks'}>
+                                <Link href='/ebooks' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Ebooks' >
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-ebook.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Ebooks</p>
@@ -613,7 +613,7 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li className=''>
-                                <Link href='/webinars' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Webinars' scroll={false} key={'webinars'}>
+                                <Link href='/webinars' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Webinars' >
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-webinar.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Webinars</p>
@@ -622,7 +622,7 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li className=''>
-                                <Link href='/case-studies' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Case Studies' scroll={false} key={'case-studies'}>
+                                <Link href='/case-studies' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Case Studies' >
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-case-study.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Case Studies</p>
@@ -631,7 +631,7 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li className=''>
-                                <Link href='/product-videos' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Product Videos' scroll={false} key={'product-videos'}>
+                                <Link href='/product-videos' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Product Videos'>
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-product-videos.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Product Videos</p>
@@ -658,7 +658,7 @@ const Header = () => {
                                 </Link>
                             </li>
                             <li className=''>
-                                <Link href='/legal' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Legal' scroll={false} key={'legal'}>
+                                <Link href='/legal' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Legal' >
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-legal.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Legal</p>
@@ -669,12 +669,12 @@ const Header = () => {
                         </ul>
                     </li>
                     <li className='px-4'>
-                        <Link href="/partner-with-us" className="flex items-center py-4 border-b text-2xl font-normal text-gray-900" scroll={false} key={'partner-with-us'}>
+                        <Link href="/partner-with-us" className="flex items-center py-4 border-b text-2xl font-normal text-gray-900" >
                             <span className="ml-3">Partners</span>
                         </Link>
                     </li>
                     <li className='px-4'>
-                        <Link href="/support" className="flex items-center py-4 border-b text-2xl font-normal text-gray-900" scroll={false} key={'Support'}>
+                        <Link href="/support" className="flex items-center py-4 border-b text-2xl font-normal text-gray-900">
                             <span className="ml-3">Support</span>
                         </Link>
                     </li>
