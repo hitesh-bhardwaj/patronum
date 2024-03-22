@@ -64,7 +64,7 @@ export default function App({ Component, pageProps, router }) {
           <DemoModal />
         </ModalProvider>
       </ReactLenis>
-      {/* <Background /> */}
+      <Background />
     </>
   ); 
 }
