@@ -10,6 +10,7 @@ import InstallModal from '@/components/InstallModal';
 import DemoModal from '@/components/InstallModal/DemoModal';
 
 import { AnimatePresence } from 'framer-motion'
+import { useEffect } from 'react';
 
 // Import the Background component dynamically
 const BackgroundWithNoSSR = dynamic(() => import('@/components/Pixi'), {
@@ -18,6 +19,21 @@ const BackgroundWithNoSSR = dynamic(() => import('@/components/Pixi'), {
 });
 
 export default function App({ Component, pageProps, router }) {
+
+  useEffect(() => {
+    // Scroll to the top when the component mounts or when the route changes
+    const handleRouteChange = () => {
+        window.scrollTo(0, 0)
+    };
+
+    // Attach the event listener for route changes
+    window.addEventListener("beforeunload", handleRouteChange);
+
+    // Remove the event listener when the component is unmounted
+    return () => {
+      window.removeEventListener("beforeunload", handleRouteChange);
+    };
+  }, []); // Empty dependency array ensures the effect runs only once on mount
 
   return(
     <>
