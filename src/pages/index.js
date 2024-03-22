@@ -18,6 +18,8 @@ import RelatedPosts from "@/components/PageComponents/BlogPage/RelatedPosts";
 import { getHomePagePosts } from '@/lib/posts';
 import UseCasesMobile from "@/components/PageComponents/HomePage/UseCasesMobile";
 
+import Stairs from "@/components/Stairs";
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home( { recentPosts } ) {
@@ -212,24 +214,26 @@ export default function Home( { recentPosts } ) {
 
   return (
     <>
-      <PreLoader />
-      <Header />
-      <main>
-        <Hero />
-        <Features />
-        <UseCases />
-        <UseCasesMobile />
-        <Pricing />
-        <About />
-        <Testimonial />
-        <RelatedPosts 
-          sectionPara={"Discover a World of Knowledge with Expert Tips, In-Depth Tricks, Latest News, and Comprehensive Resources for Mastering Google Workspace."} 
-          recentPosts={recentPosts} 
-          sectionTitle={"Our Latest Blogs"}
-          />
-        <Faqs />
-      </main>
-      <Footer />
+      <Stairs>
+        <PreLoader />
+        <Header />
+        <main>
+          <Hero />
+          <Features />
+          <UseCases />
+          <UseCasesMobile />
+          <Pricing />
+          <About />
+          <Testimonial />
+          <RelatedPosts 
+            sectionPara={"Discover a World of Knowledge with Expert Tips, In-Depth Tricks, Latest News, and Comprehensive Resources for Mastering Google Workspace."} 
+            recentPosts={recentPosts} 
+            sectionTitle={"Our Latest Blogs"}
+            />
+          <Faqs />
+        </main>
+        <Footer />
+      </Stairs>
     </>  
   );
 } 
