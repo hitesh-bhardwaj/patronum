@@ -7,7 +7,7 @@ import Footer from "../Footer";
 import Header from "../Header";
 import Hero from "./Hero";
 
-import Inner from "../Inner";
+import Stairs from "../Stairs";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -253,8 +253,7 @@ export default function PageLayout( {pageTitle1, pageTitle2, pagePara, imgSrc, c
       }, []);
 
     return(
-      // <>
-        <Inner>
+        <Stairs>
           <Header />
           <main>
             <Hero
@@ -266,7 +265,6 @@ export default function PageLayout( {pageTitle1, pageTitle2, pagePara, imgSrc, c
             {children}
           </main>
           <Footer />
-        </Inner>
-      // </>
+        </Stairs>
     )
 }

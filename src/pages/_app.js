@@ -1,7 +1,8 @@
 import '@/styles/globals.css'
-import '@/styles/styles.css'
 import { DefaultSeo } from "next-seo";
 import dynamic from 'next/dynamic';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from "@vercel/analytics/react"
 
 import { ReactLenis } from '@studio-freight/react-lenis';
 import { ModalProvider } from '@/components/InstallModal/ModelContext';
@@ -44,8 +45,10 @@ export default function App({ Component, pageProps, router }) {
       
         <ReactLenis root options={{ duration: 0.8 }}>
           <ModalProvider>
-            <AnimatePresence mode="wait" initial={false} onExitComplete={() => window.scrollTo(0, 0)}>
-              <Component {...pageProps} key={router.asPath}/>
+            <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
+              <Component {...pageProps} key={router.route}/>
+              <SpeedInsights />
+              <Analytics />
             </AnimatePresence>
             <InstallModal />
             <DemoModal />

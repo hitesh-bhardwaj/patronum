@@ -1,8 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion';
-import { opacity, expand } from './anim';
+import { expand } from './anim';
 
-export default function Layout({children, backgroundColor}) {
+export default function Layout({children}) {
 
     const anim = (variants, custom=null) => {
         return {
@@ -14,22 +14,12 @@ export default function Layout({children, backgroundColor}) {
         }
     }
 
-    const nbOfColumns = 1
     return (
-        <div className='page stairs' style={{backgroundColor}}>
-            <motion.div {...anim(opacity)} className='transition-background'/>
+        <div className='page stairs'>
             <div className='transition-container'>
-                {
-                    [...Array(nbOfColumns)].map( (_, i) => {
-                        return (
-                            <motion.div key={i} {...anim(expand, nbOfColumns - i)}/>
-                        ) 
-                    })
-                }
+                <motion.div {...anim(expand)} className='bg-[#1069df]'/>
             </div>
-            {
-                children
-            }
+            {children}
         </div>
     )
 }
