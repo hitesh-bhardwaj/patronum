@@ -784,7 +784,7 @@ section{
 
 .nav-dropdown-list{
   position: relative;
-  width: 85%;
+  width: 80%;
   margin: auto;
   display: grid;
   grid-template-columns: auto auto auto;

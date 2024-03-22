@@ -94,63 +94,63 @@ const Header = () => {
                                             <li className='nav-drop-list-item'>
                                                 <Link href='/on-boarding' className='nav-drop-list-hover' >
                                                     <img loading='lazy' src='/assets/menu/onboarding.png' alt='features icon' title='features icon'/>
-                                                    <div>
-                                                        <p className='nav-drop-title'>Onboarding</p>
-                                                        <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
-                                                    </div>
-                                                </Link>
-                                            </li>
-                                            <li className='nav-drop-list-item'>
-                                                <Link href='/google-workspace-backup' className='nav-drop-list-hover' >
-                                                    <img loading='lazy' src='/assets/menu/workspace-backup.png' alt='features icon' title='features icon'/>
-                                                    <div>
-                                                        <p className='nav-drop-title'>Workspace Backup</p>
-                                                        <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
+                                                    <div className='w-[16vw]'>
+                                                        <p className='nav-drop-title'>User Management</p>
+                                                        <p className='nav-drop-text'>Automated User Onboarding & Offboarding</p>
                                                     </div>
                                                 </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
                                                 <Link href='/email-signature-management' className='nav-drop-list-hover' >
                                                     <img loading='lazy' src='/assets/menu/email-signature.png' alt='features icon' title='features icon'/>
-                                                    <div>
-                                                        <p className='nav-drop-title'>Email Signature</p>
-                                                        <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
+                                                    <div className='w-[16vw]'>
+                                                        <p className='nav-drop-title'>Email Signatures</p>
+                                                        <p className='nav-drop-text'>Centrally Managed Gmail Email Signatures</p>
                                                     </div>
                                                 </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='/google-drive-compliance' className='nav-drop-list-hover' >
-                                                    <img loading='lazy' src='/assets/menu/file-sharing.png' alt='features icon' title='features icon'/>
-                                                    <div>
-                                                        <p className='nav-drop-title'>File Unsharing</p>
-                                                        <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
-                                                    </div>
-                                                </Link>
-                                            </li>
-                                            <li className='nav-drop-list-item'>
-                                                <Link href='/google-contact-sharing' className='nav-drop-list-hover'>
-                                                    <img loading='lazy' src='/assets/menu/contact-sharing.png' alt='features icon' title='features icon'/>
-                                                    <div>
-                                                        <p className='nav-drop-title'>Contact Sharing</p>
-                                                        <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
-                                                    </div>
-                                                </Link>
-                                            </li>
-                                            <li className='nav-drop-list-item'>
-                                                <Link href='/organisational-chart' className='nav-drop-list-hover' >
-                                                    <img loading='lazy' src='/assets/menu/organisational-chart.png' alt='features icon' title='features icon'/>
-                                                    <div>
-                                                        <p className='nav-drop-title'>Organisational Chart</p>
-                                                        <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
+                                                <Link href='/google-workspace-backup' className='nav-drop-list-hover' >
+                                                    <img loading='lazy' src='/assets/menu/workspace-backup.png' alt='features icon' title='features icon'/>
+                                                    <div className='w-[16vw]'>
+                                                        <p className='nav-drop-title'>Workspace Backup</p>
+                                                        <p className='nav-drop-text'>Best-in-Class Full Fidelity Backups</p>
                                                     </div>
                                                 </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
                                                 <Link href='/google-drive-management' className='nav-drop-list-hover' >
                                                     <img loading='lazy' src='/assets/menu/drive-management.png' alt='features icon' title='features icon'/>
-                                                    <div>
-                                                        <p className='nav-drop-title'>Drive Management</p>
-                                                        <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
+                                                    <div className='w-[16vw]'>
+                                                        <p className='nav-drop-title'>Google Drive Management</p>
+                                                        <p className='nav-drop-text'>Manage, Update, or Move User Files</p>
+                                                    </div>
+                                                </Link>
+                                            </li>
+                                            <li className='nav-drop-list-item'>
+                                                <Link href='/google-drive-compliance' className='nav-drop-list-hover' >
+                                                    <img loading='lazy' src='/assets/menu/file-sharing.png' alt='features icon' title='features icon'/>
+                                                    <div className='w-[16vw]'>
+                                                        <p className='nav-drop-title'>File Unsharing</p>
+                                                        <p className='nav-drop-text'>Automatically Unshare file & Stay Compliant</p>
+                                                    </div>
+                                                </Link>
+                                            </li>
+                                            <li className='nav-drop-list-item'>
+                                                <Link href='/google-contact-sharing' className='nav-drop-list-hover'>
+                                                    <img loading='lazy' src='/assets/menu/contact-sharing.png' alt='features icon' title='features icon'/>
+                                                    <div className='w-[16vw]'>
+                                                        <p className='nav-drop-title'>Contact Sharing</p>
+                                                        <p className='nav-drop-text'>Seemless & Secure Contact Sharing</p>
+                                                    </div>
+                                                </Link>
+                                            </li>
+                                            <li className='nav-drop-list-item'>
+                                                <Link href='/organisational-chart' className='nav-drop-list-hover' >
+                                                    <img loading='lazy' src='/assets/menu/organisational-chart.png' alt='features icon' title='features icon'/>
+                                                    <div className='w-[16vw]'>
+                                                        <p className='nav-drop-title'>Organisational Chart</p>
+                                                        <p className='nav-drop-text'>Locate & view organisation hierarchy</p>
                                                     </div>
                                                 </Link>
                                             </li>
@@ -437,8 +437,17 @@ const Header = () => {
                                 <Link href='/on-boarding' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Onboarding' >
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/onboarding.png' alt='features icon'/>
                                     <div>
-                                        <p className='text-xl font-500'>Onboarding</p>
-                                        <p className='text-base'>Lorem Ipsum is simply dummy text</p>
+                                        <p className='text-xl font-500'>User Management</p>
+                                        <p className='text-base'>Automated User Onboarding & Offboarding</p>
+                                    </div>
+                                </Link>
+                            </li>
+                            <li className=''>
+                                <Link href='/email-signature-management' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Email Signature' >
+                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/email-signature.png' alt='features icon'/>
+                                    <div>
+                                        <p className='text-xl font-500'>Email Signatures</p>
+                                        <p className='text-base'>Centrally Managed Gmail Email Signatures</p>
                                     </div>
                                 </Link>
                             </li>
@@ -447,16 +456,16 @@ const Header = () => {
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/workspace-backup.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Workspace Backup</p>
-                                        <p className='text-base'>Lorem Ipsum is simply dummy text</p>
+                                        <p className='text-base'>Best-in-Class Full Fidelity Backups</p>
                                     </div>
                                 </Link>
                             </li>
                             <li className=''>
-                                <Link href='/email-signature-management' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Email Signature' >
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/email-signature.png' alt='features icon'/>
+                                <Link href='/google-drive-management' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Google Drive Management' >
+                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/drive-management.png' alt='features icon'/>
                                     <div>
-                                        <p className='text-xl font-500'>Email Signature</p>
-                                        <p className='text-base'>Lorem Ipsum is simply dummy text</p>
+                                        <p className='text-xl font-500'>Google Drive Management</p>
+                                        <p className='text-base'>Manage, Update, or Move User Files</p>
                                     </div>
                                 </Link>
                             </li>
@@ -465,7 +474,7 @@ const Header = () => {
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/file-sharing.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>File Unsharing</p>
-                                        <p className='text-base'>Lorem Ipsum is simply dummy text</p>
+                                        <p className='text-base'>Automatically Unshare file & Stay Compliant</p>
                                     </div>
                                 </Link>
                             </li>
@@ -474,7 +483,7 @@ const Header = () => {
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/contact-sharing.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Contact Sharing</p>
-                                        <p className='text-base'>Lorem Ipsum is simply dummy text</p>
+                                        <p className='text-base'> Seemless & Secure Contact Sharing</p>
                                     </div>
                                 </Link>
                             </li>
@@ -483,16 +492,7 @@ const Header = () => {
                                     <img loading='lazy' className='w-[15%]' src='/assets/menu/organisational-chart.png' alt='features icon'/>
                                     <div>
                                         <p className='text-xl font-500'>Organisational Chart</p>
-                                        <p className='text-base'>Lorem Ipsum is simply dummy text</p>
-                                    </div>
-                                </Link>
-                            </li>
-                            <li className=''>
-                                <Link href='/google-drive-management' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Google Drive Management' >
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/drive-management.png' alt='features icon'/>
-                                    <div>
-                                        <p className='text-xl font-500'>Drive Management</p>
-                                        <p className='text-base'>Lorem Ipsum is simply dummy text</p>
+                                        <p className='text-base'>Locate & view organisation hierarchy</p>
                                     </div>
                                 </Link>
                             </li>
