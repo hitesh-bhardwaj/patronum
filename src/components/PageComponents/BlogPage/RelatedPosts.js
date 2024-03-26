@@ -1,6 +1,7 @@
 import React from 'react';
 import { format } from 'date-fns';
 import PrimaryButton from '@/components/PageLayout/Button/PrimaryButton';
+import Link from 'next/link';
 
 function RelatedPosts({ recentPosts, currentSlug, sectionTitle, sectionPara }) {
 

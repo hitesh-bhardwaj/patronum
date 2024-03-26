@@ -65,7 +65,7 @@ export default function App({ Component, pageProps, router }) {
       </ReactLenis>
       <SpeedInsights />
       <Analytics />
-      {/* <Background /> */}
+      <Background />
     </>
   ); 
 }
