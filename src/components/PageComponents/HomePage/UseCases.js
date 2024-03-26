@@ -2,6 +2,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import { useEffect } from "react";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -170,8 +171,9 @@ export default function UseCases() {
                                                         You can delegate and automate a subset of administrative capabilities to non-IT managers, secure in the knowledge they are not going to break anything.
                                                     </span>
                                                 </p>
-                                                <a href="/patronum-for-business" className="link-btn">
+                                                <Link href="/patronum-for-business" className="link-btn">
                                                     <span className="btn-text">Learn More</span>
+                                                    <span className="hidden">Know More About Patronum For Business</span>
                                                     <span className="btn-images">
                                                         <div>
                                                             <svg className="" viewBox="0 0 38 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -182,7 +184,7 @@ export default function UseCases() {
                                                             </svg>
                                                         </div>
                                                     </span>
-                                                </a>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>
@@ -205,8 +207,9 @@ export default function UseCases() {
                                                     <span>
                                                         With Patronum you can automatically unshare Google Files reducing your organisations exposure. Quickly and easily set up policies that automate.                                        </span>
                                                 </p>
-                                                <a href="/patronum-for-hr" className="link-btn">
+                                                <Link href="/patronum-for-hr" className="link-btn">
                                                     <span className="btn-text">Learn More</span>
+                                                    <span className="hidden">Know More About Patronum For HR</span>
                                                     <span className="btn-images">
                                                         <div>
                                                             <svg className="" viewBox="0 0 38 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -217,7 +220,7 @@ export default function UseCases() {
                                                             </svg>
                                                         </div>
                                                     </span>
-                                                </a>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>
@@ -240,8 +243,9 @@ export default function UseCases() {
                                                     <span>
                                                         Patronum is the only enterprise-ready contact sharing application for Google Workspace. Allow your users to share their specific contacts.                                        </span>
                                                 </p>
-                                                <a href="/patronum-for-sales-marketing" className="link-btn">
+                                                <Link href="/patronum-for-sales-marketing" className="link-btn">
                                                     <span className="btn-text">Learn More</span>
+                                                    <span className="hidden">Know More About Patronum For Sales Marketing</span>
                                                     <span className="btn-images">
                                                         <div>
                                                             <svg className="" viewBox="0 0 38 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -252,7 +256,7 @@ export default function UseCases() {
                                                             </svg>
                                                         </div>
                                                     </span>
-                                                </a>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>
@@ -275,8 +279,9 @@ export default function UseCases() {
                                                     <span>
                                                         With Patronum you can automatically unshare Google Files reducing your organisations exposure. Quickly and easily set up policies that automate.                                        </span>
                                                 </p>
-                                                <a href="/patronum-for-education" className="link-btn">
+                                                <Link href="/patronum-for-education" className="link-btn">
                                                     <span className="btn-text">Learn More</span>
+                                                    <span className="hidden">Know More About Patronum For Education</span>
                                                     <span className="btn-images">
                                                         <div>
                                                             <svg className="" viewBox="0 0 38 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -287,7 +292,7 @@ export default function UseCases() {
                                                             </svg>
                                                         </div>
                                                     </span>
-                                                </a>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>
@@ -310,8 +315,9 @@ export default function UseCases() {
                                                     <span>
                                                         Even in small organizations, it’s often difficult to connect with the right people. Patronum gives your organization instant access to your internal staff list via contact sharing.                                        </span>
                                                 </p>
-                                                <a href="/patronum-for-users" className="link-btn">
+                                                <Link href="/patronum-for-users" className="link-btn">
                                                     <span className="btn-text">Learn More</span>
+                                                    <span className="hidden">Know More About Patronum For Users</span>
                                                     <span className="btn-images">
                                                         <div>
                                                             <svg className="" viewBox="0 0 38 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -322,7 +328,7 @@ export default function UseCases() {
                                                             </svg>
                                                         </div>
                                                     </span>
-                                                </a>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>

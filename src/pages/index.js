@@ -10,8 +10,6 @@ import UseCases from '@/components/PageComponents/HomePage/UseCases';
 import Faqs from '@/components/PageComponents/HomePage/Faqs';
 import Pricing from '@/components/PageComponents/HomePage/Pricing';
 import Testimonial from '@/components/PageLayout/Testimonial';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import PreLoader from "@/components/PreLoader";
 import RelatedPosts from "@/components/PageComponents/BlogPage/RelatedPosts";
 

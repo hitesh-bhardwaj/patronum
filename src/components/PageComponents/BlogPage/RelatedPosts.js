@@ -34,6 +34,8 @@ function RelatedPosts({ recentPosts, currentSlug, sectionTitle, sectionPara }) {
                                             {post.featuredImage && (
                                                 <div className="blog-card-image">
                                                     <img 
+                                                        height="325"
+                                                        width="460"
                                                         src={post.featuredImage.node.sourceUrl} 
                                                         loading="lazy" 
                                                         alt={`${post.title} Image`} 
@@ -48,8 +50,9 @@ function RelatedPosts({ recentPosts, currentSlug, sectionTitle, sectionPara }) {
                                                     <h5 className="blog-card-title aeonik">
                                                         {post.title}
                                                     </h5>
-                                                <a href={post.slug} className="link-btn">
+                                                <Link href={post.slug} className="link-btn">
                                                     <span className="btn-text">Read More</span>
+                                                    <span className='hidden'>{post.title}</span>
                                                     <span className="btn-images">
                                                         <div>
                                                             <svg className="" viewBox="0 0 38 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,7 +63,7 @@ function RelatedPosts({ recentPosts, currentSlug, sectionTitle, sectionPara }) {
                                                             </svg>
                                                         </div>
                                                     </span>
-                                                </a>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>

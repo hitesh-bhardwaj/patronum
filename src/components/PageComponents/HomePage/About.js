@@ -23,7 +23,7 @@ export default function About() {
 
                     </div>
                     <div className="about-right lg:w-[35%] w-[75%] lg:text-right text-center">
-                        <img className="fadeRight w-full h-full" src="/assets/home/about.svg" loading="lazy" alt="about patronum" title="about patronum image"/>
+                        <img width="520" height="515" className="fadeRight w-full h-full" src="/assets/home/about.svg" loading="lazy" alt="about patronum" title="about patronum image"/>
                     </div>
                 </div>
             </div>

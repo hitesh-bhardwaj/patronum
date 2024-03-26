@@ -33,7 +33,7 @@ const PricingCard = ({ category, isAnnual, selectedCurrency, pricingImage }) => 
   return (
     <div className={`pricing-card`}>
       <div className='pricing-image'>
-        <img src={pricingImage} alt='Price Category Image' loading='lazy' title='Patronum Pricing'/>
+        <img width="245" height="190" src={pricingImage} alt='Price Category Image' loading='lazy' title='Patronum Pricing'/>
       </div>
       <h4 className='pricing-category'>{category}</h4>
       <p className='pricing-price'> 

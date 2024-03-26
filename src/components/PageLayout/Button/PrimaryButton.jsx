@@ -1,9 +1,12 @@
+import Link from "next/link";
+
 const PrimaryButton = ({link, btnText}) => {
     return(
-        <a href={link} className="btn fadeUp">
+        <Link href={link} className="btn fadeUp">
             <span data-primary className="btn-text">
                 {btnText}
             </span>
+            <span className="hidden">{link}</span>
             <div aria-hidden="true" className="btn-circle">
                 <div className="btn-circle-text">
                     {btnText}
@@ -13,7 +16,7 @@ const PrimaryButton = ({link, btnText}) => {
                     </svg>
                 </div>
             </div>
-        </a>
+        </Link>
     )
 }
 
