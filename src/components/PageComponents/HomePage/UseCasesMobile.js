@@ -60,7 +60,7 @@ export default function UseCasesMobile() {
                     </span>
                 </h4>
                 <div className="md:w-1/2 w-2/3 mx-auto">
-                    <img className="w-full h-full" src={`assets/home/${img}`} alt={`${title} image`}/>
+                    <img width="265" height="176" loading="lazy" className="w-full h-full" src={`assets/home/${img}`} alt={`${title} image`}/>
                 </div>
                 <div className="md:text-2xl text-lg space-y-[4vw]">
                     <p>

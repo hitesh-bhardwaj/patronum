@@ -26,7 +26,7 @@ const FeatureCard = ( {featTitle, featImg, featPara1, featPara2, featLink, btnTe
                         </div>
                     </div>
                     <div className="section-list-body-left fadeUp">
-                        <img loading="lazy" src={featImg} alt={featTitle} title={featTitle}/>
+                        <img width="520" height="423" loading="lazy" src={featImg} alt={featTitle} title={featTitle}/>
                     </div>
                 </div>
             </div>

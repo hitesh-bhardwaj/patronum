@@ -4,7 +4,7 @@ export default function UseCaseCard( {para, imgSrc} ) {
             <div className="section-list-item">
                 <div className="section-list-body">
                     <div className="section-list-body-left fadeUp">
-                        <img loading="lazy" src={imgSrc} alt="useCases Image"/>
+                        <img height="340" width="500" loading="lazy" src={imgSrc} alt="useCases Image"/>
                     </div>
                     <div className="section-list-body-right">
                         <p className="content-p text-anim-2">

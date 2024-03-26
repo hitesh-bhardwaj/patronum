@@ -11,6 +11,9 @@ const FeatureDetailCard  = ({id, img, title, content}) => {
                 </div>
                 <div className="img">
                     <img 
+                        loading="lazy"
+                        height="185"
+                        width="270"
                         src={img} 
                         alt={title} 
                         title={title}

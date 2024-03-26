@@ -22,7 +22,7 @@ const FaqItem = ({ item, index, isOpen, toggleAccordion }) => {
                     </div>
                 </div>
                 <div className='faq-arrow'>
-                    <img src="/assets/icons/faq-arrow.svg" alt='arrow icon'/>
+                    <img height="15" width="15" src="/assets/icons/faq-arrow.svg" alt='arrow icon'/>
                 </div>
             </div>
             <span className='h-[1px] bg-[#1a1a1a] w-full lineDraw block'/>

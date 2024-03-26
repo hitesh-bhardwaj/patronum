@@ -361,7 +361,7 @@ export default function PreLoader() {
             <div className="w-full loaderMainContainer">
               <div className="flex justify-between items-end w-full">
                 <div className="w-[11.5vw] h-[3vw]">
-                  <img src="/logo-white.svg" className="lg:w-[11.5vw] md:w-[25%] w-[37.7%] lg:top-[75vh] md:top-[78vh] top-[76vh] opacity-0 loaderLogoMain absolute" alt="Patronum Logo" ref={loaderLogo}/>
+                  <img loading="lazy" width="247" height="66" src="/logo-white.svg" className="lg:w-[11.5vw] md:w-[25%] w-[37.7%] lg:top-[75vh] md:top-[78vh] top-[76vh] opacity-0 loaderLogoMain absolute" alt="Patronum Logo" ref={loaderLogo}/>
                 </div>
                 <div className="loadingCounter lg:translate-y-[60vh] translate-y-[70vh]">
                   <div className="lg:text-[7vw] md:text-[15vw] text-[20vw] relative leading-[0.8] lg:pr-[3vw] md:pr-[5.5vw] pr-[8vw] opacity-0 counterLoaderMain w-[50vw] text-right">

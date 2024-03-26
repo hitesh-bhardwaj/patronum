@@ -101,14 +101,14 @@ export default function Slider() {
         <div className='testimonial-card'>
             <div className='testicard-content'>
                 <div>
-                    <img src='/assets/icons/quote-icon.webp' alt='quote icon' className='testi-quote-icon'/>
+                    <img width="64" height="57" src='/assets/icons/quote-icon.webp' alt='quote icon' className='testi-quote-icon'/>
                     <p className='testimonial-para'>
                         {content}
                     </p>
                 </div>
                 <div className='testi-details'>
                     <div className='testi-client-image'>
-                        <img src={clientImage} alt='client image'/>
+                        <img width="100" height="100" src={clientImage} alt='client image'/>
                     </div>
                     <div className='testi-client-details'>
                         <h5  className='testi-client-name'>

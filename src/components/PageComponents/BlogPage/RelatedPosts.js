@@ -52,8 +52,8 @@ function RelatedPosts({ recentPosts, currentSlug, sectionTitle, sectionPara }) {
                                                         {post.title}
                                                     </h5>
                                                 <Link href={post.slug} className="link-btn">
-                                                    <span className="btn-text">Read More</span>
                                                     <span className='hidden'>{post.title}</span>
+                                                    <span className="btn-text">Read More</span>
                                                     <span className="btn-images">
                                                         <div>
                                                             <svg className="" viewBox="0 0 38 21" fill="none" xmlns="http://www.w3.org/2000/svg">

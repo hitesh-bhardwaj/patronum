@@ -3,8 +3,8 @@ import Link from "next/link";
 const LinkButton = ( { link, btnText, target } ) => {
     return (
         <Link href={link} className="link-btn" target={target}>
-            <span className="btn-text">{btnText}</span>
             <span className="hidden">{link}</span>
+            <span className="btn-text">{btnText}</span>
             <span className="btn-images">
                 <div>
                     <svg className="" viewBox="0 0 38 21" fill="none" xmlns="http://www.w3.org/2000/svg">

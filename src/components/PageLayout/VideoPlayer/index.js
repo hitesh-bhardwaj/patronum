@@ -1,3 +1,4 @@
+'use client'
 import react, { useState } from "react";
 import VideoEmbed from "./VideoEmbed";
 
@@ -25,6 +26,8 @@ const VideoPlayer = ( {videoId, videoCover} ) => {
                 <div className="content">
                     <div className="feature-tutorial-video fadeUp">
                         <img
+                            width="1600"
+                            height="760"
                             className="h-full w-full object-contain"
                             src={videoCover}
                             alt="feature-tutorial"
