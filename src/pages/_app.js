@@ -56,16 +56,16 @@ export default function App({ Component, pageProps, router }) {
       
       <ReactLenis root options={{ duration: 0.8 }}>
         <ModalProvider>
-          <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
+          <AnimatePresence mode="wait">
             <Component {...pageProps} key={router.route}/>
           </AnimatePresence>
-            <SpeedInsights />
-            <Analytics />
           <InstallModal />
           <DemoModal />
         </ModalProvider>
       </ReactLenis>
-      <Background />
+      <SpeedInsights />
+      <Analytics />
+      {/* <Background /> */}
     </>
   ); 
 }

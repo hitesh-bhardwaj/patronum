@@ -2,13 +2,6 @@ import UseCaseCard from "@/components/PageComponents/UseCasePage/UseCaseCard";
 import PageLayout from "@/components/PageLayout";
 import SectionTitle from "@/components/PageLayout/SectionTitle";
 
-import { useEffect } from "react";
-import SplitType from "split-type";
-import gsap from "gsap"
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
-
-gsap.registerPlugin(ScrollTrigger);
-
 const UseCasesInfo = [
     {
         id: "01",
@@ -38,78 +31,6 @@ const UseCasesInfo = [
 ]
 
 export default function UseCasesDetail(){
-
-    useEffect(() => {
-        const headings = document.querySelectorAll('.text-anim');
-    
-        headings.forEach((heading) => {
-          let ctx = gsap.context(() => {
-            const textAnim = new SplitType(heading, {types: 'words'});
-            let animWord = heading.querySelectorAll('.word');
-    
-            gsap.from(animWord, {
-              scrollTrigger: {
-                trigger: heading,
-                start: 'top 80%',
-              },
-              duration: 0.8,
-              yPercent: 100,
-              stagger: 0.02,
-            });
-          });
-          return () => ctx.revert();
-        });
-      }, []);
-
-      useEffect(() => {
-        const sHeadings = document.querySelectorAll('.text-anim-2');
-    
-        sHeadings.forEach((sHeading) => {
-          let ctx = gsap.context(() => {
-            const textAnim2 = new SplitType(sHeading, {types: 'words'});
-            let animWord2 = sHeading.querySelectorAll('.word');
-    
-            gsap.from(animWord2, {
-              scrollTrigger: {
-                trigger: sHeading,
-                start: 'top 80%',
-              },
-              duration: 0.5,
-              yPercent: 100,
-              opacity: 0,
-              stagger: 0.01,
-            });
-          });
-          return () => ctx.revert();
-        });
-      }, []);
-
-      useEffect(() => {
-        const fadeUps = document.querySelectorAll('.fadeUp');
-    
-        let ctx = gsap.context(() => {
-          fadeUps.forEach((fadeUp) => {
-            gsap.fromTo(
-              fadeUp,
-              {
-                opacity: 0,
-                y: 50,
-              },
-              {
-                opacity: 1,
-                y: 0,
-                duration: 0.6,
-                ease: 'Power3.out',
-                scrollTrigger: {
-                  trigger: fadeUp,
-                  start: 'top 85%',
-                },
-              }
-            );
-          });
-        });
-        return () => ctx.revert();
-      }, []);
 
     return (
         <>

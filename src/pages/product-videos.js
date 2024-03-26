@@ -1,13 +1,6 @@
 import PageLayout from "@/components/PageLayout";
 import LinkButton from "@/components/PageLayout/Button/LinkButton";
 
-import { useEffect } from "react";
-import gsap from "gsap"
-import SplitType from "split-type";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
 const VideoCard = ({link, imgSrc, title, id}) => {
     return (
         <div className="fadeUp product-video-card hover:shadow-lg duration-300">
@@ -42,55 +35,6 @@ const VideoCard = ({link, imgSrc, title, id}) => {
 }
 
 export default function ProductVideos(){
-
-    useEffect(() => {
-        const headings = document.querySelectorAll('.text-anim');
-    
-        headings.forEach((heading) => {
-          let ctx = gsap.context(() => {
-            const textAnim = new SplitType(heading, {types: 'words'});
-            let animWord = heading.querySelectorAll('.word');
-    
-            gsap.from(animWord, {
-              scrollTrigger: {
-                trigger: heading,
-                start: 'top 80%',
-              },
-              duration: 0.8,
-              yPercent: 100,
-              stagger: 0.02,
-            });
-          });
-          return () => ctx.revert();
-        });
-      }, []);
-
-      useEffect(() => {
-        const fadeUps = document.querySelectorAll('.fadeUp');
-    
-        let ctx = gsap.context(() => {
-          fadeUps.forEach((fadeUp) => {
-            gsap.fromTo(
-              fadeUp,
-              {
-                opacity: 0,
-                y: 50,
-              },
-              {
-                opacity: 1,
-                y: 0,
-                duration: 0.6,
-                ease: 'Power3.out',
-                scrollTrigger: {
-                  trigger: fadeUp,
-                  start: 'top 85%',
-                },
-              }
-            );
-          });
-        });
-        return () => ctx.revert();
-      }, []);
 
     return (
         <>
