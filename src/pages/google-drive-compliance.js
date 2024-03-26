@@ -12,23 +12,23 @@ export default function FeatureDetail(){
 
     const featuresDetail = [
         {
-            title: 'identify personal access',
-            para: "In addition to sharing contacts across all your users within your company Google Workspace domain and sub-domains, you can also share and interact with customers and partners by sharing your Google Contacts outside of your Google Workspace domain.",
+            title: 'Identify & Limit Personal Access ',
+            para: "The convenience of Google Drive often leads to users sharing critical files with personal accounts. Such practices, while seemingly harmless, can create lingering access issues long after an employee's departure. Traditional offboarding processes fall short, merely transferring file ownership while ignoring external access. Patronum elegantly addresses this gap, ensuring personal accesses are identified and revoked, safeguarding your data's integrity.",
             img: "/assets/features/google-drive-compliance/main-1.svg",
         },
         {
-            title: 'Shared With Link',
-            para: "Google contact sharing enables the best features for you and to manage your contacts. Patronum is smoothly integrated into Google Workspace, Gmail and Google Contacts. Our Google Chrome extension gives users the best possible experience when it comes to managing and sharing contacts with co-workers.",
+            title: 'Link Sharing, Refined with security',
+            para: "Link-based sharing in Google Drive, though convenient, is a double-edged sword—it exposes your data to risks by making files accessible to anyone with the link. Patronum offers a sophisticated solution to refine or remove link-based sharing, allowing you to maintain the privacy of your internal information without sacrificing collaboration ease.",
             img: "/assets/features/google-drive-compliance/main-2.svg",
         },
         {
-            title: 'external access control',
-            para: "Patronum is built on a global scale technical infrastructure designed to provide security throughout. We have invested heavily in securing our infrastructure and we have engineers dedicated to keeping your data and information secure and private.",
+            title: 'Mastering External Access',
+            para: "Patronum empowers you with complete oversight and command over external access to your files, folders, and shared drives. Whether it's filtering access by individual contractors or managing domain-wide permissions, Patronum enables swift, decisive action to protect your data ecosystem.",
             img: "/assets/features/google-drive-compliance/main-3.svg",
         },
         {
-            title: 'Anyone Can Find And Access',
-            para: "In Google contact sharing your Google Contacts are updated automatically across various platforms: Desktop, Mobile, Tablet or Microsoft Outlook. Users get instant access to contacts across different devices automatically.",
+            title: 'Visibility and Control Over Internal Sharing',
+            para: "In many organizations, files become unintentionally searchable and accessible within the company, often without awareness. Patronum shines a light on these hidden corners, providing instant visibility and the ability to modify access permissions, ensuring that only the right eyes view sensitive information.",
             img: "/assets/features/google-drive-compliance/main-4.svg",
         },
     ]
@@ -37,37 +37,37 @@ export default function FeatureDetail(){
         {
             id: '01',
             title: 'Unshare Files',
-            para: "Effortlessly Manage and Automate Google Group Memberships.",
+            para: "Instantly revoke access to previously shared Google Drive files.",
             img: "/assets/features/google-drive-compliance/detail-1.svg",
         },
         {
             id: '02',
             title: 'Advance Filtering',
-            para: "Empower Specific Users with Controlled Access to Manage Others' Google.",
+            para: "Utilize detailed criteria to sort and manage Google Drive content.",
             img: "/assets/features/google-drive-compliance/detail-2.svg",
         },
         {
             id: '03',
             title: 'File Search',
-            para: "Simplify and Streamline the Sharing of Calendars within your Organisation.",
+            para: "Quickly locate specific files within Google Drive using keywords.",
             img: "/assets/features/google-drive-compliance/detail-3.svg",
         },
         {
             id: '04',
             title: 'External Access',
-            para: "Utilise Ready-Made Policy Templates for Quick and Efficient.",
+            para: "Monitor and control who outside your organization can view files.",
             img: "/assets/features/google-drive-compliance/detail-4.svg",
         },
         {
             id: '05',
             title: 'Shared Drives',
-            para: "Securely and Promptly Revoke User Access to Data and Resources.",
+            para: "Collaborate efficiently with team-specific drives for shared file access.",
             img: "/assets/features/google-drive-compliance/detail-5.svg",
         },
         {
             id: '06',
             title: 'Internal Access',
-            para: "Easily Manage and Delete Calendar Events, Ensuring Up-to-Date.",
+            para: "Manage and restrict file accessibility within your organization.",
             img: "/assets/features/google-drive-compliance/detail-6.svg",
         },
     ]
@@ -75,9 +75,9 @@ export default function FeatureDetail(){
     return (
         <>
             <PageLayout
-                pageTitle1={'Google Drive'} 
-                pageTitle2={'Compliance'}
-                pagePara={"The only tool you'll ever need to streamline your Google Workspace management."} 
+                pageTitle1={'File Unsharing &'} 
+                pageTitle2={'Google Drive Compliance'}
+                pagePara={"Transform Collaboration into Controlled Innovation"} 
                 imgSrc={'google-drive-compliance.svg'}
                 >
 
@@ -87,8 +87,8 @@ export default function FeatureDetail(){
                 <FeatureDetailTitle
                     sectionTitle1="Google Drive Compliance"    
                     sectionTitle2="For Google Workspace"
-                    sectionPara="With Google Drive and Google Docs collaboration is simply a click away, however with that simplicity company data can quickly become unmanageable and a risk."
-                    sectionParaBig="Company information is often shared widely between employees, departments and external organisations, from suppliers to customers."
+                    sectionPara="Patronum is the ultimate solution for taking control of your Google Drive data and staying compliant with data protection & data security laws. Google Drive and Docs revolutionize collaboration, offering simplicity and efficiency at your fingertips. Yet, this simplicity can sometimes transform into complexity, turning vital company data into potential risks. "
+                    sectionParaBig="Widespread sharing of docs, presentations, sheets etc. across employees, departments, and even with external entities like suppliers and customers makes data management a formidable challenge. Patronum is your beacon in this chaos, providing unparalleled visibility and control over your Google Drive information, ensuring your data remains secure and compliant."
                 />
 
                 <section id="feature-detail-info">
@@ -109,7 +109,7 @@ export default function FeatureDetail(){
                 </section>
 
                 <SectionBreak 
-                    sectionBreakText="Patronum redefines User Lifecycle Management in Google Workspace by using automation, delivering unparalleled security and productivity, freeing you to focus on innovation and strategic growth."
+                    sectionBreakText="Patronum makes securing your Google Drive data effortless. With its advanced identification and access management capabilities, quickly revoking access becomes simple. Transform how you protect and manage your Google Drive data with Patronum, ensuring your sensitive information remains secure."
                 />
 
                 <section id="feature-detail-card">

@@ -12,33 +12,33 @@ export default function FeatureDetail(){
 
     const featuresDetail = [
         {
-            title: 'Multi-Domain Sharing',
-            para: "In addition to sharing contacts across all your users within your company Google Workspace domain and sub-domains, you can also share and interact with customers and partners by sharing your Google Contacts outside of your Google Workspace domain.",
+            title: 'Seamless Gmail Integration',
+            para: "Patronum's seamless integration with Google Workspace, Gmail, and Google Contacts revolutionizes contact management by embedding directly into your daily tools. With a user-friendly Google Chrome extension, managing and sharing contacts becomes a natural part of your workflow, eliminating the need to switch between applications. This integration not only streamlines operations but also enhances the efficiency of communication within teams, ensuring that everyone has access to the most updated contact information without extra effort. Experience the power of a unified system that keeps your contacts synchronized, whether you're sending emails, scheduling meetings, or collaborating on projects.",
             img: "/assets/features/contact-sharing/main-1.svg",
         },
         {
-            title: 'Direct Integration With Google Gmail',
-            para: "Google contact sharing enables the best features for you and to manage your contacts. Patronum is smoothly integrated into Google Workspace, Gmail and Google Contacts. Our Google Chrome extension gives users the best possible experience when it comes to managing and sharing contacts with co-workers.",
+            title: 'Universal Sync, Effortless Access',
+            para: "The hassle of manually updating contact information across different devices and platforms is a thing of the past. Whether you're working from your desktop at the office, checking emails on your mobile device, or scheduling meetings via your tablet or even Microsoft Outlook, Patronum guarantees that your contacts are automatically synced and up to date. This universal synchronization ensures that you and your team have effortless access to essential contacts at any time, fostering seamless communication and collaboration across your organization.",
             img: "/assets/features/contact-sharing/main-2.svg",
         },
         {
-            title: 'Enterprise Security',
-            para: "Patronum is built on a global scale technical infrastructure designed to provide security throughout. We have invested heavily in securing our infrastructure and we have engineers dedicated to keeping your data and information secure and private.",
+            title: 'Unparalleled Control with User-Level Permissions',
+            para: "Elevate your contact management with sophisticated user-level permissions for your Google Address Book. This feature allows you to define exactly how contacts are shared and managed within your organization, offering options like 'Can Edit,' 'Can Delete,' and 'Read Only.' Inspired by the intuitive permissions model used in Google Docs, Patronum makes it incredibly easy to customize access according to each team member's needs, ensuring that your contact information is handled securely and efficiently.",
             img: "/assets/features/contact-sharing/main-3.svg",
         },
         {
-            title: 'Auto Sync Across Mobile/Tablet & Outlook Clients',
-            para: "In Google contact sharing your Google Contacts are updated automatically across various platforms: Desktop, Mobile, Tablet or Microsoft Outlook. Users get instant access to contacts across different devices automatically.",
+            title: 'Boundless Sharing Across Domains',
+            para: "Expand the boundaries of your organization's collaboration with Patronum's feature for boundless sharing across domains. This capability enables your company to seamlessly share Google Contacts not only within your own Google Workspace domain and sub-domains but also with external customers and partners. Patronum fosters stronger relationships and smoother interactions with key stakeholders by facilitating secure and efficient contact sharing beyond your immediate organization.",
             img: "/assets/features/contact-sharing/main-4.svg",
         },
         {
-            title: 'Set User Level Permissions',
-            para: "With Patronum you are in control of your Google Addressbook. Share contact labels with other users and assign permissions such as “Can Edit”, “Can Delete” and “Read Only”. Our interface is based on the same permissions model used within Google Docs making it super easy to understand and deploy.",
+            title: 'Uncompromised Security',
+            para: "Patronum leverages a robust global technical infrastructure designed to protect your data at every level. With a dedicated team of engineers focused on maintaining and advancing security measures, Patronum ensures that your contacts and shared information remain private and secure. This commitment to security means you can trust Patronum to handle your most sensitive contact information, providing you with the confidence to manage and share data without risking privacy breaches or unauthorized access.",
             img: "/assets/features/contact-sharing/main-5.svg",
         },
         {
-            title: 'Advanced Logging',
-            para: "Patronum provides administrators with an extensive logging feature which gives them the power to monitor and keep a track of updates to contact sharing throughout the whole system. See who is sharing what and to whom.",
+            title: 'In-Depth Logging for Total Transparency',
+            para: "Patronum's advanced logging feature offers unparalleled transparency into the contact sharing activities within your organization. With comprehensive logs, administrators can monitor and track every update and sharing action, gaining valuable insights into how information is circulated. This level of oversight allows for improved governance and compliance, ensuring that contact sharing adheres to organizational policies and standards. ",
             img: "/assets/features/contact-sharing/main-6.svg",
         },
     ]
@@ -47,49 +47,49 @@ export default function FeatureDetail(){
         {
             id: '01',
             title: 'Unlimited Shared Contact Labels',
-            para: "Effortlessly manage and automate Google Group memberships.",
+            para: "Create and share endless labels for organizing contacts.",
             img: "/assets/features/contact-sharing/detail-1.svg",
         },
         {
             id: '02',
             title: 'Unlimted Shared Contacts',
-            para: "Empower Specific Users with Controlled Access to Manage Others' Google.",
+            para: "Share an unlimited number of contacts within your organization.",
             img: "/assets/features/contact-sharing/detail-2.svg",
         },
         {
             id: '03',
             title: 'User Level Permission Management',
-            para: "Simplify and Streamline the Sharing of Calendars within your Organisation.",
+            para: "Assign and manage permissions for individual users on contact access.",
             img: "/assets/features/contact-sharing/detail-3.svg",
         },
         {
             id: '04',
             title: 'Mobile/Tablet & Outlook sync',
-            para: "Utilise Ready-Made Policy Templates for Quick and Efficient.",
+            para: "Synchronize contacts across mobile devices, tablets, and Outlook seamlessly.",
             img: "/assets/features/contact-sharing/detail-4.svg",
         },
         {
             id: '05',
             title: 'Share with Google Groups',
-            para: "Securely and Promptly Revoke User Access to Data and Resources.",
+            para: "Easily share contacts with specific Google Groups.",
             img: "/assets/features/contact-sharing/detail-5.svg",
         },
         {
             id: '06',
-            title: 'Share with external domains',
-            para: "Easily Manage and Delete Calendar Events, Ensuring Up-to-Date.",
+            title: 'Share with External Domains',
+            para: "Facilitate contact sharing with users outside your domain.",
             img: "/assets/features/contact-sharing/detail-6.svg",
         },
         {
             id: '07',
             title: 'Instant Sync',
-            para: "Seamlessly Manage the Entire User Journey within Google Workspace.",
+            para: "Contacts are updated in real-time across all devices and platforms.",
             img: "/assets/features/contact-sharing/detail-7.svg",
         },
         {
             id: '08',
-            title: 'Advanced logging and security features',
-            para: "Gain Immediate Insights with Live Tracking of all User Activities.",
+            title: 'Advanced Logging and Security Features',
+            para: "Offers detailed activity logs and enhanced security measures for contact sharing.",
             img: "/assets/features/contact-sharing/detail-8.svg",
         },
     ]
@@ -97,8 +97,8 @@ export default function FeatureDetail(){
     return (
         <>
             <PageLayout
-                pageTitle1={'Contact Sharing'} 
-                pagePara={"The only tool you'll ever need to streamline your Google Workspace management."} 
+                pageTitle1={'Google Contact Sharing'} 
+                pagePara={"Unified Contact Sharing for Powerful & efficient collaboration"} 
                 imgSrc={'contact-sharing.svg'}
                 >
 
@@ -107,8 +107,8 @@ export default function FeatureDetail(){
                 <FeatureDetailTitle
                     sectionTitle1="Contact Sharing"    
                     sectionTitle2="For Google Workspace"
-                    sectionPara="Create contact groups, add relevant contacts and share contact book with other Google Workspace users. Now sync all your contacts and labels with Google Contacts every day."
-                    sectionParaBig="Google contact sharing gives you the flexibility to fetch all your contacts changes done during the day and modify them at other users’ ends. All the users have the latest and updated contacts."
+                    sectionPara="Patronum is the only enterprise-ready application designed for contact sharing within Google Workspace."
+                    sectionParaBig="Patronum facilitates contact sharing in Google Workspace by streamlining contact group creation, ensuring your team always has access to the most current and relevant contact information. Seamless daily syncs with Google Contacts keep your entire organization connected and up-to-date."
                 />
 
                 <section id="feature-detail-info">
@@ -129,7 +129,7 @@ export default function FeatureDetail(){
                 </section>
 
                 <SectionBreak 
-                    sectionBreakText="Patronum redefines User Lifecycle Management in Google Workspace by using automation, delivering unparalleled security and productivity, freeing you to focus on innovation and strategic growth."
+                    sectionBreakText="With Patronum, users gain access to unlimited contact labels and sharing capabilities, along with effortless synchronization across Outlook and various devices. It stands as a singular solution for navigating the complexities of Google contact sharing, enhancing connectivity within and beyond your organization."
                 />
 
                 <section id="feature-detail-card">

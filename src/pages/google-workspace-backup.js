@@ -12,18 +12,18 @@ export default function FeatureDetail(){
 
     const featuresDetail = [
         {
-            title: 'No backup failures',
-            para: "In addition to sharing contacts across all your users within your company Google Workspace domain and sub-domains, you can also share and interact with customers and partners by sharing your Google Contacts outside of your Google Workspace domain.",
+            title: 'Advanced Intelligent Ransomware Protection',
+            para: "In an era where ransomware attacks are increasingly prevalent, Patronum Backup offers a sophisticated layer of defense. By employing advanced automation and preemptive backup strategies, Patronum ensures your Google Workspace data remains intact and recoverable even in the face of sophisticated ransomware threats. The feature of auto-labeling recovery points is particularly noteworthy, as it precisely identifies the last uncorrupted data snapshot, ensuring a clean and efficient restoration process without compromising your data integrity.",
             img: "/assets/features/google-workspace-backup/main-1.svg",
         },
         {
-            title: 'Simple Self Service',
-            para: "Google contact sharing enables the best features for you and to manage your contacts. Patronum is smoothly integrated into Google Workspace, Gmail and Google Contacts. Our Google Chrome extension gives users the best possible experience when it comes to managing and sharing contacts with co-workers.",
+            title: 'Guaranteed Backup Success with No Failures',
+            para: "Patronum Backup eliminates the anxiety surrounding potential backup failures. Through its intelligent management system, which includes parallel processing and automatic rescheduling, Patronum guarantees a seamless backup experience free from common Google errors or failures. This state-of-the-art approach ensures your data protection mechanisms are foolproof and consistently reliable, offering peace of mind that your organization’s data is safe, secure, and always available.",
             img: "/assets/features/google-workspace-backup/main-2.svg",
         },
         {
-            title: 'google workspace backup',
-            para: "Patronum is built on a global scale technical infrastructure designed to provide security throughout. We have invested heavily in securing our infrastructure and we have engineers dedicated to keeping your data and information secure and private.",
+            title: 'Empowering Simple Self-Service',
+            para: "Patronum Backup goes beyond just safeguarding your data—it also simplifies the restoration process. With its user-friendly self-service feature, end users gain the autonomy to restore their own data, including files and emails, swiftly and efficiently. This empowerment significantly reduces the workload on IT staff, streamlining the recovery process and allowing for immediate access to lost or deleted data without the typical delays. By democratizing data restoration, Patronum Backup not only enhances data security but also fosters a more efficient and resilient organizational workflow.",
             img: "/assets/features/google-workspace-backup/main-3.svg",
         },
         {
@@ -104,8 +104,8 @@ export default function FeatureDetail(){
                 <FeatureDetailTitle
                     sectionTitle1="Google Workspace"
                     sectionTitle2="Backup"
-                    sectionPara="Protect your Google Workspace environment from accidental and malicious deletion. With Patronum Backup, you get the world’s faster backup solution for Google Workspace providing high-frequency backups of your Google data."
-                    sectionParaBig="Company information is often shared widely between employees, departments and external organisations, from suppliers to customers."
+                    sectionPara="Patronum Backup stands at the forefront of data protection, offering the fastest and most reliable backup solution specifically designed for Google Workspace. With Patronum Backup, you get the world’s faster backup solution for Google Workspace providing high-frequency backups of your Google data."
+                    sectionParaBig="Protect your Google Workspace environment from accidental and malicious deletion. From crucial Files and Shared Drives to essential Emails, every piece of data is securely backed up, guaranteeing comprehensive point-in-time restores or the option for instant offline exports whenever the need arises. This means no piece of information is ever out of reach, providing a fail-safe against data loss incidents."
                 />
 
                 <section id="feature-detail-info">
@@ -126,7 +126,7 @@ export default function FeatureDetail(){
                 </section>
 
                 <SectionBreak 
-                    sectionBreakText="Patronum redefines User Lifecycle Management in Google Workspace by using automation, delivering unparalleled security and productivity, freeing you to focus on innovation and strategic growth."
+                    sectionBreakText="Patronum Backup transforms how your organization approaches Google Workspace data protection, marrying speed, reliability, and user empowerment in a single, powerful solution. Secure your digital workspace with Patronum, and navigate the digital landscape with confidence, knowing that your data is protected by the pinnacle of backup innovation."
                 />
 
                 <section id="feature-detail-card">

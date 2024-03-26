@@ -158,17 +158,20 @@ export default function UseCases() {
                                                 <img src="/assets/home/patronum-for-business.svg" loading="lazy" alt="use cases image" title="use case of patronum"/>
                                             </div>
                                             <div className="useCase-item-right">
-                                                <h4 className="title-3xl mb-10">
+                                                <h4 className="title-3xl mb-[1.5vw]">
                                                     <span>Patronum for Business</span>
                                                 </h4>
-                                                <p className="content-p mb-10">
+                                                <p className="para-italic mb-[1.5vw]">
+                                                    Unlock the full potential of Google Workspace for your business, at your command.
+                                                </p>
+                                                <p className="content-p mb-[1.5vw]">
                                                     <span>
-                                                        Patronum gets more out of Google Workspace by expanding access to administration tasks across your business including some for users. By setting up policies with the help of IT professionals.
+                                                        Imagine a world where onboarding and offboarding processes are seamlessly automated, where organization-wide policies don't just exist; they thrive, ensuring efficiency and compliance.
                                                     </span>
                                                     <br />
                                                     <br />
                                                     <span>
-                                                        You can delegate and automate a subset of administrative capabilities to non-IT managers, secure in the knowledge they are not going to break anything.
+                                                        Patronum brings this vision to life, offering a suite of capabilities tailored for both large enterprises and SMEs. From intricate Google Drive Management, and strategic Contact Sharing, to dynamic Email Signature Management, Patronum equips IT professionals and non-IT managers alike with unparalleled control and customization.
                                                     </span>
                                                 </p>
                                                 <Link href="/patronum-for-business" className="link-btn">
@@ -196,16 +199,22 @@ export default function UseCases() {
                                                 <img src="/assets/home/patronum-for-hr.svg" loading="lazy" alt="use cases image" title="use case of patronum"/>
                                             </div>
                                             <div className="useCase-item-right">
-                                                <h4 className="title-3xl mb-10">
+                                                <h4 className="title-3xl mb-[1.5vw]">
                                                     <span>Patronum For HR</span>
                                                 </h4>
-                                                <p className="content-p mb-10">
+                                                <p className="para-italic mb-[1.5vw]">
+                                                    Develop a culture of collaboration & turn new hires into integral assets from day one.
+                                                </p>
+                                                <p className="content-p mb-[1.5vw]">
                                                     <span>
-                                                        With Patronum you can automatically unshare Google Files reducing your organisations exposure. Quickly and easily set up policies that automate the clean up of file sharing with external organisations.                                        </span>
+                                                        As a human resource executive, do you day dream of offering a personalised, yet resource-rich and interconnected workspace experience to each user in your organisation? With Patronum, onboarding new hires is a tailored journey, where new staff members are greeted by a Google Workspace sculpted just for their role. Google Groups, Labels, Calendars, and Contacts converge, syncing seamlessly with smart devices.
+
+                                                    </span>
                                                     <br />
                                                     <br />
                                                     <span>
-                                                        With Patronum you can automatically unshare Google Files reducing your organisations exposure. Quickly and easily set up policies that automate.                                        </span>
+                                                    With Patronum, your team isn't just working—they're thriving from the outset, enveloped in a culture of collaboration that fuels job satisfaction and retention.                 
+                                                    </span>
                                                 </p>
                                                 <Link href="/patronum-for-hr" className="link-btn">
                                                     <span className="btn-text">Learn More</span>
@@ -232,16 +241,20 @@ export default function UseCases() {
                                                 <img src="/assets/home/patronum-for-sales-marketing.svg" loading="lazy" alt="use cases image" title="use case of patronum"/>
                                             </div>
                                             <div className="useCase-item-right">
-                                                <h4 className="title-3xl mb-10">
+                                                <h4 className="title-3xl mb-[1.5vw]">
                                                     <span>For Sales & Marketing</span>
                                                 </h4>
-                                                <p className="content-p mb-10">
+                                                <p className="para-italic mb-[1.5vw]">
+                                                    Unleash your Sales & Marketing teams from the shackles of IT dependency
+                                                </p>
+                                                <p className="content-p mb-[1.5vw]">
                                                     <span>
-                                                        Patronum is the only enterprise-ready contact sharing application for Google Workspace. Allow your users to share their specific contacts via labels, while giving administrators enhanced visibility and management of the whole process.                                        </span>
+                                                        Patronum is a catalyst for synergy between sales and marketing, breaking down silos and fostering a culture of shared success. Patronum transforms the mundane into the extraordinary, enabling sales and marketing managers to directly manage key Google Workspace features - from resetting passwords to configuring email signatures. From shared contacts and customer lists to up-to-date templates, every feature is designed to streamline workflows and amplify your market presence.
+                                                    </span>
                                                     <br />
                                                     <br />
                                                     <span>
-                                                        Patronum is the only enterprise-ready contact sharing application for Google Workspace. Allow your users to share their specific contacts.                                        </span>
+                                                        In the high-stakes world of sales and marketing, Patronum is your secret weapon. It's like having a digital wizard at your fingertips, ensuring your team remains in the fast lane, fully equipped and ready from day one.                                        </span>
                                                 </p>
                                                 <Link href="/patronum-for-sales-marketing" className="link-btn">
                                                     <span className="btn-text">Learn More</span>
@@ -268,16 +281,19 @@ export default function UseCases() {
                                                 <img src="/assets/home/patronum-for-education.svg" loading="lazy" alt="use cases image" title="use case of patronum"/>
                                             </div>
                                             <div className="useCase-item-right">
-                                                <h4 className="title-3xl mb-10">
+                                                <h4 className="title-3xl mb-[1.5vw]">
                                                     <span>Patronum For Education</span>
                                                 </h4>
-                                                <p className="content-p mb-10">
+                                                <p className="para-italic mb-[1.5vw]">
+                                                    Efficiency meets security, on a budget, enabling you to focus on educational excellence.
+                                                </p>
+                                                <p className="content-p mb-[1.5vw]">
                                                     <span>
-                                                        With Patronum you can automatically unshare Google Files reducing your organisations exposure. Quickly and easily set up policies that automate the clean up of file sharing with external organisations.                                        </span>
+                                                        Patronum is as an indispensable ally for educational institutions leveraging Google Workspace. From the precise alignment of staff in Google Groups to the strategic distribution of resources, Patronum ensures that everyone is on the same page.                                    </span>
                                                     <br />
                                                     <br />
                                                     <span>
-                                                        With Patronum you can automatically unshare Google Files reducing your organisations exposure. Quickly and easily set up policies that automate.                                        </span>
+                                                        Patronum is as an indispensable ally for educational institutions leveraging Google Workspace. From the precise alignment of staff in Google Groups to the strategic distribution of resources, Patronum ensures that everyone is on the same page.                                       </span>
                                                 </p>
                                                 <Link href="/patronum-for-education" className="link-btn">
                                                     <span className="btn-text">Learn More</span>
@@ -304,16 +320,19 @@ export default function UseCases() {
                                                 <img src="/assets/home/patronum-for-users.svg" loading="lazy" alt="use cases image" title="use case of patronum"/>
                                             </div>
                                             <div className="useCase-item-right">
-                                                <h4 className="title-3xl mb-10">
+                                                <h4 className="title-3xl mb-[1.5vw]">
                                                     <span>Patronum For Users</span>
                                                 </h4>
-                                                <p className="content-p mb-10">
+                                                <p className="para-italic mb-[1.5vw]">
+                                                    Transform the way your team works—with every document, contact, & calendar at their fingertips.
+                                                </p>
+                                                <p className="content-p mb-[1.5vw]">
                                                     <span>
-                                                        With Patronum your staff will be up and running from day one with Google Drive Management, contact and calendar sharing. No more hunting for documents, or requesting access to schedules, or data they need.                                        </span>
+                                                        Patronum seamlessly integrates Google Drive Management, shares contacts & calendars and gives users a clear view of organisation hierarchy, ensuring your staff has what they need, when they need it.                                         </span>
                                                     <br />
                                                     <br />
                                                     <span>
-                                                        Even in small organizations, it’s often difficult to connect with the right people. Patronum gives your organization instant access to your internal staff list via contact sharing.                                        </span>
+                                                        Patronum eliminates the common hurdles of document access and schedule coordination, enabling your all team members to focus on productivity. Patronum also enhances organisational connectivity, providing immediate access to an internal staff directory. With the ability to search for colleagues by department, location, or skillset via the Organisation Chart and People Finder, collaboration within the organisation becomes seamless and more intuitive.                                        </span>
                                                 </p>
                                                 <Link href="/patronum-for-users" className="link-btn">
                                                     <span className="btn-text">Learn More</span>

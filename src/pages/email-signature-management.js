@@ -12,43 +12,43 @@ export default function FeatureDetail(){
 
     const featuresDetail = [
         {
-            title: 'Email Signature Templates',
-            para: "Setting up standard folders, calendars, email signatures, and even Gmail Filters and Labels is effortless with Patronum. This ensures that new users have everything they need to be productive immediately, providing a best-in-class start within Google Workspace.",
+            title: 'Redefine Your Email Communication',
+            para: "Unlock the power of professional Google Workspace email signatures with Patronum. Dive into the world of effortless email signature management that not only streamlines your professional communication but also solidifies your brand identity across every email sent from your organization. With Patronum, accessing managed Google Workspace email signatures becomes as simple as a click, transforming every email into a brand-building opportunity.",
             img: "/assets/features/email-signature-management/main-1.svg",
         },
         {
-            title: 'Professional Google Workspace Email Signatures',
-            para: "Understanding that IDaaS providers may not cover all business needs, Patronum complements these services by supporting major IDaaS providers like OneLogin, Namely, Okta, and PingIdentity. Patronum seamlessly integrates with these platforms, picking up where they leave off to provide a comprehensive user management experience.",
+            title: 'Be Creative with pre-built Signature Templates',
+            para: "Imagine having access to over 20 exquisite, professionally designed email signature templates that you can customize and deploy within seconds. Patronum brings this vision to life, offering a diverse range of templates that cater to your unique brand standards, ensuring consistency and elegance in your email communication.",
             img: "/assets/features/email-signature-management/main-2.svg",
         },
         {
-            title: 'Ease of Use',
-            para: "Security is a top priority in user management. Patronum adopts a security-first approach, ensuring that user access privileges are appropriately revoked upon their departure from the organisation. This includes automatic password changes, updating recovery email addresses, and deleting all app-specific passwords, thereby maintaining the integrity and security of your Google Workspace.",
+            title: 'User-Friendly Design for Everyone',
+            para: "Patronum is ingeniously designed for simplicity, making professional email signature management accessible to everyone, regardless of technical expertise. Choose your ideal template, personalize it with your brand's fonts and colors, and publish it effortlessly. It's email signature management made easy, ensuring that anyone in your organization can create stunning, professional email signatures without needing to code.",
             img: "/assets/features/email-signature-management/main-3.svg",
         },
         {
-            title: 'HTML Editor For Expert Mode',
-            para: "In a mobile-centric world, Patronum also extends its management capabilities to mobile devices. It automatically wipes mobile devices when users leave the organisation, ensuring that sensitive data remains securely within the organisation and does not leave with the departing employee.",
+            title: 'See the Magic Before You Send',
+            para: "With Patronum's innovative real-time preview feature, you can see exactly how your email signature will appear on both desktop and mobile devices. This intuitive interface allows for adjustments and customizations, ensuring that your email signature perfectly represents your brand across all user platforms within your Google Workspace domain.",
             img: "/assets/features/email-signature-management/main-4.svg",
         },
         {
-            title: 'Always Up-to-date',
-            para: "Patronum provides complete email signature management within Google Workspace, ensuring that all communications are consistent and aligned with your organisation's branding and standards.",
+            title: 'Constantly Current Signatures',
+            para: "Patronum ensures that your Google Workspace users' email signatures are always current, reflecting the most up-to-date information. Should users personalize their signatures, Patronum's smart management system ensures that all signatures remain uniform and on-brand, maintaining your organization's professional image in every correspondence.",
             img: "/assets/features/email-signature-management/main-5.svg",
         },
         {
-            title: 'Delegate Control Of Email Signatures',
-            para: "Patronum excels in simplifying complex tasks. Its automated workflows allow administrators to apply dynamic automation centrally, saving time and reducing the likelihood of errors and security issues.",
+            title: 'Empower Your Marketing Team',
+            para: "Grant your marketing team the autonomy they need to manage email signatures across the board. With Patronum, delegating control of email signatures is seamless, allowing your marketing experts to ensure brand consistency and leverage email signatures as a powerful marketing tool.",
             img: "/assets/features/email-signature-management/main-6.svg",
         },
         {
-            title: 'Real-time previews',
-            para: "Patronum intelligently manages Google Workspace licensing, reducing costs by dynamically removing accounts during the de-provisioning process. This ensures that all resources are safely archived without the need for additional software, optimising your investment in Google Workspace.",
+            title: 'Dive Deep with Advanced Customization',
+            para: "For those who wish to explore beyond the templates, Patronum's advanced HTML editor offers the perfect playground. This expert mode allows administrators to craft bespoke email signatures, providing the flexibility to truly personalize and innovate your organization's email signatures.",
             img: "/assets/features/email-signature-management/main-7.svg",
         },
         {
-            title: 'No Need For IT Experience Or Complex SMTP Settings',
-            para: "For organisations that rely heavily on Google contacts, Patronum offers a centralised management system to keep all Google Contacts in sync and well-managed, enhancing communication efficiency across the organisation.",
+            title: 'Simplified Integration, No IT Expertise Required',
+            para: "Patronum is seamlessly integrated into your Google Workspace environment, eliminating the need for complex IT knowledge or adjustments to SMTP or SPF settings. Its plug-and-play nature means you can quickly install Patronum and start creating perfect email signatures right away, ensuring your communications are always professional and branded.",
             img: "/assets/features/email-signature-management/main-8.svg",
         },
     ]
@@ -57,49 +57,50 @@ export default function FeatureDetail(){
         {
             id: '01',
             title: 'Multiple Google Workspace email signatures',
-            para: "Effortlessly Manage and Automate Google Group Memberships.",
+            para: ": Manage versatile email signatures tailored to various roles or departments, enhancing your organization's communication flexibility.",
             img: "/assets/features/email-signature-management/detail-1.svg",
         },
         {
             id: '02',
-            title: 'Choose from pre-built signature templates',
-            para: "Empower Specific Users with Controlled Access to Manage Others' Google.",
+            title: 'Real-time update',
+            para: "Instantaneously refresh email signatures across your organization to keep information up-to-date and consistent.",
             img: "/assets/features/email-signature-management/detail-2.svg",
         },
         {
             id: '03',
-            title: 'No need for IT experience or complex SMTP settings',
-            para: "Simplify and Streamline the Sharing of Calendars within your Organisation.",
-            img: "/assets/features/email-signature-management/detail-3.svg",
-        },
-        {
-            id: '04',
-            title: 'Standardise Branding & Marketing Campaigns',
-            para: "Utilise Ready-Made Policy Templates for Quick and Efficient.",
-            img: "/assets/features/email-signature-management/detail-4.svg",
-        },
-        {
-            id: '05',
-            title: 'Supports “Send As” addresses',
-            para: "Securely and Promptly Revoke User Access to Data and Resources.",
-            img: "/assets/features/email-signature-management/detail-5.svg",
-        },
-        {
-            id: '06',
-            title: 'Include Google Workspace users photo',
-            para: "Easily Manage and Delete Calendar Events, Ensuring Up-to-Date.",
-            img: "/assets/features/email-signature-management/detail-6.svg",
-        },
-        {
-            id: '07',
-            title: 'Real-time update',
-            para: "Seamlessly Manage the Entire User Journey within Google Workspace.",
+            title: 'Choose from pre-built signature templates',
+            para: "Quickly create elegant email signatures with our selection of professionally designed templates.",
             img: "/assets/features/email-signature-management/detail-7.svg",
         },
         {
+            id: '04',
+            title: 'No need for IT experience or complex SMTP settings',
+            para: "Quickly create elegant email signatures with our selection of professionally designed templates.",
+            img: "/assets/features/email-signature-management/detail-3.svg",
+        },
+        {
+            id: '05',
+            title: 'Standardise Branding & Marketing Campaigns',
+            para: "Ensure uniformity in branding and marketing efforts with consistent email signatures across your team.",
+            img: "/assets/features/email-signature-management/detail-4.svg",
+        },
+        {
+            id: '06',
+            title: 'Supports “Send As” addresses',
+            para: "Seamlessly manage and assign signatures for various 'Send As' addresses, accommodating different roles or aliases.",
+            img: "/assets/features/email-signature-management/detail-5.svg",
+        },
+        {
+            id: '07',
+            title: 'Include Google Workspace users photo',
+            para: "Add a personal touch to your email communications by incorporating Google Workspace user photos in signatures.",
+            img: "/assets/features/email-signature-management/detail-6.svg",
+        },
+        
+        {
             id: '08',
             title: 'Delegated Access',
-            para: "Gain Immediate Insights with Live Tracking of all User Activities.",
+            para: "Empower designated team members with the ability to update and manage email signatures, offering flexibility while retaining control.",
             img: "/assets/features/email-signature-management/detail-8.svg",
         },
     ]
@@ -109,7 +110,7 @@ export default function FeatureDetail(){
             <PageLayout
                 pageTitle1={'Email Signature'} 
                 pageTitle2={'Management'}
-                pagePara={"The only tool you'll ever need to streamline your Google Workspace management."} 
+                pagePara={"Centrally managed Google Workspace Email Signatures for Your Brand's Professional Image"} 
                 imgSrc={'email-signature-management.svg'}
                 >
 
@@ -118,8 +119,8 @@ export default function FeatureDetail(){
                 <FeatureDetailTitle
                     sectionTitle1="Email Signature Management"    
                     sectionTitle2="For Google Workspace"
-                    sectionPara="Have you heard about email signature management? Do you want to have professional Google Workspace email signatures but lack the technical ability to do so."
-                    sectionParaBig="Give your users a consistent, dynamic and centrally manage Gmail email signatures for all your users. With Patronum you will be confident that everyone within your organization is presenting themselves correctly and on-brand."
+                    sectionPara="Transform your email communication with Patronum’s sophisticated email signature management. This powerful feature of Patronum allows for the creation of centrally managed, dynamic, brand-aligned signatures effortlessly, even without HTML knowledge."
+                    sectionParaBig="Patronum simplifies email signature management, offering features like marketing team control and an advanced HTML editor for custom designs. Integrate seamlessly into your Google Workspace without the hassle of complex settings, ensuring your team always presents a unified brand image."
                 />
 
                 <section id="feature-detail-info">
@@ -140,7 +141,7 @@ export default function FeatureDetail(){
                 </section>
 
                 <SectionBreak 
-                    sectionBreakText="Patronum redefines User Lifecycle Management in Google Workspace by using automation, delivering unparalleled security and productivity, freeing you to focus on innovation and strategic growth."
+                    sectionBreakText="Patronum is seamlessly integrated into your Google Workspace environment, eliminating the need for complex IT knowledge or adjustments to SMTP or SPF settings. Its plug-and-play nature means you can quickly install Patronum and start creating perfect email signatures right away, ensuring your communications are always professional and branded."
                 />
 
                 <section id="feature-detail-card">

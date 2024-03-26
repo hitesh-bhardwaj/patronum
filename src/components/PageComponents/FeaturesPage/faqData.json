@@ -1,22 +1,77 @@
 [
     {
         "id": "01",
-        "title": "Can Patronum handle role-based access control during onboarding?",
-        "content": "Yes, Patronum can manage role-based access control during onboarding. It assigns Google Workspace access and permissions based on specific job roles or departments, ensuring that each user has the appropriate level."
+        "title": "What is automated user onboarding and offboarding in Google Workspace?",
+        "content": "Automated user onboarding and offboarding in Google Workspace, as facilitated by Patronum, involves streamlining the addition and removal of users. This process includes setting up user accounts, email configurations, access permissions, revoking these accesses and archiving data when users leave, all done automatically to enhance efficiency and security."
     },
     {
         "id": "02",
-        "title": "What is automated user onboarding and offboarding in Google Workspace?",
-        "content": "Yes, Patronum can manage role-based access control during onboarding. It assigns Google Workspace access and permissions based on specific job roles or departments, ensuring that each user has the appropriate level."
+        "title": "Can Patronum handle role-based access control during onboarding?",
+        "content": "Yes, Patronum can manage role-based access control during onboarding. It assigns Google Workspace access and permissions based on specific job roles or departments, ensuring that each user has the appropriate level of access from day one."
     },
     {
         "id": "03",
         "title": "How does Patronum ensure security during the offboarding process?",
-        "content": "Yes, Patronum can manage role-based access control during onboarding. It assigns Google Workspace access and permissions based on specific job roles or departments, ensuring that each user has the appropriate level."
+        "content": "During offboarding, Patronum secures company data by revoking the departing employee's access to Google Workspace tools and services. It also ensures that all sensitive data is either transferred to a designated person or securely archived, preventing unauthorised access."
     },
     {
         "id": "04",
         "title": "Is it possible to customise onboarding workflows with Patronum?",
-        "content": "Yes, Patronum can manage role-based access control during onboarding. It assigns Google Workspace access and permissions based on specific job roles or departments, ensuring that each user has the appropriate level."
+        "content": "Yes, Patronum offers customisable onboarding workflows. Organisations can tailor these processes to meet their specific requirements, ensuring that every new employee's onboarding experience aligns with organisational protocols and needs."
+    },
+    {
+        "id": "05",
+        "title": "How does Patronum integrate with existing IDaaS providers for user management?",
+        "content": "Patronum seamlessly integrates with major IDaaS providers like Okta and OneLogin. It complements these services by picking up where they left off, providing additional user management functionalities specific to Google Workspace."
+    },
+    {
+        "id": "06",
+        "title": "Can Patronum automate email setup and signature configuration for new users?",
+        "content": "Absolutely, Patronum automates the email setup process for new users, including configuring email accounts and standardising email signatures according to the organisation's branding guidelines."
+    },
+    {
+        "id": "07",
+        "title": "Does Patronum support bulk user onboarding and offboarding?",
+        "content": "Yes, Patronum supports bulk user onboarding and offboarding, allowing organisations to efficiently manage large-scale additions or removals of users in Google Workspace."
+    },
+    {
+        "id": "08",
+        "title": "How does Patronum manage mobile device access during offboarding?",
+        "content": "Patronum manages mobile device access during offboarding by wiping company data from the employee's mobile devices or revoking access to ensure that sensitive information remains secure."
+    },
+    {
+        "id": "09",
+        "title": "Can Patronum automate the transfer of files and documents to new users?",
+        "content": "Yes, Patronum can automate the transferring of necessary files and documents to new users. It ensures that new employees have immediate access to all the required resources, streamlining their integration into the organisation."
+    },
+    {
+        "id": "10",
+        "title": "What reporting features does Patronum offer for onboarding and offboarding activities?",
+        "content": "Patronum provides comprehensive reporting features for onboarding and offboarding activities. These include detailed logs and audits of all user management actions, offering transparency and aiding in compliance and security monitoring."
+    },
+    {
+        "id": "11",
+        "title": "How does Patronum handle user data backup during offboarding?",
+        "content": "Patronum ensures that all user data, including emails, documents, and calendar information, is securely backed up during offboarding. This process allows for the safe archiving of important data, which can be accessed or transferred as needed, ensuring that no critical information is lost when a user leaves the organisation."
+    },
+    {
+        "id": "12",
+        "title": "Can Patronum manage automatic group memberships for new users?",
+        "content": "Yes, Patronum can automatically manage group memberships for new users. Based on predefined criteria such as department, role, or location, Patronum can add new users to relevant Google Groups, ensuring they have immediate access to necessary communication channels and resources."
+    },
+    {
+        "id": "13",
+        "title": "Is it possible to schedule future onboarding or offboarding actions with Patronum?",
+        "content": "Patronum allows for the scheduling of future onboarding or offboarding actions. This feature enables IT administrators to plan and execute user management tasks in advance, aligning with the employee's start or end date, thereby streamlining the workflow."
+    },
+    {
+        "id": "14",
+        "title": "How does Patronum assist in maintaining compliance during user management?",
+        "content": "Patronum assists in maintaining compliance by automating the management of user permissions and access, ensuring adherence to data protection and privacy regulations. It provides detailed logs and reports of user activities, which are crucial for audit trails and compliance checks."
+    },
+    {
+        "id": "15",
+        "title": "Can Patronum facilitate the transfer of responsibilities during offboarding?",
+        "content": "Yes, during offboarding, Patronum can facilitate the transfer of responsibilities and ownership of files, documents, and tasks from the departing employee to other team members. This ensures a smooth transition and continuity of work without disrupting ongoing projects or operations."
     }
 ]

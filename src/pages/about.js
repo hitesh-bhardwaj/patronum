@@ -46,7 +46,7 @@ export default function About(){
         <>
             <PageLayout 
                 pageTitle1={'About Patronum'} 
-                pagePara={"The only tool you'll ever need to streamline your Google Workspace management."} 
+                pagePara={"Meet the innovators transforming your Google Workspace experience with heart and hustle."} 
                 imgSrc={'about.svg'}>
 
                 <section id="second-section">

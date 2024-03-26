@@ -8,29 +8,29 @@ gsap.registerPlugin(ScrollTrigger);
 const accordionData = [
     {
         title: 'Onboarding & Offboarding',
-        content: 'Provisioning and deprovisioning users within Google Workspace can be time-consuming and costly. Let Patronum fully automate all the administrator and user tasks to ensure an effective and secure process.',
-        more: 'Provisioning and deprovisioning users within Google Workspace can be time-consuming and costly. Let Patronum fully automate all the administrator.',
+        content: 'Provisioning and de-provisioning users within Google Workspace can be time-consuming and costly. Let Patronum fully automate all the administrator and user tasks to ensure an effective and secure process.',
+        more: 'With Patronum, your team hits the ground running from day one. Automatic access to essential files, folders, calendars, and Google groups enables users to be productive from day one. Plus, our seamless integration with leading IDaaS providers like OneLogin, Namely, Okta, and PingIdentity ensures a smooth continuation of services.',
         img: 'assets/home/features-1.svg',
         link: '/on-boarding',
     },
     {
         title: 'File Unsharing & Compliances',
-        content: 'With Patronum you can automatically unshare Google Files reducing your organisations exposure. Quickly and easily set up policies that automate the clean up of file sharing with external organisations.',
-        more: 'With Patronum you can automatically unshare Google Files reducing your organisations exposure. Quickly and easily set up policies that automate.',
+        content: "In a world where business information flows freely across employees, departments, and external entities, from suppliers to customers, managing your company's data effectively is crucial. Our intuitive policies enable you to effortlessly clean up file sharing with external organizations.",
+        more: "With Patronum you can gain comprehensive insights into external access to your data and revoke it as necessary or you can easily set up policies that automate the clean-up of file sharing with external organisations.",
         img: 'assets/home/features-2.svg',
         link: '/google-drive-compliance',
     },
     {
         title: 'Contact Sharing',
-        content: 'Patronum is the only enterprise-ready contact sharing application for Google Workspace. Allow your users to share their specific contacts via labels, while giving administrators enhanced visibility and management of the whole process.',
-        more: 'Patronum is the only enterprise-ready contact sharing application for Google Workspace. Allow your users to share their specific contacts.',
+        content: 'Patronum is the only enterprise-ready contact sharing application for Google Workspace. Patronum ensures your contacts and labels are in perfect sync with Google Contacts by capturing all changes made throughout the day and updating them across all user accounts.',
+        more: 'Our platform also allows users to effortlessly share specific contacts through labels, providing a seamless experience. Meanwhile, administrators gain unparalleled visibility and control over the entire process, ensuring efficient and secure contact management.',
         img: 'assets/home/features-3.svg',
         link: '/contact-sharing',
     },
     {
         title: 'Email Signature Management',
-        content: 'With Patronum you can automatically unshare Google Files reducing your organisations exposure. Quickly and easily set up policies that automate the clean up of file sharing with external organisations.',
-        more: 'With Patronum you can automatically unshare Google Files reducing your organisations exposure. Quickly and easily set up policies that automate.',
+        content: 'Crafting the perfect email signature in Gmail just got a whole lot easier with Patronum. Select from a range of templates, customize fonts and colors to your liking, and publish with ease. Designed for users without HTML expertise, Patronum ensures consistency across your organization, providing dynamic and centrally managed Gmail Email Signatures for all users.',
+        more: "With Patronum, you can rest assured that your Google Workspace users will always have up-to-date signatures with accurate information, and on-brand templates, enhancing your organization's image in every correspondence.",
         img: 'assets/home/features-4.svg',
         link: '/email-signature-management',
     },
@@ -43,8 +43,8 @@ const accordionData = [
     },
     {
         title: 'Google Workspace Backup',
-        content: "Experience the world's fastest backup solution, meticulously designed for Google Workspace. Patronum Backup offers unparalleled high-frequency backups, ensuring your Google data is always secure and recoverable.",
-        more: "With Patronum, your Google Workspace data is not just backed up; it's bulletproof. Secure Your Google Workspace leveraging the most advanced.",
+        content: "Experience the world's fastest backup solution, meticulously designed for Google Workspace. Patronum Backup offers unparalleled high-frequency backups, ensuring your Google data is always secure and recoverable. Enjoy complete peace of mind with 100% fidelity backups of Email, Calendar, Contacts, Files, and Shared Drives.",
+        more: "With Patronum, your Google Workspace data is not just backed up; it's bulletproof. Secure Your Google Workspace leveraging the most advanced, reliable backup technology available in the market.",
         img: 'assets/home/features-6.svg',
         link: '/google-workspace-backup',
     }

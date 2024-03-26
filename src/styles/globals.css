@@ -979,12 +979,12 @@ section{
   transition: height 0.5s ease;
 }
 .feat-accordion-item.open .accordion-content{
-  height: 18.2vw;
+  height: 24vw;
 } 
 
 @media screen and (max-width: 1536px) {
   .feat-accordion-item.open .accordion-content{
-    height: 19.2vw;
+    height: 24.5vw;
   } 
 }
 
@@ -1118,7 +1118,7 @@ section{
 }
 
 .useCase-item{
-  padding: 2vw 13vw 2vw;
+  padding: 2vw 10vw 2vw;
 }
 .use_case_content{
   background: #fefefe;
@@ -1127,9 +1127,9 @@ section{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 32vw;
   width: 100%;
   padding: 0% 5%;
+  height: 37vw;
 }
 .useCase-item-left{
   width: 35%;
@@ -1140,7 +1140,19 @@ section{
   height: 100%;
 }
 .useCase-item-right{
-  width: 43%;
+  width: 50%;
+}
+
+@media screen and (max-width: 1530px) {
+  .useCase-item{
+    padding: 2vw 10vw 2vw;
+  }
+  .use_case_content{
+    height: 40vw;
+  }
+  .useCase-item-right{
+    width: 44%;
+  }
 }
 
 /* Use Cases Section - 1920 End - Index*/
@@ -1524,7 +1536,7 @@ section{
   transition: 0.3s;
 }
 .faq-item.open .faq-content{
-  height: 6vw;
+  height: 9vw;
 }
 .faq-item .faq-arrow{
   position: absolute;
@@ -2897,7 +2909,7 @@ section{
   display: none;
 }
 .feat-accordion-item.open .accordion-content{
-  height: 150vw;
+  height: 180vw;
 }
 .feat-accordion-btn{
   width: 8vw;

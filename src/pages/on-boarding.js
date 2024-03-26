@@ -12,7 +12,7 @@ export default function FeatureDetail(){
 
     const featuresDetail = [
         {
-            title: 'Productive from day One',
+            title: 'Productive from Day One',
             para: "Setting up standard folders, calendars, email signatures, and even Gmail Filters and Labels is effortless with Patronum. This ensures that new users have everything they need to be productive immediately, providing a best-in-class start within Google Workspace.",
             img: "/assets/features/onboarding/main-1.svg",
         },
@@ -22,13 +22,13 @@ export default function FeatureDetail(){
             img: "/assets/features/onboarding/main-2.svg",
         },
         {
-            title: 'Security First Approach',
+            title: 'Security-First Approach',
             para: "Security is a top priority in user management. Patronum adopts a security-first approach, ensuring that user access privileges are appropriately revoked upon their departure from the organisation. This includes automatic password changes, updating recovery email addresses, and deleting all app-specific passwords, thereby maintaining the integrity and security of your Google Workspace.",
             img: "/assets/features/onboarding/main-3.svg",
         },
         {
             title: 'Mobile Management',
-            para: "Patronum provides complete email signature management within Google Workspace, ensuring that all communications are consistent and aligned with your organisation's branding and standards.",
+            para: "In a mobile-centric world, Patronum also extends its management capabilities to mobile devices. It automatically wipes mobile devices when users leave the organisation, ensuring that sensitive data remains securely within the organisation and does not leave with the departing employee.",
             img: "/assets/features/onboarding/main-4.svg",
         },
         {
@@ -42,14 +42,14 @@ export default function FeatureDetail(){
             img: "/assets/features/onboarding/main-6.svg",
         },
         {
-            title: 'Control Licensing Costs',
-            para: "Patronum intelligently manages Google Workspace licensing, reducing costs by dynamically removing accounts during the de-provisioning process. This ensures that all resources are safely archived without the need for additional software, optimising your investment in Google Workspace.",
-            img: "/assets/features/onboarding/main-7.svg",
-        },
-        {
             title: 'Shared Contacts Management',
             para: "For organisations that rely heavily on Google contacts, Patronum offers a centralised management system to keep all Google Contacts in sync and well-managed, enhancing communication efficiency across the organisation.",
             img: "/assets/features/onboarding/main-8.svg",
+        },
+        {
+            title: 'Control Licensing Costs',
+            para: "Patronum intelligently manages Google Workspace licensing, reducing costs by dynamically removing accounts during the de-provisioning process. This ensures that all resources are safely archived without the need for additional software, optimising your investment in Google Workspace.",
+            img: "/assets/features/onboarding/main-7.svg",
         },
     ]
 
@@ -57,51 +57,53 @@ export default function FeatureDetail(){
         {
             id: '01',
             title: 'Dynamic Google Groups',
-            para: "Effortlessly Manage and Automate Google Group Memberships.",
+            para: "Effortlessly manage and automate Google Group memberships based on user roles and attributes.",
             img: "/assets/features/onboarding/detail-1.svg",
         },
         {
             id: '02',
             title: 'Delegated Access',
-            para: "Empower Specific Users with Controlled Access to Manage Others' Google.",
+            para: "Empower specific users with controlled access to manage others' Google Workspace resources without full administrative privileges.",
             img: "/assets/features/onboarding/detail-2.svg",
         },
         {
             id: '03',
-            title: 'Calendar Sharing',
-            para: "Simplify and Streamline the Sharing of Calendars within your Organisation.",
-            img: "/assets/features/onboarding/detail-3.svg",
+            title: 'Real-time Activity Login',
+            para: "Gain immediate insights with live tracking of all user activities and changes within Google Workspace.",
+            img: "/assets/features/onboarding/detail-8.svg",
         },
         {
             id: '04',
-            title: 'Pre-Build Policies',
-            para: "Utilise Ready-Made Policy Templates for Quick and Efficient.",
-            img: "/assets/features/onboarding/detail-4.svg",
+            title: 'Calendar Sharing',
+            para: "Simplify and streamline the sharing of calendars within your organisation, enhancing collaboration and scheduling.",
+            img: "/assets/features/onboarding/detail-3.svg",
         },
         {
             id: '05',
-            title: 'Data Access revocation',
-            para: "Securely and Promptly Revoke User Access to Data and Resources.",
+            title: 'Data Access Revocation',
+            para: "Securely and promptly revoke user access to data and resources upon role change or departure.",
             img: "/assets/features/onboarding/detail-5.svg",
         },
         {
             id: '06',
+            title: 'Pre-built Policies',
+            para: "Utilise ready-made policy templates for quick and efficient implementation of standard Google Workspace practices.",
+            img: "/assets/features/onboarding/detail-4.svg",
+        },
+        
+        {
+            id: '07',
             title: 'Calendar Event Deletion',
-            para: "Easily Manage and Delete Calendar Events, Ensuring Up-to-Date.",
+            para: "Easily manage and delete calendar events, ensuring up-to-date scheduling and resource allocation.",
             img: "/assets/features/onboarding/detail-6.svg",
         },
         {
-            id: '07',
+            id: '08',
             title: 'User Lifecycle Management',
-            para: "Seamlessly Manage the Entire User Journey within Google Workspace.",
+            para: "Seamlessly manage the entire user journey within Google Workspace, from onboarding to offboarding, with automated processes and enhanced control.",
             img: "/assets/features/onboarding/detail-7.svg",
         },
-        {
-            id: '08',
-            title: 'Real-time Activity Login',
-            para: "Gain Immediate Insights with Live Tracking of all User Activities.",
-            img: "/assets/features/onboarding/detail-8.svg",
-        },
+        
     ]
 
     return (
@@ -109,7 +111,7 @@ export default function FeatureDetail(){
             <PageLayout
                 pageTitle1={'User Lifecycle'} 
                 pageTitle2={'Management'}
-                pagePara={"The only tool you'll ever need to streamline your Google Workspace management."} 
+                pagePara={"Seamless & Automated User Lifecycle Management for Google Workspace."} 
                 imgSrc={'feature-onboarding.svg'}
                 >
 
