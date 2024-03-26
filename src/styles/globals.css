@@ -47,7 +47,7 @@
 :root {
   --orb-color-1: #c2ddff; /* Red */
   --orb-color-2: #d6d9ff; /* Green */
-  --orb-color-3: #ff4d00; /* Blue */
+  --orb-color-3: #c2ddff; /* Blue */
 }
 
 .orb-canvas {
@@ -1953,14 +1953,17 @@ section{
   align-items: flex-start;
   justify-content: space-between;
 }
+.line-verticle{
+  width: 1px;
+  height: 30vw;
+  background: #c2c2c2;
+  display: block;
+}
 .future-card{
   width: 33%;
   padding: 5% 3%;
-  border-right: 1px solid #c2c2c2;
 }
-.future-card:first-child{
-  border-left: 1px solid #c2c2c2;
-}
+
 .future-card .img{
   width: 5vw;
   height: 5vw;
@@ -2667,7 +2670,7 @@ section{
   background: #FDFDFD;
   border: 1px solid #e2e2e2;
   border-radius: 15px;
-  padding: 5% 5%;
+  padding: 5vh 4vw;
   width: 48%;
   height: 100%;
   display: flex;
@@ -2675,7 +2678,7 @@ section{
   align-items: center;
 }
 #install-modal .install-right .contact-form>div{
-  margin-bottom: 2.5vw !important;
+  margin-bottom: 6% !important;
 }
 #install-modal .install-right .contact-form>div.mobile{
   margin-bottom: 1.4vw !important;
@@ -3314,8 +3317,8 @@ section{
     border-right: 1px solid #e2e2e2;
     margin-bottom: 15vw;
   }
-  .future-card:first-child{
-    border-left: 1px solid #e2e2e2;
+  .line-verticle{
+    display: none;
   }
   .future-card .img{
     width: 15vw;

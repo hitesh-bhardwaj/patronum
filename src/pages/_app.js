@@ -9,6 +9,7 @@ import { ModalProvider } from '@/components/InstallModal/ModelContext';
 import InstallModal from '@/components/InstallModal';
 import DemoModal from '@/components/InstallModal/DemoModal';
 import { useEffect } from 'react';
+import { AnimatePresence } from 'framer-motion';
 
 // Import the Background component dynamically
 const Background = dynamic(() => import('@/components/Pixi'), {
@@ -55,11 +56,11 @@ export default function App({ Component, pageProps, router }) {
       
       <ReactLenis root options={{ duration: 0.8 }}>
         <ModalProvider>
-          {/* <AnimatePresence mode="popLayout" onExitComplete={() => window.scrollTo(0, 0)}> */}
+          <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
             <Component {...pageProps} key={router.route}/>
+          </AnimatePresence>
             <SpeedInsights />
             <Analytics />
-          {/* </AnimatePresence> */}
           <InstallModal />
           <DemoModal />
         </ModalProvider>

@@ -1,6 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion';
 import { expand } from './anim';
+import Header from '../Header';
+import Footer from '../Footer';
 
 export default function Layout({children}) {
 
@@ -19,7 +21,9 @@ export default function Layout({children}) {
             <div className='transition-container'>
                 <motion.div {...anim(expand)} className='bg-[#1069df]'/>
             </div>
+            <Header />
             {children}
+            <Footer />
         </div>
     )
 }

@@ -396,21 +396,25 @@ export default function About(){
                                 />
                             </div>
                             <div className="patronum-future-bottom fadeUp">
+                                <span className="line-verticle"/>
                                 <FutureCard 
                                     futureImg="future-1.png"
                                     futureTitle="Continuous Innovation"
                                     futurePara="Our journey doesn't stop here. We are committed to continuous innovation, constantly enhancing our platform to meet the ever-changing landscape of cloud computing. We aim to remain at the forefront of cloud software services, providing our customers with cutting-edge solutions."
                                 />
+                                <span className="line-verticle"/>
                                 <FutureCard 
                                     futureImg="future-2.png"
                                     futureTitle="Expanding Our Reach"
                                     futurePara="As we look to the future, we aim to expand our reach, bringing Patronum to more organizations worldwide. We are dedicated to making cloud management more accessible, efficient, and secure for businesses of all sizes."
                                 />
+                                <span className="line-verticle"/>
                                 <FutureCard 
                                     futureImg="future-3.png"
                                     futureTitle="Stronger Partnerships"
                                     futurePara="We recognize the importance of strong partnerships in our growth and success. Moving forward, we will continue to forge and nurture partnerships that align with our mission and values, creating a robust network that benefits our customers and the broader community."
                                 />
+                                <span className="line-verticle"/>
                             </div>
                         </div>
                     </div>

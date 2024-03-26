@@ -22,7 +22,7 @@ export default function InstallModal() {
                             <p className="aeonik title-4xl text-head">
                                 Let’s Get Started
                             </p>
-                            <div className="w-[90%] mt-[20%]">
+                            <div className="w-[45vh] mt-[10vh]">
                                 <img loading="lazy" className="w-full h-full" src="/assets/contact/install-modal.svg" alt="install-modal Image"/>
                             </div>
                         </div>

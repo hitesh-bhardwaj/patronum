@@ -1,24 +1,23 @@
-import Footer from "../Footer";
-import Header from "../Header";
 import PageLoader from "../PageLoader";
 import Hero from "./Hero";
+import Stairs from "@/components/Stairs";
 
 export default function PageLayout( {pageTitle1, pageTitle2, pagePara, imgSrc, children} ){
 
     return(
       <>
-        <PageLoader />
-        <Header />
+      <Stairs>
+        {/* <PageLoader /> */}
         <main>
-          <Hero
+        <Hero
             pageTitle1={pageTitle1} 
             pageTitle2={pageTitle2} 
             pagePara={pagePara} 
             imgSrc={imgSrc}
           />
-            {children}
-          </main>
-        <Footer />
+          {children}
+        </main>
+      </Stairs>
       </>
     )
 }
