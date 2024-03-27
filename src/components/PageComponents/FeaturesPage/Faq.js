@@ -4,10 +4,16 @@ import faqData from './faqData.json';
 import PrimaryButton from '@/components/PageLayout/Button/PrimaryButton';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Faqs = () => {
+const Faqs = ({ featureName }) => {
     const [accordionOpen, setAccordionOpen] = useState(0);
 
     const toggleAccordion = (index) => {
@@ -45,39 +51,59 @@ const Faqs = () => {
         return () => ctx.revert();
       }, []);
 
-    return (
-        <>
-            <section id="faqs">
-                <div className="container">
-                    <div className="content">
-                        <div className="section-head">
-                            <h2 className="title-4xl text-anim">
-                                <span>Frequently </span>
-                                <br />
-                                <span>Asked Questions</span>
-                            </h2>
-                        </div>
+    // Filter FAQ data based on feature name
+    const filteredFaqData = () => {
+      return faqData.find((item) => item.feature === featureName)?.faqs || [];
+    };
 
-                        <div className='faq-wrapper'>
-                            <span className='h-[1px] bg-[#1a1a1a] w-full lineDraw block'/>
-                            {faqData.map((item, index) => (
-                                <FaqItem
-                                    key={index}
-                                    item={item}
-                                    index={index}
-                                    isOpen={index === accordionOpen}
-                                    toggleAccordion={toggleAccordion}
-                                />
-                            ))}
-                            <div className="section-btn-container mt-16">
-                                <PrimaryButton link="#" btnText="View All FAQ's"/>
+  return (
+    <>
+      <section id="faqs">
+          <div className="container">
+              <div className="content">
+                  <div className="section-head">
+                      <h2 className="title-4xl text-anim">
+                          <span>Frequently </span>
+                          <br />
+                          <span>Asked Questions</span>
+                      </h2>
+                  </div>
+
+                  <div className='faq-wrapper'>
+                    <span className='h-[1px] bg-[#1a1a1a] w-full lineDraw block'/>
+                    <Accordion type="single" collapsible>
+                      {filteredFaqData().map((item, index) => (
+                        <AccordionItem value={`item-${item.id}`} key={index} className="faq-item-content scaleAnim">
+                          <AccordionTrigger className="title-2xl pb-2 relative px-[2vw] py-[2vw] w-[90%]">
+                            <div className='faq-number'>
+                              <span className='aeonik'>
+                                  {item.id}
+                              </span>
                             </div>
-                        </div>
+                            <div className='faq-main-content'>
+                              {item.title}
+                            </div>
+                            <div className='faq-arrow features'>
+                              <img className='transition' height="15" width="15" src="/assets/icons/faq-arrow.svg" alt='arrow icon'/>
+                            </div>
+                          </AccordionTrigger>
+                          <AccordionContent className="content-p faq-main-content ml-[7vw] features">
+                            {item.content}
+                          </AccordionContent>
+                          <span className='h-[1px] bg-[#1a1a1a] w-full lineDraw block'/>
+                        </AccordionItem>
+                      ))}
+                    </Accordion>
+                  
+                    <div className="section-btn-container mt-16">
+                      <PrimaryButton link="#" btnText="View All FAQ's"/>
                     </div>
-                </div>
-            </section>
-        </>
-    );
+                  </div>
+              </div>
+          </div>
+      </section>
+    </>
+  );
 }
 
 export default Faqs;

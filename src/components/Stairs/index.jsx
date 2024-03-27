@@ -22,7 +22,7 @@ export default function Layout({children}) {
                 <motion.div {...anim(expand)} className='bg-[#1069df]'/>
             </div>
             <Header />
-            {children}
+                {children}
             <Footer />
         </div>
     )

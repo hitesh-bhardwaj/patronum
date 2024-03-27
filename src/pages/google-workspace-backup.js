@@ -327,7 +327,7 @@ export default function FeatureDetail(){
 
                 </section>
 
-                <Faqs />
+                <Faqs featureName="google_workspace_backup"/>
 
             </PageLayout>
 

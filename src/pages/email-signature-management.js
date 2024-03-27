@@ -171,7 +171,7 @@ export default function FeatureDetail(){
                     </div>    
                 </section>
 
-                <Faqs />
+                <Faqs featureName="email_signature_management"/>
 
             </PageLayout>
 

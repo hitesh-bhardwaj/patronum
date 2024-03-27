@@ -172,7 +172,7 @@ export default function FeatureDetail(){
                     </div>    
                 </section>
 
-                <Faqs />
+                <Faqs featureName="on_boarding" />
 
             </PageLayout>
         </>

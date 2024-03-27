@@ -18,7 +18,7 @@ export default function PricePage() {
 
                 <ProductFeatures />
 
-                <Faqs />
+                <Faqs featureName="on_boarding"/>
 
             </PageLayout>
         </>

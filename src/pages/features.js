@@ -99,7 +99,7 @@ export default function Features(){
 
                 <Testimonial />
 
-                <Faqs />
+                <Faqs featureName="on_boarding"/>
 
             </PageLayout>
         </>

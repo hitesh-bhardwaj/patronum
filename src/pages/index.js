@@ -213,7 +213,7 @@ export default function Home( { recentPosts } ) {
   return (
     <>
       <Stairs>
-        <PreLoader />
+        {/* <PreLoader /> */}
         <main>
           <Hero />
           <Features />

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import gsap from "gsap"
+import gsap from "gsap";
 import SplitType from "split-type";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
@@ -17,6 +17,9 @@ export default function Hero( {pageTitle1, pageTitle2, pagePara, imgSrc} ){
     };
 
     useEffect(() => {
+        const isFirstTimeLoading = localStorage.getItem('hasVisited') === null;
+        let delayTime = isFirstTimeLoading ? 3.6 : 0.5;
+
         let ctx = gsap.context(() => {
 
             const headerAnim = document.querySelectorAll(".header-anim");
@@ -26,12 +29,15 @@ export default function Hero( {pageTitle1, pageTitle2, pagePara, imgSrc} ){
                 opacity: 0,
                 stagger: 0.05,
                 ease: 'power2.out',
-            }, '+=1.2');
+            }, `+=${delayTime}`);
         });
         return () => ctx.revert();
     }, []);
 
     useEffect(() => {
+        const isFirstTimeLoading = localStorage.getItem('hasVisited') === null;
+        let delayTime = isFirstTimeLoading ? 3.6 : 0.5;
+
         let ctx = gsap.context(() => {
   
             const heroPara = document.querySelector('.hero-para');
@@ -47,7 +53,7 @@ export default function Hero( {pageTitle1, pageTitle2, pagePara, imgSrc} ){
             tl.to(titleAnim, 0.8,{
                 y: 0,
                 stagger: 0.02,
-            }, '+=1.2')
+            }, `+=${delayTime}`)
             tl.to(heroPara, 0.8,{
                 y: 0,
                 opacity: 1,
@@ -69,7 +75,7 @@ export default function Hero( {pageTitle1, pageTitle2, pagePara, imgSrc} ){
                 y: -10, 
                 opacity: 0,
                 duration: 0.7
-            }, '-=0.6');
+            }, "=-0.4");
             
         });
         return () => ctx.revert();

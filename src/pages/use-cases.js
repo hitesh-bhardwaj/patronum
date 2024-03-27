@@ -83,7 +83,7 @@ export default function useCases(){
 
                 <Testimonial />
 
-                <Faqs />
+                <Faqs featureName="on_boarding"/>
 
             </PageLayout>
         </>

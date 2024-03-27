@@ -1528,7 +1528,10 @@ section{
   margin-top: 0.7vw;
 }
 .faq-main-content{
-  width: 90%;
+  width: 85%;
+}
+.faq-main-content.features{
+  width: 80%;
 }
 .faq-item .faq-content{
   height: 0;
@@ -1538,17 +1541,17 @@ section{
 .faq-item.open .faq-content{
   height: 9vw;
 }
-.faq-item .faq-arrow{
+.faq-arrow{
   position: absolute;
   right: 3vw;
   top: 2.5vw;
 }
-.faq-item .faq-arrow img{
+.faq-arrow img{
   width: 2vw;
   transition: 0.3s;
 }
 .faq-item.open .faq-arrow img{
-  transform: rotate(-45deg);
+  rotate: -45deg;
 }
 
 /* FAQs Section - 1920 End - Index*/
@@ -3050,7 +3053,7 @@ section{
     right: 2vw;
     top: 3vw;
   }
-  .faq-item .faq-arrow img{
+ .faq-arrow img{
     width: 4vw;
   }
   .faq-item.open .faq-content{
@@ -3059,6 +3062,19 @@ section{
   .faq-item .faq-content .content-p{
     font-size: 3.5vw;
   }
+
+  .content-p.features{
+    font-size: 3.5vw;
+  }
+  .faq-main-content{
+    width: 76%;
+  }
+  .faq-main-content.features{
+    width: 70%;
+    margin-left: 10vw;
+    margin-top: 2vw;
+  }
+
 
   /* Recent Blogs Home Page 900px*/
   .blog-card-wrapper{

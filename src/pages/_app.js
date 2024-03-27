@@ -3,13 +3,13 @@ import { DefaultSeo } from 'next-seo';
 import dynamic from 'next/dynamic';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from "@vercel/analytics/react"
-
 import { ReactLenis } from '@studio-freight/react-lenis';
 import { ModalProvider } from '@/components/InstallModal/ModelContext';
 import InstallModal from '@/components/InstallModal';
 import DemoModal from '@/components/InstallModal/DemoModal';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
+import PreLoader from '@/components/PreLoader';
 
 // Import the Background component dynamically
 const Background = dynamic(() => import('@/components/Pixi'), {
@@ -17,18 +17,37 @@ const Background = dynamic(() => import('@/components/Pixi'), {
 });
 
 export default function App({ Component, pageProps, router }) {
+  const [showPreloader, setShowPreloader] = useState(true);
 
   useEffect(() => {
-    const handleRouteChange = () => {
-        window.scrollTo(0, 0)
-    };
+    const hasVisited = localStorage.getItem('hasVisited');
 
-    window.addEventListener("beforeunload", handleRouteChange);
+    if (!hasVisited) {
+      setShowPreloader(true); 
+      
+      const preloaderTimeout = setTimeout(() => {
+        setShowPreloader(false); 
+        localStorage.setItem('hasVisited', 'true');
+      }, 4000);
 
-    return () => {
-      window.removeEventListener("beforeunload", handleRouteChange);
-    };
+      return () => clearTimeout(preloaderTimeout);
+    }
+    else {
+      setShowPreloader(false);
+    }
   }, []);
+
+    // useEffect(() => {
+  //   const handleRouteChange = () => {
+  //       window.scrollTo(0, 0)
+  //   };
+
+  //   window.addEventListener("beforeunload", handleRouteChange);
+
+  //   return () => {
+  //     window.removeEventListener("beforeunload", handleRouteChange);
+  //   };
+  // }, []);
 
   return(
     <>
@@ -53,6 +72,8 @@ export default function App({ Component, pageProps, router }) {
         }
         ]}
       />
+
+      {showPreloader && <PreLoader />} {/* Show the preloader if showPreloader is true */}
       
       <ReactLenis root options={{ duration: 0.8 }}>
         <ModalProvider>

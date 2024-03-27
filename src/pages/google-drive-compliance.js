@@ -139,7 +139,7 @@ export default function FeatureDetail(){
                     </div>    
                 </section>
 
-                <Faqs />
+                <Faqs featureName="google_drive_compliance"/>
 
             </PageLayout>
 

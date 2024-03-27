@@ -6,7 +6,7 @@ import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 
 gsap.registerPlugin(ScrollToPlugin);
 
-export default function Hero(){
+export default function Hero({ firstLoad }){
 
     const { openModal } = useModal();
 
@@ -20,9 +20,12 @@ export default function Hero(){
             scrollTo: {y: "#features", offsetY: 50},
             ease: "power3.inOut",
         });
-    }; 
+    };
 
     useEffect(() => {
+        const isFirstTimeLoading = localStorage.getItem('hasVisited') === null;
+        let delayTime = isFirstTimeLoading ? 3.6 : 0.5;
+
         let ctx = gsap.context(() => {
 
             const text = new SplitType('.hero-para', {types: 'words'});
@@ -34,7 +37,7 @@ export default function Hero(){
                 y: 0,
                 stagger: 0.1,
                 ease: 'power2.out',
-            }, '+=6')
+            }, `+=${delayTime}`)
             .to(heroPara, 0.4,{
                 y: 0,
                 opacity: 1,
@@ -66,6 +69,9 @@ export default function Hero(){
     }, []);
 
     useEffect(() => {
+        const isFirstTimeLoading = localStorage.getItem('hasVisited') === null;
+        let delayTime = isFirstTimeLoading ? 3.6 : 0.5;
+
         let ctx = gsap.context(() => {
 
             const headerAnim = document.querySelectorAll(".header-anim");
@@ -75,7 +81,7 @@ export default function Hero(){
                 opacity: 0,
                 stagger: 0.05,
                 ease: 'power2.out',
-            }, '+=6');
+            }, `+=${delayTime}`);
         });
         return () => ctx.revert();
     }, []);

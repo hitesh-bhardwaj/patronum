@@ -30,25 +30,24 @@ export default function PreLoader() {
       };
   
       let tl = gsap.timeline();
-  
+
       tl.to(logo, {
         opacity: 1,
-        duration: 0.5,
-        delay: 0.5,
+        duration: 0.3,
       }).to(mainProgress, {
         scaleX: 1,
-        duration: 0.5,
-        delay: -0.5,
+        duration: 0.3,
+        delay: -0.3,
       }).to('.counterLoaderMain', {
         opacity: 1,
-        duration: 0.5,
-        delay: -0.5
+        duration: 0.3,
+        delay: -0.3
       })
   
-      // Till 65
+      // Till 60
       tl.to(counter, {
         innerHTML: "60",
-        duration: 2.2,
+        duration: 1.5,
         ease: s.bezier_1,
         onUpdate: () => {
           const percentage = parseInt(counter.innerHTML);
@@ -59,24 +58,24 @@ export default function PreLoader() {
       })
       .to(progressBar, {
         width: '60%',
-        duration: 2.2,
+        duration: 1.5,
         ease: s.bezier_1,
-      }, "-=2.2")
+      }, "-=1.5")
       .to(".loadingCounter, .progressMainLoader", {
         y: "20vh",
-        duration: 2.2,
+        duration: 1.5,
         ease: s.bezier_1,
-      }, "-=2.2")
+      }, "-=1.5")
       .to(".loaderLogoMain", {
         top: '34vh',
-        duration: 2.2,
+        duration: 1.5,
         ease: s.bezier_1,
-      }, "-=2.2")
+      }, "-=1.5")
       
       // Till 100
       .to(counter, {
           innerHTML: "100",
-          duration: 2.45,
+          duration: 1.5,
           ease: s.bezier_3,
           onUpdate: () => {
             const percentage = parseInt(counter.innerHTML);
@@ -87,35 +86,35 @@ export default function PreLoader() {
       })
       .to(progressBar, {
           width: '100%',
-          duration: 2.45,
+          duration: 1.5,
           ease: s.bezier_3,
-      }, "-=2.45")
+      }, "-=1.5")
       .to(".loadingCounter, .progressMainLoader", {
           y: "-5vw",
-          duration: 2.45,
+          duration: 1.5,
           ease: s.bezier_3,
-      }, "-=2.45")
+      }, "-=1.5")
       .to(".loaderLogoMain", {
           top: '2.6%',
-          duration: 2.1,
+          duration: 1.5,
           ease: s.bezier_3,
-      }, "-=2.4")
+      }, "-=1.5")
       
       .to(".loadingCounter, .progressMainLoader", {
         opacity: 0,
-        duration: 0.6,
+        duration: 0.5,
         ease: "power4.out",
-        delay: -0.5,
+        delay: -0.3,
       })
       .to(loaderBg, {
         y: '100%',
-        duration: 0.8,
-        ease: "power3.in",
-        delay: -0.5
+        duration: 0.5,
+        ease: "expo.in",
+        delay: -0.3
       })
       .to(".loaderLogoMain", {
         opacity: 0,
-      }, "=-0.7")
+      }, "=-0.5")
       .to("#loader", {
         display: "none",
         visibility: "hidden",
@@ -146,22 +145,21 @@ export default function PreLoader() {
   
       tl.to(logo, {
         opacity: 1,
-        duration: 0.5,
-        delay: 0.5,
+        duration: 0.3,
       }).to(mainProgress, {
         scaleX: 1,
-        duration: 0.5,
-        delay: -0.5,
+        duration: 0.3,
+        delay: -0.3,
       }).to('.counterLoaderMain', {
         opacity: 1,
-        duration: 0.5,
-        delay: -0.5
+        duration: 0.3,
+        delay: -0.3
       })
   
-      // Till 65
+      // Till 60
       tl.to(counter, {
         innerHTML: "60",
-        duration: 2.2,
+        duration: 1.5,
         ease: s.bezier_1,
         onUpdate: () => {
           const percentage = parseInt(counter.innerHTML);
@@ -172,24 +170,24 @@ export default function PreLoader() {
       })
       .to(progressBar, {
         width: '60%',
-        duration: 2.2,
+        duration: 1.5,
         ease: s.bezier_1,
-      }, "-=2.2")
+      }, "-=1.5")
       .to(".loadingCounter, .progressMainLoader", {
         y: "20vh",
-        duration: 2.2,
+        duration: 1.5,
         ease: s.bezier_1,
-      }, "-=2.2")
+      }, "-=1.5")
       .to(".loaderLogoMain", {
         top: '28vh',
-        duration: 2.2,
+        duration: 1.5,
         ease: s.bezier_1,
-      }, "-=2.2")
+      }, "-=1.5")
       
       // Till 100
       .to(counter, {
           innerHTML: "100",
-          duration: 2.45,
+          duration: 1.5,
           ease: s.bezier_3,
           onUpdate: () => {
             const percentage = parseInt(counter.innerHTML);
@@ -200,35 +198,35 @@ export default function PreLoader() {
       })
       .to(progressBar, {
           width: '100%',
-          duration: 2.45,
+          duration: 1.5,
           ease: s.bezier_3,
-      }, "-=2.45")
+      }, "-=1.5")
       .to(".loadingCounter, .progressMainLoader", {
           y: "-5vw",
-          duration: 2.45,
+          duration: 1.5,
           ease: s.bezier_3,
-      }, "-=2.45")
+      }, "-=1.5")
       .to(".loaderLogoMain", {
           top: '2%',
-          duration: 2.1,
+          duration: 1.5,
           ease: s.bezier_3,
-      }, "-=2.4")
+      }, "-=1.5")
       
       .to(".loadingCounter, .progressMainLoader", {
         opacity: 0,
-        duration: 0.6,
+        duration: 0.5,
         ease: "power4.out",
-        delay: -0.5,
+        delay: -0.3,
       })
       .to(loaderBg, {
         y: '100%',
-        duration: 0.8,
+        duration: 0.5,
         ease: "power3.in",
-        delay: -0.5
+        delay: -0.3
       })
       .to(".loaderLogoMain", {
         opacity: 0,
-      }, "=-0.7")
+      }, "-=0.5")
       .to("#loader", {
         display: "none",
         visibility: "hidden",
@@ -259,22 +257,21 @@ export default function PreLoader() {
   
       tl.to(logo, {
         opacity: 1,
-        duration: 0.5,
-        delay: 0.5,
+        duration: 0.3,
       }).to(mainProgress, {
         scaleX: 1,
-        duration: 0.5,
-        delay: -0.5,
+        duration: 0.3,
+        delay: -0.3,
       }).to('.counterLoaderMain', {
         opacity: 1,
-        duration: 0.5,
-        delay: -0.5
+        duration: 0.3,
+        delay: -0.3
       })
   
       // Till 65
       tl.to(counter, {
         innerHTML: "60",
-        duration: 2.2,
+        duration: 1.5,
         ease: s.bezier_1,
         onUpdate: () => {
           const percentage = parseInt(counter.innerHTML);
@@ -285,24 +282,24 @@ export default function PreLoader() {
       })
       .to(progressBar, {
         width: '60%',
-        duration: 2.2,
+        duration: 1.5,
         ease: s.bezier_1,
-      }, "-=2.2")
+      }, "-=1.5")
       .to(".loadingCounter, .progressMainLoader", {
         y: "20vh",
-        duration: 2.2,
+        duration: 1.5,
         ease: s.bezier_1,
-      }, "-=2.2")
+      }, "-=1.5")
       .to(".loaderLogoMain", {
         top: '26vh',
-        duration: 2.2,
+        duration: 1.5,
         ease: s.bezier_1,
-      }, "-=2.2")
+      }, "-=1.5")
       
       // Till 100
       .to(counter, {
           innerHTML: "100",
-          duration: 2.45,
+          duration: 1.5,
           ease: s.bezier_3,
           onUpdate: () => {
             const percentage = parseInt(counter.innerHTML);
@@ -313,35 +310,35 @@ export default function PreLoader() {
       })
       .to(progressBar, {
           width: '100%',
-          duration: 2.45,
+          duration: 1.5,
           ease: s.bezier_3,
-      }, "-=2.45")
+      }, "-=1.5")
       .to(".loadingCounter, .progressMainLoader", {
           y: "-5vw",
-          duration: 2.45,
+          duration: 1.5,
           ease: s.bezier_3,
-      }, "-=2.45")
+      }, "-=1.5")
       .to(".loaderLogoMain", {
           top: '2%',
-          duration: 2.1,
+          duration: 1.5,
           ease: s.bezier_3,
-      }, "-=2.4")
+      }, "-=1.5")
       
       .to(".loadingCounter, .progressMainLoader", {
         opacity: 0,
-        duration: 0.6,
+        duration: 0.5,
         ease: "power4.out",
-        delay: -0.5,
+        delay: -0.3,
       })
       .to(loaderBg, {
         y: '100%',
-        duration: 0.8,
+        duration: 0.5,
         ease: "power3.in",
-        delay: -0.5
+        delay: -0.3
       })
       .to(".loaderLogoMain", {
         opacity: 0,
-      }, "=-0.7")
+      }, "-=0.5")
       .to("#loader", {
         display: "none",
         visibility: "hidden",
@@ -361,16 +358,16 @@ export default function PreLoader() {
             <div className="w-full loaderMainContainer">
               <div className="flex justify-between items-end w-full">
                 <div className="w-[11.5vw] h-[3vw]">
-                  <img loading="lazy" width="247" height="66" src="/logo-white.svg" className="lg:w-[11.5vw] md:w-[25%] w-[37.7%] lg:top-[75vh] md:top-[78vh] top-[76vh] opacity-0 loaderLogoMain absolute" alt="Patronum Logo" ref={loaderLogo}/>
+                  <img loading="lazy" width="247" height="66" src="/logo-white.svg" className="lg:w-[11.5vw] md:w-[25%] opacity-0 w-[37.7%] lg:top-[75vh] md:top-[78vh] top-[76vh] loaderLogoMain absolute" alt="Patronum Logo" ref={loaderLogo}/>
                 </div>
                 <div className="loadingCounter lg:translate-y-[60vh] translate-y-[70vh]">
-                  <div className="lg:text-[7vw] md:text-[15vw] text-[20vw] relative leading-[0.8] lg:pr-[3vw] md:pr-[5.5vw] pr-[8vw] opacity-0 counterLoaderMain w-[50vw] text-right">
+                  <div className="lg:text-[7vw] md:text-[15vw] text-[20vw] relative leading-[0.8] lg:pr-[3vw] md:pr-[5.5vw] pr-[8vw] counterLoaderMain w-[50vw] text-right opacity-0">
                     <span ref={counterRef}>00</span>
                     <span className="lg:text-[3vw] md:text-[6vw] text-[8vw] absolute right-0 lg:top-[0.5vw] md:top-[1.5vw] top-[1.8vw] z-10">%</span>
                   </div>
                 </div>
               </div>
-                <div className="lg:translate-y-[60vh] translate-y-[70vh] lg:mt-[2%] md:mt-[4%] mt-[4%] w-full lg:h-[7px] h-[5px] bg-white/10 scale-x-0 origin-left progressMainLoader" ref={progressBarMain}>
+                <div className="lg:translate-y-[60vh] translate-y-[70vh] lg:mt-[2%] scale-x-0 md:mt-[4%] mt-[4%] w-full lg:h-[7px] h-[5px] bg-white/10 origin-left progressMainLoader" ref={progressBarMain}>
                   <span className="h-full w-0 bg-white block" ref={progressBarRef}/>
                 </div>
             </div>

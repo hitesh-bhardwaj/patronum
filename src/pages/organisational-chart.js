@@ -79,7 +79,7 @@ export default function FeatureDetail(){
                     sectionBreakText="Patronum redefines User Lifecycle Management in Google Workspace by using automation, delivering unparalleled security and productivity, freeing you to focus on innovation and strategic growth."
                 />
 
-                <Faqs />
+            <Faqs featureName="on_boarding"/>
 
             </PageLayout>
 
