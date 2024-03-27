@@ -18,6 +18,7 @@ const Background = dynamic(() => import('@/components/Pixi'), {
 
 export default function App({ Component, pageProps, router }) {
   const [showPreloader, setShowPreloader] = useState(true);
+  const [loadBackground, setLoadBackground] = useState(false);
 
   useEffect(() => {
     const hasVisited = localStorage.getItem('hasVisited');
@@ -37,17 +38,26 @@ export default function App({ Component, pageProps, router }) {
     }
   }, []);
 
-    // useEffect(() => {
-  //   const handleRouteChange = () => {
-  //       window.scrollTo(0, 0)
-  //   };
+  useEffect(() => {
+    // Set a timer to change loadBackground state after a specific time
+    const timer = setTimeout(() => {
+      setLoadBackground(true);
+    }, 3600); // Delay in milliseconds before importing/rendering the component
 
-  //   window.addEventListener("beforeunload", handleRouteChange);
+    return () => clearTimeout(timer); // Cleanup the timer
+  }, []);
 
-  //   return () => {
-  //     window.removeEventListener("beforeunload", handleRouteChange);
-  //   };
-  // }, []);
+    useEffect(() => {
+    const handleRouteChange = () => {
+        window.scrollTo(0, 0)
+    };
+
+    window.addEventListener("beforeunload", handleRouteChange);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleRouteChange);
+    };
+  }, []);
 
   return(
     <>
@@ -86,7 +96,7 @@ export default function App({ Component, pageProps, router }) {
       </ReactLenis>
       <SpeedInsights />
       <Analytics />
-      <Background />
+      {loadBackground && <Background />}
     </>
   ); 
 }

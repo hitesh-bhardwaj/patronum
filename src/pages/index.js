@@ -1,4 +1,4 @@
-import react, { useEffect } from "react"
+import react, { useEffect, useState } from "react";
 import SplitType from "split-type";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
@@ -17,10 +17,37 @@ import { getHomePagePosts } from '@/lib/posts';
 import UseCasesMobile from "@/components/PageComponents/HomePage/UseCasesMobile";
 
 import Stairs from "@/components/Stairs";
+import SideMenu from "@/components/SideMenu";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home( { recentPosts } ) {
+  const [showSideMenu, setShowSideMenu] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setShowSideMenu(window.innerWidth > 1024);
+    };
+
+    // Check on mount
+    checkScreenSize();
+
+    // Add event listener
+    window.addEventListener('resize', checkScreenSize);
+
+    // Cleanup event listener
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
+  const sections = [
+    { name: "Introduction", id: "hero" },
+    { name: "Features", id: "features" },
+    { name: "Use Cases", id: "use-cases" },
+    { name: "Pricing", id: "pricing" },
+    { name: "About", id: "about" },
+    { name: "Blog", id: "blogs" },
+    { name: "FAQ's", id: "faqs" },
+  ];
 
       useEffect(() => {
         const headings = document.querySelectorAll('.text-anim');
@@ -213,7 +240,7 @@ export default function Home( { recentPosts } ) {
   return (
     <>
       <Stairs>
-        {/* <PreLoader /> */}
+        {showSideMenu && <SideMenu sections={sections}/>}
         <main>
           <Hero />
           <Features />

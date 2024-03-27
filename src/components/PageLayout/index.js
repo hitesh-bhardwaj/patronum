@@ -1,6 +1,3 @@
-import Footer from "../Footer";
-import Header from "../Header";
-import PageLoader from "../PageLoader";
 import Hero from "./Hero";
 
 import { useEffect } from "react";
@@ -195,7 +192,6 @@ export default function PageLayout( {pageTitle1, pageTitle2, pagePara, imgSrc, c
     return(
       <>
         <Stairs>
-          {/* <PageLoader /> */}
           <main>
             <Hero
               pageTitle1={pageTitle1} 

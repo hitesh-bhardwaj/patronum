@@ -180,46 +180,46 @@ function PostDetail({ post, recentPosts }) {
 
 return (
       <>
-      <BlogLayout
-        postTitle={post.title}
-        postAuthor={post.author.name}
-        postDate={formattedDate}
-        shareLink={post.slug}
-        featImg={post.featuredImage.sourceUrl}
-      >
+        <BlogLayout
+          postTitle={post.title}
+          postAuthor={post.author.name}
+          postDate={formattedDate}
+          shareLink={post.slug}
+          featImg={post.featuredImage.sourceUrl}
+        >
 
-      <section className="container">
-        <div className="content blog-content">
-          <div className="flex w-full justify-between items-start" id="blog-container">
-            <div className="w-[20%] -ml-[2vw] relative fadeUp" id="table-of-content"> 
-              <span className="absolute h-[98%] block w-1.5 bg-[#E9E9E9] overflow-hidden -left-8 rounded -top-[1.5%]">
-                <span className="w-full h-[2%] bg-head block rounded origin-top" id="toc-bar"/>
-              </span>
-              {/* Update TOC rendering to indicate the active section */}
-              <ul className="toc_ul_list">
-                {toc.map(({ id, title }) => (
-                  <li key={id} className={`mb-[1.2vw] ${id === activeSection ? 'toc-active' : ''}`}>
-                      <a href={`#${id}`} onClick={(e) => handleSmoothScroll(e, id)} className="leading-[1] text-head aeonik text-[0.94vw] hover:text-primary transition-all">
-                          {title}
-                      </a>
-                  </li>
-                ))}
-              </ul>
+        <section className="container">
+          <div className="content blog-content">
+            <div className="flex w-full justify-between items-start" id="blog-container">
+              <div className="w-[20%] -ml-[2vw] relative fadeUp" id="table-of-content"> 
+                <span className="absolute h-[98%] block w-1.5 bg-[#E9E9E9] overflow-hidden -left-8 rounded -top-[1.5%]">
+                  <span className="w-full h-[2%] bg-head block rounded origin-top" id="toc-bar"/>
+                </span>
+                {/* Update TOC rendering to indicate the active section */}
+                <ul className="toc_ul_list">
+                  {toc.map(({ id, title }) => (
+                    <li key={id} className={`mb-[1.2vw] ${id === activeSection ? 'toc-active' : ''}`}>
+                        <a href={`#${id}`} onClick={(e) => handleSmoothScroll(e, id)} className="leading-[1] text-head aeonik text-[0.94vw] hover:text-primary transition-all">
+                            {title}
+                        </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div 
+                dangerouslySetInnerHTML={{
+                  __html: content,
+                }}
+                id="blog-content"
+                className={styles.blogContent}
+              />
             </div>
-            <div 
-              dangerouslySetInnerHTML={{
-                __html: content,
-              }}
-              id="blog-content fadeUp"
-              className={styles.blogContent}
-            />
           </div>
-        </div>
-      </section>
+        </section>
 
-        <RelatedPosts sectionTitle={'Related Blogs'} recentPosts={recentPosts} currentSlug={post.slug} />
+          <RelatedPosts sectionTitle={'Related Blogs'} recentPosts={recentPosts} currentSlug={post.slug} />
 
-      </BlogLayout>
+        </BlogLayout>
     </>
   );
 }

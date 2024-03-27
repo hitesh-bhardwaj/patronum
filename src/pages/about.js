@@ -1,8 +1,36 @@
+import react, { useEffect, useState } from "react"
 import PageLayout from "@/components/PageLayout";
 import SectionBreak from "@/components/PageLayout/SectionBreak";
 import SectionTitle from "@/components/PageLayout/SectionTitle";
+import SideMenu from "@/components/SideMenu";
 
 export default function About(){
+    const [showSideMenu, setShowSideMenu] = useState(false);
+
+    useEffect(() => {
+        const checkScreenSize = () => {
+          setShowSideMenu(window.innerWidth > 1024);
+        };
+    
+        // Check on mount
+        checkScreenSize();
+    
+        // Add event listener
+        window.addEventListener('resize', checkScreenSize);
+    
+        // Cleanup event listener
+        return () => window.removeEventListener('resize', checkScreenSize);
+      }, []);
+    
+      const sections = [
+        { name: "Introduction", id: "pageHero" },
+        { name: "About", id: "second-section" },
+        { name: "Features", id: "section-3" },
+        { name: "Mission", id: "mission" },
+        { name: "Publication", id: "press" },
+        { name: "Advantage", id: "advantage-patronum" },
+        { name: "Future", id: "future" },
+      ];
 
     const MissionCard = ( {missionImg, missionPara, missionTitle} ) => {
         return ( 
@@ -48,6 +76,8 @@ export default function About(){
                 pageTitle1={'About Patronum'} 
                 pagePara={"Meet the innovators transforming your Google Workspace experience with heart and hustle."} 
                 imgSrc={'about.svg'}>
+
+                {showSideMenu && <SideMenu sections={sections}/>}
 
                 <section id="second-section">
                     <div className="container">
@@ -100,7 +130,7 @@ export default function About(){
                     </div>
                 </section>
 
-                <section>
+                <section id="section-3">
                     <div className="container">
                         <div className="content">
                             <div className="section-list-container">
@@ -155,7 +185,7 @@ export default function About(){
 
                 <SectionBreak sectionBreakText={"Today, Patronum stands as a beacon of innovation and efficiency, utilized by thousands of businesses worldwide, including an impressive roster of Fortune 500 companies, burgeoning startups, and dynamic scaleups."}/>
 
-                <section className="patronum-mission">
+                <section className="patronum-mission" id="mission">
                     <div className="container">
                         <div className="content">
                             <div className="mission-top">
@@ -182,7 +212,7 @@ export default function About(){
                     </div>
                 </section>
 
-                <section className="press-release">
+                <section className="press-release" id="press">
                     <div className="container">
                         <div className="content">
                             <div className="section-head">
@@ -216,7 +246,7 @@ export default function About(){
                     </div>
                 </section>
 
-                <section className="patronum-advantage">
+                <section className="patronum-advantage" id="advantage-patronum">
                     <div className="container">
                         <div className="content">
                             <div className="section-head">
@@ -252,7 +282,7 @@ export default function About(){
                     </div>
                 </section>
 
-                <section className="patronum-future">
+                <section className="patronum-future" id="future">
                     <div className="container-lg">
                         <div className="content">
                             <div className="section-head">

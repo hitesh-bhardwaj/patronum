@@ -11,7 +11,7 @@ function RelatedPosts({ recentPosts, currentSlug, sectionTitle, sectionPara }) {
 
     return (
         <>
-            <section className='recent-blogs'>
+            <section className='recent-blogs' id='blogs'>
                 <div className='container'>
                     <div className='content'>
                         <div className='section-head'>

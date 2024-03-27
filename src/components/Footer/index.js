@@ -4,7 +4,7 @@ import FooterContact from "./FooterContact";
 const Footer = () => {
 
     return(
-        <footer id="footer">
+        <footer id="footer" className="relative z-10">
 
             <FooterContact />
 

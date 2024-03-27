@@ -34,7 +34,7 @@ export default function Faqs(){
 
     return(
         <>
-            <section id="features">
+            <section id="faqs">
                 <div className="container">
                     <div className="content">
                         <div className="section-head">

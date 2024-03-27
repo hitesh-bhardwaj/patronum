@@ -1,5 +1,3 @@
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import {
     LinkedinShareButton,
     FacebookShareButton,
@@ -12,6 +10,7 @@ import gsap from "gsap"
 import SplitType from "split-type";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import PageLoader from "@/components/PageLoader";
+import Stairs from "@/components/Stairs";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -68,8 +67,8 @@ export default function BlogLayout( { children, postTitle, postAuthor, postDate,
 
   return(
     <>
-      <PageLoader />
-      <Header />
+      {/* <PageLoader /> */}
+      <Stairs>
           <main>
             <section id="blog-hero">
               <div className="w-[88%] mx-auto">
@@ -131,7 +130,7 @@ export default function BlogLayout( { children, postTitle, postAuthor, postDate,
             </section>
           {children}
         </main>
-      <Footer />
+      </Stairs>
     </>
   )
 }
