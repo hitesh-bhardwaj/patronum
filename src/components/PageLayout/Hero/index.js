@@ -18,7 +18,7 @@ export default function Hero( {pageTitle1, pageTitle2, pagePara, imgSrc} ){
 
     useEffect(() => {
         const isFirstTimeLoading = localStorage.getItem('hasVisited') === null;
-        let delayTime = isFirstTimeLoading ? 3.6 : 0.5;
+        let delayTime = isFirstTimeLoading ? 3.4 : 0.4;
 
         let ctx = gsap.context(() => {
 
@@ -36,7 +36,7 @@ export default function Hero( {pageTitle1, pageTitle2, pagePara, imgSrc} ){
 
     useEffect(() => {
         const isFirstTimeLoading = localStorage.getItem('hasVisited') === null;
-        let delayTime = isFirstTimeLoading ? 3.6 : 0.5;
+        let delayTime = isFirstTimeLoading ? 3.4 : 0.4;
 
         let ctx = gsap.context(() => {
   
@@ -74,9 +74,8 @@ export default function Hero( {pageTitle1, pageTitle2, pagePara, imgSrc} ){
             .from(".scroll-down-btn-img",{
                 y: -10, 
                 opacity: 0,
-                duration: 0.7
-            }, "=-0.4");
-            
+                duration: 0.5
+            }, "=-1");
         });
         return () => ctx.revert();
       }, []);

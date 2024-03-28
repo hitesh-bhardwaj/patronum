@@ -6,7 +6,7 @@ import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 
 gsap.registerPlugin(ScrollToPlugin);
 
-export default function Hero({ firstLoad }){
+export default function Hero(){
 
     const { openModal } = useModal();
 
@@ -24,7 +24,7 @@ export default function Hero({ firstLoad }){
 
     useEffect(() => {
         const isFirstTimeLoading = localStorage.getItem('hasVisited') === null;
-        let delayTime = isFirstTimeLoading ? 3.6 : 0.5;
+        let delayTime = isFirstTimeLoading ? 3.4 : 0.4;
 
         let ctx = gsap.context(() => {
 
@@ -70,7 +70,7 @@ export default function Hero({ firstLoad }){
 
     useEffect(() => {
         const isFirstTimeLoading = localStorage.getItem('hasVisited') === null;
-        let delayTime = isFirstTimeLoading ? 3.6 : 0.5;
+        let delayTime = isFirstTimeLoading ? 3.4 : 0.4;
 
         let ctx = gsap.context(() => {
 

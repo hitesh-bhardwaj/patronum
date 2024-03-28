@@ -1,8 +1,56 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { useModal } from './InstallModal/ModelContext';
+import { useModal } from '../InstallModal/ModelContext';
 import Link from 'next/link';
+
+const MobileNav = {
+    open: {
+      x: 0,  
+      transition: {
+        duration: 0.5,
+        type: 'spring',
+      }
+    },
+    closed: {
+      x: '100%',
+      transition: {
+        duration: 0.3,
+      }
+    }
+  };
+
+  const NavParent = {
+    open: {
+      transition: {
+        staggerChildren: 0.07,
+        delayChildren: 0.2,
+      }
+    },
+    closed: {
+      transition: {
+        staggerChildren: 0.05,
+        staggerDirection: -1
+      }
+    }
+  };
+
+  const NavChildren = {
+    open: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        y: { stiffness: 1000, velocity: -100 }
+      }
+    },
+    closed: {
+      y: 50,
+      opacity: 0,
+      transition: {
+        y: { stiffness: 1000 }
+      }
+    }
+  };
 
 const Header = () => {
     const { openModal } = useModal();
@@ -14,8 +62,10 @@ const Header = () => {
     const [isFeaturesDropdownOpen, setFeaturesDropdownOpen] = useState(false);
     const [isUsecasesDropdownOpen, setUsecasesDropdownOpen] = useState(false);
     const [isResourcesDropdownOpen, setResourcesDropdownOpen] = useState(false);
+    const [isPriceDropdownOpen, setPriceDropdownOpen] = useState(false);
     const [isSideNavOpen, setSideNavOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [showMobileNav, setShowMobileNav] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -34,6 +84,21 @@ const Header = () => {
         };
     }, []);
 
+    useEffect(() => {
+        const checkScreenSize = () => {
+          setShowMobileNav(window.innerWidth < 1024);
+        };
+    
+        // Check on mount
+        checkScreenSize();
+    
+        // Add event listener
+        window.addEventListener('resize', checkScreenSize);
+    
+        // Cleanup event listener
+        return () => window.removeEventListener('resize', checkScreenSize);
+      }, []);
+      
   return (
     <>
         <header className={isScrolled ? 'header scrolled' : 'header'}>
@@ -94,7 +159,7 @@ const Header = () => {
                                             <li className='nav-drop-list-item'>
                                                 <Link href='/on-boarding' className='nav-drop-list-hover' >
                                                     <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/onboarding.svg' alt='features icon' title='features icon'/>
+                                                        <img loading='lazy' src='/assets/menu/onboarding.svg' alt='features icon'/>
                                                     </div>
                                                     <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>User Management</p>
@@ -105,7 +170,7 @@ const Header = () => {
                                             <li className='nav-drop-list-item'>
                                                 <Link href='/email-signature-management' className='nav-drop-list-hover' >
                                                     <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/email-signature.svg' alt='features icon' title='features icon'/>
+                                                        <img loading='lazy' src='/assets/menu/email-signature.svg' alt='features icon'/>
                                                     </div>
                                                     <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>Email Signatures</p>
@@ -116,7 +181,7 @@ const Header = () => {
                                             <li className='nav-drop-list-item'>
                                                 <Link href='/google-workspace-backup' className='nav-drop-list-hover' >
                                                     <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/workspace-backup.svg' alt='features icon' title='features icon'/>
+                                                        <img loading='lazy' src='/assets/menu/workspace-backup.svg' alt='features icon'/>
                                                     </div>
                                                     <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>Workspace Backup</p>
@@ -127,7 +192,7 @@ const Header = () => {
                                             <li className='nav-drop-list-item'>
                                                 <Link href='/google-drive-management' className='nav-drop-list-hover' >
                                                     <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/drive-management.svg' alt='features icon' title='features icon'/>
+                                                        <img loading='lazy' src='/assets/menu/drive-management.svg' alt='features icon'/>
                                                     </div>
                                                     <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>Google Drive Management</p>
@@ -138,7 +203,7 @@ const Header = () => {
                                             <li className='nav-drop-list-item'>
                                                 <Link href='/google-drive-compliance' className='nav-drop-list-hover' >
                                                     <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/file-sharing.svg' alt='features icon' title='features icon'/>
+                                                        <img loading='lazy' src='/assets/menu/file-sharing.svg' alt='features icon'/>
                                                     </div>
                                                     <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>File Unsharing</p>
@@ -149,7 +214,7 @@ const Header = () => {
                                             <li className='nav-drop-list-item'>
                                                 <Link href='/google-contact-sharing' className='nav-drop-list-hover'>
                                                     <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/contact-sharing.svg' alt='features icon' title='features icon'/>
+                                                        <img loading='lazy' src='/assets/menu/contact-sharing.svg' alt='features icon'/>
                                                     </div>
                                                     <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>Contact Sharing</p>
@@ -160,7 +225,7 @@ const Header = () => {
                                             <li className='nav-drop-list-item'>
                                                 <Link href='/organisational-chart' className='nav-drop-list-hover' >
                                                     <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/organisational-chart.svg' alt='features icon' title='features icon'/>
+                                                        <img loading='lazy' src='/assets/menu/organisational-chart.svg' alt='features icon'/>
                                                     </div>
                                                     <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>Organisational Chart</p>
@@ -196,8 +261,10 @@ const Header = () => {
                                     <ul className='nav-dropdown-list'>
                                             <li className='nav-drop-list-item'>
                                                 <Link href='/patronum-for-business' className='nav-drop-list-hover' >
-                                                    <img loading='lazy' src='/assets/menu/use-case-business.png' alt='features icon' title='features icon'/>
-                                                    <div>
+                                                    <div className='img'>
+                                                        <img loading='lazy' src='/assets/menu/for-business.svg' alt='use-case icon'/>
+                                                    </div>
+                                                    <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>For Business</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
@@ -205,8 +272,10 @@ const Header = () => {
                                             </li>
                                             <li className='nav-drop-list-item'>
                                                 <Link href='/patronum-for-education' className='nav-drop-list-hover' >
-                                                    <img loading='lazy' src='/assets/menu/use-case-education.png' alt='features icon' title='features icon'/>
-                                                    <div>
+                                                    <div className='img'>
+                                                        <img loading='lazy' src='/assets/menu/for-education.svg' alt='use-case icon'/>
+                                                    </div>
+                                                    <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>For Education</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
@@ -214,36 +283,44 @@ const Header = () => {
                                             </li>
                                             <li className='nav-drop-list-item'>
                                                 <Link href='/patronum-for-hr' className='nav-drop-list-hover' >
-                                                    <img loading='lazy' src='/assets/menu/use-case-hr.png' alt='features icon' title='features icon'/>
-                                                    <div>
+                                                    <div className='img'>
+                                                        <img loading='lazy' src='/assets/menu/for-hr.svg' alt='use-case icon'/>
+                                                    </div>
+                                                    <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>For HR</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
                                                 </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='/patronum-for-users' className='nav-drop-list-hover' >
-                                                    <img loading='lazy' src='/assets/menu/use-case-users.png' alt='features icon' title='features icon'/>
-                                                    <div>
-                                                        <p className='nav-drop-title'>For Users</p>
-                                                        <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
-                                                    </div>
-                                                </Link>
-                                            </li>
-                                            <li className='nav-drop-list-item'>
                                                 <Link href='/patronum-for-sales-marketing' className='nav-drop-list-hover' >
-                                                    <img loading='lazy' src='/assets/menu/use-case-sales.png' alt='features icon' title='features icon'/>
-                                                    <div>
+                                                    <div className='img'>
+                                                        <img loading='lazy' src='/assets/menu/for-sales-marketing.svg' alt='use-case icon'/>
+                                                    </div>
+                                                    <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>For Sales & Marketing</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
                                                 </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='/patronum-for-it-admins' className='nav-drop-list-hover' >
-                                                    <img loading='lazy' src='/assets/menu/use-case-admin.png' alt='features icon' title='features icon'/>
-                                                    <div>
+                                                <Link href='/patronum-it-admin' className='nav-drop-list-hover' >
+                                                    <div className='img'>
+                                                        <img loading='lazy' src='/assets/menu/for-it-admins.svg' alt='use-case icon'/>
+                                                    </div>
+                                                    <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>For IT Admins</p>
+                                                        <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
+                                                    </div>
+                                                </Link>
+                                            </li>
+                                            <li className='nav-drop-list-item'>
+                                                <Link href='/patronum-for-users' className='nav-drop-list-hover' >
+                                                    <div className='img'>
+                                                        <img loading='lazy' src='/assets/menu/for-users.svg' alt='use-case icon'/>
+                                                    </div>
+                                                    <div className='w-[16vw]'>
+                                                        <p className='nav-drop-title'>For Users</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
                                                 </Link>
@@ -252,14 +329,57 @@ const Header = () => {
                                     </motion.div>
                                 )}
                         </li>
-                        <li className='nav-list-item'>
-                            <Link className='' href='/pricing' >
+                        <li className='nav-list-item' 
+                            onMouseEnter={() => setPriceDropdownOpen(true)}
+                            onMouseLeave={() => setPriceDropdownOpen(false)}
+                            >
+                            <Link href='/pricing' className='dropdown' >
                                 <div className='header-anim'>
                                     <span>
                                         Pricing
                                     </span>
+                                    <svg viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L6.5 6.5L12 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                    </svg>
                                 </div>
                             </Link>
+                                {isPriceDropdownOpen && (
+                                    <motion.div 
+                                        initial={{ y: -30, opacity: 0 }}
+                                        animate={{ y: 0, opacity: 1 }}
+                                        transition={{ duration: 0.4 }} 
+                                        className='nav-dropdown'>
+                                        <ul className='nav-dropdown-list justify-center'>
+                                            <li className='nav-drop-list-item '>
+                                                <Link href='/pricing' className='flex flex-col gap-4 items-center group hover:bg-[#FDFDFD] px-[3vw] py-4 rounded-xl transition border border-gray-100 mx-3' >
+                                                    <img className='h-[10vw]' loading='lazy' width="170" height="140" src='/assets/pricing/education.svg' alt='price image'/>
+                                                    <div>
+                                                        <p className='text-head text-3xl text-center transition mb-2'>Education</p>
+                                                        <p className='text-primary text-2xl text-center group-hover:text-primary transition'>$ 2.00<span className='text-gray-400'> /year</span></p>
+                                                    </div>
+                                                </Link>
+                                            </li>
+                                            <li className='nav-drop-list-item'>
+                                                <Link href='/pricing' className='flex flex-col gap-4 items-center group hover:bg-[#FDFDFD] px-[3vw] py-4 rounded-xl transition border border-gray-100 mx-3' >
+                                                    <img className='h-[10vw]' loading='lazy' width="170" height="140" src='/assets/pricing/non-profit.svg' alt='price image'/>
+                                                    <div>
+                                                        <p className='text-head text-3xl text-center transition mb-2'>Non-Profit</p>
+                                                        <p className='text-primary text-2xl text-center group-hover:text-primary transition'>$ 2.00<span className='text-gray-400'> /year</span></p>
+                                                    </div>
+                                                </Link>
+                                            </li>
+                                            <li className='nav-drop-list-item'>
+                                                <Link href='/pricing' className='flex flex-col gap-4 items-center group hover:bg-[#FDFDFD] px-[3vw] py-4 rounded-xl transition border border-gray-100 mx-3' >
+                                                    <img className='h-[10vw]' loading='lazy' width="170" height="140" src='/assets/pricing/business.svg' alt='price image'/>
+                                                    <div>
+                                                        <p className='text-head text-3xl text-center transition mb-2'>Business</p>
+                                                        <p className='text-primary text-2xl text-center group-hover:text-primary transition'>$ 8.00<span className='text-gray-400'> /year</span></p>
+                                                    </div>
+                                                </Link>
+                                            </li>
+                                        </ul>
+                                    </motion.div>
+                                )}
                         </li>
                         <li className='nav-list-item' 
                             onMouseEnter={() => setResourcesDropdownOpen(true)}
@@ -284,8 +404,10 @@ const Header = () => {
                                         <ul className='nav-dropdown-list'>
                                             <li className='nav-drop-list-item'>
                                                 <Link href='/blog' className='nav-drop-list-hover' >
-                                                    <img loading='lazy' src='/assets/menu/resource-blog.png' alt='features icon' title='features icon'/>
-                                                    <div>
+                                                    <div className='img'>
+                                                        <img loading='lazy' src='/assets/menu/resource-blog.svg' alt='resource icon'/>
+                                                    </div>
+                                                    <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>Blog</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
@@ -293,8 +415,10 @@ const Header = () => {
                                             </li>
                                             <li className='nav-drop-list-item'>
                                                 <Link href='/guides' className='nav-drop-list-hover' >
-                                                    <img loading='lazy' src='/assets/menu/resource-guide.png' alt='features icon' title='features icon'/>
-                                                    <div>
+                                                    <div className='img'>
+                                                        <img loading='lazy' src='/assets/menu/resource-guides.svg' alt='resource icon'/>
+                                                    </div>
+                                                    <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>Guides</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
@@ -302,8 +426,10 @@ const Header = () => {
                                             </li>
                                             <li className='nav-drop-list-item'>
                                                 <Link href='/ebooks' className='nav-drop-list-hover' >
-                                                    <img loading='lazy' src='/assets/menu/resource-ebook.png' alt='features icon' title='features icon'/>
-                                                    <div>
+                                                    <div className='img'>
+                                                        <img loading='lazy' src='/assets/menu/resource-ebooks.svg' alt='resource icon'/>
+                                                    </div>
+                                                    <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>Ebooks</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
@@ -311,8 +437,10 @@ const Header = () => {
                                             </li>
                                             <li className='nav-drop-list-item'>
                                                 <Link href='/webinars' className='nav-drop-list-hover' >
-                                                    <img loading='lazy' src='/assets/menu/resource-webinar.png' alt='features icon' title='features icon'/>
-                                                    <div>
+                                                    <div className='img'>
+                                                        <img loading='lazy' src='/assets/menu/resource-webinars.svg' alt='resource icon'/>
+                                                    </div>
+                                                    <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>Webinars</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
@@ -320,8 +448,10 @@ const Header = () => {
                                             </li>
                                             <li className='nav-drop-list-item'>
                                                 <Link href='/case-studies' className='nav-drop-list-hover' >
-                                                    <img loading='lazy' src='/assets/menu/resource-case-study.png' alt='features icon' title='features icon'/>
-                                                    <div>
+                                                    <div className='img'>
+                                                        <img loading='lazy' src='/assets/menu/resource-case-studies.svg' alt='resource icon'/>
+                                                    </div>
+                                                    <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>Case Studies</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
@@ -329,8 +459,10 @@ const Header = () => {
                                             </li>
                                             <li className='nav-drop-list-item'>
                                                 <Link href='/product-videos' className='nav-drop-list-hover' >
-                                                    <img loading='lazy' src='/assets/menu/resource-product-videos.png' alt='features icon' title='features icon'/>
-                                                    <div>
+                                                    <div className='img'>
+                                                        <img loading='lazy' src='/assets/menu/resource-product-videos.svg' alt='resource icon'/>
+                                                    </div>
+                                                    <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>Product Videos</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
@@ -338,8 +470,10 @@ const Header = () => {
                                             </li>
                                             <li className='nav-drop-list-item'>
                                                 <Link href='https://community.patronum.io' target='_blank' className='nav-drop-list-hover'>
-                                                    <img loading='lazy' src='/assets/menu/resource-community.png' alt='features icon' title='features icon'/>
-                                                    <div>
+                                                    <div className='img'>
+                                                        <img loading='lazy' src='/assets/menu/resource-community.svg' alt='resource icon'/>
+                                                    </div>
+                                                    <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>Community</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
@@ -347,8 +481,10 @@ const Header = () => {
                                             </li>
                                             <li className='nav-drop-list-item'>
                                                 <Link href='https://help.patronum.com' target='_blank' className='nav-drop-list-hover'>
-                                                    <img loading='lazy' src='/assets/menu/resource-help.png' alt='features icon' title='features icon'/>
-                                                    <div>
+                                                    <div className='img'>
+                                                        <img loading='lazy' src='/assets/menu/resource-help.svg' alt='resource icon'/>
+                                                    </div>
+                                                    <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>Help</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
@@ -356,8 +492,10 @@ const Header = () => {
                                             </li>
                                             <li className='nav-drop-list-item'>
                                                 <Link href='/legal' className='nav-drop-list-hover' >
-                                                    <img loading='lazy' src='/assets/menu/resource-legal.png' alt='features icon' title='features icon'/>
-                                                    <div>
+                                                    <div className='img'>
+                                                        <img loading='lazy' src='/assets/menu/resource-legal.svg' alt='resource icon'/>
+                                                    </div>
+                                                    <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>Legal</p>
                                                         <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
                                                     </div>
@@ -412,13 +550,15 @@ const Header = () => {
             </div>
         </header>
         
-        {/* Mobile Nav or Side Nav */}
-        <aside
+        {/* Mobile Navigation */}
+        {showMobileNav && (
+        <motion.aside
+            initial={false}
+            variants={MobileNav}
+            animate={isSideNavOpen ? "open" : "closed"}
             data-lenis-prevent
             id="default-sidebar"
-            className={`fixed top-0 right-0 z-[120] md:w-[30rem] w-full h-screen transition-all duration-300 ${
-                isSideNavOpen ? "translate-x-0" : "translate-x-full"
-            }`}
+            className={`fixed top-0 right-0 z-[120] md:w-[30rem] w-full h-screen`}
             aria-label="Sidenav"
             >
             <div className="overflow-y-auto pb-10 pt-10 h-full w-full bg-white md:border-l border-gray-200">
@@ -427,29 +567,35 @@ const Header = () => {
                         <span>Close</span>
                     </button>
                 </div>
-                <ul className="my-12">
-                    <li className='px-4'>
+                <motion.ul 
+                    variants={NavParent}
+                    className="my-12">
+                    <motion.li 
+                        variants={NavChildren}
+                        className='px-4'>
                         <Link href="/about" className="flex items-center py-4 text-2xl font-normal text-gray-900 border-b" aria-label='About' >
                             <span className="ml-3">About</span>
                         </Link>
-                    </li>
-                    <li>
+                    </motion.li>
+                    <motion.li variants={NavChildren}>
                         <div className='px-4'>
                             <div className='flex justify-between border-b'>
                                 <Link href="/features" className="flex items-center w-[80%] py-4 text-2xl font-normal text-gray-900" aria-label='Features' >
                                     <span className="ml-3">Features</span>
                                 </Link>
-                                <button onClick={() => setFeaturesDropdownOpen(!isFeaturesDropdownOpen)} type="button" className={`flex items-center justify-center py-4 w-[20%] text-base font-normal text-gray-900 transition ${isFeaturesDropdownOpen ? "-rotate-90" : "rotate-0"}`} aria-label='Open Features Dropdown'>
+                                <button onClick={() => setFeaturesDropdownOpen(!isFeaturesDropdownOpen)} type="button" className={`flex items-center justify-center py-4 w-[20%] text-base font-normal text-gray-900 transition duration-500 ${isFeaturesDropdownOpen ? "-rotate-90" : "rotate-0"}`} aria-label='Open Features Dropdown'>
                                     <svg aria-hidden="true" className="w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                         <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path>
                                     </svg>
                                 </button>
                             </div>
                         </div>
-                        <ul id="dropdown-features" className={`py-4 px-4 space-y-4 bg-gray-100 transition-all duration-300 ${isFeaturesDropdownOpen ? "block" : "hidden" }`} aria-hidden="true">
+                        <ul id="dropdown-features" className={`px-4 flex flex-col justify-center space-y-4 bg-gray-100 transition-all duration-500 overflow-hidden ${isFeaturesDropdownOpen ? "h-[700px]" : "h-0" }`} aria-hidden="true">
                             <li className=''>
                                 <Link href='/on-boarding' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Onboarding' >
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/onboarding.png' alt='features icon'/>
+                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                        <img loading='lazy' src='/assets/menu/onboarding.svg' alt='feature icon'/>
+                                    </div>
                                     <div>
                                         <p className='text-xl font-500'>User Management</p>
                                         <p className='text-base'>Automated User Onboarding & Offboarding</p>
@@ -458,7 +604,9 @@ const Header = () => {
                             </li>
                             <li className=''>
                                 <Link href='/email-signature-management' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Email Signature' >
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/email-signature.png' alt='features icon'/>
+                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                        <img loading='lazy' src='/assets/menu/email-signature.svg' alt='feature icon'/>
+                                    </div>
                                     <div>
                                         <p className='text-xl font-500'>Email Signatures</p>
                                         <p className='text-base'>Centrally Managed Gmail Email Signatures</p>
@@ -467,7 +615,9 @@ const Header = () => {
                             </li>
                             <li className=''>
                                 <Link href='/google-workspace-backup' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Workspace Backup' >
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/workspace-backup.png' alt='features icon'/>
+                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                        <img loading='lazy' src='/assets/menu/workspace-backup.svg' alt='feature icon'/>
+                                    </div>
                                     <div>
                                         <p className='text-xl font-500'>Workspace Backup</p>
                                         <p className='text-base'>Best-in-Class Full Fidelity Backups</p>
@@ -476,7 +626,9 @@ const Header = () => {
                             </li>
                             <li className=''>
                                 <Link href='/google-drive-management' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Google Drive Management' >
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/drive-management.png' alt='features icon'/>
+                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                        <img loading='lazy' src='/assets/menu/drive-management.svg' alt='feature icon'/>
+                                    </div>
                                     <div>
                                         <p className='text-xl font-500'>Google Drive Management</p>
                                         <p className='text-base'>Manage, Update, or Move User Files</p>
@@ -485,7 +637,9 @@ const Header = () => {
                             </li>
                             <li className=''>
                                 <Link href='/google-drive-compliance' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - File Unsharing' >
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/file-sharing.png' alt='features icon'/>
+                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                        <img loading='lazy' src='/assets/menu/file-sharing.svg' alt='feature icon'/>
+                                    </div>
                                     <div>
                                         <p className='text-xl font-500'>File Unsharing</p>
                                         <p className='text-base'>Automatically Unshare file & Stay Compliant</p>
@@ -494,7 +648,9 @@ const Header = () => {
                             </li>
                             <li className=''>
                                 <Link href='/google-contact-sharing' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Contact Sharing' >
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/contact-sharing.png' alt='features icon'/>
+                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                        <img loading='lazy' src='/assets/menu/contact-sharing.svg' alt='feature icon'/>
+                                    </div>
                                     <div>
                                         <p className='text-xl font-500'>Contact Sharing</p>
                                         <p className='text-base'> Seemless & Secure Contact Sharing</p>
@@ -503,7 +659,9 @@ const Header = () => {
                             </li>
                             <li className=''>
                                 <Link href='/organisational-chart' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Organisational Chart' >
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/organisational-chart.png' alt='features icon'/>
+                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                        <img loading='lazy' src='/assets/menu/organisational-chart.svg' alt='use case icon'/>
+                                    </div>
                                     <div>
                                         <p className='text-xl font-500'>Organisational Chart</p>
                                         <p className='text-base'>Locate & view organisation hierarchy</p>
@@ -511,24 +669,26 @@ const Header = () => {
                                 </Link>
                             </li>
                         </ul>
-                    </li>
-                    <li>
+                    </motion.li>
+                    <motion.li variants={NavChildren}>
                         <div className='px-4'>
                             <div className='flex justify-between border-b'>
                                 <Link href="/use-cases" className="flex w-[80%] items-center py-4 text-2xl font-normal text-gray-900" aria-label='Use Cases' >
                                     <span className="ml-3">Use Cases</span>
                                 </Link>
-                                <button onClick={() => setUsecasesDropdownOpen(!isUsecasesDropdownOpen)} type="button" className={`flex items-center justify-center py-4 w-[20%] text-base font-normal text-gray-900 transition ${isUsecasesDropdownOpen ? "-rotate-90" : "rotate-0"}`} aria-label='Open UseCases Dropdown'>
+                                <button onClick={() => setUsecasesDropdownOpen(!isUsecasesDropdownOpen)} type="button" className={`flex items-center justify-center py-4 w-[20%] text-base font-normal text-gray-900 transition duration-500 ${isUsecasesDropdownOpen ? "-rotate-90" : "rotate-0"}`} aria-label='Open UseCases Dropdown'>
                                     <svg aria-hidden="true" className="w-7 h-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                         <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path>
                                     </svg>
                                 </button>
                             </div>
                         </div>
-                        <ul id="dropdown-usecases" className={`py-4 px-4 space-y-4 bg-gray-100 ${isUsecasesDropdownOpen ? "block" : "hidden" }`} aria-hidden="true">
+                        <ul id="dropdown-usecases" className={`px-4 flex flex-col justify-center space-y-4 bg-gray-100 transition-all duration-500 overflow-hidden ${isUsecasesDropdownOpen ? "h-[600px]" : "h-0" }`} aria-hidden="true">
                             <li className=''>
                                 <Link href='/patronum-for-business' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Business' >
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/use-case-business.png' alt='use cases icon' title='use cases icon'/>
+                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                        <img loading='lazy' src='/assets/menu/for-business.svg' alt='use case icon'/>
+                                    </div>
                                     <div>
                                         <p className='text-xl font-500'>For Business</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
@@ -537,7 +697,9 @@ const Header = () => {
                             </li>
                             <li className=''>
                                 <Link href='/patronum-for-education' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Education' >
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/use-case-education.png' alt='use cases icon' title='use cases icon'/>
+                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                        <img loading='lazy' src='/assets/menu/for-education.svg' alt='use case icon'/>
+                                    </div>
                                     <div>
                                         <p className='text-xl font-500'>For Education</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
@@ -546,7 +708,9 @@ const Header = () => {
                             </li>
                             <li className=''>
                                 <Link href='/patronum-for-hr' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For HR' >
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/use-case-hr.png' alt='use cases icon' title='use cases icon'/>
+                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                        <img loading='lazy' src='/assets/menu/for-hr.svg' alt='use case icon'/>
+                                    </div>
                                     <div>
                                         <p className='text-xl font-500'>For HR</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
@@ -555,7 +719,9 @@ const Header = () => {
                             </li>
                             <li className=''>
                                 <Link href='/patronum-for-users' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Users' >
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/use-case-users.png' alt='use cases icon' title='use cases icon'/>
+                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                        <img loading='lazy' src='/assets/menu/for-users.svg' alt='use case icon'/>
+                                    </div>
                                     <div>
                                         <p className='text-xl font-500'>For Users</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
@@ -564,7 +730,9 @@ const Header = () => {
                             </li>
                             <li className=''>
                                 <Link href='/patronum-for-sales-marketing' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Sales & Marketing' >
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/use-case-sales.png' alt='use cases icon' title='use cases icon'/>
+                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                        <img loading='lazy' src='/assets/menu/for-sales-marketing.svg' alt='use case icon'/>
+                                    </div>
                                     <div>
                                         <p className='text-xl font-500'>For Sales & Marketing</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
@@ -573,7 +741,9 @@ const Header = () => {
                             </li>
                             <li className=''>
                                 <Link href='/patronum-for-it-admins' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For IT Admins' >
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/use-case-admin.png' alt='use cases icon' title='use cases icon'/>
+                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                        <img loading='lazy' src='/assets/menu/for-it-admins.svg' alt='use case icon'/>
+                                    </div>
                                     <div>
                                         <p className='text-xl font-500'>For IT Admins</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
@@ -581,27 +751,31 @@ const Header = () => {
                                 </Link>
                             </li>
                         </ul>
-                    </li>
-                    <li className='px-4'>
-                        <Link href="#" className="flex items-center py-4 border-b text-2xl font-normal text-gray-900" aria-label='Pricing' >
+                    </motion.li>
+                    <motion.li 
+                        variants={NavChildren} 
+                        className='px-4'>
+                        <Link href="/pricing" className="flex items-center py-4 border-b text-2xl font-normal text-gray-900" aria-label='Pricing' >
                             <span className="ml-3">Pricing</span>
                         </Link>
-                    </li>
-                    <li>
+                    </motion.li>
+                    <motion.li variants={NavChildren}>
                         <div className='px-4'>
                             <button onClick={() => setResourcesDropdownOpen(!isResourcesDropdownOpen)} type="button" className="flex items-center py-4 border-b w-full text-2xl font-normal text-gray-900" aria-label='Open Resources Dropdown'>
                                 <span className="flex-1 ml-3 text-left w-4/5 whitespace-nowrap">Resources</span>
                                 <span className='w-1/5 flex items-center justify-center'>
-                                    <svg aria-hidden="true" className={`w-7 h-7 transition ${isResourcesDropdownOpen ? "-rotate-90" : "rotate-0"}`} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <svg aria-hidden="true" className={`w-7 h-7 transition duration-500 ${isResourcesDropdownOpen ? "-rotate-90" : "rotate-0"}`} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                         <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path>
                                     </svg>
                                 </span>
                             </button>
                         </div>
-                        <ul id="dropdown-resources" className={`py-4 px-4 space-y-4 bg-gray-100 ${isResourcesDropdownOpen ? "block" : "hidden" }`} aria-hidden="true">
+                        <ul id="dropdown-resources" className={`px-4 space-y-4 bg-gray-100 transition-all duration-500 overflow-hidden flex flex-col justify-center ${isResourcesDropdownOpen ? "h-[880px]" : "h-0" }`} aria-hidden="true">
                             <li className=''>
                                 <Link href='/blog' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Blog' >
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-blog.png' alt='features icon'/>
+                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                        <img loading='lazy' src='/assets/menu/resource-blog.svg' alt='resource icon'/>
+                                    </div>
                                     <div>
                                         <p className='text-xl font-500'>Blog</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
@@ -610,7 +784,9 @@ const Header = () => {
                             </li>
                             <li className=''>
                                 <Link href='/guides' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Guides' >
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-guide.png' alt='features icon'/>
+                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                        <img loading='lazy' src='/assets/menu/resource-guides.svg' alt='resource icon'/>
+                                    </div>
                                     <div>
                                         <p className='text-xl font-500'>Guides</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
@@ -619,7 +795,9 @@ const Header = () => {
                             </li>
                             <li className=''>
                                 <Link href='/ebooks' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Ebooks' >
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-ebook.png' alt='features icon'/>
+                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                        <img loading='lazy' src='/assets/menu/resource-ebooks.svg' alt='resource icon'/>
+                                    </div>
                                     <div>
                                         <p className='text-xl font-500'>Ebooks</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
@@ -628,7 +806,9 @@ const Header = () => {
                             </li>
                             <li className=''>
                                 <Link href='/webinars' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Webinars' >
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-webinar.png' alt='features icon'/>
+                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                        <img loading='lazy' src='/assets/menu/resource-webinars.svg' alt='resource icon'/>
+                                    </div>
                                     <div>
                                         <p className='text-xl font-500'>Webinars</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
@@ -637,7 +817,9 @@ const Header = () => {
                             </li>
                             <li className=''>
                                 <Link href='/case-studies' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Case Studies' >
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-case-study.png' alt='features icon'/>
+                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                        <img loading='lazy' src='/assets/menu/resource-case-studies.svg' alt='resource icon'/>
+                                    </div>
                                     <div>
                                         <p className='text-xl font-500'>Case Studies</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
@@ -646,7 +828,9 @@ const Header = () => {
                             </li>
                             <li className=''>
                                 <Link href='/product-videos' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Product Videos'>
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-product-videos.png' alt='features icon'/>
+                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                        <img loading='lazy' src='/assets/menu/resource-product-videos.svg' alt='resource icon'/>
+                                    </div>
                                     <div>
                                         <p className='text-xl font-500'>Product Videos</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
@@ -655,7 +839,9 @@ const Header = () => {
                             </li>
                             <li className=''>
                                 <Link href='https://community.patronum.io' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Community'>
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-community.png' alt='features icon'/>
+                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                        <img loading='lazy' src='/assets/menu/resource-community.svg' alt='resource icon'/>
+                                    </div>
                                     <div>
                                         <p className='text-xl font-500'>Community</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
@@ -664,7 +850,9 @@ const Header = () => {
                             </li>
                             <li className=''>
                                 <Link href='https://help.patronum.com' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Help'>
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-help.png' alt='features icon'/>
+                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                        <img loading='lazy' src='/assets/menu/resource-help.svg' alt='resource icon'/>
+                                    </div>
                                     <div>
                                         <p className='text-xl font-500'>Help</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
@@ -673,7 +861,9 @@ const Header = () => {
                             </li>
                             <li className=''>
                                 <Link href='/legal' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Legal' >
-                                    <img loading='lazy' className='w-[15%]' src='/assets/menu/resource-legal.png' alt='features icon'/>
+                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                        <img loading='lazy' src='/assets/menu/resource-legal.svg' alt='resource icon'/>
+                                    </div>
                                     <div>
                                         <p className='text-xl font-500'>Legal</p>
                                         <p className='text-base'>Lorem Ipsum is simply dummy text</p>
@@ -681,20 +871,25 @@ const Header = () => {
                                 </Link>
                             </li>
                         </ul>
-                    </li>
-                    <li className='px-4'>
+                    </motion.li>
+                    <motion.li 
+                        variants={NavChildren} 
+                        className='px-4'>
                         <Link href="/partner-with-us" className="flex items-center py-4 border-b text-2xl font-normal text-gray-900" >
                             <span className="ml-3">Partners</span>
                         </Link>
-                    </li>
-                    <li className='px-4'>
+                    </motion.li>
+                    <motion.li 
+                        variants={NavChildren}
+                        className='px-4'>
                         <Link href="/support" className="flex items-center py-4 border-b text-2xl font-normal text-gray-900">
                             <span className="ml-3">Support</span>
                         </Link>
-                    </li>
-                </ul>
+                    </motion.li>
+                </motion.ul>
             </div>
-        </aside>
+        </motion.aside>
+        )}
     </>
   );
 };
