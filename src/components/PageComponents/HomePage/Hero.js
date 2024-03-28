@@ -24,7 +24,7 @@ export default function Hero(){
 
     useEffect(() => {
         const isFirstTimeLoading = localStorage.getItem('hasVisited') === null;
-        let delayTime = isFirstTimeLoading ? 3.4 : 0.4;
+        let delayTime = isFirstTimeLoading ? 3.4 : 0.6;
 
         let ctx = gsap.context(() => {
 
@@ -70,7 +70,7 @@ export default function Hero(){
 
     useEffect(() => {
         const isFirstTimeLoading = localStorage.getItem('hasVisited') === null;
-        let delayTime = isFirstTimeLoading ? 3.4 : 0.4;
+        let delayTime = isFirstTimeLoading ? 3.4 : 0.6;
 
         let ctx = gsap.context(() => {
 
@@ -157,13 +157,19 @@ export default function Hero(){
                         </div>
                         
                         <div className="hero-right">
-                            <img
+                            <video 
+                                autoPlay
+                                muted 
+                                loop 
+                                src="/assets/home/hero-animation.webm"
+                                className='hero-img'
+                            />
+                            {/* <img
                                 src="/assets/home/hero-animation.gif"
                                 className='hero-img'
                                 alt='patronum dashboard showcase'
                                 title='patronum dashboard showcase'
-                            />
-                            <span className="hero-img-bg" />
+                            /> */}
                         </div>
                     </div>
                     <div className="scroll-down-btn">

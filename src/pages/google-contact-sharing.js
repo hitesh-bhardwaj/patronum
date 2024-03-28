@@ -97,7 +97,8 @@ export default function FeatureDetail(){
     return (
         <>
             <PageLayout
-                pageTitle1={'Google Contact Sharing'} 
+                pageTitle1={'Google Contact'} 
+                pageTitle2={'Sharing'}
                 pagePara={"Unified Contact Sharing for Powerful & efficient collaboration"} 
                 imgSrc={'contact-sharing.svg'}
                 >

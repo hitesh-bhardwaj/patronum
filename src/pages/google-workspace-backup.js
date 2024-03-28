@@ -86,7 +86,7 @@ export default function FeatureDetail(){
             id: '09',
             title: 'Encryption',
             para: "Easily manage and delete calendar events, ensuring up-to-date.",
-            img: "/assets/features/google-workspace-backup/detail-8.svg",
+            img: "/assets/features/google-workspace-backup/detail-9.svg",
         },
     ]
 

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useModal } from '../InstallModal/ModelContext';
 import Link from 'next/link';
+import PrimaryButton from '../PageLayout/Button/PrimaryButton';
 
 const MobileNav = {
     open: {
@@ -304,7 +305,7 @@ const Header = () => {
                                                 </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='/patronum-it-admin' className='nav-drop-list-hover' >
+                                                <Link href='/patronum-for-it-admins' className='nav-drop-list-hover' >
                                                     <div className='img'>
                                                         <img loading='lazy' src='/assets/menu/for-it-admins.svg' alt='use-case icon'/>
                                                     </div>
@@ -351,33 +352,39 @@ const Header = () => {
                                         className='nav-dropdown'>
                                         <ul className='nav-dropdown-list justify-center'>
                                             <li className='nav-drop-list-item '>
-                                                <Link href='/pricing' className='flex flex-col gap-4 items-center group hover:bg-[#FDFDFD] px-[3vw] py-4 rounded-xl transition border border-gray-100 mx-3' >
-                                                    <img className='h-[10vw]' loading='lazy' width="170" height="140" src='/assets/pricing/education.svg' alt='price image'/>
+                                                <Link href='/pricing' className='flex flex-col gap-4 items-center group hover:bg-[#fbfbfb] px-[3vw] py-4 rounded-xl transition border border-gray-100 mx-8' >
+                                                    <img className='h-[9vw]' loading='lazy' width="170" height="140" src='/assets/pricing/education.svg' alt='price image'/>
                                                     <div>
-                                                        <p className='text-head text-3xl text-center transition mb-2'>Education</p>
+                                                        <p className='text-head text-2xl text-center transition mb-2'>Education</p>
                                                         <p className='text-primary text-2xl text-center group-hover:text-primary transition'>$ 2.00<span className='text-gray-400'> /year</span></p>
                                                     </div>
                                                 </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='/pricing' className='flex flex-col gap-4 items-center group hover:bg-[#FDFDFD] px-[3vw] py-4 rounded-xl transition border border-gray-100 mx-3' >
-                                                    <img className='h-[10vw]' loading='lazy' width="170" height="140" src='/assets/pricing/non-profit.svg' alt='price image'/>
+                                                <Link href='/pricing' className='flex flex-col gap-4 items-center group hover:bg-[#fbfbfb] px-[3vw] py-4 rounded-xl transition border border-gray-100 mx-8' >
+                                                    <img className='h-[9vw]' loading='lazy' width="170" height="140" src='/assets/pricing/non-profit.svg' alt='price image'/>
                                                     <div>
-                                                        <p className='text-head text-3xl text-center transition mb-2'>Non-Profit</p>
+                                                        <p className='text-head text-2xl text-center transition mb-2'>Non-Profit</p>
                                                         <p className='text-primary text-2xl text-center group-hover:text-primary transition'>$ 2.00<span className='text-gray-400'> /year</span></p>
                                                     </div>
                                                 </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='/pricing' className='flex flex-col gap-4 items-center group hover:bg-[#FDFDFD] px-[3vw] py-4 rounded-xl transition border border-gray-100 mx-3' >
-                                                    <img className='h-[10vw]' loading='lazy' width="170" height="140" src='/assets/pricing/business.svg' alt='price image'/>
+                                                <Link href='/pricing' className='flex flex-col gap-4 items-center group hover:bg-[#fbfbfb] px-[3vw] py-4 rounded-xl transition border border-gray-100 mx-8' >
+                                                    <img className='h-[9vw]' loading='lazy' width="170" height="140" src='/assets/pricing/business.svg' alt='price image'/>
                                                     <div>
-                                                        <p className='text-head text-3xl text-center transition mb-2'>Business</p>
+                                                        <p className='text-head text-2xl text-center transition mb-2'>Business</p>
                                                         <p className='text-primary text-2xl text-center group-hover:text-primary transition'>$ 8.00<span className='text-gray-400'> /year</span></p>
                                                     </div>
                                                 </Link>
                                             </li>
                                         </ul>
+                                        <div className='section-btn-container mb-10'>
+                                            <PrimaryButton 
+                                                link="/pricing"
+                                                btnText="Get Started"
+                                            />
+                                        </div>
                                     </motion.div>
                                 )}
                         </li>

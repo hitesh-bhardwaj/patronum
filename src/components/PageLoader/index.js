@@ -10,7 +10,7 @@ export default function PageLoader() {
 
             tl.to("#pageLoaderSlide", {
                 scaleY: 0,
-                duration: 0.4,
+                duration: 0.6,
                 ease: 'power2.in',
                 onComplete: () => {
                     gsap.set("#pageLoader", {
@@ -25,7 +25,7 @@ export default function PageLoader() {
 
     return (
         <>
-            <div className="fixed top-0 left-0 w-screen h-screen z-[9999] flex justify-center items-center" id="pageLoader">
+            <div className="fixed top-0 left-0 w-screen h-screen z-[999999] flex justify-center items-center" id="pageLoader">
                 <div className="w-full h-full absolute bg-primary origin-bottom" id="pageLoaderSlide"/>
             </div>
         </>

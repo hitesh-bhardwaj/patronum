@@ -18,7 +18,7 @@ export default function Hero( {pageTitle1, pageTitle2, pagePara, imgSrc} ){
 
     useEffect(() => {
         const isFirstTimeLoading = localStorage.getItem('hasVisited') === null;
-        let delayTime = isFirstTimeLoading ? 3.4 : 0.4;
+        let delayTime = isFirstTimeLoading ? 3.4 : 0.6;
 
         let ctx = gsap.context(() => {
 
@@ -36,7 +36,7 @@ export default function Hero( {pageTitle1, pageTitle2, pagePara, imgSrc} ){
 
     useEffect(() => {
         const isFirstTimeLoading = localStorage.getItem('hasVisited') === null;
-        let delayTime = isFirstTimeLoading ? 3.4 : 0.4;
+        let delayTime = isFirstTimeLoading ? 3.4 : 0.6;
 
         let ctx = gsap.context(() => {
   

@@ -30,7 +30,7 @@ export default function UseCases() {
                         snap: {
                             snapTo: 1 / (foc_sections.length - 1),
                             inertia: false,
-                            duration: {min: 0.1, max: 1}
+                            duration: {min: 0.1, max: 0.5}
                         },
                         end: "+=" + (foc_container.offsetWidth - innerWidth),
                         invalidateOnRefresh: true,
