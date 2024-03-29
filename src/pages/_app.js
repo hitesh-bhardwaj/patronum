@@ -5,22 +5,24 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from "@vercel/analytics/react"
 import { ReactLenis } from '@studio-freight/react-lenis';
 import { ModalProvider } from '@/components/InstallModal/ModelContext';
-import InstallModal from '@/components/InstallModal';
-import DemoModal from '@/components/InstallModal/DemoModal';
 import { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import PreLoader from '@/components/PreLoader';
-import Pixi from "@/components/Pixi";
 
 // Import the Background component dynamically
-// const Background = dynamic(() => import('@/components/Pixi'), {
-//   ssr: false, 
-// });
+const Background = dynamic(() => import('@/components/Pixi'), {
+  ssr: false, 
+});
+const LazyInstallModal = dynamic(() => import('@/components/InstallModal'), {
+  ssr: false,
+});
+const LazyDemoModal = dynamic(() => import('@/components/InstallModal/DemoModal'), {
+  ssr: false,
+});
 
 export default function App({ Component, pageProps, router }) {
   const [showPreloader, setShowPreloader] = useState(true);
   const [loadBackground, setLoadBackground] = useState(false);
-  const [showComponent, setShowComponent] = useState(false);
 
   useEffect(() => {
     const hasVisited = sessionStorage.getItem('hasVisited');
@@ -40,14 +42,14 @@ export default function App({ Component, pageProps, router }) {
     }
   }, []);
 
-  // useEffect(() => {
-  //   // Set a timer to change loadBackground state after a specific time
-  //   const timer = setTimeout(() => {
-  //     setLoadBackground(true);
-  //   }, 3600); // Delay in milliseconds before importing/rendering the component
+  useEffect(() => {
+    // Set a timer to change loadBackground state after a specific time
+    const timer = setTimeout(() => {
+      setLoadBackground(true);
+    }, 3000); // Delay in milliseconds before importing/rendering the component
 
-  //   return () => clearTimeout(timer); // Cleanup the timer
-  // }, []);
+    return () => clearTimeout(timer); // Cleanup the timer
+  }, []);
 
     useEffect(() => {
     const handleRouteChange = () => {
@@ -91,15 +93,13 @@ export default function App({ Component, pageProps, router }) {
           <AnimatePresence mode="wait">
             <Component {...pageProps} key={router.route}/>
           </AnimatePresence>
-          <InstallModal />
-          <DemoModal />
+          <LazyInstallModal />
+          <LazyDemoModal />
         </ModalProvider>
       </ReactLenis>
       <SpeedInsights />
       <Analytics />
       {/* {loadBackground && <Background />} */}
-      {/* <Background /> */}
-      <Pixi />
     </>
   ); 
 }

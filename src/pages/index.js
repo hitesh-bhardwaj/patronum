@@ -104,8 +104,6 @@ export default function Home( { recentPosts } ) {
             scrollTrigger: {
                 trigger: ".pricing-card-wrapper",
                 start: "top 85%",
-                // end: "bottom bottom",
-                // toggleActions: "play none none reverse"
             }
         });
     
@@ -119,7 +117,7 @@ export default function Home( { recentPosts } ) {
                 opacity: 1,
                 y: 0,
                 duration: 0.6,
-                stagger: 0.1, // Adjust stagger timing as needed
+                stagger: 0.1, 
                 ease: 'Power2.out',
             }
         );
@@ -127,7 +125,6 @@ export default function Home( { recentPosts } ) {
 
     useEffect(() => {
       const blogCards = document.querySelectorAll('.blog-card-wrapper .blog-cards');
-      // Ensure GSAP library is imported and available
       let tl = gsap.timeline({
           scrollTrigger: {
               trigger: ".blog-card-wrapper",
@@ -145,7 +142,7 @@ export default function Home( { recentPosts } ) {
               opacity: 1,
               y: 0,
               duration: 0.6,
-              stagger: 0.1, // Adjust stagger timing as needed
+              stagger: 0.1, 
               ease: 'Power2.out',
           }
       );

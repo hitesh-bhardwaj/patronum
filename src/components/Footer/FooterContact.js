@@ -1,8 +1,6 @@
 import React from "react";
 import { useModal } from "../InstallModal/ModelContext";
-import Lottie from 'react-lottie-player';
-
-import AnimationData from '@/lotties/rocket-final.json';
+import Image from "next/image";
 
 export default function FooterContact() {
 
@@ -72,12 +70,18 @@ export default function FooterContact() {
 
                         <div className="right">
                             <div className="footer-lottie fadeUp">
-                                <Lottie
-                                    play
-                                    loop
-                                    animationData={AnimationData}
-                                    style={{ width: "27vw", height: "auto" }}
+                                <Image 
+                                    src="/assets/footer/rocket.gif"
+                                    alt="A rocket taking off in space."
+                                    width={500}
+                                    height={500}
+                                    className="lg:w-[27vw] w-full h-auto"
+                                    loading="lazy"
                                 />
+                                {/* <video className="lg:w-[27vw] w-full h-auto blend-screen" loop autoPlay muted playsInline>
+                                    <source src="/assets/footer/rocket.webm" type='video/webm' />
+                                    <source src="/assets/footer/rocket.mp4" type='video/mp4'/>
+                                </video> */}
                             </div>
                         </div>
                     </div>

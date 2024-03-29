@@ -14,7 +14,7 @@ export default function Test() {
 
     return(
     <>
-        <SideMenu sections={sections}/>
+        {/* <SideMenu sections={sections}/>
         <main>
             <section className="h-screen w-screen" id="intro">
                 <div className="w-full h-full bg-gray-100 flex justify-center items-center text-9xl">Intro</div>
@@ -37,7 +37,7 @@ export default function Test() {
             <section className="h-[160vh] w-screen" id="faqs">
                 <div className="w-full h-full bg-gray-600 flex justify-center items-center text-9xl">FAQ's</div>
             </section>
-        </main>
+        </main> */}
     </>
     )
 }
