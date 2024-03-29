@@ -99,6 +99,22 @@ const Header = () => {
         // Cleanup event listener
         return () => window.removeEventListener('resize', checkScreenSize);
       }, []);
+
+      const NavItem = ({ link, img, title, disc }) => {
+        return (
+            <li className='nav-drop-list-item'>
+                <Link href={link} className='nav-drop-list-hover' >
+                    <div className='img'>
+                        <img loading='lazy' src={`/assets/menu/${img}`} alt='menu icon'/>
+                    </div>
+                    <div className='w-[16vw]'>
+                        <p className='nav-drop-title'>{title}</p>
+                        <p className='nav-drop-text'>{disc}</p>
+                    </div>
+                </Link>
+            </li>
+        )
+      }
       
   return (
     <>
@@ -157,83 +173,48 @@ const Header = () => {
                                         transition={{ duration: 0.4 }} 
                                         className='nav-dropdown'>
                                         <ul className='nav-dropdown-list'>
-                                            <li className='nav-drop-list-item'>
-                                                <Link href='/on-boarding' className='nav-drop-list-hover' >
-                                                    <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/onboarding.svg' alt='features icon'/>
-                                                    </div>
-                                                    <div className='w-[16vw]'>
-                                                        <p className='nav-drop-title'>User Management</p>
-                                                        <p className='nav-drop-text'>Automated User Onboarding & Offboarding</p>
-                                                    </div>
-                                                </Link>
-                                            </li>
-                                            <li className='nav-drop-list-item'>
-                                                <Link href='/email-signature-management' className='nav-drop-list-hover' >
-                                                    <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/email-signature.svg' alt='features icon'/>
-                                                    </div>
-                                                    <div className='w-[16vw]'>
-                                                        <p className='nav-drop-title'>Email Signatures</p>
-                                                        <p className='nav-drop-text'>Centrally Managed Gmail Email Signatures</p>
-                                                    </div>
-                                                </Link>
-                                            </li>
-                                            <li className='nav-drop-list-item'>
-                                                <Link href='/google-workspace-backup' className='nav-drop-list-hover' >
-                                                    <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/workspace-backup.svg' alt='features icon'/>
-                                                    </div>
-                                                    <div className='w-[16vw]'>
-                                                        <p className='nav-drop-title'>Workspace Backup</p>
-                                                        <p className='nav-drop-text'>Best-in-Class Full Fidelity Backups</p>
-                                                    </div>
-                                                </Link>
-                                            </li>
-                                            <li className='nav-drop-list-item'>
-                                                <Link href='/google-drive-management' className='nav-drop-list-hover' >
-                                                    <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/drive-management.svg' alt='features icon'/>
-                                                    </div>
-                                                    <div className='w-[16vw]'>
-                                                        <p className='nav-drop-title'>Google Drive Management</p>
-                                                        <p className='nav-drop-text'>Manage, Update, or Move User Files</p>
-                                                    </div>
-                                                </Link>
-                                            </li>
-                                            <li className='nav-drop-list-item'>
-                                                <Link href='/google-drive-compliance' className='nav-drop-list-hover' >
-                                                    <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/file-sharing.svg' alt='features icon'/>
-                                                    </div>
-                                                    <div className='w-[16vw]'>
-                                                        <p className='nav-drop-title'>File Unsharing</p>
-                                                        <p className='nav-drop-text'>Automatically Unshare file & Stay Compliant</p>
-                                                    </div>
-                                                </Link>
-                                            </li>
-                                            <li className='nav-drop-list-item'>
-                                                <Link href='/google-contact-sharing' className='nav-drop-list-hover'>
-                                                    <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/contact-sharing.svg' alt='features icon'/>
-                                                    </div>
-                                                    <div className='w-[16vw]'>
-                                                        <p className='nav-drop-title'>Contact Sharing</p>
-                                                        <p className='nav-drop-text'>Seemless & Secure Contact Sharing</p>
-                                                    </div>
-                                                </Link>
-                                            </li>
-                                            <li className='nav-drop-list-item'>
-                                                <Link href='/organisational-chart' className='nav-drop-list-hover' >
-                                                    <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/organisational-chart.svg' alt='features icon'/>
-                                                    </div>
-                                                    <div className='w-[16vw]'>
-                                                        <p className='nav-drop-title'>Organisational Chart</p>
-                                                        <p className='nav-drop-text'>Locate & view organisation hierarchy</p>
-                                                    </div>
-                                                </Link>
-                                            </li>
+                                            <NavItem 
+                                                title={'User Management'}
+                                                disc={'Automated User Onboarding & Offboarding'}
+                                                link={'/on-boarding'}
+                                                img={'onboarding.svg'}
+                                            />
+                                            <NavItem 
+                                                title={'Email Signatures'}
+                                                disc={'Centrally Managed Gmail Email Signatures'}
+                                                link={'/email-signature-management'}
+                                                img={'email-signature.svg'}
+                                            />
+                                            <NavItem 
+                                                title={'Workspace Backup'}
+                                                disc={'Best-in-Class Full Fidelity Backups'}
+                                                link={'/google-workspace-backup'}
+                                                img={'workspace-backup.svg'}
+                                            />
+                                            <NavItem 
+                                                title={'Google Drive Management'}
+                                                disc={'Manage, Update, or Move User Files'}
+                                                link={'/google-drive-management'}
+                                                img={'drive-management.svg'}
+                                            />
+                                            <NavItem 
+                                                title={'File Unsharing'}
+                                                disc={'Automatically Unshare file & Stay Compliant'}
+                                                link={'/google-drive-compliance'}
+                                                img={'file-sharing.svg'}
+                                            />
+                                            <NavItem 
+                                                title={'Contact Sharing'}
+                                                disc={'Seemless & Secure Contact Sharing'}
+                                                link={'/google-contact-sharing'}
+                                                img={'contact-sharing.svg'}
+                                            />
+                                            <NavItem 
+                                                title={'Organisational Chart'}
+                                                disc={'Locate & view organisation hierarchy'}
+                                                link={'/organisational-chart'}
+                                                img={'organisational-chart.svg'}
+                                            />
                                         </ul>
                                     </motion.div>
                                 )}
@@ -260,72 +241,42 @@ const Header = () => {
                                         transition={{ duration: 0.4 }} 
                                         className='nav-dropdown'>
                                     <ul className='nav-dropdown-list'>
-                                            <li className='nav-drop-list-item'>
-                                                <Link href='/patronum-for-business' className='nav-drop-list-hover' >
-                                                    <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/for-business.svg' alt='use-case icon'/>
-                                                    </div>
-                                                    <div className='w-[16vw]'>
-                                                        <p className='nav-drop-title'>For Business</p>
-                                                        <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
-                                                    </div>
-                                                </Link>
-                                            </li>
-                                            <li className='nav-drop-list-item'>
-                                                <Link href='/patronum-for-education' className='nav-drop-list-hover' >
-                                                    <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/for-education.svg' alt='use-case icon'/>
-                                                    </div>
-                                                    <div className='w-[16vw]'>
-                                                        <p className='nav-drop-title'>For Education</p>
-                                                        <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
-                                                    </div>
-                                                </Link>
-                                            </li>
-                                            <li className='nav-drop-list-item'>
-                                                <Link href='/patronum-for-hr' className='nav-drop-list-hover' >
-                                                    <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/for-hr.svg' alt='use-case icon'/>
-                                                    </div>
-                                                    <div className='w-[16vw]'>
-                                                        <p className='nav-drop-title'>For HR</p>
-                                                        <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
-                                                    </div>
-                                                </Link>
-                                            </li>
-                                            <li className='nav-drop-list-item'>
-                                                <Link href='/patronum-for-sales-marketing' className='nav-drop-list-hover' >
-                                                    <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/for-sales-marketing.svg' alt='use-case icon'/>
-                                                    </div>
-                                                    <div className='w-[16vw]'>
-                                                        <p className='nav-drop-title'>For Sales & Marketing</p>
-                                                        <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
-                                                    </div>
-                                                </Link>
-                                            </li>
-                                            <li className='nav-drop-list-item'>
-                                                <Link href='/patronum-for-it-admins' className='nav-drop-list-hover' >
-                                                    <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/for-it-admins.svg' alt='use-case icon'/>
-                                                    </div>
-                                                    <div className='w-[16vw]'>
-                                                        <p className='nav-drop-title'>For IT Admins</p>
-                                                        <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
-                                                    </div>
-                                                </Link>
-                                            </li>
-                                            <li className='nav-drop-list-item'>
-                                                <Link href='/patronum-for-users' className='nav-drop-list-hover' >
-                                                    <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/for-users.svg' alt='use-case icon'/>
-                                                    </div>
-                                                    <div className='w-[16vw]'>
-                                                        <p className='nav-drop-title'>For Users</p>
-                                                        <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
-                                                    </div>
-                                                </Link>
-                                            </li>
+                                            <NavItem 
+                                                title={'For Business'}
+                                                disc={'Lorem Ipsum is simply dummy text'}
+                                                link={'/patronum-for-business'}
+                                                img={'for-business.svg'}
+                                            />
+                                            <NavItem 
+                                                title={'For Education'}
+                                                disc={'Lorem Ipsum is simply dummy text'}
+                                                link={'/patronum-for-education'}
+                                                img={'for-education.svg'}
+                                            />
+                                            <NavItem 
+                                                title={'For HR'}
+                                                disc={'Lorem Ipsum is simply dummy text'}
+                                                link={'/patronum-for-hr'}
+                                                img={'for-hr.svg'}
+                                            />
+                                            <NavItem 
+                                                title={'For Sales & Marketing'}
+                                                disc={'Lorem Ipsum is simply dummy text'}
+                                                link={'/patronum-for-sales-marketing'}
+                                                img={'for-sales-marketing.svg'}
+                                            />
+                                            <NavItem 
+                                                title={'For IT Admins'}
+                                                disc={'Lorem Ipsum is simply dummy text'}
+                                                link={'/patronum-for-it-admins'}
+                                                img={'for-it-admins.svg'}
+                                            />
+                                            <NavItem 
+                                                title={'For Users'}
+                                                disc={'Lorem Ipsum is simply dummy text'}
+                                                link={'/patronum-for-users'}
+                                                img={'for-users.svg'}
+                                            />
                                         </ul>
                                     </motion.div>
                                 )}
@@ -351,40 +302,38 @@ const Header = () => {
                                         transition={{ duration: 0.4 }} 
                                         className='nav-dropdown'>
                                         <ul className='nav-dropdown-list justify-center'>
-                                            <li className='nav-drop-list-item '>
-                                                <Link href='/pricing' className='flex flex-col gap-4 items-center group hover:bg-[#fbfbfb] px-[3vw] py-4 rounded-xl transition border border-gray-100 mx-8' >
-                                                    <img className='h-[9vw]' loading='lazy' width="170" height="140" src='/assets/pricing/education.svg' alt='price image'/>
-                                                    <div>
-                                                        <p className='text-head text-2xl text-center transition mb-2'>Education</p>
-                                                        <p className='text-primary text-2xl text-center group-hover:text-primary transition'>$ 2.00<span className='text-gray-400'> /year</span></p>
+                                            <div className='border border-gray-100 rounded-xl py-10 hover:bg-[#fbfbfb] transition duration-300'>
+                                                <Link href="/pricing" className='flex justify-center items-center mb-10'>
+                                                    <div className='flex flex-col gap-4 items-center px-[3vw] py-4 mx-8'>
+                                                        <img className='h-[9vw]' loading='lazy' width="170" height="140" src='/assets/pricing/education.svg' alt='price image'/>
+                                                        <div>
+                                                            <p className='text-head text-2xl text-center transition mb-2'>Education</p>
+                                                            <p className='text-primary text-2xl text-center group-hover:text-primary transition'>$ 2.00<span className='text-gray-400'> /year</span></p>
+                                                        </div>
+                                                    </div>
+                                                    <div className='flex flex-col gap-4 items-center px-[3vw] py-4 mx-8'>
+                                                        <img className='h-[9vw]' loading='lazy' width="170" height="140" src='/assets/pricing/non-profit.svg' alt='price image'/>
+                                                        <div>
+                                                            <p className='text-head text-2xl text-center transition mb-2'>Non-Profit</p>
+                                                            <p className='text-primary text-2xl text-center group-hover:text-primary transition'>$ 2.00<span className='text-gray-400'> /year</span></p>
+                                                        </div>
+                                                    </div>
+                                                    <div className='flex flex-col gap-4 items-center px-[3vw] py-4 mx-8'>
+                                                        <img className='h-[9vw]' loading='lazy' width="170" height="140" src='/assets/pricing/business.svg' alt='price image'/>
+                                                        <div>
+                                                            <p className='text-head text-2xl text-center transition mb-2'>Business</p>
+                                                            <p className='text-primary text-2xl text-center group-hover:text-primary transition'>$ 8.00<span className='text-gray-400'> /year</span></p>
+                                                        </div>
                                                     </div>
                                                 </Link>
-                                            </li>
-                                            <li className='nav-drop-list-item'>
-                                                <Link href='/pricing' className='flex flex-col gap-4 items-center group hover:bg-[#fbfbfb] px-[3vw] py-4 rounded-xl transition border border-gray-100 mx-8' >
-                                                    <img className='h-[9vw]' loading='lazy' width="170" height="140" src='/assets/pricing/non-profit.svg' alt='price image'/>
-                                                    <div>
-                                                        <p className='text-head text-2xl text-center transition mb-2'>Non-Profit</p>
-                                                        <p className='text-primary text-2xl text-center group-hover:text-primary transition'>$ 2.00<span className='text-gray-400'> /year</span></p>
-                                                    </div>
-                                                </Link>
-                                            </li>
-                                            <li className='nav-drop-list-item'>
-                                                <Link href='/pricing' className='flex flex-col gap-4 items-center group hover:bg-[#fbfbfb] px-[3vw] py-4 rounded-xl transition border border-gray-100 mx-8' >
-                                                    <img className='h-[9vw]' loading='lazy' width="170" height="140" src='/assets/pricing/business.svg' alt='price image'/>
-                                                    <div>
-                                                        <p className='text-head text-2xl text-center transition mb-2'>Business</p>
-                                                        <p className='text-primary text-2xl text-center group-hover:text-primary transition'>$ 8.00<span className='text-gray-400'> /year</span></p>
-                                                    </div>
-                                                </Link>
-                                            </li>
+                                                <div className='section-btn-container'>
+                                                    <PrimaryButton 
+                                                        link="/pricing"
+                                                        btnText="Get Started"
+                                                    />
+                                                </div>
+                                            </div>
                                         </ul>
-                                        <div className='section-btn-container mb-10'>
-                                            <PrimaryButton 
-                                                link="/pricing"
-                                                btnText="Get Started"
-                                            />
-                                        </div>
                                     </motion.div>
                                 )}
                         </li>
@@ -409,76 +358,46 @@ const Header = () => {
                                         transition={{ duration: 0.4 }} 
                                         className='nav-dropdown'>
                                         <ul className='nav-dropdown-list'>
+                                            <NavItem 
+                                                title={'Blog'}
+                                                disc={'Lorem Ipsum is simply dummy text'}
+                                                link={'/blog'}
+                                                img={'resource-blog.svg'}
+                                            />
+                                            <NavItem 
+                                                title={'Guides'}
+                                                disc={'Lorem Ipsum is simply dummy text'}
+                                                link={'/guides'}
+                                                img={'resource-guides.svg'}
+                                            />
+                                            <NavItem 
+                                                title={'Ebooks'}
+                                                disc={'Lorem Ipsum is simply dummy text'}
+                                                link={'/ebooks'}
+                                                img={'resource-ebooks.svg'}
+                                            />
+                                            <NavItem 
+                                                title={'Webinars'}
+                                                disc={'Lorem Ipsum is simply dummy text'}
+                                                link={'/webinars'}
+                                                img={'resource-webinars.svg'}
+                                            />
+                                            <NavItem 
+                                                title={'Case Studies'}
+                                                disc={'Lorem Ipsum is simply dummy text'}
+                                                link={'/case-studies'}
+                                                img={'resource-case-studies.svg'}
+                                            />
+                                            <NavItem 
+                                                title={'Product Videos'}
+                                                disc={'Lorem Ipsum is simply dummy text'}
+                                                link={'/product-videos'}
+                                                img={'resource-product-videos.svg'}
+                                            />
                                             <li className='nav-drop-list-item'>
-                                                <Link href='/blog' className='nav-drop-list-hover' >
+                                                <Link href='https://community.patronum.io' target='_blank' className='nav-drop-list-hover' >
                                                     <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/resource-blog.svg' alt='resource icon'/>
-                                                    </div>
-                                                    <div className='w-[16vw]'>
-                                                        <p className='nav-drop-title'>Blog</p>
-                                                        <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
-                                                    </div>
-                                                </Link>
-                                            </li>
-                                            <li className='nav-drop-list-item'>
-                                                <Link href='/guides' className='nav-drop-list-hover' >
-                                                    <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/resource-guides.svg' alt='resource icon'/>
-                                                    </div>
-                                                    <div className='w-[16vw]'>
-                                                        <p className='nav-drop-title'>Guides</p>
-                                                        <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
-                                                    </div>
-                                                </Link>
-                                            </li>
-                                            <li className='nav-drop-list-item'>
-                                                <Link href='/ebooks' className='nav-drop-list-hover' >
-                                                    <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/resource-ebooks.svg' alt='resource icon'/>
-                                                    </div>
-                                                    <div className='w-[16vw]'>
-                                                        <p className='nav-drop-title'>Ebooks</p>
-                                                        <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
-                                                    </div>
-                                                </Link>
-                                            </li>
-                                            <li className='nav-drop-list-item'>
-                                                <Link href='/webinars' className='nav-drop-list-hover' >
-                                                    <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/resource-webinars.svg' alt='resource icon'/>
-                                                    </div>
-                                                    <div className='w-[16vw]'>
-                                                        <p className='nav-drop-title'>Webinars</p>
-                                                        <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
-                                                    </div>
-                                                </Link>
-                                            </li>
-                                            <li className='nav-drop-list-item'>
-                                                <Link href='/case-studies' className='nav-drop-list-hover' >
-                                                    <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/resource-case-studies.svg' alt='resource icon'/>
-                                                    </div>
-                                                    <div className='w-[16vw]'>
-                                                        <p className='nav-drop-title'>Case Studies</p>
-                                                        <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
-                                                    </div>
-                                                </Link>
-                                            </li>
-                                            <li className='nav-drop-list-item'>
-                                                <Link href='/product-videos' className='nav-drop-list-hover' >
-                                                    <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/resource-product-videos.svg' alt='resource icon'/>
-                                                    </div>
-                                                    <div className='w-[16vw]'>
-                                                        <p className='nav-drop-title'>Product Videos</p>
-                                                        <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
-                                                    </div>
-                                                </Link>
-                                            </li>
-                                            <li className='nav-drop-list-item'>
-                                                <Link href='https://community.patronum.io' target='_blank' className='nav-drop-list-hover'>
-                                                    <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/resource-community.svg' alt='resource icon'/>
+                                                        <img loading='lazy' src='/assets/menu/resource-community.svg' alt='menu icon'/>
                                                     </div>
                                                     <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>Community</p>
@@ -487,9 +406,9 @@ const Header = () => {
                                                 </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='https://help.patronum.com' target='_blank' className='nav-drop-list-hover'>
+                                                <Link href='https://help.patronum.io' target='_blank' className='nav-drop-list-hover' >
                                                     <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/resource-help.svg' alt='resource icon'/>
+                                                        <img loading='lazy' src='/assets/menu/resource-help.svg' alt='menu icon'/>
                                                     </div>
                                                     <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>Help</p>
@@ -497,17 +416,12 @@ const Header = () => {
                                                     </div>
                                                 </Link>
                                             </li>
-                                            <li className='nav-drop-list-item'>
-                                                <Link href='/legal' className='nav-drop-list-hover' >
-                                                    <div className='img'>
-                                                        <img loading='lazy' src='/assets/menu/resource-legal.svg' alt='resource icon'/>
-                                                    </div>
-                                                    <div className='w-[16vw]'>
-                                                        <p className='nav-drop-title'>Legal</p>
-                                                        <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
-                                                    </div>
-                                                </Link>
-                                            </li>
+                                            <NavItem 
+                                                title={'Legal'}
+                                                disc={'Lorem Ipsum is simply dummy text'}
+                                                link={'/legal'}
+                                                img={'resource-legal.svg'}
+                                            />
                                         </ul>
                                     </motion.div>
                                 )}
