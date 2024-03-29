@@ -1002,7 +1002,7 @@ section{
 
 .feat-accordion-btn .plus, .feat-accordion-btn .minus{
   background: var(--text-head);
-  height: 5%;
+  height: 3px;
   width: 40%;
   position: absolute;
   transition: all 0.3s ease;
@@ -1119,7 +1119,7 @@ section{
   align-items: center;
   width: 100%;
   padding: 0% 5%;
-  height: 37vw;
+  height: 35vw;
 }
 .useCase-item-left{
   width: 35%;
@@ -1326,7 +1326,7 @@ section{
   margin-bottom: 2vw;
 }
 .para-italic{
-  font-size: 1.3vw;
+  font-size: 1.2vw;
   font-weight: 500;
   font-family: 'Aeonik';
   font-style: italic;
@@ -1529,7 +1529,7 @@ section{
   transition: 0.3s;
 }
 .faq-item.open .faq-content{
-  height: 9vw;
+  height: 6vw;
 }
 .faq-arrow{
   position: absolute;

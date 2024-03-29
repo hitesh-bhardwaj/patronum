@@ -23,7 +23,7 @@ export default function Hero(){
     };
 
     useEffect(() => {
-        const isFirstTimeLoading = localStorage.getItem('hasVisited') === null;
+        const isFirstTimeLoading = sessionStorage.getItem('hasVisited') === null;
         let delayTime = isFirstTimeLoading ? 3.4 : 0.6;
 
         let ctx = gsap.context(() => {
@@ -31,13 +31,19 @@ export default function Hero(){
             const text = new SplitType('.hero-para', {types: 'words'});
             const heroPara = document.querySelectorAll('.hero-para span .word');
             const heroAnim = document.querySelectorAll(".hero-anim .span");
+            const headerAnim = document.querySelectorAll(".header-anim");
 
             const tl = gsap.timeline();
-            tl.to(heroAnim, 0.8,{
+            tl.from(headerAnim, 1,{
+                opacity: 0,
+                stagger: 0.05,
+                ease: 'power2.out',
+            }, `+=${delayTime}`)
+            .to(heroAnim, 0.8,{
                 y: 0,
                 stagger: 0.1,
                 ease: 'power2.out',
-            }, `+=${delayTime}`)
+            }, '-=1')
             .to(heroPara, 0.4,{
                 y: 0,
                 opacity: 1,
@@ -64,24 +70,6 @@ export default function Hero(){
                 opacity: 1,
                 ease: "expo.out",
             }, '-=2');
-        });
-        return () => ctx.revert();
-    }, []);
-
-    useEffect(() => {
-        const isFirstTimeLoading = localStorage.getItem('hasVisited') === null;
-        let delayTime = isFirstTimeLoading ? 3.4 : 0.6;
-
-        let ctx = gsap.context(() => {
-
-            const headerAnim = document.querySelectorAll(".header-anim");
-
-            const tl = gsap.timeline();
-            tl.from(headerAnim, 1,{
-                opacity: 0,
-                stagger: 0.05,
-                ease: 'power2.out',
-            }, `+=${delayTime}`);
         });
         return () => ctx.revert();
     }, []);

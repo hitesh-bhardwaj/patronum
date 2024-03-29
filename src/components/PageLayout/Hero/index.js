@@ -17,29 +17,12 @@ export default function Hero( {pageTitle1, pageTitle2, pagePara, imgSrc} ){
     };
 
     useEffect(() => {
-        const isFirstTimeLoading = localStorage.getItem('hasVisited') === null;
+        const isFirstTimeLoading = sessionStorage.getItem('hasVisited') === null;
         let delayTime = isFirstTimeLoading ? 3.4 : 0.6;
 
         let ctx = gsap.context(() => {
 
             const headerAnim = document.querySelectorAll(".header-anim");
-
-            const tl = gsap.timeline();
-            tl.from(headerAnim, 1,{
-                opacity: 0,
-                stagger: 0.05,
-                ease: 'power2.out',
-            }, `+=${delayTime}`);
-        });
-        return () => ctx.revert();
-    }, []);
-
-    useEffect(() => {
-        const isFirstTimeLoading = localStorage.getItem('hasVisited') === null;
-        let delayTime = isFirstTimeLoading ? 3.4 : 0.6;
-
-        let ctx = gsap.context(() => {
-  
             const heroPara = document.querySelector('.hero-para');
             const title = new SplitType('.page-hero-anim', {types: 'words'});
             const titleAnim = document.querySelectorAll('.page-hero-anim span .word');
@@ -49,11 +32,15 @@ export default function Hero( {pageTitle1, pageTitle2, pagePara, imgSrc} ){
                     ease: "power2.out"
                 }
             });
-  
-            tl.to(titleAnim, 0.8,{
+            tl.from(headerAnim, 1,{
+                opacity: 0,
+                stagger: 0.05,
+                ease: 'power2.out',
+            }, `+=${delayTime}`)
+            .to(titleAnim, 0.8,{
                 y: 0,
                 stagger: 0.02,
-            }, `+=${delayTime}`)
+            }, "-=1")
             tl.to(heroPara, 0.8,{
                 y: 0,
                 opacity: 1,

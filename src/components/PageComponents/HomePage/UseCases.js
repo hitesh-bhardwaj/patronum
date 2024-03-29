@@ -171,7 +171,7 @@ export default function UseCases() {
                                                     <br />
                                                     <br />
                                                     <span>
-                                                        Patronum brings this vision to life, offering a suite of capabilities tailored for both large enterprises and SMEs. From intricate Google Drive Management, and strategic Contact Sharing, to dynamic Email Signature Management, Patronum equips IT professionals and non-IT managers alike with unparalleled control and customization.
+                                                        Patronum brings this vision to life, offering a suite of capabilities tailored for both large enterprises and SMEs. From Google Drive Management & Contact Sharing, to Email Signature Management, Patronum equips IT professionals and non-IT managers alike with unparalleled control and customization.
                                                     </span>
                                                 </p>
                                                 <Link href="/patronum-for-business" className="link-btn">
@@ -207,13 +207,12 @@ export default function UseCases() {
                                                 </p>
                                                 <p className="content-p mb-[1.5vw]">
                                                     <span>
-                                                        As a human resource executive, do you day dream of offering a personalised, yet resource-rich and interconnected workspace experience to each user in your organisation? With Patronum, onboarding new hires is a tailored journey, where new staff members are greeted by a Google Workspace sculpted just for their role. Google Groups, Labels, Calendars, and Contacts converge, syncing seamlessly with smart devices.
-
+                                                        As an HR executive, do you daydream of offering a personalised, resource-rich and interconnected workspace experience to each user? 
                                                     </span>
                                                     <br />
                                                     <br />
                                                     <span>
-                                                    With Patronum, your team isn't just working—they're thriving from the outset, enveloped in a culture of collaboration that fuels job satisfaction and retention.                 
+                                                        With Patronum, onboarding new hires is a tailored journey, where new members are greeted by a Google Workspace sculpted just for their role. Google Groups, Labels, Calendars, and Contacts converge, syncing seamlessly with smart devices. With Patronum, your team is thriving from the outset, enveloped in a culture of collaboration.             
                                                     </span>
                                                 </p>
                                                 <Link href="/patronum-for-hr" className="link-btn">
@@ -249,12 +248,13 @@ export default function UseCases() {
                                                 </p>
                                                 <p className="content-p mb-[1.5vw]">
                                                     <span>
-                                                        Patronum is a catalyst for synergy between sales and marketing, breaking down silos and fostering a culture of shared success. Patronum transforms the mundane into the extraordinary, enabling sales and marketing managers to directly manage key Google Workspace features - from resetting passwords to configuring email signatures. From shared contacts and customer lists to up-to-date templates, every feature is designed to streamline workflows and amplify your market presence.
+                                                        Patronum breaks down silos, fostering a culture of shared success. Patronum enables sales & marketing managers to directly manage key Google Workspace features - from resetting passwords to configuring email signatures. From shared contacts and customer lists to up-to-date templates, every feature is designed to streamline workflows & amplify your market presence.
                                                     </span>
                                                     <br />
                                                     <br />
                                                     <span>
-                                                        In the high-stakes world of sales and marketing, Patronum is your secret weapon. It's like having a digital wizard at your fingertips, ensuring your team remains in the fast lane, fully equipped and ready from day one.                                        </span>
+                                                        Patronum is like having a digital wizard at your fingertips, ensuring your team remains in the fast lane, fully equipped and ready from day one.
+                                        </span>
                                                 </p>
                                                 <Link href="/patronum-for-sales-marketing" className="link-btn">
                                                     <span className="btn-text">Learn More</span>
@@ -332,7 +332,7 @@ export default function UseCases() {
                                                     <br />
                                                     <br />
                                                     <span>
-                                                        Patronum eliminates the common hurdles of document access and schedule coordination, enabling your all team members to focus on productivity. Patronum also enhances organisational connectivity, providing immediate access to an internal staff directory. With the ability to search for colleagues by department, location, or skillset via the Organisation Chart and People Finder, collaboration within the organisation becomes seamless and more intuitive.                                        </span>
+                                                        Patronum eliminates the common hurdles of document access and schedule coordination, enabling your all team members to focus on productivity. Patronum also enhances organisational connectivity, with the ability to search for colleagues by department, location, or skillset via the Organisation Chart and People Finder.                                        </span>
                                                 </p>
                                                 <Link href="/patronum-for-users" className="link-btn">
                                                     <span className="btn-text">Learn More</span>
