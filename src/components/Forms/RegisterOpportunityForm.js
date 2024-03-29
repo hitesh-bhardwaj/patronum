@@ -1,8 +1,9 @@
-"use client";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
+import Link from "next/link";
+import { useState } from 'react';
+import axios from 'axios';
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -15,23 +16,18 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-import { PhoneInput } from "../ui/phone-input";
-import { isValidPhoneNumber } from "react-phone-number-input";
-
-import Link from "next/link";
-import { useState } from 'react';
-import axios from 'axios';
+import CountrySelector from "../ui/country-selector";
+import { COUNTRIES } from "@/lib/countries";
 
 const formSchema = z.object({
     name: z.string().min(1, {message: "Name is required."}),
     email: z.string().min(1, {message: "Email is required."}).email({message: "Invalid email format."}),
     company: z.string().min(1, {message: "Company Name is required."}),
     country: z.string().min(1, {message: "Country is required."}),
-    phone: z.string().refine(isValidPhoneNumber, {message: "Invalid phone number."}),
     clname: z.string().min(1, {message: "Client Name is required."}),
     clemail: z.string().min(1, {message: "Client Email is required."}).email({message: "Invalid email format."}),
     clcompany: z.string().min(1, {message: "Client Company Name is required."}),
-    clcountry: z.string().min(1, {message: "Client Country is required."}),
+    clcountry: z.string().min(1, "Country is required."),
     cldomain: z.string().min(1, {message: "This field is required."}),
     cluser: z.string().min(1, {message: "This field is required."}),
     textarea: z.string().min(1, {message: "Message is Required."}),
@@ -40,7 +36,8 @@ const formSchema = z.object({
 
 // Update the ContactForm component
 export default function RegisterOpportunityForm() {
-
+    const [isOpen, setIsOpen] = useState(false);
+    const [country, setCountry] = useState("GB");
     const [submitting, setSubmitting] = useState(false);
     const [submissionError, setSubmissionError] = useState(null);
     const [submissionSuccess, setSubmissionSuccess] = useState(false);
@@ -55,11 +52,10 @@ export default function RegisterOpportunityForm() {
         clname: "",
         clemail: "",
         clcompany: "",
-        clcountry: "",
+        clcountry: "GB",
         cldomain: "",
         cluser: "",
         textarea: "",
-        phone: "",
         terms: false,
         },
     });
@@ -67,7 +63,7 @@ export default function RegisterOpportunityForm() {
     const onSubmit = async (data) => {
         setSubmitting(true);
         try {
-
+            const countryName = COUNTRIES.find(c => c.value === country)?.title || 'Not specified';
             // Format the email message
             const message = `
                 <h1><strong>Register An Opportunity Form Submission</strong></h1>
@@ -76,12 +72,11 @@ export default function RegisterOpportunityForm() {
                 <p><strong>Partner Email:</strong> ${data.email}</p>
                 <p><strong>Partner Organisation Name:</strong> ${data.company}</p>
                 <p><strong>Partner Country:</strong> ${data.country}</p>
-                <p><strong>Partner Phone Number:</strong> ${data.phone}</p><br>
                 <h3>Opportunity Details:</h3
                 <p><strong>Client Name:</strong> ${data.clname}</p>
                 <p><strong>Client Email:</strong> ${data.clemail}</p>
                 <p><strong>Client Organisation Name:</strong> ${data.clcompany}</p>
-                <p><strong>Client Country:</strong> ${data.clcountry}</p>
+                <p><strong>Partner Country:</strong> ${countryName}</p>
                 <p><strong>Client Google Workspace Domain:</strong> ${data.cldomain}</p>
                 <p><strong>Client Number of Licensed User:</strong> ${data.cluser}</p><br>
                 <p><strong>Message:</strong> ${data.textarea}</p>
@@ -89,7 +84,7 @@ export default function RegisterOpportunityForm() {
             `;
 
             // Make a POST request to your API route
-            const response = await axios.post('/api/send-email', {
+            await axios.post('/api/send-email', {
                 message: message, // Pass the formatted message to the API
                 subject: "Opportunity Form Submission",
             });
@@ -141,7 +136,7 @@ export default function RegisterOpportunityForm() {
             )}
         />
 
-        {/* Company field */}
+        {/* Country field */}
         <FormField 
             control={form.control}
             name="country"
@@ -165,26 +160,6 @@ export default function RegisterOpportunityForm() {
                     <FormLabel>Business Email</FormLabel>
                     <FormControl>
                         <Input placeholder="Enter Your Email" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                </FormItem>
-            )}
-        />
-
-        {/* Phone Input Field */}
-        <FormField
-            control={form.control}
-            name="phone"
-            render={({ field }) => (
-                <FormItem className="flex flex-col items-start required">
-                    <FormLabel className="text-left">Phone Number</FormLabel>
-                    <FormControl className="w-full">
-                        <PhoneInput 
-                            international
-                            defaultCountry="US"
-                            placeholder="Enter Mobile Number" 
-                            {...field} 
-                        />
                     </FormControl>
                     <FormMessage />
                 </FormItem>
@@ -225,15 +200,24 @@ export default function RegisterOpportunityForm() {
             )}
         />
 
-        {/* Company field */}
-        <FormField 
+        {/* Country Selector Field */}
+        <FormField
             control={form.control}
             name="clcountry"
-            render= {({ field }) => (
+            render={({ field }) => (
                 <FormItem className="required">
-                    <FormLabel>Client Country</FormLabel>
+                    <FormLabel>Country</FormLabel>
                     <FormControl>
-                        <Input placeholder="Client Country" {...field}/>
+                        <CountrySelector
+                            id={"country-selector"}
+                            open={isOpen}
+                            onToggle={() => setIsOpen(!isOpen)}
+                            onChange={(value) => {
+                                setCountry(value);
+                                field.onChange(value);
+                            }}
+                            selectedValue={COUNTRIES.find((option) => option.value === country)}
+                        />
                     </FormControl>
                     <FormMessage />
                 </FormItem>
@@ -285,7 +269,7 @@ export default function RegisterOpportunityForm() {
             )}
         />
 
-        {/* Email field */}
+        {/* TextArea field */}
         <FormField 
             control={form.control}
             name="textarea"

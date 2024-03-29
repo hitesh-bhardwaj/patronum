@@ -83,8 +83,9 @@ const Faqs = ({ featureName }) => {
                             <div className='faq-main-content'>
                               {item.title}
                             </div>
-                            <div className='faq-arrow features'>
-                              <img className='transition' height="15" width="15" src="/assets/icons/faq-arrow.svg" alt='arrow icon'/>
+                            <div className="feat-accordion-btn">
+                              <span className="plus"/>
+                              <span className="minus"/>
                             </div>
                           </AccordionTrigger>
                           <AccordionContent className="content-p faq-main-content ml-[7vw] features">

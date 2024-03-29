@@ -1,8 +1,6 @@
-"use client";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -15,9 +13,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-import { PhoneInput } from "../ui/phone-input";
-import { isValidPhoneNumber } from "react-phone-number-input";
-
+import CountrySelector from "../ui/country-selector";
+import { COUNTRIES } from "@/lib/countries";
 import Link from "next/link";
 import { useState } from 'react';
 import axios from 'axios';
@@ -26,15 +23,15 @@ const formSchema = z.object({
     name: z.string().min(1, {message: "Name is required."}),
     email: z.string().min(1, {message: "Email is required."}).email({message: "Invalid email format."}),
     company: z.string().min(1, {message: "Company Name is required."}),
-    country: z.string().min(1, {message: "Country is required."}),
-    phone: z.string().refine(isValidPhoneNumber, {message: "Invalid phone number."}),
+    country: z.string().min(1, "Country is required."),
     textarea: z.string().min(1, {message: "Message is Required."}),
     terms: z.boolean().refine(value => value === true, {message: "You must agree to the terms."}),
 });
 
 // Update the ContactForm component
 export default function BecomePartnerForm() {
-
+    const [isOpen, setIsOpen] = useState(false);
+    const [country, setCountry] = useState("GB");
     const [submitting, setSubmitting] = useState(false);
     const [submissionError, setSubmissionError] = useState(null);
     const [submissionSuccess, setSubmissionSuccess] = useState(false);
@@ -45,7 +42,7 @@ export default function BecomePartnerForm() {
         name: "",
         email: "",
         company: "",
-        country: "",
+        country: "GB",
         textarea: "",
         phone: "",
         terms: false,
@@ -56,23 +53,21 @@ export default function BecomePartnerForm() {
         setSubmitting(true);
         try {
 
-            // Format the email message
+            const countryName = COUNTRIES.find(c => c.value === country)?.title || 'Not specified';
             const message = `
                 <h1><strong>Become Partner Form Submission</strong></h1>
                 <p><strong>Name:</strong> ${data.name}</p>
                 <p><strong>Email:</strong> ${data.email}</p>
                 <p><strong>Organisation Name:</strong> ${data.company}</p>
-                <p><strong>Country:</strong> ${data.country}</p>
-                <p><strong>Phone Number:</strong> ${data.phone}</p>
+                <p><strong>Country:</strong> ${countryName}</p>
                 <p><strong>Message:</strong> ${data.textarea}</p>
                 <p><strong>Terms Agreement:</strong> ${data.terms ? 'Agreed' : 'Not Agreed'}</p>
             `;
 
-            // Make a POST request to your API route
-            const response = await axios.post('/api/send-email', {
-                message: message, // Pass the formatted message to the API
-                subject: "Become Partner Form",
-            });
+            await axios.post('/api/send-email', {
+                message: message,
+                subject: "Become Partner Form Submission",
+            }); 
             
             form.reset();
             setSubmitting(false);
@@ -86,6 +81,7 @@ export default function BecomePartnerForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 contact-form">
+        
         {/* Form fields */}
         {/* Name field */}
         <FormField
@@ -117,15 +113,24 @@ export default function BecomePartnerForm() {
             )}
         />
 
-        {/* Company field */}
-        <FormField 
+        {/* Country Selector Field */}
+        <FormField
             control={form.control}
             name="country"
-            render= {({ field }) => (
+            render={({ field }) => (
                 <FormItem className="required">
                     <FormLabel>Country</FormLabel>
                     <FormControl>
-                        <Input placeholder="Enter Country" {...field}/>
+                        <CountrySelector
+                            id={"country-selector"}
+                            open={isOpen}
+                            onToggle={() => setIsOpen(!isOpen)}
+                            onChange={(value) => {
+                                setCountry(value);
+                                field.onChange(value);
+                            }}
+                            selectedValue={COUNTRIES.find((option) => option.value === country)}
+                        />
                     </FormControl>
                     <FormMessage />
                 </FormItem>
@@ -141,26 +146,6 @@ export default function BecomePartnerForm() {
                     <FormLabel>Business Email</FormLabel>
                     <FormControl>
                         <Input placeholder="Enter Your Email" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                </FormItem>
-            )}
-        />
-
-        {/* Phone Input Field */}
-        <FormField
-            control={form.control}
-            name="phone"
-            render={({ field }) => (
-                <FormItem className="flex flex-col items-start required">
-                    <FormLabel className="text-left">Phone Number</FormLabel>
-                    <FormControl className="w-full">
-                        <PhoneInput 
-                            international
-                            defaultCountry="US"
-                            placeholder="Enter Mobile Number" 
-                            {...field} 
-                        />
                     </FormControl>
                     <FormMessage />
                 </FormItem>

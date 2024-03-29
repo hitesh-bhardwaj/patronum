@@ -1,8 +1,9 @@
-"use client";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
+import Link from "next/link";
+import { useState } from 'react';
+import axios from 'axios';
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -13,25 +14,22 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import Link from "next/link";
 import { Checkbox } from "@/components/ui/checkbox";
-import { PhoneInput } from "../ui/phone-input";
-import { isValidPhoneNumber } from "react-phone-number-input";
-
-import { useState } from 'react';
-import axios from 'axios';
+import CountrySelector from "../ui/country-selector";
+import { COUNTRIES } from "@/lib/countries";
 
 const formSchema = z.object({
     name: z.string().min(1, {message: "Name is required."}),
     email: z.string().min(1, {message: "Email is required."}).email({message: "Invalid email format."}),
     company: z.string().min(1, "Company Name is required."),
-    phone: z.string().refine(isValidPhoneNumber, "Invalid phone number."),
+    country: z.string().min(1, "Country is required."),
     terms: z.boolean().refine(value => value === true, "You must agree to the terms."),
 });
 
 // Update the ContactForm component
 export default function ContactForm() {
-
+    const [isOpen, setIsOpen] = useState(false);
+    const [country, setCountry] = useState("GB");
     const [submitting, setSubmitting] = useState(false);
     const [submissionError, setSubmissionError] = useState(null);
     const [submissionSuccess, setSubmissionSuccess] = useState(false);
@@ -42,7 +40,7 @@ export default function ContactForm() {
         name: "",
         email: "",
         company: "",
-        phone: "",
+        country: "GB",
         terms: false,
         },
     });
@@ -50,22 +48,20 @@ export default function ContactForm() {
     const onSubmit = async (data) => {
         setSubmitting(true);
         try {
-
-            // Format the email message
+            const countryName = COUNTRIES.find(c => c.value === country)?.title || 'Not specified';
             const message = `
                 <h1>New Contact Form Submission</h1>
                 <p><strong>Name:</strong> ${data.name}</p>
                 <p><strong>Email:</strong> ${data.email}</p>
                 <p><strong>Company Name:</strong> ${data.company}</p>
-                <p><strong>Phone Number:</strong> ${data.phone}</p>
+                <p><strong>Country:</strong> ${countryName}</p>
                 <p><strong>Terms Agreement:</strong> ${data.terms ? 'Agreed' : 'Not Agreed'}</p>
             `;
 
-            // Make a POST request to your API route
-            const response = await axios.post('/api/send-email', {
-                message: message, // Pass the formatted message to the API
+            await axios.post('/api/send-email', {
+                message: message,
                 subject: "Contact Form Submission",
-            });
+            });     
             
             form.reset();
             setSubmitting(false);
@@ -80,6 +76,7 @@ export default function ContactForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 contact-form">
+        
         {/* Form fields */}
         {/* Name field */}
         <FormField
@@ -95,6 +92,7 @@ export default function ContactForm() {
             </FormItem>
           )}
         />
+
         {/* Email field */}
         <FormField 
             control={form.control}
@@ -109,6 +107,7 @@ export default function ContactForm() {
                 </FormItem>
             )}
         />
+
         {/* Company field */}
         <FormField 
             control={form.control}
@@ -124,19 +123,23 @@ export default function ContactForm() {
             )}
         />
 
-        {/* Phone Input Field */}
+        {/* Country Selector Field */}
         <FormField
             control={form.control}
-            name="phone"
+            name="country"
             render={({ field }) => (
-                <FormItem className="flex flex-col items-start required mobile">
-                    <FormLabel className="text-left">Mobile Number</FormLabel>
-                    <FormControl className="w-full">
-                        <PhoneInput 
-                            international
-                            defaultCountry="US"
-                            placeholder="Enter Mobile Number" 
-                            {...field} 
+                <FormItem className="required">
+                    <FormLabel>Country</FormLabel>
+                    <FormControl>
+                        <CountrySelector
+                            id={"country-selector"}
+                            open={isOpen}
+                            onToggle={() => setIsOpen(!isOpen)}
+                            onChange={(value) => {
+                                setCountry(value);
+                                field.onChange(value);
+                            }}
+                            selectedValue={COUNTRIES.find((option) => option.value === country)}
                         />
                     </FormControl>
                     <FormMessage />
@@ -166,16 +169,13 @@ export default function ContactForm() {
             </FormItem>
           )}
         />
-        {/* Submit button */}
-        {/* <Button type="submit">Submit</Button> */}
 
+        {/* Submit button */}
         <Button type="submit" disabled={submitting}>
             {submitting ? 'Submitting...' : 'Submit'}
         </Button>
         {submissionError && <p className="text-red-500">{submissionError}</p>}
-        {submissionSuccess && (
-            <p className="text-green-500">Email sent successfully!</p>
-        )}
+        {submissionSuccess && <p className="text-green-500">Email sent successfully!</p>}
       </form>
     </Form>
   );

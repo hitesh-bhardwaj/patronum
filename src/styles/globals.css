@@ -1543,6 +1543,28 @@ section{
 .faq-item.open .faq-arrow img{
   rotate: -45deg;
 }
+.faq-item .feat-accordion-btn{
+  top: 2.2vw;
+}
+.faq-item.open .feat-accordion-btn{
+  background-color: var(--text-head);
+  border-color: var(--text-head);
+}
+.faq-item.open .feat-accordion-btn .minus{
+  background: white;
+}
+
+.faq-item-content .feat-accordion-btn{
+  top: 2vw;
+  right: 1.5vw;
+}
+.faq-item-content[data-state='open'] .feat-accordion-btn{
+  background-color: var(--text-head);
+  border-color: var(--text-head);
+}
+.faq-item-content[data-state='open'] .feat-accordion-btn .minus{
+  background: white;
+}
 
 /* FAQs Section - 1920 End - Index*/
 
@@ -2095,7 +2117,7 @@ section{
   height: 80%;
   transition: all 0.3s ease-in;
 }
-.video-modal-overlay .modal-close{
+ .modal-close{
   position: absolute;
   right: 6vw;
   top: 3vw;
@@ -2107,7 +2129,7 @@ section{
   justify-content: center;
   align-items: center;
 }
-.video-modal-overlay .modal-close .modal-btn{
+ .modal-close .modal-btn{
   width: 40%;
   height: 3%;
   background: rgb(0, 0, 0);
@@ -2115,15 +2137,15 @@ section{
   position: absolute;
   transition: scale 0.3s ease;
 }
-.video-modal-overlay .modal-close:hover .modal-btn{
+ .modal-close:hover .modal-btn{
   rotate: 180deg;
   transition: all 0.3s ease;
   scale: 0.9;
 }
-.video-modal-overlay .modal-close .close-plus{
+ .modal-close .close-plus{
   transform: rotate(45deg);
 }
-.video-modal-overlay .modal-close .close-minus{
+ .modal-close .close-minus{
   transform: rotate(-45deg);
 }
 .video-modal-overlay .modal>div{
@@ -2660,13 +2682,10 @@ section{
   visibility: none;
 }
 #install-modal .install-modal-container{
-  width: 91%;
-  height: 94%;
+  width: 80%;
+  height: auto;
   background: white;
   border-radius: 30px;
-}
-#install-modal .install-left{
-  margin-top: 2%;
 }
 #install-modal .install-right{
   background: #FDFDFD;
@@ -3058,6 +3077,13 @@ section{
   }
   .faq-item .faq-content .content-p{
     font-size: 3.5vw;
+  }
+
+  .faq-item .feat-accordion-btn{
+    top: 3vw;
+  }
+  .faq-item-content .feat-accordion-btn{
+    top: 3vw;
   }
 
   .content-p.features{
@@ -3584,7 +3610,8 @@ section{
     width: 80%;
     height: fit-content;
     border-radius: 15px;
-    padding: 10% 2% 6%;
+    padding-left: 2%;
+    padding-right: 2%;
   }
   #install-modal .install-left{
     display: none;
@@ -3597,6 +3624,7 @@ section{
   #install-modal .install-right .contact-form>div{
     margin-bottom: 6vw !important;
   }
+
   .en-btn_cta{
     font-size: 3vw;
     padding: 1.5vw 3vw;
@@ -3605,13 +3633,18 @@ section{
     width: 80%;
     height: 40%;
   }
-  .video-modal-overlay .modal-close{
+ .modal-close{
     top: 22%;
     right: 10vw;
     width: 7vw;
     height: 7vw;
   }
-
+.install-modal-overlay .modal-close{
+  top: 12%;
+  width: 7vw;
+  height: 7vw;
+}
+  
   /* Webinars 900px */
   .cards-wrapper.webinar{
     display: block;
@@ -3770,6 +3803,11 @@ section{
 }
 .link-btn svg{
   width: 6vw;
+}
+
+/* Faq Section Home Page 640px */
+.feat-accordion-btn .plus, .feat-accordion-btn .minus{
+  height: 2px;
 }
 
   /* Recent Blogs Home Page 640px*/
