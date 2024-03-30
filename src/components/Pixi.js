@@ -1,5 +1,4 @@
 import SimplexNoise from 'simplex-noise';
-import hsl from 'hsl-to-hex';
 import debounce from 'debounce';
 import { useEffect } from 'react';
 

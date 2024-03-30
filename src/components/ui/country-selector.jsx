@@ -45,7 +45,6 @@ export default function CountrySelector({
               alt={`${selectedValue.value}`}
               src={`https://purecatamphetamine.github.io/country-flag-icons/3x2/${selectedValue.value}.svg`}
               className={"inline mr-3 relative lg:h-4 md:h-6 h-4 rounded-sm"}
-              loading={"lazy"}
             />
             <span className="pl-3 relative after:left-0 after:top-0 after:absolute after:block after:h-full after:w-[2px] after:bg-gray-200 after:rounded-2xl">
                 {selectedValue.title}

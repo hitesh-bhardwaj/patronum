@@ -8,16 +8,12 @@ import { ModalProvider } from '@/components/InstallModal/ModelContext';
 import { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import PreLoader from '@/components/PreLoader';
+import InstallModal from '@/components/InstallModal';
+import DemoModal from '@/components/InstallModal/DemoModal';
 
 // Import the Background component dynamically
 const Background = dynamic(() => import('@/components/Pixi'), {
   ssr: false, 
-});
-const LazyInstallModal = dynamic(() => import('@/components/InstallModal'), {
-  ssr: false,
-});
-const LazyDemoModal = dynamic(() => import('@/components/InstallModal/DemoModal'), {
-  ssr: false,
 });
 
 export default function App({ Component, pageProps, router }) {
@@ -93,8 +89,8 @@ export default function App({ Component, pageProps, router }) {
           <AnimatePresence mode="wait">
             <Component {...pageProps} key={router.route}/>
           </AnimatePresence>
-          <LazyInstallModal />
-          <LazyDemoModal />
+          <InstallModal />
+          <DemoModal />
         </ModalProvider>
       </ReactLenis>
       <SpeedInsights />

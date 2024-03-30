@@ -90,6 +90,8 @@ export default function Hero(){
                                         alt='Google Logo'
                                         title='Google Logo'
                                         className='google-logo-hero span'
+                                        width={750}
+                                        height={100}
                                     />
                                 </div>
                                 
@@ -106,12 +108,12 @@ export default function Hero(){
                                             Your
                                         </span>
                                         <span className="md:w-[45%] w-[50%] mt-[1.5vw] span">
-                                            <img className="w-full google" src="/assets/home/google.svg" alt="hero image" />
+                                            <img className="w-full google" src="/assets/home/google.svg" loading="lazy" width={307} height={100} alt="google logo image" />
                                         </span>
                                     </div>
                                     <div className="hero-anim">
                                         <span className="md:w-[70%] w-[80%] mt-[1.5vw] span">
-                                            <img className="w-full" src="/assets/home/workspace.svg" alt="hero image"/>
+                                            <img className="w-full" src="/assets/home/workspace.svg" loading="lazy" width={450} height={100} alt="google workspace image"/>
                                         </span>
                                     </div>
                                     <div className="hero-anim">
