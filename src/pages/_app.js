@@ -86,9 +86,9 @@ export default function App({ Component, pageProps, router }) {
       {showPreloader && <PreLoader />} 
       <ReactLenis root options={{ duration: 0.8 }}>
         <ModalProvider>
-          <AnimatePresence mode="wait">
+          {/* <AnimatePresence mode="wait"> */}
             <Component {...pageProps} key={router.route}/>
-          </AnimatePresence>
+          {/* </AnimatePresence> */}
           <InstallModal />
           <DemoModal />
         </ModalProvider>
