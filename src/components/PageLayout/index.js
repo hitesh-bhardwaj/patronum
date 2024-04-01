@@ -4,10 +4,7 @@ import { useEffect } from "react";
 import gsap from "gsap"
 import SplitType from "split-type";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import Stairs from "../Stairs";
-import Header from "../Header";
-import Footer from "../Footer";
-import PageLoader from "../PageLoader";
+import Stairs from '@/components/Stairs'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -193,21 +190,18 @@ export default function PageLayout( {pageTitle1, pageTitle2, pagePara, imgSrc, c
       }, []);
 
     return(
-      <>
-        {/* <Stairs> */}
-          <PageLoader />
-          <Header />
-          <main>
-            <Hero
-              pageTitle1={pageTitle1} 
-              pageTitle2={pageTitle2} 
-              pagePara={pagePara} 
-              imgSrc={imgSrc}
-            />
-            {children}
-          </main>
-          <Footer />
-        {/* </Stairs> */}
+        <>  
+          <Stairs>
+            <main>
+              <Hero
+                pageTitle1={pageTitle1} 
+                pageTitle2={pageTitle2} 
+                pagePara={pagePara} 
+                imgSrc={imgSrc}
+              />
+              {children}
+            </main>
+          </Stairs>
       </>
     )
 }

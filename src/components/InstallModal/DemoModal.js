@@ -23,7 +23,6 @@ export default function DemoModal() {
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                             allowFullScreen>
                         </iframe>
-                        {/* <VideoEmbed videoId="A6rBxfmr8hs" /> */}
                         <button className="modal-close" onClick={closeModal} aria-label="Close Video Modal">
                             <span className="close-plus modal-btn"/>
                             <span className="close-minus modal-btn"/>

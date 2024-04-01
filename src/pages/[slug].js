@@ -156,26 +156,6 @@ function PostDetail({ post, recentPosts }) {
         });
         return () => ctx.revert();
       });
-
-
-      // To make section id's Active
-      
-      // useEffect(() => {
-      //   toc.forEach((section) => {
-      //     ScrollTrigger.create({
-      //       trigger: `#${section.id}`,
-      //       start: "top center",
-      //       end: "bottom center",
-      //       onEnter: () => setActiveSection(section.id),
-      //       onEnterBack: () => setActiveSection(section.id),
-      //     });
-      //   });
-      
-      //   return () => {
-      //     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-      //   };
-      // }, [toc]); // Dependency array includes toc to ensure triggers are set up after TOC is defined
-    
     }
 
 return (

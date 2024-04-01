@@ -1,6 +1,4 @@
-'use client'
-import react, { useState } from "react";
-import VideoEmbed from "./VideoEmbed";
+import { useState } from "react";
 
 const VideoPlayer = ( {videoId, videoCover} ) => {
     const [modalOpen, setModalOpen] = useState(false);
@@ -41,17 +39,24 @@ const VideoPlayer = ( {videoId, videoCover} ) => {
                             <img src="/assets/icons/play.svg" alt="Play Video"/>
                         </button>
                     </div>
-                    {/* {modalOpen && ( */}
+                    {modalOpen && (
                         <div className={`video-modal-overlay ${modalOpen ? 'show' : 'hide'}`} onClick={handleModalClick}>
                             <div className="modal">
-                                <VideoEmbed videoId={videoId} />
+                                <iframe
+                                    width="640" 
+                                    height="390" 
+                                    src={`https://www.youtube.com/embed/${videoId}`} 
+                                    title="Patronum - Full product demo" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                    allowFullScreen>
+                                </iframe>
                                 <button className="modal-close" onClick={closeModal} aria-label="Close Video Modal">
                                     <span className="close-plus modal-btn"/>
                                     <span className="close-minus modal-btn"/>
                                 </button>
                             </div>
                         </div>
-                    {/* )} */}
+                    )}
                 </div>
             </div>
         </section>

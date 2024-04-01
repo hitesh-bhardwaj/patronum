@@ -4,39 +4,14 @@ import {
     TwitterShareButton,
     WhatsappShareButton
   } from 'next-share';
-
 import { useEffect } from "react";
 import gsap from "gsap"
-import SplitType from "split-type";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import PageLoader from "@/components/PageLoader";
-import Stairs from "@/components/Stairs";
+import Stairs from '@/components/Stairs'
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function BlogLayout( { children, postTitle, postAuthor, postDate, shareLink, featImg } ) {
-
-    useEffect(() => {
-        const headings = document.querySelectorAll('.text-anim');
-    
-        headings.forEach((heading) => {
-          let ctx = gsap.context(() => {
-            const textAnim = new SplitType(heading, {types: 'words'});
-            let animWord = heading.querySelectorAll('.word');
-    
-            gsap.from(animWord, {
-              scrollTrigger: {
-                trigger: heading,
-                start: 'top 80%',
-              },
-              duration: 0.8,
-              yPercent: 100,
-              stagger: 0.02,
-            });
-          });
-          return () => ctx.revert();
-        });
-      }, []);
 
     useEffect(() => {
         const fadeUps = document.querySelectorAll('.fadeUp');
@@ -67,8 +42,7 @@ export default function BlogLayout( { children, postTitle, postAuthor, postDate,
 
   return(
     <>
-      {/* <PageLoader /> */}
-      <Stairs>
+          <Stairs>
           <main>
             <section id="blog-hero">
               <div className="w-[88%] mx-auto">
@@ -130,7 +104,7 @@ export default function BlogLayout( { children, postTitle, postAuthor, postDate,
             </section>
           {children}
         </main>
-      </Stairs>
+        </Stairs>
     </>
   )
 }

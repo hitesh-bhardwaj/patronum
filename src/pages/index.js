@@ -15,11 +15,7 @@ import RelatedPosts from "@/components/PageComponents/BlogPage/RelatedPosts";
 import { getHomePagePosts } from '@/lib/posts';
 import UseCasesMobile from "@/components/PageComponents/HomePage/UseCasesMobile";
 
-import Stairs from "@/components/Stairs";
 import SideMenu from "@/components/SideMenu";
-import PageLoader from "@/components/PageLoader";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -238,35 +234,24 @@ export default function Home( { recentPosts } ) {
 
   return (
     <>
-      {/* <Stairs> */}
         {showSideMenu && <SideMenu sections={sections}/>}
-          {/* <div className='fixed w-screen h-screen left-0 top-0 pointer-events-none z-[10000]'>
-            <motion.div 
-              initial={{top: 0, height: 0}}
-              exit={{height: '100%'}}
-              transition={{ease: [[0.215, 0.61, 0.355, 1]], duration: 0.4}}
-              className='bg-primary h-0 w-full relative origin-bottom'
-            />
-          </div> */}
-        <PageLoader />
-        <Header />
-        <main>
-          <Hero />
-          <Features />
-          <UseCases />
-          <UseCasesMobile />
-          <Pricing />
-          <About />
-          <Testimonial />
-          <RelatedPosts 
-            sectionPara={"Discover a World of Knowledge with Expert Tips, In-Depth Tricks, Latest News, and Comprehensive Resources for Mastering Google Workspace."} 
-            recentPosts={recentPosts} 
-            sectionTitle={"Our Latest Blogs"}
-            />
-          <Faqs />
-        </main>
-        <Footer />
-      {/* </Stairs> */}
+        <Stairs>
+          <main>
+            <Hero />
+            <Features />
+            <UseCases />
+            <UseCasesMobile />
+            <Pricing />
+            <About />
+            <Testimonial />
+            <RelatedPosts 
+              sectionPara={"Discover a World of Knowledge with Expert Tips, In-Depth Tricks, Latest News, and Comprehensive Resources for Mastering Google Workspace."} 
+              recentPosts={recentPosts} 
+              sectionTitle={"Our Latest Blogs"}
+              />
+            <Faqs />
+          </main>
+        </Stairs>
     </>  
   );
 } 

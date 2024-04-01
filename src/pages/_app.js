@@ -26,12 +26,12 @@ export default function App({ Component, pageProps, router }) {
     if (!hasVisited) {
       setShowPreloader(true); 
       
-      // const preloaderTimeout = setTimeout(() => {
-      //   setShowPreloader(false); 
-      //   sessionStorage.setItem('hasVisited', 'true');
-      // }, 4000);
+      const preloaderTimeout = setTimeout(() => {
+        setShowPreloader(false); 
+        sessionStorage.setItem('hasVisited', 'true');
+      }, 4000);
 
-      // return () => clearTimeout(preloaderTimeout);
+      return () => clearTimeout(preloaderTimeout);
     }
     else {
       setShowPreloader(false);
@@ -86,9 +86,9 @@ export default function App({ Component, pageProps, router }) {
       {showPreloader && <PreLoader />} 
       <ReactLenis root options={{ duration: 0.8 }}>
         <ModalProvider>
-          {/* <AnimatePresence mode="wait"> */}
+          <AnimatePresence mode="wait">
             <Component {...pageProps} key={router.route}/>
-          {/* </AnimatePresence> */}
+          </AnimatePresence>
           <InstallModal />
           <DemoModal />
         </ModalProvider>

@@ -49,7 +49,7 @@ export default function FeatureDetail(){
                 imgSrc={'organisational-chart.svg'}
                 >
 
-                <VideoPlayer videoId="POIX6FiWaN0" videoCover={"/assets/features/organisational-chart/video-cover.png"}/> 
+                <VideoPlayer videoId="POIX6FiWaN0" videoCover={"/assets/features/organisational-chart/video-cover.webp"}/> 
 
                 <FeatureDetailTitle
                     sectionTitle1="Organisational Chart"    

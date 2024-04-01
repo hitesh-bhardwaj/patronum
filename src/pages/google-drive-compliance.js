@@ -82,7 +82,7 @@ export default function FeatureDetail(){
                 >
 
 
-                <VideoPlayer videoId="POIX6FiWaN0" videoCover={"/assets/features/google-drive-compliance/video-cover.png"} /> 
+                <VideoPlayer videoId="POIX6FiWaN0" videoCover={"/assets/features/google-drive-compliance/video-cover.webp"} /> 
 
                 <FeatureDetailTitle
                     sectionTitle1="Google Drive Compliance"    

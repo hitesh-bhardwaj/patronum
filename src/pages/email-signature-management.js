@@ -114,7 +114,7 @@ export default function FeatureDetail(){
                 imgSrc={'email-signature-management.svg'}
                 >
 
-                <VideoPlayer videoId="POIX6FiWaN0" videoCover={"/assets/features/email-signature-management/video-cover.png"}/>
+                <VideoPlayer videoId="POIX6FiWaN0" videoCover={"/assets/features/email-signature-management/video-cover.webp"}/>
 
                 <FeatureDetailTitle
                     sectionTitle1="Email Signature Management"    

@@ -103,7 +103,7 @@ export default function FeatureDetail(){
                 imgSrc={'contact-sharing.svg'}
                 >
 
-                <VideoPlayer videoId="POIX6FiWaN0" videoCover={"/assets/features/contact-sharing/video-cover.png"} />
+                <VideoPlayer videoId="POIX6FiWaN0" videoCover={"/assets/features/contact-sharing/video-cover.webp"} />
 
                 <FeatureDetailTitle
                     sectionTitle1="Contact Sharing"    

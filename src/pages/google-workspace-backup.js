@@ -99,7 +99,7 @@ export default function FeatureDetail(){
                 imgSrc={'google-workspace-backup.svg'}
                 >
 
-                <VideoPlayer videoId="POIX6FiWaN0" videoCover={"/assets/features/google-workspace-backup/video-cover.png"}/>
+                <VideoPlayer videoId="POIX6FiWaN0" videoCover={"/assets/features/google-workspace-backup/video-webp.png"}/>
 
                 <FeatureDetailTitle
                     sectionTitle1="Google Workspace"
