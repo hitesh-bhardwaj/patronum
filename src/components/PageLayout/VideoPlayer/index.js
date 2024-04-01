@@ -1,65 +1,59 @@
 import { useState } from "react";
+import dynamic from 'next/dynamic';
+
+// Dynamically import the LazyIframe component
+const LazyIframe = dynamic(() => import('./LazyIframe'), {
+    loading: () => <p>Loading...</p>,
+    ssr: false, // This line is important if your component should only be rendered client-side
+  });
 
 const VideoPlayer = ( {videoId, videoCover} ) => {
     const [modalOpen, setModalOpen] = useState(false);
 
-    const openModal = () => {
-        setModalOpen(true);
-    };
-
-    const closeModal = () => {
-        setModalOpen(false);
-    };
-
+    const openModal = () => setModalOpen(true);
+    const closeModal = () => setModalOpen(false);
     const handleModalClick = (e) => {
         if (e.target.classList.contains("video-modal-overlay")) {
-        closeModal();
+            closeModal();
         }
     };
 
     return(
         <>
-        <section className="feature-detail-video" id="second-section">
-            <div className="container-lg">
-                <div className="content">
-                    <div className="feature-tutorial-video fadeUp">
-                        <img
-                            width="1600"
-                            height="760"
-                            className="h-full w-full object-contain"
-                            src={videoCover}
-                            alt="feature-tutorial"
-                            loading="lazy"
-                        />
-                        <button
-                            className="video-tutorial-play-button"
-                            onClick={openModal}
-                            aria-label="Play Tutorial Video"
-                        >
-                            <img src="/assets/icons/play.svg" alt="Play Video"/>
-                        </button>
-                    </div>
-                    {modalOpen && (
-                        <div className={`video-modal-overlay ${modalOpen ? 'show' : 'hide'}`} onClick={handleModalClick}>
-                            <div className="modal">
-                                <iframe
-                                    width="640" 
-                                    height="390" 
-                                    src={`https://www.youtube.com/embed/${videoId}`} 
-                                    title="Patronum - Full product demo" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                    allowFullScreen>
-                                </iframe>
-                                <button className="modal-close" onClick={closeModal} aria-label="Close Video Modal">
-                                    <span className="close-plus modal-btn"/>
-                                    <span className="close-minus modal-btn"/>
-                                </button>
-                            </div>
+            <section className="feature-detail-video" id="second-section">
+                <div className="container-lg">
+                    <div className="content">
+                        <div className="feature-tutorial-video fadeUp">
+                            <img
+                                width="1600"
+                                height="760"
+                                className="h-full w-full object-contain"
+                                src={videoCover}
+                                alt="feature-tutorial"
+                                loading="lazy"
+                            />
+                            <button
+                                className="video-tutorial-play-button"
+                                onClick={openModal}
+                                aria-label="Play Tutorial Video"
+                            >
+                                <img src="/assets/icons/play.svg" alt="Play Video" />
+                            </button>
                         </div>
-                    )}
+                        {modalOpen && (
+                            <div className={`video-modal-overlay ${modalOpen ? 'show' : 'hide'}`} onClick={handleModalClick}>
+                                <div className="modal">
+                                    <LazyIframe videoId={videoId} />
+                                    <button className="modal-close" onClick={closeModal} aria-label="Close Video Modal">
+                                        <span className="close-plus modal-btn"/>
+                                        <span className="close-minus modal-btn"/>
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
     </>
   );
 };
