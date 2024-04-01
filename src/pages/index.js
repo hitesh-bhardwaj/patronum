@@ -237,7 +237,6 @@ export default function Home( { recentPosts } ) {
         {showSideMenu && <SideMenu sections={sections}/>}
         <Stairs>
           <main>
-            
             <Hero />
             <Features />
             <UseCases />
