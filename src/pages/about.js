@@ -21,17 +21,17 @@ export default function About(){
         // Cleanup event listener
         return () => window.removeEventListener('resize', checkScreenSize);
       }, []);
-    
-      const sections = [
-        { name: "Introduction", id: "pageHero" },
-        { name: "About", id: "second-section" },
-        { name: "Features", id: "section-3" },
-        { name: "Mission", id: "mission" },
-        { name: "Publication", id: "press" },
-        { name: "Advantage", id: "advantage-patronum" },
-        { name: "Future", id: "future" },
-      ];
 
+      const sections = [
+        { id: '#pageHero', name: 'Introduction' },
+        { id: '#second-section', name: 'About' },
+        { id: '#section-3', name: 'Features' },
+        { id: '#mission', name: 'Mission' },
+        { id: '#press', name: 'Publication' },
+        { id: '#advantage-patronum', name: 'Advantage' },
+        { id: "#future", name: "Future" },
+      ];
+    
     const MissionCard = ( {missionImg, missionPara, missionTitle} ) => {
         return ( 
             <>

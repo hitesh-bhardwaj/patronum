@@ -14,7 +14,7 @@ import RelatedPosts from "@/components/PageComponents/BlogPage/RelatedPosts";
 
 import { getHomePagePosts } from '@/lib/posts';
 import UseCasesMobile from "@/components/PageComponents/HomePage/UseCasesMobile";
-
+import Stairs from '@/components/Stairs';
 import SideMenu from "@/components/SideMenu";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -38,13 +38,13 @@ export default function Home( { recentPosts } ) {
   }, []);
 
   const sections = [
-    { name: "Introduction", id: "hero" },
-    { name: "Features", id: "features" },
-    { name: "Use Cases", id: "use-cases" },
-    { name: "Pricing", id: "pricing" },
-    { name: "About", id: "about" },
-    { name: "Blog", id: "blogs" },
-    { name: "FAQ's", id: "faqs" },
+    { id: '#hero', name: 'Introduction' },
+    { id: '#features', name: 'Features' },
+    { id: '#use-cases', name: 'Use Cases' },
+    { id: '#pricing', name: 'Pricing' },
+    { id: '#about', name: 'About' },
+    { id: '#blogs', name: 'Blog' },
+    { id: "#faqs", name: "FAQ's" },
   ];
 
       useEffect(() => {
@@ -237,6 +237,7 @@ export default function Home( { recentPosts } ) {
         {showSideMenu && <SideMenu sections={sections}/>}
         <Stairs>
           <main>
+            
             <Hero />
             <Features />
             <UseCases />

@@ -1,70 +1,49 @@
-import gsap from "gsap";
+import React, { useEffect, useRef, useState } from 'react';
+import gsap from 'gsap';
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
-import React, { useEffect, useState, useRef } from "react";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
 const handleSmoothScroll = (sectionId) => {
     gsap.to(window, {
         duration: 1.5,
-        scrollTo: { y: `#${sectionId}`, offsetY: 50 },
-        ease: "power3.inOut",
+        scrollTo: { y: `${sectionId}`, offsetY: 50 },
+        ease: "power3.out",
     });
 };
 
-export default function SideMenu({ sections, scrollEnd }) {
+export default function SideMenu({sections}) {
     const [activeSection, setActiveSection] = useState('');
+    const progressBars = useRef([]);
 
     useEffect(() => {
-        const sections = document.querySelectorAll("section");
-        const observer = new IntersectionObserver(
-            (entries) => {
-                let activeId = activeSection; // Keep track of the current active section
-                entries.forEach((entry) => {
-                  if (entry.isIntersecting && entry.intersectionRatio > 0.5) { // This checks if more than half of the item is visible
-                    activeId = entry.target.id;
-                  }
+        const triggers = sections.map((section, index) => {
+        return ScrollTrigger.create({
+            trigger: section.id,
+            start: 'top bottom',
+            end: 'bottom bottom',
+            scrub: true,
+            onEnter: () => setActiveSection(section.id),
+            onLeaveBack: () => setActiveSection(''),
+            onEnterBack: () => setActiveSection(section.id),
+            onUpdate: self => {
+                const progress = self.progress;
+                // Adjust the progress here to range up to 1.1 instead of 1
+                const adjustedProgress = progress * 1.1; // Maps 0-1 to 0-1.1
+                gsap.to(progressBars.current[index], {
+                    scaleY: adjustedProgress,
                 });
-                setActiveSection(activeId);
-              },
-              {
-                rootMargin: "0px",
-                threshold: 0.5, // Adjust as needed
-              }
-        );
-
-        sections.forEach((section) => {
-            observer.observe(section);
+            },
+        });
         });
 
         return () => {
-            sections.forEach((section) => {
-                observer.unobserve(section);
-            });
+        triggers.forEach(trigger => trigger.kill());
         };
     }, []);
 
     useEffect(() => {
-        let ctx = gsap.context(() => {
-          const tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: 'main',
-              start: 'top 0',
-              end: 'bottom 0',
-              scrub: true,
-            },
-          });
-
-          tl.to('#toc-bar', {
-            scaleY: 1,
-            duration: 1,
-          })
-        });
-        return () => ctx.revert();
-      });
-
-      useEffect(() => {
         let ctx = gsap.context(() => {
             gsap.from('#toc',{
                 scrollTrigger: {
@@ -79,26 +58,27 @@ export default function SideMenu({ sections, scrollEnd }) {
         return () => ctx.revert();
       }, []);
 
-    return (
-        <>
-            <div className="fixed left-[2vw] top-1/2 transform -translate-y-1/2 flex items-start z-10" id="toc">
-                <span className="absolute h-[90%] block w-[0.3rem] bg-black/10 overflow-hidden rounded top-2">
-                    <span className="w-full h-full bg-black scale-y-[2%] block rounded origin-top" id="toc-bar"/>
-                </span>
-                <ul className="text-[0.8vw] aeonik space-y-1 ml-5">
-                    {sections.map(({ id, name }) => (
-                        <li
-                        key={id}
-                        onClick={() => handleSmoothScroll(id)}
-                        className={`text-black hover:opacity-100 transition-all duration-300 cursor-pointer ${
-                            activeSection === id ? "opacity-100" : "opacity-50"
-                        }`}
-                        >
-                        {name}
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        </>
-    )
+  return (
+    <div className='fixed z-10 left-10 top-1/2 -translate-y-1/2 flex gap-5 items-center h-[11vw]' id='toc'>
+        <div className="progress-container h-full w-full overflow-hidden rounded">
+            {sections.map((_, index) => (
+                <div
+                    key={index}
+                    className={`progress-bar w-[0.3rem] bg-primary h-[14.28%] scale-y-0 origin-top scale-x-[1.5]`}
+                    ref={el => progressBars.current[index] = el}
+                />
+            ))}
+        </div>
+        <ul className="text-[0.8vw] aeonik opacity-60 h-full flex flex-col justify-between">
+            {sections.map(({ id, name }) => (
+                <li
+                    key={id}
+                    onClick={() => handleSmoothScroll(id)}
+                    className={`text-black hover:opacity-100 transition-all duration-300 cursor-pointer ${activeSection === id ? 'text-bold' : ''}`}>
+                    {name}
+                </li>
+            ))}
+        </ul>
+    </div>
+  );
 }
