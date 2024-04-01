@@ -18,6 +18,8 @@ import UseCasesMobile from "@/components/PageComponents/HomePage/UseCasesMobile"
 import Stairs from "@/components/Stairs";
 import SideMenu from "@/components/SideMenu";
 import PageLoader from "@/components/PageLoader";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -247,6 +249,7 @@ export default function Home( { recentPosts } ) {
             />
           </div> */}
         <PageLoader />
+        <Header />
         <main>
           <Hero />
           <Features />
@@ -262,6 +265,7 @@ export default function Home( { recentPosts } ) {
             />
           <Faqs />
         </main>
+        <Footer />
       {/* </Stairs> */}
     </>  
   );

@@ -5,6 +5,9 @@ import gsap from "gsap"
 import SplitType from "split-type";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Stairs from "../Stairs";
+import Header from "../Header";
+import Footer from "../Footer";
+import PageLoader from "../PageLoader";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -191,7 +194,9 @@ export default function PageLayout( {pageTitle1, pageTitle2, pagePara, imgSrc, c
 
     return(
       <>
-        <Stairs>
+        {/* <Stairs> */}
+          <PageLoader />
+          <Header />
           <main>
             <Hero
               pageTitle1={pageTitle1} 
@@ -201,7 +206,8 @@ export default function PageLayout( {pageTitle1, pageTitle2, pagePara, imgSrc, c
             />
             {children}
           </main>
-        </Stairs>
+          <Footer />
+        {/* </Stairs> */}
       </>
     )
 }
