@@ -25,7 +25,7 @@ const accordionData = [
         content: 'Patronum is the only enterprise-ready contact sharing application for Google Workspace. Patronum ensures your contacts and labels are in perfect sync with Google Contacts by capturing all changes made throughout the day and updating them across all user accounts.',
         more: 'Our platform also allows users to effortlessly share specific contacts through labels, providing a seamless experience. Meanwhile, administrators gain unparalleled visibility and control over the entire process, ensuring efficient and secure contact management.',
         img: 'assets/home/features-3.svg',
-        link: '/contact-sharing',
+        link: '/google-contact-sharing',
     },
     {
         title: 'Email Signature Management',

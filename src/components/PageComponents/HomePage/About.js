@@ -22,7 +22,7 @@ export default function About() {
                                 From user and group management to secure content sharing, from centralised email signatures to Google Workspace backups, Patronum empowers you to take control of your Google Workspace with unmatched ease and precision.
                         </p>
 
-                        <PrimaryButton link="/about" btnText="Get Started"/>
+                        <PrimaryButton link="/about-us" btnText="Get Started"/>
 
                     </div>
                     <div className="about-right lg:w-[35%] w-[75%] lg:text-right text-center">

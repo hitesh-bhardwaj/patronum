@@ -72,7 +72,7 @@ function RelatedPosts({ recentPosts, currentSlug, sectionTitle, sectionPara }) {
                             ))}
                         </div>
                         <div className="section-btn-container">
-                            <PrimaryButton link="/blogs" btnText="View All Blogs"/>
+                            <PrimaryButton link="/blog" btnText="View All Blogs"/>
                         </div>
                     </div>
                 </div>
