@@ -20,7 +20,7 @@ const DesktopNavigation = () => {
                 <nav className='navbar lg:block hidden'>
                     <ul className='navbar-list'>
                         <li className='nav-list-item'>
-                            <Link href='/about' >
+                            <Link href='/about-us' >
                                 <div className='header-anim'>
                                     <span>
                                         About

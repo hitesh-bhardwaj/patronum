@@ -10,6 +10,7 @@ import { AnimatePresence } from 'framer-motion';
 import PreLoader from '@/components/PreLoader';
 import InstallModal from '@/components/InstallModal';
 import DemoModal from '@/components/InstallModal/DemoModal';
+import Head from 'next/head';
 
 // Import the Background component dynamically
 const Background = dynamic(() => import('@/components/Pixi'), {
@@ -62,26 +63,99 @@ export default function App({ Component, pageProps, router }) {
   return(
     <>
       <DefaultSeo
-        title='Patronum - Best Platform for Google Workspace Management'
-        description='Patronum provides a better way to Google Workspace Management. Patronum fully automates all the admin and user tasks to ensure an effective and secure process.'
-        additionalMetaTags={[{
-          name: 'viewport',
-          content: 'width=device-width, initial-scale=1.0, maximum-scale=5.0'
-        },
+        title='Patronum - Best Platform for Google Workspace (GSuite) Management'
+        description='Patronum provides a better way to Google Workspace (GSuite) Management. Patronum fully automates all the administrator and user tasks to ensure an efficient, effective and secure process.'
+        additionalMetaTags={[
+          {
+            name: 'viewport',
+            content: 'width=device-width, initial-scale=1.0, maximum-scale=5.0'
+          },
         ]}
-
-        additionalLinkTags={[{
-          rel: 'icon',
-          href: '/favicon.png',
-        },
-        {
-          rel: 'preload',
-          href: '/assets/fonts/Aeonik/Aeonik-Regular.woff2',
-          as: 'font',
-          crossOrigin: 'anonymous'
-        }
+        additionalLinkTags={[
+          {
+            rel: 'icon',
+            href: '/favicon.png',
+          },
+          {
+            rel: 'preload',
+            href: '/assets/fonts/Aeonik/Aeonik-Regular.woff2',
+            as: 'font',
+            type: 'font/woff2',
+            crossOrigin: 'anonymous'
+          }
         ]}
+        openGraph={{
+          type: 'website',
+          locale: 'en_US',
+        }}
+        twitter={{
+          site: 'Patronum',
+          cardType: 'summary_large_image',
+        }}
       />
+
+    <Head>
+      <meta charSet="utf-8" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "@id": "https://www.patronum.io/#organization",
+              "name": "Patronum",
+              "url": "https://www.patronum.io",
+              "logo": "https://www.patronum.io/logo.svg",
+              "sameAs": [
+                "https://www.instagram.com/patronum.io/",
+                "https://www.linkedin.com/company/wearepatronum/",
+                "https://www.facebook.com/patronum.io",
+                "https://twitter.com/Patronum_io",
+                "https://www.youtube.com/@wearepatronum"
+              ]
+            },
+          ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": "https://www.patronum.io/#website",
+              "name": "Patronum",
+              "url": "https://www.patronum.io",
+              "publisher":[
+                {
+                  "@id": "https://www.patronum.io/#organization"
+                }
+              ],
+              "inLanguage": "en-US",
+
+            },
+          ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            {
+              "@context": "https://schema.org",
+              "@type": "ImageObject",
+              "@id": "https://patronum.io/assets/seo/Google-Workspace.png",
+              "url": "https://patronum.io/assets/seo/Google-Workspace.png",
+              "width": "1295",
+              "height": "594",
+              "inLanguage": "en-US"
+            },
+          ),
+        }}
+      />
+    </Head>
 
       {showPreloader && <PreLoader />} 
       <ReactLenis root options={{ duration: 0.8 }}>
@@ -95,7 +169,7 @@ export default function App({ Component, pageProps, router }) {
       </ReactLenis>
       <SpeedInsights />
       <Analytics />
-      {loadBackground && <Background />}
+      {/* {loadBackground && <Background />} */}
     </>
   ); 
 }

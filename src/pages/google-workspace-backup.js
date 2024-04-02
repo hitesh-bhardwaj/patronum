@@ -97,6 +97,13 @@ export default function FeatureDetail(){
                 pageTitle2={'Backup'}
                 pagePara={"The only tool you'll ever need to streamline your Google Workspace management."} 
                 imgSrc={'google-workspace-backup.svg'}
+                title={"Google Backup with Patronum"}
+                description={"Google Workspace contact sharing lets the users use Google Backup, which helps store information about users, groups, and external contacts."}
+                url={"google-workspace-backup"}
+                img={"Google-Workspace.png"}
+                date_published={"2023-10-16T10:45"}
+                date_modified={"2024-04-04T12:00"}
+                keywords={"Google Workspace"}
                 >
 
                 <VideoPlayer videoId="POIX6FiWaN0" videoCover={"/assets/features/google-workspace-backup/video-cover.webp"}/>

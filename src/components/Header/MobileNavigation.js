@@ -75,7 +75,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                 <motion.li 
                         variants={NavChildren}
                         className='px-4'>
-                        <Link href="/about" className="flex items-center py-4 text-2xl font-normal text-gray-900 border-b" aria-label='About' >
+                        <Link href="/about-us" className="flex items-center py-4 text-2xl font-normal text-gray-900 border-b" aria-label='About' >
                             <span className="ml-3">About</span>
                         </Link>
                     </motion.li>

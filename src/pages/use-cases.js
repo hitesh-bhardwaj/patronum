@@ -57,7 +57,14 @@ export default function useCases(){
                 pageTitle1={'Address Challenges'} 
                 pageTitle2={'Across Your Organisation'}
                 pagePara={"The only tool you'll ever need to streamline your Google Workspace management."} 
-                imgSrc={'useCases.svg'}>
+                imgSrc={'useCases.svg'}
+                title={"Patronum - One stop destination for G Suite management"}
+                description={"With the help of Patronum, you can save time by avoiding those monotonous and repetitive tasks. Patronum will help with G Suite management in whichever field you are in be it IT, HR, Marketing, Sales, Users or Education."}
+                url={"use-cases"}
+                img={"use-cases.jpg"}
+                date_published={"2020-12-21T12:00"}
+                date_modified={"2024-04-04T12:00"}
+                keywords={"G Suite management"}>
 
                 <SectionBreakSmall 
                     sectionBreakText={"Patronum gives you full control over how Google Workspace is managed with intelligent automation and delegation"}

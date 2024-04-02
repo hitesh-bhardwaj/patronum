@@ -47,6 +47,13 @@ export default function FeatureDetail(){
                 pageTitle2={'Chart'}
                 pagePara={"The only tool you'll ever need to streamline your Google Workspace management."} 
                 imgSrc={'organisational-chart.svg'}
+                title={"Organisational Chart - Patronum"}
+                description={"Find, collaborate and better understand the hierarchy within your organisation through the Patronum Organisational Chart and People Finder."}
+                url={"organisational-chart"}
+                img={"organisational-chart.jpg"}
+                date_published={"2020-12-21T12:00"}
+                date_modified={"2024-04-04T12:00"}
+                keywords={"Organisational Chart"}
                 >
 
                 <VideoPlayer videoId="POIX6FiWaN0" videoCover={"/assets/features/organisational-chart/video-cover.webp"}/> 

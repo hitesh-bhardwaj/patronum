@@ -5,10 +5,11 @@ import gsap from "gsap"
 import SplitType from "split-type";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Stairs from '@/components/Stairs'
+import MetaData from "./MetaData";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function PageLayout( {pageTitle1, pageTitle2, pagePara, imgSrc, children} ){
+export default function PageLayout( {pageTitle1, pageTitle2, pagePara, imgSrc, children, title, description, url, img, date_published, date_modified, keywords} ){
 
   useEffect(() => {
     const headings = document.querySelectorAll('.text-anim');
@@ -191,6 +192,15 @@ export default function PageLayout( {pageTitle1, pageTitle2, pagePara, imgSrc, c
 
     return(
         <>  
+          <MetaData 
+            title={title}
+            description={description}
+            url={url}
+            img={img}
+            date_published={date_published}
+            date_modified={date_modified}
+            keywords={keywords}
+          />
           <Stairs>
             <main>
               <Hero

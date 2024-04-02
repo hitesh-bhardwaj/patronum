@@ -101,6 +101,13 @@ export default function FeatureDetail(){
                 pageTitle2={'Sharing'}
                 pagePara={"Unified Contact Sharing for Powerful & efficient collaboration"} 
                 imgSrc={'contact-sharing.svg'}
+                title={"Google contact sharing with Patronum"}
+                description={"Google Workspace contact sharing lets the users use Google Contact, which helps store information about users, groups, and external contacts."}
+                url={"google-contact-sharing"}
+                img={"contact-sharing.jpg"}
+                date_published={"2020-12-21T13:41"}
+                date_modified={"2024-04-04T12:00"}
+                keywords={"google contact sharing,Google Workspace contact sharing"}
                 >
 
                 <VideoPlayer videoId="POIX6FiWaN0" videoCover={"/assets/features/contact-sharing/video-cover.webp"} />

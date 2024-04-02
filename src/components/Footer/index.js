@@ -74,7 +74,7 @@ const Footer = () => {
                                     <h6 className="footer-link-head fadeUp">Other Links</h6>
                                     <ul className='footer-links fadeUp'>
                                         <li className="py-2">
-                                            <Link href="/about" className="text-xl">
+                                            <Link href="/about-us" className="text-xl">
                                                 About
                                             </Link>
                                         </li>

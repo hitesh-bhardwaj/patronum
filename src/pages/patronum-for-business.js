@@ -29,6 +29,13 @@ export default function UseCasesDetail(){
                 pageTitle2={'for Business'}
                 pagePara={"The only tool you'll ever need to streamline your Google Workspace management."} 
                 imgSrc={'use-cases_business.svg'}
+                title={"Patronum for Business - Patronum"}
+                description={"Patronum provides a better way to Google Workspace (GSuite) Management. Patronum fully automates all the administrator and user tasks to ensure an efficient, effective and secure process."}
+                url={"patronum-for-business"}
+                img={"patronum-for-business.jpg"}
+                date_published={"2023-04-20T12:00"}
+                date_modified={"2024-04-04T12:00"}
+                keywords={"Google Workspace"}
             >
 
                 <section id="second-section">

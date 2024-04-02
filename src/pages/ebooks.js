@@ -32,7 +32,15 @@ export default function Ebooks(){
             <PageLayout
                 pageTitle1={'Ebooks'} 
                 pagePara={"Read our guides for a detailed exploration of relevant industry themes."} 
-                imgSrc={'guides.svg'}>
+                imgSrc={'guides.svg'}
+                title={"Ebooks - Patronum"}
+                description={"Patronum provides a better way to Google Workspace (GSuite) Management. Patronum fully automates all the administrator and user tasks to ensure an efficient, effective and secure process."}
+                url={"ebooks"}
+                img={"Google-Workspace.png"}
+                date_published={"2024-04-04T12:00"}
+                date_modified={"2024-04-04T12:00"}
+                keywords={"Patronum, Google Workspace Manager, G-Suite Manager"}
+                >
 
                     <section id="second-section">
                         <div className="container">

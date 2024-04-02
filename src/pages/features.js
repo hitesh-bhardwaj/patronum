@@ -64,7 +64,15 @@ export default function Features(){
                 pageTitle1={'Maximize Efficiency'} 
                 pageTitle2={'with Patronum'}
                 pagePara={"Patronum is the swiss army knife for Google Workspace Management."} 
-                imgSrc={'features.svg'}>
+                imgSrc={'features.svg'}
+                title={"Patronum - Most Feature Rich Google Workspace Manager"}
+                description="With features like an organizational chart, contact sharing, email signature management and complete on & offboarding solutions Patronum is the Swiss Army knife for Google Workspace management."
+                url="features"
+                img="features-page.png"
+                date_published="2020-12-21T12:22"
+                date_modified="2024-04-04T00:00"
+                keywords="Google Workspace"
+                >
 
                 <section id="second-section">
                     <div className="container">

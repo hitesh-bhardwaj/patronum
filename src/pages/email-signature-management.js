@@ -112,6 +112,13 @@ export default function FeatureDetail(){
                 pageTitle2={'Management'}
                 pagePara={"Centrally managed Google Workspace Email Signatures for Your Brand's Professional Image"} 
                 imgSrc={'email-signature-management.svg'}
+                title={"Email Signature Management with Patronum"}
+                description={"Patronum is one of the best solutions on the marketplace for email signature management as you can give your users consistent, dynamic, and centrally managed Gmail signatures."}
+                url={"email-signature-management"}
+                img={"email-signature-management.jpg"}
+                date_published={"2020-12-21T12:27"}
+                date_modified={"2024-04-04T12:00"}
+                keywords={"Google Workspace"}
                 >
 
                 <VideoPlayer videoId="POIX6FiWaN0" videoCover={"/assets/features/email-signature-management/video-cover.webp"}/>

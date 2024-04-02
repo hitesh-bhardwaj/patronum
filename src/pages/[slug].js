@@ -18,6 +18,8 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import  ScrollToPlugin  from 'gsap/dist/ScrollToPlugin';
 import RelatedPosts from "@/components/PageComponents/BlogPage/RelatedPosts";
+import Head from "next/head";
+import { NextSeo } from "next-seo";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -160,6 +162,117 @@ function PostDetail({ post, recentPosts }) {
 
 return (
       <>
+              <NextSeo
+                title={post.seo.title}
+                description={post.seo.description}
+                openGraph={{
+                  type: 'article',
+                  article: {
+                    publishedTime: post.date,
+                    modifiedTime: post.modified,
+                  },
+                  url: `https://patronum.io/${post.slug}`,
+                  title: post.seo.title,
+                  "description": post.seo.description,
+                  images: [
+                        {
+                        url: post.featuredImage.sourceUrl,
+                        width: 1200,
+                        height: 630,
+                        alt: post.title,
+                        type: "image/png",
+                        },
+                    ],
+                    siteName: "Patronum",
+                    }}
+                
+                  additionalMetaTags={[
+                    {
+                      name: "twitter:title",
+                      content: post.seo.title
+                    },
+                    {
+                      name: "twitter:description",
+                      content: post.seo.description
+                    },
+                    {
+                      name: "twitter:image",
+                      content: post.featuredImage.sourceUrl
+                    },
+                ]}
+            />
+            <Head>
+                <link rel="canonical" href={`https://patronum.io/${post.slug}`} />
+                <link rel="alternate" href={`https://patronum.io/${post.slug}`} hreflang="x-default"/>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "WebPage",
+                            "@id": `https://patronum.io/${post.slug}#webpage`,
+                            "url": `https://patronum.io/${post.slug}`,
+                            "name": post.seo.title,
+                            "description": post.seo.description,
+                            "datePublished": post.date,
+                            "dateModified": post.modified,
+                            "publisher": {
+                            "@type": "Organization",
+                            "name": "Patronum",
+                            "logo": {
+                                "@type": "ImageObject",
+                                "url": "https://patronum.io/logo.svg",
+                            }
+                            },
+                            "about": {
+                                "@id": `https://www.patronum.io/${post.slug}#organization`
+                            },
+                            "isPartOf" : {
+                                "@id" : `https://www.patronum.io/${post.slug}#website`
+                            },
+                            "inLanguage": "en_US",
+                        }
+                        ),
+                    }}
+                />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "BlogPosting",
+                            "headline": post.seo.title,
+                            "keywords": post.seo.keywords,
+                            "datePublished": post.date,
+                            "dateModified": post.modified,
+                            "author": {
+                                "name": "Patronum",
+                                "@id": "https://www.patronum.io/admin/",
+                            },
+                            "publisher": {
+                                "@id": "https://www.patronum.io/#organization"
+                            },
+                            "name": post.seo.title,
+                            "description": post.seo.description,
+                            "@id": `https://www.patronum.io/${post.slug}#richSnippet`,
+                            "url": `https://patronum.io/${post.slug}`,
+                            "isPartOf" : {
+                                "@id" : `https://www.patronum.io/${post.slug}#website`
+                            },
+                            "image" : {
+                                "@id" : post.seo.image,
+                            },
+                            "inLanguage": "en_US",
+                            "mainEntityOfPage": {
+                                "@id": `https://www.patronum.io/${post.slug}#webpage`
+                            },
+                        }
+                    ),
+                }}
+                />
+            </Head>
         <BlogLayout
           postTitle={post.title}
           postAuthor={post.author.name}

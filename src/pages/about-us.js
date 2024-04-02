@@ -75,8 +75,15 @@ export default function About(){
             <PageLayout 
                 pageTitle1={'About Patronum'} 
                 pagePara={"Meet the innovators transforming your Google Workspace experience with heart and hustle."} 
-                imgSrc={'about.svg'}>
-
+                imgSrc={'about.svg'}
+                title={"About Patronum - Google Workspace Manager"}
+                description="Patronum removes the hassle of Google Workspace (GSuite) administration by fully automating all administrator and user tasks to ensure an efficient, effective and secure process"
+                url="about-us"
+                img="Google-Workspace.png"
+                date_published="2020-12-21T06:17"
+                date_modified="2024-04-04T12:32"
+                keywords="Google Workspace"
+                >
                 {showSideMenu && <SideMenu sections={sections}/>}
 
                 <section id="second-section">

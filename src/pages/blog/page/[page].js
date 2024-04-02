@@ -18,6 +18,13 @@ export default function Blog({ posts, pagination, categories }) {
         pageTitle2={'Latest Blogs'}
         pagePara={"The only tool you'll ever need to streamline your Google Workspace management."}
         imgSrc={"/blog.svg"}
+        title={"Learn more about Google Workspace (G Suite) Management"}
+        description={"Get all the information that can help you with effective & efficient management of your Google Workspace (Gsuite). Download our resources and participate in webinars to know more."}
+        url={`blog/page/${pagination?.currentPage}`}
+        img={"blog.jpg"}
+        date_published={"2020-12-21T12:00"}
+        date_modified={"2024-04-04T12:00"}
+        keywords={"Patronum,Google Workspace Manager"}
       >
 
         <section id="second-section">

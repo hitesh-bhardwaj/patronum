@@ -76,6 +76,13 @@ export default function Partners() {
                 pageTitle2="With Us"
                 pagePara="Join forces with Patronum! Let’s redefine efficiency and productivity together!"
                 imgSrc="partner-with-us.svg"
+                title={"Partner With Us - Patronum"}
+                description={"If you’re currently selling and supporting Google Workspace, partnering with Patronum can help you deliver even more value and service to your clients. While our software is innovative and unique, we understand the importance of expanding our reach through reseller partnerships."}
+                url={"partner-with-us"}
+                img={"partner-with-us.jpg"}
+                date_published={"2023-05-05T12:00"}
+                date_modified={"2024-04-04T12:00"}
+                keywords={"partner with us"}
             >
 
                 <section id="second-section">
