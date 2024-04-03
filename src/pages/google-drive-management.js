@@ -13,12 +13,12 @@ export default function FeatureDetail(){
     const featuresDetail = [
         {
             title: 'Change Ownership',
-            para: "In addition to sharing contacts across all your users within your company Google Workspace domain and sub-domains, you can also share and interact with customers and partners by sharing your Google Contacts outside of your Google Workspace domain.",
+            para: "Patronum Google drive management feature allows you to change the ownership in no time. Manually change ownership of users’ files and folders directly from within the Patronum Google drive management interface.",
             img: "/assets/features/google-drive-management/main-1.svg",
         },
         {
             title: 'Browse Users Files & Folders',
-            para: "Google contact sharing enables the best features for you and to manage your contacts. Patronum is smoothly integrated into Google Workspace, Gmail and Google Contacts. Our Google Chrome extension gives users the best possible experience when it comes to managing and sharing contacts with co-workers.",
+            para: "Google drive management features allow IT – administrators – to browse all your Google Workspace users’ files and folders to provide better remote assistance with complete security. Now browse all your Google Workspace users files and folders without any hassles.’",
             img: "/assets/features/google-drive-management/main-2.svg",
         },
         {
@@ -103,8 +103,8 @@ export default function FeatureDetail(){
                 <FeatureDetailTitle
                     sectionTitle1="Google Drive Management"    
                     sectionTitle2="For Google Workspace"
-                    sectionPara="Are you struggling to manage your data in Google drive and looking for an optimum solution for Google drive management? Then Patronum is the right solution for you."
-                    sectionParaBig="Google drive management solutions from Patronum allows IT administration to see Google drive in a whole different way. Allows IT administrators to see Google Drive in a whole different way."
+                    sectionPara="Are you struggling to manage your data in Google drive and looking for an optimum solution for Google drive management? Then Patronum is the right solution for you. Google drive management solutions from Patronum allows IT administration to see Google drive in a whole different way."
+                    sectionParaBig=" View users files and folders and review sharing permissions, including Google Shared Team Drives. With Patronum managing Google Drive feels more like managing a local filesystem with all the control and power IT administrators need."
                 />
 
                 <section id="feature-detail-info">

@@ -47,9 +47,14 @@ export default function ContactForm() {
 
     const onSubmit = async (data) => {
         setSubmitting(true);
-        try {
-            const countryName = COUNTRIES.find(c => c.value === country)?.title || 'Not specified';
-            const message = `
+        const countryName = COUNTRIES.find(c => c.value === country)?.title || 'Not specified';
+        const formData = {
+            name: data.name,
+            email: data.email,
+            company: data.company,
+            countryName, 
+        };
+        const message = `
                 <h1>New Contact Form Submission</h1>
                 <p><strong>Name:</strong> ${data.name}</p>
                 <p><strong>Email:</strong> ${data.email}</p>
@@ -57,11 +62,15 @@ export default function ContactForm() {
                 <p><strong>Country:</strong> ${countryName}</p>
                 <p><strong>Terms Agreement:</strong> ${data.terms ? 'Agreed' : 'Not Agreed'}</p>
             `;
-
+        try {
+            // Send email
             await axios.post('/api/send-email', {
                 message: message,
                 subject: "Contact Form Submission",
             });     
+
+            // Send data to Mailchimp
+            await axios.post('/api/mail-chimp', formData);
             
             form.reset();
             setSubmitting(false);

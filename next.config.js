@@ -6,6 +6,10 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = {
   reactStrictMode: true,
   productionBrowserSourceMaps: true,
+  experimental: {
+    optimizeCss: true,
+    nextScriptWorkers: true,
+  },
   images: {
     domains: ['wordpress-156292-4361221.cloudwaysapps.com'],
   },

@@ -4,13 +4,14 @@ import dynamic from 'next/dynamic';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from "@vercel/analytics/react"
 import { ReactLenis } from '@studio-freight/react-lenis';
-import { ModalProvider } from '@/components/InstallModal/ModelContext';
 import { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
+import Head from 'next/head';
+import Script from 'next/script';
+import { ModalProvider } from '@/components/InstallModal/ModelContext';
 import PreLoader from '@/components/PreLoader';
 import InstallModal from '@/components/InstallModal';
 import DemoModal from '@/components/InstallModal/DemoModal';
-import Head from 'next/head';
 
 // Import the Background component dynamically
 const Background = dynamic(() => import('@/components/Pixi'), {
@@ -167,8 +168,33 @@ export default function App({ Component, pageProps, router }) {
           <DemoModal />
         </ModalProvider>
       </ReactLenis>
+
+      {/* Vercel Analytics */}
       <SpeedInsights />
       <Analytics />
+
+      {/* Google Tag Manager */}
+      <Script
+        async
+        strategy="worker"
+        src="https://www.googletagmanager.com/gtag/js?id=G-QTG00X44EP"
+      />
+
+      {/* Google Analytics */}
+      <Script
+        strategy="worker"
+        id="google-analytics"
+        >
+          {` window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-QTG00X44EP', {
+              page_path: window.location.pathname,
+            });
+          `}
+      </Script>
+
+      {/* WEBGL Background */}
       {loadBackground && <Background />}
     </>
   ); 

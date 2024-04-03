@@ -51,23 +51,31 @@ export default function BecomePartnerForm() {
 
     const onSubmit = async (data) => {
         setSubmitting(true);
-        try {
-
-            const countryName = COUNTRIES.find(c => c.value === country)?.title || 'Not specified';
-            const message = `
-                <h1><strong>Become Partner Form Submission</strong></h1>
-                <p><strong>Name:</strong> ${data.name}</p>
-                <p><strong>Email:</strong> ${data.email}</p>
-                <p><strong>Organisation Name:</strong> ${data.company}</p>
-                <p><strong>Country:</strong> ${countryName}</p>
-                <p><strong>Message:</strong> ${data.textarea}</p>
-                <p><strong>Terms Agreement:</strong> ${data.terms ? 'Agreed' : 'Not Agreed'}</p>
+        const countryName = COUNTRIES.find(c => c.value === country)?.title || 'Not specified';
+        const formData = {
+            name: data.name,
+            email: data.email,
+            company: data.company,
+            countryName, 
+        };
+        const message = `
+            <h1><strong>Become Partner Form Submission</strong></h1>
+            <p><strong>Name:</strong> ${data.name}</p>
+            <p><strong>Email:</strong> ${data.email}</p>
+            <p><strong>Organisation Name:</strong> ${data.company}</p>
+            <p><strong>Country:</strong> ${countryName}</p>
+            <p><strong>Message:</strong> ${data.textarea}</p>
+            <p><strong>Terms Agreement:</strong> ${data.terms ? 'Agreed' : 'Not Agreed'}</p>
             `;
-
+        try {
+            // Send email
             await axios.post('/api/send-email', {
                 message: message,
                 subject: "Become Partner Form Submission",
             }); 
+
+            // Send data to Mailchimp
+            await axios.post('/api/mail-chimp', formData);
             
             form.reset();
             setSubmitting(false);

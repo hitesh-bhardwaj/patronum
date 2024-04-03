@@ -1,3 +1,4 @@
+import Faqs from "@/components/PageComponents/FeaturesPage/Faq";
 import UseCaseCard from "@/components/PageComponents/UseCasePage/UseCaseCard";
 import PageLayout from "@/components/PageLayout";
 import SectionTitle from "@/components/PageLayout/SectionTitle";
@@ -5,17 +6,17 @@ import SectionTitle from "@/components/PageLayout/SectionTitle";
 const UseCasesInfo = [
     {
         id: "01",
-        para: "“Patronum is a real game-changer when it comes to Google Workspace administration.” Alexis Trabuchet, IT Manager, Fintecture explained, “With Patronum we can completely automate the user on and offboarding with policies that you can apply organization-wide.",
+        para: "Navigating Google Workspace administration is a daunting task for businesses, big or small. IT managers often juggle with the laborious task of manually onboarding and offboarding users. Large enterprises struggle with enforcing strategic policies across subsidiaries, while SMEs grapple with managing Google Workspace efficiently without deep Google knowledge.",
         img: "/assets/useCases/business/main1.svg",
     },
     {
         id: "02",
-        para: "For large enterprises Patronum is a Google Workspace productivity suite for IT professionals who need to implement strategic policies. Many tasks can either be automated by dedicated IT staff in centralized support and/or delegated to knowledgable non-IT managers. These include Google Drive Management, Contact Sharing and Email Signature Management. With subsidiaries or franchises, pre-agreed Patronum policies enable IT professionals to set up a tailored Google Workspace environment quickly.",
+        para: "The challenge intensifies with the need to automate tasks without sacrificing control or compliance. In large organizations, IT teams are under pressure to deploy tailored environments rapidly for each franchise or subsidiary, ensuring data security and policy adherence. For SMEs, executives are in dire need of tools that empower them with easy-to-use interfaces for robust data management and compliance, without being Google experts.",
         img: "/assets/useCases/business/main2.svg",
     },
     {
         id: "03",
-        para: "For small to medium enterprise (SME) Patronum’s intuitive interface is ideal for busy executives, who may not have a detailed knowledge of Google, but want a better way to manage Google Workspace. These include Google Drive management with automated file unsharing and compliance.",
+        para: "This is where Patronum steps in as a linchpin for business optimization. Patronum is not just a tool but a gateway to uncomplicated Google Workspace management, meticulously designed to automate critical processes like user onboarding and offboarding, drive management, contact sharing, and email signature curation. With Patronum, IT managers can breathe life into policies that ripple effectively organization-wide.",
         img: "/assets/useCases/business/main3.svg",
     }
 ]
@@ -27,7 +28,7 @@ export default function UseCasesDetail(){
             <PageLayout 
                 pageTitle1={'Patronum'} 
                 pageTitle2={'for Business'}
-                pagePara={"The only tool you'll ever need to streamline your Google Workspace management."} 
+                pagePara={"Tailored Google Workspace Management for Forward-Thinking Companies"} 
                 imgSrc={'use-cases_business.svg'}
                 title={"Patronum for Business - Patronum"}
                 description={"Patronum provides a better way to Google Workspace (GSuite) Management. Patronum fully automates all the administrator and user tasks to ensure an efficient, effective and secure process."}
@@ -44,7 +45,7 @@ export default function UseCasesDetail(){
                             <SectionTitle 
                                 sectionTitle1="Use Cases:"
                                 sectionTitle2="Patronum for Business"
-                                sectionPara="Patronum redefines user lifecycle management by providing a consistent and unified experience within Google Workspace while significantly reducing IT expenditure in managing users and resources."
+                                sectionPara="Patronum’s smart automation and sophisticated interface empower businesses to cut through the technical morass and find a clear path toward effective digital workspace governance."
                             />
                             <div className="useCases-Info">
                                 {UseCasesInfo.map((usecase, index) => (
@@ -58,6 +59,8 @@ export default function UseCasesDetail(){
                         </div>
                     </div>    
                 </section>
+
+                <Faqs featureName="patronum_for_business"/>
 
             </PageLayout>
         </>

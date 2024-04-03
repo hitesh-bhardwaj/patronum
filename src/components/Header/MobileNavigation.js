@@ -193,18 +193,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>For Business</p>
-                                        <p className='text-base'>Lorem Ipsum is simply dummy text</p>
-                                    </div>
-                                </Link>
-                            </li>
-                            <li className=''>
-                                <Link href='/patronum-for-education' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Education' >
-                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
-                                        <img loading='lazy' src='/assets/menu/for-education.svg' alt='use case icon'/>
-                                    </div>
-                                    <div>
-                                        <p className='text-xl font-500'>For Education</p>
-                                        <p className='text-base'>Lorem Ipsum is simply dummy text</p>
+                                        <p className='text-base'>Optimize Operations, Maximize Potential</p>
                                     </div>
                                 </Link>
                             </li>
@@ -215,18 +204,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>For HR</p>
-                                        <p className='text-base'>Lorem Ipsum is simply dummy text</p>
-                                    </div>
-                                </Link>
-                            </li>
-                            <li className=''>
-                                <Link href='/patronum-for-users' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Users' >
-                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
-                                        <img loading='lazy' src='/assets/menu/for-users.svg' alt='use case icon'/>
-                                    </div>
-                                    <div>
-                                        <p className='text-xl font-500'>For Users</p>
-                                        <p className='text-base'>Lorem Ipsum is simply dummy text</p>
+                                        <p className='text-base'>Human Resources: Digitally Empowered</p>
                                     </div>
                                 </Link>
                             </li>
@@ -237,7 +215,29 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>For Sales & Marketing</p>
-                                        <p className='text-base'>Lorem Ipsum is simply dummy text</p>
+                                        <p className='text-base'>Elevating Brand Through Unified Messaging</p>
+                                    </div>
+                                </Link>
+                            </li>
+                            <li className=''>
+                                <Link href='/patronum-for-education' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Education' >
+                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                        <img loading='lazy' src='/assets/menu/for-education.svg' alt='use case icon'/>
+                                    </div>
+                                    <div>
+                                        <p className='text-xl font-500'>For Education</p>
+                                        <p className='text-base'>Empowering Education with Smart Administration</p>
+                                    </div>
+                                </Link>
+                            </li>
+                            <li className=''>
+                                <Link href='/patronum-for-users' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Users' >
+                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                        <img loading='lazy' src='/assets/menu/for-users.svg' alt='use case icon'/>
+                                    </div>
+                                    <div>
+                                        <p className='text-xl font-500'>For Users</p>
+                                        <p className='text-base'>User Empowerment: Connect More, Do More</p>
                                     </div>
                                 </Link>
                             </li>
@@ -248,7 +248,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>For IT Admins</p>
-                                        <p className='text-base'>Lorem Ipsum is simply dummy text</p>
+                                        <p className='text-base'>Administrate Smarter, Not Harder</p>
                                     </div>
                                 </Link>
                             </li>

@@ -1,12 +1,12 @@
 import nodemailer from "nodemailer";
 
-const emailform = process.env.EMAIL;
+const emailfrom = process.env.EMAIL;
 const pass = process.env.EMAIL_PASS;
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: emailform,
+    user: emailfrom,
     pass,
   },
 });
@@ -19,10 +19,10 @@ export default async (req, res) => {
 
       // Define email data
       const mailOptions = {
-        from: emailform,
-        to: emailform,
-        subject: subject || "Form Response", // Set default subject or use the provided subject
-        html: message, // Set the html field to the HTML message
+        from: emailfrom,
+        to: emailfrom,
+        subject: subject || "Form Response",
+        html: message,
       };
 
       // Send the email

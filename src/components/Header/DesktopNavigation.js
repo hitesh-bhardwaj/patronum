@@ -119,39 +119,39 @@ const DesktopNavigation = () => {
                                     <ul className='nav-dropdown-list'>
                                             <NavItem 
                                                 title={'For Business'}
-                                                disc={'Lorem Ipsum is simply dummy text'}
+                                                disc={'Optimize Operations, Maximize Potential'}
                                                 link={'/patronum-for-business'}
                                                 img={'for-business.svg'}
                                             />
                                             <NavItem 
-                                                title={'For Education'}
-                                                disc={'Lorem Ipsum is simply dummy text'}
-                                                link={'/patronum-for-education'}
-                                                img={'for-education.svg'}
-                                            />
-                                            <NavItem 
                                                 title={'For HR'}
-                                                disc={'Lorem Ipsum is simply dummy text'}
+                                                disc={'Human Resources: Digitally Empowered'}
                                                 link={'/patronum-for-hr'}
                                                 img={'for-hr.svg'}
                                             />
                                             <NavItem 
                                                 title={'For Sales & Marketing'}
-                                                disc={'Lorem Ipsum is simply dummy text'}
+                                                disc={'Elevating Brand Through Unified Messaging'}
                                                 link={'/patronum-for-sales-marketing'}
                                                 img={'for-sales-marketing.svg'}
                                             />
                                             <NavItem 
-                                                title={'For IT Admins'}
-                                                disc={'Lorem Ipsum is simply dummy text'}
-                                                link={'/patronum-for-it-admins'}
-                                                img={'for-it-admins.svg'}
+                                                title={'For Education'}
+                                                disc={'Empowering Education with Smart Administration'}
+                                                link={'/patronum-for-education'}
+                                                img={'for-education.svg'}
                                             />
                                             <NavItem 
                                                 title={'For Users'}
-                                                disc={'Lorem Ipsum is simply dummy text'}
+                                                disc={'User Empowerment: Connect More, Do More'}
                                                 link={'/patronum-for-users'}
                                                 img={'for-users.svg'}
+                                            />
+                                            <NavItem 
+                                                title={'For IT Admins'}
+                                                disc={'Administrate Smarter, Not Harder'}
+                                                link={'/patronum-for-it-admins'}
+                                                img={'for-it-admins.svg'}
                                             />
                                         </ul>
                                     </motion.div>

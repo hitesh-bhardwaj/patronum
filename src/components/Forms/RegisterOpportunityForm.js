@@ -62,32 +62,39 @@ export default function RegisterOpportunityForm() {
 
     const onSubmit = async (data) => {
         setSubmitting(true);
+        const countryName = COUNTRIES.find(c => c.value === country)?.title || 'Not specified';
+        const formData = {
+            name: data.clname,
+            email: data.clemail,
+            company: data.clcompany,
+            countryName,
+        };
+        const message = `
+            <h1><strong>Register An Opportunity Form Submission</strong></h1>
+            <h3>Partner Details:</h3>
+            <p><strong>Partner Name:</strong> ${data.name}</p>
+            <p><strong>Partner Email:</strong> ${data.email}</p>
+            <p><strong>Partner Organisation Name:</strong> ${data.company}</p>
+            <p><strong>Partner Country:</strong> ${data.country}</p>
+            <h3>Opportunity Details:</h3>
+            <p><strong>Client Name:</strong> ${data.clname}</p>
+            <p><strong>Client Email:</strong> ${data.clemail}</p>
+            <p><strong>Client Organisation Name:</strong> ${data.clcompany}</p>
+            <p><strong>Partner Country:</strong> ${countryName}</p>
+            <p><strong>Client Google Workspace Domain:</strong> ${data.cldomain}</p>
+            <p><strong>Client Number of Licensed User:</strong> ${data.cluser}</p><br>
+            <p><strong>Message:</strong> ${data.textarea}</p>
+            <p><strong>Terms Agreement:</strong> ${data.terms ? 'Agreed' : 'Not Agreed'}</p>
+        `;
         try {
-            const countryName = COUNTRIES.find(c => c.value === country)?.title || 'Not specified';
-            // Format the email message
-            const message = `
-                <h1><strong>Register An Opportunity Form Submission</strong></h1>
-                <h3>Partner Details:</h3>
-                <p><strong>Partner Name:</strong> ${data.name}</p>
-                <p><strong>Partner Email:</strong> ${data.email}</p>
-                <p><strong>Partner Organisation Name:</strong> ${data.company}</p>
-                <p><strong>Partner Country:</strong> ${data.country}</p>
-                <h3>Opportunity Details:</h3
-                <p><strong>Client Name:</strong> ${data.clname}</p>
-                <p><strong>Client Email:</strong> ${data.clemail}</p>
-                <p><strong>Client Organisation Name:</strong> ${data.clcompany}</p>
-                <p><strong>Partner Country:</strong> ${countryName}</p>
-                <p><strong>Client Google Workspace Domain:</strong> ${data.cldomain}</p>
-                <p><strong>Client Number of Licensed User:</strong> ${data.cluser}</p><br>
-                <p><strong>Message:</strong> ${data.textarea}</p>
-                <p><strong>Terms Agreement:</strong> ${data.terms ? 'Agreed' : 'Not Agreed'}</p>
-            `;
-
-            // Make a POST request to your API route
+            // Send email
             await axios.post('/api/send-email', {
-                message: message, // Pass the formatted message to the API
+                message: message, 
                 subject: "Opportunity Form Submission",
             });
+
+            // Send data to Mailchimp
+            await axios.post('/api/mail-chimp', formData);
             
             form.reset();
             setSubmitting(false);
