@@ -498,5 +498,40 @@
                 "content": "Patronum aids HR in adhering to data protection regulations by automating the enforcement of data access and retention policies. This helps in maintaining compliance with GDPR and other privacy laws, reducing the risk of breaches."
             }
         ]
+    },
+    {
+        "feature": "pricing",
+        "faqs": [
+            {
+                "id": "01",
+                "title": "How much does Patronum cost and what’s included?",
+                "content": "Patronum is based on the number of Google Workspace licenses you have within your Google domain. When you purchase Patronum you are given access to all the various features. Patronum pricing is fair and completely transparent."
+            },
+            {
+                "id": "02",
+                "title": "What is a user?",
+                "content": "A user is defined as one personalized email address (you@yourcompany). Group email aliases such as sales@yourcompany and support@yourcompany are included in the pricing and don’t count as additional users."
+            },
+            {
+                "id": "03",
+                "title": " What if I increase users mid-contract?",
+                "content": "We offer two types of billing options, annual and monthly. With both, you only need to pay for the users you have at the beginning of your subscription. When you renew, your renewal will be based on your current user count. We think that’s fair, and hope you agree."
+            },
+            {
+                "id": "04",
+                "title": "Will I pay more for some features?",
+                "content": "No. All prices indicated are flat. We believe in treating our customers right, we have a simple pricing structure, you pay a per-user yearly fee for the number of active accounts within your Google Workspace environment. We’re not going to hike the price up on you or try to sign you up to any long term contract."
+            },
+            {
+                "id": "05",
+                "title": "Is VAT included in plan prices?",
+                "content": "As most of our customers are businesses, they do not owe VAT and thus we charge the advertised flat price. If you are an EU business, make sure you enter your EU VAT number to prove your business status and thus remove VAT from the price. If you are located outside the EU, we won’t charge any VAT."
+            },
+            {
+                "id": "06",
+                "title": "I’m a Non-Profit / Education organisation. Do you offer discounts?",
+                "content": "Yes, we offer huge discounts for non-profit and education organizations."
+            }
+        ]
     }
 ]

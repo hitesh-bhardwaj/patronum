@@ -10,7 +10,7 @@ export default function PricePage() {
             <PageLayout
                 pageTitle1="No Setup Fee,"
                 pageTitle2="No Upsells, No Worries"
-                pagePara="The only tool you'll ever need to streamline your Google Workspace management."
+                pagePara="Honest, Transparent and Fair Pricing."
                 imgSrc="pricing.svg"
                 title={"Pricing - Patronum"}
                 description={"Patronum provides a better way to Google Workspace (GSuite) Management. Patronum fully automates all the administrator and user tasks to ensure an efficient, effective and secure process."}
@@ -25,7 +25,7 @@ export default function PricePage() {
 
                 <ProductFeatures />
 
-                <Faqs featureName="on_boarding"/>
+                <Faqs featureName="pricing"/>
 
             </PageLayout>
         </>

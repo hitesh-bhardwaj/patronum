@@ -49,7 +49,7 @@ const Pricing = () => {
                         <div className='pricing-head'>
                             <h2 className='title-4xl text-anim'>
                                 <span>
-                                    Find the Plan is Right
+                                    Find the Plan that is right
                                 </span>
                                 <br />
                                 <span>

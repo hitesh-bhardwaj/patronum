@@ -97,9 +97,13 @@
     width: 90%;
   }
   .content{
-    font-size: 1.3vw;
+    margin: 1vw 0;
+  }
+  .content span{
+    display: block;
+    margin: 0.3vw 0;
     color: #2A2A2A;
-    margin: 10px 0;
+    font-size: 1.25vw;
   }
   .content span::before{
     content: "•";
@@ -111,14 +115,6 @@
     font-weight: 500;
     color: #616161;
     padding-bottom: 10px;
-  }
-  .featureItem .featureContent{
-    height: 0;
-    overflow: hidden;
-    transition: 0.5s;
-  }
-  .featureItem.open .featureContent{
-    height: 14vw;
   }
   .featureItem .featureImg{
     position: absolute;
@@ -176,9 +172,6 @@
   .content span::before{
     margin-right: 2vw;
     margin-left: 2vw;
-  }
-  .featureItem.open .featureContent{
-    height: 50vw;
   }
 }
 /* =======================900px End============================== */

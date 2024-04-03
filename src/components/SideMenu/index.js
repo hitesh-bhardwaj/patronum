@@ -64,12 +64,12 @@ export default function SideMenu({sections}) {
             {sections.map((_, index) => (
                 <div
                     key={index}
-                    className={`progress-bar w-[0.3rem] bg-primary h-[14.28%] scale-y-0 origin-top scale-x-[1.5]`}
+                    className={`progress-bar w-[0.25rem] bg-[#7aa5ed] h-[14.28%] scale-y-0 origin-top scale-x-[1.5]`}
                     ref={el => progressBars.current[index] = el}
                 />
             ))}
         </div>
-        <ul className="text-[0.8vw] aeonik opacity-60 h-full flex flex-col justify-between">
+        <ul className="text-[0.8vw] aeonik opacity-40 h-full flex flex-col justify-between">
             {sections.map(({ id, name }) => (
                 <li
                     key={id}

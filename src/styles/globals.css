@@ -1360,7 +1360,7 @@ section{
 .testimonial-para{
   font-size: 1vw;
   text-align: left;
-  margin-bottom: 4vw;
+  margin-bottom: 0vw;
 }
 .testi-details{
   border-top: 1px solid #A5A5A5;
@@ -2390,6 +2390,18 @@ section{
   .backup-tab-card.table-2, .backup-tab-card.table-3{
     display: none;
   }
+  .backup-tab-card.tab-card-1 h5{
+    font-size: 2vw;
+  }
+  .backup-tab-card h5{
+    font-size: 2vw;
+  }
+  .backup-tab-card p{
+    font-size: 1.8vw;
+  }
+  .tab-card-row-1 img{
+    width: 5vw;
+  }
 }
 
 @media screen and (max-width: 480px){
@@ -2407,6 +2419,15 @@ section{
   .backup-tab-card.tab-card-1, 
   .backup-tab-card.table-1{
     display: none;
+  }
+  .tab-card-row-1 img{
+    width: 40px;
+  }
+  .backup-tab-card h5{
+    font-size: 4vw;
+  }
+  .backup-tab-card p{
+    font-size: 3.8vw;
   }
 }
 
