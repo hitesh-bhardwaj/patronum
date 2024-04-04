@@ -106,13 +106,13 @@ export default function Legal() {
                                     id={"06"}
                                     title={"Cookie Policy"}
                                     img={"cookie-policy"}
-                                    link="#"
+                                    link="/cookie-policy"
                                 />
                                 <LegalCard 
                                     id={"07"}
                                     title={"Anti-slavery and Human Trafficking Statement"}
                                     img={"/anti-slavery-and-human-trafficking"}
-                                    link="#"
+                                    link="/anti-slavery-and-human-trafficking-statement"
                                 />
                             </div>
                         </div>

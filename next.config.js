@@ -26,6 +26,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/terms-and-conditions',
+        destination: 'https://docs.google.com/document/d/19ie2gkbs2fv2kQ6gwyPwaEYpU2mg4t0eyvSKNgDF-bE/edit?usp=drive_link',
+        permanent: true,
+      },
+      {
         source: '/terms-and-conditions-for-direct-customers',
         destination: 'https://docs.google.com/document/d/19ie2gkbs2fv2kQ6gwyPwaEYpU2mg4t0eyvSKNgDF-bE/edit?usp=drive_link',
         permanent: true,

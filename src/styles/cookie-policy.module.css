@@ -1,0 +1,122 @@
+.policy p{
+    font-size: 1.15vw;
+    margin-bottom: 1.5vw;
+    color: var(--text-body);
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    line-height: 1.6;
+}
+.policy h1, .policy h2, .policy h3, .policy h4, .policy h5, .policy h6{
+    margin-bottom: 1.5vw;
+    color: var(--text-head);
+}
+
+.policy a{
+    color: var(--primary);
+    position: relative;
+}
+
+.policy a::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    display: block;
+    bottom: -10%;
+    left: 0;
+    transform-origin: center;
+    scale: 0;
+    background: var(--primary);
+    transition: all 0.3s ease;
+}
+
+.policy a:hover::after{
+    scale: 1;
+}
+
+.policy h3{
+    font-size: 2vw;
+    font-weight: 500;
+}
+
+.policy h4{
+    font-size: 1.7vw;
+    font-weight: 500;
+}
+
+.policy ul{
+    margin-bottom: 1.5vw;
+}
+.policy li{
+    font-size: 1vw;
+    list-style: disc;
+    margin: 0.5vw 0;
+    margin-left: 1.8vw;
+}
+.policy figure{
+    border: 1px solid #CACACA;
+    border-radius: 20px;
+    width: 70%;
+    overflow: hidden;
+    margin-bottom: 1.5vw;
+    margin-top: 1.5vw;
+}
+.policy th{
+    background: var(--primary);
+    color: white;
+    padding: 1vw;
+    font-size: 1.3vw;
+    font-weight: 400;
+    border-right: 1px solid #CACACA;
+}
+.policy th:first-child{
+    width: 30%;
+}
+.policy td{
+    background: #FDFDFD;
+    border-right: 1px solid #CACACA;
+    border-bottom: 1px solid #CACACA;
+    padding: 3vw 2vw;
+    font-size: 1.2vw;
+    color: var(--text-head);
+}
+.policy tr:last-child td{
+    border-bottom: none;
+}
+.policy tr:last-child td:last-child, 
+.policy td:last-child,
+.policy th:last-child{
+    border-right: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .policy p{
+        font-size: 4vw;
+        margin-bottom: 3vw;
+        line-height: 1.4;
+    }
+    .policy h3{
+        font-size: 5vw;
+        font-weight: 500;
+    }
+    .policy h4{
+        font-size: 4.5vw;
+        font-weight: 500;
+    }
+    .policy h1, .policy h2, .policy h3, .policy h4, .policy h5, .policy h6{
+        margin-bottom: 3vw;
+    }
+    .policy li{
+        font-size: 3.5vw;
+    }
+    .policy figure{
+        width: 100%;
+        margin-top: 5vw;
+    }
+    .policy th{
+        font-size: 3vw;
+    }
+    .policy td{
+        font-size: 2.7vw;
+    }
+}
