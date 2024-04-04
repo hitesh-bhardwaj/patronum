@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { useState } from 'react';
 
 export default function Cookie() {
@@ -32,7 +33,7 @@ export default function Cookie() {
                             <path d="M6.53125 15.4375H5.9375V16.0312H6.53125V15.4375Z" fill="black" ></path>
                         </svg>
                         <span>This website uses cookies.
-                            <a href="/cookie-policy" className="relative after:absolute after:bottom-0 after:bg-black after:h-[1px] after:black after:w-full after:scale-x-0 hover:after:scale-x-100 after:left-0 after:duration-200 ml-1">Learn More</a>
+                            <Link href="/cookie-policy" className="relative after:absolute after:bottom-0 after:bg-black after:h-[1px] after:black after:w-full after:scale-x-0 hover:after:scale-x-100 after:left-0 after:duration-200 ml-1">Learn More</Link>
                         </span>
                         <button onClick={handleClose} className="rounded-full bg-primary text-white px-3 py-1 border border-primary hover:bg-white hover:text-primary transition-all duration-200">
                             OK

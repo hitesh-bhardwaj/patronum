@@ -197,7 +197,7 @@ export default function App({ Component, pageProps, router }) {
       </Script>
 
       {/* WEBGL Background */}
-      {/* {loadBackground && <Background />} */}
+      {loadBackground && <Background />}
     </>
   ); 
 }
