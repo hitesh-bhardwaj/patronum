@@ -280,7 +280,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>Blog</p>
-                                        <p className='text-base'>Lorem Ipsum is simply dummy text</p>
+                                        <p className='text-base'>Tips, Resources & Latest News</p>
                                     </div>
                                 </Link>
                             </li>
@@ -291,7 +291,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>Guides</p>
-                                        <p className='text-base'>Lorem Ipsum is simply dummy text</p>
+                                        <p className='text-base'>Step-by-Step User Guides</p>
                                     </div>
                                 </Link>
                             </li>
@@ -302,7 +302,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>Ebooks</p>
-                                        <p className='text-base'>Lorem Ipsum is simply dummy text</p>
+                                        <p className='text-base'>Exclusive Patronum Content in Ebooks</p>
                                     </div>
                                 </Link>
                             </li>
@@ -313,7 +313,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>Webinars</p>
-                                        <p className='text-base'>Lorem Ipsum is simply dummy text</p>
+                                        <p className='text-base'>Engage With Experts Live</p>
                                     </div>
                                 </Link>
                             </li>
@@ -324,7 +324,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>Case Studies</p>
-                                        <p className='text-base'>Lorem Ipsum is simply dummy text</p>
+                                        <p className='text-base'>Patronum's Real-World Success Stories</p>
                                     </div>
                                 </Link>
                             </li>
@@ -335,29 +335,29 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>Product Videos</p>
-                                        <p className='text-base'>Lorem Ipsum is simply dummy text</p>
+                                        <p className='text-base'>In-depth video guides</p>
                                     </div>
                                 </Link>
                             </li>
                             <li className=''>
-                                <Link href='https://community.patronum.io' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Community'>
+                                <Link href='https://community.patronum.io' target='_blank' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Community'>
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                         <img loading='lazy' src='/assets/menu/resource-community.svg' alt='resource icon'/>
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>Community</p>
-                                        <p className='text-base'>Lorem Ipsum is simply dummy text</p>
+                                        <p className='text-base'>Connect & Collaborate with Peers</p>
                                     </div>
                                 </Link>
                             </li>
                             <li className=''>
-                                <Link href='https://help.patronum.io' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Help'>
+                                <Link href='https://help.patronum.io' target='_blank' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Help'>
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                         <img loading='lazy' src='/assets/menu/resource-help.svg' alt='resource icon'/>
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>Help</p>
-                                        <p className='text-base'>Lorem Ipsum is simply dummy text</p>
+                                        <p className='text-base'>Need Assistance? We're here!</p>
                                     </div>
                                 </Link>
                             </li>
@@ -368,7 +368,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>Legal</p>
-                                        <p className='text-base'>Lorem Ipsum is simply dummy text</p>
+                                        <p className='text-base'>Legal Information & Terms of Use</p>
                                     </div>
                                 </Link>
                             </li>

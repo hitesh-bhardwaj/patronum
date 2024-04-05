@@ -236,37 +236,37 @@ const DesktopNavigation = () => {
                                         <ul className='nav-dropdown-list'>
                                             <NavItem 
                                                 title={'Blog'}
-                                                disc={'Lorem Ipsum is simply dummy text'}
+                                                disc={'Tips, Resources & Latest News'}
                                                 link={'/blog'}
                                                 img={'resource-blog.svg'}
                                             />
                                             <NavItem 
                                                 title={'Guides'}
-                                                disc={'Lorem Ipsum is simply dummy text'}
+                                                disc={'Step-by-Step User Guides'}
                                                 link={'/guides'}
                                                 img={'resource-guides.svg'}
                                             />
                                             <NavItem 
                                                 title={'Ebooks'}
-                                                disc={'Lorem Ipsum is simply dummy text'}
+                                                disc={'Exclusive Patronum Content in Ebooks'}
                                                 link={'/ebooks'}
                                                 img={'resource-ebooks.svg'}
                                             />
                                             <NavItem 
                                                 title={'Webinars'}
-                                                disc={'Lorem Ipsum is simply dummy text'}
+                                                disc={'Engage With Experts Live'}
                                                 link={'/webinars'}
                                                 img={'resource-webinars.svg'}
                                             />
                                             <NavItem 
                                                 title={'Case Studies'}
-                                                disc={'Lorem Ipsum is simply dummy text'}
+                                                disc={"Patronum's Real-World Success Stories"}
                                                 link={'/case-studies'}
                                                 img={'resource-case-studies.svg'}
                                             />
                                             <NavItem 
                                                 title={'Product Videos'}
-                                                disc={'Lorem Ipsum is simply dummy text'}
+                                                disc={'In-depth video guides'}
                                                 link={'/product-videos'}
                                                 img={'resource-product-videos.svg'}
                                             />
@@ -277,7 +277,7 @@ const DesktopNavigation = () => {
                                                     </div>
                                                     <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>Community</p>
-                                                        <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
+                                                        <p className='nav-drop-text'>Connect & Collaborate with Peers</p>
                                                     </div>
                                                 </Link>
                                             </li>
@@ -288,13 +288,13 @@ const DesktopNavigation = () => {
                                                     </div>
                                                     <div className='w-[16vw]'>
                                                         <p className='nav-drop-title'>Help</p>
-                                                        <p className='nav-drop-text'>Lorem Ipsum is simply dummy text</p>
+                                                        <p className='nav-drop-text'>Need Assistance? We're here!</p>
                                                     </div>
                                                 </Link>
                                             </li>
                                             <NavItem 
                                                 title={'Legal'}
-                                                disc={'Lorem Ipsum is simply dummy text'}
+                                                disc={'Legal Information & Terms of Use'}
                                                 link={'/legal'}
                                                 img={'resource-legal.svg'}
                                             />
