@@ -13,6 +13,7 @@ import PreLoader from '@/components/PreLoader';
 import InstallModal from '@/components/InstallModal';
 import DemoModal from '@/components/InstallModal/DemoModal';
 import Pixi from '@/components/Pixi';
+import Cookie from '@/components/Cookie';
 
 // Import the Background component dynamically
 // const Background = dynamic(() => import('@/components/Pixi'), {
@@ -21,7 +22,7 @@ import Pixi from '@/components/Pixi';
 
 export default function App({ Component, pageProps, router }) {
   const [showPreloader, setShowPreloader] = useState(true);
-  const [loadBackground, setLoadBackground] = useState(false);
+  // const [loadBackground, setLoadBackground] = useState(false);
 
   useEffect(() => {
     const hasVisited = sessionStorage.getItem('hasVisited');
@@ -41,14 +42,14 @@ export default function App({ Component, pageProps, router }) {
     }
   }, []);
 
-  useEffect(() => {
-    // Set a timer to change loadBackground state after a specific time
-    const timer = setTimeout(() => {
-      setLoadBackground(true);
-    }, 0); // Delay in milliseconds before importing/rendering the component
+  // useEffect(() => {
+  //   // Set a timer to change loadBackground state after a specific time
+  //   const timer = setTimeout(() => {
+  //     setLoadBackground(true);
+  //   }, 3000); // Delay in milliseconds before importing/rendering the component
 
-    return () => clearTimeout(timer); // Cleanup the timer
-  }, []);
+  //   return () => clearTimeout(timer); // Cleanup the timer
+  // }, []);
 
     useEffect(() => {
     const handleRouteChange = () => {
@@ -163,6 +164,7 @@ export default function App({ Component, pageProps, router }) {
       <ReactLenis root options={{ duration: 0.8 }}>
         <ModalProvider>
           <AnimatePresence mode="wait">
+            <Cookie />
             <Component {...pageProps} key={router.route}/>
           </AnimatePresence>
           <InstallModal />
