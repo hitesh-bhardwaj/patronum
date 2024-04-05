@@ -2,6 +2,7 @@ import Hero from "@/components/PageLayout/Hero";
 import MetaData from "@/components/PageLayout/MetaData";
 import Layout from "@/components/Stairs";
 import styles from '@/styles/cookie-policy.module.css'
+import { wordpressUrl } from "@/utils/variables";
 
 export default function Page({ title, content }) {
 
@@ -46,7 +47,7 @@ export default function Page({ title, content }) {
   
 export async function getServerSideProps(context) {
     try {
-        const response = await fetch('https://wordpress-156292-4361221.cloudwaysapps.com/wp-json/wp/v2/pages?slug=anti-slavery-and-human-trafficking-statement');
+        const response = await fetch(`${wordpressUrl}/wp-json/wp/v2/pages?slug=anti-slavery-and-human-trafficking-statement`);
         if (!response.ok) {
             throw new Error('Failed to fetch data');
         }

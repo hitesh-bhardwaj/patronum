@@ -55,6 +55,11 @@ const nextConfig = {
         destination: '/blog',
         permanent: true,
       },
+      {
+        source: '/sitemap.xml',
+        destination: '/sitemap_index.xml',
+        permanent: true,
+      }
     ]
   },
 }
