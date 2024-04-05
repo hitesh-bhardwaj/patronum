@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Header from '../Header';
 import Footer from '../Footer';
 import PageLoader from '../PageLoader';
+import Cookie from '../Cookie';
 
 export default function Layout({children}) {
 
@@ -16,6 +17,7 @@ export default function Layout({children}) {
                     className='bg-primary h-0 w-full relative origin-bottom'/>
             </div>
             <PageLoader />
+            <Cookie />
             <Header />
                 {children}
             <Footer />

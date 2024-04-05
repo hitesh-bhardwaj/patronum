@@ -1,8 +1,18 @@
 import SimplexNoise from 'simplex-noise';
 import debounce from 'debounce';
-import { useEffect } from 'react';
+import gsap from 'gsap';
+import { useEffect, useRef } from 'react';
 
 export default function Pixi() {
+
+    const canvasRef = useRef(null);
+    useEffect(() => {
+        gsap.to(canvasRef.current, {
+            opacity: 1,
+            duration: 2,
+            delay: 3
+        });
+    }, [])
 
     useEffect(() => {
         // Dynamically import PixiJS and other client-side code
@@ -180,7 +190,7 @@ export default function Pixi() {
         
     return (
         <>
-            <canvas className="orb-canvas"></canvas>
+            <canvas className="orb-canvas" ref={canvasRef} />
         </>
     )
 }

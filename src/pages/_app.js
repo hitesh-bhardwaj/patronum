@@ -12,12 +12,12 @@ import { ModalProvider } from '@/components/InstallModal/ModelContext';
 import PreLoader from '@/components/PreLoader';
 import InstallModal from '@/components/InstallModal';
 import DemoModal from '@/components/InstallModal/DemoModal';
-import Cookie from '@/components/Cookie';
+import Pixi from '@/components/Pixi';
 
 // Import the Background component dynamically
-const Background = dynamic(() => import('@/components/Pixi'), {
-  ssr: false, 
-});
+// const Background = dynamic(() => import('@/components/Pixi'), {
+//   ssr: false, 
+// });
 
 export default function App({ Component, pageProps, router }) {
   const [showPreloader, setShowPreloader] = useState(true);
@@ -45,7 +45,7 @@ export default function App({ Component, pageProps, router }) {
     // Set a timer to change loadBackground state after a specific time
     const timer = setTimeout(() => {
       setLoadBackground(true);
-    }, 3000); // Delay in milliseconds before importing/rendering the component
+    }, 0); // Delay in milliseconds before importing/rendering the component
 
     return () => clearTimeout(timer); // Cleanup the timer
   }, []);
@@ -161,7 +161,6 @@ export default function App({ Component, pageProps, router }) {
 
       {showPreloader && <PreLoader />} 
       <ReactLenis root options={{ duration: 0.8 }}>
-        <Cookie />
         <ModalProvider>
           <AnimatePresence mode="wait">
             <Component {...pageProps} key={router.route}/>
@@ -197,7 +196,8 @@ export default function App({ Component, pageProps, router }) {
       </Script>
 
       {/* WEBGL Background */}
-      {loadBackground && <Background />}
+      <Pixi />
+      {/* {loadBackground && <Background />} */}
     </>
   ); 
 }
