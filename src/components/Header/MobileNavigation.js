@@ -92,7 +92,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                 </button>
                             </div>
                         </div>
-                        <ul id="dropdown-features" className={`px-4 flex flex-col justify-center space-y-4 bg-gray-100 transition-all duration-500 overflow-hidden ${isFeaturesDropdownOpen ? "h-[700px]" : "h-0" }`} aria-hidden="true">
+                        <ul id="dropdown-features" className={`px-4 flex flex-col justify-center space-y-4 bg-gray-100 transition-all duration-500 overflow-hidden ${isFeaturesDropdownOpen ? "h-[700px]" : "h-0" }`}>
                             <li className=''>
                                 <Link href='/on-boarding' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Onboarding' >
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
@@ -185,7 +185,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                 </button>
                             </div>
                         </div>
-                        <ul id="dropdown-usecases" className={`px-4 flex flex-col justify-center space-y-4 bg-gray-100 transition-all duration-500 overflow-hidden ${isUsecasesDropdownOpen ? "h-[600px]" : "h-0" }`} aria-hidden="true">
+                        <ul id="dropdown-usecases" className={`px-4 flex flex-col justify-center space-y-4 bg-gray-100 transition-all duration-500 overflow-hidden ${isUsecasesDropdownOpen ? "h-[600px]" : "h-0" }`}>
                             <li className=''>
                                 <Link href='/patronum-for-business' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Business' >
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
@@ -272,7 +272,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                 </span>
                             </button>
                         </div>
-                        <ul id="dropdown-resources" className={`px-4 space-y-4 bg-gray-100 transition-all duration-500 overflow-hidden flex flex-col justify-center ${isResourcesDropdownOpen ? "h-[880px]" : "h-0" }`} aria-hidden="true">
+                        <ul id="dropdown-resources" className={`px-4 space-y-4 bg-gray-100 transition-all duration-500 overflow-hidden flex flex-col justify-center ${isResourcesDropdownOpen ? "h-[880px]" : "h-0" }`}>
                             <li className=''>
                                 <Link href='/blog' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Blog' >
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
