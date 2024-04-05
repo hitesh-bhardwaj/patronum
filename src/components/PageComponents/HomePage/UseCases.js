@@ -176,7 +176,7 @@ export default function UseCases() {
                                                 </p>
                                                 <Link href="/patronum-for-business" className="link-btn">
                                                     <span className="btn-text">Learn More</span>
-                                                    <span className="hidden">Know More About Patronum For Business</span>
+                                                    <span className="screen-reader-text">Get Started</span>
                                                     <span className="btn-images">
                                                         <div>
                                                             <svg className="" viewBox="0 0 38 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -217,7 +217,7 @@ export default function UseCases() {
                                                 </p>
                                                 <Link href="/patronum-for-hr" className="link-btn">
                                                     <span className="btn-text">Learn More</span>
-                                                    <span className="hidden">Know More About Patronum For HR</span>
+                                                    <span className="screen-reader-text">Get Started</span>
                                                     <span className="btn-images">
                                                         <div>
                                                             <svg className="" viewBox="0 0 38 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -258,7 +258,7 @@ export default function UseCases() {
                                                 </p>
                                                 <Link href="/patronum-for-sales-marketing" className="link-btn">
                                                     <span className="btn-text">Learn More</span>
-                                                    <span className="hidden">Know More About Patronum For Sales Marketing</span>
+                                                    <span className="screen-reader-text">Get Started</span>
                                                     <span className="btn-images">
                                                         <div>
                                                             <svg className="" viewBox="0 0 38 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -297,7 +297,7 @@ export default function UseCases() {
                                                 </p>
                                                 <Link href="/patronum-for-education" className="link-btn">
                                                     <span className="btn-text">Learn More</span>
-                                                    <span className="hidden">Know More About Patronum For Education</span>
+                                                    <span className="screen-reader-text">Get Started</span>
                                                     <span className="btn-images">
                                                         <div>
                                                             <svg className="" viewBox="0 0 38 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -336,7 +336,7 @@ export default function UseCases() {
                                                 </p>
                                                 <Link href="/patronum-for-users" className="link-btn">
                                                     <span className="btn-text">Learn More</span>
-                                                    <span className="hidden">Know More About Patronum For Users</span>
+                                                    <span className="screen-reader-text">Get Started</span>
                                                     <span className="btn-images">
                                                         <div>
                                                             <svg className="" viewBox="0 0 38 21" fill="none" xmlns="http://www.w3.org/2000/svg">

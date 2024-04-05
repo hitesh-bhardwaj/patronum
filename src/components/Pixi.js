@@ -58,7 +58,7 @@ export default function Pixi() {
                 this.xOff = random(0, 1000);
                 this.yOff = random(0, 1000);
                 // how quickly the noise/self similar random values step through time
-                this.inc = 0.0001;
+                this.inc = 0.001;
             
                 // PIXI.Graphics is used to draw 2d primitives (in this case a circle) to the canvas
                 this.graphics = new PIXI.Graphics();

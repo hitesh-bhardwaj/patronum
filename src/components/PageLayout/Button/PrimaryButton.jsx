@@ -6,7 +6,7 @@ const PrimaryButton = ({link, btnText}) => {
             <span data-primary className="btn-text">
                 {btnText}
             </span>
-            <span className="hidden">{link}</span>
+            <span className="screen-reader-text">About This</span>
             <div aria-hidden="true" className="btn-circle">
                 <div className="btn-circle-text">
                     {btnText}

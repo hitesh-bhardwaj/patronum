@@ -411,37 +411,37 @@
                 "id": "01",
                 "title": "What unique features does Patronum offer for large businesses using Google Workspace?",
                 "content": "Patronum provides organization-wide policy automation, allowing for Google Drive management and email signature standardization, enhancing consistency and brand integrity."
-              },
-              {
+            },
+            {
                 "id": "02",
                 "title": "How can Patronum improve onboarding efficiency for enterprises?",
                 "content": "Patronum automates the entire user onboarding process, from account creation to resource allocation, saving time and ensuring new hires are ready to go from day one."
-              },
-              {
+            },
+            {
                 "id": "03",
                 "title": "What solutions does Patronum offer for data compliance and file management?",
                 "content": "With automated file unsharing and compliance, Patronum ensures sensitive information is protected and data governance policies are consistently applied."
-              },
-              {
+            },
+            {
                 "id": "04",
                 "title": "Can Patronum assist with offboarding in Google Workspace?",
                 "content": "Yes, Patronum can automate offboarding tasks such as transferring file ownership and revoking access, ensuring a secure and comprehensive offboarding process."
-              },
-              {
+            },
+            {
                 "id": "05",
                 "title": "How does Patronum handle the complexity of managing multiple subsidiaries or franchises?",
                 "content": "Patronum enables IT professionals to quickly set up a Google Workspace environment with pre-agreed policies, tailored for each subsidiary or franchise’s needs."
-              },
-              {
+            },
+            {
                 "id": "06",
                 "title": "Is Patronum suitable for SMEs with limited IT expertise?",
                 "content": "Absolutely, Patronum's intuitive interface is designed for users who may not be well-versed in Google Workspace, simplifying management without the need for in-depth technical knowledge."
-              },
-              {
+            },
+            {
                 "id": "07",
                 "title": "What benefits does Patronum provide for day-to-day business operations?",
                 "content": "Patronum enhances daily operations by providing contact sharing and intelligent email signature management, facilitating better communication and marketing alignment."
-              }
+            }
         ]
     },
     {
@@ -533,5 +533,125 @@
                 "content": "Yes, we offer huge discounts for non-profit and education organizations."
             }
         ]
-    }
+    },
+    {
+        "feature": "patronum_for_sales",
+        "faqs": [
+            {
+                "id": "01",
+                "title": "How does Patronum simplify the onboarding process for sales and marketing teams?",
+                "content": "Patronum automates the onboarding process by integrating with Google Workspace to provide immediate access to essential tools and resources. This ensures new team members can start productive work from day one, enhancing early job satisfaction."
+            },
+            {
+                "id": "02",
+                "title": "Can Patronum help maintain our brand's consistency across all email communications?",
+                "content": "Absolutely. With Patronum’s email signature management, you can ensure that every email sent by your team aligns with your brand's identity. You can update signatures across the team to reflect the latest branding or campaign initiatives."
+            },
+            {
+                "id": "03",
+                "title": "How does Patronum facilitate the sharing of sales materials and contacts within our team?",
+                "content": "Patronum utilizes Google Groups and Labels to automatically distribute resources and contacts within Google Workspace. This means sales materials and vital contacts are readily accessible to the entire team, fostering seamless collaboration."
+            },
+            {
+                "id": "04",
+                "title": "What advantages does Patronum offer for managing data access within sales teams?",
+                "content": "It enables sales managers to easily modify team configurations and access rights, ensuring sensitive data is protected while making sure all team members have the information they need to close deals."
+            },
+            {
+                "id": "05",
+                "title": "How does Patronum ensure our sales and marketing databases are always up to date?",
+                "content": "Through real-time synchronization, Patronum ensures that any changes in contact details, shared documents, or email signatures are immediately reflected across the team, keeping your databases current."
+            },
+            {
+                "id": "06",
+                "title": "Can Patronum assist in automating routine tasks for our sales and marketing team?",
+                "content": "Yes, by automating tasks such as contact sharing, email signature updates, and access management, Patronum frees your team to focus more on strategic sales and marketing efforts rather than administrative tasks."
+            },
+            {
+                "id": "07",
+                "title": "How does Patronum support cross-functional collaboration between sales and marketing?",
+                "content": "By ensuring both teams have access to shared contacts, common customer lists, and the latest templates or presentations, Patronum enhances productivity and ensures a unified approach to customer engagement."
+            }
+        ]
+    },
+    {
+        "feature": "patronum_for_education",
+        "faqs": [
+            {
+                "id": "01",
+                "title": "How does Patronum simplify Google Workspace for Education management?",
+                "content": "Patronum streamlines Google Workspace management for education by automating onboarding, email setups, and access management. It saves time and resources, ensuring staff and students quickly gain access to necessary tools and information. This efficiency boosts productivity and the educational experience."
+            },
+            {
+                "id": "02",
+                "title": "Can Patronum help with professional branding in educational communications?",
+                "content": "Yes, Patronum facilitates professional branding by allowing easy updates and uniformity in email signatures across the institution. This consistency enhances the institution's image in all communications, contributing to a stronger professional presence."
+            },
+            {
+                "id": "03",
+                "title": "How does Patronum facilitate cross-functional collaboration in educational settings?",
+                "content": "Patronum promotes collaboration by automatically organizing staff and students into Google Groups based on roles or departments, ensuring smooth data sharing and communication. This organization supports effective teamwork and project management within the educational community."
+            },
+            {
+                "id": "04",
+                "title": "What benefits does Patronum offer for temporary or non-permanent staff?",
+                "content": "Patronum ensures temporary staff have immediate access to necessary resources and information with automated onboarding policies. It manages data access efficiently, making transitions seamless and secure, without the need for extensive IT intervention."
+            },
+            {
+                "id": "05",
+                "title": "How does Patronum enhance communication with parents and guardians?",
+                "content": "Through its Contacts sharing feature, Patronum enables schools to selectively distribute information to parents and guardians, fostering an inclusive and engaged community. This feature supports better communication and involvement in the educational process."
+            },
+            {
+                "id": "06",
+                "title": "How does Patronum ensure data security and privacy in educational institutions?",
+                "content": "Patronum adheres to strict data security and privacy standards, automating account suspensions and data retention policies to protect sensitive information. This ensures institutions meet compliance requirements effortlessly."
+            },
+            {
+                "id": "07",
+                "title": "What makes Patronum user-friendly for educational administrators?",
+                "content": "With its intuitive interface, Patronum requires no scripting or advanced IT knowledge, making it accessible for all administrators. This ease of use reduces reliance on technical support and empowers staff to manage their workspace efficiently."
+            }
+        ]
+    },
+    {
+        "feature": "patronum_for_users",
+        "faqs": [
+            {
+                "id": "01",
+                "title": "How does Patronum simplify Google Workspace management for individual users?",
+                "content": "Patronum automates routine tasks like password resets and permissions, streamlining document management and collaboration for a smoother Google Workspace experience."
+            },
+            {
+                "id": "02",
+                "title": "Can Patronum improve collaboration within my team?",
+                "content": "Yes, it enhances teamwork by organizing shared documents and streamlining communication, making it easier for team members to collaborate effectively."
+            },
+            {
+                "id": "03",
+                "title": "What benefits does Patronum offer for new hires?",
+                "content": "New hires benefit from immediate access to necessary tools and resources, ensuring a quick and seamless integration into the team."
+            },
+            {
+                "id": "04",
+                "title": "How does Patronum handle data for departing employees?",
+                "content": "It securely manages the transfer or deletion of data, ensuring organizational integrity and compliance while respecting privacy."
+            },
+            {
+                "id": "05",
+                "title": "Does using Patronum require IT expertise?",
+                "content": "No, Patronum is designed for ease of use, requiring no advanced IT knowledge, thus empowering all users to manage their workspace efficiently."
+            },
+            {
+                "id": "06",
+                "title": "How does Patronum contribute to job satisfaction?",
+                "content": "By reducing administrative friction and enhancing collaboration, Patronum allows users to focus on meaningful work, thereby increasing job satisfaction."
+            },
+            {
+                "id": "07",
+                "title": "Is Patronum suitable for organizations of all sizes?",
+                "content": "Absolutely, its scalable features are designed to benefit organizations of any size, from small teams to large enterprises."
+            }
+        ]
+    }      
 ]

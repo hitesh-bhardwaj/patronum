@@ -141,7 +141,7 @@ export default function Features(){
                                                     </p>
                                                     <Link href={item.link} className="link-btn">
                                                         <span className="btn-text">Learn More</span>
-                                                        <span className='hidden'>{item.link}</span>
+                                                        <span className="screen-reader-text">Get Started</span>
                                                         <span className="btn-images">
                                                             <div>
                                                                 <svg className="" viewBox="0 0 38 21" fill="none" xmlns="http://www.w3.org/2000/svg">

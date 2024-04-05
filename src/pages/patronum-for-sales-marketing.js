@@ -1,3 +1,4 @@
+import Faqs from "@/components/PageComponents/FeaturesPage/Faq";
 import UseCaseCard from "@/components/PageComponents/UseCasePage/UseCaseCard";
 import PageLayout from "@/components/PageLayout";
 import SectionTitle from "@/components/PageLayout/SectionTitle";
@@ -5,27 +6,27 @@ import SectionTitle from "@/components/PageLayout/SectionTitle";
 const UseCasesInfo = [
     {
         id: "01",
-        para: "“Patronum is a real game-changer when it comes to Google Workspace administration.” Alexis Trabuchet, IT Manager, Fintecture explained, “With Patronum we can completely automate the user on and offboarding with policies that you can apply organization-wide.",
+        para: "In the competitive realm of sales and marketing, achieving sales targets and keeping teams motivated are monumental tasks that hinge on efficiency and seamless operations. Yet, one persistent roadblock is the reliance on IT professionals for simple Google Workspace administration tasks. This dependency not only slows down the pace at which sales and marketing teams operate but also diverts their focus from core activities, leading to frustration and decreased productivity. The need to constantly wait for password resets or access permissions adds unnecessary delays, compounding the pressure on sales teams to perform and detracting from their motivation and energy.",
         img: "/assets/useCases/sales-marketing/main1.svg",
     },
     {
         id: "02",
-        para: "For large enterprises Patronum is a Google Workspace productivity suite for IT professionals who need to implement strategic policies. Many tasks can either be automated by dedicated IT staff in centralized support and/or delegated to knowledgable non-IT managers. These include Google Drive Management, Contact Sharing and Email Signature Management. With subsidiaries or franchises, pre-agreed Patronum policies enable IT professionals to set up a tailored Google Workspace environment quickly.",
+        para: "The recruitment process in sales and marketing is equally fraught with challenges. Attracting top talent is only half the battle; the real test begins with their onboarding. New hires often face a steep learning curve, grappling with access issues and a lack of integration into the company's digital workspace. This initial friction not only dampens early job satisfaction but also delays their contribution to the team's goals. Without immediate access to shared data and resources, new recruits are sidelined, unable to collaborate effectively or immerse themselves in the company culture, leading to disengagement and a potential waste of talent.",
         img: "/assets/useCases/sales-marketing/main2.svg",
     },
     {
         id: "03",
-        para: "For small to medium enterprise (SME) Patronum’s intuitive interface is ideal for busy executives, who may not have a detailed knowledge of Google, but want a better way to manage Google Workspace. These include Google Drive management with automated file unsharing and compliance.",
+        para: "Patronum introduces a compelling solution to these challenges by empowering sales and marketing managers with delegated Google Workspace administration rights. This innovative approach eliminates the need for constant IT intervention, allowing managers to directly manage login credentials and access rights, streamlining operations, and significantly improving the working environment. This autonomy not only frees up valuable time but also enhances team responsiveness and agility, crucial for meeting sales targets and maintaining team morale.",
         img: "/assets/useCases/sales-marketing/main3.svg",
     },
     {
         id: "04",
-        para: "For large enterprises Patronum is a Google Workspace productivity suite for IT professionals who need to implement strategic policies. Many tasks can either be automated by dedicated IT staff in centralized support and/or delegated to knowledgable non-IT managers. These include Google Drive Management, Contact Sharing and Email Signature Management. With subsidiaries or franchises, pre-agreed Patronum policies enable IT professionals to set up a tailored Google Workspace environment quickly.",
+        para: "Furthermore, Patronum's policies for automatic resource allocation via Google Groups and Labels transform the onboarding experience for new hires. From day one, team members gain access to essential tools like Google Drive, Calendars, and Contacts, enabling immediate collaboration and integration into the team. This smooth transition process ensures that new talent can hit the ground running, fostering job satisfaction and early engagement in their roles. By removing barriers to entry, Patronum ensures that sales and marketing teams can focus on their primary objectives, harnessing the full potential of their new recruits.",
         img: "/assets/useCases/sales-marketing/main4.svg",
     },
     {
         id: "05",
-        para: "For small to medium enterprise (SME) Patronum’s intuitive interface is ideal for busy executives, who may not have a detailed knowledge of Google, but want a better way to manage Google Workspace. These include Google Drive management with automated file unsharing and compliance.",
+        para: "Patronum's suite of features extends beyond administrative ease and onboarding enhancements. It revolutionizes data sharing and management, offering sales consultants the ability to securely share presentations or quotes with clients and revoke access as needed. This strategic control over data not only secures sensitive information but also encourages ongoing client engagement. Additionally, compliance with 'do not call' requests and the management of offboarding processes are streamlined, ensuring data privacy and retention policies are effortlessly maintained. Patronum stands as a beacon of efficiency and security in the sales and marketing ecosystem, enabling teams to surpass their targets while safeguarding client relationships and team dynamics.",
         img: "/assets/useCases/sales-marketing/main5.svg",
     }
 ]
@@ -37,7 +38,7 @@ export default function UseCasesDetail(){
             <PageLayout 
                 pageTitle1={'Patronum'} 
                 pageTitle2={'for Sales & Marketing'}
-                pagePara={"The only tool you'll ever need to streamline your Google Workspace management."} 
+                pagePara={"Empowering Sales and Marketing Teams with Delegated Administration"} 
                 imgSrc={'use-cases-sales-marketing.svg'}
                 title={"Patronum for Sales & Marketing - Patronum"}
                 description={"Patronum provides a better way to Google Workspace (GSuite) Management. Patronum fully automates all the administrator and user tasks to ensure an efficient, effective and secure process."}
@@ -54,7 +55,7 @@ export default function UseCasesDetail(){
                             <SectionTitle 
                                 sectionTitle1="Use Cases:"
                                 sectionTitle2="Patronum for Sales & Marketing"
-                                sectionPara="Patronum redefines user lifecycle management by providing a consistent and unified experience within Google Workspace while significantly reducing IT expenditure in managing users and resources."
+                                sectionPara="In the competitive sales and marketing arena, achieving targets and maintaining team motivation are paramount. Patronum transforms Google Workspace into a powerhouse for sales and marketing teams, enabling them to excel without the constant need for IT intervention."
                             />
                             <div className="useCases-Info">
                                 {UseCasesInfo.map((usecase, index) => (
@@ -68,6 +69,8 @@ export default function UseCasesDetail(){
                         </div>
                     </div>    
                 </section>
+
+                <Faqs featureName={"patronum_for_sales"}/>
 
             </PageLayout>
         </>
