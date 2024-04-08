@@ -13,6 +13,9 @@
     color: gray;
     content: '#'
 }
+.anchor::after {
+    content: none !important;
+}
   
 .blogContent{
     width: 80%;
@@ -25,15 +28,26 @@
 
 .blogContent h2{
     font-size: 2.3vw;
-    font-weight: 400;
-    color: #2a2a2a;
+    font-weight: 500;
+    color: var(--text-head);
     padding-top: 10px;
     scroll-behavior: smooth;
     scroll-margin-top: 7vw;
-} 
+}
 
 .blogContent h2 strong{
+    font-weight: 500;
+}
+
+.blogContent h3{
+    font-size: 1.8vw;
     font-weight: 400;
+    color: var(--text-head);
+    padding-top: 10px;
+}
+
+.blogContent h3 strong{
+    font-weight: 500;
 }
 
 .blogContent p{
@@ -61,7 +75,7 @@
     font-size: 1.15vw;
     letter-spacing: 0.5px;
     line-height: 1.7;
-    color: #4a4a4a;
+    color: var(--text-body);
     list-style: disc;
     margin: 2% 0;
 }
@@ -70,7 +84,7 @@
     font-family: 'Ageo' !important;
     text-rendering: geometricPrecision !important;
     font-weight: 600 !important;
-    color: #2a2a2a !important;
+    color: var(--text-head) !important;
 }
 
 .blogContent figure {
@@ -83,6 +97,29 @@
     border-radius: 20px;
 }
 
+.blogContent a{
+    color: var(--primary);
+    position: relative;
+    transition: all 200ms ease;
+}
+.blogContent a::after{
+    content: '';
+    position: absolute;
+    display: block;
+    left: 0;
+    bottom: -5%;
+    height: 1px;
+    width: 100%;
+    transform: scaleX(0);
+    background: #2b87ff;
+    transition: all 150ms ease;
+}
+.blogContent a:hover{
+    color: #2b87ff;
+}
+.blogContent a:hover::after{
+    transform: scaleX(1);
+}
 
 /* Media 1024px */
 @media screen and (max-width: 1024px) {
@@ -106,10 +143,12 @@
     }
 }
 
-
 @media screen and (max-width: 1024px) {
     .blogContent h2{
         font-size: 6vw;
+    }
+    .blogContent h3{
+        font-size: 5.2vw;
     }
     .blogContent p{
         font-size: 4.2vw;
