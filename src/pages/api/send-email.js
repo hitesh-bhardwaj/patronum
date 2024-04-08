@@ -20,7 +20,7 @@ export default async (req, res) => {
       // Define email data
       const mailOptions = {
         from: emailfrom,
-        to: emailfrom,
+        to: `${emailfrom}, hitesh@weareenigma.com`, 
         subject: subject || "Form Response",
         html: message,
       };
