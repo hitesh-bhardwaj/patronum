@@ -2,6 +2,7 @@ import react, { useEffect, useState } from "react";
 import SplitType from "split-type";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import { NextSeo } from "next-seo";
 
 import Hero from '@/components/PageComponents/HomePage/Hero';
 import Features from '@/components/PageComponents/HomePage/Features';
@@ -14,10 +15,9 @@ import RelatedPosts from "@/components/PageComponents/BlogPage/RelatedPosts";
 
 import { getHomePagePosts } from '@/lib/posts';
 import UseCasesMobile from "@/components/PageComponents/HomePage/UseCasesMobile";
-import Stairs from '@/components/Stairs';
 import SideMenu from "@/components/SideMenu";
-import { NextSeo } from "next-seo";
 import Head from "next/head";
+import Layout from "@/components/Stairs";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -343,7 +343,7 @@ export default function Home( { recentPosts } ) {
         />
     </Head>
         {showSideMenu && <SideMenu sections={sections}/>}
-        <Stairs>
+        <Layout>
           <main>
             <Hero />
             <Features />
@@ -359,10 +359,10 @@ export default function Home( { recentPosts } ) {
               />
             <Faqs />
           </main>
-        </Stairs>
+        </Layout>
     </>  
   );
-} 
+}
 
 export async function getStaticProps() {
 
