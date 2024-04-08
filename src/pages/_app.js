@@ -151,8 +151,8 @@ export default function App({ Component, pageProps, router }) {
           <AnimatePresence mode="wait">
             <Component {...pageProps} key={router.route}/>
           </AnimatePresence>
-          {/* <InstallModal /> */}
-          {/* <DemoModal /> */}
+          <InstallModal />
+          <DemoModal />
         </ModalProvider>
       </ReactLenis>
 

@@ -102,6 +102,7 @@ export default function Hero(){
                                     </span>
                                 </div>
                             </h1>
+                            
                             <h1 className='title-5xl lg:hidden block'>
                                 <div className="flex flex-col gap-y-[2vw]">
                                     <div className="hero-anim flex items-end gap-x-[2vw] w-full">
@@ -149,13 +150,16 @@ export default function Hero(){
                         </div>
                         
                         <div className="hero-right">
-                            <img
-                                src="/assets/home/hero-gif-final.gif"
-                                className='hero-img'
-                                alt='patronum dashboard showcase'
-                                title='patronum dashboard showcase'
+                            <video 
+                                src="/assets/home/Dashboard-Hero.webm" 
                                 loading="lazy"
-                            />
+                                alt='patronum dashboard showcase'
+                                className='hero-img'
+                                muted 
+                                autoPlay 
+                                loop
+                                playsInline>
+                            </video>
                         </div>
                     </div>
 
