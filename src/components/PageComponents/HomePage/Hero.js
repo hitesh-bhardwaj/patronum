@@ -80,9 +80,10 @@ export default function Hero(){
                 <div className="container-lg relative">
                     <div className="lg:px-[4vw] flex-all">
                         <div className="lg:w-1/2 w-full flex flex-col lg:gap-y-10 gap-y-[7vw] lg:pt-0 md:pt-[20vw] pt-[25vw]">
+                            
                             <h1 className='title-5xl lg:block hidden'>
                                 <div className='hero-anim Your'>
-                                    <span className="span">Your</span>
+                                    <span className="span">Your </span>
                                 </div>
                                 <div className="hero-anim">
                                     <img
@@ -94,7 +95,7 @@ export default function Hero(){
                                         height={100}
                                     />
                                 </div>
-                                
+                                <p className="hidden">Google Workspace </p>
                                 <div className='hero-anim'>
                                     <span className="span">
                                         Manager
@@ -107,6 +108,7 @@ export default function Hero(){
                                         <span className="span">
                                             Your
                                         </span>
+                                        <p> Google Workspace </p>
                                         <span className="md:w-[45%] w-[50%] mt-[1.5vw] span">
                                             <img className="w-full google" src="/assets/home/google.svg" loading="lazy" width={307} height={100} alt="google logo image" />
                                         </span>
@@ -147,19 +149,12 @@ export default function Hero(){
                         </div>
                         
                         <div className="hero-right">
-                            <video 
-                                autoPlay
-                                muted 
-                                loop 
-                                src="/assets/home/hero-animation.webm"
-                                className='hero-img'
-                            />
-                            {/* <img
-                                src="/assets/home/hero-animation.gif"
+                            <img
+                                src="/assets/home/hero-gif-final.gif"
                                 className='hero-img'
                                 alt='patronum dashboard showcase'
                                 title='patronum dashboard showcase'
-                            /> */}
+                            />
                         </div>
                     </div>
                     <div className="scroll-down-btn">

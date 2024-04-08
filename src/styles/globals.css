@@ -871,7 +871,6 @@ section{
 .hero-img{
   width: 32vw;
   height: 100%;
-  mix-blend-mode: darken;
   opacity: 0;
   transform: translateX(100px);
 }
