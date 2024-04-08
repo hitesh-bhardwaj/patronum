@@ -874,6 +874,8 @@ section{
   opacity: 0;
   transform: translateX(100px);
 }
+
+/* Scroll Down Button 1920px */
 .scroll-down-btn{
   position: absolute;
   bottom: 4%;
@@ -882,17 +884,6 @@ section{
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.scroll-down-btn a{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.scroll-down-btn a>svg{
-  width: 4.5vw;
-  height: 4.5vw;
 }
 .scroll-down-btn .scroll-down-a{
   width: 100%;
@@ -909,23 +900,28 @@ section{
   stroke-width: 1.5px;
   stroke-dasharray: 0% 300%;
 }
-.scroll-down-btn-img {
-  height: 1.3vw;
+.scroll-down-btn .scroll-down-a .scroll-img-container{
+  display: block;
+  position: absolute;
   overflow: hidden;
-  stroke-width: 0;
+  height: 1.3vw;
+  width: max-content;
 }
-.scroll-down-btn-img g{
-  transform-origin: center;
+.scroll-down-btn .scroll-down-a .scroll-img-container img{
   transition: var(--transition-btn);
+  height: 100%;
 }
-.scroll-down-btn-img .first-path{
-  transform: translateY(-110%) scale(0);
+.scroll-down-btn .scroll-down-a .scroll-img-container img[data="first"]{
+  transform: translateY(-100%) scale(0);
 }
-.scroll-down-btn:hover .scroll-down-btn-img .first-path{
+.scroll-down-btn:hover .scroll-down-a .scroll-img-container img[data="first"]{
   transform: translateY(0%) scale(1);
 }
-.scroll-down-btn:hover .scroll-down-btn-img .second-path{
-  transform: translateY(110%) scale(0);
+.scroll-down-btn .scroll-down-a .scroll-img-container img[data="second"]{
+  transform: translateY(-100%);
+}
+.scroll-down-btn:hover .scroll-down-a .scroll-img-container img[data="second"]{
+  transform: translateY(100%) scale(0);
 }
 
 .hero-anim{
@@ -946,7 +942,6 @@ section{
   transform: translateY(100%);
   opacity: 0;
 }
-
 /* Hero Section - 1920 End - Index*/
 
 /* Features Section - 1920 Start - Index*/

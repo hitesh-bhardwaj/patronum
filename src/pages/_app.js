@@ -180,9 +180,8 @@ export default function App({ Component, pageProps, router }) {
             });
           `}
       </Script>
-
       {/* WEBGL Background */}
-      <Pixi />
+      {/* <Pixi /> */}
     </>
   ); 
 }
