@@ -3,6 +3,12 @@ import { motion } from 'framer-motion';
 import Header from '../Header';
 import Footer from '../Footer';
 import PageLoader from '../PageLoader';
+import dynamic from 'next/dynamic'
+
+const CrispWithNoSSR = dynamic(
+    () => import('@/components/Crisp'),
+    { ssr: false }
+  )
 
 export default function Layout({children}) {
 
@@ -16,6 +22,7 @@ export default function Layout({children}) {
                     className='bg-primary h-0 w-full relative origin-bottom'/>
             </div>
             <PageLoader />
+            <CrispWithNoSSR />
             <Header />
                 {children}
             <Footer />

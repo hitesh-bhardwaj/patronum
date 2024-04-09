@@ -11,7 +11,7 @@ export async function getServerSideProps({ res, params: { slug } }) {
       notFound: true,
     };
   }
-  let slugArray = slug.replace(".xml", "").split("_");
+  let slugArray = slug.replace(".xml", "").split("-");
   let type = slugArray[0];
   let pageNo = slugArray[1]?.match(/(\d+)/) ?? null;
   let page = pageNo ? parseInt(pageNo) : null;

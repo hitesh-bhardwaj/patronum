@@ -7,12 +7,17 @@ import { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Head from 'next/head';
 import Script from 'next/script';
+import dynamic from 'next/dynamic'
 import { ModalProvider } from '@/components/InstallModal/ModelContext';
 import PreLoader from '@/components/PreLoader';
-import InstallModal from '@/components/InstallModal';
 import DemoModal from '@/components/InstallModal/DemoModal';
 import Pixi from '@/components/Pixi';
 import Cookie from '@/components/Cookie';
+
+const InstallModalWithNoSSR = dynamic(
+  () => import('@/components/InstallModal'),
+  { ssr: false }
+)
 
 export default function App({ Component, pageProps, router }) {
   const [showPreloader, setShowPreloader] = useState(true);
@@ -151,7 +156,7 @@ export default function App({ Component, pageProps, router }) {
           <AnimatePresence mode="wait">
             <Component {...pageProps} key={router.route}/>
           </AnimatePresence>
-          <InstallModal />
+          <InstallModalWithNoSSR />
           <DemoModal />
         </ModalProvider>
       </ReactLenis>

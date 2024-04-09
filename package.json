@@ -34,6 +34,7 @@
     "clsx": "^2.1.0",
     "cmdk": "^0.2.1",
     "country-flag-icons": "^1.5.4",
+    "crisp-sdk-web": "^1.0.22",
     "critters": "^0.0.22",
     "cross-env": "^7.0.3",
     "date-fns": "^3.0.6",

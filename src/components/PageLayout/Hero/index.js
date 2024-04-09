@@ -22,7 +22,7 @@ export default function Hero( {pageTitle1, pageTitle2, pagePara, imgSrc} ){
 
         let ctx = gsap.context(() => {
 
-            const headerAnim = document.querySelectorAll(".header-anim");
+            // const headerAnim = document.querySelectorAll(".header-anim");
             const heroPara = document.querySelector('.hero-para');
             const title = new SplitType('.page-hero-anim', {types: 'words'});
             const titleAnim = document.querySelectorAll('.page-hero-anim span .word');
@@ -32,15 +32,15 @@ export default function Hero( {pageTitle1, pageTitle2, pagePara, imgSrc} ){
                     ease: "power2.out"
                 }
             });
-            tl.from(headerAnim, 1,{
-                opacity: 0,
-                stagger: 0.05,
-                ease: 'power2.out',
-            }, `+=${delayTime}`)
-            .to(titleAnim, 0.8,{
+            // tl.from(headerAnim, 1,{
+            //     opacity: 0,
+            //     stagger: 0.05,
+            //     ease: 'power2.out',
+            // }, `+=${delayTime}`)
+            tl.to(titleAnim, 0.8,{
                 y: 0,
                 stagger: 0.02,
-            }, "-=1")
+            }, `+=${delayTime}`)
             tl.to(heroPara, 0.8,{
                 y: 0,
                 opacity: 1,

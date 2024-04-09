@@ -12,17 +12,13 @@ export const getServerSideProps = async ({ res }) => {
     .filter((staticPage) => {
       return ![
         "api",
-        "about",
         "_app.js",
         "_document.js",
-        "404.js",
         "sitemap.xml.js",
         "sitemap",
         "blog",
         "category",
         "[slug].js",
-        "page_sitemap.xml.js",
-        "test.js",
         "index.js",
       ].includes(staticPage);
     })
