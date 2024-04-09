@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from 'react';
 import axios from 'axios';
 import { Button } from "@/components/ui/button";
+
 import {
   Form,
   FormControl,
@@ -24,6 +25,7 @@ const formSchema = z.object({
     company: z.string().min(1, "Company Name is required."),
     country: z.string().min(1, "Country is required."),
     terms: z.boolean().refine(value => value === true, "You must agree to the terms."),
+    pageURL: z.string(),
 });
 
 // Update the ContactForm component
@@ -42,18 +44,22 @@ export default function ContactForm() {
         company: "",
         country: "GB",
         terms: false,
+        pageURL: typeof window !== 'undefined' ? window.location.href : '', // Use window only in client-side context
         },
     });
 
     const onSubmit = async (data) => {
         setSubmitting(true);
         const countryName = COUNTRIES.find(c => c.value === country)?.title || 'Not specified';
+
         const formData = {
             name: data.name,
             email: data.email,
             company: data.company,
             countryName, 
+            pageURL: data.pageURL,
         };
+        
         const message = `
                 <h1>New Contact Form Submission</h1>
                 <p><strong>Name:</strong> ${data.name}</p>

@@ -1,10 +1,10 @@
 import fetch from 'isomorphic-unfetch';
 
 export default async (req, res) => {
-  const { email, name, company, countryName } = req.body; 
+  const { email, name, company, countryName, pageURL } = req.body; 
 
-  console.log({ email, name, company, countryName  }); 
-  if (!email || !name || !company || !countryName) { 
+  console.log({ email, name, company, countryName, pageURL  }); 
+  if (!email || !name || !company || !countryName || !pageURL) { 
     return res.status(400).json({ error: 'All fields are required.' });
   }
 
@@ -12,13 +12,22 @@ export default async (req, res) => {
     const AUDIENCE_ID = process.env.MAILCHIMP_AUDIENCE_ID;
     const API_KEY = process.env.MAILCHIMP_API_KEY;
     const DATACENTER = process.env.MAILCHIMP_API_SERVER;
+    
+    // Split full name into first name and last name
+    const fullName = name.trim(); // Trim to remove leading/trailing spaces
+    const spaceIndex = fullName.indexOf(' ');
+    const firstName = spaceIndex !== -1 ? fullName.substring(0, spaceIndex) : fullName;
+    const lastName = spaceIndex !== -1 ? fullName.substring(spaceIndex + 1) : '';
+
     const data = {
       email_address: email,
       status: 'subscribed',
       merge_fields: {
-        FNAME: name,
+        FNAME: firstName,
+        LNAME: lastName,
+        COUNTRY: countryName,
         COMPANY: company,
-        COUNTRY: countryName
+        POPUPREQ: pageURL,
       },
     };
 

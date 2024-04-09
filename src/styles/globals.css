@@ -2880,8 +2880,8 @@ section{
   width: 11vw;
   height: 11vw;
 }
-.scroll-down-btn-img {
-  height: 4vw;
+.scroll-down-btn .scroll-down-a .scroll-img-container {
+  height: 3.5vw;
 }
 
 /* Button */
@@ -3786,8 +3786,8 @@ section{
   width: 20vw;
   height: 20vw;
   }
-  .scroll-down-btn-img {
-  height: 5.5vw;
+  .scroll-down-btn .scroll-down-a .scroll-img-container {
+    height: 5.5vw;
   }
 
   /* Button */

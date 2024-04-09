@@ -11,7 +11,7 @@ const nextConfig = {
     nextScriptWorkers: true,
   },
   images: {
-    domains: ['wordpress-156292-4361221.cloudwaysapps.com'],
+    domains: ['wordpress-213572-4463644.cloudwaysapps.com'],
   },
   async redirects() {
     return [

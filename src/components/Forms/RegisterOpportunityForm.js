@@ -32,6 +32,7 @@ const formSchema = z.object({
     cluser: z.string().min(1, {message: "This field is required."}),
     textarea: z.string().min(1, {message: "Message is Required."}),
     terms: z.boolean().refine(value => value === true, {message: "You must agree to the terms."}),
+    pageURL: z.string(),
 });
 
 // Update the ContactForm component
@@ -57,18 +58,22 @@ export default function RegisterOpportunityForm() {
         cluser: "",
         textarea: "",
         terms: false,
+        pageURL: typeof window !== 'undefined' ? window.location.href : '', // Use window only in client-side context
         },
     });
 
     const onSubmit = async (data) => {
         setSubmitting(true);
         const countryName = COUNTRIES.find(c => c.value === country)?.title || 'Not specified';
+
         const formData = {
             name: data.clname,
             email: data.clemail,
             company: data.clcompany,
             countryName,
+            pageURL: data.pageURL,
         };
+        
         const message = `
             <h1><strong>Register An Opportunity Form Submission</strong></h1>
             <h3>Partner Details:</h3>

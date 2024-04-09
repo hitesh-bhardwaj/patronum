@@ -26,6 +26,7 @@ const formSchema = z.object({
     country: z.string().min(1, "Country is required."),
     textarea: z.string().min(1, {message: "Message is Required."}),
     terms: z.boolean().refine(value => value === true, {message: "You must agree to the terms."}),
+    pageURL: z.string(),
 });
 
 // Update the ContactForm component
@@ -45,18 +46,22 @@ export default function ReferCustomerForm() {
         country: "GB",
         textarea: "",
         terms: false,
+        pageURL: typeof window !== 'undefined' ? window.location.href : '', // Use window only in client-side context
         },
     });
 
     const onSubmit = async (data) => {
         setSubmitting(true);
         const countryName = COUNTRIES.find(c => c.value === country)?.title || 'Not specified';
+
         const formData = {
             name: data.name,
             email: data.email,
             company: data.company,
             countryName,
+            pageURL: data.pageURL,
         };
+
         const message = `
             <h1><strong>Refer Customer Form Submission</strong></h1>
             <p><strong>Name:</strong> ${data.name}</p>

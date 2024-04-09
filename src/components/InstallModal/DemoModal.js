@@ -1,3 +1,4 @@
+'use client'
 import { useModal } from "./ModelContext";
 
 export default function DemoModal() {

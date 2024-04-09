@@ -240,7 +240,7 @@ const DesktopNavigation = () => {
                                                 link={'/blog'}
                                                 img={'resource-blog.svg'}
                                             />
-                                            <NavItem 
+                                            {/* <NavItem 
                                                 title={'Guides'}
                                                 disc={'Step-by-Step User Guides'}
                                                 link={'/guides'}
@@ -269,7 +269,7 @@ const DesktopNavigation = () => {
                                                 disc={'In-depth video guides'}
                                                 link={'/product-videos'}
                                                 img={'resource-product-videos.svg'}
-                                            />
+                                            /> */}
                                             <li className='nav-drop-list-item'>
                                                 <Link href='https://community.patronum.io' target='_blank' className='nav-drop-list-hover' >
                                                     <div className='img'>

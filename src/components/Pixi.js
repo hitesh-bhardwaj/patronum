@@ -113,28 +113,38 @@ export default function Pixi() {
                 }
             }
             
-            // Create PixiJS app
-            const app = new PIXI.Application({
-                view: document.querySelector(".orb-canvas"),
-                resizeTo: window,
-                transparent: true
-            });
-            
-            app.stage.filters = [new KawaseBlurFilter(30, 30)];
-            
-            // Create orbs
-            const orbs = [];
-            
-            for (let i = 0; i < 3; i++) {
-                const orb = new Orb(colors[i]);
-                app.stage.addChild(orb.graphics);
-                orbs.push(orb);
-            }
-            
-                orbs.forEach((orb) => {
-                orb.update();
-                orb.render();
+                // Create PixiJS app
+                const app = new PIXI.Application({
+                    view: document.querySelector(".orb-canvas"),
+                    resizeTo: window,
+                    transparent: true
                 });
+            
+                app.stage.filters = [new KawaseBlurFilter(30, 30)];
+            
+                // Create orbs
+                const orbs = [];
+            
+                for (let i = 0; i < 3; i++) {
+                    const orb = new Orb(colors[i]);
+                    app.stage.addChild(orb.graphics);
+                    orbs.push(orb);
+                }
+            
+                // Animate!
+                if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                    app.ticker.add(() => {
+                        orbs.forEach((orb) => {
+                        orb.update();
+                        orb.render();
+                        });
+                    });
+                } else {
+                    orbs.forEach((orb) => {
+                    orb.update();
+                    orb.render();
+                    });
+                }
             });
         });
     }, []);
