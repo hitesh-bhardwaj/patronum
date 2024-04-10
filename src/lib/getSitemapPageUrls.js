@@ -14,7 +14,6 @@ export default async function getSitemapPageUrls({ type, page }) {
     );
     return (await res?.data) ?? [];
   }
-
   const res = await axios.get(
     `${wordpressUrl}/wp-json/sitemap/v1/posts?pageNo=${page}&postType=${type}&perPage=${sitemapPerPage}`
   );

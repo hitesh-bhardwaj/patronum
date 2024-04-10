@@ -4,8 +4,6 @@ import {
     QUERY_WEBSTORY_BY_SLUG,
 } from '../data/webstories';
 
-// getWebstoryBySlug
-
 export async function getWebstoryBySlug(slug) {
     const apolloClient = getApolloClient();
   
@@ -25,7 +23,7 @@ export async function getWebstoryBySlug(slug) {
   
     if (!webstoryData?.data.webStory) return { webstory: undefined };
 
-    const webstory = [webstoryData?.data.webStory].map(mapWebstoryData)[0];
+    const webstory = [webstoryData?.data.webStory].map(webstory => webstory)[0];
   
     return {
       webstory,

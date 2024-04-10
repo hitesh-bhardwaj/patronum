@@ -1,6 +1,6 @@
-import getSitemapPageUrls from "@/lib/getSitemapPageUrls";
-import getTotalCounts from "@/lib/getTotalCounts";
-import generateSitemapPaths from "@/utils/generateSitemapPaths";
+import getSitemapPageUrls from "../../lib/getSitemapPageUrls";
+import getTotalCounts from "../../lib/getTotalCounts";
+import generateSitemapPaths from "../../utils/generateSitemapPaths";
 export default function SitemapTagPage() {
   return null;
 }
@@ -11,9 +11,9 @@ export async function getServerSideProps({ res, params: { slug } }) {
       notFound: true,
     };
   }
-  let slugArray = slug.replace(".xml", "").split("-");
+  let slugArray = slug.replace(".xml", "").split("_");
   let type = slugArray[0];
-  let pageNo = slugArray[1]?.match(/(\d+)/) ?? null;
+  let pageNo = slugArray[1]?.match(/(\d+)/)[0] ?? null;
   let page = pageNo ? parseInt(pageNo) : null;
   let possibleTypes = await getTotalCounts();
   if (!possibleTypes.some((e) => e.name === type)) {

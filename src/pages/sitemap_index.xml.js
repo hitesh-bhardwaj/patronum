@@ -1,7 +1,6 @@
 import getSitemapPages from "../utils/getSitemapPages";
 import getTotalCounts from "../lib/getTotalCounts";
 import { frontendUrl } from "@/utils/variables";
-
 export default function SitemapIndexPage() {
   return null;
 }
@@ -14,10 +13,10 @@ export async function getServerSideProps({ res }) {
            xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      ${details.map((item) => getSitemapPages(item)).join("")}
      <sitemap>
-     <loc>
-        ${frontendUrl}/sitemap/page-sitemap.xml
-    </loc>
-</sitemap>
+      <loc>
+          ${frontendUrl}/sitemap/page_sitemap1.xml
+      </loc>
+    </sitemap>
   </sitemapindex>`;
   res.setHeader("Content-Type", "text/xml; charset=utf-8");
   res.setHeader(

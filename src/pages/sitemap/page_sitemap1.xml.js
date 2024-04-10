@@ -20,6 +20,7 @@ export const getServerSideProps = async ({ res }) => {
         "category",
         "[slug].js",
         "index.js",
+        "web-stories",
       ].includes(staticPage);
     })
     .map((staticPagePath) => {
