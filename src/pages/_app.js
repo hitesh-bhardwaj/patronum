@@ -4,7 +4,6 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from "@vercel/analytics/react"
 import { ReactLenis } from '@studio-freight/react-lenis';
 import { useEffect, useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
 import Head from 'next/head';
 import Script from 'next/script';
 import dynamic from 'next/dynamic'
@@ -13,6 +12,7 @@ import PreLoader from '@/components/PreLoader';
 import DemoModal from '@/components/InstallModal/DemoModal';
 import Pixi from '@/components/Pixi';
 import Cookie from '@/components/Cookie';
+import Transition from '@/components/Transition';
 
 const InstallModalWithNoSSR = dynamic(
   () => import('@/components/InstallModal'),
@@ -153,9 +153,11 @@ export default function App({ Component, pageProps, router }) {
       <Cookie />
       <ReactLenis root options={{ duration: 0.8 }}>
         <ModalProvider>
-          <AnimatePresence mode="wait">
+          {/* <AnimatePresence mode="wait"> */}
+          <Transition>
             <Component {...pageProps} key={router.route}/>
-          </AnimatePresence>
+          </Transition>
+          {/* </AnimatePresence> */}
           <InstallModalWithNoSSR />
           <DemoModal />
         </ModalProvider>

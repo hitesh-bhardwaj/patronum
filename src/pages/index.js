@@ -17,7 +17,6 @@ import { getHomePagePosts } from '@/lib/posts';
 import UseCasesMobile from "@/components/PageComponents/HomePage/UseCasesMobile";
 import SideMenu from "@/components/SideMenu";
 import Head from "next/head";
-import Layout from "@/components/Stairs";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -343,7 +342,7 @@ export default function Home( { recentPosts } ) {
         />
     </Head>
         {showSideMenu && <SideMenu sections={sections}/>}
-        <Layout>
+        {/* <Layout> */}
           <main>
             <Hero />
             <Features />
@@ -359,7 +358,7 @@ export default function Home( { recentPosts } ) {
               />
             <Faqs />
           </main>
-        </Layout>
+        {/* </Layout> */}
     </>  
   );
 }

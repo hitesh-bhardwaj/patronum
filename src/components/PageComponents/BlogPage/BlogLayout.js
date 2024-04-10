@@ -7,7 +7,6 @@ import {
 import { useEffect } from "react";
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import Layout from '@/components/Stairs';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,7 +41,7 @@ export default function BlogLayout( { children, postTitle, postAuthor, postDate,
 
   return(
     <>
-          <Layout>
+          {/* <Layout> */}
             <main>
               <section id="blog-hero">
                 <div className="w-[88%] mx-auto">
@@ -104,7 +103,7 @@ export default function BlogLayout( { children, postTitle, postAuthor, postDate,
               </section>
             {children}
           </main>
-        </Layout>
+        {/* </Layout> */}
     </>
   )
 }
