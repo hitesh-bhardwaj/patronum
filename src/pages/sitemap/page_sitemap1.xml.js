@@ -1,6 +1,4 @@
 import { frontendUrl } from "@/utils/variables";
-import * as fs from "fs";
-import * as path from "path";
 
 const Sitemap = () => {
   return null;
@@ -9,50 +7,42 @@ const Sitemap = () => {
 export const getServerSideProps = async ({ res }) => {
   const BASE_URL = frontendUrl;
 
-  const pagesDir = path.join(process.cwd(), "/src/pages");
-  console.log("Reading directory:", pagesDir);
-  const staticPaths = fs
-    .readdirSync(pagesDir)
-    .filter((staticPage) => {
-      console.log("Found static page:", staticPage);
-      return ![
-        "api",
-        "_app.js",
-        "_document.js",
-        "sitemap.xml.js",
-        "sitemap",
-        "blog",
-        "category",
-        "[slug].js",
-        "index.js",
-        "web-stories",
-      ].includes(staticPage);
-    })
-    .map((staticPagePath) => {
-      const pageName = staticPagePath.replace(/\.js$/, "");
-      return `${BASE_URL}/${pageName}`;
-    });
-  console.log("Static paths:", staticPaths);
-  // const staticPaths = fs
-  //   .readdirSync(pagesDir)
-  //   .filter((staticPage) => {
-  //     return ![
-  //       "api",
-  //       "_app.js",
-  //       "_document.js",
-  //       "sitemap.xml.js",
-  //       "sitemap",
-  //       "blog",
-  //       "category",
-  //       "[slug].js",
-  //       "index.js",
-  //       "web-stories",
-  //     ].includes(staticPage);
-  //   })
-  //   .map((staticPagePath) => {
-  //     const pageName = staticPagePath.replace(/\.js$/, "");
-  //     return `${BASE_URL}/${pageName}`;
-  //   });
+  // Static paths manually defined
+  const staticPaths = [
+    "about-us",
+    "anti-slavery-and-human-trafficking-statement",
+    "become-a-partner",
+    "blog",
+    "case-studies",
+    "contact-us",
+    "cookie-policy",
+    "ebooks",
+    "email-signature-management",
+    "features",
+    "google-contact-sharing",
+    "google-drive-compliance",
+    "google-drive-management",
+    "google-workspace-backup",
+    "guides",
+    "legal",
+    "on-boarding",
+    "organisational-chart",
+    "partner-with-us",
+    "patronum-for-business",
+    "patronum-for-education",
+    "patronum-for-hr",
+    "patronum-for-it-admins",
+    "patronum-for-sales-marketing",
+    "patronum-for-users",
+    "pricing",
+    "privacy-policy",
+    "product-videos",
+    "refer-a-customer",
+    "register-an-opportunity",
+    "support",
+    "use-cases",
+    "webinars"
+  ].map(page => `${BASE_URL}/${page}`);
 
   const mainPaths = [`${BASE_URL}/`];
   const redirectPaths = [
