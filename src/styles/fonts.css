@@ -1,0 +1,52 @@
+/*==============FONTS===================*/
+/* Ageo */
+@font-face {
+    font-family: 'Ageo';
+    src: url('/assets/fonts/Ageo/Ageo.woff2') format('woff2'),
+        url('/assets/fonts/Ageo/Ageo.woff') format('woff');
+         font-weight: 400;
+         font-display: swap;
+         font-style: normal;
+  }
+  @font-face {
+    font-family: 'Ageo';
+    src: url('/assets/fonts/Ageo/Ageo-Medium.woff2') format('woff2'),
+        url('/assets/fonts/Ageo/Ageo-Medium.woff') format('woff');
+         font-weight: 500;
+         font-display: swap;
+         font-style: normal;
+  }
+  @font-face {
+    font-family: 'Ageo';
+    src: url('/assets/fonts/Ageo/Ageo-SemiBold.woff2') format('woff2'),
+        url('/assets/fonts/Ageo/Ageo-SemiBold.woff') format('woff');
+         font-weight: 600;
+         font-display: swap;
+         font-style: normal;
+  }
+  @font-face {
+    font-family: 'Ageo';
+    src: url('/assets/fonts/Ageo/Ageo-Bold.woff2') format('woff2'),
+        url('/assets/fonts/Ageo/Ageo-Bold.woff') format('woff');
+         font-weight: 700;
+         font-display: swap;
+         font-style: normal;
+  }
+  /* Aeonik */
+  @font-face {
+    font-family: 'Aeonik';
+    src: url('/assets/fonts/Aeonik/Aeonik-Regular.woff2') format('woff2'),
+        url('/assets/fonts/Aeonik/Aeonik-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Aeonik';
+    src: url('/assets/fonts/Aeonik/Aeonik-Medium.woff2') format('woff2'),
+        url('/assets/fonts/Aeonik/Aeonik-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  /*==============FONTS END===================*/

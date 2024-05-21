@@ -92,7 +92,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                 </button>
                             </div>
                         </div>
-                        <ul id="dropdown-features" className={`px-4 flex flex-col justify-center space-y-4 bg-gray-100 transition-all duration-500 overflow-hidden ${isFeaturesDropdownOpen ? "h-[700px]" : "h-0" }`}>
+                        <ul id="dropdown-features" className={`px-4 flex flex-col justify-center space-y-4 bg-gray-100 transition-all duration-500 overflow-hidden ${isFeaturesDropdownOpen ? "h-[730px]" : "h-0" }`}>
                             <li className=''>
                                 <Link href='/on-boarding' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Onboarding' >
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
@@ -160,13 +160,13 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                 </Link>
                             </li>
                             <li className=''>
-                                <Link href='/organisational-chart' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Organisational Chart' >
+                                <Link href='/organisational-chart' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Organizational Chart' >
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                         <img loading='lazy' src='/assets/menu/organisational-chart.svg' alt='use case icon'/>
                                     </div>
                                     <div>
-                                        <p className='text-xl font-500'>Organisational Chart</p>
-                                        <p className='text-base'>Locate & view organisation hierarchy</p>
+                                        <p className='text-xl font-500'>Organizational Chart</p>
+                                        <p className='text-base'>Locate & view organization hierarchy</p>
                                     </div>
                                 </Link>
                             </li>
@@ -185,7 +185,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                 </button>
                             </div>
                         </div>
-                        <ul id="dropdown-usecases" className={`px-4 flex flex-col justify-center space-y-4 bg-gray-100 transition-all duration-500 overflow-hidden ${isUsecasesDropdownOpen ? "h-[600px]" : "h-0" }`}>
+                        <ul id="dropdown-usecases" className={`px-4 flex flex-col justify-center space-y-4 bg-gray-100 transition-all duration-500 overflow-hidden ${isUsecasesDropdownOpen ? "h-[650px]" : "h-0" }`}>
                             <li className=''>
                                 <Link href='/patronum-for-business' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Business' >
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
@@ -242,7 +242,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                 </Link>
                             </li>
                             <li className=''>
-                                <Link href='/patronum-for-it-admins' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For IT Admins' >
+                                <Link href='#' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For IT Admins' >
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                         <img loading='lazy' src='/assets/menu/for-it-admins.svg' alt='use case icon'/>
                                     </div>
@@ -272,7 +272,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                 </span>
                             </button>
                         </div>
-                        <ul id="dropdown-resources" className={`px-4 space-y-4 bg-gray-100 transition-all duration-500 overflow-hidden flex flex-col justify-center ${isResourcesDropdownOpen ? "h-[380px]" : "h-0" }`}>
+                        <ul id="dropdown-resources" className={`px-4 space-y-4 bg-gray-100 transition-all duration-500 overflow-hidden flex flex-col justify-center ${isResourcesDropdownOpen ? "h-[500px]" : "h-0" }`}>
                             <li className=''>
                                 <Link href='/blog' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Blog' >
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
@@ -307,17 +307,6 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                 </Link>
                             </li>
                             <li className=''>
-                                <Link href='/webinars' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Webinars' >
-                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
-                                        <img loading='lazy' src='/assets/menu/resource-webinars.svg' alt='resource icon'/>
-                                    </div>
-                                    <div>
-                                        <p className='text-xl font-500'>Webinars</p>
-                                        <p className='text-base'>Engage With Experts Live</p>
-                                    </div>
-                                </Link>
-                            </li>
-                            <li className=''>
                                 <Link href='/case-studies' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Case Studies' >
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                         <img loading='lazy' src='/assets/menu/resource-case-studies.svg' alt='resource icon'/>
@@ -339,6 +328,17 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </div>
                                 </Link>
                             </li> */}
+                            <li className=''>
+                                <Link href='/webinars' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Webinars' >
+                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                        <img loading='lazy' src='/assets/menu/resource-webinars.svg' alt='resource icon'/>
+                                    </div>
+                                    <div>
+                                        <p className='text-xl font-500'>Webinars</p>
+                                        <p className='text-base'>Engage With Experts Live</p>
+                                    </div>
+                                </Link>
+                            </li>
                             <li className=''>
                                 <Link href='https://community.patronum.io' target='_blank' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Community'>
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
