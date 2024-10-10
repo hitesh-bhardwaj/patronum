@@ -3,6 +3,7 @@ import Testimonial from "@/components/PageLayout/Testimonial";
 import PageLayout from "@/components/PageLayout";
 import FeatureCard from "@/components/PageLayout/FeatureCard";
 import SectionBreakSmall from "@/components/PageLayout/SectionBreakSmall";
+import Head from "next/head";
 
 const useCasesData = [
     {
@@ -45,18 +46,113 @@ const useCasesData = [
         para1: "Patronum redefines the role of IT Administrators in Google Workspace management by offering a suite of tools that automate and simplify complex tasks. From user provisioning to meticulous security configurations and reliable data backups, it covers all bases, liberating IT staff from the trenches of day-to-day management.",
         para2: "This allows for a shift in focus to strategic initiatives that foster innovation and growth. As a nexus of control and efficiency, Patronum provides a safer, more organized digital environment, empowering IT Admins with the capability to preemptively address challenges and support a thriving digital ecosystem.",
         img: "/assets/home/patronum-for-it-admins.svg",
-        link: "/patronum-for-it-admins"
+        link: "#"
     },
 ];
 
-export default function useCases(){
+export default function useCases() {
 
     return (
         <>
-            <PageLayout 
-                pageTitle1={'Address Challenges'} 
-                pageTitle2={'Across Your Organisation'}
-                pagePara={"The only tool you'll ever need to streamline your Google Workspace management."} 
+            <Head>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(
+                            {
+                                "@context": "https://schema.org",
+                                "@type": "FAQPage",
+                                "mainEntity": [
+                                    {
+                                        "@type": "Question",
+                                        "name": "How does Patronum enhance the onboarding process for new users?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Patronum automates the user onboarding process in Google Workspace, creating accounts, setting up email signatures, and ensuring new team members have immediate access to necessary files and contacts. This makes the first day smoother and helps new hires integrate faster."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "Can Patronum help in managing offboarding procedures?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Yes, Patronum simplifies offboarding by automating the revocation of access rights, transferring essential documents to supervisors, and backing up any important user data, ensuring a secure and comprehensive offboarding process."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "Does Patronum offer solutions for maintaining email signature consistency?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Patronum allows central management of email signatures, ensuring consistent branding across all employee communications. It can dynamically update signatures to reflect the latest branding or marketing campaigns."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "How can Patronum aid in data loss prevention?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Patronum provides robust backup features that prevent data loss from accidental deletions or malicious attacks, with options for point-in-time recovery and real-time data backup."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "Can Patronum improve collaboration within my organization?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Absolutely. Patronum facilitates better collaboration by ensuring all users have up-to-date contact information and access to shared drives, enhancing team coordination and project management."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "How does Patronum handle user permissions and access management?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "With Patronum, administrators can easily assign and manage user-level permissions for accessing and editing files within Google Workspace, reinforcing data security and workflow efficiency."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "Is Patronum suitable for educational institutions?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Yes, Patronum is well-suited for educational settings, streamlining administrative tasks, managing classroom resources, and enhancing the collaboration between teachers and students."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "Can Patronum assist in regulatory compliance for my business?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Patronum aids compliance by maintaining detailed logs of data access and modifications, as well as ensuring data retention policies are upheld, which is critical for regulatory adherence."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "How does Patronum support remote work environments?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Patronum supports remote work by providing reliable access to necessary documents, ensuring continuous collaboration, and maintaining communication standards no matter where team members are located."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "Does Patronum offer custom solutions for unique business needs?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Patronum is designed to be flexible and can be tailored to meet the specific requirements of your business, providing custom solutions for unique workflow challenges."
+                                        }
+                                    }
+                                ]
+                            }
+                        )
+                    }}
+                />
+            </Head>
+            <PageLayout
+                pageTitle1={'Unlocking Efficiency'}
+                pageTitle2={'Across Departments'}
+                pagePara={"Break Barriers, Build Bridges & Harness the Full Potential of Google Workspace Across Your Organization"}
                 imgSrc={'useCases.svg'}
                 title={"Patronum - One stop destination for G Suite management"}
                 description={"With the help of Patronum, you can save time by avoiding those monotonous and repetitive tasks. Patronum will help with G Suite management in whichever field you are in be it IT, HR, Marketing, Sales, Users or Education."}
@@ -66,7 +162,7 @@ export default function useCases(){
                 date_modified={"2024-04-04T12:00"}
                 keywords={"G Suite management"}>
 
-                <SectionBreakSmall 
+                <SectionBreakSmall
                     sectionBreakText={"Patronum gives you full control over how Google Workspace is managed with intelligent automation and delegation"}
                 />
 
@@ -90,7 +186,7 @@ export default function useCases(){
 
                 <Testimonial />
 
-                <Faqs featureName="use_cases"/>
+                <Faqs featureName="use_cases" />
 
             </PageLayout>
         </>

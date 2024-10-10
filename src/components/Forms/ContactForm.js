@@ -2,10 +2,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import Link from "next/link";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Button } from "@/components/ui/button";
-
 import {
   Form,
   FormControl,
@@ -18,15 +17,8 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import CountrySelector from "../ui/country-selector";
 import { COUNTRIES } from "@/lib/countries";
-
-const formSchema = z.object({
-    name: z.string().min(1, {message: "Name is required."}),
-    email: z.string().min(1, {message: "Email is required."}).email({message: "Invalid email format."}),
-    company: z.string().min(1, "Company Name is required."),
-    country: z.string().min(1, "Country is required."),
-    terms: z.boolean().refine(value => value === true, "You must agree to the terms."),
-    pageURL: z.string(),
-});
+import Router from "next/router";
+import { useModal } from '@/components/Modals/ModalContext'; 
 
 // Update the ContactForm component
 export default function ContactForm() {
@@ -35,6 +27,46 @@ export default function ContactForm() {
     const [submitting, setSubmitting] = useState(false);
     const [submissionError, setSubmissionError] = useState(null);
     const [submissionSuccess, setSubmissionSuccess] = useState(false);
+    const [blockedDomains, setBlockedDomains] = useState([]);
+    const { closeModal } = useModal();
+
+    useEffect(() => {
+        // Fetch the JSON file containing 4700 emails
+        const fetchEmails = async () => {
+            try {
+                const response = await axios.get('/domainBlock.json');
+                const data = response.data;
+                const extractedDomains = data.map(item => Object.values(item)[0]); // Extract domains
+                setBlockedDomains(extractedDomains); // Set extracted domains as blockedDomains
+            } catch (error) {
+                console.error('Error fetching emails:', error);
+            }
+        };
+        fetchEmails();
+    }, []);
+
+    const formSchema = z.object({
+        name: z.string().min(1, {message: "Name is required."}),
+        email: z.string()
+            .min(1, {message: "Email is required."})
+            .email({message: "Invalid email format."})
+            .refine((email) => {
+            // Extract the domain from the email address
+            const domain = email.split("@")[1];
+            // Check if the domain is not in the blocked list
+            return !blockedDomains.includes(domain);
+        }, {message: "Please enter a valid business email."}),
+        company: z.string().min(1, "Company Name is required."),
+        country: z.string().min(1, "Country is required."),
+        phoneNumber: z.string().optional().refine((phone) => {
+            if (country === "IN") {
+                return phone.length >= 10;
+            }
+            return true;
+        }, {message: "Please enter a valid number."}),
+        terms: z.boolean().refine(value => value === true, "You must agree to the terms."),
+        pageURL: z.string(),
+    });
 
     const form = useForm({
         resolver: zodResolver(formSchema),
@@ -43,6 +75,7 @@ export default function ContactForm() {
         email: "",
         company: "",
         country: "GB",
+        phoneNumber: "",
         terms: false,
         pageURL: typeof window !== 'undefined' ? window.location.href : '', // Use window only in client-side context
         },
@@ -58,31 +91,37 @@ export default function ContactForm() {
             company: data.company,
             countryName, 
             pageURL: data.pageURL,
+            tag: "Patronum Interest",
         };
         
         const message = `
-                <h1>New Contact Form Submission</h1>
+                <h1>New Install Patronum Form Submission</h1>
                 <p><strong>Name:</strong> ${data.name}</p>
                 <p><strong>Email:</strong> ${data.email}</p>
                 <p><strong>Company Name:</strong> ${data.company}</p>
                 <p><strong>Country:</strong> ${countryName}</p>
+                <p><strong>Phone Number:</strong> ${data.phoneNumber}</p>
+                <p><strong>Page URL:</strong> ${data.pageURL}</p>
                 <p><strong>Terms Agreement:</strong> ${data.terms ? 'Agreed' : 'Not Agreed'}</p>
             `;
         try {
-            // Send email
-            await axios.post('/api/send-email', {
-                message: message,
-                subject: "Contact Form Submission",
-            });     
-
             // Send data to Mailchimp
             await axios.post('/api/mail-chimp', formData);
+
+            // Send email
+            await axios.post('/api/mail', {
+                message: message,
+                subject: "Install Patronum Form Submission",
+            });
             
             form.reset();
             setSubmitting(false);
             setSubmissionSuccess(true);
+            setTimeout(() => {
+                closeModal();
+                Router.push("/thank-you");
+              }, 1000);
         } catch (error) {
-            // console.error('Error sending email:', error);
             setSubmitting(false);
             setSubmissionError('Error sending email. Please try again later.');
         }
@@ -90,7 +129,7 @@ export default function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 contact-form">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 contact-form install-patronum-form">
         
         {/* Form fields */}
         {/* Name field */}
@@ -162,6 +201,23 @@ export default function ContactForm() {
             )}
         />
 
+        {/* Phone Number field - conditional rendering */}
+        {country === "IN" && (
+            <FormField 
+                control={form.control}
+                name="phoneNumber"
+                render= {({ field }) => (
+                    <FormItem className="required">
+                        <FormLabel>Phone Number</FormLabel>
+                        <FormControl>
+                            <Input type="number" placeholder="Enter Your Phone Number" {...field}/>
+                        </FormControl>
+                        <FormMessage />
+                    </FormItem>
+                )}
+            />
+        )}
+
         {/* Terms checkbox field */}
         <FormField
           control={form.control}
@@ -186,7 +242,7 @@ export default function ContactForm() {
         />
 
         {/* Submit button */}
-        <Button type="submit" disabled={submitting}>
+        <Button id="submit_install" type="submit" disabled={submitting}>
             {submitting ? 'Submitting...' : 'Submit'}
         </Button>
         {submissionError && <p className="text-red-500">{submissionError}</p>}

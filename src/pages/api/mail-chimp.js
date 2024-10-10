@@ -1,10 +1,9 @@
 import fetch from 'isomorphic-unfetch';
 
 export default async (req, res) => {
-  const { email, name, company, countryName, pageURL } = req.body; 
+  const { email, name, company, countryName, pageURL, tag } = req.body; 
 
-  console.log({ email, name, company, countryName, pageURL  }); 
-  if (!email || !name || !company || !countryName || !pageURL) { 
+  if (!email || !name || !company || !countryName || !pageURL || !tag) { 
     return res.status(400).json({ error: 'All fields are required.' });
   }
 
@@ -22,10 +21,11 @@ export default async (req, res) => {
     const data = {
       email_address: email,
       status: 'subscribed',
+      tags: [`${tag}`],
       merge_fields: {
         FNAME: firstName,
         LNAME: lastName,
-        COUNTRY: countryName,
+        COUNTRY:  countryName,
         COMPANY: company,
         POPUPREQ: pageURL,
       },
@@ -44,13 +44,13 @@ export default async (req, res) => {
     );
 
     if (response.status >= 400) {
-      return res.status(400).json({
-        error: `There was an error while submiting your details., Contact us through support.`,
+      return res.status(201).json({
+        error: '',
       });
     }
 
     return res.status(201).json({ error: '' });
   } catch (error) {
-    return res.status(500).json({ error: error.message || error.toString() });
+    return res.status(201).json({ error: error.message || error.toString() });
   }
 };

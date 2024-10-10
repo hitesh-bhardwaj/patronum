@@ -2,6 +2,7 @@ import Faqs from "@/components/PageComponents/FeaturesPage/Faq";
 import UseCaseCard from "@/components/PageComponents/UseCasePage/UseCaseCard";
 import PageLayout from "@/components/PageLayout";
 import SectionTitle from "@/components/PageLayout/SectionTitle";
+import Head from "next/head";
 
 const UseCasesInfo = [
     {
@@ -31,14 +32,109 @@ const UseCasesInfo = [
     }
 ]
 
-export default function UseCasesDetail(){
+export default function UseCasesDetail() {
 
     return (
         <>
-            <PageLayout 
-                pageTitle1={'Patronum'} 
+            <Head>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(
+                            {
+                                "@context": "https://schema.org",
+                                "@type": "FAQPage",
+                                "mainEntity": [
+                                    {
+                                        "@type": "Question",
+                                        "name": "How does Patronum streamline the onboarding process for new hires?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Patronum automates the entire onboarding procedure by integrating with your HR systems to automatically populate the Google Workspace directory. This means new hires have access to necessary resources from day one, significantly reducing the administrative workload and improving the new employee experience."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "Can Patronum facilitate easier role transitions within the company?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Absolutely. Patronum's dynamic policy application allows for smooth role transitions by automatically updating a user's access to resources, Google Groups memberships, and email signatures to reflect their new position."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "How does Patronum enhance employee retention in the first six months?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Patronum enhances job satisfaction by ensuring new hires are effectively integrated into the team, have access to training materials, and can easily collaborate, thereby increasing their competence and improving retention."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "Does Patronum support automatic policy enforcement for HR compliance?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Patronum enables HR departments to set up policies that automatically enforce compliance requirements across Google Workspace, ensuring distribution of essential materials and secure access to sensitive information."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "How does Patronum handle the offboarding process?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Patronum automates the offboarding process by revoking access to corporate data and transferring ownership of critical documents, ensuring a secure and compliant offboarding process."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "Can Patronum improve HR's efficiency in managing Google Workspace?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "By automating routine administrative tasks, Patronum allows HR to focus on strategic tasks like employee engagement and development, improving overall productivity."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "How does Patronum contribute to fostering a positive work environment?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Patronum frees up time for HR to create programs that enhance employee satisfaction, contributing to a more dynamic, flexible, and supportive workplace culture."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "How does Patronum enhance team collaboration within Google Workspace?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Patronum streamlines the sharing of contacts and documents within Google Workspace, ensuring smoother communication and project coordination."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "Can Patronum help in managing employee performance and feedback documents securely?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Yes, Patronum ensures the secure management of sensitive documents like performance reviews by controlling access permissions and automating archival processes, maintaining confidentiality."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "What role does Patronum play in ensuring HR compliance with data protection regulations?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Patronum aids HR in adhering to data protection regulations by automating the enforcement of data access and retention policies, ensuring compliance with GDPR and other privacy laws."
+                                        }
+                                    }
+                                ]
+                            }
+                        )
+                    }}
+                />
+            </Head>
+            <PageLayout
+                pageTitle1={'Patronum'}
                 pageTitle2={'for HR'}
-                pagePara={"Automating HR Processes for Enhanced Workforce Management via Google Workspace."} 
+                pagePara={"Automating HR Processes for Enhanced Workforce Management via Google Workspace."}
                 imgSrc={'use-cases-hr.svg'}
                 title={"Patronum for HR - Patronum"}
                 description={"Patronum provides a better way to Google Workspace (GSuite) Management. Patronum fully automates all the administrator and user tasks to ensure an efficient, effective and secure process."}
@@ -52,14 +148,14 @@ export default function UseCasesDetail(){
                 <section id="second-section">
                     <div className="container">
                         <div className="content-2">
-                            <SectionTitle 
+                            <SectionTitle
                                 sectionTitle1="Use Cases:"
                                 sectionTitle2="Patronum for HR"
-                                sectionPara="Patronum redefines user lifecycle management by providing a consistent and unified experience within Google Workspace while significantly reducing IT expenditure in managing users and resources."
+                                sectionPara="Patronum acts as the bridge between your HR system and Google Workspace. By automating essential processes like onboarding, offboarding, and managing employee information, Patronum allows HR professionals to focus on strategic initiatives and employee engagement."
                             />
                             <div className="useCases-Info">
                                 {UseCasesInfo.map((usecase, index) => (
-                                    <UseCaseCard 
+                                    <UseCaseCard
                                         key={index}
                                         para={usecase.para}
                                         imgSrc={usecase.img}
@@ -67,10 +163,10 @@ export default function UseCasesDetail(){
                                 ))}
                             </div>
                         </div>
-                    </div>    
+                    </div>
                 </section>
 
-                <Faqs featureName="patronum_for_hr"/>
+                <Faqs featureName="patronum_for_hr" />
 
             </PageLayout>
         </>

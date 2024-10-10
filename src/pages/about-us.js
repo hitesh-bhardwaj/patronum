@@ -76,16 +76,16 @@ export default function About(){
                 pageTitle1={'About Patronum'} 
                 pagePara={"Meet the innovators transforming your Google Workspace experience with heart and hustle."} 
                 imgSrc={'about.svg'}
-                title={"About Patronum - Google Workspace Manager"}
-                description="Patronum removes the hassle of Google Workspace (GSuite) administration by fully automating all administrator and user tasks to ensure an efficient, effective and secure process"
+                title={"About Patronum: The Evolution of Patronum"}
+                description="Patronum is a Swiss army knife for Google Workspace management. It automates repetitive admin tasks like onboarding & offboarding users, managing email signatures, automated file unsharing, and much more."
                 url="about-us"
-                img="Google-Workspace.png"
+                img="homepage.jpg"
                 date_published="2020-12-21T06:17"
                 date_modified="2024-04-04T12:32"
                 keywords="Google Workspace"
                 >
                 {showSideMenu && <SideMenu sections={sections}/>}
-
+                
                 <section id="second-section">
                     <div className="container">
                         <div className="content">
@@ -113,7 +113,7 @@ export default function About(){
                                 <div className="flex lg:justify-end justify-start w-full">
                                     <h2 className="title-4xl text-anim lg:mb-[2.5vw] mb-[10vw] lg:w-[38%]">
                                         <span>
-                                            The Genesis 
+                                            The Genesis{" "}
                                         </span>
                                         <br />
                                         <span>
@@ -196,7 +196,7 @@ export default function About(){
                     <div className="container">
                         <div className="content">
                             <div className="mission-top">
-                                <SectionTitle sectionTitle1='Our Mission' sectionTitle2= "And Values" sectionPara="Give your users a consistent, and unified experience within their Google Workspace while at the same time reduce IT spend managing users and resources." />
+                                <SectionTitle sectionTitle1='Our Mission' sectionTitle2="And Values" sectionPara="Give your users a consistent, and unified experience within their Google Workspace while at the same time reduce IT spend managing users and resources." />
                                 <MissionCard 
                                     missionImg="icon-1.png"
                                     missionTitle="A Platform Built on Innovation and Excellence"
@@ -226,7 +226,7 @@ export default function About(){
                                 <SectionTitle 
                                     sectionTitle1='Featured By Top' 
                                     sectionTitle2= "Media Publications" 
-                                    sectionPara="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text." 
+                                    sectionPara="Patronum has been recognized for its innovation and impact in the Google Workspace, as featured in leading media publications."
                                 />
                             </div>
                             <div className="media-logos fadeUp">
@@ -265,22 +265,22 @@ export default function About(){
                             </div>
                             <div className="advantage-cards">
                                 <AdvantageCard 
-                                    advantageImg="/advantage-1.svg"
+                                    advantageImg="advantage-1.svg"
                                     advantageTitle="Simplifying Google Workspace Management"
                                     advantagePara="Patronum's platform is specifically tailored to enhance the Google Workspace experience. Automating administrative and user tasks ensures a more efficient, effective, and secure management process. This automation extends across the entire lifecycle of Google Workspace users, from onboarding to offboarding."
                                 />
                                 <AdvantageCard 
-                                    advantageImg="/advantage-2.svg"
+                                    advantageImg="advantage-2.svg"
                                     advantageTitle="A Testament to Global Excellence"
                                     advantagePara="Patronum's global footprint is a reflection of our unwavering commitment to excellence and innovation. Our clientele, spanning across continents, is a diverse tapestry of industry leaders, visionary startups, and fast-growing scaleups. Each client's journey with Patronum is a story of transformation marked by enhanced efficiency, robust security, and streamlined cloud management."
                                 />
                                 <AdvantageCard 
-                                    advantageImg="/advantage-3.svg"
+                                    advantageImg="advantage-3.svg"
                                     advantageTitle="Community & Collaboration"
                                     advantagePara="We believe in the power of collaboration. We have created an ecosystem that thrives on shared knowledge and collective innovation by actively engaging with our users and partners. This collaborative environment drives innovation and continuous improvement that not only enhances the platform but also fosters a sense of community among our users."
                                 />
                                 <AdvantageCard 
-                                    advantageImg="/advantage-4.svg"
+                                    advantageImg="advantage-4.svg"
                                     advantageTitle="A Platform for All"
                                     advantagePara="Whether you're a small business or a large enterprise, Patronum is designed to cater to your specific needs. Our platform scales with your organization, ensuring that your Google Workspace management remains seamless and hassle-free, regardless of your company's size."
                                 />

@@ -4,20 +4,17 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from "@vercel/analytics/react"
 import { ReactLenis } from '@studio-freight/react-lenis';
 import { useEffect, useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import Head from 'next/head';
-import Script from 'next/script';
-import dynamic from 'next/dynamic'
-import { ModalProvider } from '@/components/InstallModal/ModelContext';
+import { ModalProvider } from '@/components/Modals/ModalContext';
 import PreLoader from '@/components/PreLoader';
-import DemoModal from '@/components/InstallModal/DemoModal';
-import Pixi from '@/components/Pixi';
+import DemoModal from '@/components/Modals/DemoModal';
 import Cookie from '@/components/Cookie';
-import Transition from '@/components/Transition';
-
-const InstallModalWithNoSSR = dynamic(
-  () => import('@/components/InstallModal'),
-  { ssr: false }
-)
+import useWindowSize from "@/components/Header/useWindowSize";
+import { Suspense } from 'react';
+import InstallModal from '@/components/Modals/InstallModal';
+import { GoogleTagManager } from '@next/third-parties/google'
+import AnimatedCanvas from '@/components/AnimatedCanvas';
 
 export default function App({ Component, pageProps, router }) {
   const [showPreloader, setShowPreloader] = useState(true);
@@ -26,10 +23,10 @@ export default function App({ Component, pageProps, router }) {
     const hasVisited = sessionStorage.getItem('hasVisited');
 
     if (!hasVisited) {
-      setShowPreloader(true); 
-      
+      setShowPreloader(true);
+
       const preloaderTimeout = setTimeout(() => {
-        setShowPreloader(false); 
+        setShowPreloader(false);
         sessionStorage.setItem('hasVisited', 'true');
       }, 4000);
 
@@ -40,9 +37,29 @@ export default function App({ Component, pageProps, router }) {
     }
   }, []);
 
-    useEffect(() => {
+  useEffect(() => {
     const handleRouteChange = () => {
-        window.scrollTo(0, 0)
+      // Disable pointer events on route change
+      document.body.style.pointerEvents = 'none';
+
+      // Enable pointer events when mouse moves
+      const enablePointerEvents = () => {
+        document.body.style.pointerEvents = 'auto';
+        document.removeEventListener('mousemove', enablePointerEvents);
+      };
+      document.addEventListener('mousemove', enablePointerEvents);
+    };
+
+    router.events.on('routeChangeStart', handleRouteChange);
+
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange);
+    };
+  }, [router]);
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      window.scrollTo(0, 0)
     };
 
     window.addEventListener("beforeunload", handleRouteChange);
@@ -52,11 +69,11 @@ export default function App({ Component, pageProps, router }) {
     };
   }, []);
 
-  return(
+  return (
     <>
       <DefaultSeo
         title='Patronum - Best Platform for Google Workspace (GSuite) Management'
-        description='Patronum provides a better way to Google Workspace (GSuite) Management. Patronum fully automates all the administrator and user tasks to ensure an efficient, effective and secure process.'
+        description='Patronum provides a better way to manage Google Workspace (GSuite). Patronum is your Google Workspace (GSuite) manager that fully automates all administrator and user tasks to ensure an efficient, effective, and secure process.'
         additionalMetaTags={[
           {
             name: 'viewport',
@@ -79,116 +96,111 @@ export default function App({ Component, pageProps, router }) {
         openGraph={{
           type: 'website',
           locale: 'en_US',
+          title: "Patronum - Best Platform for Google Workspace (GSuite) Management",
+          "description": "Patronum provides a better way to Google Workspace (GSuite) Management. Patronum fully automates all the administrator and user tasks to ensure an efficient, effective and secure process.",
+          images: [
+            {
+              url: "https://www.patronum.io/assets/seo/homepage.png",
+              width: 1200,
+              height: 630,
+              alt: "Patronum",
+              type: "image/png",
+            },
+          ],
+          siteName: "Patronum",
         }}
         twitter={{
           site: 'Patronum',
           cardType: 'summary_large_image',
         }}
       />
+      <Head>
+        <meta charSet="utf-8" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "@id": "https://www.patronum.io/#organization",
+                "name": "Patronum",
+                "url": "https://www.patronum.io",
+                "logo": "https://www.patronum.io/logo.svg",
+                "sameAs": [
+                  "https://www.instagram.com/patronum.io/",
+                  "https://www.linkedin.com/company/wearepatronum/",
+                  "https://www.facebook.com/patronum.io",
+                  "https://twitter.com/Patronum_io",
+                  "https://www.youtube.com/@wearepatronum"
+                ]
+              },
+            ),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "@id": "https://www.patronum.io/#website",
+                "name": "Patronum",
+                "url": "https://www.patronum.io",
+                "publisher": [
+                  {
+                    "@id": "https://www.patronum.io/#organization"
+                  }
+                ],
+                "inLanguage": "en-US",
+              },
+            ),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              {
+                "@context": "https://schema.org",
+                "@type": "ImageObject",
+                "@id": "https://www.patronum.io/assets/seo/homepage.jpg",
+                "url": "https://www.patronum.io/assets/seo/homepage.jpg",
+                "width": "1295",
+                "height": "594",
+                "inLanguage": "en-US"
+              },
+            ),
+          }}
+        />
+      </Head>
 
-    <Head>
-      <meta charSet="utf-8" />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            {
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "@id": "https://www.patronum.io/#organization",
-              "name": "Patronum",
-              "url": "https://www.patronum.io",
-              "logo": "https://www.patronum.io/logo.svg",
-              "sameAs": [
-                "https://www.instagram.com/patronum.io/",
-                "https://www.linkedin.com/company/wearepatronum/",
-                "https://www.facebook.com/patronum.io",
-                "https://twitter.com/Patronum_io",
-                "https://www.youtube.com/@wearepatronum"
-              ]
-            },
-          ),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            {
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              "@id": "https://www.patronum.io/#website",
-              "name": "Patronum",
-              "url": "https://www.patronum.io",
-              "publisher":[
-                {
-                  "@id": "https://www.patronum.io/#organization"
-                }
-              ],
-              "inLanguage": "en-US",
-
-            },
-          ),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            {
-              "@context": "https://schema.org",
-              "@type": "ImageObject",
-              "@id": "https://patronum.io/assets/seo/Google-Workspace.png",
-              "url": "https://patronum.io/assets/seo/Google-Workspace.png",
-              "width": "1295",
-              "height": "594",
-              "inLanguage": "en-US"
-            },
-          ),
-        }}
-      />
-    </Head>
-
-      {showPreloader && <PreLoader />} 
+      {showPreloader && <PreLoader />}
       <Cookie />
       <ReactLenis root options={{ duration: 0.8 }}>
         <ModalProvider>
-          {/* <AnimatePresence mode="wait"> */}
-          <Transition>
-            <Component {...pageProps} key={router.route}/>
-          </Transition>
-          {/* </AnimatePresence> */}
-          <InstallModalWithNoSSR />
-          <DemoModal />
+          <AnimatePresence mode="wait">
+            <Component {...pageProps} key={router.route} />
+          </AnimatePresence>
+          <Suspense fallback={null}>
+            <InstallModal />
+            <DemoModal />
+          </Suspense>
         </ModalProvider>
       </ReactLenis>
 
-      {/* Vercel Analytics */}
-      <SpeedInsights />
-      <Analytics />
-
       {/* Google Tag Manager */}
-      <Script
-        async
-        strategy="worker"
-        src="https://www.googletagmanager.com/gtag/js?id=G-QTG00X44EP"
-      />
+      <GoogleTagManager gtmId="GTM-MDWM3Z7J" />
 
-      {/* Google Analytics */}
-      <Script
-        strategy="worker"
-        id="google-analytics"
-        >
-          {` window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-QTG00X44EP', {
-              page_path: window.location.pathname,
-            });
-          `}
-      </Script>
-      {/* WEBGL Background */}
-      <Pixi />
+      {/* Vercel Analytics */}
+      <SpeedInsights
+        strategy="afterInteractive"
+      />
+      <Analytics
+        strategy="afterInteractive"
+      />
+      <AnimatedCanvas />
     </>
-  ); 
+  );
 }

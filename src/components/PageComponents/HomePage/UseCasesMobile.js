@@ -45,15 +45,15 @@ export default function UseCasesMobile() {
             id: 5,
             title: "For Users",
             img: "patronum-for-users.svg",
-            description1: "Patronum seamlessly integrates Google Drive Management, shares contacts & calendars and gives users a clear view of organisation hierarchy, ensuring your staff has what they need, when they need it.",
-            description2: "Patronum eliminates the common hurdles of document access and schedule coordination, enabling your all team members to focus on productivity. Patronum also enhances organisational connectivity, with the ability to search for colleagues by department, location, or skillset via the Organisation Chart and People Finder.",
+            description1: "Patronum seamlessly integrates Google Drive Management, shares contacts & calendars and gives users a clear view of organization hierarchy, ensuring your staff has what they need, when they need it.",
+            description2: "Patronum eliminates the common hurdles of document access and schedule coordination, enabling your all team members to focus on productivity. Patronum also enhances organizational connectivity, with the ability to search for colleagues by department, location, or skillset via the Organization Chart and People Finder.",
             link: "/patronum-for-users",
         }
     ]
 
     const UseCasesMobileCard = ({ title, img, description1, description2, link }) => {
         return (
-            <div className="text-center w-full h-full md:px-12 px-8 space-y-[8vw]">
+            <div className="text-center w-full h-full md:px-12 px-8 space-y-[8vw] pt-[1.4vw]">
                 <h4 className="md:text-4xl text-[6vw]">
                     <span>
                         {title}
@@ -87,9 +87,9 @@ export default function UseCasesMobile() {
                     <div className="container overflow-hidden">
                         <div className="section-head">
                             <h2 className="title-4xl text-anim">
-                                <span>Master Challenges</span> 
+                                <span>Master{" "}Challenges{" "}</span> 
                                 <br />
-                                <span>Across Your Organisation</span>
+                                <span>Across{" "}Your{" "}Organization</span>
                             </h2>
                         </div>
                     </div>

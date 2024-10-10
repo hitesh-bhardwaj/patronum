@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import FaqItem from '@/components/PageLayout/FaqItem'; 
 import faqData from './faqData.json'; 
-import PrimaryButton from '@/components/PageLayout/Button/PrimaryButton';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import {
@@ -14,11 +12,6 @@ import {
 gsap.registerPlugin(ScrollTrigger);
 
 const Faqs = ({ featureName }) => {
-    const [accordionOpen, setAccordionOpen] = useState(0);
-
-    const toggleAccordion = (index) => {
-        setAccordionOpen(index === accordionOpen ? null : index);
-    };
 
     useEffect(() => {
         const scaleAnims = document.querySelectorAll('.scaleAnim');
@@ -77,7 +70,7 @@ const Faqs = ({ featureName }) => {
                           <AccordionTrigger className="title-2xl pb-2 relative px-[2vw] py-[2vw] w-[90%]">
                             <div className='faq-number'>
                               <span className='aeonik'>
-                                  {item.id}
+                                  {item.id}{" "}
                               </span>
                             </div>
                             <div className='faq-main-content'>
@@ -89,16 +82,12 @@ const Faqs = ({ featureName }) => {
                             </div>
                           </AccordionTrigger>
                           <AccordionContent className="content-p faq-main-content ml-[7vw] features">
-                            {item.content}
+                            <span dangerouslySetInnerHTML={{__html:item.content}} />
                           </AccordionContent>
                           <span className='h-[1px] bg-[#1a1a1a] w-full lineDraw block'/>
                         </AccordionItem>
                       ))}
                     </Accordion>
-                  
-                    <div className="section-btn-container mt-16">
-                      <PrimaryButton link="#" btnText="View All FAQ's"/>
-                    </div>
                   </div>
               </div>
           </div>

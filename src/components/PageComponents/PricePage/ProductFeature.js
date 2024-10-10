@@ -20,7 +20,7 @@ const ProductFeatures = () => {
             title: "Dashboard",
             img: '/assets/pricing/detail-1.png',
             description: [
-                'Top Organisation Shares',
+                'Top Organization Shares',
                 'Top Externally Shared Files',
                 'Top External Domains',
                 'Alerts & Reports',
@@ -169,7 +169,7 @@ const ProductFeatures = () => {
                 'Remove Connected 3rd Party Applications',
                 'Force user sign out',
                 'Hide User from Google Global Address book',
-                'Move User to different organisational unit within Google Directory',
+                'Move User to different organizational unit within Google Directory',
                 'Rename the User',
                 'Allocate leaver’s email address to another user or Google Group',
                 'Timed suspension of User',
@@ -187,9 +187,9 @@ const ProductFeatures = () => {
                     <div className="content">
                         <div className="section-head">
                             <SectionTitle 
-                                sectionTitle1={"Lorem Ipsum"}
-                                sectionTitle2={"Lorem Ipsum Dolor"}
-                                sectionPara={"Patronum redefines user lifecycle management by providing a consistent and unified experience within Google Workspace while significantly reducing IT expenditure in managing users and resources."}
+                                sectionTitle1={"Comprehensive"}
+                                sectionTitle2={" Feature Breakdown"}
+                                sectionPara={"Dive into the details of what Patronum offers across all our pricing plans. This section outlines the rich set of features designed to optimize your Google Workspace experience, including automation tools, security enhancements, and user management capabilities."}
                             />
                         </div>
 

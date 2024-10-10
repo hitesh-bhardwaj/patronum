@@ -1,5 +1,5 @@
 import React from "react";
-import { useModal } from "../InstallModal/ModelContext";
+import { useModal } from "../Modals/ModalContext";
 import Image from "next/image";
 
 export default function FooterContact() {
@@ -78,10 +78,6 @@ export default function FooterContact() {
                                     className="lg:w-[27vw] w-full h-auto"
                                     loading="lazy"
                                 />
-                                {/* <video className="lg:w-[27vw] w-full h-auto blend-screen" loop autoPlay muted playsInline>
-                                    <source src="/assets/footer/rocket.webm" type='video/webm' />
-                                    <source src="/assets/footer/rocket.mp4" type='video/mp4'/>
-                                </video> */}
                             </div>
                         </div>
                     </div>

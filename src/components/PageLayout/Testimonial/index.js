@@ -45,7 +45,7 @@ export default function Testimonial() {
                         <div className="section-head">
                             <h2 className="title-4xl text-anim">
                                 <span>
-                                    Client Speak: 
+                                    Client Speak:{" "}
                                 </span>
                                 <br />
                                 <span>

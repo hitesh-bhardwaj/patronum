@@ -40,7 +40,7 @@ const PricingCard = ({ features, category, isAnnual, selectedCurrency, pricingIm
       <span className={styles.hr}/>
       <div className={styles.featureList}>
         {features.map((feature, index) => (
-          <h4 key={index}>{feature}</h4>
+          <h4 key={index}><span>✓</span><span>{feature}</span></h4>
         ))}
       </div>
       <span className={styles.hr}/>
@@ -48,7 +48,7 @@ const PricingCard = ({ features, category, isAnnual, selectedCurrency, pricingIm
             <p className={styles.pricingPrice}> 
                 <span >{getCurrencySymbol(selectedCurrency)} </span>
                 <span >{isAnnual ? prices[category][selectedCurrency].annual : prices[category][selectedCurrency].monthly}</span>
-                <span className={styles.pricingType}> {isAnnual ? '/year' : '/month'}</span>
+                <span className={styles.pricingType}> /user{isAnnual ? '/year' : '/month'}</span>
             </p>
             <div>
                 <a href="/contact-us" className="link-btn">
@@ -66,7 +66,6 @@ const PricingCard = ({ features, category, isAnnual, selectedCurrency, pricingIm
                 </a>
             </div>
       </div>
-
     </div>
   );
 };

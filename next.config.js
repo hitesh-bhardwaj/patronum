@@ -7,17 +7,31 @@ const nextConfig = {
   reactStrictMode: true,
   productionBrowserSourceMaps: true,
   experimental: {
-    optimizeCss: true,
     nextScriptWorkers: true,
   },
   images: {
-    domains: ['wordpress-213572-4463644.cloudwaysapps.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'wordpress-213572-4463644.cloudwaysapps.com',
+      },
+    ],
   },
   async redirects() {
     return [
       {
+        source: '/use-utm-code-within-your-email-signature-to-track-the-success-of-your-email-marketing',
+        destination: '/use-utm-code-within-your-email-signature',
+        permanent: true,
+      },
+      {
         source: '/standard-contractual-clauses',
         destination: 'https://docs.google.com/document/d/1C3PqmGvh1jItmMvN2FrL13V8V-rOestnw0QkWkNFIvc/edit?usp=drive_link',
+        permanent: true,
+      },
+      {
+        source: '/anti-slavery-and-human-trafficking-statement',
+        destination: 'https://docs.google.com/document/d/1mb7Rh5glrBbqTv_zYSQs9eniASpQp9OLq4vAojohGY4/edit?usp=drive_link',
         permanent: true,
       },
       {
@@ -59,7 +73,42 @@ const nextConfig = {
         source: '/sitemap.xml',
         destination: '/sitemap_index.xml',
         permanent: true,
-      }
+      },
+      {
+        source: '/google-drive-management/',
+        destination: '/google-drive-management',
+        permanent: true,
+      },
+      {
+        source: '/support/',
+        destination: '/support',
+        permanent: true,
+      },
+      {
+        source: '/organisational-chart/',
+        destination: '/organisational-chart',
+        permanent: true,
+      },
+      {
+        source: '/patronum-google-drive-beta/',
+        destination: '/patronum-google-drive-beta',
+        permanent: true,
+      },
+      {
+        source: '/email-signature-management/',
+        destination: '/email-signature-management',
+        permanent: true,
+      },
+      {
+        source: '/on-boarding/',
+        destination: '/on-boarding',
+        permanent: true,
+      },
+      {
+        source: '/patronum-awarded-best-ease-of-use-and-best-value-by-capterra/',
+        destination: '/patronum-awarded-best-ease-of-use-and-best-value-by-capterra',
+        permanent: true,
+      },
     ]
   },
 }

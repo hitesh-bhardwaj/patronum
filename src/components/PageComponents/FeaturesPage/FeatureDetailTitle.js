@@ -6,7 +6,7 @@ export default function FeatureDetailTitle( {sectionTitle1, sectionTitle2, secti
                     <div className="sectionTitle">
                         <h2 className="title-4xl text-anim">
                             <span>
-                                {sectionTitle1}
+                                {sectionTitle1}{" "}
                             </span>
                             <br />
                             <span>

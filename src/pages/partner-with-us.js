@@ -91,7 +91,7 @@ export default function Partners() {
                             <div className="lg:flex items-start justify-between">
                                 <h2 className="title-4xl text-anim">
                                     <span>
-                                        Partner
+                                        Partner{" "}
                                     </span>
                                     <br />
                                     <span>
@@ -100,7 +100,7 @@ export default function Partners() {
                                 </h2>
                                 <p className="content-p lg:w-1/3 w-[95%] lg:mt-[1vw] mt-[5vw] text-anim-2">
                                     <span>
-                                        Transform your Google Workspace experience with Patronum, the ultimate solution to your onboarding nightmares, permission hassles, and data compliance woes. Patronum is designed to streamline the management of Google Workspace.
+                                        Gain exclusive access to comprehensive training, marketing resources, and technical support with Patronum’s Partner Program and open up new opportunities to grow your business.
                                     </span>
                                 </p>
                             </div>
@@ -148,7 +148,7 @@ export default function Partners() {
                             <SectionTitle
                                 sectionTitle1="Patronum"
                                 sectionTitle2="Partner Benefits"
-                                sectionPara="Patronum redefines user lifecycle management by providing a consistent and unified experience within Google Workspace while significantly reducing IT expenditure in managing users and resources."
+                                sectionPara="Patronum’s Partner Program is designed to empower businesses by offering exclusive benefits and opportunities for growth. Partners gain access to comprehensive training, marketing resources, and technical support, enhancing their ability to deliver optimized Google Workspace solutions to their clients."
                             />
 
                             <div className="partner-info-wrapper">

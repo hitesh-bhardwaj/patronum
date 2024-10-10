@@ -20,7 +20,7 @@
             {
                 "id": "04",
                 "title": "Is it possible to customise onboarding workflows with Patronum?",
-                "content": "Yes, Patronum offers customisable onboarding workflows. Organisations can tailor these processes to meet their specific requirements, ensuring that every new employee's onboarding experience aligns with organisational protocols and needs."
+                "content": "Yes, Patronum offers customisable onboarding workflows. Organizations can tailor these processes to meet their specific requirements, ensuring that every new employee's onboarding experience aligns with organizational protocols and needs."
             },
             {
                 "id": "05",
@@ -30,12 +30,12 @@
             {
                 "id": "06",
                 "title": "Can Patronum automate email setup and signature configuration for new users?",
-                "content": "Absolutely, Patronum automates the email setup process for new users, including configuring email accounts and standardising email signatures according to the organisation's branding guidelines."
+                "content": "Absolutely, Patronum automates the email setup process for new users, including configuring email accounts and standardising email signatures according to the organization's branding guidelines."
             },
             {
                 "id": "07",
                 "title": "Does Patronum support bulk user onboarding and offboarding?",
-                "content": "Yes, Patronum supports bulk user onboarding and offboarding, allowing organisations to efficiently manage large-scale additions or removals of users in Google Workspace."
+                "content": "Yes, Patronum supports bulk user onboarding and offboarding, allowing organizations to efficiently manage large-scale additions or removals of users in Google Workspace."
             },
             {
                 "id": "08",
@@ -45,7 +45,7 @@
             {
                 "id": "09",
                 "title": "Can Patronum automate the transfer of files and documents to new users?",
-                "content": "Yes, Patronum can automate the transferring of necessary files and documents to new users. It ensures that new employees have immediate access to all the required resources, streamlining their integration into the organisation."
+                "content": "Yes, Patronum can automate the transferring of necessary files and documents to new users. It ensures that new employees have immediate access to all the required resources, streamlining their integration into the organization."
             },
             {
                 "id": "10",
@@ -55,7 +55,7 @@
             {
                 "id": "11",
                 "title": "How does Patronum handle user data backup during offboarding?",
-                "content": "Patronum ensures that all user data, including emails, documents, and calendar information, is securely backed up during offboarding. This process allows for the safe archiving of important data, which can be accessed or transferred as needed, ensuring that no critical information is lost when a user leaves the organisation."
+                "content": "Patronum ensures that all user data, including emails, documents, and calendar information, is securely backed up during offboarding. This process allows for the safe archiving of important data, which can be accessed or transferred as needed, ensuring that no critical information is lost when a user leaves the organization."
             },
             {
                 "id": "12",
@@ -77,6 +77,46 @@
                 "title": "Can Patronum facilitate the transfer of responsibilities during offboarding?",
                 "content": "Yes, during offboarding, Patronum can facilitate the transfer of responsibilities and ownership of files, documents, and tasks from the departing employee to other team members. This ensures a smooth transition and continuity of work without disrupting ongoing projects or operations."
             }
+        ]
+    },
+    {
+        "feature": "organizational_chart",
+        "faqs": [
+            {
+                "id": "01",
+                "title": "How does Patronum's Organizational Chart improve understanding of company structure?",
+                "content": "Patronum's Organizational Chart offers a visual representation of your company's hierarchy, making it easy to see how teams and departments are structured. It simplifies understanding the organizational layout, helping employees recognize their place within the company and how different roles interconnect, thus enhancing organizational clarity and coherence."
+              },
+              {
+                "id": "02",
+                "title": "Can I find employees based on specific skills or languages using Patronum?",
+                "content": "Yes, with Patronum's custom schema feature, you can quickly locate employees based on specific attributes, including skills, languages, or qualifications. This functionality allows for efficient searching within the Google Directory, making it easier to find the right person for specific tasks or projects."
+              },
+              {
+                "id": "03",
+                "title": "Is Patronum's Organizational Chart easy for all employees to use?",
+                "content": "Absolutely. Patronum is designed using Google Material Design, mirroring the familiar Google Workspace interface. This design choice ensures that the experience is highly intuitive, requiring minimal to no learning curve for users, thereby making it accessible to everyone in the organization."
+              },
+              {
+                "id": "04",
+                "title": "How can I view direct reporting structures within my organization using Patronum?",
+                "content": "Patronum enables you to view direct reports clearly within the organizational chart. This feature provides a straightforward view of who reports to whom across the organization, essential for managing teams and understanding reporting lines."
+              },
+              {
+                "id": "05",
+                "title": "How does Patronum facilitate unlocking talent within the organization?",
+                "content": "Patronum's search capability within the Google Directory allows you to uncover and leverage the diverse talents within your organization. By searching for specific skills, languages, or qualifications, you can identify employees who best fit the needs of particular tasks or roles, thus optimizing your workforce's potential."
+              },
+              {
+                "id": "06",
+                "title": "How does Patronum enhance collaboration within the organization?",
+                "content": "Patronum enhances collaboration by making it easier to connect with colleagues. You can search for a user within your organization and contact them via phone, email, or Google Meet directly through Patronum. This feature streamlines communication and fosters a more collaborative environment."
+              },
+              {
+                "id": "07",
+                "title": "Will Patronum's Organizational Chart integrate smoothly with our existing Google Workspace setup?",
+                "content": "Yes, Patronum is designed to integrate seamlessly with Google Workspace. Its use of Google Material Design ensures that it fits naturally within the Google ecosystem, providing a consistent user experience without disrupting your existing workspace setup."
+              }
         ]
     },
     {
@@ -130,7 +170,7 @@
             {
                 "id": "10",
                 "title": "How immediate is the contact sync with Patronum?",
-                "content": "Patronum offers instant synchronization, ensuring that any updates or changes to contacts are immediately reflected across all users’ devices, maintaining up-to-date contact information organization-wide."
+                "content": "Patronum offers daily synchronization, ensuring that any updates or changes to contacts are reflected across all users’ devices, maintaining up-to-date contact information organization-wide."
             },
             {
                 "id": "11",
@@ -160,7 +200,57 @@
             {
                 "id": "16",
                 "title": "Do you backup my contacts just in case I or someone else deletes them accidentally?",
-                "content": "Patronum prioritizes data security, including features for contact backup and recovery, protecting against accidental deletions and ensuring your contacts are safeguarded."
+                "content": "Patronum prioritizes data security, including features for contact backup and recovery (additional opt-in feature), protecting against accidental deletions and ensuring your contacts are safeguarded. You can opt-in for <a class='link-href' href='/google-workspace-backup'>Google Workspace Backup</a> as an add-on to your Patronum subscription."
+            }
+        ]
+    },
+    {
+        "feature": "google_drive_management",
+        "faqs": [
+            {
+                "id": "01",
+                "title": "How does Patronum's Google Drive Management benefit my organization?",
+                "content": "Patronum’s Google Drive Management is designed to enhance the efficiency of managing Google Workspace files and folders. It benefits organizations by providing IT administrators with advanced capabilities to oversee user permissions, transfer file ownership, organize digital assets, and ensure that file sharing aligns with company policies, all from a central interface."
+            },
+            {
+                "id": "02",
+                "title": "Can I use Patronum to manage file permissions across my entire organization's Google Drive?",
+                "content": "Yes, with Patronum, you can manage file permissions across your entire organization. It allows you to review, update, and set file-sharing settings to ensure sensitive information is protected while fostering a collaborative environment."
+            },
+            {
+                "id": "03",
+                "title": "How does the ‘Change Ownership’ feature work in cases of employee turnover?",
+                "content": "The ‘Change Ownership’ feature allows IT administrators to quickly transfer ownership of files and folders when an employee leaves or moves within the company. This ensures that essential documents remain accessible and that there's no interruption in workflow."
+            },
+            {
+                "id": "04",
+                "title": "Is it possible to move files and folders in bulk with Patronum, or do they have to be moved individually?",
+                "content": "Patronum supports both individual and bulk movements of files and folders. This flexibility is crucial for restructuring your digital workspace or during large-scale organizational changes, allowing for efficient transitions and organization."
+            },
+            {
+                "id": "05",
+                "title": "Can Patronum's Google Drive Management handle the organization of Google Shared Drives?",
+                "content": "Absolutely. Patronum is equipped to streamline the management of Google Shared Drives. It provides functionalities to add new users, assign managers, and reorganize content, ensuring that your shared drives reflect the structured and secure access hierarchy of your organization."
+            },
+            {
+                "id": "06",
+                "title": "What security measures does Patronum have in place to protect our data during the management of Google Drive?",
+                "content": "Patronum prioritizes security by adhering to Google's stringent API use policies and providing role-based access within the tool. Actions are logged and can be audited to ensure compliance with your organization's data protection policies."
+            },
+            {
+                "id": "07",
+                "title": "How does Patronum facilitate the addition of files from other users, especially when the owner is unavailable?",
+                "content": "Patronum allows IT administrators to grant access to necessary files when the owner is unavailable. This ensures that teams can continue their work without delays, maintaining productivity and adherence to deadlines."
+            },
+            {
+                "id": "08",
+                "title": "In what ways can Patronum's Google Drive Management feature streamline content creation and sharing within a company?",
+                "content": "Patronum can streamline content creation and sharing by automating the organization of new files and folders, setting default sharing permissions, and ensuring that newly created content adheres to predefined organizational structures and security standards."
+            },
+            {
+                "id": "09",
+                "title": "Is there a trial version available for Patronum's Google Drive Management, and how can we sign up?",
+                "content": "Patronum does offer a no-obligation 30-day trial for prospective clients. To sign up for a trial, click on the 'Install Patronum' button and fill up your details, no credit card is required. To discuss how Patronum can be tailored to meet your organization’s specific needs, you can schedule a demo by contacting us."
             }
         ]
     },
@@ -529,7 +619,7 @@
             },
             {
                 "id": "06",
-                "title": "I’m a Non-Profit / Education organisation. Do you offer discounts?",
+                "title": "I’m a Non-Profit / Education organization. Do you offer discounts?",
                 "content": "Yes, we offer huge discounts for non-profit and education organizations."
             }
         ]

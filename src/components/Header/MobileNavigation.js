@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const MobileNavVariants = {
     open: {
@@ -96,7 +97,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                             <li className=''>
                                 <Link href='/on-boarding' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Onboarding' >
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
-                                        <img loading='lazy' src='/assets/menu/onboarding.svg' alt='feature icon'/>
+                                        <Image width={30} height={30} loading='lazy' src='/assets/menu/onboarding.svg' alt='feature icon'/>
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>User Management</p>
@@ -107,7 +108,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                             <li className=''>
                                 <Link href='/email-signature-management' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Email Signature' >
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
-                                        <img loading='lazy' src='/assets/menu/email-signature.svg' alt='feature icon'/>
+                                        <Image width={30} height={30} loading='lazy' src='/assets/menu/email-signature.svg' alt='feature icon'/>
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>Email Signatures</p>
@@ -118,7 +119,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                             <li className=''>
                                 <Link href='/google-workspace-backup' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Workspace Backup' >
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
-                                        <img loading='lazy' src='/assets/menu/workspace-backup.svg' alt='feature icon'/>
+                                        <Image width={30} height={30} loading='lazy' src='/assets/menu/workspace-backup.svg' alt='feature icon'/>
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>Workspace Backup</p>
@@ -129,7 +130,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                             <li className=''>
                                 <Link href='/google-drive-management' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Google Drive Management' >
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
-                                        <img loading='lazy' src='/assets/menu/drive-management.svg' alt='feature icon'/>
+                                        <Image width={30} height={30} loading='lazy' src='/assets/menu/drive-management.svg' alt='feature icon'/>
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>Google Drive Management</p>
@@ -140,7 +141,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                             <li className=''>
                                 <Link href='/google-drive-compliance' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - File Unsharing' >
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
-                                        <img loading='lazy' src='/assets/menu/file-sharing.svg' alt='feature icon'/>
+                                        <Image width={30} height={30} loading='lazy' src='/assets/menu/file-sharing.svg' alt='feature icon'/>
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>File Unsharing</p>
@@ -151,7 +152,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                             <li className=''>
                                 <Link href='/google-contact-sharing' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Contact Sharing' >
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
-                                        <img loading='lazy' src='/assets/menu/contact-sharing.svg' alt='feature icon'/>
+                                        <Image width={30} height={30} loading='lazy' src='/assets/menu/contact-sharing.svg' alt='feature icon'/>
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>Contact Sharing</p>
@@ -162,7 +163,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                             <li className=''>
                                 <Link href='/organisational-chart' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Organizational Chart' >
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
-                                        <img loading='lazy' src='/assets/menu/organisational-chart.svg' alt='use case icon'/>
+                                        <Image width={30} height={30} loading='lazy' src='/assets/menu/organisational-chart.svg' alt='use case icon'/>
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>Organizational Chart</p>
@@ -189,7 +190,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                             <li className=''>
                                 <Link href='/patronum-for-business' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Business' >
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
-                                        <img loading='lazy' src='/assets/menu/for-business.svg' alt='use case icon'/>
+                                        <Image width={30} height={30} loading='lazy' src='/assets/menu/for-business.svg' alt='use case icon'/>
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>For Business</p>
@@ -200,7 +201,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                             <li className=''>
                                 <Link href='/patronum-for-hr' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For HR' >
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
-                                        <img loading='lazy' src='/assets/menu/for-hr.svg' alt='use case icon'/>
+                                        <Image width={30} height={30} loading='lazy' src='/assets/menu/for-hr.svg' alt='use case icon'/>
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>For HR</p>
@@ -211,7 +212,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                             <li className=''>
                                 <Link href='/patronum-for-sales-marketing' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Sales & Marketing' >
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
-                                        <img loading='lazy' src='/assets/menu/for-sales-marketing.svg' alt='use case icon'/>
+                                        <Image width={30} height={30} loading='lazy' src='/assets/menu/for-sales-marketing.svg' alt='use case icon'/>
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>For Sales & Marketing</p>
@@ -222,7 +223,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                             <li className=''>
                                 <Link href='/patronum-for-education' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Education' >
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
-                                        <img loading='lazy' src='/assets/menu/for-education.svg' alt='use case icon'/>
+                                        <Image width={30} height={30} loading='lazy' src='/assets/menu/for-education.svg' alt='use case icon'/>
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>For Education</p>
@@ -233,7 +234,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                             <li className=''>
                                 <Link href='/patronum-for-users' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Users' >
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
-                                        <img loading='lazy' src='/assets/menu/for-users.svg' alt='use case icon'/>
+                                        <Image width={30} height={30} loading='lazy' src='/assets/menu/for-users.svg' alt='use case icon'/>
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>For Users</p>
@@ -244,7 +245,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                             <li className=''>
                                 <Link href='#' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For IT Admins' >
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
-                                        <img loading='lazy' src='/assets/menu/for-it-admins.svg' alt='use case icon'/>
+                                        <Image width={30} height={30} loading='lazy' src='/assets/menu/for-it-admins.svg' alt='use case icon'/>
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>For IT Admins</p>
@@ -272,11 +273,11 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                 </span>
                             </button>
                         </div>
-                        <ul id="dropdown-resources" className={`px-4 space-y-4 bg-gray-100 transition-all duration-500 overflow-hidden flex flex-col justify-center ${isResourcesDropdownOpen ? "h-[500px]" : "h-0" }`}>
+                        <ul id="dropdown-resources" className={`px-4 space-y-4 bg-gray-100 transition-all duration-500 overflow-hidden flex flex-col justify-center ${isResourcesDropdownOpen ? "h-[680px]" : "h-0" }`}>
                             <li className=''>
                                 <Link href='/blog' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Blog' >
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
-                                        <img loading='lazy' src='/assets/menu/resource-blog.svg' alt='resource icon'/>
+                                        <Image width={30} height={30} loading='lazy' src='/assets/menu/resource-blog.svg' alt='resource icon'/>
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>Blog</p>
@@ -284,54 +285,10 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </div>
                                 </Link>
                             </li>
-                            {/* <li className=''>
-                                <Link href='/guides' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Guides' >
-                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
-                                        <img loading='lazy' src='/assets/menu/resource-guides.svg' alt='resource icon'/>
-                                    </div>
-                                    <div>
-                                        <p className='text-xl font-500'>Guides</p>
-                                        <p className='text-base'>Step-by-Step User Guides</p>
-                                    </div>
-                                </Link>
-                            </li>
-                            <li className=''>
-                                <Link href='/ebooks' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Ebooks' >
-                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
-                                        <img loading='lazy' src='/assets/menu/resource-ebooks.svg' alt='resource icon'/>
-                                    </div>
-                                    <div>
-                                        <p className='text-xl font-500'>Ebooks</p>
-                                        <p className='text-base'>Exclusive Patronum Content in Ebooks</p>
-                                    </div>
-                                </Link>
-                            </li>
-                            <li className=''>
-                                <Link href='/case-studies' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Case Studies' >
-                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
-                                        <img loading='lazy' src='/assets/menu/resource-case-studies.svg' alt='resource icon'/>
-                                    </div>
-                                    <div>
-                                        <p className='text-xl font-500'>Case Studies</p>
-                                        <p className='text-base'>Patronum's Real-World Success Stories</p>
-                                    </div>
-                                </Link>
-                            </li>
-                            <li className=''>
-                                <Link href='/product-videos' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Product Videos'>
-                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
-                                        <img loading='lazy' src='/assets/menu/resource-product-videos.svg' alt='resource icon'/>
-                                    </div>
-                                    <div>
-                                        <p className='text-xl font-500'>Product Videos</p>
-                                        <p className='text-base'>In-depth video guides</p>
-                                    </div>
-                                </Link>
-                            </li> */}
                             <li className=''>
                                 <Link href='/webinars' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Webinars' >
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
-                                        <img loading='lazy' src='/assets/menu/resource-webinars.svg' alt='resource icon'/>
+                                        <Image width={30} height={30} loading='lazy' src='/assets/menu/resource-webinars.svg' alt='resource icon'/>
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>Webinars</p>
@@ -340,20 +297,20 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                 </Link>
                             </li>
                             <li className=''>
-                                <Link href='https://community.patronum.io' target='_blank' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Community'>
+                                <Link href='/security-and-compliance' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Compliance' >
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
-                                        <img loading='lazy' src='/assets/menu/resource-community.svg' alt='resource icon'/>
+                                        <Image width={30} height={30} loading='lazy' src='/assets/menu/resource-compliance.svg' alt='resource icon'/>
                                     </div>
                                     <div>
-                                        <p className='text-xl font-500'>Community</p>
-                                        <p className='text-base'>Connect & Collaborate with Peers</p>
+                                        <p className='text-xl font-500'>Compliance</p>
+                                        <p className='text-base'>Our Security & Compliance Practices</p>
                                     </div>
                                 </Link>
                             </li>
                             <li className=''>
                                 <Link href='https://help.patronum.io' target='_blank' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Help'>
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
-                                        <img loading='lazy' src='/assets/menu/resource-help.svg' alt='resource icon'/>
+                                        <Image width={30} height={30} loading='lazy' src='/assets/menu/resource-help.svg' alt='resource icon'/>
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>Help</p>
@@ -362,13 +319,35 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                 </Link>
                             </li>
                             <li className=''>
+                                <Link href='https://community.patronum.io' target='_blank' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Community'>
+                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                        <Image width={30} height={30} loading='lazy' src='/assets/menu/resource-community.svg' alt='resource icon'/>
+                                    </div>
+                                    <div>
+                                        <p className='text-xl font-500'>Community</p>
+                                        <p className='text-base'>Connect & Collaborate with Peers</p>
+                                    </div>
+                                </Link>
+                            </li>
+                            <li className=''>
                                 <Link href='/legal' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Legal' >
                                     <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
-                                        <img loading='lazy' src='/assets/menu/resource-legal.svg' alt='resource icon'/>
+                                        <Image width={30} height={30} loading='lazy' src='/assets/menu/resource-legal.svg' alt='resource icon'/>
                                     </div>
                                     <div>
                                         <p className='text-xl font-500'>Legal</p>
                                         <p className='text-base'>Legal Information & Terms of Use</p>
+                                    </div>
+                                </Link>
+                            </li>
+                            <li className=''>
+                                <Link href='/contact-us' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Contact' >
+                                    <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                        <Image width={30} height={30} loading='lazy' src='/assets/menu/resource-contact.svg' alt='resource icon'/>
+                                    </div>
+                                    <div>
+                                        <p className='text-xl font-500'>Contact Us</p>
+                                        <p className='text-base'>Get in Touch with Us</p>
                                     </div>
                                 </Link>
                             </li>

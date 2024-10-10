@@ -48,23 +48,23 @@ const Footer = () => {
                                             </Link>
                                         </li>
                                         <li className="py-2">
-                                            <Link href="https://community.patronum.io" target="_blank" className="text-xl">
-                                                Community
+                                            <Link href="/privacy-policy" className="text-xl">
+                                                Privacy Policy
                                             </Link>
                                         </li>
                                         <li className="py-2">
-                                            <Link href="#" className="text-xl">
-                                                Resources
-                                            </Link>
-                                        </li>
-                                        <li className="py-2">
-                                            <Link href="/legal" className="text-xl">
-                                                Legal
+                                            <Link href="/security-and-compliance" className="text-xl">
+                                                Compliance
                                             </Link>
                                         </li>
                                         <li className="py-2">
                                             <Link href="https://help.patronum.io" target="_blank" className="text-xl">
                                                 Help
+                                            </Link>
+                                        </li>
+                                        <li className="py-2">
+                                            <Link href="/legal" className="text-xl">
+                                                Legal
                                             </Link>
                                         </li>
                                     </ul>
@@ -94,8 +94,13 @@ const Footer = () => {
                                             </Link>
                                         </li>
                                         <li className="py-2">
-                                            <Link href="/contact-us" className="text-xl">
-                                                Contact
+                                            <Link href="/blog" className="text-xl">
+                                                Blog
+                                            </Link>
+                                        </li>
+                                        <li className="py-2">
+                                            <Link href="https://community.patronum.io" target="_blank" className="text-xl">
+                                                Community
                                             </Link>
                                         </li>
                                     </ul>
@@ -131,17 +136,16 @@ const Footer = () => {
                                     </li>
                                 </ul>
                             </div>
-
                         </div>
                 </div>
 
-                <div className="py-10 lg:px-10 px-0 fadeUp">
-                    <p className="text-center font-[400] lg:text-[0.84vw] text-[3vw]">Bespin Labs Limited is registered with the Information Commissioners Office in relation to the processing of personal information (registration number: ZA686937). Bespin Labs Limited is incorporated in England and Wales (company number: 11068628). Our registered office is First Floor Office Suite, Mill B Colne Road Buildings, Colne Road, Huddersfield, United Kingdom, HD1 3AG</p>
+                <div className="py-10 px-0 fadeUp">
+                    <p className="text-center font-[400] lg:text-[0.89vw] text-[3.25vw]">Bespin Labs Limited is registered with the Information Commissioners Office in relation to the processing of personal information (registration number: ZA686937). Bespin Labs Limited is incorporated in England and Wales (company number: 11068628). Our registered office is First Floor Office Suite, Mill B Colne Road Buildings, Colne Road, Huddersfield, United Kingdom, HD1 3AG</p>
                 </div>
                 
                 <span className="drawLine h-[1px] bg-white/50 w-full block"/>
 
-                <div className="py-6 lg:text-[0.9vw] text-[2.5vw] flex justify-between text-center text-[aeonik] tracking-[0.5px]">
+                <div className="py-6 lg:text-[0.9vw] text-[2.8vw] flex justify-between text-center tracking-[0.5px]">
                     <span>© 2024 <Link href="https://www.bespinlabs.com/" target="_blank" className="relative after:absolute after:bg-white after:h-[1px] after:left-0 after:bottom-[-2px] after:scale-0 hover:after:scale-100 after:duration-300 after:w-full">Bespin Labs Ltd.</Link> All rights reserved.</span>
                     <Link href='https://weareenigma.com' target="_blank" title="We Create Magic">By: <span className="relative after:absolute after:bg-white after:h-[1px] after:left-0 after:bottom-[-2px] after:scale-0 hover:after:scale-100 after:duration-300 after:w-full">Enigma</span></Link>
                 </div>

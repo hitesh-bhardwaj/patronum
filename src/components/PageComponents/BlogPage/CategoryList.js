@@ -1,3 +1,4 @@
+import Search from '@/components/Search';
 import Link from 'next/link';
 
 const CategoryList = ({ categories, activeCategory, setActiveCategory }) => {
@@ -5,7 +6,7 @@ const CategoryList = ({ categories, activeCategory, setActiveCategory }) => {
   const filteredCategories = categoriesArray.filter((category) => category.name !== 'All');
 
   return (
-    <ul className='blog-cati-button flex flex-wrap lg:justify-between lg:gap-0 gap-[2vw]'>
+    <ul className='blog-cati-button flex flex-wrap lg:justify-start lg:gap-[0.7vw] gap-[2vw]'>
       <li key="all" className='fadeUp'>
         <Link href="/blog" className='cat-btn'>
           <button 

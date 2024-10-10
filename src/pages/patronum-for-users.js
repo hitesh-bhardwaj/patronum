@@ -2,6 +2,7 @@ import Faqs from "@/components/PageComponents/FeaturesPage/Faq";
 import UseCaseCard from "@/components/PageComponents/UseCasePage/UseCaseCard";
 import PageLayout from "@/components/PageLayout";
 import SectionTitle from "@/components/PageLayout/SectionTitle";
+import Head from "next/head";
 
 const UseCasesInfo = [
     {
@@ -26,19 +27,90 @@ const UseCasesInfo = [
     },
 ]
 
-export default function UseCasesDetail(){
+export default function UseCasesDetail() {
 
     return (
         <>
-            <PageLayout 
-                pageTitle1={'Patronum'} 
+            <Head>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(
+                            {
+                                "@context": "https://schema.org",
+                                "@type": "FAQPage",
+                                "mainEntity": [
+                                    {
+                                        "@type": "Question",
+                                        "name": "How does Patronum simplify Google Workspace management for individual users?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Patronum automates routine tasks like password resets and permissions, streamlining document management and collaboration for a smoother Google Workspace experience."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "Can Patronum improve collaboration within my team?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Yes, it enhances teamwork by organizing shared documents and streamlining communication, making it easier for team members to collaborate effectively."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "What benefits does Patronum offer for new hires?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "New hires benefit from immediate access to necessary tools and resources, ensuring a quick and seamless integration into the team."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "How does Patronum handle data for departing employees?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "It securely manages the transfer or deletion of data, ensuring organizational integrity and compliance while respecting privacy."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "Does using Patronum require IT expertise?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "No, Patronum is designed for ease of use, requiring no advanced IT knowledge, thus empowering all users to manage their workspace efficiently."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "How does Patronum contribute to job satisfaction?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "By reducing administrative friction and enhancing collaboration, Patronum allows users to focus on meaningful work, thereby increasing job satisfaction."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "Is Patronum suitable for organizations of all sizes?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Absolutely, its scalable features are designed to benefit organizations of any size, from small teams to large enterprises."
+                                        }
+                                    }
+                                ]
+                            }
+                        )
+                    }}
+                />
+            </Head>
+            <PageLayout
+                pageTitle1={'Patronum'}
                 pageTitle2={'for Users'}
-                pagePara={"The only tool you'll ever need to streamline your Google Workspace management."} 
+                pagePara={"Simplify and Streamline Google Workspace for Every User Across Your Organization"}
                 imgSrc={'use-cases-users.svg'}
                 title={"Patronum for Users - Patronum"}
                 description={"Patronum provides a better way to Google Workspace (GSuite) Management. Patronum fully automates all the administrator and user tasks to ensure an efficient, effective and secure process."}
                 url={"patronum-for-users"}
-                img={"patronum-for-hr.jpg"}
+                img={"homepage.jpg"}
                 date_published={"2024-04-04T12:00"}
                 date_modified={"2024-04-04T12:00"}
                 keywords={"Google Workspace"}
@@ -47,14 +119,14 @@ export default function UseCasesDetail(){
                 <section id="second-section">
                     <div className="container">
                         <div className="content-2">
-                            <SectionTitle 
+                            <SectionTitle
                                 sectionTitle1="Use Cases:"
                                 sectionTitle2="Patronum for Users"
                                 sectionPara="Patronum revolutionizes productivity by automating routine tasks like password resets and managing access permissions. It also simplifies document management for both individual and team use, enhancing collaboration and ensuring seamless sharing of ideas and efficient teamwork."
                             />
                             <div className="useCases-Info">
                                 {UseCasesInfo.map((usecase, index) => (
-                                    <UseCaseCard 
+                                    <UseCaseCard
                                         key={index}
                                         para={usecase.para}
                                         imgSrc={usecase.img}
@@ -62,10 +134,10 @@ export default function UseCasesDetail(){
                                 ))}
                             </div>
                         </div>
-                    </div>    
+                    </div>
                 </section>
 
-                <Faqs featureName={'patronum_for_users'}/>
+                <Faqs featureName={'patronum_for_users'} />
 
             </PageLayout>
         </>

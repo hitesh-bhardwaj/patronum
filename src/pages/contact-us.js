@@ -1,4 +1,4 @@
-import ContactForm from "@/components/Forms/ContactForm";
+import ContactPageForm from "@/components/Forms/ContactPageForm";
 import PageLayout from "@/components/PageLayout";
 
 export default function Contact() {
@@ -7,12 +7,12 @@ export default function Contact() {
         <>
             <PageLayout
                 pageTitle1={'Contact Us'} 
-                pagePara={"The only tool you'll ever need to streamline your Google Workspace management."} 
+                pagePara={"Say Hello! We Promise Good Vibes and Great Coffee! ☕"} 
                 imgSrc={'contact.svg'}
                 title={"Contact Us - Patronum"}
                 description={"Patronum provides a better way to Google Workspace (GSuite) Management. Patronum fully automates all the administrator and user tasks to ensure an efficient, effective and secure process."}
                 url={"contact-us"}
-                img={"Google-Workspace.png"}
+                img={"homepage.jpg"}
                 date_published={"2021-02-05T12:00"}
                 date_modified={"2024-04-04T12:00"}
                 keywords={"Patronum Google Workspace Manager"}
@@ -86,7 +86,8 @@ export default function Contact() {
                                             <h4 className="aeonik lg:text-[2.5vw] mb-[10%] md:text-6xl text-2xl">
                                                 Fill the Form
                                             </h4>
-                                            <ContactForm />
+                                            {/* <ContactForm /> */}
+                                            <ContactPageForm />
                                         </div>
                                     </div>
                                 </div>

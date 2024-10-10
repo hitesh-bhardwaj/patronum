@@ -40,9 +40,9 @@ const PricingCard = ({ category, isAnnual, selectedCurrency, pricingImage }) => 
         <span className='currency'>{getCurrencySymbol(selectedCurrency)} </span>
         <span className='price'>{isAnnual ? prices[category][selectedCurrency].annual : prices[category][selectedCurrency].monthly}</span>
       </p>
-      <p className='pricing-type'>{isAnnual ? '/Annually' : '/Monthly'}</p>
+      <p className='pricing-type'>{`User ${isAnnual ? '/ Year' : '/ Month'}`}</p>
       <div className='pricing-link'>
-        <a href="#" className="link-btn">
+        <a href="/pricing" className="link-btn">
           <span className="btn-text">Get Started</span>
             <span className="btn-images">
                 <div>

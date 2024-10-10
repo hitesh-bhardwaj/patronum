@@ -13,17 +13,17 @@ export const getServerSideProps = async ({ res }) => {
     "anti-slavery-and-human-trafficking-statement",
     "become-a-partner",
     "blog",
-    "case-studies",
+    // "case-studies",
     "contact-us",
     "cookie-policy",
-    "ebooks",
+    // "ebooks",
     "email-signature-management",
     "features",
     "google-contact-sharing",
     "google-drive-compliance",
     "google-drive-management",
     "google-workspace-backup",
-    "guides",
+    // "guides",
     "legal",
     "on-boarding",
     "organisational-chart",
@@ -36,12 +36,14 @@ export const getServerSideProps = async ({ res }) => {
     "patronum-for-users",
     "pricing",
     "privacy-policy",
-    "product-videos",
+    // "product-videos",
     "refer-a-customer",
     "register-an-opportunity",
     "support",
     "use-cases",
-    "webinars"
+    "webinars",
+    "security-and-compliance",
+    "environmental-policy"
   ].map(page => `${BASE_URL}/${page}`);
 
   const mainPaths = [`${BASE_URL}/`];

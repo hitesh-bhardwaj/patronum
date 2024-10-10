@@ -119,9 +119,9 @@ export default function UseCases() {
                     <div className="container overflow-hidden">
                         <div className="section-head">
                             <h2 className="title-4xl text-anim">
-                                <span>Master Challenges</span> 
+                                <span>Master Challenges{" "}</span> 
                                 <br />
-                                <span>Across Your Organisation</span>
+                                <span>Across Your Organization</span>
                             </h2>
                         </div>
 
@@ -328,11 +328,11 @@ export default function UseCases() {
                                                 </p>
                                                 <p className="content-p mb-[1.5vw]">
                                                     <span>
-                                                        Patronum seamlessly integrates Google Drive Management, shares contacts & calendars and gives users a clear view of organisation hierarchy, ensuring your staff has what they need, when they need it.                                         </span>
+                                                        Patronum seamlessly integrates Google Drive Management, shares contacts & calendars and gives users a clear view of organization hierarchy, ensuring your staff has what they need, when they need it.                                         </span>
                                                     <br />
                                                     <br />
                                                     <span>
-                                                        Patronum eliminates the common hurdles of document access and schedule coordination, enabling your all team members to focus on productivity. Patronum also enhances organisational connectivity, with the ability to search for colleagues by department, location, or skillset via the Organisation Chart and People Finder.                                        </span>
+                                                        Patronum eliminates the common hurdles of document access and schedule coordination, enabling your all team members to focus on productivity. Patronum also enhances organizational connectivity, with the ability to search for colleagues by department, location, or skillset via the Organization Chart and People Finder.                                        </span>
                                                 </p>
                                                 <Link href="/patronum-for-users" className="link-btn">
                                                     <span className="btn-text">Learn More</span>

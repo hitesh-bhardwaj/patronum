@@ -5,7 +5,7 @@ const CategoryPosts = ({ posts }) => {
   return (
     <div className='category-posts'>
       {posts.length > 0 ? (
-        <div className='blog-main-container lg:mt-[5vw] mt-[10vw]'>
+        <div className='blog-main-container'>
             {posts.map((post) => {
                 return (
                     <PostCard key={post.slug} post={post} />

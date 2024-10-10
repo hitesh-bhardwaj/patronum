@@ -16,7 +16,7 @@ import styles from '@/styles/blog.module.css';
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import  ScrollToPlugin  from 'gsap/dist/ScrollToPlugin';
+import ScrollToPlugin from 'gsap/dist/ScrollToPlugin';
 import RelatedPosts from "@/components/PageComponents/BlogPage/RelatedPosts";
 import Head from "next/head";
 import { NextSeo } from "next-seo";
@@ -31,13 +31,13 @@ function PostDetail({ post, recentPosts }) {
     e.preventDefault();
     const targetElement = document.getElementById(targetId);
     const targetPosition = targetElement.offsetTop;
-        gsap.to(window, {
-            duration: 1.5,
-            scrollTo: {y: targetPosition, offsetY: 130, autoKill: true},
-            ease: "power3.inOut",
-        });
-      };    
-
+    gsap.to(window, {
+      duration: 1.5,
+      scrollTo: { y: targetPosition, offsetY: 130, autoKill: true },
+      ease: "power3.inOut",
+    });
+  };
+  
   if (!post) {
     return <div>Loading...</div>;
   }
@@ -54,44 +54,35 @@ function PostDetail({ post, recentPosts }) {
       return (tree) => {
         visit(tree, 'element', function (node) {
           if (node.tagName === 'h2') {
-            // Function to extract text in a flexible manner
             const extractText = (node) => {
-              // Check if the direct child exists and is of type text
               if (node.children?.[0]?.type === 'text') {
                 return node.children[0].value;
-              } 
-              // Check if there's a nested child of type text
-              else if (node.children?.[0]?.children?.[0]?.type === 'text') {
+              } else if (node.children?.[0]?.children?.[0]?.type === 'text') {
                 return node.children[0].children[0].value;
-              }
-              // Safely handle cases where the expected structure is missing
-              else {
-                // Recursively search for text in deeper nested structures
+              } else {
                 let foundText = null;
                 const findTextRecursively = (node) => {
-                  if(node.type === 'text') {
+                  if (node.type === 'text') {
                     foundText = node.value;
                     return;
                   }
-                  if(node.children) {
-                    for(let child of node.children) {
+                  if (node.children) {
+                    for (let child of node.children) {
                       findTextRecursively(child);
-                      if(foundText) break; // Exit if text is found
+                      if (foundText) break;
                     }
                   }
                 };
-            
                 findTextRecursively(node);
-            
-                return foundText || ""; // Return found text or default to empty string if none found
+                return foundText || "";
               }
             };
-    
+
             const textContent = extractText(node);
             const id = parameterize(textContent);
-    
+
             node.properties.id = id;
-    
+
             if (id && textContent) {
               toc.push({
                 id,
@@ -100,7 +91,7 @@ function PostDetail({ post, recentPosts }) {
             } else {
               console.error(`Invalid section generated`, { id, title: textContent });
             }
-    
+
             node.children.unshift({
               type: 'element',
               properties: {
@@ -120,186 +111,217 @@ function PostDetail({ post, recentPosts }) {
     .processSync(post.content)
     .toString();
 
-    if (globalThis.innerWidth>1024) {
-      // Section Pinnnig
-      useEffect(() => {
-        let ctx = gsap.context(() => {
-          let brandImagePin = document.getElementById("table-of-content");
-          let brandImageNotPin = document.getElementById("blog-content");
-          ScrollTrigger.create({
-            trigger: brandImagePin,
-            start: "top 18%",
-            endTrigger: brandImageNotPin,
-            end: "bottom 80%",
-            invalidateOnRefresh: true,
-            pin: brandImagePin,
+  if (globalThis.innerWidth > 1024) {
+    useEffect(() => {
+      let ctx = gsap.context(() => {
+        let brandImagePin = document.getElementById("table-of-content");
+        let brandImageNotPin = document.getElementById("blog-content");
+        ScrollTrigger.create({
+          trigger: brandImagePin,
+          start: "top 18%",
+          endTrigger: brandImageNotPin,
+          end: "bottom 80%",
+          invalidateOnRefresh: true,
+          pin: brandImagePin,
+          markers: false,
+        });
+      });
+      return () => ctx.revert();
+    });
+
+    useEffect(() => {
+      let ctx = gsap.context(() => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: '#blog-content',
+            start: 'top 18%',
+            end: 'bottom 80%',
+            scrub: 1,
             markers: false,
-          });
+          },
         });
-        return () => ctx.revert();
-      });
 
-      useEffect(() => {
-        let ctx = gsap.context(() => {
-          const tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: '#blog-content',
-              start: 'top 18%',
-              end: 'bottom 80%',
-              scrub: 1,
-              markers: false,
-            },
-          });
+        tl.to('#toc-bar', {
+          width: '100%',
+          duration: 1,
+        });
+      });
+      return () => ctx.revert();
+    });
+  }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sectionOffsets = toc.map(({ id }) => {
+        const element = document.getElementById(id);
+        if (element) {
+          return {
+            id,
+            offsetTop: element.offsetTop - 130, // Adjust for sticky header if necessary
+          };
+        }
+        return null;
+      }).filter(Boolean);
   
-          tl.to('#toc-bar', {
-            height: '100%',
-            duration: 1,
-          })
-        });
-        return () => ctx.revert();
-      });
-    }
+      const scrollPosition = window.scrollY;
+  
+      for (let i = sectionOffsets.length - 1; i >= 0; i--) {
+        if (scrollPosition >= sectionOffsets[i].offsetTop) {
+          setActiveSection(sectionOffsets[i].id);
+          break;
+        }
+      }
+    };
+  
+    window.addEventListener("scroll", handleScroll);
+  
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [toc]);
 
-return (
-      <>
-              <NextSeo
-                title={post.seo.title}
-                description={post.seo.description}
-                openGraph={{
-                  type: 'article',
-                  article: {
-                    publishedTime: post.date,
-                    modifiedTime: post.modified,
-                  },
-                  url: `https://patronum.io/${post.slug}`,
-                  title: post.seo.title,
-                  "description": post.seo.description,
-                  images: [
-                        {
-                        url: post.featuredImage.sourceUrl,
-                        width: 1200,
-                        height: 630,
-                        alt: post.title,
-                        type: "image/png",
-                        },
-                    ],
-                    siteName: "Patronum",
-                    }}
-                
-                  additionalMetaTags={[
-                    {
-                      name: "twitter:title",
-                      content: post.seo.title
-                    },
-                    {
-                      name: "twitter:description",
-                      content: post.seo.description
-                    },
-                    {
-                      name: "twitter:image",
-                      content: post.featuredImage.sourceUrl
-                    },
-                ]}
-            />
-            <Head>
-                <link rel="canonical" href={`https://patronum.io/${post.slug}`} />
-                <link rel="alternate" href={`https://patronum.io/${post.slug}`} hreflang="x-default"/>
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify(
-                        {
-                            "@context": "https://schema.org",
-                            "@type": "WebPage",
-                            "@id": `https://patronum.io/${post.slug}#webpage`,
-                            "url": `https://patronum.io/${post.slug}`,
-                            "name": post.seo.title,
-                            "description": post.seo.description,
-                            "datePublished": post.date,
-                            "dateModified": post.modified,
-                            "publisher": {
-                            "@type": "Organization",
-                            "name": "Patronum",
-                            "logo": {
-                                "@type": "ImageObject",
-                                "url": "https://patronum.io/logo.svg",
-                            }
-                            },
-                            "about": {
-                                "@id": `https://www.patronum.io/${post.slug}#organization`
-                            },
-                            "isPartOf" : {
-                                "@id" : `https://www.patronum.io/${post.slug}#website`
-                            },
-                            "inLanguage": "en_US",
-                        }
-                        ),
-                    }}
-                />
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify(
-                        {
-                            "@context": "https://schema.org",
-                            "@type": "BlogPosting",
-                            "headline": post.seo.title,
-                            "keywords": post.seo.keywords,
-                            "datePublished": post.date,
-                            "dateModified": post.modified,
-                            "author": {
-                                "name": "Patronum",
-                                "@id": "https://www.patronum.io/admin/",
-                            },
-                            "publisher": {
-                                "@id": "https://www.patronum.io/#organization"
-                            },
-                            "name": post.seo.title,
-                            "description": post.seo.description,
-                            "@id": `https://www.patronum.io/${post.slug}#richSnippet`,
-                            "url": `https://patronum.io/${post.slug}`,
-                            "isPartOf" : {
-                                "@id" : `https://www.patronum.io/${post.slug}#website`
-                            },
-                            "image" : {
-                                "@id" : post.seo.image,
-                            },
-                            "inLanguage": "en_US",
-                            "mainEntityOfPage": {
-                                "@id": `https://www.patronum.io/${post.slug}#webpage`
-                            },
-                        }
-                    ),
-                }}
-                />
-            </Head>
-        <BlogLayout
-          postTitle={post.title}
-          postAuthor={post.author.name}
-          postDate={formattedDate}
-          shareLink={post.slug}
-          featImg={post.featuredImage.sourceUrl}
-        >
+  return (
+    <>
+      <NextSeo
+        title={post.seo.title}
+        description={post.seo.description}
+        openGraph={{
+          type: 'article',
+          article: {
+            publishedTime: post.date,
+            modifiedTime: post.modified,
+          },
+          url: `https://www.patronum.io/${post.slug}`,
+          title: post.seo.title,
+          "description": post.seo.description,
+          images: [
+            {
+              url: post.featuredImage.sourceUrl,
+              width: 1200,
+              height: 630,
+              alt: post.title,
+              type: "image/png",
+            },
+          ],
+          siteName: "Patronum",
+        }}
+
+        additionalMetaTags={[
+          {
+            name: "twitter:title",
+            content: post.seo.title
+          },
+          {
+            name: "twitter:description",
+            content: post.seo.description
+          },
+          {
+            name: "twitter:image",
+            content: post.featuredImage.sourceUrl
+          },
+        ]}
+      />
+      <Head>
+        <link rel="canonical" href={`https://www.patronum.io/${post.slug}`} />
+        <link rel="alternate" href={`https://www.patronum.io/${post.slug}`} hreflang="x-default" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              {
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "@id": `https://www.patronum.io/${post.slug}#webpage`,
+                "url": `https://www.patronum.io/${post.slug}`,
+                "name": post.seo.title,
+                "description": post.seo.description,
+                "datePublished": post.date,
+                "dateModified": post.modified,
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "Patronum",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.patronum.io/logo.svg",
+                  }
+                },
+                "about": {
+                  "@id": `https://www.www.patronum.io/${post.slug}#organization`
+                },
+                "isPartOf": {
+                  "@id": `https://www.www.patronum.io/${post.slug}#website`
+                },
+                "inLanguage": "en_US",
+              }
+            ),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              {
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                "headline": post.seo.title,
+                "keywords": post.seo.keywords,
+                "datePublished": post.date,
+                "dateModified": post.modified,
+                "author": {
+                  "name": "Patronum",
+                  "@id": "https://www.patronum.io/admin/",
+                },
+                "publisher": {
+                  "@id": "https://www.patronum.io/#organization"
+                },
+                "name": post.seo.title,
+                "description": post.seo.description,
+                "@id": `https://www.patronum.io/${post.slug}#richSnippet`,
+                "url": `https://www.patronum.io/${post.slug}`,
+                "isPartOf": {
+                  "@id": `https://www.patronum.io/${post.slug}#website`
+                },
+                "image": {
+                  "@id": post.seo.image,
+                },
+                "inLanguage": "en_US",
+                "mainEntityOfPage": {
+                  "@id": `https://www.patronum.io/${post.slug}#webpage`
+                },
+              }
+            ),
+          }}
+        />
+      </Head>
+      <BlogLayout
+        postTitle={post.title}
+        postAuthor={post.author.name}
+        postDate={formattedDate}
+        shareLink={post.slug}
+        featImg={post.featuredImage.sourceUrl}
+        readingTime={post.readingTime}
+      >
+
+      <div className="fixed h-[5px] w-[100vw] overflow-hidden top-[5.4vw] left-0 z-[999]" id="progress-bar">
+        <span className="w-0 h-[5px] bg-primary block origin-top" id="toc-bar"/>
+      </div>
 
         <section className="container">
           <div className="content blog-content">
             <div className="flex w-full justify-between items-start" id="blog-container">
-              <div className="w-[20%] -ml-[2vw] relative fadeUp" id="table-of-content"> 
-                <span className="absolute h-[98%] block w-1.5 bg-[#E9E9E9] overflow-hidden -left-8 rounded -top-[1.5%]">
-                  <span className="w-full h-[2%] bg-head block rounded origin-top" id="toc-bar"/>
-                </span>
+              <div className="w-[20%] -ml-[3vw] relative" id="table-of-content">
                 {/* Update TOC rendering to indicate the active section */}
                 <ul className="toc_ul_list">
                   {toc.map(({ id, title }) => (
-                    <li key={id} className={`mb-[1.2vw] ${id === activeSection ? 'toc-active' : ''}`}>
-                        <a href={`#${id}`} onClick={(e) => handleSmoothScroll(e, id)} className="leading-[1] text-head aeonik text-[0.94vw] hover:text-primary transition-all">
-                            {title}
-                        </a>
+                    <li key={id} className={`mb-[1vw] leading-[1.2] transition-all ${id === activeSection ? 'toc-active' : ''}`}>
+                      <a href={`#${id}`} onClick={(e) => handleSmoothScroll(e, id)} className="text-head/60 aeonik text-[0.9vw] transition-all hover:text-primary">
+                        {title}
+                      </a>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div 
+              <div
                 dangerouslySetInnerHTML={{
                   __html: content,
                 }}
@@ -310,9 +332,9 @@ return (
           </div>
         </section>
 
-          <RelatedPosts sectionTitle={'Related Blogs'} recentPosts={recentPosts} currentSlug={post.slug} />
+        <RelatedPosts sectionTitle={'Related Blogs'} recentPosts={recentPosts} currentSlug={post.slug} />
 
-        </BlogLayout>
+      </BlogLayout>
     </>
   );
 }
@@ -334,7 +356,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: 'blocking', 
+    fallback: 'blocking',
   }
 }
 
@@ -359,7 +381,7 @@ export async function getStaticProps({ params }) {
         post,
         recentPosts,
       },
-      revalidate: 10,
+      revalidate: 500,
     };
   } catch (error) {
     console.error('Error fetching data:', error);
@@ -369,7 +391,7 @@ export async function getStaticProps({ params }) {
         post: null, // Use null instead of undefined
         recentPosts: [],
       },
-      revalidate: 10,
+      revalidate: 500,
     };
   }
 }

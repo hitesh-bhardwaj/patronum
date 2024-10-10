@@ -2,6 +2,7 @@ import Faqs from "@/components/PageComponents/FeaturesPage/Faq";
 import UseCaseCard from "@/components/PageComponents/UseCasePage/UseCaseCard";
 import PageLayout from "@/components/PageLayout";
 import SectionTitle from "@/components/PageLayout/SectionTitle";
+import Head from "next/head";
 
 const UseCasesInfo = [
     {
@@ -31,14 +32,85 @@ const UseCasesInfo = [
     }
 ]
 
-export default function UseCasesDetail(){
+export default function UseCasesDetail() {
 
     return (
         <>
-            <PageLayout 
-                pageTitle1={'Patronum'} 
+            <Head>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(
+                            {
+                                "@context": "https://schema.org",
+                                "@type": "FAQPage",
+                                "mainEntity": [
+                                    {
+                                        "@type": "Question",
+                                        "name": "How does Patronum simplify Google Workspace for Education management?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Patronum streamlines Google Workspace management for education by automating onboarding, email setups, and access management. It saves time and resources, ensuring staff and students quickly gain access to necessary tools and information. This efficiency boosts productivity and the educational experience."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "Can Patronum help with professional branding in educational communications?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Yes, Patronum facilitates professional branding by allowing easy updates and uniformity in email signatures across the institution. This consistency enhances the institution's image in all communications, contributing to a stronger professional presence."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "How does Patronum facilitate cross-functional collaboration in educational settings?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Patronum promotes collaboration by automatically organizing staff and students into Google Groups based on roles or departments, ensuring smooth data sharing and communication. This organization supports effective teamwork and project management within the educational community."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "What benefits does Patronum offer for temporary or non-permanent staff?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Patronum ensures temporary staff have immediate access to necessary resources and information with automated onboarding policies. It manages data access efficiently, making transitions seamless and secure, without the need for extensive IT intervention."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "How does Patronum enhance communication with parents and guardians?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Through its Contacts sharing feature, Patronum enables schools to selectively distribute information to parents and guardians, fostering an inclusive and engaged community. This feature supports better communication and involvement in the educational process."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "How does Patronum ensure data security and privacy in educational institutions?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Patronum adheres to strict data security and privacy standards, automating account suspensions and data retention policies to protect sensitive information. This ensures institutions meet compliance requirements effortlessly."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "What makes Patronum user-friendly for educational administrators?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "With its intuitive interface, Patronum requires no scripting or advanced IT knowledge, making it accessible for all administrators. This ease of use reduces reliance on technical support and empowers staff to manage their workspace efficiently."
+                                        }
+                                    }
+                                ]
+                            }
+                        )
+                    }}
+                />
+            </Head>
+            <PageLayout
+                pageTitle1={'Patronum'}
                 pageTitle2={'for Education'}
-                pagePara={"Maximize Budget Efficiency with Patronum's Smart Automations built for Educators"} 
+                pagePara={"Maximize Budget Efficiency with Patronum's Smart Automations built for Educators"}
                 imgSrc={'use-cases-education.svg'}
                 title={"Patronum for Education - Patronum"}
                 description={"Patronum provides a better way to Google Workspace (GSuite) Management. Patronum fully automates all the administrator and user tasks to ensure an efficient, effective and secure process."}
@@ -52,14 +124,14 @@ export default function UseCasesDetail(){
                 <section id="second-section">
                     <div className="container">
                         <div className="content-2">
-                            <SectionTitle 
+                            <SectionTitle
                                 sectionTitle1="Use Cases:"
                                 sectionTitle2="Patronum for Education"
                                 sectionPara="Manual setup and constant adjustments burden staff, detracting from education quality. Patronum introduces an intuitive solution, automating Google Workspace management to streamline processes, from email signatures to resource allocation."
                             />
                             <div className="useCases-Info">
                                 {UseCasesInfo.map((usecase, index) => (
-                                    <UseCaseCard 
+                                    <UseCaseCard
                                         key={index}
                                         para={usecase.para}
                                         imgSrc={usecase.img}
@@ -67,10 +139,10 @@ export default function UseCasesDetail(){
                                 ))}
                             </div>
                         </div>
-                    </div>    
+                    </div>
                 </section>
 
-                <Faqs featureName={'patronum_for_education'}/>
+                <Faqs featureName={'patronum_for_education'} />
 
             </PageLayout>
         </>

@@ -1,4 +1,4 @@
-import { useModal } from "@/components/InstallModal/ModelContext";
+import { useModal } from "@/components/Modals/ModalContext";
 
 const InstallBlackButton = ({btnText}) => {
 

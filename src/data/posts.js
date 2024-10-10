@@ -188,6 +188,7 @@ export const QUERY_POST_BY_SLUG = gql`
       content
       date
       excerpt
+      readingTime
       featuredImage {
         node {
           altText

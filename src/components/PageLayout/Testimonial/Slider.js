@@ -5,10 +5,17 @@ import { FreeMode, Scrollbar } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/scrollbar';
+import Image from 'next/image';
 
 export default function Slider() {
 
       const data = [
+        {
+          content: "Patronum has been a great tool for us to use for Drive management! Highly recommend working with Paul Lees and the Patronum team!",
+          clientImage: "/assets/testimonial/issac-musselwhite.webp",
+          clientName: "Isaac Musselwhite",
+          clientCompany: "Block"
+        },
         {
           content: "The people at Patronum are amazing. they are always willing to help proactively and respectfully even though the needs might be due to a lack of in-house skills. The Patronum product is amazing too and they improve it all the time.",
           clientImage: "/assets/testimonial/virgil-chelu.webp",
@@ -34,16 +41,10 @@ export default function Slider() {
           clientCompany: "Zola Systems Limited"
         },
         {
-          content: "Fantastic automation tool that makes life easy. Simple and intuitive with great support when needed.",
-          clientImage: "/assets/testimonial/liam-finnegan.webp",
-          clientName: "Liam Finnegan",
-          clientCompany: "DPD Group"
-        },
-        {
           content: "Being a Patronum partner is a really great opportunity to offer our clients a top-class Workspace management tool, that works really well with our Workspace consulting offering.",
           clientImage: "/assets/testimonial/dominik-kugelmann.webp",
           clientName: "Dominik Kugelmann",
-          clientCompany: "CEO - 22d consulting"
+          clientCompany: "22d consulting"
         },
         {
           content: "Patronum is a great tool allows us to do things that are not available in the Google Administration Console, such as calendar sharing and management, plus its policies and signatures feature is amazing. Their customer service and support are of the highest level. We are very pleased with Patronum, they provide a real bang for your buck!",
@@ -55,7 +56,7 @@ export default function Slider() {
           content: "Easy tool to help with some basic stuff, which should be part of Google Workspace.",
           clientImage: "/assets/testimonial/ruben-hauser.webp",
           clientName: "Ruben Hauser",
-          clientCompany: "buerohauser"
+          clientCompany: "Buerohauser"
         },
         {
           content: "Patronum has been a game-changer for me in managing my Google Workspace. I was struggling with a major problem that Google couldn't solve, but Patronum came to the rescue. The product is power-packed and has exceeded my expectations. It has made my work much easier and more efficient.",
@@ -120,7 +121,7 @@ export default function Slider() {
                 </div>
                 <div className='testi-details'>
                     <div className='testi-client-image'>
-                        <img width="100" height="100" src={clientImage} alt='client image'/>
+                        <Image width={100} height={100} src={clientImage} priority={false} alt={`${clientName} Image`}/>
                     </div>
                     <div className='testi-client-details'>
                         <h5  className='testi-client-name'>

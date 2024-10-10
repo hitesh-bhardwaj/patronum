@@ -2,7 +2,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import Link from "next/link";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Button } from "@/components/ui/button";
 import {
@@ -19,22 +19,6 @@ import { Checkbox } from "@/components/ui/checkbox";
 import CountrySelector from "../ui/country-selector";
 import { COUNTRIES } from "@/lib/countries";
 
-const formSchema = z.object({
-    name: z.string().min(1, {message: "Name is required."}),
-    email: z.string().min(1, {message: "Email is required."}).email({message: "Invalid email format."}),
-    company: z.string().min(1, {message: "Company Name is required."}),
-    country: z.string().min(1, {message: "Country is required."}),
-    clname: z.string().min(1, {message: "Client Name is required."}),
-    clemail: z.string().min(1, {message: "Client Email is required."}).email({message: "Invalid email format."}),
-    clcompany: z.string().min(1, {message: "Client Company Name is required."}),
-    clcountry: z.string().min(1, "Country is required."),
-    cldomain: z.string().min(1, {message: "This field is required."}),
-    cluser: z.string().min(1, {message: "This field is required."}),
-    textarea: z.string().min(1, {message: "Message is Required."}),
-    terms: z.boolean().refine(value => value === true, {message: "You must agree to the terms."}),
-    pageURL: z.string(),
-});
-
 // Update the ContactForm component
 export default function RegisterOpportunityForm() {
     const [isOpen, setIsOpen] = useState(false);
@@ -42,6 +26,54 @@ export default function RegisterOpportunityForm() {
     const [submitting, setSubmitting] = useState(false);
     const [submissionError, setSubmissionError] = useState(null);
     const [submissionSuccess, setSubmissionSuccess] = useState(false);
+    const [blockedDomains, setBlockedDomains] = useState([]);
+
+    useEffect(() => {
+        // Fetch the JSON file containing 4700 emails
+        const fetchEmails = async () => {
+            try {
+                const response = await axios.get('/domainBlock.json');
+                const data = response.data;
+                const extractedDomains = data.map(item => Object.values(item)[0]); // Extract domains
+                setBlockedDomains(extractedDomains); // Set extracted domains as blockedDomains
+            } catch (error) {
+                console.error('Error fetching emails:', error);
+            }
+        };
+        fetchEmails();
+    }, []);
+
+    const formSchema = z.object({
+        name: z.string().min(1, {message: "Name is required."}),
+        email: z.string()
+            .min(1, {message: "Email is required."})
+            .email({message: "Invalid email format."})
+            .refine((email) => {
+            // Extract the domain from the email address
+            const domain = email.split("@")[1];
+            // Check if the domain is not in the blocked list
+            return !blockedDomains.includes(domain);
+        }, {message: "Please enter a valid business email."}),
+        company: z.string().min(1, {message: "Company Name is required."}),
+        country: z.string().min(1, {message: "Country is required."}),
+        clname: z.string().min(1, {message: "Client Name is required."}),
+        clemail: z.string()
+            .min(1, {message: "Email is required."})
+            .email({message: "Invalid email format."})
+            .refine((email) => {
+            // Extract the domain from the email address
+            const domain = email.split("@")[1];
+            // Check if the domain is not in the blocked list
+            return !blockedDomains.includes(domain);
+        }, {message: "Please enter a valid business email."}),
+        clcompany: z.string().min(1, {message: "Client Company Name is required."}),
+        clcountry: z.string().min(1, "Country is required."),
+        cldomain: z.string().min(1, {message: "This field is required."}),
+        cluser: z.string().min(1, {message: "This field is required."}),
+        textarea: z.string().min(1, {message: "Message is required."}),
+        terms: z.boolean().refine(value => value === true, {message: "You must agree to the terms."}),
+        pageURL: z.string(),
+    });
 
     const form = useForm({
         resolver: zodResolver(formSchema),
@@ -72,6 +104,7 @@ export default function RegisterOpportunityForm() {
             company: data.clcompany,
             countryName,
             pageURL: data.pageURL,
+            tag: "Patronum Interest",
         };
         
         const message = `
@@ -79,12 +112,12 @@ export default function RegisterOpportunityForm() {
             <h3>Partner Details:</h3>
             <p><strong>Partner Name:</strong> ${data.name}</p>
             <p><strong>Partner Email:</strong> ${data.email}</p>
-            <p><strong>Partner Organisation Name:</strong> ${data.company}</p>
+            <p><strong>Partner Organization Name:</strong> ${data.company}</p>
             <p><strong>Partner Country:</strong> ${data.country}</p>
             <h3>Opportunity Details:</h3>
             <p><strong>Client Name:</strong> ${data.clname}</p>
             <p><strong>Client Email:</strong> ${data.clemail}</p>
-            <p><strong>Client Organisation Name:</strong> ${data.clcompany}</p>
+            <p><strong>Client Organization Name:</strong> ${data.clcompany}</p>
             <p><strong>Partner Country:</strong> ${countryName}</p>
             <p><strong>Client Google Workspace Domain:</strong> ${data.cldomain}</p>
             <p><strong>Client Number of Licensed User:</strong> ${data.cluser}</p><br>
@@ -92,15 +125,16 @@ export default function RegisterOpportunityForm() {
             <p><strong>Terms Agreement:</strong> ${data.terms ? 'Agreed' : 'Not Agreed'}</p>
         `;
         try {
+
+            // Send data to Mailchimp
+            await axios.post('/api/mail-chimp', formData);            
+
             // Send email
-            await axios.post('/api/send-email', {
+            await axios.post('/api/mail', {
                 message: message, 
                 subject: "Opportunity Form Submission",
             });
 
-            // Send data to Mailchimp
-            await axios.post('/api/mail-chimp', formData);
-            
             form.reset();
             setSubmitting(false);
             setSubmissionSuccess(true);
@@ -115,7 +149,7 @@ export default function RegisterOpportunityForm() {
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 contact-form">
         {/* Form fields */}
         <div className="w-full text-center">
-            <h3 className="text-[2.2vw] text-body font-medium">Partner Details</h3>
+            <h3 className="lg:text-[2.2vw] text-[4.7vw] text-body font-medium">Partner Details</h3>
         </div>
         
         {/* Name field */}
@@ -139,9 +173,9 @@ export default function RegisterOpportunityForm() {
             name="company"
             render= {({ field }) => (
                 <FormItem className="required">
-                    <FormLabel>Organisation Name</FormLabel>
+                    <FormLabel>Organization Name</FormLabel>
                     <FormControl>
-                        <Input placeholder="Enter Organisation Name" {...field}/>
+                        <Input placeholder="Enter Organization Name" {...field}/>
                     </FormControl>
                     <FormMessage />
                 </FormItem>
@@ -179,7 +213,7 @@ export default function RegisterOpportunityForm() {
         />
 
         <div className="w-full text-center">
-            <h3 className="text-[2.2vw] text-body font-medium">Opportunity Details</h3>
+            <h3 className="lg:text-[2.2vw] text-[4.7vw] text-body font-medium">Opportunity Details</h3>
         </div>
 
         {/* Name field */}
@@ -203,9 +237,9 @@ export default function RegisterOpportunityForm() {
             name="clcompany"
             render= {({ field }) => (
                 <FormItem className="required">
-                    <FormLabel>Client Organisation Name</FormLabel>
+                    <FormLabel>Client Organization Name</FormLabel>
                     <FormControl>
-                        <Input placeholder="Client Organisation Name" {...field}/>
+                        <Input placeholder="Client Organization Name" {...field}/>
                     </FormControl>
                     <FormMessage />
                 </FormItem>

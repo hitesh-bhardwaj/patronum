@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("./fonts.css");
+
 * {
   margin: 0;
   padding: 0;
@@ -114,26 +116,6 @@ body{
   overflow-x: hidden;
 }
 
-/* Background Canvas */
-.canvas-container{
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: -1;
-}
-#gradient-canvas {
-  width: 100%;
-  height: 100%;
-  opacity: 0.3;
-  --gradient-color-1: #ffffff;
-  --gradient-color-2: #ffffff;
-  --gradient-color-3: #6ec3f4;
-  --gradient-color-4: #ffffff;
-}
-
 h1,h2,h3,h4,h5,h6{
   font-family: 'Aeonik';
   text-rendering: geometricPrecision;
@@ -147,68 +129,6 @@ p{
   line-height: 1.5;
   text-rendering: geometricPrecision;
 }
-
-/*01. Fonts */
-/*==============FONTS===================*/
-
-/* Ageo */
-@font-face {
-  font-family: 'Ageo';
-  src: url('/assets/fonts/Ageo/Ageo.woff2') format('woff2');
-       font-weight: 400;
-       font-display: swap;
-       font-style: normal;
-}
-@font-face {
-  font-family: 'Ageo';
-  src: url('/assets/fonts/Ageo/Ageo-Medium.woff2') format('woff2');
-       font-weight: 500;
-       font-display: swap;
-       font-style: normal;
-}
-
-/* Aeonik */
-@font-face {
-  font-family: 'Aeonik';
-  src: url('/assets/fonts/Aeonik/Aeonik-Light.otf') format('otf');
-  src: url('/assets/fonts/Aeonik/Aeonik-Light.woff2') format('woff2');
-       font-weight: 300;
-       font-display: swap;
-       font-style: normal;
-}
-@font-face {
-  font-family: 'Aeonik';
-  src: url('/assets/fonts/Aeonik/Aeonik-Regular.otf') format('otf');
-  src: url('/assets/fonts/Aeonik/Aeonik-Regular.woff2') format('woff2');
-       font-weight: 400;
-       font-display: swap;
-       font-style: normal;
-}
-@font-face {
-  font-family: 'Aeonik';
-  src: url('/assets/fonts/Aeonik/Aeonik-Medium.otf') format('otf');
-  src: url('/assets/fonts/Aeonik/Aeonik-Medium.woff2') format('woff2');
-       font-weight: 500;
-       font-display: swap;
-       font-style: normal;
-}
-@font-face {
-  font-family: 'Aeonik';
-  src: url('/assets/fonts/Aeonik/Aeonik-MediumItalic.otf') format('otf');
-  src: url('/assets/fonts/Aeonik/Aeonik-MediumItalic.woff2') format('woff2');
-       font-weight: 500;
-       font-display: swap;
-       font-style: italic;
-}
-@font-face {
-  font-family: 'Aeonik';
-  src: url('/assets/fonts/Aeonik/Aeonik-Bold.otf') format('otf');
-  src: url('/assets/fonts/Aeonik/Aeonik-Bold.woff2') format('woff2');
-       font-weight: 700;
-       font-display: swap;
-       font-style: normal;
-}
-/*==============FONTS END===================*/
 
 .container-lg{
   width: 90%;
@@ -359,6 +279,28 @@ section{
   clip-path: inset(0 round 4vw);
   background-color: var(--primary);
   color: white;
+}
+
+.btn.thankyou{
+  max-width: 17.5vw;
+}
+
+@media screen and (max-width: 1024px) {
+  .btn.thankyou{
+    max-width: 47vw !important;
+  }
+  .btn.thankyou .btn-circle{
+    clip-path: inset(1.6vw 2vw 1.6vw calc(100% - 10vw) round 4vw) !important;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .btn.thankyou{
+    max-width: 65vw !important;
+  }
+  .btn.thankyou .btn-circle{
+    clip-path: inset(2vw 2.5vw 2vw calc(100% - 14vw) round 1000px) !important;
+  }
 }
 
 /* Button Secondary */
@@ -717,20 +659,20 @@ section{
   font-family: 'Aeonik';
   font-weight: 500;
 }
-.nav-list-item>a{
+.nav-list-item>.page-link{
   font-size: 1.1vw;
   color: var(--text-body);
   transition: all 0.3s ease;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
-.nav-list-item>a svg{
+.nav-list-item>.page-link svg{
   width: 0.7vw;
   display: inline-block;
   margin-left: 5px;
   margin-bottom: 2px;
 }
-.nav-list-item>a.dropdown::before{
+.nav-list-item>.page-link.dropdown::before{
   content: '';
   height: 70px;
   background: none;
@@ -739,10 +681,10 @@ section{
   top: 0;
   width: 100%;
 }
-.nav-list-item>a span{
+.nav-list-item>.page-link span{
   position: relative;
 }
-.nav-list-item>a span::after{
+.nav-list-item>.page-link span::after{
   content: "";
   position: absolute;
   bottom: -2px;
@@ -754,11 +696,11 @@ section{
   transform-origin: right;
   transition: var(--transition-2);
 }
-.nav-list-item:hover>a span::after{
+.nav-list-item:hover>.page-link span::after{
   transform: scaleX(1);
   transform-origin: left;
 }
-.nav-list-item:hover>a{
+.nav-list-item:hover>.page-link{
   color: var(--primary);
 }
 
@@ -769,10 +711,10 @@ section{
   width: 100%;
   left: 0;
   top: 0;
-  padding-top: 100px;
+  padding-top: 5vw;
   background: #ffffff;
   border-top: 2px solid var(--gray-100);
-  z-index: 0;
+  z-index: -1;
   box-shadow: 1px 1px 10px #00000010;
   border-end-start-radius: 20px;
   border-end-end-radius: 20px;
@@ -1029,6 +971,12 @@ section{
 
 .feat-accordion-item.open .feat-accordion-btn .minus{
   background: white;
+}
+
+.feat-accordion-btn.security{
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1.5vw;
 }
 
 .accordion-img{
@@ -1539,7 +1487,7 @@ section{
   transition: 0.3s;
 }
 .faq-item.open .faq-content{
-  height: 6vw;
+  height: 7vw;
 }
 .faq-arrow{
   position: absolute;
@@ -2395,10 +2343,7 @@ section{
     margin-top: 20px;
   }
   .backup-tab {
-    grid-template-columns: 20% 35% 35%;
-  }
-  .backup-tab-card.table-2, .backup-tab-card.table-3{
-    display: none;
+    width: 200%;
   }
   .backup-tab-card.tab-card-1 h5{
     font-size: 2vw;
@@ -2423,12 +2368,8 @@ section{
     margin-top: 50px;
   }
   .backup-tab {
-    grid-template-columns: 90%;
+    width: 300%;
     text-align: left;
-  }
-  .backup-tab-card.tab-card-1, 
-  .backup-tab-card.table-1{
-    display: none;
   }
   .tab-card-row-1 img{
     width: 40px;
@@ -2438,6 +2379,9 @@ section{
   }
   .backup-tab-card p{
     font-size: 3.8vw;
+  }
+  .backup-tab-card.tab-card-1 h5{
+    font-size: 4vw;
   }
 }
 
@@ -2489,7 +2433,7 @@ section{
   border-radius: 10px;
   background: #fdfdfd;
   padding: 1.4vw 1vw;
-  height: 100%;
+  height: auto;
 }
 .legal-card .img{
   width: 100%;
@@ -2580,6 +2524,7 @@ section{
 
 .cards-wrapper.webinar{
   row-gap: 5vw;
+  align-items: stretch;
 }
 
 .cards-wrapper.guide{
@@ -2686,6 +2631,16 @@ section{
   border-radius: 100px;
   height: 1.7vw;
 }
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
 /* Install PopUp Form */
 .install-modal-overlay{
@@ -2743,12 +2698,12 @@ section{
 /* Blogs Start Main */
 .cat-btn button{
   border-radius: 1000px;
-  padding: 0.5vw 1.5vw;
+  padding: 0.7vw 1.5vw;
   min-width: 5vw;
   border: 1px solid #E2E2E2;
   background-color: #FDFDFD;
-  width: 100%;
-  height: 100%;
+  width: fit-content;
+  height: fit-content;
   text-align: center;
   font-size: 1.1vw;
   color: var(--text-head);
@@ -2802,7 +2757,6 @@ section{
 }
 .toc-active a{
   color: var(--primary);
-  transition: all 0.3s ease-in;
 }
 .toc_ul_list li{
   display: none;
@@ -2813,7 +2767,10 @@ section{
 .toc_ul_list li:nth-child(4),
 .toc_ul_list li:nth-child(5),
 .toc_ul_list li:nth-child(6),
-.toc_ul_list li:nth-child(7){
+.toc_ul_list li:nth-child(7),
+.toc_ul_list li:nth-child(8),
+.toc_ul_list li:nth-child(9),
+.toc_ul_list li:nth-child(10){
   display: block;
 }
 /* Blogs END Main */
@@ -2823,6 +2780,7 @@ section{
 /* =======================900px Start============================== */
 /* Header */
 @media screen and (max-width: 1024px) {
+
   .desktop-only{
     display: none;
   }
@@ -3104,7 +3062,7 @@ section{
     width: 4vw;
   }
   .faq-item.open .faq-content{
-    height: 40vw;
+    height: 42vw;
   }
   .faq-item .faq-content .content-p{
     font-size: 3.5vw;
@@ -3552,9 +3510,12 @@ section{
   /* Partner with us 900px */
   .partner-card{
     width: 100%;
-    margin-bottom: 10vw;
+    margin-bottom: 16vw;
     padding: 0 7%;
-    gap: 5vw;
+    gap: 4vw;
+  }
+  .partner-card-link {
+    margin-top: 15vw;
   }
   .partner-card img {
     width: 30%;
@@ -3568,6 +3529,16 @@ section{
     height: 6.5vw;
     font-size: 3vw;
   }
+
+  .partner-info-wrapper .section-list-head .cards-num span{
+    width: 6.5vw;
+    height: 6.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
   .partner-info-wrapper .section-list-head{
     padding: 2vw 2vw;
     gap: 2vw;
@@ -3779,7 +3750,7 @@ section{
     margin-bottom: 5vw;
   }
   .scroll-down-btn{
-  bottom: 6%;
+  bottom: 0%;
   left: 0;
   }
   .scroll-down-btn .scroll-down-a>svg{
@@ -3827,7 +3798,7 @@ section{
 
   /* Link Button */
 .link-btn{
-  font-size: 4vw;
+  font-size: 4.2vw;
 }
 .link-btn .btn-images{
   width: 7vw;
@@ -3865,6 +3836,11 @@ section{
 
 
   /* About Page 640px CSS Start */
+  .faq-item-content .faq-number{
+    font-size: 11px;
+    width: 24px;
+    height: 24px;
+  }
   .footer-contact-bg{
     height: 100.4vw;
   }
@@ -3872,7 +3848,7 @@ section{
     width: 20%;
   }
   #pageHero{
-    height: 80vh;
+    height: 85vh;
   }
   .page-hero-flex{
     flex-direction: column;
@@ -3966,3 +3942,33 @@ section{
 }
 
 /* =======================480px End============================== */
+
+
+/* New CSS for Blog and Classes which can be grabbed by module css files.*/
+.blog_blogContent__Tf9Rv .wp-block-table{
+  border: 1px solid #CACACA;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 5% 0 !important;
+}
+
+@media screen and (max-width: 640px) {
+  .blog_blogContent__Tf9Rv .wp-block-table{
+    border-radius: 10px;
+    overflow-y: hidden;
+    overflow-x: auto;
+  }
+
+  .blog_blogContent__Tf9Rv .wp-block-table table{
+    width: max-content;
+  }
+}
+
+/* Link Class */
+.link-href{
+  color: var(--primary);
+}
+
+.testing-testing{
+  position: static;
+}

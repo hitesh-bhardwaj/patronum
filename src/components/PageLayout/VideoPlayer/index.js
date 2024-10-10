@@ -1,13 +1,7 @@
 import { useState } from "react";
-import dynamic from 'next/dynamic';
 
-// Dynamically import the LazyIframe component
-const LazyIframe = dynamic(() => import('./LazyIframe'), {
-    loading: () => <p>Loading...</p>,
-    ssr: false, // This line is important if your component should only be rendered client-side
-  });
 
-const VideoPlayer = ( {videoId, videoCover} ) => {
+const VideoPlayer = ( {videoId, videoCover, disabled} ) => {
     const [modalOpen, setModalOpen] = useState(false);
 
     const openModal = () => setModalOpen(true);
@@ -33,7 +27,8 @@ const VideoPlayer = ( {videoId, videoCover} ) => {
                                 loading="lazy"
                             />
                             <button
-                                className="video-tutorial-play-button"
+                                disabled={disabled}
+                                className={`video-tutorial-play-button`}
                                 onClick={openModal}
                                 aria-label="Play Tutorial Video"
                             >

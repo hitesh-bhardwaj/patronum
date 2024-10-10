@@ -8,7 +8,7 @@ import dynamic from 'next/dynamic'
 const CrispWithNoSSR = dynamic(
     () => import('@/components/Crisp'),
     { ssr: false }
-)
+  )
 
 export default function Layout({children}) {
 

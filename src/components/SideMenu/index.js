@@ -51,6 +51,7 @@ export default function SideMenu({sections}) {
                     start: 'top top',
                     toggleActions: 'play none none reverse',
                 },
+                pointerEvents: "none",
                 opacity: 0,
                 duration: 0.5,
             })
