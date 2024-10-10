@@ -14,7 +14,7 @@ import useWindowSize from "@/components/Header/useWindowSize";
 import { Suspense } from 'react';
 import InstallModal from '@/components/Modals/InstallModal';
 import { GoogleTagManager } from '@next/third-parties/google'
-import AnimatedCanvas from '@/components/AnimatedCanvas';
+// import Pixi from '@/components/Pixi';
 
 export default function App({ Component, pageProps, router }) {
   const [showPreloader, setShowPreloader] = useState(true);
@@ -202,13 +202,13 @@ export default function App({ Component, pageProps, router }) {
         strategy="afterInteractive"
       />
       {/* WEBGL Background */}
-      {width >= 1024 ? (
+      {/* {width >= 1024 ? (
         <Suspense fallback={null}>
-          <AnimatedCanvas />
+          <Pixi />
         </Suspense>
       ) : (
         <></>
-      )}
+      )} */}
     </>
   );
 }
