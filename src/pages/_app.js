@@ -14,11 +14,7 @@ import useWindowSize from "@/components/Header/useWindowSize";
 import { Suspense } from 'react';
 import InstallModal from '@/components/Modals/InstallModal';
 import { GoogleTagManager } from '@next/third-parties/google'
-import dynamic from 'next/dynamic';
-
-const DynamicCanvas = dynamic(() => import('@/components/AnimatedCanvas'), {
-  ssr: false,
-})
+import AnimatedCanvas from '@/components/AnimatedCanvas';
 
 export default function App({ Component, pageProps, router }) {
   const [showPreloader, setShowPreloader] = useState(true);
@@ -207,7 +203,9 @@ export default function App({ Component, pageProps, router }) {
       />
       {/* WEBGL Background */}
       {width >= 1024 ? (
-          <DynamicCanvas />
+        <Suspense fallback={null}>
+          <AnimatedCanvas />
+        </Suspense>
       ) : (
         <></>
       )}
