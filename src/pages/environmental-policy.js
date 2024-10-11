@@ -11,7 +11,7 @@ export default function Page() {
 
         title={"Patronum's Environment Policy - A Comittement for a Better Future"}
         description={"Patronum is committed to environmental excellence by reducing our carbon footprint,  and embedding sustainability in all we do to protect & ensure a healthier planet for future generations."}
-        url={"environment-policy"}
+        url={"environmental-policy"}
         img={"homepage.jpg"}
         date_published={"2024-09-23T07:07"}
         date_modified={"2024-09-23T07:07"}
