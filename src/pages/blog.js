@@ -79,43 +79,29 @@ export default function Blogs({ posts, featuredPost, pagination, categories, all
 
 export async function getStaticProps({ params }) {
     const { slug } = params || {};
-  
-    // Fetch paginated posts
     let { posts, pagination } = await getPaginatedPosts({
       queryIncludes: 'archive',
     });
-  
-    // Fetch all posts for search
     const { posts: allPosts } = await getAllPosts({
         queryIncludes: 'index',
     });
 
     // Fetch categories
     const categories = await getCategories();
-  
-    // If a category slug is provided, filter posts by category
     if (slug) {
       const { posts: filteredPosts, pagination: filteredPagination } = await getPaginatedPosts({
         queryIncludes: 'archive',
-        categoryId: slug, // Pass the category ID or slug to filter posts
+        categoryId: slug,
       });
-  
       posts = filteredPosts;
       pagination = {
         ...filteredPagination,
         basePath: `/categories/${slug}/page`,
       };
     }
-  
-    // Sort posts with sticky posts first
     posts = sortStickyPosts(posts);
-  
-    // Separate the featured post
     const featuredPost = posts.find((post) => post.isSticky) || null;
-  
-    // Remove the featured post from regular posts
     posts = posts.filter((post) => !post.isSticky);
-  
     return {
       props: {
         posts,

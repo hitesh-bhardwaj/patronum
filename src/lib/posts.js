@@ -8,9 +8,6 @@ import {
   QUERY_ALL_POSTS_ARCHIVE,
   QUERY_ALL_POSTS,
   QUERY_POST_BY_SLUG,
-  QUERY_POSTS_BY_AUTHOR_SLUG_INDEX,
-  QUERY_POSTS_BY_AUTHOR_SLUG_ARCHIVE,
-  QUERY_POSTS_BY_AUTHOR_SLUG,
   QUERY_POSTS_BY_CATEGORY_ID_INDEX,
   QUERY_POSTS_BY_CATEGORY_ID_ARCHIVE,
   QUERY_POSTS_BY_CATEGORY_ID,
@@ -53,9 +50,6 @@ export async function getPostBySlug(slug) {
   if (!postData?.data.post) return { post: undefined };
 
   const post = [postData?.data.post].map(mapPostData)[0];
-
-  // If the SEO plugin is enabled, look up the data
-  // and apply it to the default settings
 
   if (process.env.WORDPRESS_PLUGIN_SEO === true) {
     try {
@@ -141,42 +135,6 @@ export async function getAllPosts(options = {}) {
   });
 
   const posts = data?.data.posts.edges.map(({ node = {} }) => node);
-
-  return {
-    posts: Array.isArray(posts) && posts.map(mapPostData),
-  };
-}
-
-/**
- * getPostsByAuthorSlug
- */
-
-const postsByAuthorSlugIncludesTypes = {
-  all: QUERY_POSTS_BY_AUTHOR_SLUG,
-  archive: QUERY_POSTS_BY_AUTHOR_SLUG_ARCHIVE,
-  index: QUERY_POSTS_BY_AUTHOR_SLUG_INDEX,
-};
-
-export async function getPostsByAuthorSlug({ slug, ...options }) {
-  const { queryIncludes = 'index' } = options;
-
-  const apolloClient = getApolloClient();
-
-  let postData;
-
-  try {
-    postData = await apolloClient.query({
-      query: postsByAuthorSlugIncludesTypes[queryIncludes],
-      variables: {
-        slug,
-      },
-    });
-  } catch (e) {
-    console.log(`[posts][getPostsByAuthorSlug] Failed to query post data: ${e.message}`);
-    throw e;
-  }
-
-  const posts = postData?.data.posts.edges.map(({ node = {} }) => node);
 
   return {
     posts: Array.isArray(posts) && posts.map(mapPostData),
@@ -311,14 +269,12 @@ export function mapPostData(post = {}) {
 /**
  * getRelatedPosts
  */
-
 export async function getRelatedPosts(categories, postId, count = 3) {
-  console.log('Input parameters:', categories, postId, count);
-
   if (!Array.isArray(categories) || categories.length === 0) return;
 
   let related = {
     category: categories && categories.shift(),
+    posts: [],
   };
 
   if (related.category) {
@@ -327,12 +283,20 @@ export async function getRelatedPosts(categories, postId, count = 3) {
       queryIncludes: 'archive',
     });
 
-    console.log('Related posts from GraphQL:', posts);
-
     const filtered = posts.filter(({ postId: id }) => id !== postId);
     const sorted = sortObjectsByDate(filtered);
 
-    related.posts = sorted.map((post) => ({ title: post.title, slug: post.slug }));
+    related.posts = await Promise.all(
+      sorted.map(async (post) => {
+        const { featuredImage, categories } = await getPostDetails(post.slug);
+        return {
+          title: post.title,
+          slug: post.slug,
+          featuredImage,
+          categories,
+        };
+      })
+    );
   }
 
   if (!Array.isArray(related.posts) || related.posts.length === 0) {
@@ -341,10 +305,19 @@ export async function getRelatedPosts(categories, postId, count = 3) {
   }
 
   if (Array.isArray(related.posts) && related.posts.length > count) {
-    return related.posts.slice(0, count);
+    related.posts = related.posts.slice(0, count);
   }
 
   return related;
+}
+
+// Helper function to get post details
+async function getPostDetails(slug) {
+  const { post } = await getPostBySlug(slug);
+  return {
+    featuredImage: post.featuredImage,
+    categories: post.categories,
+  };
 }
 
 /**
@@ -424,7 +397,6 @@ export async function getPaginatedPosts({ currentPage = 1, ...options } = {}) {
     },
   };
 }
-
 
 // Posts for HomePage
 export async function getHomePagePosts() {
