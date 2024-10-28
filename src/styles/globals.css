@@ -68,7 +68,7 @@
 
 .orb-canvas {
   width: 100%;
-  height: 110%;
+  height: 100%;
   pointer-events: none;
   z-index: -1;
   position: fixed;
@@ -183,10 +183,7 @@ section{
 .title-5xl{
   font-size: 5vw;
   color: #414141;
-  line-height: 1;
-}
-.title-5xl .hero-anim .span{
-  line-height: 1.5;
+  line-height: 100%;
 }
 .title-4xl{
   font-size: 3.8vw;
@@ -606,18 +603,13 @@ section{
 /*================ IndexPage CSS START Main============= */
 
 /* Hero Section - 1920 */
-#hero{
-  height: 100vh;
-  width: 100vw;
-}
-.google-logo-hero{
-  height: auto;
-  width: 100%;
-}
 .hero-para{
   font-size: 1.25vw;
   width: 24vw;
   font-weight: 500;
+}
+.line {
+  overflow: hidden;
 }
 .hero-right{
   width: 40%;
@@ -637,8 +629,6 @@ section{
 .hero-img{
   width: 32vw;
   height: 100%;
-  opacity: 0;
-  transform: translateX(100px);
 }
 
 /* Scroll Down Button 1920px */
@@ -662,10 +652,6 @@ section{
   width: 4.5vw;
   height: 4.5vw;
 }
-.hero-svg-circle{
-  stroke-width: 1.5px;
-  stroke-dasharray: 0% 300%;
-}
 .scroll-down-btn .scroll-down-a .scroll-img-container{
   display: block;
   position: absolute;
@@ -688,25 +674,6 @@ section{
 }
 .scroll-down-btn:hover .scroll-down-a .scroll-img-container img[data="second"]{
   transform: translateY(100%) scale(0);
-}
-
-.hero-anim{
-  overflow: hidden;
-  line-height: 1;
-}
-.hero-anim .span{
-  display: block;
-  line-height: 1.5;
-  margin-top: -1vw;
-  transform: translateY(100%);
-}
-.google-logo-hero.span{
-  margin-top: unset;
-  display: block;
-}
-.hero-para span .word{
-  transform: translateY(100%);
-  opacity: 0;
 }
 /* Hero Section - 1920 End - Index*/
 
@@ -1530,8 +1497,8 @@ section{
 }
 .hero-hr{
   height: 1px;
+  width: 105%;
   background: #1A1A1A;
-  width: 0;
   margin-left: -2.5%;
   display: block;
 }
@@ -1542,8 +1509,6 @@ section{
   margin-bottom: 1.5vw;
 }
 .page-hero-left .hero-para{
-  transform: translateY(50px);
-  opacity: 0;
   width: 60%;
 }
 .page-hero-right{
@@ -1562,26 +1527,6 @@ section{
 }
 
 /* Page Animations Hero */
-.page-hero-anim{
-  line-height: 0.5;
-}
-.page-hero-anim .span{
-  overflow: hidden;
-  line-height: 1.2;
-}
-.page-hero-anim span .word{
-  transform: translateY(100%);
-}
-
-.title-4xl.text-anim span{
-  overflow: hidden;
-  line-height: 1.2;
-}
-.title-4xl.text-anim {
-  line-height: 0.5;
-}
-
-
 .about-top{
   padding-top: 2.5vw;
   display: block;
@@ -3519,12 +3464,6 @@ input[type=number] {
   }
   .logo-container{
     width: 42%;
-  }
-
-
-/* Hero Home Page */
-  #hero{
-    height: 95vh;
   }
   .container-lg{
     padding-left: 0;

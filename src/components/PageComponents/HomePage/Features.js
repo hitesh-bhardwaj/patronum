@@ -95,9 +95,9 @@ export default function Features() {
                     <div className="content">
                         <div className="section-head">
                             <h2 className="title-4xl text-anim">
-                                <span>Empowering IT </span>
+                                Empowering IT
                                 <br />
-                                <span>Admins & Professionals</span>
+                                Admins & Professionals
                             </h2>
                         </div>
                         <div className="features-bottom relative lg:flex block justify-between items-start" id='main-features-container'>

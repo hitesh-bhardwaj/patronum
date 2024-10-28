@@ -1,20 +1,14 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { useModal } from '../Modals/ModalContext';
 import { motion } from 'framer-motion';
 import PrimaryButton from '../PageLayout/Button/PrimaryButton';
 import InstallButton from '../PageLayout/Button/InstallButton';
 
 const DesktopNavigation = () => {
-    const { openModal } = useModal();
     const [isFeaturesDropdownOpen, setFeaturesDropdownOpen] = useState(false);
     const [isUsecasesDropdownOpen, setUsecasesDropdownOpen] = useState(false);
     const [isResourcesDropdownOpen, setResourcesDropdownOpen] = useState(false);
     const [isPriceDropdownOpen, setPriceDropdownOpen] = useState(false);
-
-    const openContactModal = () => {
-        openModal('contact');
-    };
 
     return (
         <>
@@ -312,7 +306,7 @@ const DesktopNavigation = () => {
                     </ul>
                 </nav>
                 <div className='header-anim hidden lg:block'>
-                    <InstallButton onClick={openContactModal} />
+                    <InstallButton />
                 </div>
         </>
     );

@@ -19,6 +19,7 @@ import SideMenu from "@/components/SideMenu";
 import Head from "next/head";
 import Layout from "@/components/Stairs";
 import Ratings from "@/components/PageComponents/HomePage/Ratings";
+import { SplitInLine } from "@/components/splitTextUtils";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,8 +53,8 @@ export default function Home({ recentPosts }) {
 
     headings.forEach((heading) => {
       let ctx = gsap.context(() => {
-        const textAnim = new SplitType(heading, { types: 'words' });
-        let animWord = heading.querySelectorAll('.word');
+        SplitInLine(heading);
+        let animWord = heading.querySelectorAll('.line .line-internal');
 
         gsap.from(animWord, {
           scrollTrigger: {
@@ -406,8 +407,8 @@ export default function Home({ recentPosts }) {
               }
             )
           }} />
-
       </Head>
+      
       {showSideMenu && <SideMenu sections={sections} />}
       <Layout>
         <main>

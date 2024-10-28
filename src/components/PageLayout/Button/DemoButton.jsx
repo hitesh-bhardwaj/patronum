@@ -1,9 +1,11 @@
+import { useModal } from "@/components/Modals/ModalContext";
 import styles from "./primary.module.css";
 
-const DemoButton = ({ onClick, className="" }) => {
-    
+const DemoButton = ({ className="" }) => {
+    const { openModal } = useModal();
+
     return (
-        <button onClick={onClick} className={`${styles.btn} ${className}`}>
+        <button onClick={() => openModal('video')} className={`${styles.btn} ${className}`}>
             <span data-primary className={styles.btnText}>
                 Watch Demo
             </span>

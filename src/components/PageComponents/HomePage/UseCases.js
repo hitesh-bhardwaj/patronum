@@ -119,9 +119,9 @@ export default function UseCases() {
                     <div className="container overflow-hidden">
                         <div className="section-head">
                             <h2 className="title-4xl text-anim">
-                                <span>Master Challenges{" "}</span> 
+                                Master Challenges{" "}
                                 <br />
-                                <span>Across Your Organization</span>
+                                Across Your Organization
                             </h2>
                         </div>
 

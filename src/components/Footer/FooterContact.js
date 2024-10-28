@@ -1,20 +1,9 @@
 import React from "react";
-import { useModal } from "../Modals/ModalContext";
 import Image from "next/image";
 import InstallButton from "../PageLayout/Button/InstallButton";
 import DemoButton from "../PageLayout/Button/DemoButton";
 
 export default function FooterContact() {
-
-    const { openModal } = useModal();
-
-    const openContactModal = () => {
-        openModal('contact');
-    };
-
-    const openVideoModal = () => {
-        openModal('video');
-    };
 
     return(
             <div className="footer-contact">
@@ -32,8 +21,8 @@ export default function FooterContact() {
                             </p>
 
                             <div className="footer-cta-container fadeUp">
-                                <DemoButton onClick={openVideoModal} />
-                                <InstallButton onClick={openContactModal} />
+                                <DemoButton />
+                                <InstallButton />
                             </div>
                         </div>
 

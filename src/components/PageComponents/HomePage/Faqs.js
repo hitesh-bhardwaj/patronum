@@ -50,9 +50,9 @@ export default function Faqs(){
                     <div className="content">
                         <div className="section-head">
                             <h2 className="title-4xl text-anim">
-                                <span>Frequently </span>
+                                Frequently{" "}
                                 <br />
-                                <span>Asked Questions</span>
+                                Asked Questions
                             </h2>
                         </div>
 

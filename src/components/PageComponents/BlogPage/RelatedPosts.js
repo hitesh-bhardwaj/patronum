@@ -16,9 +16,7 @@ function RelatedPosts({ recentPosts, currentSlug, sectionTitle, sectionPara }) {
                     <div className='content'>
                         <div className='section-head'>
                             <h2 className='title-4xl'>
-                                <span>
                                     {sectionTitle}
-                                </span>
                             </h2>
                             {sectionPara && (
                                 <p className='content-p lg:w-[40%] w-[90%] fadeUp mt-8'>

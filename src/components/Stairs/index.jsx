@@ -1,14 +1,15 @@
 import React from 'react'
 import { motion } from 'framer-motion';
-import Header from '../Header';
-import Footer from '../Footer';
 import PageLoader from '../PageLoader';
 import dynamic from 'next/dynamic'
 
 const CrispWithNoSSR = dynamic(
     () => import('@/components/Crisp'),
     { ssr: false }
-  )
+  );
+
+const DynamicHeader = dynamic(() => import('../Header'), {ssr: false});
+const DynamicFooter = dynamic(() => import('../Footer'), {ssr: false});
 
 export default function Layout({children}) {
 
@@ -23,9 +24,9 @@ export default function Layout({children}) {
             </div>
             <PageLoader />
             <CrispWithNoSSR />
-            <Header />
+            <DynamicHeader />
                 {children}
-            <Footer />
+            <DynamicFooter />
         </div>
     )
 }

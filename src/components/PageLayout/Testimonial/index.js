@@ -44,13 +44,9 @@ export default function Testimonial() {
                     <div className="container">
                         <div className="section-head">
                             <h2 className="title-4xl text-anim">
-                                <span>
                                     Client Speak:{" "}
-                                </span>
                                 <br />
-                                <span>
                                     Real Stories, Real Impact!
-                                </span>
                             </h2>
                         </div>
                     </div>

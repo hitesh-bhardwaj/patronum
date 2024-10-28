@@ -24,9 +24,7 @@ const Pricing = () => {
 
                         <div className='pricing-head'>
                             <h2 className='title-4xl text-anim'>
-                                <span>
                                     Plans & Pricing
-                                </span>
                             </h2>
                         </div>
 
