@@ -15,7 +15,7 @@ const DesktopNavigation = () => {
                 <nav className='navbar lg:block hidden'>
                     <ul className='navbar-list'>
                         <li className='nav-list-item'>
-                            <Link href='/about-us' className='page-link'>
+                            <Link href='/about-us' className='page-link' shallow={false}>
                                 <div className='header-anim'>
                                     <span>
                                         About
@@ -27,7 +27,7 @@ const DesktopNavigation = () => {
                             onMouseEnter={() => setFeaturesDropdownOpen(true)}
                             onMouseLeave={() => setFeaturesDropdownOpen(false)}
                         >
-                            <Link href='/features' className='page-link dropdown' >
+                            <Link href='/features' className='page-link dropdown' shallow={false}>
                                 <div className='header-anim'>
                                     <span>
                                         Features
@@ -95,7 +95,7 @@ const DesktopNavigation = () => {
                             onMouseEnter={() => setUsecasesDropdownOpen(true)}
                             onMouseLeave={() => setUsecasesDropdownOpen(false)}
                             >
-                            <Link href='/use-cases' className='page-link dropdown' >
+                            <Link href='/use-cases' className='page-link dropdown' shallow={false}>
                                 <div className='header-anim'>
                                     <span>
                                         Use Cases
@@ -156,7 +156,7 @@ const DesktopNavigation = () => {
                             onMouseEnter={() => setPriceDropdownOpen(true)}
                             onMouseLeave={() => setPriceDropdownOpen(false)}
                             >
-                            <Link href='/pricing' className='page-link dropdown' >
+                            <Link href='/pricing' className='page-link dropdown' shallow={false}>
                                 <div className='header-anim'>
                                     <span>
                                         Pricing
@@ -174,7 +174,7 @@ const DesktopNavigation = () => {
                                         className='nav-dropdown'>
                                         <ul className='nav-dropdown-list justify-center'>
                                             <div className='border border-gray-100 rounded-xl py-10 hover:bg-[#fbfbfb] transition duration-300'>
-                                                <Link href="/pricing" className='flex justify-center items-center mb-10'>
+                                                <Link href="/pricing" className='flex justify-center items-center mb-10' shallow={false}>
                                                     <div className='flex flex-col gap-4 items-center px-[3vw] py-4 mx-8'>
                                                         <img className='h-[9vw]' loading='lazy' width="170" height="140" src='/assets/pricing/education.svg' alt='price image'/>
                                                         <div>
@@ -248,7 +248,7 @@ const DesktopNavigation = () => {
                                                 img={'resource-compliance.svg'}
                                             />
                                             <li className='nav-drop-list-item'>
-                                                <Link href='https://help.patronum.io' target='_blank' rel="nofollow" className='nav-drop-list-hover' >
+                                                <Link href='https://help.patronum.io' target='_blank' rel="nofollow" className='nav-drop-list-hover' shallow={false}>
                                                     <div className='img'>
                                                         <img loading='lazy' src='/assets/menu/resource-help.svg' alt='menu icon'/>
                                                     </div>
@@ -259,7 +259,7 @@ const DesktopNavigation = () => {
                                                 </Link>
                                             </li>
                                             <li className='nav-drop-list-item'>
-                                                <Link href='https://community.patronum.io' target='_blank' rel="nofollow" className='nav-drop-list-hover' >
+                                                <Link href='https://community.patronum.io' target='_blank' rel="nofollow" className='nav-drop-list-hover' shallow={false}>
                                                     <div className='img'>
                                                         <img loading='lazy' src='/assets/menu/resource-community.svg' alt='menu icon'/>
                                                     </div>
@@ -286,7 +286,7 @@ const DesktopNavigation = () => {
                                 )}
                             </li>
                         <li className='nav-list-item'>
-                            <Link className='page-link' href='/partner-with-us' >
+                            <Link className='page-link' href='/partner-with-us' shallow={false}>
                                 <div className='header-anim'>
                                     <span>
                                         Partners
@@ -295,7 +295,7 @@ const DesktopNavigation = () => {
                             </Link>
                         </li>
                         <li className='nav-list-item'>
-                            <Link className='page-link' href='/support' >
+                            <Link className='page-link' href='/support' shallow={false}>
                                 <div className='header-anim'>
                                     <span>
                                         Support
@@ -315,7 +315,7 @@ const DesktopNavigation = () => {
 const NavItem = ({ link, img, title, disc }) => {
     return (
         <li className='nav-drop-list-item'>
-            <Link href={link} className='nav-drop-list-hover' >
+            <Link href={link} className='nav-drop-list-hover' shallow={false}>
                 <div className='img'>
                     <img loading='lazy' src={`/assets/menu/${img}`} alt='menu icon'/>
                 </div>

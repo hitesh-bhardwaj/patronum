@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { NextSeo } from "next-seo";
@@ -14,28 +14,19 @@ import RelatedPosts from "@/components/PageComponents/BlogPage/RelatedPosts";
 
 import { getHomePagePosts } from '@/lib/posts';
 import UseCasesMobile from "@/components/PageComponents/HomePage/UseCasesMobile";
-import SideMenu from "@/components/SideMenu";
 import Head from "next/head";
 import Layout from "@/components/Stairs";
 import Ratings from "@/components/PageComponents/HomePage/Ratings";
 import { SplitInLine } from "@/components/Utils/SplitText";
+import useWindowSize from "@/components/Header/useWindowSize";
+import dynamic from "next/dynamic";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Home({ recentPosts }) {
-  const [showSideMenu, setShowSideMenu] = useState(false);
+const DynamicSideMenu = dynamic(() => import('@/components/SideMenu'), {ssr: false});
 
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setShowSideMenu(window.innerWidth > 1024);
-    };
-    // Check on mount
-    checkScreenSize();
-    // Add event listener
-    window.addEventListener('resize', checkScreenSize);
-    // Cleanup event listener
-    return () => window.removeEventListener('resize', checkScreenSize);
-  }, []);
+export default function Home({ recentPosts }) {
+  const { width } = useWindowSize();
 
   const sections = [
     { id: '#hero', name: 'Introduction' },
@@ -94,57 +85,6 @@ export default function Home({ recentPosts }) {
       });
     });
     return () => ctx.revert();
-  }, []);
-
-  useEffect(() => {
-    const pricingCards = document.querySelectorAll('.pricing-card-wrapper .pricing-card');
-    // Ensure GSAP library is imported and available
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".pricing-card-wrapper",
-        start: "top 85%",
-      }
-    });
-
-    tl.fromTo(
-      pricingCards,
-      {
-        opacity: 0,
-        y: 100,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: 'Power2.out',
-      }
-    );
-  }, []);
-
-  useEffect(() => {
-    const blogCards = document.querySelectorAll('.blog-card-wrapper .blog-cards');
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".blog-card-wrapper",
-        start: "top 85%",
-      }
-    });
-
-    tl.fromTo(
-      blogCards,
-      {
-        opacity: 0,
-        y: 100,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: 'Power2.out',
-      }
-    );
   }, []);
 
   useEffect(() => {
@@ -407,15 +347,20 @@ export default function Home({ recentPosts }) {
             )
           }} />
       </Head>
-
-      {showSideMenu && <SideMenu sections={sections} />}
+      {width >= 1024 ? ( <DynamicSideMenu sections={sections} /> 
+      ) : (
+        <></>
+      )}
       <Layout>
         <main>
           <Hero />
           <Ratings />
           <Features />
-          <UseCases />
-          <UseCasesMobile />
+          {width >= 1024 ? (
+            <UseCases />
+          ) : (
+            <UseCasesMobile />
+          )}
           <Pricing />
           <About />
           <Testimonial />

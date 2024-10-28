@@ -3,11 +3,7 @@ import { motion } from 'framer-motion';
 import PageLoader from '../PageLoader';
 import dynamic from 'next/dynamic'
 
-const CrispWithNoSSR = dynamic(
-    () => import('@/components/Crisp'),
-    { ssr: false }
-  );
-
+const CrispWithNoSSR = dynamic(() => import('@/components/Crisp'), { ssr: false });
 const DynamicHeader = dynamic(() => import('../Header'), {ssr: false});
 const DynamicFooter = dynamic(() => import('../Footer'), {ssr: false});
 
