@@ -2,16 +2,12 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { NextSeo } from "next-seo";
-
 import Hero from '@/components/PageComponents/HomePage/Hero';
 import Features from '@/components/PageComponents/HomePage/Features';
 import About from '@/components/PageComponents/HomePage/About';
 import UseCases from '@/components/PageComponents/HomePage/UseCases';
 import Faqs from '@/components/PageComponents/HomePage/Faqs';
-import Pricing from '@/components/PageComponents/HomePage/Pricing';
-import Testimonial from '@/components/PageLayout/Testimonial';
 import RelatedPosts from "@/components/PageComponents/BlogPage/RelatedPosts";
-
 import { getHomePagePosts } from '@/lib/posts';
 import UseCasesMobile from "@/components/PageComponents/HomePage/UseCasesMobile";
 import Head from "next/head";
@@ -24,6 +20,8 @@ import dynamic from "next/dynamic";
 gsap.registerPlugin(ScrollTrigger);
 
 const DynamicSideMenu = dynamic(() => import('@/components/SideMenu'), {ssr: false});
+const DynamicPricing = dynamic(() => import('@/components/PageComponents/HomePage/Pricing'), {ssr: false});
+const DynamicTestimonial = dynamic(() => import('@/components/PageLayout/Testimonial'), {ssr: false});
 
 export default function Home({ recentPosts }) {
   const { width } = useWindowSize();
@@ -361,9 +359,9 @@ export default function Home({ recentPosts }) {
           ) : (
             <UseCasesMobile />
           )}
-          <Pricing />
+          <DynamicPricing />
           <About />
-          <Testimonial />
+          <DynamicTestimonial />
           <RelatedPosts
             sectionPara={"Discover a World of Knowledge with Expert Tips, In-Depth Tricks, Latest News, and Comprehensive Resources for Mastering Google Workspace."}
             recentPosts={recentPosts}
