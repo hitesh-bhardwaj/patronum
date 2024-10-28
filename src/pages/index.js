@@ -19,9 +19,9 @@ import dynamic from "next/dynamic";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const DynamicSideMenu = dynamic(() => import('@/components/SideMenu'), {ssr: false});
-const DynamicPricing = dynamic(() => import('@/components/PageComponents/HomePage/Pricing'), {ssr: false});
-const DynamicTestimonial = dynamic(() => import('@/components/PageLayout/Testimonial'), {ssr: false});
+const DynamicSideMenu = dynamic(() => import('@/components/SideMenu'));
+const DynamicPricing = dynamic(() => import('@/components/PageComponents/HomePage/Pricing'));
+const DynamicTestimonial = dynamic(() => import('@/components/PageLayout/Testimonial'));
 
 export default function Home({ recentPosts }) {
   const { width } = useWindowSize();
