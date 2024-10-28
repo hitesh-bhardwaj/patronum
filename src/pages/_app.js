@@ -111,7 +111,7 @@ export default function App({ Component, pageProps, router }) {
           cardType: 'summary_large_image',
         }}
       />
-      {/* <Head>
+      <Head>
         <meta charSet="utf-8" />
         <script
           type="application/ld+json"
@@ -171,7 +171,7 @@ export default function App({ Component, pageProps, router }) {
             ),
           }}
         />
-      </Head> */}
+      </Head>
 
       {showPreloader && <PreLoader />}
       <ReactLenis root options={{ duration: 0.8 }}>

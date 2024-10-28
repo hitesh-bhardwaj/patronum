@@ -171,7 +171,7 @@ export default function Home() {
 
   return (
     <>
-      {/* <NextSeo
+      <NextSeo
         title="Patronum - Best Platform for Google Workspace (GSuite) Management"
         description="Patronum provides a better way to manage Google Workspace (GSuite). Patronum is your Google Workspace (GSuite) manager that fully automates all administrator and user tasks to ensure an efficient, effective, and secure process."
         openGraph={{
@@ -204,8 +204,8 @@ export default function Home() {
             content: "https://www.patronum.io/assets/seo/homepage.jpg"
           },
         ]}
-      /> */}
-      {/* <Head>
+      />
+      <Head>
         <link rel="canonical" href="https://www.patronum.io" />
         <link rel="alternate" href="https://www.patronum.io" hreflang="x-default" />
         <script
@@ -343,7 +343,7 @@ export default function Home() {
               }
             )
           }} />
-      </Head> */}
+      </Head>
       {width >= 1024 ? ( <DynamicSideMenu sections={sections} /> 
       ) : (
         <></>
@@ -353,16 +353,16 @@ export default function Home() {
           <Hero />
           <Ratings />
           <Features />
-          {width >= 1024 ? (
+          {/* {width >= 1024 ? (
             <UseCases />
           ) : (
             <UseCasesMobile />
-          )}
-          <DynamicPricing />
-          <About />
-          <DynamicTestimonial />
-          <Blogs />
-          <Faqs />
+          )} */}
+          {/* <DynamicPricing /> */}
+          {/* <About /> */}
+          {/* <DynamicTestimonial /> */}
+          {/* <Blogs /> */}
+          {/* <Faqs /> */}
         </main>
       </Layout>
     </>
