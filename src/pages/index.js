@@ -7,8 +7,6 @@ import Features from '@/components/PageComponents/HomePage/Features';
 import About from '@/components/PageComponents/HomePage/About';
 import UseCases from '@/components/PageComponents/HomePage/UseCases';
 import Faqs from '@/components/PageComponents/HomePage/Faqs';
-// import RelatedPosts from "@/components/PageComponents/BlogPage/RelatedPosts";
-// import { getHomePagePosts } from '@/lib/posts';
 import UseCasesMobile from "@/components/PageComponents/HomePage/UseCasesMobile";
 import Head from "next/head";
 import Layout from "@/components/Stairs";
@@ -16,14 +14,15 @@ import Ratings from "@/components/PageComponents/HomePage/Ratings";
 import { SplitInLine } from "@/components/Utils/SplitText";
 import useWindowSize from "@/components/Header/useWindowSize";
 import dynamic from "next/dynamic";
+import Blogs from "@/components/PageComponents/HomePage/Blogs";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const DynamicSideMenu = dynamic(() => import('@/components/SideMenu'));
-const DynamicPricing = dynamic(() => import('@/components/PageComponents/HomePage/Pricing'));
-const DynamicTestimonial = dynamic(() => import('@/components/PageLayout/Testimonial'));
+const DynamicSideMenu = dynamic(() => import('@/components/SideMenu'), {ssr: false});
+const DynamicPricing = dynamic(() => import('@/components/PageComponents/HomePage/Pricing'), {ssr: false});
+const DynamicTestimonial = dynamic(() => import('@/components/PageLayout/Testimonial'), {ssr: false});
 
-export default function Home({ recentPosts }) {
+export default function Home() {
   const { width } = useWindowSize();
 
   const sections = [
@@ -362,26 +361,10 @@ export default function Home({ recentPosts }) {
           <DynamicPricing />
           <About />
           <DynamicTestimonial />
-          {/* <RelatedPosts
-            sectionPara={"Discover a World of Knowledge with Expert Tips, In-Depth Tricks, Latest News, and Comprehensive Resources for Mastering Google Workspace."}
-            recentPosts={recentPosts}
-            sectionTitle={"Our Latest Blogs"}
-          /> */}
+          <Blogs />
           <Faqs />
         </main>
       </Layout>
     </>
   );
 }
-
-// export async function getStaticProps() {
-
-//   const recentPosts = await getHomePagePosts();
-
-//   return {
-//     props: {
-//       recentPosts,
-//     },
-//     revalidate: 500,
-//   };
-// }

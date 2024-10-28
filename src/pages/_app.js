@@ -8,10 +8,9 @@ import { AnimatePresence } from 'framer-motion';
 import Head from 'next/head';
 import PreLoader from '@/components/PreLoader';
 import Pixi from '@/components/Pixi';
-import Cookie from '@/components/Cookie';
 import useWindowSize from "@/components/Header/useWindowSize";
 import { Suspense } from 'react';
-import { GoogleTagManager } from '@next/third-parties/google'
+// import { GoogleTagManager } from '@next/third-parties/google'
 
 export default function App({ Component, pageProps, router }) {
   const [showPreloader, setShowPreloader] = useState(true);
@@ -175,7 +174,6 @@ export default function App({ Component, pageProps, router }) {
       </Head>
 
       {showPreloader && <PreLoader />}
-      <Cookie />
       <ReactLenis root options={{ duration: 0.8 }}>
         <AnimatePresence mode="wait">
           <Component {...pageProps} key={router.route} />
@@ -183,7 +181,7 @@ export default function App({ Component, pageProps, router }) {
       </ReactLenis>
 
       {/* Google Tag Manager */}
-      <GoogleTagManager gtmId="GTM-MDWM3Z7J" />
+      {/* <GoogleTagManager gtmId="GTM-MDWM3Z7J" /> */}
 
       {/* Vercel Analytics */}
       <SpeedInsights

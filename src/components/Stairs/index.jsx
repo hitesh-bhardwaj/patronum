@@ -2,33 +2,37 @@ import { motion } from 'framer-motion';
 import PageLoader from '../PageLoader';
 import dynamic from 'next/dynamic'
 import { ModalProvider } from '../Modals/ModalContext';
+import Cookie from '../Cookie';
 
-const CrispWithNoSSR = dynamic(() => import('@/components/Crisp'));
-const DynamicHeader = dynamic(() => import('../Header'));
-const DynamicFooter = dynamic(() => import('../Footer'));
-const DynamicInstallModal = dynamic(() => import('../Modals/InstallModal'));
-const DynamicDemoModal = dynamic(() => import('../Modals/DemoModal'));
+const CrispWithNoSSR = dynamic(() => import('@/components/Crisp'), { ssr: false });
+const DynamicHeader = dynamic(() => import('../Header'), { ssr: false });
+const DynamicFooter = dynamic(() => import('../Footer'), { ssr: false });
+const DynamicInstallModal = dynamic(() => import('../Modals/InstallModal'), { ssr: false });
+const DynamicDemoModal = dynamic(() => import('../Modals/DemoModal'), { ssr: false });
 
 export default function Layout({ children }) {
 
     return (
-        <ModalProvider>
-            <div className='page'>
-                <div className='fixed w-screen h-screen left-0 top-0 pointer-events-none z-[10000]'>
-                    <motion.div
-                        initial={{ top: 0, height: 0 }}
-                        exit={{ height: '100%' }}
-                        transition={{ ease: [[0.215, 0.61, 0.355, 1]], duration: 0.4 }}
-                        className='bg-primary h-0 w-full relative origin-bottom' />
+        <>
+            <Cookie />
+            <ModalProvider>
+                <div className='page'>
+                    <div className='fixed w-screen h-screen left-0 top-0 pointer-events-none z-[10000]'>
+                        <motion.div
+                            initial={{ top: 0, height: 0 }}
+                            exit={{ height: '100%' }}
+                            transition={{ ease: [[0.215, 0.61, 0.355, 1]], duration: 0.4 }}
+                            className='bg-primary h-0 w-full relative origin-bottom' />
+                    </div>
+                    <PageLoader />
+                    <CrispWithNoSSR />
+                    <DynamicHeader />
+                    {children}
+                    <DynamicFooter />
                 </div>
-                <PageLoader />
-                <CrispWithNoSSR />
-                <DynamicHeader />
-                {children}
-                <DynamicFooter />
-            </div>
-            <DynamicInstallModal />
-            <DynamicDemoModal />
-        </ModalProvider>
+                <DynamicInstallModal />
+                <DynamicDemoModal />
+            </ModalProvider>
+        </>
     )
 }
