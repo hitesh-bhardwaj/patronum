@@ -4,7 +4,7 @@ import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import Image from "next/image";
 import DemoButton from "@/components/PageLayout/Button/DemoButton";
 import CallButton from "@/components/PageLayout/Button/CallButton";
-import { SplitInLine } from "@/components/splitTextUtils";
+import { SplitInLine } from "@/components/Utils/SplitText";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -32,7 +32,6 @@ export default function Hero() {
     useEffect(() => {
         const isFirstTimeLoading = sessionStorage.getItem('hasVisited') === null;
         let delayTime = isFirstTimeLoading ? 3.4 : 0.6;
-
         let ctx = gsap.context(() => {
             SplitInLine(para.current);
             const heroPara = para.current.querySelectorAll('.line .line-internal');
