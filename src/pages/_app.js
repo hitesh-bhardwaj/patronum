@@ -183,9 +183,7 @@ export default function App({ Component, pageProps, router }) {
       </ReactLenis>
 
       {/* Google Tag Manager */}
-      {/* <Suspense fallback={null}>
-        <GoogleTagManager gtmId="GTM-MDWM3Z7J" />
-      </Suspense> */}
+      <GoogleTagManager gtmId="GTM-MDWM3Z7J" />
 
       {/* Vercel Analytics */}
       <SpeedInsights
