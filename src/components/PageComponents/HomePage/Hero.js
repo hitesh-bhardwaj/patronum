@@ -1,6 +1,5 @@
 import gsap from "gsap";
 import { useEffect, useRef } from "react"
-import SplitType from "split-type";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import Image from "next/image";
 import DemoButton from "@/components/PageLayout/Button/DemoButton";
