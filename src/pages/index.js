@@ -7,8 +7,8 @@ import Features from '@/components/PageComponents/HomePage/Features';
 import About from '@/components/PageComponents/HomePage/About';
 import UseCases from '@/components/PageComponents/HomePage/UseCases';
 import Faqs from '@/components/PageComponents/HomePage/Faqs';
-import RelatedPosts from "@/components/PageComponents/BlogPage/RelatedPosts";
-import { getHomePagePosts } from '@/lib/posts';
+// import RelatedPosts from "@/components/PageComponents/BlogPage/RelatedPosts";
+// import { getHomePagePosts } from '@/lib/posts';
 import UseCasesMobile from "@/components/PageComponents/HomePage/UseCasesMobile";
 import Head from "next/head";
 import Layout from "@/components/Stairs";
@@ -362,11 +362,11 @@ export default function Home({ recentPosts }) {
           <DynamicPricing />
           <About />
           <DynamicTestimonial />
-          <RelatedPosts
+          {/* <RelatedPosts
             sectionPara={"Discover a World of Knowledge with Expert Tips, In-Depth Tricks, Latest News, and Comprehensive Resources for Mastering Google Workspace."}
             recentPosts={recentPosts}
             sectionTitle={"Our Latest Blogs"}
-          />
+          /> */}
           <Faqs />
         </main>
       </Layout>
@@ -374,14 +374,14 @@ export default function Home({ recentPosts }) {
   );
 }
 
-export async function getStaticProps() {
+// export async function getStaticProps() {
 
-  const recentPosts = await getHomePagePosts();
+//   const recentPosts = await getHomePagePosts();
 
-  return {
-    props: {
-      recentPosts,
-    },
-    revalidate: 500,
-  };
-}
+//   return {
+//     props: {
+//       recentPosts,
+//     },
+//     revalidate: 500,
+//   };
+// }
