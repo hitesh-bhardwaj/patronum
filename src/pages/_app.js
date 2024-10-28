@@ -11,7 +11,7 @@ import Pixi from '@/components/Pixi';
 import Cookie from '@/components/Cookie';
 import useWindowSize from "@/components/Header/useWindowSize";
 import { Suspense } from 'react';
-// import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleTagManager } from '@next/third-parties/google'
 
 export default function App({ Component, pageProps, router }) {
   const [showPreloader, setShowPreloader] = useState(true);
