@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import SplitType from "split-type";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { NextSeo } from "next-seo";
@@ -19,7 +18,7 @@ import SideMenu from "@/components/SideMenu";
 import Head from "next/head";
 import Layout from "@/components/Stairs";
 import Ratings from "@/components/PageComponents/HomePage/Ratings";
-import { SplitInLine } from "@/components/splitTextUtils";
+import { SplitInLine } from "@/components/Utils/SplitText";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -408,7 +407,7 @@ export default function Home({ recentPosts }) {
             )
           }} />
       </Head>
-      
+
       {showSideMenu && <SideMenu sections={sections} />}
       <Layout>
         <main>
