@@ -8,19 +8,19 @@ import About from '@/components/PageComponents/HomePage/About';
 import UseCases from '@/components/PageComponents/HomePage/UseCases';
 import Faqs from '@/components/PageComponents/HomePage/Faqs';
 import UseCasesMobile from "@/components/PageComponents/HomePage/UseCasesMobile";
-import Head from "next/head";
 import Layout from "@/components/Stairs";
 import Ratings from "@/components/PageComponents/HomePage/Ratings";
 import { SplitInLine } from "@/components/Utils/SplitText";
 import useWindowSize from "@/components/Header/useWindowSize";
 import dynamic from "next/dynamic";
 import Blogs from "@/components/PageComponents/HomePage/Blogs";
+import Pricing from "@/components/PageComponents/HomePage/Pricing";
+import Testimonial from "@/components/PageLayout/Testimonial";
+import Script from "next/script";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const DynamicSideMenu = dynamic(() => import('@/components/SideMenu'), {ssr: false});
-const DynamicPricing = dynamic(() => import('@/components/PageComponents/HomePage/Pricing'), {ssr: false});
-const DynamicTestimonial = dynamic(() => import('@/components/PageLayout/Testimonial'), {ssr: false});
 
 export default function Home() {
   const { width } = useWindowSize();
@@ -37,12 +37,10 @@ export default function Home() {
 
   useEffect(() => {
     const headings = document.querySelectorAll('.text-anim');
-
     headings.forEach((heading) => {
       let ctx = gsap.context(() => {
         SplitInLine(heading);
         let animWord = heading.querySelectorAll('.line .line-internal');
-
         gsap.from(animWord, {
           scrollTrigger: {
             trigger: heading,
@@ -59,7 +57,6 @@ export default function Home() {
 
   useEffect(() => {
     const fadeUps = document.querySelectorAll('.fadeUp');
-
     let ctx = gsap.context(() => {
       fadeUps.forEach((fadeUp) => {
         gsap.fromTo(
@@ -86,7 +83,6 @@ export default function Home() {
 
   useEffect(() => {
     const fadeRights = document.querySelectorAll('.fadeRight');
-
     let ctx = gsap.context(() => {
       fadeRights.forEach((fadeRight) => {
         gsap.fromTo(
@@ -114,7 +110,6 @@ export default function Home() {
 
   useEffect(() => {
     const lineDraws = document.querySelectorAll('.lineDraw');
-
     let ctx = gsap.context(() => {
       lineDraws.forEach((lineDraw) => {
         gsap.fromTo(
@@ -140,7 +135,6 @@ export default function Home() {
 
   useEffect(() => {
     const scaleAnims = document.querySelectorAll('.scaleAnim');
-
     let ctx = gsap.context(() => {
       scaleAnims.forEach((scaleAnim) => {
         gsap.fromTo(
@@ -204,11 +198,21 @@ export default function Home() {
             content: "https://www.patronum.io/assets/seo/homepage.jpg"
           },
         ]}
+
+        additionalLinkTags={[
+          {
+            rel: "canonical",
+            href: "https://www.patronum.io",
+          },
+          {
+            rel: "alternate",
+            href: "https://www.patronum.io",
+            hreflang: "en",
+          }
+        ]}
       />
-      <Head>
-        <link rel="canonical" href="https://www.patronum.io" />
-        <link rel="alternate" href="https://www.patronum.io" hreflang="x-default" />
-        <script
+        <Script
+          async
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(
@@ -240,7 +244,8 @@ export default function Home() {
             ),
           }}
         />
-        <script
+        <Script
+          async
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(
@@ -276,8 +281,8 @@ export default function Home() {
             ),
           }}
         />
-
-        <script
+        <Script
+          async
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(
@@ -343,7 +348,6 @@ export default function Home() {
               }
             )
           }} />
-      </Head>
       {width >= 1024 ? ( <DynamicSideMenu sections={sections} /> 
       ) : (
         <></>
@@ -353,16 +357,16 @@ export default function Home() {
           <Hero />
           <Ratings />
           <Features />
-          {/* {width >= 1024 ? (
+          {width >= 1024 ? (
             <UseCases />
           ) : (
             <UseCasesMobile />
-          )} */}
-          {/* <DynamicPricing /> */}
-          {/* <About /> */}
-          {/* <DynamicTestimonial /> */}
-          {/* <Blogs /> */}
-          {/* <Faqs /> */}
+          )}
+          <Pricing />
+          <About />
+          <Testimonial />
+          <Blogs />
+          <Faqs />
         </main>
       </Layout>
     </>

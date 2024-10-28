@@ -3,64 +3,54 @@ import { DefaultSeo } from 'next-seo';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from "@vercel/analytics/react"
 import { ReactLenis } from '@studio-freight/react-lenis';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import Head from 'next/head';
-import PreLoader from '@/components/PreLoader';
-import Pixi from '@/components/Pixi';
-import useWindowSize from "@/components/Header/useWindowSize";
-import { Suspense } from 'react';
+// import PreLoader from '@/components/PreLoader';
+// import Pixi from '@/components/Pixi';
+// import useWindowSize from "@/components/Header/useWindowSize";
+// import { Suspense } from 'react';
 import { GoogleTagManager } from '@next/third-parties/google'
+import Script from 'next/script';
 
 export default function App({ Component, pageProps, router }) {
-  const [showPreloader, setShowPreloader] = useState(true);
-  const { width } = useWindowSize();
+  // const [showPreloader, setShowPreloader] = useState(true);
+  // const { width } = useWindowSize();
 
-  useEffect(() => {
-    const hasVisited = sessionStorage.getItem('hasVisited');
+  // useEffect(() => {
+  //   const hasVisited = sessionStorage.getItem('hasVisited');
+  //   if (!hasVisited) {
+  //     setShowPreloader(true);
+  //     const preloaderTimeout = setTimeout(() => {
+  //       setShowPreloader(false);
+  //       sessionStorage.setItem('hasVisited', 'true');
+  //     }, 4000);
+  //     return () => clearTimeout(preloaderTimeout);
+  //   }
+  //   else {
+  //     setShowPreloader(false);
+  //   }
+  // }, []);
 
-    if (!hasVisited) {
-      setShowPreloader(true);
-
-      const preloaderTimeout = setTimeout(() => {
-        setShowPreloader(false);
-        sessionStorage.setItem('hasVisited', 'true');
-      }, 4000);
-
-      return () => clearTimeout(preloaderTimeout);
-    }
-    else {
-      setShowPreloader(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    const handleRouteChange = () => {
-      // Disable pointer events on route change
-      document.body.style.pointerEvents = 'none';
-
-      // Enable pointer events when mouse moves
-      const enablePointerEvents = () => {
-        document.body.style.pointerEvents = 'auto';
-        document.removeEventListener('mousemove', enablePointerEvents);
-      };
-      document.addEventListener('mousemove', enablePointerEvents);
-    };
-
-    router.events.on('routeChangeStart', handleRouteChange);
-
-    return () => {
-      router.events.off('routeChangeStart', handleRouteChange);
-    };
-  }, [router]);
+  // useEffect(() => {
+  //   const handleRouteChange = () => {
+  //     document.body.style.pointerEvents = 'none';
+  //     const enablePointerEvents = () => {
+  //       document.body.style.pointerEvents = 'auto';
+  //       document.removeEventListener('mousemove', enablePointerEvents);
+  //     };
+  //     document.addEventListener('mousemove', enablePointerEvents);
+  //   };
+  //   router.events.on('routeChangeStart', handleRouteChange);
+  //   return () => {
+  //     router.events.off('routeChangeStart', handleRouteChange);
+  //   };
+  // }, [router]);
 
   useEffect(() => {
     const handleRouteChange = () => {
       window.scrollTo(0, 0)
     };
-
     window.addEventListener("beforeunload", handleRouteChange);
-
     return () => {
       window.removeEventListener("beforeunload", handleRouteChange);
     };
@@ -76,6 +66,10 @@ export default function App({ Component, pageProps, router }) {
             name: 'viewport',
             content: 'width=device-width, initial-scale=1.0, maximum-scale=5.0'
           },
+          {
+            name: "charSet",
+            content: "utf-8",
+          }
         ]}
         additionalLinkTags={[
           {
@@ -111,9 +105,8 @@ export default function App({ Component, pageProps, router }) {
           cardType: 'summary_large_image',
         }}
       />
-      <Head>
-        <meta charSet="utf-8" />
-        <script
+        <Script
+          async
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(
@@ -135,7 +128,8 @@ export default function App({ Component, pageProps, router }) {
             ),
           }}
         />
-        <script
+        <Script
+          async
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(
@@ -155,7 +149,8 @@ export default function App({ Component, pageProps, router }) {
             ),
           }}
         />
-        <script
+        <Script
+          async
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(
@@ -171,9 +166,8 @@ export default function App({ Component, pageProps, router }) {
             ),
           }}
         />
-      </Head>
 
-      {showPreloader && <PreLoader />}
+      {/* {showPreloader && <PreLoader />} */}
       <ReactLenis root options={{ duration: 0.8 }}>
         <AnimatePresence mode="wait">
           <Component {...pageProps} key={router.route} />
@@ -191,13 +185,13 @@ export default function App({ Component, pageProps, router }) {
         strategy="afterInteractive"
       />
       {/* WEBGL Background */}
-      {width >= 1024 ? (
+      {/* {width >= 1024 ? (
         <Suspense fallback={null}>
           <Pixi />
         </Suspense>
       ) : (
         <></>
-      )}
+      )} */}
     </>
   );
 }
