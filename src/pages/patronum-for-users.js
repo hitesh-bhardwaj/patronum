@@ -108,7 +108,7 @@ export default function UseCasesDetail() {
                 pagePara={"Simplify and Streamline Google Workspace for Every User Across Your Organization"}
                 imgSrc={'use-cases-users.svg'}
                 title={"Patronum for Users - Patronum"}
-                description={"Patronum provides a better way to Google Workspace (GSuite) Management. Patronum fully automates all the administrator and user tasks to ensure an efficient, effective and secure process."}
+                description={"Patronum for Users revolutionizes productivity by automating routine tasks like password resets and managing access permissions. It also simplifies document management for individual and team use, enhancing collaboration and ensuring seamless sharing of ideas for efficient teamwork."}
                 url={"patronum-for-users"}
                 img={"homepage.jpg"}
                 date_published={"2024-04-04T12:00"}

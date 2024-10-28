@@ -1,7 +1,3 @@
-/**
- * decodeHtmlEntities
- */
-
 export function decodeHtmlEntities(text) {
   if (typeof text !== 'string') {
     throw new Error(`Failed to decode HTML entity: invalid type ${typeof text}`);
@@ -17,10 +13,6 @@ export function decodeHtmlEntities(text) {
 
   return decoded.replace(/&amp;|&quot;|&#039;/g, (char) => entities[char]);
 }
-
-/**
- * removeLastTrailingSlash
- */
 
 export function removeLastTrailingSlash(url) {
   if (typeof url !== 'string') return url;

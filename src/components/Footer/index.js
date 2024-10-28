@@ -58,7 +58,7 @@ const Footer = () => {
                                             </Link>
                                         </li>
                                         <li className="py-2">
-                                            <Link href="https://help.patronum.io" target="_blank" className="text-xl">
+                                            <Link href="https://help.patronum.io" target="_blank" rel="nofollow" className="text-xl">
                                                 Help
                                             </Link>
                                         </li>
@@ -99,7 +99,7 @@ const Footer = () => {
                                             </Link>
                                         </li>
                                         <li className="py-2">
-                                            <Link href="https://community.patronum.io" target="_blank" className="text-xl">
+                                            <Link href="https://community.patronum.io" target="_blank" rel="nofollow" className="text-xl">
                                                 Community
                                             </Link>
                                         </li>
@@ -110,27 +110,27 @@ const Footer = () => {
                             <div className='social-links fadeUp'>
                                 <ul className=''>
                                     <li>
-                                        <Link href='https://www.facebook.com/patronum.io' target="_blank">
+                                        <Link href='https://www.facebook.com/patronum.io' target="_blank" rel="nofollow">
                                             <img width="25" height="25" src='/assets/footer/facebook.svg' alt='social icons'/>
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href='https://www.linkedin.com/company/wearepatronum/' target="_blank">
+                                        <Link href='https://www.linkedin.com/company/wearepatronum/' target="_blank" rel="nofollow">
                                             <img width="25" height="25" src='/assets/footer/linkedin.svg' alt='social icons'/>
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href='https://twitter.com/Patronum_io' target="_blank">
+                                        <Link href='https://twitter.com/Patronum_io' target="_blank" rel="nofollow">
                                             <img width="25" height="25" src='/assets/footer/twitter.svg' alt='social icons'/>
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href='https://www.instagram.com/patronum.io/' target="_blank">
+                                        <Link href='https://www.instagram.com/patronum.io/' target="_blank" rel="nofollow">
                                             <img width="25" height="25" src='/assets/footer/instagram.svg' alt='social icons'/>
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href='https://www.youtube.com/@wearepatronum' target="_blank">
+                                        <Link href='https://www.youtube.com/@wearepatronum' target="_blank" rel="nofollow">
                                             <img width="25" height="25" src='/assets/footer/youtube.svg' alt='social icons'/>
                                         </Link>
                                     </li>

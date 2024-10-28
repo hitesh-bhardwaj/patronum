@@ -11,8 +11,8 @@ export default function PartnersDetail() {
                 pageTitle2="An Opportunity"
                 pagePara="Join forces with Patronum! Let’s redefine efficiency and productivity together!"
                 imgSrc="partner-with-us.svg"
-                title={"Register An Opportunity - Patronum"}
-                description={"Patronum provides a better way to Google Workspace (GSuite) Management. Patronum fully automates all the administrator and user tasks to ensure an efficient, effective and secure process."}
+                title={"Register an Opportunity - Patronum"}
+                description={"Register an Opportunity - Patronum: Does your customer need Patronum? As a reseller partner or referral source, you can register opportunities through our website."}
                 url={"register-an-opportunity"}
                 img={"homepage.jpg"}
                 date_published={"2023-05-13T12:00"}

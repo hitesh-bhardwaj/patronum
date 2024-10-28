@@ -124,81 +124,111 @@
         "faqs": [
             {
                 "id": "01",
+                "title": "Who can share contacts in Google Workspace?",
+                "content": "In Google Workspace, any user with the appropriate permissions can share contacts. Patronum enhances this process by automating contact management, ensuring users can easily share and update contact information efficiently while maintaining compliance and security. This streamlines collaboration and improves overall productivity."
+            },
+            {
+                "id": "02",
+                "title": "How do I share contacts in Google Workspace?",
+                "content": "To share contacts in Google Workspace, go to Google Contacts, select the contacts you want to share, and use the &quot;Share&quot; option to create a link or invite others. Patronum simplifies this process by automating contact sharing and management, ensuring seamless collaboration and easy access to up-to-date contact information across your organization."
+            },
+            {
+                "id": "03",
+                "title": "Can I share Google Contacts with users outside my Google Workspace organization?",
+                "content": "No, you cannot share Google Contacts with users outside your Google Workspace organization by default. However, you can export contacts and send them manually. Patronum helps by providing a streamlined way to manage and share contacts securely within your organization, ensuring that all relevant information is accessible while maintaining compliance."
+            },
+            {
+                "id": "04",
+                "title": "How do I view shared contacts in Google Workspace?",
+                "content": "To view shared contacts in Google Workspace, go to Google Contacts, and look for the &quot;Contacts&quot; section. Shared contacts will appear there if you've been granted access. Patronum enhances this experience by automatically organizing and syncing shared contacts, making finding and managing them more accessible, and ensuring seamless collaboration within your team."
+            },
+            {
+                "id": "05",
+                "title": "Is there a limit to the number of contacts I can share in Google Workspace?",
+                "content": "Yes, in Google Workspace, there is a limit of 25,000 contacts per user. However, sharing capabilities can be influenced by your organization's settings. Patronum helps by streamlining contact management, allowing you to efficiently organize and share large sets of contacts while ensuring compliance with any limits set by your organization."
+            },
+            {
+                "id": "06",
+                "title": "Is Google Contact Sharing in Google Workspace secure?",
+                "content": "Yes, Google Contact Sharing in Google Workspace is secure, as it uses encryption and permissions settings to control access to shared contacts. Patronum enhances security by providing additional layers of management and compliance, ensuring that contact sharing aligns with your organization's policies and that sensitive information is protected."
+            },
+            {
+                "id": "07",
                 "title": "What is contact sharing in Google Workspace?",
                 "content": "Contact sharing in Google Workspace lets users share their Google Contacts with other team members, streamlining communication within organizations by ensuring everyone has access to necessary contact information."
             },
             {
-                "id": "02",
+                "id": "08",
                 "title": "What are \"Contact Labels\"?",
                 "content": "Contact Labels are tags used in Google Contacts to organize contacts into groups, making it easier to manage and share sets of contacts based on criteria like department, project, or location."
             },
             {
-                "id": "03",
+                "id": "09",
                 "title": "What is the difference between Google Shared Contacts and Google Contacts?",
                 "content": "Google Contacts is a personal contact management tool, while Google Shared Contacts are those shared with other users within the Google Workspace environment, facilitated by tools like Patronum for broader access."
             },
             {
-                "id": "04",
+                "id": "10",
                 "title": "Is contact sharing only performed by Google administrators?",
                 "content": "While Google administrators can set up and manage contact sharing on an organizational level, Patronum enables both administrators and end-users to share contacts within defined permissions."
             },
             {
-                "id": "05",
+                "id": "11",
                 "title": "Can I share contacts with specific groups or teams using Patronum?",
                 "content": "Yes, Patronum allows users to share contacts with specific Google Groups, enabling targeted sharing that ensures the right team members have access to relevant contacts."
             },
             {
-                "id": "06",
+                "id": "12",
                 "title": "Is it possible to sync contacts with Outlook using Patronum?",
                 "content": "Patronum supports syncing contacts with Outlook, ensuring that users have consistent access to their contacts across Google Workspace and Microsoft Outlook."
             },
             {
-                "id": "07",
+                "id": "13",
                 "title": "What are user-level permissions in Patronum?",
                 "content": "Patronum allows administrators to set specific permissions for each user, including \"Can Edit,\" \"Can Delete,\" and \"Read Only,\"  offering precise control over who can access and modify shared contacts."
             },
             {
-                "id": "08",
+                "id": "14",
                 "title": "Does Patronum offer unlimited contact sharing?",
                 "content": "Yes, Patronum provides the ability to share an unlimited number of contacts and contact labels, accommodating the needs of growing organizations with expansive networks."
             },
             {
-                "id": "09",
+                "id": "15",
                 "title": "How do I sync my contacts with my Phone or Tablets?",
                 "content": "To sync your contacts with your phone or tablet, ensure your device is connected to your Google account. Patronum ensures that any changes made in Google Contacts are automatically updated across all connected devices."
             },
             {
-                "id": "10",
+                "id": "16",
                 "title": "How immediate is the contact sync with Patronum?",
                 "content": "Patronum offers daily synchronization, ensuring that any updates or changes to contacts are reflected across all users’ devices, maintaining up-to-date contact information organization-wide."
             },
             {
-                "id": "11",
+                "id": "17",
                 "title": "What security features does Patronum have for contact sharing?",
                 "content": "Patronum includes advanced security features and logging capabilities, which protect shared contact information and provide detailed insights into sharing activities and modifications, enhancing data security and compliance."
             },
             {
-                "id": "12",
+                "id": "18",
                 "title": "Can I manage and share contacts from my mobile device with Patronum?",
                 "content": "Patronum supports synchronization across mobile devices and tablets, allowing users to manage and share contacts on-the-go, ensuring they have access to important contacts from anywhere."
             },
             {
-                "id": "13",
+                "id": "19",
                 "title": "What happens if my administrator user account is deleted?",
                 "content": "If an administrator account is deleted, contact sharing settings managed by that account may need to be reassigned. Patronum can help ensure continuity in contact management and sharing."
             },
             {
-                "id": "14",
+                "id": "20",
                 "title": "What happens if a Contact Label owner is deleted?",
                 "content": "If a Contact Label owner is deleted, the label and its sharing permissions may be affected. Reassigning ownership before deletion can prevent disruption."
             },
             {
-                "id": "15",
+                "id": "21",
                 "title": "How can I delegate access so another user can manage my contacts?",
                 "content": "With Patronum, you can assign user-level permissions, allowing specific users to manage your contacts on your behalf, ensuring efficient and secure delegation."
             },
             {
-                "id": "16",
+                "id": "22",
                 "title": "Do you backup my contacts just in case I or someone else deletes them accidentally?",
                 "content": "Patronum prioritizes data security, including features for contact backup and recovery (additional opt-in feature), protecting against accidental deletions and ensuring your contacts are safeguarded. You can opt-in for <a class='link-href' href='/google-workspace-backup'>Google Workspace Backup</a> as an add-on to your Patronum subscription."
             }

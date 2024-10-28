@@ -8,10 +8,6 @@ export function formatDate(date, pattern = 'PPP') {
   return format(new Date(date), pattern);
 }
 
-export function formatDateYear(date) {
-  return format(new Date(date), 'yyyy');
-}
-
 /**
  * sortObjectsByDate
  */

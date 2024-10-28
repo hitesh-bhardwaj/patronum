@@ -112,8 +112,8 @@ export default function UseCasesDetail() {
                 pageTitle2={'for Sales & Marketing'}
                 pagePara={"Empowering Sales and Marketing Teams with Delegated Administration"}
                 imgSrc={'use-cases-sales-marketing.svg'}
-                title={"Patronum for Sales & Marketing - Patronum"}
-                description={"Patronum provides a better way to Google Workspace (GSuite) Management. Patronum fully automates all the administrator and user tasks to ensure an efficient, effective and secure process."}
+                title={"Patronum for Sales Marketing - Patronum"}
+                description={"Patronum for Sales and Marketing transforms Google Workspace into a powerhouse for teams, enabling them to excel in the competitive sales arena while achieving targets and maintaining motivation, all without the constant need for IT intervention."}
                 url={"patronum-for-sales-marketing"}
                 img={"patronum-for-sales-marketing.jpg"}
                 date_published={"2023-04-20T12:00"}

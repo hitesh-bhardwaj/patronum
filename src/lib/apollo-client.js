@@ -24,6 +24,12 @@ export function _createApolloClient() {
       uri: removeLastTrailingSlash(process.env.WORDPRESS_GRAPHQL_ENDPOINT),
     }),
     cache: new InMemoryCache({
+      watchQuery: {
+        fetchPolicy: 'no-cache', // Disable caching for watchQuery
+      },
+      query: {
+        fetchPolicy: 'no-cache', // Disable caching for query
+      },
       typePolicies: {
         RootQuery: {
           queryType: true,

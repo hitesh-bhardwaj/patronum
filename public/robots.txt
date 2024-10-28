@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Disallow: /_next/
+Disallow: /_next/static/
 
 # Sitemaps
 Sitemap: https://www.patronum.io/sitemap_index.xml

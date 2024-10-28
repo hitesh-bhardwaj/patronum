@@ -36,8 +36,8 @@ export default function Legal() {
                 pageTitle1="Legal"
                 pagePara="Navigate & Understand Your Rights with Patronum"
                 imgSrc="legal.svg"
-                title={"Legal - Patronum"}
-                description={"Patronum provides a better way to Google Workspace (GSuite) Management. Patronum fully automates all the administrator and user tasks to ensure an efficient, effective and secure process."}
+                title={"Legal- Patronum"}
+                description={"Legal - Patronum: Stay informed about your rights and responsibilities as a Patronum user with comprehensive access to our terms of use, privacy policies, compliance documentation, and legal disclaimers."}
                 url={"legal"}
                 img={"homepage.jpg"}
                 date_published={"2020-12-21T12:00"}

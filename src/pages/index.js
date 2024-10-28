@@ -1,4 +1,4 @@
-import react, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import SplitType from "split-type";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
@@ -18,6 +18,7 @@ import UseCasesMobile from "@/components/PageComponents/HomePage/UseCasesMobile"
 import SideMenu from "@/components/SideMenu";
 import Head from "next/head";
 import Layout from "@/components/Stairs";
+import Ratings from "@/components/PageComponents/HomePage/Ratings";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -411,6 +412,7 @@ export default function Home({ recentPosts }) {
       <Layout>
         <main>
           <Hero />
+          <Ratings />
           <Features />
           <UseCases />
           <UseCasesMobile />

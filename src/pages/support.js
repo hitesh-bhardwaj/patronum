@@ -1,5 +1,6 @@
 import PageLayout from "@/components/PageLayout";
 import SectionBreakSmall from "@/components/PageLayout/SectionBreakSmall";
+import PrimaryButton from "@/components/PageLayout/Button/PrimaryButton";
 
     function openCrispChat() {
         if (window.$crisp) {
@@ -11,7 +12,7 @@ import SectionBreakSmall from "@/components/PageLayout/SectionBreakSmall";
 
 export default function Support(){
 
-    const SupportCard = ( {featTitle, featImg, featPara1, featPara2, btnText} ) => {
+    const SupportCard = ( {featTitle, featImg, featPara1, btnText} ) => {
         return ( 
             <>
                 <div className="section-list-item">
@@ -29,24 +30,8 @@ export default function Support(){
                             <p className="content-p fadeUp">
                                 {featPara1}
                             </p>
-                            <p className="content-p fadeUp">
-                                {featPara2}
-                            </p>
                             <div className="section-list-button">
-                                <button onClick={openCrispChat}  className="btn fadeUp" aria-label="Open Crisp Chat">
-                                    <span data-primary className="btn-text">
-                                        {btnText}
-                                    </span>
-                                    <div aria-hidden="true" className="btn-circle">
-                                        <div className="btn-circle-text">
-                                            {btnText}
-                                            <svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" className="btn-icon">
-                                                <path data-v-f4363f2a fillRule="evenodd" clipRule="evenodd" d="M3.82475e-07 5.625L7.625 5.625L4.125 9.125L5 10L10 5L5 -4.37114e-07L4.125 0.874999L7.625 4.375L4.91753e-07 4.375L3.82475e-07 5.625Z" className="btn-path fill-current" />
-                                                <path data-v-f4363f2a fillRule="evenodd" clipRule="evenodd" d="M3.82475e-07 5.625L7.625 5.625L4.125 9.125L5 10L10 5L5 -4.37114e-07L4.125 0.874999L7.625 4.375L4.91753e-07 4.375L3.82475e-07 5.625Z" className="btn-path fill-current" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </button>
+                                <PrimaryButton onClick={openCrispChat} btnText={btnText} scroll={false} link={""} />
                             </div>
                         </div>
                         <div className="section-list-body-left fadeUp">
@@ -72,11 +57,9 @@ export default function Support(){
                 date_modified={"2024-04-04T12:00"}
                 keywords={"Patronum Google Workspace Manager"}
                 >
-
                     <SectionBreakSmall 
                         sectionBreakText="With Patronum you get expert help and support directly from within the application."
                     />
-
                     <section className="features-main useCases-main">
                         <div className="container">
                             <div className="content">
@@ -101,8 +84,6 @@ export default function Support(){
                             </div>
                         </div>
                     </section>
-                    
-                    
             </PageLayout>
         </>
     )

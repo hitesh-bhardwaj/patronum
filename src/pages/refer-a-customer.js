@@ -11,8 +11,8 @@ export default function PartnersDetail() {
                 pageTitle2="A Customer"
                 pagePara="Join forces with Patronum! Let’s redefine efficiency and productivity together!"
                 imgSrc="partner-with-us.svg"
-                title={"Refer A Customer - Patronum"}
-                description={"Patronum provides a better way to Google Workspace (GSuite) Management. Patronum fully automates all the administrator and user tasks to ensure an efficient, effective and secure process."}
+                title={"Refer a Customer - Patronum"}
+                description={"Refer a Customer - Patronum: Even if you're not a reseller partner, you can refer a customer and earn commission on a completed sale. Fill out the form below or contact us directly."}
                 url={"refer-a-customer"}
                 img={"homepage.jpg"}
                 date_published={"2023-05-13T12:00"}

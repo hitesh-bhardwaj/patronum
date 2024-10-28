@@ -11,8 +11,8 @@ export default function PartnersDetail() {
                 pageTitle2="A Partner"
                 pagePara="Join forces with Patronum! Let’s redefine efficiency and productivity together!"
                 imgSrc="partner-with-us.svg"
-                title={"Become A Partner - Patronum"}
-                description={"Patronum provides a better way to Google Workspace (GSuite) Management. Patronum fully automates all the administrator and user tasks to ensure an efficient, effective and secure process."}
+                title={"Become a Partner - Patronum"}
+                description={"Become a Partner - Patronum: As a Patronum partner, you'll receive sales, marketing, and support assistance to win new clients and generate recurring revenue. Get in touch to get started."}
                 url={"become-a-partner"}
                 img={"homepage.jpg"}
                 date_published={"2023-05-13T12:00"}

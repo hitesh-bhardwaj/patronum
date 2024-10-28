@@ -113,7 +113,7 @@ export default function UseCasesDetail() {
                 pagePara={"Maximize Budget Efficiency with Patronum's Smart Automations built for Educators"}
                 imgSrc={'use-cases-education.svg'}
                 title={"Patronum for Education - Patronum"}
-                description={"Patronum provides a better way to Google Workspace (GSuite) Management. Patronum fully automates all the administrator and user tasks to ensure an efficient, effective and secure process."}
+                description={"Patronum for Education simplifies Google Workspace management, alleviating the burden of manual setup and constant adjustments, and automating processes from email signatures to resource allocation, enhancing education quality."}
                 url={"patronum-for-education"}
                 img={"patronum-for-education.jpg"}
                 date_published={"2023-04-20T12:00"}

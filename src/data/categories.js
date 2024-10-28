@@ -24,6 +24,16 @@ export const QUERY_CATEGORY_BY_SLUG = gql`
       id
       name
       slug
+      seo {
+        canonicalUrl
+        description
+        title
+        openGraph {
+          image {
+            url
+          }
+        }
+      }
     }
   }
 `;

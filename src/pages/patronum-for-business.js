@@ -103,7 +103,7 @@ export default function UseCasesDetail() {
                 pagePara={"Tailored Google Workspace Management for Forward-Thinking Companies"}
                 imgSrc={'use-cases_business.svg'}
                 title={"Patronum for Business - Patronum"}
-                description={"Patronum provides a better way to Google Workspace (GSuite) Management. Patronum fully automates all the administrator and user tasks to ensure an efficient, effective and secure process."}
+                description={"Patronum for Business empowers companies with smart automation and a sophisticated interface, cutting through technical challenges to ensure effective digital workspace governance."}
                 url={"patronum-for-business"}
                 img={"patronum-for-business.jpg"}
                 date_published={"2023-04-20T12:00"}

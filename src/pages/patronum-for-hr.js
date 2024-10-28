@@ -136,8 +136,8 @@ export default function UseCasesDetail() {
                 pageTitle2={'for HR'}
                 pagePara={"Automating HR Processes for Enhanced Workforce Management via Google Workspace."}
                 imgSrc={'use-cases-hr.svg'}
-                title={"Patronum for HR - Patronum"}
-                description={"Patronum provides a better way to Google Workspace (GSuite) Management. Patronum fully automates all the administrator and user tasks to ensure an efficient, effective and secure process."}
+                title={"Patronum for HR (Human Resource) - Patronum"}
+                description={"Patronum for HR - Patronum acts as a bridge between your HR system and Google Workspace, automating onboarding, offboarding, and employee management, enabling focus on strategic initiatives."}
                 url={"patronum-for-hr"}
                 img={"patronum-for-hr.jpg"}
                 date_published={"2023-04-18T12:00"}
