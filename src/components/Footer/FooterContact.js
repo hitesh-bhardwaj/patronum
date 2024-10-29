@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import InstallButton from "../PageLayout/Button/InstallButton";
 import DemoButton from "../PageLayout/Button/DemoButton";
 
@@ -28,7 +27,7 @@ export default function FooterContact() {
 
                         <div className="right">
                             <div className="footer-lottie fadeUp">
-                                <Image 
+                                <img
                                     src="/assets/footer/rocket.gif"
                                     alt="A rocket taking off in space."
                                     width={500}

@@ -3,6 +3,8 @@ import PageLoader from '../PageLoader';
 import dynamic from 'next/dynamic'
 import { ModalProvider } from '../Modals/ModalContext';
 import Cookie from '../Cookie';
+import PreLoader from '../PreLoader';
+import { useEffect, useState } from 'react';
 
 const CrispWithNoSSR = dynamic(() => import('@/components/Crisp'), { ssr: false });
 const DynamicHeader = dynamic(() => import('../Header'), { ssr: false });
@@ -11,9 +13,26 @@ const DynamicInstallModal = dynamic(() => import('../Modals/InstallModal'), { ss
 const DynamicDemoModal = dynamic(() => import('../Modals/DemoModal'), { ssr: false });
 
 export default function Layout({ children }) {
+    const [showPreloader, setShowPreloader] = useState(true);
+
+    useEffect(() => {
+        const hasVisited = sessionStorage.getItem('hasVisited');
+        if (!hasVisited) {
+          setShowPreloader(true);
+          const preloaderTimeout = setTimeout(() => {
+            setShowPreloader(false);
+            sessionStorage.setItem('hasVisited', 'true');
+          }, 4000);
+          return () => clearTimeout(preloaderTimeout);
+        }
+        else {
+          setShowPreloader(false);
+        }
+      }, []);
 
     return (
         <>
+            {showPreloader && <PreLoader />}
             <Cookie />
             <CrispWithNoSSR />
             <ModalProvider>
@@ -23,8 +42,7 @@ export default function Layout({ children }) {
                             <m.div
                                 initial={{ top: 0, height: 0 }}
                                 exit={{ height: '100%' }}
-                                transition={{ease: "easeOut", duration: 0.4}}
-                                // transition={{ ease: [[0.215, 0.61, 0.355, 1]], duration: 0.4 }}
+                                transition={{ ease: "easeOut", duration: 0.4 }}
                                 className='bg-primary h-0 w-full relative origin-bottom' />
                         </LazyMotion>
                     </div>

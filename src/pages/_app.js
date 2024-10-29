@@ -5,7 +5,6 @@ import { Analytics } from "@vercel/analytics/react"
 import { ReactLenis } from '@studio-freight/react-lenis';
 import { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import PreLoader from '@/components/PreLoader';
 import Pixi from '@/components/Pixi';
 import useWindowSize from "@/components/Header/useWindowSize";
 import { Suspense } from 'react';
@@ -13,23 +12,7 @@ import { GoogleTagManager } from '@next/third-parties/google'
 import Script from 'next/script';
 
 export default function App({ Component, pageProps, router }) {
-  const [showPreloader, setShowPreloader] = useState(true);
   const { width } = useWindowSize();
-
-  useEffect(() => {
-    const hasVisited = sessionStorage.getItem('hasVisited');
-    if (!hasVisited) {
-      setShowPreloader(true);
-      const preloaderTimeout = setTimeout(() => {
-        setShowPreloader(false);
-        sessionStorage.setItem('hasVisited', 'true');
-      }, 4000);
-      return () => clearTimeout(preloaderTimeout);
-    }
-    else {
-      setShowPreloader(false);
-    }
-  }, []);
 
   useEffect(() => {
     const handleRouteChange = () => {
@@ -167,7 +150,6 @@ export default function App({ Component, pageProps, router }) {
           }}
         />
 
-      {showPreloader && <PreLoader />}
       <ReactLenis root options={{ duration: 0.8 }}>
         <AnimatePresence mode="wait">
           <Component {...pageProps} key={router.route} />
