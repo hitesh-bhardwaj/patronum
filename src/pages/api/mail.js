@@ -9,7 +9,6 @@ export default async (req, res) => {
 
             await mail.send({
                 to: ['paul.lees@bespinlabs.com', 'b@weareenigma.com', 'sales@bespinlabs.com'],
-                // to: 'hitesh@weareenigma.com',
                 from: {
                     name: 'Patronum Webforms',
                     email: 'webforms@patronum.io'
