@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { m, LazyMotion, domAnimation } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -57,7 +57,8 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
     const [isResourcesDropdownOpen, setResourcesDropdownOpen] = useState(false);
 
     return (
-        <motion.aside
+        <LazyMotion features={domAnimation}>
+        <m.aside
             initial={false}
             variants={MobileNavVariants}
             animate={isOpen ? "open" : "closed"}
@@ -72,15 +73,15 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                         <span>Close</span>
                     </button>
                 </div>
-                <motion.ul variants={NavParentVariants} className="my-12">
-                <motion.li 
+                <m.ul variants={NavParentVariants} className="my-12">
+                <m.li 
                         variants={NavChildren}
                         className='px-4'>
                         <Link href="/about-us" className="flex items-center py-4 text-2xl font-normal text-gray-900 border-b" aria-label='About' >
                             <span className="ml-3">About</span>
                         </Link>
-                    </motion.li>
-                    <motion.li variants={NavChildren}>
+                    </m.li>
+                    <m.li variants={NavChildren}>
                         <div className='px-4'>
                             <div className='flex justify-between border-b'>
                                 <Link href="/features" className="flex items-center w-[80%] py-4 text-2xl font-normal text-gray-900" aria-label='Features' >
@@ -172,8 +173,8 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                 </Link>
                             </li>
                         </ul>
-                    </motion.li>
-                    <motion.li variants={NavChildren}>
+                    </m.li>
+                    <m.li variants={NavChildren}>
                         <div className='px-4'>
                             <div className='flex justify-between border-b'>
                                 <Link href="/use-cases" className="flex w-[80%] items-center py-4 text-2xl font-normal text-gray-900" aria-label='Use Cases' >
@@ -254,15 +255,15 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                 </Link>
                             </li>
                         </ul>
-                    </motion.li>
-                    <motion.li 
+                    </m.li>
+                    <m.li 
                         variants={NavChildren} 
                         className='px-4'>
                         <Link href="/pricing" className="flex items-center py-4 border-b text-2xl font-normal text-gray-900" aria-label='Pricing' >
                             <span className="ml-3">Pricing</span>
                         </Link>
-                    </motion.li>
-                    <motion.li variants={NavChildren}>
+                    </m.li>
+                    <m.li variants={NavChildren}>
                         <div className='px-4'>
                             <button onClick={() => setResourcesDropdownOpen(!isResourcesDropdownOpen)} type="button" className="flex items-center py-4 border-b w-full text-2xl font-normal text-gray-900" aria-label='Open Resources Dropdown'>
                                 <span className="flex-1 ml-3 text-left w-4/5 whitespace-nowrap">Resources</span>
@@ -352,24 +353,25 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                 </Link>
                             </li>
                         </ul>
-                    </motion.li>
-                    <motion.li 
+                    </m.li>
+                    <m.li 
                         variants={NavChildren} 
                         className='px-4'>
                         <Link href="/partner-with-us" className="flex items-center py-4 border-b text-2xl font-normal text-gray-900" >
                             <span className="ml-3">Partners</span>
                         </Link>
-                    </motion.li>
-                    <motion.li 
+                    </m.li>
+                    <m.li 
                         variants={NavChildren}
                         className='px-4'>
                         <Link href="/support" className="flex items-center py-4 border-b text-2xl font-normal text-gray-900">
                             <span className="ml-3">Support</span>
                         </Link>
-                    </motion.li>
-                </motion.ul>
+                    </m.li>
+                </m.ul>
             </div>
-        </motion.aside>
+        </m.aside>
+        </LazyMotion>
     );
 };
 

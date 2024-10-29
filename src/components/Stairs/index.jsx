@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { domAnimation, LazyMotion, m } from 'framer-motion';
 import PageLoader from '../PageLoader';
 import dynamic from 'next/dynamic'
 import { ModalProvider } from '../Modals/ModalContext';
@@ -15,17 +15,20 @@ export default function Layout({ children }) {
     return (
         <>
             <Cookie />
+            <CrispWithNoSSR />
             <ModalProvider>
                 <div className='page'>
                     <div className='fixed w-screen h-screen left-0 top-0 pointer-events-none z-[10000]'>
-                        <motion.div
-                            initial={{ top: 0, height: 0 }}
-                            exit={{ height: '100%' }}
-                            transition={{ ease: [[0.215, 0.61, 0.355, 1]], duration: 0.4 }}
-                            className='bg-primary h-0 w-full relative origin-bottom' />
+                        <LazyMotion features={domAnimation}>
+                            <m.div
+                                initial={{ top: 0, height: 0 }}
+                                exit={{ height: '100%' }}
+                                transition={{ease: "easeOut", duration: 0.4}}
+                                // transition={{ ease: [[0.215, 0.61, 0.355, 1]], duration: 0.4 }}
+                                className='bg-primary h-0 w-full relative origin-bottom' />
+                        </LazyMotion>
                     </div>
                     <PageLoader />
-                    <CrispWithNoSSR />
                     <DynamicHeader />
                     {children}
                     <DynamicFooter />
