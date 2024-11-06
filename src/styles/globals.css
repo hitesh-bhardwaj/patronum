@@ -89,7 +89,7 @@
 .text-destructive {
   color: hsl(var(--destructive));
 }
-
+  
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -422,7 +422,6 @@ section{
   transform: translateY(100%);
   opacity: 0;
 }
-
 .preload-img-span{
   width: 14vw;
   height: auto;
@@ -526,7 +525,6 @@ section{
 }
 
 /* Nav Dropdown */
-
 .nav-dropdown{
   position: absolute;
   width: 100%;
@@ -592,16 +590,13 @@ section{
   font-weight: 500;
   transition: all 0.3s ease;
 }
-
 .nav-drop-text{
   font-size: 0.9vw;
 }
-
 /*================ Header CSS STOP Main============= */
 
 
 /*================ IndexPage CSS START Main============= */
-
 /* Hero Section - 1920 */
 .hero-para{
   font-size: 1.25vw;
@@ -1333,7 +1328,6 @@ section{
 
 .footer-contact{
   margin-top: 10vw;
-  /* background-color: #fdfdfd; */
   height: 100%;
 }
 .footer-contact__content{

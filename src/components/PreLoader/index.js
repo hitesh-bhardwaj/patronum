@@ -86,7 +86,7 @@ export default function PreLoader() {
       visibility: "hidden",
     });
 
-    return () => tl.kill(); // Cleanup the timeline on component unmount
+    return () => tl.kill();
   }, []);
 
   return (

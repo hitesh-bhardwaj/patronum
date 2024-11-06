@@ -42,36 +42,7 @@ export default function PreLoader() {
         opacity: 1,
         duration: 0.4,
         delay: -0.4
-      })
-  
-      // // Till 60
-      // tl.to(counter, {
-      //   innerHTML: "60",
-      //   duration: 1.5,
-      //   ease: s.bezier_1,
-      //   onUpdate: () => {
-      //     const percentage = parseInt(counter.innerHTML);
-      //     // Format the counter with leading zeros
-      //     const formattedCounter = String(percentage).padStart(2, "0");
-      //     counter.innerHTML = formattedCounter;
-      //   },
-      // })
-      // .to(progressBar, {
-      //   width: '60%',
-      //   duration: 1.5,
-      //   ease: s.bezier_1,
-      // }, "-=1.5")
-      // .to(".loadingCounter, .progressMainLoader", {
-      //   y: "20vh",
-      //   duration: 1.5,
-      //   ease: s.bezier_1,
-      // }, "-=1.5")
-      // .to(".loaderLogoMain", {
-      //   top: '34vh',
-      //   duration: 1.5,
-      //   ease: s.bezier_1,
-      // }, "-=1.5")
-      
+      })      
       // Till 100
       .to(counter, {
           innerHTML: "100",
@@ -155,35 +126,6 @@ export default function PreLoader() {
         duration: 0.4,
         delay: -0.3
       })
-  
-      // // Till 60
-      // tl.to(counter, {
-      //   innerHTML: "60",
-      //   duration: 1.5,
-      //   ease: s.bezier_1,
-      //   onUpdate: () => {
-      //     const percentage = parseInt(counter.innerHTML);
-      //     // Format the counter with leading zeros
-      //     const formattedCounter = String(percentage).padStart(2, "0");
-      //     counter.innerHTML = formattedCounter;
-      //   },
-      // })
-      // .to(progressBar, {
-      //   width: '60%',
-      //   duration: 1.5,
-      //   ease: s.bezier_1,
-      // }, "-=1.5")
-      // .to(".loadingCounter, .progressMainLoader", {
-      //   y: "20vh",
-      //   duration: 1.5,
-      //   ease: s.bezier_1,
-      // }, "-=1.5")
-      // .to(".loaderLogoMain", {
-      //   top: '28vh',
-      //   duration: 1.5,
-      //   ease: s.bezier_1,
-      // }, "-=1.5")
-      
       // Till 100
       .to(counter, {
           innerHTML: "100",
@@ -233,7 +175,7 @@ export default function PreLoader() {
       });
   
       return () => {
-        tl.kill(); // Kill the timeline on component unmount
+        tl.kill();
       };
     }, []);
   } else {
@@ -267,35 +209,6 @@ export default function PreLoader() {
         duration: 0.3,
         delay: -0.3
       })
-  
-      // // Till 65
-      // tl.to(counter, {
-      //   innerHTML: "60",
-      //   duration: 1.5,
-      //   ease: s.bezier_1,
-      //   onUpdate: () => {
-      //     const percentage = parseInt(counter.innerHTML);
-      //     // Format the counter with leading zeros
-      //     const formattedCounter = String(percentage).padStart(2, "0");
-      //     counter.innerHTML = formattedCounter;
-      //   },
-      // })
-      // .to(progressBar, {
-      //   width: '60%',
-      //   duration: 1.5,
-      //   ease: s.bezier_1,
-      // }, "-=1.5")
-      // .to(".loadingCounter, .progressMainLoader", {
-      //   y: "20vh",
-      //   duration: 1.5,
-      //   ease: s.bezier_1,
-      // }, "-=1.5")
-      // .to(".loaderLogoMain", {
-      //   top: '26vh',
-      //   duration: 1.5,
-      //   ease: s.bezier_1,
-      // }, "-=1.5")
-      
       // Till 100
       .to(counter, {
           innerHTML: "100",
