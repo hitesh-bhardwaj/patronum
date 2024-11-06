@@ -1,4 +1,5 @@
 import { useState } from "react";
+import LazyIframe from "./LazyIframe";
 
 
 const VideoPlayer = ( {videoId, videoCover, disabled} ) => {

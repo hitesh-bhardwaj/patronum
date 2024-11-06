@@ -66,17 +66,6 @@
   word-break: normal;
 }
 
-.orb-canvas {
-  width: 100%;
-  height: 110%;
-  pointer-events: none;
-  z-index: -1;
-  position: fixed;
-  top: 0;
-  left: 0;
-  opacity: 0;
-}
-
 /* Background CSS END*/
 
 /* Transition */
@@ -440,275 +429,13 @@ section{
 }
 
 /*================ Header CSS START Main============= */
-.header{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  z-index: 100;
-  padding: 0.8vw 0;
-  transition: all 300ms ease;
-}
-
-.scrolled {
-  background: #ffffffa3;
-  backdrop-filter: blur(12px);
-  box-shadow: 1px 1px 10px #00000010;
-}
-
-.header-container{
-  width: 88%;
-  height: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.logo-container{
-  width: 11.5vw;
-}
-.logo-container img{
-  width: 100%;
-  height: auto;
-}
-.logo-container a{
-  position: relative;
-  z-index: 1;
-}
-.navbar-list {
-  display: flex;
-  align-items: center;
-  gap: 3vw;
-  font-family: 'Aeonik';
-  font-weight: 500;
-}
-.nav-list-item>.page-link{
-  font-size: 1.1vw;
-  color: var(--text-body);
-  transition: all 0.3s ease;
-  position: relative;
-  z-index: 2;
-}
-.nav-list-item>.page-link svg{
-  width: 0.7vw;
-  display: inline-block;
-  margin-left: 5px;
-  margin-bottom: 2px;
-}
-.nav-list-item>.page-link.dropdown::before{
-  content: '';
-  height: 70px;
-  background: none;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-}
-.nav-list-item>.page-link span{
-  position: relative;
-}
-.nav-list-item>.page-link span::after{
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  background: var(--primary);
-  width: 100%;
-  height: 1.5px;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: var(--transition-2);
-}
-.nav-list-item:hover>.page-link span::after{
-  transform: scaleX(1);
-  transform-origin: left;
-}
-.nav-list-item:hover>.page-link{
-  color: var(--primary);
-}
 
 /* Nav Dropdown */
-
-.nav-dropdown{
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 0;
-  padding-top: 5vw;
-  background: #ffffff;
-  border-top: 2px solid var(--gray-100);
-  z-index: -1;
-  box-shadow: 1px 1px 10px #00000010;
-  border-end-start-radius: 20px;
-  border-end-end-radius: 20px;
-}
-
-.nav-dropdown-list{
-  position: relative;
-  width: 85%;
-  margin: auto;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  padding: 2vw 0;
-  justify-items: center;
-  row-gap: 2vw;
-}
-
-.nav-drop-list-hover{
-  transition: all 0.3s ease;
-  padding: 6px 20px;
-  border-radius: 18px;
-  display: flex;
-  align-items: center;
-  gap: 1vw;
-}
-.nav-drop-list-hover:hover{
-  background: var(--gray-100);
-}
-
-.nav-drop-list-hover .img{
-  width: 4vw;
-  height: 4vw;
-  border-radius: 50%;
-  background-color: #2A2A2A;
-  transition: all 0.3s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1vw;
-}
-.nav-drop-list-hover .img img{
-  width: 100%;
-}
-.nav-drop-list-hover:hover .img{
-  scale: 0.95;
-  background-color: var(--primary);
-}
-
-.nav-drop-list-hover:hover .nav-drop-title{
-  color: var(--primary);
-}
-.nav-drop-title{
-  font-size: 1.2vw;
-  color: var(--text-head);
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.nav-drop-text{
-  font-size: 0.9vw;
-}
 
 /*================ Header CSS STOP Main============= */
 
 
 /*================ IndexPage CSS START Main============= */
-
-/* Hero Section - 1920 */
-#hero{
-  height: 100vh;
-  width: 100vw;
-}
-.google-logo-hero{
-  height: auto;
-  width: 100%;
-}
-.hero-para{
-  font-size: 1.25vw;
-  width: 24vw;
-  font-weight: 500;
-}
-.hero-right{
-  width: 40%;
-  text-align: end;
-  position: relative;
-}
-.hero-img-bg {
-  position: absolute;
-  height: 45%;
-  width: 81%;
-  background: white;
-  top: 26%;
-  left: 10%;
-  z-index: -1;
-  scale: 0;
-}
-.hero-img{
-  width: 32vw;
-  height: 100%;
-  opacity: 0;
-  transform: translateX(100px);
-}
-
-/* Scroll Down Button 1920px */
-.scroll-down-btn{
-  position: absolute;
-  bottom: 4%;
-  left: 6%;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.scroll-down-btn .scroll-down-a{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.scroll-down-btn .scroll-down-a>svg{
-  width: 4.5vw;
-  height: 4.5vw;
-}
-.hero-svg-circle{
-  stroke-width: 1.5px;
-  stroke-dasharray: 0% 300%;
-}
-.scroll-down-btn .scroll-down-a .scroll-img-container{
-  display: block;
-  position: absolute;
-  overflow: hidden;
-  height: 1.3vw;
-  width: max-content;
-}
-.scroll-down-btn .scroll-down-a .scroll-img-container img{
-  transition: var(--transition-btn);
-  height: 100%;
-}
-.scroll-down-btn .scroll-down-a .scroll-img-container img[data="first"]{
-  transform: translateY(-100%) scale(0);
-}
-.scroll-down-btn:hover .scroll-down-a .scroll-img-container img[data="first"]{
-  transform: translateY(0%) scale(1);
-}
-.scroll-down-btn .scroll-down-a .scroll-img-container img[data="second"]{
-  transform: translateY(-100%);
-}
-.scroll-down-btn:hover .scroll-down-a .scroll-img-container img[data="second"]{
-  transform: translateY(100%) scale(0);
-}
-
-.hero-anim{
-  overflow: hidden;
-  line-height: 1;
-}
-.hero-anim .span{
-  display: block;
-  line-height: 1.5;
-  margin-top: -1vw;
-  transform: translateY(100%);
-}
-.google-logo-hero.span{
-  margin-top: unset;
-  display: block;
-}
-.hero-para span .word{
-  transform: translateY(100%);
-  opacity: 0;
-}
-/* Hero Section - 1920 End - Index*/
 
 /* Features Section - 1920 Start - Index*/
 
@@ -1457,9 +1184,14 @@ section{
 
 /*===================== About Page CSS Main START===================*/
 #pageHero{
-  height: 76vh;
+  height: fit-content;
   width: 100%;
   position: relative;
+}
+.hero-para{
+  font-size: 1.25vw;
+  width: 24vw;
+  font-weight: 500;
 }
 .page-hero-flex{
   padding-top: 10%;
@@ -1495,12 +1227,6 @@ section{
   width: 100%;
   height: 100%;
 }
-.scroll-down-btn[data-page-hero]{
-  position: unset;
-  width: fit-content;
-  height: fit-content;
-  margin-top: 2.5vw;
-}
 
 /* Page Animations Hero */
 .page-hero-anim{
@@ -1524,7 +1250,6 @@ section{
 
 
 .about-top{
-  padding-top: 2.5vw;
   display: block;
 }
 .section-head-sm{
@@ -2595,18 +2320,6 @@ input[type=number] {
   margin-top: -3.5vw;
 }
 
-.scroll-down-btn{
-  bottom: 5%;
-  left: 0;
-}
-.scroll-down-btn .scroll-down-a>svg{
-  width: 11vw;
-  height: 11vw;
-}
-.scroll-down-btn .scroll-down-a .scroll-img-container {
-  height: 3.5vw;
-}
-
 /* Link Button */
 .link-btn{
   font-size: 3.5vw;
@@ -2648,7 +2361,7 @@ input[type=number] {
   display: none;
 }
 .feat-accordion-item.open .accordion-content{
-  height: 180vw;
+  height: 170vw;
 }
 .feat-accordion-btn{
   width: 8vw;
@@ -2793,7 +2506,7 @@ input[type=number] {
     width: 4vw;
   }
   .faq-item.open .faq-content{
-    height: 42vw;
+    height: 45vw;
   }
   .faq-item .faq-content .content-p{
     font-size: 3.5vw;
@@ -2896,15 +2609,12 @@ input[type=number] {
 
 /* About Page 900px */
 @media screen and (max-width: 1024px){
-  #pageHero{
-    height: 95vh;
-  }
   .page-hero-flex{
     flex-direction: column;
     padding-top: 20%;
     justify-content: center;
     height: auto;
-    margin-bottom: 15vw;
+    margin-bottom: 10vw;
   }
   .page-hero-left{
     width: 100%;
@@ -2923,9 +2633,6 @@ input[type=number] {
   }
   .page-hero-img{
     width: 60%;
-  }
-  .scroll-down-btn[data-page-hero]{
-    margin-top: 8vw;
   }
 
   /* About Page Second Section */
@@ -3422,9 +3129,6 @@ input[type=number] {
 
 
 /* Hero Home Page */
-  #hero{
-    height: 95vh;
-  }
   .container-lg{
     padding-left: 0;
     padding-right: 0;
@@ -3438,18 +3142,6 @@ input[type=number] {
     width: 100%;
     margin-bottom: 5vw;
   }
-  .scroll-down-btn{
-  bottom: 0%;
-  left: 0;
-  }
-  .scroll-down-btn .scroll-down-a>svg{
-  width: 20vw;
-  height: 20vw;
-  }
-  .scroll-down-btn .scroll-down-a .scroll-img-container {
-    height: 5.5vw;
-  }
-
   /* Link Button */
 .link-btn{
   font-size: 4.2vw;
@@ -3495,15 +3187,12 @@ input[type=number] {
   .footer-iso img{
     width: 20%;
   }
-  #pageHero{
-    height: 90vh;
-  }
   .page-hero-flex{
     flex-direction: column;
     padding-top: 30%;
     justify-content: center;
     height: auto;
-    margin-bottom: 18vw;
+    margin-bottom: 15vw;
   }
   .page-hero-left{
     width: 100%;
@@ -3522,9 +3211,6 @@ input[type=number] {
   }
   .page-hero-img{
     width: 70%;
-  }
-  .scroll-down-btn[data-page-hero]{
-    margin-top: 12vw;
   }
 
   /* Blogs 640px*/

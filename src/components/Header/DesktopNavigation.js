@@ -201,7 +201,7 @@ const DesktopNavigation = () => {
                                             </Link>
                                             <div className='w-full text-center'>
                                                 <PrimaryButton
-                                                    link="/pricing"
+                                                    href="/pricing"
                                                     btnText="Get Started"
                                                 />
                                             </div>

@@ -25,7 +25,7 @@ const Header = () => {
     return (
         <>
             <header className={`fixed top-0 left-0 w-screen z-[100] lg:py-[0.8vw] duration-300 ease-in-out transition-all md:py-[3vw] py-[4vw] ${isScrolled ? 'bg-white/50 backdrop-blur-md shadow-md' : ''}`}>
-                <div className='w-[88%] mx-auto flex items-center justify-between md:w-[90%]'>
+                <div className='lg:w-[88%] mx-auto flex items-center justify-between w-[90%]'>
                     <div className='xl:w-[11.5vw] md:w-[25vw] w-[42%]'>
                         <Link href='/' className='z-[1] relative'>
                             <Image

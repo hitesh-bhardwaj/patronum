@@ -2,20 +2,12 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import SplitType from "split-type";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
 import BreadcrumbComponent from "../BreadCrumb";
+import ScrollButton from "@/components/Buttons/ScrollButton";
 
-gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero({ pageTitle1, pageTitle2, pagePara, imgSrc, breadcrumbTitle, breadcrumbLink  }) {
-
-    const handleSmoothScroll = () => {
-        gsap.to(window, {
-            duration: 1.5,
-            scrollTo: { y: "#second-section", offsetY: 30 },
-            ease: "power3.inOut",
-        });
-    };
 
     useEffect(() => {
         const isFirstTimeLoading = sessionStorage.getItem('hasVisited') === null;
@@ -54,7 +46,9 @@ export default function Hero({ pageTitle1, pageTitle2, pagePara, imgSrc, breadcr
                     opacity: 0,
                     duration: 0.5,
                 }, "-=1.5")
-                .to(".hero-svg-circle", {
+                .fromTo(".hero-svg-circle", {
+                    strokeDasharray: "0% 300%",
+                }, {
                     strokeDasharray: "310% 300%",
                     duration: 1.2,
                 }, '-=1.8')
@@ -101,7 +95,7 @@ export default function Hero({ pageTitle1, pageTitle2, pagePara, imgSrc, breadcr
                         </div>
                     </div>
 
-                    <div className="mb-[4%] breadanim">
+                    <div className="lg:mb-[4%] md:mb-[4vw] mb-[5vw] breadanim">
                         <BreadcrumbComponent 
                             middleLinkName={breadcrumbTitle}
                             middleLink={breadcrumbLink}
@@ -110,17 +104,7 @@ export default function Hero({ pageTitle1, pageTitle2, pagePara, imgSrc, breadcr
 
                     <span className="hero-hr" />
 
-                    <div data-page-hero className="scroll-down-btn">
-                        <button className="scroll-down-a" onClick={handleSmoothScroll} aria-label="Scroll Down">
-                            <svg width="86" height="86" viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle className="hero-svg-circle" cx="43" cy="43" r="42" stroke="currentColor" strokeWidth="2" />
-                            </svg>
-                            <span className="scroll-img-container">
-                                <img data="first" src="/assets/icons/arrow-down-big.svg" alt="arrow-image" />
-                                <img data="second" src="/assets/icons/arrow-down-big.svg" alt="arrow-image" />
-                            </span>
-                        </button>
-                    </div>
+                    <ScrollButton className="!static !h-fit !w-fit mt-[10vw] md:mt-[6vw] lg:mt-[4vw]" />
                 </div>
             </section>
         </>

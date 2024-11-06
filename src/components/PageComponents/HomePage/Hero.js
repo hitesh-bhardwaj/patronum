@@ -1,150 +1,109 @@
-import { useModal } from "@/components/Modals/ModalContext";
 import gsap from "gsap";
-import { useEffect } from "react"
-import SplitType from "split-type";
-import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
+import { useEffect, useRef } from "react"
 import useWindowSize from "@/components/Header/useWindowSize";
 import Image from "next/image";
 import DemoButton from "@/components/Buttons/DemoButton";
 import CallButton from "@/components/Buttons/CallButton";
-
-gsap.registerPlugin(ScrollToPlugin);
+import ScrollButton from "@/components/Buttons/ScrollButton";
 
 function supportsHEVCAlpha() {
     const navigator = window.navigator;
     const ua = navigator.userAgent.toLowerCase()
     const hasMediaCapabilities = !!(navigator.mediaCapabilities && navigator.mediaCapabilities.decodingInfo)
-    const isSafari = ((ua.indexOf('safari') != -1) && (!(ua.indexOf('chrome')!= -1) && (ua.indexOf('version/')!= -1)))
+    const isSafari = ((ua.indexOf('safari') != -1) && (!(ua.indexOf('chrome') != -1) && (ua.indexOf('version/') != -1)))
     return isSafari && hasMediaCapabilities
 }
 
-export default function Hero(){
+export default function Hero() {
     const { width } = useWindowSize();
-    const { openModal } = useModal();
 
-    const openVideoModal = () => {
-        openModal('video');
-    }
-
-    const handleSmoothScroll = () => {
-        gsap.to(window, {
-            duration: 1.5,
-            scrollTo: {y: "#features", offsetY: 50},
-            ease: "power3.inOut",
-        });
-    };
+    const section = useRef(null);
+    const para = useRef(null);
 
     useEffect(() => {
         const isFirstTimeLoading = sessionStorage.getItem('hasVisited') === null;
         let delayTime = isFirstTimeLoading ? 3.4 : 0.6;
 
         let ctx = gsap.context(() => {
-
-            const text = new SplitType('.hero-para', {types: 'words'});
-            const heroPara = document.querySelectorAll('.hero-para span .word');
-            const heroAnim = document.querySelectorAll(".hero-anim .span");
+            const heroPara = para.current;
+            const heroAnim = section.current.querySelectorAll(".hero-anim .span");
 
             const tl = gsap.timeline();
-            tl.to(heroAnim, 0.8,{
-                y: 0,
+
+            tl.fromTo(heroAnim, 0.8, {
+                yPercent: 105,
+            }, {
+                yPercent: 0,
                 stagger: 0.1,
                 ease: 'power2.out',
             }, `+=${delayTime}`)
-            .to(heroPara, 0.4,{
-                y: 0,
-                opacity: 1,
-                ease: "Power2.out",
-                stagger: 0.01,
-            }, '-=0.8')
-            .from('.hero-button-anim', 0.8, {
-                y: 30,
-                opacity: 0,
-                ease: "power2.out",
-            }, '-=0.8')
-            .to(".hero-svg-circle",{
-                strokeDasharray: "310% 300%",
-                duration: 1.5,
-                ease: "power2.out",
-            }, '-=0.8')
-            .from(".scroll-img-container",{
-                y: -10, 
-                opacity: 0,
-                duration: 0.8
-            }, '-=0.5')
-            .to('.hero-img', 2,{
-                x: 0,
-                opacity: 1,
-                ease: "expo.out",
-            }, '-=2');
+                .fromTo(heroPara, 0.4, {
+                    yPercent: 100,
+                    opacity: 0
+                }, {
+                    yPercent: 0,
+                    opacity: 1,
+                    ease: "Power2.out",
+                    stagger: 0.1,
+                }, '-=0.8')
+                .from('.hero-button-anim', 0.8, {
+                    y: 30,
+                    opacity: 0,
+                    ease: "power2.out",
+                }, '-=0.8')
+                .fromTo(".hero-svg-circle", {
+                    strokeDasharray: "0% 300%",
+                }, {
+                    strokeDasharray: "310% 300%",
+                    duration: 1.5,
+                    ease: "power2.out",
+                }, '-=0.8')
+                .from(".scroll-img-container", {
+                    y: -10,
+                    opacity: 0,
+                    duration: 0.8
+                }, '-=0.5')
+                .fromTo('.hero-img', 2, {
+                    x: 100,
+                    opacity: 0
+                }, {
+                    x: 0,
+                    opacity: 1,
+                    ease: "expo.out",
+                }, '-=2');
         });
         return () => ctx.revert();
     }, []);
 
-      useEffect(() => {
+    useEffect(() => {
         const player = document.getElementById('player');
         player.src = supportsHEVCAlpha() ? '/assets/home/Dashboard-Hero.mov' : '/assets/home/Dashboard-Hero.webm';
-      }, [supportsHEVCAlpha]);
+    }, [supportsHEVCAlpha]);
 
-    return(
+    return (
         <>
-            <section id="hero">
-                <div className="container-lg relative">
-                    <div className="lg:px-[4vw] flex-all">
-                        <div className="lg:w-1/2 w-full flex flex-col lg:gap-y-10 gap-y-[7vw] lg:pt-0 md:pt-[20vw] pt-[25vw]">
-                            
-                                <h1 className='title-5xl lg:block hidden'>
-                                    <div className='hero-anim Your'>
-                                        <span className="span">Your{" "}</span>
-                                    </div>
-                                    <div className="hero-anim">
-                                        <Image
-                                            priority={false}
-                                            src="/assets/home/google-workspace.svg"
-                                            alt='Google Logo'
-                                            title='Google Logo'
-                                            className='google-logo-hero span'
-                                            width={750}
-                                            height={100}
-                                        />
-                                    </div>
-                                    <span className="hidden">Google Workspace{" "}</span>
-                                    <div className='hero-anim'>
-                                        <span className="span">
-                                            Manager
-                                        </span>
-                                    </div>
-                                </h1>
-                                {width >= 1024 ? (
-                                    <></>
-                            ) : (
-                                <h1 className='title-5xl lg:hidden block'>
-                                    <div className="flex flex-col gap-y-[2vw]">
-                                        <div className="hero-anim flex items-end gap-x-[2vw] w-full">
-                                            <span className="span">
-                                                Your
-                                            </span>
-                                            <span className="hidden"> Google Workspace </span>
-                                            <span className="md:w-[45%] w-[50%] mt-[1.5vw] span">
-                                                <Image className="w-full google" src="/assets/home/google.svg" priority={false} width={307} height={100} alt="google logo image" />
-                                            </span>
-                                        </div>
-                                        <div className="hero-anim">
-                                            <span className="md:w-[70%] w-[80%] mt-[1.5vw] span">
-                                                <Image className="w-full" src="/assets/home/workspace.svg" priority={false} width={450} height={100} alt="google workspace image"/>
-                                            </span>
-                                        </div>
-                                        <div className="hero-anim">
-                                            <span className="span manager">
-                                                Manager
-                                            </span>
-                                        </div>
-                                    </div>
-                                </h1>
-                            )}
-                            <p className="hero-para">
-                                <span>
-                                    The only tool you'll ever need to streamline your Google Workspace management.
-                                </span>
+            <section ref={section} id="hero" className="lg:h-screen w-screen h-fit">
+                <div className="container-lg relative lg:mb-0 mb-[10vw]">
+                    <div className="lg:px-[4vw] lg:flex lg:items-center lg:justify-between h-full w-full lg:mb-0 mb-[10vw] md:mb-[15vw]">
+                        <div className="pt-[25vw] gap-y-[7vw] flex-col w-full flex md:pt-[20vw] lg:pt-0 lg:gap-y-10 lg:w-[55%]">
+                            <h1 className='title-5xl hero-anim flex flex-wrap justify-start items-end space-y-[2vw] lg:space-y-0'>
+                                <div className='overflow-hidden lg:w-full mb-[1vw] w-fit'>
+                                    <span className="span block">Your{" "}</span>
+                                </div>
+                                <div className="overflow-hidden w-fit ml-[2.5vw] lg:ml-0">
+                                    <Image className="span lg:w-[15.5vw] md:w-[40vw] w-[43vw]" src="/assets/home/google.svg" priority={false} width={250} height={100} alt="google logo image" />
+                                </div>
+                                <div className="overflow-hidden w-fit lg:ml-[1.4vw] tablet:ml-0">
+                                    <Image className="span lg:mt-[0.2vw] md:mt-[3vw] mt-[2.5vw] lg:w-[23vw] md:w-[62vw] w-[95%]" src="/assets/home/workspace.svg" priority={false} width={400} height={100} alt="google workspace image" />
+                                </div>
+                                <span className="hidden">Google Workspace{" "}</span>
+                                <div className='overflow-hidden w-full'>
+                                    <span className="span block leading-[115%]">Manager</span>
+                                </div>
+                            </h1>
+
+                            <p ref={para} className="lg:text-[1.25vw] lg:w-[24vw] md:mb-0 font-medium md:text-[4vw] md:w-full text-[5vw] mb-[5vw]">
+                                The only tool you'll ever need to streamline your Google Workspace management.
                             </p>
 
                             <div className="flex md:gap-[2vw] flex-col md:flex-row gap-[5vw]">
@@ -152,34 +111,23 @@ export default function Hero(){
                                 <CallButton />
                             </div>
                         </div>
-                        
-                        <div className="hero-right">
-                            <video 
+
+                        <div className="lg:w-[40%] lg:block text-end relative hidden">
+                            <video
                                 width={600}
                                 height={530}
                                 id="player"
                                 loading="lazy"
                                 alt='patronum dashboard showcase'
-                                className='hero-img'
-                                muted 
+                                className='hero-img w-full'
+                                muted
                                 autoPlay
                                 loop
                                 playsInline>
                             </video>
                         </div>
                     </div>
-
-                    <div className="scroll-down-btn">
-                        <button className="scroll-down-a" onClick={handleSmoothScroll} aria-label="Scroll Down">
-                            <svg width="86" height="86" viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle className="hero-svg-circle" cx="43" cy="43" r="42" stroke="currentColor" strokeWidth="2"/>
-                            </svg>
-                            <span className="scroll-img-container">
-                                <img data="first" src="/assets/icons/arrow-down-big.svg" alt="arrow-image"/>
-                                <img data="second" src="/assets/icons/arrow-down-big.svg" alt="arrow-image"/>
-                            </span>
-                        </button>
-                    </div>
+                    <ScrollButton />
                 </div>
             </section>
         </>
