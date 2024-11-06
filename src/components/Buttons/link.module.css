@@ -62,19 +62,19 @@
   .linkBtn .btnImages {
     width: 5vw;
   }
-  .linkBtn svg {
+  .linkBtn .img {
     width: 5vw;
   }
 }
 
 @media screen and (max-width: 540px) {
-  .link-btn {
+  .linkBtn {
     font-size: 4.2vw;
   }
-  .link-btn .btn-images {
+  .linkBtn .btnImages {
     width: 7vw;
   }
-  .link-btn svg {
-    width: 6vw;
+  .linkBtn .img {
+    width: 4vw;
   }
 }

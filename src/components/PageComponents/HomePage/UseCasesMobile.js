@@ -1,10 +1,10 @@
-import LinkButton from "@/components/PageLayout/Button/LinkButton"
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
+import LinkButton from '@/components/Buttons/LinkButton';
 
 export default function UseCasesMobile() {
 
@@ -72,8 +72,8 @@ export default function UseCasesMobile() {
                 </div>
                 <div className="section-button-container">
                     <LinkButton 
-                        btnText={"Learn More"}
-                        link={link}
+                        href={link}
+                        btnText="Learn More"
                     />
                 </div>
             </div>

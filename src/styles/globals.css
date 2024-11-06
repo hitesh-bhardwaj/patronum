@@ -1261,11 +1261,6 @@ section{
   transition: 0.3s;
 }
 
-.blog-card .link-btn{
-  position: absolute;
-  bottom: 2.5vw;
-}
-
 /* Blogs Section - 1920 End - Index*/
 
 /* FAQs Section - 1920 Start - Index*/
@@ -3488,9 +3483,6 @@ input[type=number] {
   }
   .blog-card-title{
     font-size: 4.8vw;
-  }
-  .blog-card .link-btn{
-    bottom: 5vw;
   }
 
 

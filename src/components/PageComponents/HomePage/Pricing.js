@@ -1,8 +1,8 @@
 import React, { useState  } from 'react';
 import PricingCard from './PricingCard';
-import PrimaryButton from '@/components/PageLayout/Button/PrimaryButton';
 import PriceDropDown from './PriceDropDown';
 import { Switch } from "@/components/ui/switch"
+import PrimaryButton from '@/components/Buttons/PrimaryButton';
 
 const Pricing = () => {
     const [isAnnual, setIsAnnual] = useState(true);
@@ -67,7 +67,7 @@ const Pricing = () => {
                         </div>
 
                         <div className="section-btn-container">
-                            <PrimaryButton link="/pricing" btnText="Detailed Pricing"/>
+                            <PrimaryButton href="/pricing" btnText="Detailed Pricing"/>
                         </div>
                     </div>
                 </div>

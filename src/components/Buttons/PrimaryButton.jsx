@@ -1,9 +1,9 @@
 import Link from "next/link";
 import styles from "./primary.module.css";
 
-const PrimaryButton = ({link, btnText, className="", ...props }) => {
+const PrimaryButton = ({btnText, className="", ...props }) => {
     return(
-        <Link {...props} href={link} className={`${styles.btn} fadeUp ${className}`}>
+        <Link {...props} className={`${styles.btn} fadeUp ${className}`}>
             <span data-primary className={styles.btnText}>
                 {btnText}
             </span>

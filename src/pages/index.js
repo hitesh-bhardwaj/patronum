@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import SplitType from "split-type";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
+// import SplitType from "split-type";
+// import gsap from "gsap";
+// import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { NextSeo } from "next-seo";
 
 import Hero from '@/components/PageComponents/HomePage/Hero';
@@ -15,30 +15,24 @@ import RelatedPosts from "@/components/PageComponents/BlogPage/RelatedPosts";
 
 import { getHomePagePosts } from '@/lib/posts';
 import UseCasesMobile from "@/components/PageComponents/HomePage/UseCasesMobile";
-import SideMenu from "@/components/SideMenu";
+// import SideMenu from "@/components/SideMenu";
 import Head from "next/head";
 import Ratings from "@/components/PageComponents/HomePage/Ratings";
 import Layout from "@/components/Layout";
 import { useDevice } from "@/utils/useDevice";
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
+
+import dynamic from "next/dynamic";
+
+const SideMenu = dynamic(() => import("@/components/SideMenu"), { ssr: false });
 
 export default function Home({ recentPosts }) {
   const { isDesktop } = useDevice();
   const [isClient, setIsClient] = useState(false);
-  const [showSideMenu, setShowSideMenu] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
-    const checkScreenSize = () => {
-      setShowSideMenu(window.innerWidth > 1024);
-    };
-    // Check on mount
-    checkScreenSize();
-    // Add event listener
-    window.addEventListener('resize', checkScreenSize);
-    // Cleanup event listener
-    return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
   const sections = [
@@ -51,230 +45,201 @@ export default function Home({ recentPosts }) {
     { id: "#faqs", name: "FAQ's" },
   ];
 
-  useEffect(() => {
-    const headings = document.querySelectorAll('.text-anim');
+  // useEffect(() => {
+  //   const headings = document.querySelectorAll('.text-anim');
 
-    headings.forEach((heading) => {
-      let ctx = gsap.context(() => {
-        const textAnim = new SplitType(heading, { types: 'words' });
-        let animWord = heading.querySelectorAll('.word');
+  //   headings.forEach((heading) => {
+  //     let ctx = gsap.context(() => {
+  //       const textAnim = new SplitType(heading, { types: 'words' });
+  //       let animWord = heading.querySelectorAll('.word');
 
-        gsap.from(animWord, {
-          scrollTrigger: {
-            trigger: heading,
-            start: 'top 80%',
-          },
-          duration: 0.6,
-          yPercent: 100,
-          stagger: 0.04,
-        });
-      });
-      return () => ctx.revert();
-    });
-  }, []);
+  //       gsap.from(animWord, {
+  //         scrollTrigger: {
+  //           trigger: heading,
+  //           start: 'top 80%',
+  //         },
+  //         duration: 0.6,
+  //         yPercent: 100,
+  //         stagger: 0.04,
+  //       });
+  //     });
+  //     return () => ctx.revert();
+  //   });
+  // }, []);
 
-  useEffect(() => {
-    const fadeUps = document.querySelectorAll('.fadeUp');
+  // useEffect(() => {
+  //   const fadeUps = document.querySelectorAll('.fadeUp');
 
-    let ctx = gsap.context(() => {
-      fadeUps.forEach((fadeUp) => {
-        gsap.fromTo(
-          fadeUp,
-          {
-            opacity: 0,
-            y: 40,
-          },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            ease: 'Power3.out',
-            scrollTrigger: {
-              trigger: fadeUp,
-              start: 'top 85%',
-            },
-          }
-        );
-      });
-    });
-    return () => ctx.revert();
-  }, []);
+  //   let ctx = gsap.context(() => {
+  //     fadeUps.forEach((fadeUp) => {
+  //       gsap.fromTo(
+  //         fadeUp,
+  //         {
+  //           opacity: 0,
+  //           y: 40,
+  //         },
+  //         {
+  //           opacity: 1,
+  //           y: 0,
+  //           duration: 0.6,
+  //           ease: 'Power3.out',
+  //           scrollTrigger: {
+  //             trigger: fadeUp,
+  //             start: 'top 85%',
+  //           },
+  //         }
+  //       );
+  //     });
+  //   });
+  //   return () => ctx.revert();
+  // }, []);
 
-  useEffect(() => {
-    const pricingCards = document.querySelectorAll('.pricing-card-wrapper .pricing-card');
-    // Ensure GSAP library is imported and available
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".pricing-card-wrapper",
-        start: "top 85%",
-      }
-    });
+  // useEffect(() => {
+  //   const pricingCards = document.querySelectorAll('.pricing-card-wrapper .pricing-card');
+  //   // Ensure GSAP library is imported and available
+  //   let tl = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: ".pricing-card-wrapper",
+  //       start: "top 85%",
+  //     }
+  //   });
 
-    tl.fromTo(
-      pricingCards,
-      {
-        opacity: 0,
-        y: 100,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: 'Power2.out',
-      }
-    );
-  }, []);
+  //   tl.fromTo(
+  //     pricingCards,
+  //     {
+  //       opacity: 0,
+  //       y: 100,
+  //     },
+  //     {
+  //       opacity: 1,
+  //       y: 0,
+  //       duration: 0.6,
+  //       stagger: 0.1,
+  //       ease: 'Power2.out',
+  //     }
+  //   );
+  // }, []);
 
-  useEffect(() => {
-    const blogCards = document.querySelectorAll('.blog-card-wrapper .blog-cards');
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".blog-card-wrapper",
-        start: "top 85%",
-      }
-    });
+  // useEffect(() => {
+  //   const blogCards = document.querySelectorAll('.blog-card-wrapper .blog-cards');
+  //   let tl = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: ".blog-card-wrapper",
+  //       start: "top 85%",
+  //     }
+  //   });
 
-    tl.fromTo(
-      blogCards,
-      {
-        opacity: 0,
-        y: 100,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: 'Power2.out',
-      }
-    );
-  }, []);
+  //   tl.fromTo(
+  //     blogCards,
+  //     {
+  //       opacity: 0,
+  //       y: 100,
+  //     },
+  //     {
+  //       opacity: 1,
+  //       y: 0,
+  //       duration: 0.6,
+  //       stagger: 0.1,
+  //       ease: 'Power2.out',
+  //     }
+  //   );
+  // }, []);
 
-  useEffect(() => {
-    const fadeRights = document.querySelectorAll('.fadeRight');
+  // useEffect(() => {
+  //   const fadeRights = document.querySelectorAll('.fadeRight');
 
-    let ctx = gsap.context(() => {
-      fadeRights.forEach((fadeRight) => {
-        gsap.fromTo(
-          fadeRight,
-          {
-            opacity: 0,
-            x: 100,
-          },
-          {
-            opacity: 1,
-            x: 0,
-            duration: 0.6,
-            stagger: 0.05,
-            ease: 'Power3.out',
-            scrollTrigger: {
-              trigger: fadeRight,
-              start: 'top 85%',
-            },
-          }
-        );
-      });
-    });
-    return () => ctx.revert();
-  }, []);
+  //   let ctx = gsap.context(() => {
+  //     fadeRights.forEach((fadeRight) => {
+  //       gsap.fromTo(
+  //         fadeRight,
+  //         {
+  //           opacity: 0,
+  //           x: 100,
+  //         },
+  //         {
+  //           opacity: 1,
+  //           x: 0,
+  //           duration: 0.6,
+  //           stagger: 0.05,
+  //           ease: 'Power3.out',
+  //           scrollTrigger: {
+  //             trigger: fadeRight,
+  //             start: 'top 85%',
+  //           },
+  //         }
+  //       );
+  //     });
+  //   });
+  //   return () => ctx.revert();
+  // }, []);
 
-  useEffect(() => {
-    const lineDraws = document.querySelectorAll('.lineDraw');
+  // useEffect(() => {
+  //   const lineDraws = document.querySelectorAll('.lineDraw');
 
-    let ctx = gsap.context(() => {
-      lineDraws.forEach((lineDraw) => {
-        gsap.fromTo(
-          lineDraw,
-          {
-            scaleX: 0,
-            transformOrigin: 'left'
-          },
-          {
-            scaleX: 1,
-            duration: 1,
-            ease: 'Power4.out',
-            scrollTrigger: {
-              trigger: lineDraw,
-              start: 'top 90%',
-            },
-          }
-        );
-      });
-    });
-    return () => ctx.revert();
-  }, []);
+  //   let ctx = gsap.context(() => {
+  //     lineDraws.forEach((lineDraw) => {
+  //       gsap.fromTo(
+  //         lineDraw,
+  //         {
+  //           scaleX: 0,
+  //           transformOrigin: 'left'
+  //         },
+  //         {
+  //           scaleX: 1,
+  //           duration: 1,
+  //           ease: 'Power4.out',
+  //           scrollTrigger: {
+  //             trigger: lineDraw,
+  //             start: 'top 90%',
+  //           },
+  //         }
+  //       );
+  //     });
+  //   });
+  //   return () => ctx.revert();
+  // }, []);
 
-  useEffect(() => {
-    const scaleAnims = document.querySelectorAll('.scaleAnim');
+  // useEffect(() => {
+  //   const scaleAnims = document.querySelectorAll('.scaleAnim');
 
-    let ctx = gsap.context(() => {
-      scaleAnims.forEach((scaleAnim) => {
-        gsap.fromTo(
-          scaleAnim,
-          {
-            scale: 1.1,
-            y: 40,
-            opacity: 0,
-            transformOrigin: 'bottom center'
-          },
-          {
-            y: 0,
-            scale: 1,
-            opacity: 1,
-            duration: 0.8,
-            ease: 'Power4.out',
-            scrollTrigger: {
-              trigger: scaleAnim,
-              start: 'top bottom',
-              end: 'bottom 85%',
-            },
-          }
-        );
-      });
-    });
-    return () => ctx.revert();
-  }, []);
+  //   let ctx = gsap.context(() => {
+  //     scaleAnims.forEach((scaleAnim) => {
+  //       gsap.fromTo(
+  //         scaleAnim,
+  //         {
+  //           scale: 1.1,
+  //           y: 40,
+  //           opacity: 0,
+  //           transformOrigin: 'bottom center'
+  //         },
+  //         {
+  //           y: 0,
+  //           scale: 1,
+  //           opacity: 1,
+  //           duration: 0.8,
+  //           ease: 'Power4.out',
+  //           scrollTrigger: {
+  //             trigger: scaleAnim,
+  //             start: 'top bottom',
+  //             end: 'bottom 85%',
+  //           },
+  //         }
+  //       );
+  //     });
+  //   });
+  //   return () => ctx.revert();
+  // }, []);
 
   return (
     <>
       <NextSeo
-        title="Patronum - Best Platform for Google Workspace (GSuite) Management"
-        description="Patronum provides a better way to manage Google Workspace (GSuite). Patronum is your Google Workspace (GSuite) manager that fully automates all administrator and user tasks to ensure an efficient, effective, and secure process."
-        openGraph={{
-          url: "https://www.patronum.io",
-          title: "Patronum - Best Platform for Google Workspace (GSuite) Management",
-          "description": "Patronum provides a better way to Google Workspace (GSuite) Management. Patronum fully automates all the administrator and user tasks to ensure an efficient, effective and secure process.",
-          images: [
-            {
-              url: "https://www.patronum.io/assets/seo/homepage.jpg",
-              width: 1200,
-              height: 630,
-              alt: "Patronum",
-              type: "image/png",
-            },
-          ],
-          siteName: "Patronum",
-        }}
-
-        additionalMetaTags={[
-          {
-            name: "twitter:title",
-            content: "Patronum - Best Platform for Google Workspace (GSuite) Management"
-          },
-          {
-            name: "twitter:description",
-            content: "Patronum provides a better way to Google Workspace (GSuite) Management. Patronum fully automates all the administrator and user tasks to ensure an efficient, effective and secure process."
-          },
-          {
-            name: "twitter:image",
-            content: "https://www.patronum.io/assets/seo/homepage.jpg"
-          },
-        ]}
+        canonical="https://www.patronum.io"
+        languageAlternates={[{
+          hrefLang: 'en-US',
+          href: 'https://www.patronum.io'
+        }]}
       />
       <Head>
-        <link rel="canonical" href="https://www.patronum.io" />
-        <link rel="alternate" href="https://www.patronum.io" hreflang="x-default" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -412,7 +377,7 @@ export default function Home({ recentPosts }) {
           }} />
 
       </Head>
-      {showSideMenu && <SideMenu sections={sections} />}
+      {isClient && isDesktop && <SideMenu sections={sections} />}
       <Layout>
         <main>
           <Hero />

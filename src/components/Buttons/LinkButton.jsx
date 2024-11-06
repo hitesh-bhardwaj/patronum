@@ -1,9 +1,9 @@
 import Link from "next/link";
 import styles from "./link.module.css";
 
-const LinkButton = ({ btnText, ...props }) => {
+const LinkButton = ({ btnText, className=" ", ...props }) => {
     return (
-        <Link {...props} className={styles.linkBtn}>
+        <Link {...props} className={`${styles.linkBtn} ${className}`}>
             <span className={styles.btnText}>{btnText}</span>
             <span className="screen-reader-text">About This</span>
             <span className={styles.btnImages}>
