@@ -1,18 +1,8 @@
 import SimplexNoise from 'simplex-noise';
 import debounce from 'debounce';
-import gsap from 'gsap';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
-export default function Pixi() {
-
-    const canvasRef = useRef(null);
-    useEffect(() => {
-        gsap.to(canvasRef.current, {
-            opacity: 1,
-            duration: 2,
-            delay: 3
-        });
-    }, [])
+export default function Background() {
 
     useEffect(() => {
         import('pixi.js').then((PIXI) => {
@@ -151,7 +141,7 @@ export default function Pixi() {
         
     return (
         <>
-            <canvas className="orb-canvas" ref={canvasRef} />
+            <canvas className="orb-canvas h-screen w-screen z-[-1] pointer-events-none fixed top-0 left-0" />
         </>
     )
 }

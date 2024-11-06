@@ -5,7 +5,10 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // productionBrowserSourceMaps: true,
+  productionBrowserSourceMaps: true,
+  experimental: {
+    nextScriptWorkers: true,
+  },
   images: {
     remotePatterns: [
       {
@@ -104,6 +107,16 @@ const nextConfig = {
       {
         source: '/patronum-awarded-best-ease-of-use-and-best-value-by-capterra/',
         destination: '/patronum-awarded-best-ease-of-use-and-best-value-by-capterra',
+        permanent: true,
+      },
+      {
+        source: '/category',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/page',
+        destination: '/blog',
         permanent: true,
       },
     ]

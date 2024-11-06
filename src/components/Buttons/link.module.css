@@ -1,0 +1,80 @@
+/* Link Button */
+.linkBtn {
+  display: inline-flex;
+  font-size: 1.2vw;
+  align-items: center;
+  font-weight: 500;
+  position: relative;
+  color: var(--text-head);
+  font-family: "Aeonik";
+  gap: 0.2vw;
+}
+
+.linkBtn:hover {
+  color: var(--primary);
+}
+
+.linkBtn .btnText {
+  width: 100%;
+  position: relative;
+  transition: var(--transition-2);
+}
+
+.btnText:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 95%;
+  transform: scaleX(0);
+  transform-origin: center;
+  background: var(--primary);
+  transition: var(--transition-2);
+}
+
+.linkBtn:hover .btnText:after {
+  transform: scaleX(1);
+}
+
+.linkBtn .btnImages {
+  width: 2vw;
+  overflow: hidden;
+}
+.linkBtn .btnImages div {
+  display: inline-flex;
+  gap: 6px;
+  width: 200%;
+  transition: var(--transition-2);
+  transform: translateX(-50%);
+}
+.linkBtn:hover .btnImages .div {
+  transform: translateX(0%);
+}
+.linkBtn .img {
+  width: 1.2vw;
+}
+
+@media screen and (max-width: 1024px) {
+  .linkBtn {
+    font-size: 3.5vw;
+  }
+  .linkBtn .btnImages {
+    width: 5vw;
+  }
+  .linkBtn svg {
+    width: 5vw;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .link-btn {
+    font-size: 4.2vw;
+  }
+  .link-btn .btn-images {
+    width: 7vw;
+  }
+  .link-btn svg {
+    width: 6vw;
+  }
+}

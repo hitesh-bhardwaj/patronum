@@ -9,13 +9,16 @@ export default function Testimonial() {
 
     useEffect(() => {
         let ctx = gsap.context(() => {
+
             const testicard = document.querySelectorAll('.testi-slider .mySwiper');
+            
             let tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".testi-slider",
                     start: "top 90%",
                 }
             });
+        
             tl.fromTo(
                 testicard,
                 {
@@ -41,9 +44,13 @@ export default function Testimonial() {
                     <div className="container">
                         <div className="section-head">
                             <h2 className="title-4xl text-anim">
+                                <span>
                                     Client Speak:{" "}
+                                </span>
                                 <br />
+                                <span>
                                     Real Stories, Real Impact!
+                                </span>
                             </h2>
                         </div>
                     </div>

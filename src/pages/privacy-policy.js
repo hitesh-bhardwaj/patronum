@@ -1,6 +1,6 @@
+import Layout from "@/components/Layout";
 import Hero from "@/components/PageLayout/Hero";
 import MetaData from "@/components/PageLayout/MetaData";
-import Layout from "@/components/Stairs";
 import styles from "@/styles/cookie-policy.module.css";
 
 export default function Page() {
@@ -15,6 +15,8 @@ export default function Page() {
         date_modified={"2024-04-04T07:08"}
         url={"privacy-policy"}
         img={"homepage.jpg"}
+        breadcrumbTitle={"Legal"}
+        breadcrumbLink={"legal"}
       />
       <Layout>
         <Hero

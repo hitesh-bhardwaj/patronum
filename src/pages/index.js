@@ -1,29 +1,45 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import SplitType from "split-type";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { NextSeo } from "next-seo";
+
 import Hero from '@/components/PageComponents/HomePage/Hero';
 import Features from '@/components/PageComponents/HomePage/Features';
 import About from '@/components/PageComponents/HomePage/About';
 import UseCases from '@/components/PageComponents/HomePage/UseCases';
 import Faqs from '@/components/PageComponents/HomePage/Faqs';
+import Pricing from '@/components/PageComponents/HomePage/Pricing';
+import Testimonial from '@/components/PageLayout/Testimonial';
+import RelatedPosts from "@/components/PageComponents/BlogPage/RelatedPosts";
+
+import { getHomePagePosts } from '@/lib/posts';
 import UseCasesMobile from "@/components/PageComponents/HomePage/UseCasesMobile";
-import Layout from "@/components/Stairs";
+import SideMenu from "@/components/SideMenu";
+import Head from "next/head";
 import Ratings from "@/components/PageComponents/HomePage/Ratings";
-import { SplitInLine } from "@/components/Utils/SplitText";
-import useWindowSize from "@/components/Header/useWindowSize";
-import dynamic from "next/dynamic";
-import Blogs from "@/components/PageComponents/HomePage/Blogs";
-import Pricing from "@/components/PageComponents/HomePage/Pricing";
-import Testimonial from "@/components/PageLayout/Testimonial";
-import Script from "next/script";
+import Layout from "@/components/Layout";
+import { useDevice } from "@/utils/useDevice";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const DynamicSideMenu = dynamic(() => import('@/components/SideMenu'), {ssr: false});
+export default function Home({ recentPosts }) {
+  const { isDesktop } = useDevice();
+  const [isClient, setIsClient] = useState(false);
+  const [showSideMenu, setShowSideMenu] = useState(false);
 
-export default function Home() {
-  const { width } = useWindowSize();
+  useEffect(() => {
+    setIsClient(true);
+    const checkScreenSize = () => {
+      setShowSideMenu(window.innerWidth > 1024);
+    };
+    // Check on mount
+    checkScreenSize();
+    // Add event listener
+    window.addEventListener('resize', checkScreenSize);
+    // Cleanup event listener
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
 
   const sections = [
     { id: '#hero', name: 'Introduction' },
@@ -37,10 +53,12 @@ export default function Home() {
 
   useEffect(() => {
     const headings = document.querySelectorAll('.text-anim');
+
     headings.forEach((heading) => {
       let ctx = gsap.context(() => {
-        SplitInLine(heading);
-        let animWord = heading.querySelectorAll('.line .line-internal');
+        const textAnim = new SplitType(heading, { types: 'words' });
+        let animWord = heading.querySelectorAll('.word');
+
         gsap.from(animWord, {
           scrollTrigger: {
             trigger: heading,
@@ -57,6 +75,7 @@ export default function Home() {
 
   useEffect(() => {
     const fadeUps = document.querySelectorAll('.fadeUp');
+
     let ctx = gsap.context(() => {
       fadeUps.forEach((fadeUp) => {
         gsap.fromTo(
@@ -82,7 +101,59 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    const pricingCards = document.querySelectorAll('.pricing-card-wrapper .pricing-card');
+    // Ensure GSAP library is imported and available
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".pricing-card-wrapper",
+        start: "top 85%",
+      }
+    });
+
+    tl.fromTo(
+      pricingCards,
+      {
+        opacity: 0,
+        y: 100,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: 'Power2.out',
+      }
+    );
+  }, []);
+
+  useEffect(() => {
+    const blogCards = document.querySelectorAll('.blog-card-wrapper .blog-cards');
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".blog-card-wrapper",
+        start: "top 85%",
+      }
+    });
+
+    tl.fromTo(
+      blogCards,
+      {
+        opacity: 0,
+        y: 100,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: 'Power2.out',
+      }
+    );
+  }, []);
+
+  useEffect(() => {
     const fadeRights = document.querySelectorAll('.fadeRight');
+
     let ctx = gsap.context(() => {
       fadeRights.forEach((fadeRight) => {
         gsap.fromTo(
@@ -110,6 +181,7 @@ export default function Home() {
 
   useEffect(() => {
     const lineDraws = document.querySelectorAll('.lineDraw');
+
     let ctx = gsap.context(() => {
       lineDraws.forEach((lineDraw) => {
         gsap.fromTo(
@@ -135,6 +207,7 @@ export default function Home() {
 
   useEffect(() => {
     const scaleAnims = document.querySelectorAll('.scaleAnim');
+
     let ctx = gsap.context(() => {
       scaleAnims.forEach((scaleAnim) => {
         gsap.fromTo(
@@ -198,21 +271,11 @@ export default function Home() {
             content: "https://www.patronum.io/assets/seo/homepage.jpg"
           },
         ]}
-
-        additionalLinkTags={[
-          {
-            rel: "canonical",
-            href: "https://www.patronum.io",
-          },
-          {
-            rel: "alternate",
-            href: "https://www.patronum.io",
-            hreflang: "en",
-          }
-        ]}
       />
-        <Script
-          async
+      <Head>
+        <link rel="canonical" href="https://www.patronum.io" />
+        <link rel="alternate" href="https://www.patronum.io" hreflang="x-default" />
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(
@@ -244,8 +307,7 @@ export default function Home() {
             ),
           }}
         />
-        <Script
-          async
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(
@@ -281,8 +343,8 @@ export default function Home() {
             ),
           }}
         />
-        <Script
-          async
+
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(
@@ -348,27 +410,46 @@ export default function Home() {
               }
             )
           }} />
-      {width >= 1024 ? ( <DynamicSideMenu sections={sections} /> 
-      ) : (
-        <></>
-      )}
+
+      </Head>
+      {showSideMenu && <SideMenu sections={sections} />}
       <Layout>
         <main>
           <Hero />
           <Ratings />
           <Features />
-          {width >= 1024 ? (
-            <UseCases />
-          ) : (
-            <UseCasesMobile />
+          {isClient && (
+            <>
+              {isDesktop ? (
+                <UseCases />
+              ) : (
+                <UseCasesMobile />
+              )}
+            </>
           )}
           <Pricing />
           <About />
           <Testimonial />
-          <Blogs />
+          <RelatedPosts
+            sectionPara={"Discover a World of Knowledge with Expert Tips, In-Depth Tricks, Latest News, and Comprehensive Resources for Mastering Google Workspace."}
+            recentPosts={recentPosts}
+            sectionTitle={"Our Latest Blogs"}
+          />
           <Faqs />
         </main>
       </Layout>
     </>
   );
+}
+
+export async function getStaticProps() {
+
+  const recentPosts = await getHomePagePosts();
+
+  return {
+    props: {
+      recentPosts,
+    },
+    revalidate: 500,
+  };
 }

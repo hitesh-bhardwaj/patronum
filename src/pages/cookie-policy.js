@@ -1,6 +1,6 @@
+import Layout from "@/components/Layout";
 import Hero from "@/components/PageLayout/Hero";
 import MetaData from "@/components/PageLayout/MetaData";
-import Layout from "@/components/Stairs";
 import styles from "@/styles/cookie-policy.module.css";
 
 export default function Page() {
@@ -23,6 +23,8 @@ export default function Page() {
             "This policy explains the way in which cookies are used on our website."
           }
           imgSrc={"cookie-policy.svg"}
+          breadcrumbTitle={"Legal"}
+          breadcrumbLink={"legal"}
         />
         <section className="" id="second-section">
           <div className="container">

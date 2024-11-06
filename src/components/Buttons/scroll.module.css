@@ -1,0 +1,72 @@
+.scrollDownBtn {
+  position: absolute;
+  bottom: 4%;
+  left: 6%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.scrollDownBtn .scrollDownA {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.scrollDownBtn .scrollDownA > svg {
+  width: 4.5vw;
+  height: 4.5vw;
+}
+.scrollDownBtn .scrollDownA .scrollImgContainer {
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  height: 1.3vw;
+  width: max-content;
+}
+.scrollDownBtn .scrollDownA .scrollImgContainer img {
+  transition: var(--transition-btn);
+  height: 100%;
+}
+.scrollDownBtn .scrollDownA .scrollImgContainer img[data-first] {
+  transform: translateY(-100%) scale(0);
+}
+.scrollDownBtn:hover .scrollDownA .scrollImgContainer img[data-first] {
+  transform: translateY(0%) scale(1);
+}
+.scrollDownBtn .scrollDownA .scrollImgContainer img[data-second] {
+  transform: translateY(-100%);
+}
+.scrollDownBtn:hover .scrollDownA .scrollImgContainer img[data-second] {
+  transform: translateY(100%) scale(0);
+}
+
+@media screen and (max-width: 1024px) {
+  .scrollDownBtn {
+    position: static;
+    width: 11vw;
+    height: 11vw;
+  }
+  .scrollDownBtn .scrollDownA > svg {
+    width: 11vw;
+    height: 11vw;
+  }
+  .scrollDownBtn .scrollDownA .scrollImgContainer {
+    height: 3.5vw;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .scrollDownBtn {
+    width: 20vw;
+    height: 20vw;
+  }
+  .scrollDownBtn .scrollDownA > svg {
+    width: 20vw;
+    height: 20vw;
+  }
+  .scrollDownBtn .scrollDownA .scrollImgContainer {
+    height: 5.5vw;
+  }
+}

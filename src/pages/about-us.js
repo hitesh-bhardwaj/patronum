@@ -1,4 +1,4 @@
-import react, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import PageLayout from "@/components/PageLayout";
 import SectionBreak from "@/components/PageLayout/SectionBreak";
 import SectionTitle from "@/components/PageLayout/SectionTitle";

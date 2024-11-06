@@ -1,11 +1,10 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import PageLayout from '@/components/PageLayout';
 import PostCard from '@/components/PageComponents/BlogPage/PostCard';
 import { getAllPosts } from '@/lib/posts';
 import Fuse from 'fuse.js';
 import MetaData from '@/components/PageLayout/MetaData';
-import Layout from '@/components/Stairs';
+import Layout from '@/components/Layout';
 
 export default function SearchResults({ posts }) {
   const router = useRouter();

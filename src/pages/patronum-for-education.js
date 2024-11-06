@@ -119,6 +119,8 @@ export default function UseCasesDetail() {
                 date_published={"2023-04-20T12:00"}
                 date_modified={"2024-04-04T12:00"}
                 keywords={"Google Workspace"}
+                breadcrumbTitle={"Use Cases"}
+                breadcrumbLink={"use-cases"}
             >
 
                 <section id="second-section">

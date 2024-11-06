@@ -16,6 +16,8 @@ export default function Page() {
         date_published={"2024-09-23T07:07"}
         date_modified={"2024-09-23T07:07"}
         keywords={"Google Workspace, Environment Policy"}
+        breadcrumbTitle={"Legal"}
+        breadcrumbLink={"legal"}
       >
         <section className="" id="second-section">
           <div className="container">

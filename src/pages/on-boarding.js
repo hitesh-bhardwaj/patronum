@@ -3,7 +3,7 @@ import FeatureDetailCard from "@/components/PageComponents/FeaturesPage/FeatureD
 import FeatureDetailInfo from "@/components/PageComponents/FeaturesPage/FeatureDetailInfo";
 import FeatureDetailTitle from "@/components/PageComponents/FeaturesPage/FeatureDetailTitle";
 import PageLayout from "@/components/PageLayout";
-import InstallButton from "@/components/PageLayout/Button/InstallButton";
+import InstallButton from "@/components/Buttons/InstallButton";
 import SectionBreak from "@/components/PageLayout/SectionBreak";
 import SectionTitle from "@/components/PageLayout/SectionTitle";
 import VideoPlayer from "@/components/PageLayout/VideoPlayer";
@@ -257,6 +257,8 @@ export default function FeatureDetail() {
                 date_published={"2020-12-21T06:37"}
                 date_modified={"2024-04-01T00:00"}
                 keywords={"Google Workspace"}
+                breadcrumbTitle={"Features"}
+                breadcrumbLink={"features"}
             >
 
                 <VideoPlayer disabled={false} videoId="POIX6FiWaN0" videoCover={"/assets/features/onboarding/video-cover.webp"} />

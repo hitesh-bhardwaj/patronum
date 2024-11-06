@@ -3,7 +3,7 @@ import FeatureDetailCard from "@/components/PageComponents/FeaturesPage/FeatureD
 import FeatureDetailInfo from "@/components/PageComponents/FeaturesPage/FeatureDetailInfo";
 import FeatureDetailTitle from "@/components/PageComponents/FeaturesPage/FeatureDetailTitle";
 import PageLayout from "@/components/PageLayout";
-import InstallButton from "@/components/PageLayout/Button/InstallButton";
+import InstallButton from "@/components/Buttons/InstallButton";
 import SectionBreak from "@/components/PageLayout/SectionBreak";
 import SectionTitle from "@/components/PageLayout/SectionTitle";
 import VideoPlayer from "@/components/PageLayout/VideoPlayer";
@@ -236,6 +236,8 @@ export default function FeatureDetail() {
                 date_published={"2020-12-21T13:41"}
                 date_modified={"2024-04-04T12:00"}
                 keywords={"google contact sharing,Google Workspace contact sharing"}
+                breadcrumbTitle={"Features"}
+                breadcrumbLink={"features"}
             >
 
                 <VideoPlayer disabled={false} videoId="ibhxOj9-qGQ" videoCover={"/assets/features/contact-sharing/video-cover.webp"} />

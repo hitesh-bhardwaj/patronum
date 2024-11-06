@@ -1,15 +1,15 @@
-import React from "react";
-import InstallButton from "../PageLayout/Button/InstallButton";
-import DemoButton from "../PageLayout/Button/DemoButton";
+import InstallButton from "../Buttons/InstallButton";
+import DemoButton from "../Buttons/DemoButton";
+import styles from "./footer.module.css"
 
 export default function FooterContact() {
 
     return(
-            <div className="footer-contact">
+            <div className={styles.footerContact}>
                 <div className="container">
-                    <div className="footer-contact__content">
-                        <span className="footer-contact-bg" />
-                        <div className="left">
+                    <div className={styles.footerContact__content}>
+                        <span className={styles.footerContactBg} />
+                        <div className={styles.left}>
                             <h2 className="title-4xl text-anim">
                                 <span>
                                     Get More from Patronum.
@@ -19,20 +19,20 @@ export default function FooterContact() {
                                 Talk to our experts and see how Patronum makes Google Workspace work for you.
                             </p>
 
-                            <div className="footer-cta-container fadeUp">
+                            <div className={`${styles.footerCtaContainer} fadeUp`}>
                                 <DemoButton />
                                 <InstallButton />
                             </div>
                         </div>
 
-                        <div className="right">
-                            <div className="footer-lottie fadeUp">
+                        <div className={styles.right}>
+                            <div className={`${styles.footerLottie} fadeUp`}>
                                 <img
                                     src="/assets/footer/rocket.gif"
                                     alt="A rocket taking off in space."
                                     width={500}
                                     height={500}
-                                    className="lg:w-[27vw] w-full h-auto"
+                                    className="lg:w-[27vw] tablet:w-full h-auto"
                                     loading="lazy"
                                 />
                             </div>

@@ -7,8 +7,10 @@ export default function About() {
                 <div className="container">
                     <div className="content flex justify-between items-center w-full h-full lg:flex-row flex-col-reverse lg:gap-unset gap-[10vw]">
                         <div className="about-left lg:w-[40%] w-full lg:text-left text-center">
-                            <h2 className="title-4xl text-anim">
-                                Why Patronum?
+                            <h2 className="title-4xl textAnim">
+                                <span>
+                                    Why Patronum?
+                                </span>
                             </h2>
                             <p className="para-italic mb-10 fadeUp">
                                 Ever felt overwhelmed managing Google Workspace? We get it.
@@ -19,7 +21,9 @@ export default function About() {
                                 <br />
                                 From user and group management to secure content sharing, from centralised email signatures to Google Workspace backups, Patronum empowers you to take control of your Google Workspace (GSuite) with unmatched ease and precision.
                             </p>
+
                             <PrimaryButton link="/about-us" btnText="Get Started" />
+
                         </div>
                         <div className="about-right lg:w-[35%] w-[75%] lg:text-right text-center">
                             <img width="520" height="515" className="fadeRight w-full h-full" src="/assets/home/about.svg" loading="lazy" alt="about patronum" title="about patronum image" />

@@ -126,6 +126,8 @@ export default function FeatureDetail() {
                 date_published={"2020-12-21T12:00"}
                 date_modified={"2024-04-04T12:00"}
                 keywords={"Organisational Chart"}
+                breadcrumbTitle={"Features"}
+                breadcrumbLink={"features"}
             >
 
                 <VideoPlayer disabled={true} videoCover={"/assets/features/organisational-chart/video-cover.webp"} />

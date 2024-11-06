@@ -1,6 +1,5 @@
-// ModalContext.js
 import React, { createContext, useState, useContext } from 'react';
-import { useLenis } from '@studio-freight/react-lenis';
+import { useLenis } from 'lenis/react';
 
 const ModalContext = createContext();
 

@@ -68,7 +68,7 @@
 
 .orb-canvas {
   width: 100%;
-  height: 100%;
+  height: 110%;
   pointer-events: none;
   z-index: -1;
   position: fixed;
@@ -89,7 +89,7 @@
 .text-destructive {
   color: hsl(var(--destructive));
 }
-  
+
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -183,7 +183,10 @@ section{
 .title-5xl{
   font-size: 5vw;
   color: #414141;
-  line-height: 100%;
+  line-height: 1;
+}
+.title-5xl .hero-anim .span{
+  line-height: 1.5;
 }
 .title-4xl{
   font-size: 3.8vw;
@@ -422,6 +425,7 @@ section{
   transform: translateY(100%);
   opacity: 0;
 }
+
 .preload-img-span{
   width: 14vw;
   height: auto;
@@ -525,6 +529,7 @@ section{
 }
 
 /* Nav Dropdown */
+
 .nav-dropdown{
   position: absolute;
   width: 100%;
@@ -590,21 +595,29 @@ section{
   font-weight: 500;
   transition: all 0.3s ease;
 }
+
 .nav-drop-text{
   font-size: 0.9vw;
 }
+
 /*================ Header CSS STOP Main============= */
 
 
 /*================ IndexPage CSS START Main============= */
+
 /* Hero Section - 1920 */
+#hero{
+  height: 100vh;
+  width: 100vw;
+}
+.google-logo-hero{
+  height: auto;
+  width: 100%;
+}
 .hero-para{
   font-size: 1.25vw;
   width: 24vw;
   font-weight: 500;
-}
-.line {
-  overflow: hidden;
 }
 .hero-right{
   width: 40%;
@@ -624,6 +637,8 @@ section{
 .hero-img{
   width: 32vw;
   height: 100%;
+  opacity: 0;
+  transform: translateX(100px);
 }
 
 /* Scroll Down Button 1920px */
@@ -647,6 +662,10 @@ section{
   width: 4.5vw;
   height: 4.5vw;
 }
+.hero-svg-circle{
+  stroke-width: 1.5px;
+  stroke-dasharray: 0% 300%;
+}
 .scroll-down-btn .scroll-down-a .scroll-img-container{
   display: block;
   position: absolute;
@@ -669,6 +688,25 @@ section{
 }
 .scroll-down-btn:hover .scroll-down-a .scroll-img-container img[data="second"]{
   transform: translateY(100%) scale(0);
+}
+
+.hero-anim{
+  overflow: hidden;
+  line-height: 1;
+}
+.hero-anim .span{
+  display: block;
+  line-height: 1.5;
+  margin-top: -1vw;
+  transform: translateY(100%);
+}
+.google-logo-hero.span{
+  margin-top: unset;
+  display: block;
+}
+.hero-para span .word{
+  transform: translateY(100%);
+  opacity: 0;
 }
 /* Hero Section - 1920 End - Index*/
 
@@ -1325,59 +1363,6 @@ section{
   color: #ffffff;
   padding-top: 6vw;
 }
-
-.footer-contact{
-  margin-top: 10vw;
-  height: 100%;
-}
-.footer-contact__content{
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
-}
-.footer-contact-bg{
-  position: absolute;
-  width: 90%;
-  height: 100%;
-  background-color: #f8f8f8;
-  border-top-right-radius: 1000px;
-  border-bottom-right-radius: 1000px;
-  left: -15vw;
-  top: 0;
-}
-.footer-contact__content .left{
-  padding: 9vw 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 0.8vw;
-  position: relative;
-  z-index: 1;
-}
-.footer-contact__content .right{
-  position: relative;
-  width: 35%;
-  height: 100%;
-  margin-right: -7%;
-}
-.footer-lottie{
-  width: 100%;
-}
-
-.footer-contact__content .left .title-4xl{
-  margin: 0;
-}
-.footer-contact__content .left p{
-  width: 60%;
-  margin-bottom: 2.5vw;
-}
-.footer-cta-container{
-  display: flex;
-  width: 100%;
-  gap: 2.5vw;
-}
 .footer-top{
   display: flex;
   justify-content: space-between;
@@ -1477,13 +1462,13 @@ section{
 
 /*===================== About Page CSS Main START===================*/
 #pageHero{
-  height: 75vh;
+  height: 76vh;
   width: 100%;
   position: relative;
 }
 .page-hero-flex{
   padding-top: 10%;
-  margin-bottom: 8%;
+  margin-bottom: 4%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1491,8 +1476,8 @@ section{
 }
 .hero-hr{
   height: 1px;
-  width: 105%;
   background: #1A1A1A;
+  width: 0;
   margin-left: -2.5%;
   display: block;
 }
@@ -1503,6 +1488,8 @@ section{
   margin-bottom: 1.5vw;
 }
 .page-hero-left .hero-para{
+  transform: translateY(50px);
+  opacity: 0;
   width: 60%;
 }
 .page-hero-right{
@@ -1521,6 +1508,26 @@ section{
 }
 
 /* Page Animations Hero */
+.page-hero-anim{
+  line-height: 0.5;
+}
+.page-hero-anim .span{
+  overflow: hidden;
+  line-height: 1.2;
+}
+.page-hero-anim span .word{
+  transform: translateY(100%);
+}
+
+.title-4xl.text-anim span{
+  overflow: hidden;
+  line-height: 1.2;
+}
+.title-4xl.text-anim {
+  line-height: 0.5;
+}
+
+
 .about-top{
   padding-top: 2.5vw;
   display: block;
@@ -2832,48 +2839,6 @@ input[type=number] {
     font-size: 2.8vw;
   }
   /* Footer Top 900px */
-  .footer-contact{
-    margin-top: 20vw;
-  }
-  .footer-contact__content{
-    flex-direction: column-reverse;
-  }
-  .footer-contact-bg{
-    width: 115%;
-    height: 92.5vw;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    left: -7.5%;
-    bottom: -5vw;
-    top: unset;
-  }
-  .footer-contact__content .right{
-    width: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-  }
-  .footer-lottie div{
-    width: 70vw !important;
-  }
-  .footer-lottie{
-    text-align: center;
-    width: 70vw;
-  }
-  .footer-contact__content .left{
-    padding: 10vw 5vw;
-    align-items: center;
-    text-align: center;
-    gap: 4vw;
-  }
-  .footer-contact__content .left p{
-    width: 100%;
-  }
-  .footer-cta-container{
-    flex-direction: column;
-    align-items: center;
-    gap: 4vw;
-  }
   .footer{
     padding-top: 15vw;
     border-top-right-radius: 4vw;
@@ -3459,6 +3424,12 @@ input[type=number] {
   .logo-container{
     width: 42%;
   }
+
+
+/* Hero Home Page */
+  #hero{
+    height: 95vh;
+  }
   .container-lg{
     padding-left: 0;
     padding-right: 0;
@@ -3529,14 +3500,11 @@ input[type=number] {
     width: 24px;
     height: 24px;
   }
-  .footer-contact-bg{
-    height: 100.4vw;
-  }
   .footer-iso img{
     width: 20%;
   }
   #pageHero{
-    height: 85vh;
+    height: 90vh;
   }
   .page-hero-flex{
     flex-direction: column;

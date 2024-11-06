@@ -4,10 +4,11 @@ import Pagination from '@/components/PageComponents/BlogPage/Pagination';
 import PostCard from '@/components/PageComponents/BlogPage/PostCard';
 import { getCategories } from '@/lib/categories';
 import CategoryList from '@/components/PageComponents/BlogPage/CategoryList';
-import { useEffect, useState } from 'react';
-import Layout from '@/components/Stairs';
+import { useState } from 'react';
 import MetaData from '@/components/PageLayout/MetaData';
 import Search from '@/components/Search';
+import BreadcrumbComponent from '@/components/PageLayout/BreadCrumb';
+import Layout from '@/components/Layout';
 
 export default function Blog({ posts, pagination, categories }) {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -34,16 +35,17 @@ export default function Blog({ posts, pagination, categories }) {
                         Blog Page {pagination?.currentPage}
                       </span>
                     </h1>
+                    <div className='mt-[6vw] mb-[3vw]'>
+                    <BreadcrumbComponent />
+                  </div>
+
+                  <span className='h-[1px] block w-full bg-head'></span>
                   </div>
 
                   <div className="2xl:w-[112%] 2xl:ml-[-6%] gap-y-[2vw] lg:w-[105%] lg:ml-[-2.5%] ml-0 w-full flex justify-between flex-wrap">
                     <CategoryList categories={categories} activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
                     <Search posts={posts} />
                   </div>
-
-                  {/* <div className="lg:w-[105%] lg:ml-[-2.5%] ml-0 w-full">
-                    <CategoryList categories={categories} activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
-                  </div> */}
 
                   <div className='blog-main-container'>
                     {posts.map((post) => {
