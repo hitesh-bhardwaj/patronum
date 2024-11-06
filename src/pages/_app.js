@@ -6,7 +6,7 @@ import { ReactLenis } from 'lenis/react';
 import { useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Head from 'next/head';
-import { GoogleTagManager } from '@next/third-parties/google'
+// import { GoogleTagManager } from '@next/third-parties/google'
 import dynamic from 'next/dynamic';
 import nextSeoConfig from '../../next-seo.config';
 
@@ -119,7 +119,7 @@ export default function App({ Component, pageProps, router }) {
       </ReactLenis>
 
       {/* Google Tag Manager */}
-      <GoogleTagManager gtmId="GTM-MDWM3Z7J" />
+      {/* <GoogleTagManager gtmId="GTM-MDWM3Z7J" /> */}
 
       {/* Vercel Analytics */}
       <SpeedInsights
