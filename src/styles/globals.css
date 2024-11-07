@@ -69,12 +69,6 @@
 /* Background CSS END*/
 
 /* Transition */
-.page .transition-container div{
-      position: relative;
-      height: 100%;
-      width: 100%;
-  }
-
 .text-destructive {
   color: hsl(var(--destructive));
 }
@@ -173,9 +167,6 @@ section{
   font-size: 5vw;
   color: #414141;
   line-height: 1;
-}
-.title-5xl .hero-anim .span{
-  line-height: 1.5;
 }
 .title-4xl{
   font-size: 3.8vw;
@@ -427,13 +418,6 @@ section{
   transform: translateY(100%);
   opacity: 0;
 }
-
-/*================ Header CSS START Main============= */
-
-/* Nav Dropdown */
-
-/*================ Header CSS STOP Main============= */
-
 
 /*================ IndexPage CSS START Main============= */
 
@@ -1073,114 +1057,6 @@ section{
 /* FAQs Section - 1920 End - Index*/
 
 /*================ IndexPage CSS END MAIN============= */
-/*  */
-/*===================== Footer CSS Main Start===================*/
-
-.footer{
-  width: 100%;
-  background-color: #0F68DE;
-  border-top-right-radius: 50px;
-  border-top-left-radius: 50px;
-  overflow: hidden;
-  color: #ffffff;
-  padding-top: 6vw;
-}
-.footer-top{
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 3vw;
-}
-.footer-top-left{
-  width: 35%;
-  display: flex;
-  flex-direction: column;
-  gap: 2vw;
-}
-.footer-logo{
-  width: 60%;
-}
-.footer-top-left p{
-  font-size: 1.2vw;
-  font-weight: 400;
-  line-height: 1.5;
-  margin-bottom: 0.5vw;
-}
-.footer-iso img{
-  width: 15%;
-}
-.footer-award img{
-  width: 18%;
-}
-.footer-award img:last-child{
-  width: auto;
-  height: auto;
-}
-
-.footer-top-right{
-  width: 30%;
-  padding-top: 2vw;
-}
-
-.footer-top-right-top{
-  display: flex;
-  gap: 4vw;
-  justify-content: flex-start;
-  text-align: left;
-}
-.footer-link-head{
-  font-size: 1.3vw;
-  font-weight: 500;
-  font-family: 'Aeonik';
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-}
-.footer-links .py-2{
-  padding-top: 0.35vw;
-  padding-bottom: 0.35vw;
-}
-
-.footer-links li a{
-  font-size: 1.1vw;
-  font-family: 'Aeonik';
-  font-weight: 400;
-  letter-spacing: 0.5px;
-  position: relative;
-}
-.footer-links li a::after{
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  background: white;
-  width: 100%;
-  height: 1.5px;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: var(--transition-2);
-}
-.footer-links li a:hover::after{
-  transform: scaleX(1);
-  transform-origin: left;
-}
-.social-links{
-  margin-top: 2.5vw;
-}
-.social-links ul{
-  display: flex;
-  justify-content: flex-start;
-  gap: 2vw;
-  align-items: flex-end;
-}
-.social-links ul li a img{
-  width: 90%;
-}
-@media screen and (max-width: 1650px) {
-  .social-links ul li a img{
-    width: 80%;
-  }  
-}
-/*===================== Footer CSS Main END===================*/
 
 /*===================== About Page CSS Main START===================*/
 #pageHero{
@@ -2268,25 +2144,10 @@ input[type=number] {
 /*=========================Media Queries ==============================*/
 
 /* =======================900px Start============================== */
-/* Header */
 @media screen and (max-width: 1024px) {
-
   .desktop-only{
     display: none;
   }
-  .header{
-    padding: 3vw 0;
-  }
-  .header-container{
-    width: 90%;
-  }
-  .logo-container{
-    width: 25vw;
-  }
-  .navbar-list {
-    display: none;
-  }
-
   /* Hero Home Page */
   .container-lg{
     padding-left: 0;
@@ -2296,30 +2157,13 @@ input[type=number] {
   .flex-all{
     display: block;
   }
-  .hero-right{
-    display: none;
-  }
   .title-5xl{
     font-size: 13vw;
   }
-  
   .hero-para{
     font-size: 4vw;
     width: 100%;
   }
-.hero-anim{
-  line-height: 100%;
-}
-.title-5xl .hero-anim .span{
-  margin-top: 0;
-}
-.title-5xl .hero-anim .span .google{
-  padding-bottom: 1.5vw;
-}
-.title-5xl .hero-anim .span.manager{
-  margin-top: -3.5vw;
-}
-
 /* Link Button */
 .link-btn{
   font-size: 3.5vw;
@@ -2545,65 +2389,6 @@ input[type=number] {
   }
   .blog-card-title{
     font-size: 2.8vw;
-  }
-  /* Footer Top 900px */
-  .footer{
-    padding-top: 15vw;
-    border-top-right-radius: 4vw;
-    border-top-left-radius: 4vw;
-    position: relative;
-    z-index: 5;
-  }
-  .footer-top {
-    flex-direction: column;
-    align-items: center;
-  }
-  .footer-top-left{
-    width: 100%;
-    align-items: center;
-    text-align: center;
-    gap: 5vw;
-  }
-  .footer-top-left p{
-    font-size: 4.6vw;
-    margin-bottom: 6vw;
-  }
-  .footer-iso img{
-    width: 100%;
-  }
-  .footer-award{
-    align-items: center;
-  }
-  .footer-award img{
-    width: 25%;
-  }
-  .footer-top-right{
-    width: 100%;
-    margin-top: 12vw;
-  }
-  .footer-top-right-top {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .footer-link-head{
-    font-size: 5vw;
-    margin-bottom: 2vw;
-  }
-  .footer-links .py-2{
-    padding-top: 0.5vw;
-    padding-bottom: 0.5vw;
-  }
-  .footer-links li a{
-    font-size: 4.5vw;
-    line-height: 2;
-  }
-  .social-links{
-    margin-top: 10vw;
-  }
-  .social-links ul{
-    gap: 8vw;
-    justify-content: center;
   }
 }
 
@@ -3120,14 +2905,6 @@ input[type=number] {
 /* =======================640px Start============================== */
 /* Header */
 @media screen and (max-width: 640px) {
-  .header{
-    padding: 4vw 0;
-  }
-  .logo-container{
-    width: 42%;
-  }
-
-
 /* Hero Home Page */
   .container-lg{
     padding-left: 0;
@@ -3183,9 +2960,6 @@ input[type=number] {
     font-size: 11px;
     width: 24px;
     height: 24px;
-  }
-  .footer-iso img{
-    width: 20%;
   }
   .page-hero-flex{
     flex-direction: column;
@@ -3303,6 +3077,11 @@ input[type=number] {
   color: var(--primary);
 }
 
-.testing-testing{
-  position: static;
+[data-news]:-webkit-autofill {
+  -webkit-box-shadow:0 0 0 50px #1069df inset; /* Change the color to your own background color */
+  -webkit-text-fill-color: white;
+}
+[data-news]:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 50px #1069df inset;/*your box-shadow*/
+  -webkit-text-fill-color: white;
 }
