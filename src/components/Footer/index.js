@@ -1,7 +1,7 @@
 import Link from "next/link";
 import FooterContact from "./FooterContact";
 import styles from "./styles.module.css";
-import Newsletter from "./Newsletter";
+// import Newsletter from "./Newsletter";
 
 const Footer = () => {
 
@@ -32,7 +32,7 @@ const Footer = () => {
                                 </div>
 
                                 <div className="rounded-xl overflow-hidden h-fit lg:w-[10vw] md:w-[20vw] w-[35vw]">
-                                    <img loading="lazy" className="w-full object-bottom h-full object-cover" src="/assets/footer/GOV.UK.png" alt="UK GOV digital marketplace logo" title="UK GOV digital marketplace logo" />
+                                    <img loading="lazy" className="w-full object-bottom h-full object-cover" src="/assets/footer/GOV.UK-2.png" alt="UK GOV digital marketplace logo" title="UK GOV digital marketplace logo" />
                                 </div>
                             </div>
 
@@ -140,8 +140,6 @@ const Footer = () => {
                                         </li>
                                     </ul>
                                 </div>
-
-                                <Newsletter />
                             </div>
                         </div>
 
@@ -151,7 +149,7 @@ const Footer = () => {
 
                         <span className="drawLine h-[1px] bg-white/50 w-full block" />
 
-                        <div className="py-6 lg:text-[0.9vw] md:text-[2.5vw] md:pr-[8vw] text-[2.8vw] flex justify-between text-center tracking-[0.5px]">
+                        <div className="py-6 lg:text-[0.9vw] md:text-[2.5vw] lg:pr-0 md:pr-[8vw] text-[2.8vw] flex justify-between text-center tracking-[0.5px]">
                             <span>© 2024 <Link href="https://www.bespinlabs.com/" target="_blank" className="relative after:absolute after:bg-white after:h-[1px] after:left-0 after:bottom-[-2px] after:scale-0 hover:after:scale-100 after:duration-300 after:w-full">Bespin Labs Ltd.</Link> All rights reserved.</span>
                             <Link href='https://weareenigma.com' target="_blank" title="We Create Magic">By: <span className="relative after:absolute after:bg-white after:h-[1px] after:left-0 after:bottom-[-2px] after:scale-0 hover:after:scale-100 after:duration-300 after:w-full">Enigma</span></Link>
                         </div>

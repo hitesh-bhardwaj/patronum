@@ -28,36 +28,36 @@ export default function SearchResults({ posts }) {
       <MetaData
         title={`Search Archive - Patronum`}
         url={`search`}
-            date_published={"2020-12-21T12:00"}
-            date_modified={"2024-05-23T12:00"}
-            keywords={"Patronum,Google Workspace Manager"}
+        date_published={"2020-12-21T12:00"}
+        date_modified={"2024-05-23T12:00"}
+        keywords={"Patronum,Google Workspace Manager"}
       />
-        <Layout>
-          <main>
-            <section id="">
-              <div className="container">
-                <div className="content-2">
-                  <div className='section-head'>
-                    <h1 className='title-4xl text-anim'>
-                      <span>
-                        Search Results for
-                      </span>
-                      <br />
-                      <span>
-                        {`"${query}"`}
-                      </span>
-                    </h1>
-                  </div>
-                  <div className='blog-main-container mt-4'>
-                    {filteredPosts.map((post) => (
-                      <PostCard key={post.slug} post={post} />
-                    ))}
-                  </div>
+      <Layout>
+        <main>
+          <section id="">
+            <div className="container">
+              <div className="content-2">
+                <div className='section-head'>
+                  <h1 className='title-4xl text-anim'>
+                    <span>
+                      Search Results for
+                    </span>
+                    <br />
+                    <span>
+                      {`"${query}"`}
+                    </span>
+                  </h1>
+                </div>
+                <div className='blog-main-container mt-4'>
+                  {filteredPosts.map((post) => (
+                    <PostCard key={post.slug} post={post} />
+                  ))}
                 </div>
               </div>
-            </section>
-          </main>
-        </Layout>
+            </div>
+          </section>
+        </main>
+      </Layout>
     </>
   );
 }

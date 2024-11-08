@@ -37,10 +37,13 @@ export default function MetaData({ title, description, url, img, date_published,
                         content: `https://www.patronum.io/assets/seo/${img}`
                     },
                 ]}
+                canonical={`https://www.patronum.io/${url}`}
+                languageAlternates={[{
+                    hrefLang: 'en-US',
+                    href: `https://www.patronum.io/${url}`
+                }]}
             />
             <Head>
-                <link rel="canonical" href={`https://www.patronum.io/${url}`} />
-                <link rel="alternate" href={`https://www.patronum.io/${url}`} hreflang="x-default" />
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{

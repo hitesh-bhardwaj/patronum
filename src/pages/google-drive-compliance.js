@@ -7,7 +7,6 @@ import InstallButton from "@/components/Buttons/InstallButton";
 import SectionBreak from "@/components/PageLayout/SectionBreak";
 import SectionTitle from "@/components/PageLayout/SectionTitle";
 import VideoPlayer from "@/components/PageLayout/VideoPlayer";
-import Head from "next/head";
 
 export default function FeatureDetail() {
 
@@ -75,102 +74,6 @@ export default function FeatureDetail() {
 
     return (
         <>
-            <Head>
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify(
-                            {
-                                "@context": "https://schema.org",
-                                "@type": "FAQPage",
-                                "mainEntity": [
-                                    {
-                                        "@type": "Question",
-                                        "name": "What is file unsharing in Google Drive?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "File unsharing is the process of revoking previously granted access to files and folders in Google Drive, ensuring that only authorized users can view or edit content."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "How does Patronum enhance Google Drive compliance?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Patronum provides advanced tools for monitoring, controlling, and automating access to Google Drive files, ensuring adherence to data sharing policies and compliance standards."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "Can Patronum identify external access to my Google Drive files?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Yes, Patronum can identify and display which external organizations or individuals have access to your files, allowing for informed management of shared data."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "How do I revoke access to a shared file using Patronum?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "With Patronum, you can easily revoke access by using the intuitive dashboard to select the file and choosing the option to unshare it from unauthorized users."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "Is it possible to automate the unsharing process for multiple files?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Absolutely, Patronum allows for the automation of unsharing processes, enabling bulk revocation of access to ensure data security efficiently."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "What advanced filtering options does Patronum offer for Google Drive management?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Patronum offers filtering options based on user access level, file type, sharing status, and more, to effectively manage and secure your Google Drive content."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "Can I use Patronum to manage shared drives and their permissions?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Yes, Patronum provides comprehensive management tools for shared drives, including setting up permissions and monitoring access to safeguard collaborative spaces."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "How does Patronum help with internal access management within Google Drive?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Patronum enables precise control over internal access, allowing administrators to specify who within the organization can view, edit, or share files and folders."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "What steps should be taken to secure Google Drive data with Patronum?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "To secure your data, use Patronum to regularly audit file access, set up compliant sharing policies, automate unsharing for sensitive data, and monitor for unauthorized external access."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "Can Patronum detect and notify me of unauthorized external access to files?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Yes, Patronum can alert administrators to unauthorized external access attempts, enabling prompt action to protect sensitive information."
-                                        }
-                                    }
-                                ]
-                            }
-                        )
-                    }}
-                />
-
-            </Head>
             <PageLayout
                 pageTitle1={'File Unsharing &'}
                 pageTitle2={'Google Drive Compliance'}

@@ -1,18 +1,9 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import React from 'react'
-import Header from '@/components/Header';
-import dynamic from 'next/dynamic'
 import gsap from "gsap";
-import Footer from "@/components/Footer";
 import styles from "@/components/PageLayout/Button/primary.module.css";
-import Transition from "@/components/Transition";
 import Layout from "@/components/Layout";
-
-const CrispWithNoSSR = dynamic(
-  () => import('@/components/Crispchat'),
-  { ssr: false }
-)
 
 export default function Thankyou() {
   const [countdown, setCountdown] = useState(10);

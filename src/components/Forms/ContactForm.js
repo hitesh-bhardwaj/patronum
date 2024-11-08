@@ -77,7 +77,7 @@ export default function ContactForm() {
         country: "GB",
         phoneNumber: "",
         terms: false,
-        pageURL: typeof window !== 'undefined' ? window.location.href : '', // Use window only in client-side context
+        pageURL: typeof window !== 'undefined' ? window.location.href : '',
         },
     });
 

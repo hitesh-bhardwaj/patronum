@@ -10,11 +10,21 @@ const Ratings = () => {
                         <Image className="lg:w-[40%] w-[70%]" src="/assets/home/rating.svg" alt="Rating Stars" width={200} height={50} />
                     </div>
                     <div className="lg:items-end justify-between w-full h-fit gap-[7vw] lg:flex-nowrap md:flex-wrap md:flex-row md:items-end md:justify-between flex items-center flex-col">
-                        <Image className="h-auto " src="https://wordpress-213572-4463644.cloudwaysapps.com/wp-content/uploads/2024/10/google-marketplace.png" alt="Google Workspace Image" width={353} height={108}/>
-                        <Image className="h-auto" src="https://wordpress-213572-4463644.cloudwaysapps.com/wp-content/uploads/2024/10/capterra.png" alt="Captera Image" width={160} height={36}/>
-                        <Image className="h-auto mb-[0.5vw]" src="https://wordpress-213572-4463644.cloudwaysapps.com/wp-content/uploads/2024/10/software-advice.png" alt="Software Advice Image" width={222} height={26}/>
-                        <Image className="h-auto mb-[0.3vw]" src="https://wordpress-213572-4463644.cloudwaysapps.com/wp-content/uploads/2024/10/get-app.png" alt="Get App Image" width={150} height={28}/>
-                        <Image className="h-auto" src="https://wordpress-213572-4463644.cloudwaysapps.com/wp-content/uploads/2024/10/g2.png" alt="G2 Image" width={45} height={47}/>
+                        <a href="https://workspace.google.com/marketplace/app/patronum/824001351376" target="_blank">
+                            <Image className="h-auto " src="https://wordpress-213572-4463644.cloudwaysapps.com/wp-content/uploads/2024/10/google-marketplace.png" alt="Google Workspace Image" width={353} height={108} />
+                        </a>
+                        <a href="https://www.capterra.in/software/1025234/patronum" target="_blank">
+                            <Image className="h-auto" src="https://wordpress-213572-4463644.cloudwaysapps.com/wp-content/uploads/2024/10/capterra.png" alt="Captera Image" width={160} height={36} />
+                        </a>
+                        <a href="https://www.softwareadvice.com/crm/patronum-profile/" target="_blank">
+                            <Image className="h-auto mb-[0.5vw]" src="https://wordpress-213572-4463644.cloudwaysapps.com/wp-content/uploads/2024/10/software-advice.png" alt="Software Advice Image" width={222} height={26} />
+                        </a>
+                        <a href="https://www.getapp.com/it-management-software/a/patronum/" target="_blank">
+                            <Image className="h-auto mb-[0.3vw]" src="https://wordpress-213572-4463644.cloudwaysapps.com/wp-content/uploads/2024/10/get-app.png" alt="Get App Image" width={150} height={28} />
+                        </a>
+                        <a href="https://www.g2.com/products/patronum/reviews" target="_blank">
+                            <Image className="h-auto" src="https://wordpress-213572-4463644.cloudwaysapps.com/wp-content/uploads/2024/10/g2.png" alt="G2 Image" width={45} height={47} />
+                        </a>
                     </div>
                 </div>
             </div>

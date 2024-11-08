@@ -7,7 +7,6 @@ import InstallButton from "@/components/Buttons/InstallButton";
 import SectionBreak from "@/components/PageLayout/SectionBreak";
 import SectionTitle from "@/components/PageLayout/SectionTitle";
 import VideoPlayer from "@/components/PageLayout/VideoPlayer";
-import Head from "next/head";
 
 export default function FeatureDetail() {
 
@@ -88,101 +87,6 @@ export default function FeatureDetail() {
 
     return (
         <>
-            <Head>
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify(
-                            {
-                                "@context": "https://schema.org",
-                                "@type": "FAQPage",
-                                "mainEntity": [
-                                    {
-                                        "@type": "Question",
-                                        "name": "What exactly does Patronum backup from my Google Workspace?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Patronum comprehensively backs up your entire Google Workspace environment, including all Files, Shared Drives, and Emails with 100% fidelity. This ensures every piece of data, from documents to emails, is securely archived, preserving the integrity and structure of your digital workspace."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "How often does Patronum perform backups?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Patronum provides high-frequency backups, ensuring your Google Workspace data is captured regularly throughout the day. This means that in the event of data loss, you can restore information to the most recent backup."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "Can Patronum protect against ransomware attacks?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Yes, Patronum uses automation and pre-emptive backup strategies to protect your data. In case of a ransomware attack, it identifies the last clean data snapshot, enabling secure restoration without compromising data integrity."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "What happens if there's a backup failure?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Patronum’s intelligent backup system reduces the risk of backup failures. With automatic rescheduling and parallel processing, Patronum ensures backups proceed smoothly, even if an error occurs."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "How can end users restore their data with Patronum?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "End users can restore their own data, including files and emails, through an intuitive self-service interface. This reduces the need for IT intervention and streamlines the recovery process."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "Is there a limit to how much data I can back up with Patronum?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Patronum allows unlimited backups of Google Workspace data, ensuring that all your digital assets are protected regardless of the size of your organization."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "Can I perform point-in-time restores with Patronum?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Yes, Patronum enables point-in-time restores, allowing you to revert data to a specific moment before any data loss or corruption occurred, ensuring business continuity."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "How secure are backups created by Patronum?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Patronum ensures that backups are encrypted and stored according to the highest security standards, protecting them from unauthorized access. The infrastructure follows globally recognized security protocols."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "Does Patronum offer offline exports of backups?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Yes, Patronum provides instant offline exports of backups, useful for compliance and archival purposes or ensuring data availability outside of the cloud."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "How do I get started with Patronum for backing up my Google Workspace data?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Getting started is easy. Visit the Patronum website, sign up, and integrate with your Google Workspace environment. You can configure backup preferences and begin securing data immediately."
-                                        }
-                                    }
-                                ]
-                            }
-                        )
-                    }}
-                />
-            </Head>
             <PageLayout
                 pageTitle1={'Google Workspace'}
                 pageTitle2={'Backup'}

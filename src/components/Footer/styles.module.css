@@ -93,6 +93,9 @@
   scale: 1.2;
 }
 @media screen and (max-width: 1650px) {
+  .footer {
+    padding-top: 4vw;
+  }
   .socialLinks ul li a img {
     width: 80%;
   }

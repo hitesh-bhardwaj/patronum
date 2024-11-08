@@ -19,7 +19,7 @@
   top: 0;
 }
 .footerContact__content .left {
-  padding: 9vw 0;
+  padding: 6vw 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,14 +53,14 @@
 
 @media screen and (max-width: 1024px) {
   .footerContact {
-    margin-top: 20vw;
+    margin-top: 15vw;
   }
   .footerContact__content {
     flex-direction: column-reverse;
   }
   .footerContactBg {
     width: 110%;
-    height: 92.5vw;
+    height: 115.7vw;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     left: -5%;
@@ -98,6 +98,6 @@
 
 @media screen and (max-width: 540px) {
   .footerContactBg {
-    height: 100.4vw;
+    height: 135vw;
   }
 }

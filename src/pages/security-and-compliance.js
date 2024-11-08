@@ -121,7 +121,6 @@ function security() {
         pageTitle1={"Security & Compliance"}
         pagePara={"Our unwavering commitment to ensure your data is always protected"}
         imgSrc={"security-hero.svg"}
-
         title={"Data Security & Compliance at Patronum"}
         description={"Patronum ensures top-notch data security for its customers with industry-leading certifications and secure practices. Learn about our compliance measures and commitment to protecting your data."}
         url={"security-and-compliance"}

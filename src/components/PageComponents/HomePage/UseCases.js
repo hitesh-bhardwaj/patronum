@@ -98,11 +98,13 @@ export default function UseCases() {
             let ctx = gsap.context(() => {
                 const UseCaseList = document.querySelectorAll('.use-cases-list li')
 
-                gsap.to(UseCaseList, {
+                gsap.fromTo(UseCaseList, {
                     scrollTrigger: {
                         trigger: '.use-cases-list',
                         start: 'top 80%',
                     },
+                    opacity: 0,
+                }, {
                     opacity: 1,
                     duration: 0.5,
                     stagger: 0.1,

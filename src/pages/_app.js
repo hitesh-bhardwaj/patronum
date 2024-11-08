@@ -49,6 +49,7 @@ export default function App({ Component, pageProps, router }) {
           }
         ]}
       />
+      
       <Head>
         <script
           type="application/ld+json"
@@ -60,7 +61,7 @@ export default function App({ Component, pageProps, router }) {
                 "@id": "https://www.patronum.io/#organization",
                 "name": "Patronum",
                 "url": "https://www.patronum.io",
-                "logo": "https://www.patronum.io/logo.svg",
+                "logo": "https://www.patronum.io/Patronum-logo.jpg",
                 "sameAs": [
                   "https://www.instagram.com/patronum.io/",
                   "https://www.linkedin.com/company/wearepatronum/",

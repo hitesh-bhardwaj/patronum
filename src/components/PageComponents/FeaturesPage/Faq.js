@@ -8,6 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { FAQPageJsonLd } from 'next-seo';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -54,8 +55,16 @@ const Faqs = ({ featureName }) => {
     return () => ctx.revert();
   }, []);
 
+  const mainEntity = [
+    ...filteredFaqData.map((item) => ({
+      questionName: item.title,
+      acceptedAnswerText: item.content,
+    })),
+  ]
+
   return (
     <>
+      <FAQPageJsonLd mainEntity={mainEntity} />
       <section id="faqs">
         <div className="container">
           <div className="content">

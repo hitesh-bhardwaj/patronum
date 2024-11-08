@@ -1,3 +1,4 @@
+import { FAQPageJsonLd } from 'next-seo';
 import React, { useState } from 'react';
 
 export default function Faqs(){
@@ -43,8 +44,16 @@ export default function Faqs(){
         },
     ];
 
+    const mainEntity = [
+        ...faqData.map((item) => ({
+          questionName: item.title,
+          acceptedAnswerText: item.content,
+        })),
+      ]
+
     return(
         <>
+            <FAQPageJsonLd mainEntity={mainEntity} />
             <section id="faqs">
                 <div className="container">
                     <div className="content">

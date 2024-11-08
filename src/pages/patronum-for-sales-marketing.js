@@ -2,7 +2,6 @@ import Faqs from "@/components/PageComponents/FeaturesPage/Faq";
 import UseCaseCard from "@/components/PageComponents/UseCasePage/UseCaseCard";
 import PageLayout from "@/components/PageLayout";
 import SectionTitle from "@/components/PageLayout/SectionTitle";
-import Head from "next/head";
 
 const UseCasesInfo = [
     {
@@ -36,77 +35,6 @@ export default function UseCasesDetail() {
 
     return (
         <>
-            <Head>
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify(
-                            {
-                                "@context": "https://schema.org",
-                                "@type": "FAQPage",
-                                "mainEntity": [
-                                    {
-                                        "@type": "Question",
-                                        "name": "How does Patronum simplify the onboarding process for sales and marketing teams?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Patronum automates the onboarding process by integrating with Google Workspace to provide immediate access to essential tools and resources. This ensures new team members can start productive work from day one, enhancing early job satisfaction."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "Can Patronum help maintain our brand's consistency across all email communications?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Absolutely. With Patronum’s email signature management, you can ensure that every email sent by your team aligns with your brand's identity. You can update signatures across the team to reflect the latest branding or campaign initiatives."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "How does Patronum facilitate the sharing of sales materials and contacts within our team?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Patronum utilizes Google Groups and Labels to automatically distribute resources and contacts within Google Workspace. This means sales materials and vital contacts are readily accessible to the entire team, fostering seamless collaboration."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "What advantages does Patronum offer for managing data access within sales teams?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "It enables sales managers to easily modify team configurations and access rights, ensuring sensitive data is protected while making sure all team members have the information they need to close deals."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "How does Patronum ensure our sales and marketing databases are always up to date?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Through real-time synchronization, Patronum ensures that any changes in contact details, shared documents, or email signatures are immediately reflected across the team, keeping your databases current."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "Can Patronum assist in automating routine tasks for our sales and marketing team?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Yes, by automating tasks such as contact sharing, email signature updates, and access management, Patronum frees your team to focus more on strategic sales and marketing efforts rather than administrative tasks."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "How does Patronum support cross-functional collaboration between sales and marketing?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "By ensuring both teams have access to shared contacts, common customer lists, and the latest templates or presentations, Patronum enhances productivity and ensures a unified approach to customer engagement."
-                                        }
-                                    }
-                                ]
-                            }
-                        )
-                    }}
-                />
-            </Head>
             <PageLayout
                 pageTitle1={'Patronum'}
                 pageTitle2={'for Sales & Marketing'}
