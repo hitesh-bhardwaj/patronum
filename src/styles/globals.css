@@ -3078,10 +3078,10 @@ input[type=number] {
 }
 
 [data-news]:-webkit-autofill {
-  -webkit-box-shadow:0 0 0 50px #f8f8f8 inset; /* Change the color to your own background color */
-  -webkit-text-fill-color: black;
+  -webkit-box-shadow:0 0 0 50px #1069df inset; /* Change the color to your own background color */
+  -webkit-text-fill-color: white;
 }
 [data-news]:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0 50px #f8f8f8 inset;/*your box-shadow*/
-  -webkit-text-fill-color: black;
+  -webkit-box-shadow: 0 0 0 50px #1069df inset;/*your box-shadow*/
+  -webkit-text-fill-color: white;
 }

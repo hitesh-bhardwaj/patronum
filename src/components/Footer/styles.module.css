@@ -14,20 +14,13 @@
   margin-bottom: 3vw;
 }
 .footerTopLeft {
-  width: 35%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   gap: 2vw;
 }
 .footerIso img {
   width: 15%;
-}
-.footerAward img {
-  width: 18%;
-}
-.footerAward img:last-child {
-  width: auto;
-  height: auto;
 }
 
 .footerTopRight {
@@ -124,9 +117,6 @@
   }
   .footerAward {
     align-items: center;
-  }
-  .footerAward img {
-    width: 25%;
   }
   .footerTopRight {
     width: 100%;

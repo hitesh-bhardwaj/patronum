@@ -1,7 +1,6 @@
 import InstallButton from "../Buttons/InstallButton";
 import DemoButton from "../Buttons/DemoButton";
 import styles from "./footer.module.css"
-import Newsletter from "./Newsletter";
 
 export default function FooterContact() {
 
@@ -24,7 +23,6 @@ export default function FooterContact() {
                                 <DemoButton />
                                 <InstallButton />
                             </div>
-                            <Newsletter />
                         </div>
 
                         <div className={styles.right}>

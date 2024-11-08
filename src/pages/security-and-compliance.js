@@ -74,7 +74,16 @@ function security() {
       imgSrc: "gdpr-compliance.svg",
       link: "https://www.gdpreu.org/gdpr-requirements/",
       btnText: "View Guidelines"
-    }
+    },
+    {
+      id: "8",
+      title: "UK G-Cloud 14 Framework Supplier Status",
+      contentTop: "Bespin Labs Awarded UK G-Cloud 14 Framework Supplier Status.",
+      description: "Bespin Labs has been appointed as a supplier on the UK Crown Commercial Service’s (CCS) G-Cloud 14 framework agreement. As an approved supplier under the UK Government’s latest G-Cloud framework, Bespin Labs now offers Patronum, its Google Workspace Manager, to public sector organisations via the Digital Marketplace.",
+      imgSrc: "GOV.UK-2012.svg",
+      link: "#",
+      btnText: "View Profile"
+    },
   ]
 
   const compliances = [

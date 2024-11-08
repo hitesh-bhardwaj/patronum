@@ -1,6 +1,7 @@
 import Link from "next/link";
 import FooterContact from "./FooterContact";
 import styles from "./styles.module.css";
+import Newsletter from "./Newsletter";
 // import Newsletter from "./Newsletter";
 
 const Footer = () => {
@@ -15,8 +16,8 @@ const Footer = () => {
                     <div className='w-full h-full'>
                         <div className={styles.footerTop}>
                             <div className={`${styles.footerTopLeft} fadeUp`}>
-                                <img className="lg:w-[60%] w-[50%]" width="311" height="75" loading='lazy' src="/logo-white.svg" alt="patronum logo" title="patronum logo" />
-                                <p className="lg:text-[1.2vw] lg:mb-[0.5vw] font-normal leading-[1.5] md:text-[3.5vw] md:mb-[1vw] text-[4.6vw] mb-[6vw]">Your Google Workspace Manager Providing a better way to manage your Google Workspace.</p>
+                                <img className="lg:w-[50%] w-[50%]" width="311" height="75" loading='lazy' src="/logo-white.svg" alt="patronum logo" title="patronum logo" />
+                                <p className="lg:w-[85%] lg:text-[1.2vw] lg:mb-[0.5vw] font-normal leading-[1.5] md:text-[3.5vw] md:mb-[1vw] text-[4.6vw] mb-[6vw]">Your Google Workspace Manager Providing a better way to manage your Google Workspace.</p>
 
                                 <div className={`flex gap-6 ${styles.footerIso}`}>
                                     <img width="76" height="76" src='/assets/footer/ISO-1.svg' loading='lazy' alt='ISO Certficates' />
@@ -25,15 +26,44 @@ const Footer = () => {
                                     <img width="76" height="76" src='/assets/footer/ISO-4.svg' loading='lazy' alt='ISO Certficates' />
                                 </div>
 
-                                <div className={`flex gap-6 ${styles.footerAward}`}>
-                                    <img loading='lazy' src="/assets/footer/award-2.png" alt="Award for best ease of use image" title="Award for best ease of use image" />
-                                    <img loading='lazy' src="/assets/footer/award-1.png" alt="Award for best value image" title="Award for best value image" />
-                                    <img loading='lazy' src="/assets/footer/google-partner-white.svg" alt="Patronum Google Patrner" title="Patronum Google Patrner" />
+                                <div className={`flex gap-6 lg:w-[90%] md:flex-nowrap flex-wrap md:w-[70%] w-full items-center md:justify-normal justify-center ${styles.footerAward}`}>
+                                    <img className="lg:w-[15%] md:w-[16%] w-[20%] object-contain h-auto" loading='lazy' src="/assets/footer/award-2.png" alt="Award for best ease of use image" title="Award for best ease of use image" />
+                                    <img className="lg:w-[15%] md:w-[16%] w-[20%] object-contain h-auto" loading='lazy' src="/assets/footer/award-1.png" alt="Award for best value image" title="Award for best value image" />
+                                    <img className="lg:w-[27%] md:w-[30%] w-[30%] object-contain h-auto" loading='lazy' src="/assets/footer/google-partner-white.svg" alt="Patronum Google Patrner" title="Patronum Google Patrner" />
+                                    <img className="lg:w-[27%] md:w-[28%] w-[35%] object-contain h-auto" loading="lazy" src="/assets/footer/GOV.UK-2.png" alt="UK GOV digital marketplace logo" title="UK GOV digital marketplace logo" />
                                 </div>
 
-                                <div className="rounded-xl overflow-hidden h-fit lg:w-[10vw] md:w-[20vw] w-[35vw]">
-                                    <img loading="lazy" className="w-full object-bottom h-full object-cover" src="/assets/footer/GOV.UK-2.png" alt="UK GOV digital marketplace logo" title="UK GOV digital marketplace logo" />
+                                <div className={`${styles.socialLinks} fadeUp`}>
+                                    <ul className=''>
+                                        <li>
+                                            <Link href='https://www.facebook.com/patronum.io' target="_blank" rel="nofollow">
+                                                <img width="25" height="25" src='/assets/footer/facebook.svg' alt='social icons' />
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link href='https://www.linkedin.com/company/wearepatronum/' target="_blank" rel="nofollow">
+                                                <img width="25" height="25" src='/assets/footer/linkedin.svg' alt='social icons' />
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link href='https://twitter.com/Patronum_io' target="_blank" rel="nofollow">
+                                                <img width="25" height="25" src='/assets/footer/twitter.svg' alt='social icons' />
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link href='https://www.instagram.com/patronum.io/' target="_blank" rel="nofollow">
+                                                <img width="25" height="25" src='/assets/footer/instagram.svg' alt='social icons' />
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link href='https://www.youtube.com/@wearepatronum' target="_blank" rel="nofollow">
+                                                <img width="25" height="25" src='/assets/footer/youtube.svg' alt='social icons' />
+                                            </Link>
+                                        </li>
+                                    </ul>
                                 </div>
+
+
                             </div>
 
                             <div className={styles.footerTopRight}>
@@ -111,35 +141,8 @@ const Footer = () => {
                                     </div>
                                 </div>
 
-                                <div className={`${styles.socialLinks} fadeUp`}>
-                                    <ul className=''>
-                                        <li>
-                                            <Link href='https://www.facebook.com/patronum.io' target="_blank" rel="nofollow">
-                                                <img width="25" height="25" src='/assets/footer/facebook.svg' alt='social icons' />
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link href='https://www.linkedin.com/company/wearepatronum/' target="_blank" rel="nofollow">
-                                                <img width="25" height="25" src='/assets/footer/linkedin.svg' alt='social icons' />
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link href='https://twitter.com/Patronum_io' target="_blank" rel="nofollow">
-                                                <img width="25" height="25" src='/assets/footer/twitter.svg' alt='social icons' />
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link href='https://www.instagram.com/patronum.io/' target="_blank" rel="nofollow">
-                                                <img width="25" height="25" src='/assets/footer/instagram.svg' alt='social icons' />
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link href='https://www.youtube.com/@wearepatronum' target="_blank" rel="nofollow">
-                                                <img width="25" height="25" src='/assets/footer/youtube.svg' alt='social icons' />
-                                            </Link>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <Newsletter />
+                                
                             </div>
                         </div>
 

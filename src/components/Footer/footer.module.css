@@ -60,7 +60,7 @@
   }
   .footerContactBg {
     width: 110%;
-    height: 115.7vw;
+    height: 92.5vw;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     left: -5%;
@@ -98,6 +98,6 @@
 
 @media screen and (max-width: 540px) {
   .footerContactBg {
-    height: 135vw;
+    height: 100vw;
   }
 }

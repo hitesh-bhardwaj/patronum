@@ -30,10 +30,6 @@ export default function Home({ recentPosts }) {
   const { isDesktop } = useDevice();
   const [isClient, setIsClient] = useState(false);
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
   const sections = [
     { id: '#hero', name: 'Introduction' },
     { id: '#features', name: 'Features' },
@@ -45,6 +41,7 @@ export default function Home({ recentPosts }) {
   ];
 
   useEffect(() => {
+    setIsClient(true);
     const headings = document.querySelectorAll('.text-anim');
 
     headings.forEach((heading) => {
@@ -95,7 +92,6 @@ export default function Home({ recentPosts }) {
 
   useEffect(() => {
     const pricingCards = document.querySelectorAll('.pricing-card-wrapper .pricing-card');
-    // Ensure GSAP library is imported and available
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".pricing-card-wrapper",

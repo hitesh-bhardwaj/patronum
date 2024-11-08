@@ -4,7 +4,6 @@ import {
     FormControl,
     FormField,
     FormItem,
-    FormLabel,
     FormMessage,
 } from "@/components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -85,28 +84,28 @@ const Newsletter = () => {
     };
 
     return (
-        <div className="block lg:mt-[3vw] mt-[4vw] md:mb-0 mb-4 lg:w-[60%] w-[100%]">
-            <h6 className="lg:text-[1.3vw] md:text-[4vw] text-[5vw] lg:text-left text-center font-medium aeonik tracking-wide mb-[20px]">Subscribe to our Newsletter</h6>
+        <div className="block lg:mt-[3vw] mt-[10vw] lg:mb-0 md:mb-4 mb-4 lg:w-[100%] w-[100%]">
+            <h6 className="lg:text-[1.5vw] md:text-[4vw] text-[6vw] lg:text-left text-center font-medium aeonik tracking-wide mb-[20px]">Subscribe to our Newsletter</h6>
             <Form {...form} className="relative">
-                <form onSubmit={form.handleSubmit(onSubmit)} className="flex w-full items-start justify-between lg:h-[2.2vw] md:h-[7vw] h-[10vw] gap-5">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="flex w-full items-start lg:justify-start justify-center lg:h-[2.5vw] md:h-[7vw] h-[10vw] gap-5">
                     <FormField
                         control={form.control}
                         name="email"
                         render={({ field }) => (
                             <FormItem className="required w-[70%] h-full">
                                 <FormControl>
-                                    <Input placeholder="Enter Your Email" {...field} className="bg-transparent h-full lg:text-lg md:text-2xl text-xl" data-news />
+                                    <Input placeholder="Enter Your Email" {...field} className="bg-transparent h-full lg:text-lg md:text-2xl text-xl border-white border-b-2 focus-visible:border-white" data-news />
                                 </FormControl>
                                 <FormMessage className="md:text-lg text-sm text-left md:static absolute" />
                             </FormItem>
                         )}
                     />
-                    <button className={`bg-head text-white h-full items-center lg:min-w-[5vw] md:min-w-[15vw] lg:py-2 text-center flex justify-center lg:px-4 md:px-6 px-4 rounded-full hover:bg-primary duration-200 autofill:bg-transparent lg:text-lg md:text-2xl text-base min-w-[20vw] ${submitting ? 'bg-primary text-white' : ''}`} type="submit" disabled={submitting}>
-                        {submitting ? <img className="w-6 h-6 invert animate-spin" src="/assets/icons/loading.png" /> : 'Subscribe'}
+                    <button className={`bg-head text-white h-full items-center group lg:min-w-[3vw] md:min-w-[10vw] lg:py-2 text-center flex justify-center lg:px-4 md:px-6 px-2 rounded-lg hover:bg-white hover:text-primary duration-200 autofill:bg-transparent lg:text-lg md:text-2xl text-base min-w-[16vw]`} type="submit" disabled={submitting}>
+                        {submitting ? <img className="w-6 h-6 invert animate-spin group-hover:invert-0" src="/assets/icons/loading.png" alt="loading icon" loading="lazy"/> : <img className="w-6 h-6 invert -rotate-90 group-hover:invert-0 group-hover:rotate-[-135deg] duration-200 transition-all" src="/assets/icons/arrow-down-big.svg" alt="arrow icon" loading="lazy"/>}
                     </button>
                 </form>
                 {submissionError && <p className="text-red-500 absolute md:text-lg text-sm text-left mt-2 ml-2">{submissionError}</p>}
-                {submissionSuccess && <p className="text-green-500 absolute text-left md:text-lg text-sm mt-2 ml-2">Email sent successfully!</p>}
+                {submissionSuccess && <p className="text-white absolute text-left md:text-lg text-sm mt-2 ml-2">Subscribed Successfully!</p>}
             </Form>
         </div>
     )

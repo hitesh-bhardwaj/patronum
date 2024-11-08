@@ -1,4 +1,4 @@
-import React, { useState  } from 'react';
+import React, { useState } from 'react';
 import PricingCard from './PricingCard';
 import PriceDropDown from './PriceDropDown';
 import { Switch } from "@/components/ui/switch"
@@ -7,14 +7,14 @@ import PrimaryButton from '@/components/Buttons/PrimaryButton';
 const Pricing = () => {
     const [isAnnual, setIsAnnual] = useState(true);
     const [selectedCurrency, setSelectedCurrency] = useState('$ USD');
-  
+
     const handleToggle = () => {
-      setIsAnnual(!isAnnual);
+        setIsAnnual(!isAnnual);
     };
-  
+
     const handleCurrencyChange = (currency) => {
         setSelectedCurrency(currency);
-      };
+    };
 
     return (
         <>
@@ -31,25 +31,25 @@ const Pricing = () => {
                         </div>
 
                         <div className='pricing-main'>
-                        
+
                             <div className='pricing-selectors flex items-center justify-between w-full'>
-                              
-                              <div className="pricing-toggle">
-                                  <span className={`pricing-selector-type ${isAnnual ? '' : 'active' }`}>
-                                    Monthly
-                                  </span>
-                                  <Switch 
-                                    className="price-switch"
-                                    checked={isAnnual}
-                                    onCheckedChange={handleToggle} 
-                                    id="price-toggle" 
-                                    aria-label="Annual/Monthly Price Toggle"
-                                  />
-                                  <span className={`pricing-selector-type ${isAnnual ? 'active' : '' }`}>
-                                    Yearly
-                                  </span>
-                              </div>
-                              
+
+                                <div className="pricing-toggle">
+                                    <span className={`pricing-selector-type ${isAnnual ? '' : 'active'}`}>
+                                        Monthly
+                                    </span>
+                                    <Switch
+                                        className="price-switch"
+                                        checked={isAnnual}
+                                        onCheckedChange={handleToggle}
+                                        id="price-toggle"
+                                        aria-label="Annual/Monthly Price Toggle"
+                                    />
+                                    <span className={`pricing-selector-type ${isAnnual ? 'active' : ''}`}>
+                                        Yearly
+                                    </span>
+                                </div>
+
                                 <div className='relative z-10'>
                                     <PriceDropDown
                                         options={['$ USD', '£ GBP', '€ EUR', 'A$ AUD']}
@@ -60,20 +60,20 @@ const Pricing = () => {
                             </div>
 
                             <div className='pricing-card-wrapper'>
-                                <PricingCard category="Education" isAnnual={isAnnual} selectedCurrency={selectedCurrency} pricingImage='/assets/pricing/education.svg'/>
-                                <PricingCard category="Non-Profit" isAnnual={isAnnual} selectedCurrency={selectedCurrency} pricingImage='/assets/pricing/non-profit.svg'/>
-                                <PricingCard category="Business" isAnnual={isAnnual} selectedCurrency={selectedCurrency} pricingImage='/assets/pricing/business.svg'/>
+                                <PricingCard category="Education" isAnnual={isAnnual} selectedCurrency={selectedCurrency} pricingImage='/assets/pricing/education.svg' />
+                                <PricingCard category="Non-Profit" isAnnual={isAnnual} selectedCurrency={selectedCurrency} pricingImage='/assets/pricing/non-profit.svg' />
+                                <PricingCard category="Business" isAnnual={isAnnual} selectedCurrency={selectedCurrency} pricingImage='/assets/pricing/business.svg' />
                             </div>
                         </div>
 
                         <div className="section-btn-container">
-                            <PrimaryButton href="/pricing" btnText="Detailed Pricing"/>
+                            <PrimaryButton href="/pricing" btnText="Detailed Pricing" />
                         </div>
                     </div>
                 </div>
             </section>
-      </>
+        </>
     );
-  };
-  
-  export default Pricing;
+};
+
+export default Pricing;
