@@ -1,12 +1,12 @@
-import Faqs from "@/components/PageComponents/FeaturesPage/Faq";
-import FeatureDetailCard from "@/components/PageComponents/FeaturesPage/FeatureDetailCard";
 import FeatureDetailInfo from "@/components/PageComponents/FeaturesPage/FeatureDetailInfo";
 import FeatureDetailTitle from "@/components/PageComponents/FeaturesPage/FeatureDetailTitle";
 import PageLayout from "@/components/PageLayout";
-import InstallButton from "@/components/Buttons/InstallButton";
 import SectionBreak from "@/components/PageLayout/SectionBreak";
-import SectionTitle from "@/components/PageLayout/SectionTitle";
 import VideoPlayer from "@/components/PageLayout/VideoPlayer";
+import dynamic from "next/dynamic";
+import FeatureDetailCards from "@/components/PageComponents/FeaturesPage/FeatureDetailCards";
+
+const Faqs = dynamic(() => import("@/components/PageComponents/FeaturesPage/Faq"), { ssr: false });
 
 export default function FeatureDetail() {
 
@@ -99,53 +99,13 @@ export default function FeatureDetail() {
                     sectionParaBig="Widespread sharing of docs, presentations, sheets etc. across employees, departments, and even with external entities like suppliers and customers makes data management a formidable challenge. Patronum is your beacon in this chaos, providing unparalleled visibility and control over your Google Drive information, ensuring your data remains secure and compliant."
                 />
 
-                <section id="feature-detail-info">
-                    <div className="container">
-                        <div className="content">
-                            <div className="section-list-container">
-                                {featuresDetail.map((feature, index) => (
-                                    <FeatureDetailInfo
-                                        key={index}
-                                        featureDetailInfoTitle={feature.title}
-                                        featureDetailInfoPara={feature.para}
-                                        imgSrc={feature.img}
-                                    />
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <FeatureDetailInfo content={featuresDetail} />
 
                 <SectionBreak
                     sectionBreakText="Patronum makes securing your Google Drive data effortless. With its advanced identification and access management capabilities, quickly revoking access becomes simple. Transform how you protect and manage your Google Drive data with Patronum, ensuring your sensitive information remains secure."
                 />
 
-                <section id="feature-detail-card">
-                    <div className="container">
-                        <div className="content">
-                            <SectionTitle
-                                sectionTitle1="Additional Google Drive"
-                                sectionTitle2="Compliance Features"
-                            />
-
-                            <div className="feature-detail-card-wrapper">
-                                {featuresDetailCard.map((featureDetail, index) => (
-                                    <FeatureDetailCard
-                                        key={index}
-                                        id={featureDetail.id}
-                                        title={featureDetail.title}
-                                        content={featureDetail.para}
-                                        img={featureDetail.img}
-                                    />
-                                ))}
-                            </div>
-
-                            <div className="section-btn-container">
-                                <InstallButton />
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <FeatureDetailCards content={featuresDetailCard} />
 
                 <Faqs featureName="google_drive_compliance" />
 

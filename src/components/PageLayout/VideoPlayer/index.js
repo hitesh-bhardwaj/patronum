@@ -1,6 +1,9 @@
 import { useState } from "react";
-import LazyIframe from "./LazyIframe";
+import Image from "next/image";
+import dynamic from "next/dynamic";
+import styles from "./styles.module.css";
 
+const LazyIframe = dynamic(() => import("./LazyIframe"), { ssr: false });
 
 const VideoPlayer = ( {videoId, videoCover, disabled} ) => {
     const [modalOpen, setModalOpen] = useState(false);
@@ -15,13 +18,13 @@ const VideoPlayer = ( {videoId, videoCover, disabled} ) => {
 
     return(
         <>
-            <section className="feature-detail-video" id="second-section">
+            <section id="second-section">
                 <div className="container-lg">
-                    <div className="content">
-                        <div className="feature-tutorial-video fadeUp">
-                            <img
-                                width="1600"
-                                height="760"
+                    <div className={styles.content}>
+                        <div className={`${styles.featureTutorialVideo} fadeUp`}>
+                            <Image
+                                width={1600}
+                                height={760}
                                 className="h-full w-full object-contain"
                                 src={videoCover}
                                 alt="feature-tutorial"
@@ -29,7 +32,7 @@ const VideoPlayer = ( {videoId, videoCover, disabled} ) => {
                             />
                             <button
                                 disabled={disabled}
-                                className={`video-tutorial-play-button`}
+                                className={`${styles.videoTutorialPlayButton} before:animate-ping duration-1000`}
                                 onClick={openModal}
                                 aria-label="Play Tutorial Video"
                             >

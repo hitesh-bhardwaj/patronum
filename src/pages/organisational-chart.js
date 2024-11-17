@@ -1,9 +1,11 @@
-import Faqs from "@/components/PageComponents/FeaturesPage/Faq";
 import FeatureDetailInfo from "@/components/PageComponents/FeaturesPage/FeatureDetailInfo";
 import FeatureDetailTitle from "@/components/PageComponents/FeaturesPage/FeatureDetailTitle";
 import PageLayout from "@/components/PageLayout";
 import SectionBreak from "@/components/PageLayout/SectionBreak";
 import VideoPlayer from "@/components/PageLayout/VideoPlayer";
+import dynamic from "next/dynamic";
+
+const Faqs = dynamic(() => import("@/components/PageComponents/FeaturesPage/Faq"), { ssr: false });
 
 export default function FeatureDetail() {
 
@@ -67,22 +69,7 @@ export default function FeatureDetail() {
                     sectionParaBig="Patronum's 'Organizational Chart' feature simplifies navigation throughout the organization, making it easier for employees to understand their place within the company hierarchy and how they connect with their colleagues."
                 />
 
-                <section id="feature-detail-info">
-                    <div className="container">
-                        <div className="content">
-                            <div className="section-list-container">
-                                {featuresDetail.map((feature, index) => (
-                                    <FeatureDetailInfo
-                                        key={index}
-                                        featureDetailInfoTitle={feature.title}
-                                        featureDetailInfoPara={feature.para}
-                                        imgSrc={feature.img}
-                                    />
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <FeatureDetailInfo content={featuresDetail} />
 
                 <SectionBreak
                     sectionBreakText="Patronum's 'Organizational Chart' feature is designed to support seamless onboarding, promote transparency, and facilitate collaboration, thereby improving decision-making and fostering a more cohesive organizational culture."

@@ -1,7 +1,6 @@
+import LinkButton from "@/components/Buttons/LinkButton";
 import PageLayout from "@/components/PageLayout";
-import LinkButton from "@/components/PageLayout/Button/LinkButton";
 import SectionTitle from "@/components/PageLayout/SectionTitle";
-import React, { useState } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -80,8 +79,8 @@ function security() {
       title: "UK G-Cloud 14 Framework Supplier Status",
       contentTop: "Bespin Labs Awarded UK G-Cloud 14 Framework Supplier Status.",
       description: "Bespin Labs has been appointed as a supplier on the UK Crown Commercial Service’s (CCS) G-Cloud 14 framework agreement. As an approved supplier under the UK Government’s latest G-Cloud framework, Bespin Labs now offers Patronum, its Google Workspace Manager, to public sector organisations via the Digital Marketplace.",
-      imgSrc: "GOV.UK-2012.svg",
-      link: "#",
+      imgSrc: "uk.gov.png",
+      link: "https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/160164702246842",
       btnText: "View Profile"
     },
   ]
@@ -181,7 +180,7 @@ function security() {
                           <span className="block">
                             {item.description}
                           </span>
-                          <LinkButton link={item.link} btnText={item.btnText} target={"_blank"}/>
+                          <LinkButton href={item.link} btnText={item.btnText} target="_blank" />
                         </AccordionContent>
                         <span className="h-[1px] bg-[#1a1a1a] w-full lineDraw block" />
                       </AccordionItem>

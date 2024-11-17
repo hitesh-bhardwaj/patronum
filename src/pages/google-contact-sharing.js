@@ -1,12 +1,12 @@
-import Faqs from "@/components/PageComponents/FeaturesPage/Faq";
-import FeatureDetailCard from "@/components/PageComponents/FeaturesPage/FeatureDetailCard";
 import FeatureDetailInfo from "@/components/PageComponents/FeaturesPage/FeatureDetailInfo";
 import FeatureDetailTitle from "@/components/PageComponents/FeaturesPage/FeatureDetailTitle";
 import PageLayout from "@/components/PageLayout";
-import InstallButton from "@/components/Buttons/InstallButton";
 import SectionBreak from "@/components/PageLayout/SectionBreak";
-import SectionTitle from "@/components/PageLayout/SectionTitle";
 import VideoPlayer from "@/components/PageLayout/VideoPlayer";
+import dynamic from "next/dynamic";
+import FeatureDetailCards from "@/components/PageComponents/FeaturesPage/FeatureDetailCards";
+
+const Faqs = dynamic(() => import("@/components/PageComponents/FeaturesPage/Faq"), { ssr: false });
 
 export default function FeatureDetail() {
 
@@ -104,53 +104,13 @@ export default function FeatureDetail() {
                     sectionParaBig="Patronum facilitates contact sharing in Google Workspace by streamlining contact group creation, ensuring your team always has access to the most current and relevant contact information. Seamless daily syncs with Google Contacts keep your entire organization connected and up-to-date."
                 />
 
-                <section id="feature-detail-info">
-                    <div className="container">
-                        <div className="content">
-                            <div className="section-list-container">
-                                {featuresDetail.map((feature, index) => (
-                                    <FeatureDetailInfo
-                                        key={index}
-                                        featureDetailInfoTitle={feature.title}
-                                        featureDetailInfoPara={feature.para}
-                                        imgSrc={feature.img}
-                                    />
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <FeatureDetailInfo content={featuresDetail} />
 
                 <SectionBreak
                     sectionBreakText="With Patronum, users gain access to unlimited contact labels and sharing capabilities, along with effortless synchronization across Outlook and various devices. It stands as a singular solution for navigating the complexities of Google contact sharing, enhancing connectivity within and beyond your organization."
                 />
 
-                <section id="feature-detail-card">
-                    <div className="container">
-                        <div className="content">
-                            <SectionTitle
-                                sectionTitle1="Additional Contact"
-                                sectionTitle2="Sharing Features"
-                            />
-
-                            <div className="feature-detail-card-wrapper">
-                                {featuresDetailCard.map((featureDetail, index) => (
-                                    <FeatureDetailCard
-                                        key={index}
-                                        id={featureDetail.id}
-                                        title={featureDetail.title}
-                                        content={featureDetail.para}
-                                        img={featureDetail.img}
-                                    />
-                                ))}
-                            </div>
-
-                            <div className="section-btn-container">
-                                <InstallButton />
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <FeatureDetailCards content={featuresDetailCard} />
 
                 <Faqs featureName="contact_sharing" />
 

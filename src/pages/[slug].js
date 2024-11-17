@@ -17,9 +17,12 @@ import styles from '@/styles/blog.module.css';
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import ScrollToPlugin from 'gsap/dist/ScrollToPlugin';
-import RelatedPosts from "@/components/PageComponents/BlogPage/RelatedPosts";
 import Head from "next/head";
 import { NextSeo } from "next-seo";
+import dynamic from "next/dynamic";
+
+const ProgressBar = dynamic(() => import("@/components/PageComponents/BlogPage/ProgressBar"), { ssr: false });
+const RelatedPosts = dynamic(() => import("@/components/PageComponents/BlogPage/RelatedPosts"), { ssr: false });
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -37,7 +40,7 @@ function PostDetail({ post, recentPosts }) {
       ease: "power3.inOut",
     });
   };
-  
+
   if (!post) {
     return <div>Loading...</div>;
   }
@@ -128,26 +131,6 @@ function PostDetail({ post, recentPosts }) {
       });
       return () => ctx.revert();
     });
-
-    useEffect(() => {
-      let ctx = gsap.context(() => {
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: '#blog-content',
-            start: 'top 18%',
-            end: 'bottom 80%',
-            scrub: 1,
-            markers: false,
-          },
-        });
-
-        tl.to('#toc-bar', {
-          width: '100%',
-          duration: 1,
-        });
-      });
-      return () => ctx.revert();
-    });
   }
 
   useEffect(() => {
@@ -162,9 +145,9 @@ function PostDetail({ post, recentPosts }) {
         }
         return null;
       }).filter(Boolean);
-  
+
       const scrollPosition = window.scrollY;
-  
+
       for (let i = sectionOffsets.length - 1; i >= 0; i--) {
         if (scrollPosition >= sectionOffsets[i].offsetTop) {
           setActiveSection(sectionOffsets[i].id);
@@ -172,9 +155,9 @@ function PostDetail({ post, recentPosts }) {
         }
       }
     };
-  
+
     window.addEventListener("scroll", handleScroll);
-  
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -205,57 +188,14 @@ function PostDetail({ post, recentPosts }) {
           ],
           siteName: "Patronum",
         }}
-
-        additionalMetaTags={[
-          {
-            name: "twitter:title",
-            content: post.seo.title
-          },
-          {
-            name: "twitter:description",
-            content: post.seo.description
-          },
-          {
-            name: "twitter:image",
-            content: post.featuredImage.sourceUrl
-          },
-        ]}
+        canonical={`{https://www.patronum.io/${post.slug}`}
+        languageAlternates={{
+          hreflang: "en_US",
+          href: `https://www.patronum.io/${post.slug}`,
+        }}
       />
+
       <Head>
-        <link rel="canonical" href={`https://www.patronum.io/${post.slug}`} />
-        <link rel="alternate" href={`https://www.patronum.io/${post.slug}`} hreflang="x-default" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
-              {
-                "@context": "https://schema.org",
-                "@type": "WebPage",
-                "@id": `https://www.patronum.io/${post.slug}#webpage`,
-                "url": `https://www.patronum.io/${post.slug}`,
-                "name": post.seo.title,
-                "description": post.seo.description,
-                "datePublished": post.date,
-                "dateModified": post.modified,
-                "publisher": {
-                  "@type": "Organization",
-                  "name": "Patronum",
-                  "logo": {
-                    "@type": "ImageObject",
-                    "url": "https://www.patronum.io/logo.svg",
-                  }
-                },
-                "about": {
-                  "@id": `https://www.www.patronum.io/${post.slug}#organization`
-                },
-                "isPartOf": {
-                  "@id": `https://www.www.patronum.io/${post.slug}#website`
-                },
-                "inLanguage": "en_US",
-              }
-            ),
-          }}
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -292,6 +232,38 @@ function PostDetail({ post, recentPosts }) {
             ),
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              {
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "@id": `https://www.patronum.io/${post.slug}#webpage`,
+                "url": `https://www.patronum.io/${post.slug}`,
+                "name": post.seo.title,
+                "description": post.seo.description,
+                "datePublished": post.date,
+                "dateModified": post.modified,
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "Patronum",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.patronum.io/logo.svg",
+                  }
+                },
+                "about": {
+                  "@id": `https://www.www.patronum.io/${post.slug}#organization`
+                },
+                "isPartOf": {
+                  "@id": `https://www.www.patronum.io/${post.slug}#website`
+                },
+                "inLanguage": "en_US",
+              }
+            ),
+          }}
+        />
       </Head>
       <BlogLayout
         postTitle={post.title}
@@ -301,11 +273,6 @@ function PostDetail({ post, recentPosts }) {
         featImg={post.featuredImage.sourceUrl}
         readingTime={post.readingTime}
       >
-
-      <div className="fixed h-[5px] w-[100vw] overflow-hidden top-[5.4vw] left-0 z-[999]" id="progress-bar">
-        <span className="w-0 h-[5px] bg-primary block origin-top" id="toc-bar"/>
-      </div>
-
         <section className="container">
           <div className="content blog-content">
             <div className="flex w-full justify-between items-start" id="blog-container">
@@ -331,6 +298,8 @@ function PostDetail({ post, recentPosts }) {
             </div>
           </div>
         </section>
+
+        <ProgressBar />
 
         <RelatedPosts sectionTitle={'Related Blogs'} recentPosts={recentPosts} currentSlug={post.slug} />
 
@@ -367,10 +336,7 @@ export async function getStaticProps({ params }) {
 
     const recentPosts = await getHomePagePosts();
 
-    // const { posts: allPosts } = await getAllPosts();
-
     if (!post) {
-      // If the requested post is not found, return a 404 response
       return {
         notFound: true,
       };
@@ -388,7 +354,7 @@ export async function getStaticProps({ params }) {
 
     return {
       props: {
-        post: null, // Use null instead of undefined
+        post: null,
         recentPosts: [],
       },
       revalidate: 500,

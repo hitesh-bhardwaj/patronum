@@ -1,0 +1,153 @@
+/* Backup Page Table CSS */
+.backupTab {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 15% 20% 20% 20% 20%;
+  justify-content: center;
+  gap: 15px;
+  height: 100%;
+  margin-top: 5vw;
+}
+
+.backupTabCard {
+  display: grid;
+  grid-template-rows: 8vw 9vw 12vw 11vw 10.5vw 10.5vw;
+  border: 1px solid #e2e2e2;
+  background: #fdfdfd;
+  border-radius: 10px;
+  padding: 3vw 20px 10px;
+}
+
+.backupTabCard.tabCard1 {
+  border: none;
+  background: none;
+  border-radius: 0;
+  padding: 3vw 10px 40px;
+}
+.backupTabCard.active {
+  background: #1a73e8 !important;
+}
+.backupTabCard.active h4,
+.backupTabCard.active h5,
+.backupTabCard.active p {
+  color: #ffffff !important;
+}
+.backupTabCard h4 {
+  font-size: 1.5vw;
+  font-weight: 500;
+  color: var(--text-head);
+  line-height: 1.2;
+}
+.backupTabCard h5 {
+  font-size: 1.2vw;
+  color: var(--text-head);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  line-height: 1.2;
+}
+.backupTabCard.tabCard1 h5 {
+  font-size: 1.45vw;
+}
+.tabRadioBtn {
+  height: 18px;
+  width: 18px;
+  border: 1px solid #1a73e8;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 14px;
+  overflow: hidden;
+}
+.tabRadioBtn.full {
+  border-color: #ffffff;
+}
+.tabRadioBtn:after {
+  content: "";
+  background: #fe140b;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.tabRadioBtn.full:after {
+  background: #00ff1a;
+}
+.tabRadioBtn.partial:after {
+  background: #b9b9b9;
+}
+.tabRadioBtn.incomplete:after {
+  background: #fcbe43;
+}
+.backupTabCard p {
+  font-size: 0.9vw;
+  color: var(--text-body);
+  line-height: 1.5;
+}
+
+.tabCardRow1 {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-end;
+  margin: 0 0 2.5vw;
+}
+.tabCardRow1 img {
+  width: 2.6vw;
+}
+
+@media screen and (max-width: 1536px) {
+  .backupTabCard h4 {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .backupTab {
+    grid-template-columns: 14% 20% 20% 20% 21%;
+  }
+  .backupTabCard {
+    grid-template-rows: 110px 130px 210px 190px 170px 190px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .backupTab {
+    width: 200%;
+  }
+  .backupTabCard.tabCard1 h5 {
+    font-size: 2vw;
+  }
+  .backupTabCard h5 {
+    font-size: 2vw;
+  }
+  .backupTabCard p {
+    font-size: 1.8vw;
+  }
+  .tabCardRow1 img {
+    width: 5vw;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .backupTab {
+    width: 300%;
+    text-align: left;
+  }
+  .tabCardRow1 img {
+    width: 40px;
+  }
+  .backupTabCard h5 {
+    font-size: 4vw;
+  }
+  .backupTabCard p {
+    font-size: 3.8vw;
+  }
+  .backupTabCard.tabCard1 h5 {
+    font-size: 4vw;
+  }
+}

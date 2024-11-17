@@ -6,9 +6,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = {
   reactStrictMode: true,
   productionBrowserSourceMaps: true,
-  experimental: {
-    nextScriptWorkers: true,
-  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
@@ -124,6 +121,11 @@ const nextConfig = {
       {
         source: '/blog/page',
         destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/category/all/google-drive',
+        destination: '/category/google-drive',
         permanent: true,
       },
     ]

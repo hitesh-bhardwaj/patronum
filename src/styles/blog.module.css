@@ -129,7 +129,6 @@
     margin: 6% 0;
 }
 .blogContent img{
-    width: auto;
     object-fit: cover;
     border-radius: 20px;
     margin: auto;

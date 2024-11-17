@@ -1,0 +1,59 @@
+.content {
+    padding-top: 7.5vw;
+    padding-bottom: 5vw;
+}
+.featureTutorialVideo{
+    height: 100%;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .videoTutorialPlayButton{
+    position: absolute;
+    width: 5vw;
+    height: 5vw;
+    color: white;
+    background-color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+  .videoTutorialPlayButton::before{
+      border: 1px solid var(--primary);
+      border-radius: 50%;
+      content: "";
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+  }
+  .videoTutorialPlayButton img{
+    margin-left: 3px;
+    width: 20%;
+    height: 30%;
+  }
+  .videoModalOverlay{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: #000000c8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: FadeIn 0.3s ease;
+  }
+
+  
+
+@media screen and (max-width: 1024px) {
+    .content{
+        padding: 15% 0 5%;
+    }
+}

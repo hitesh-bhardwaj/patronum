@@ -1,13 +1,12 @@
-import Faqs from "@/components/PageComponents/FeaturesPage/Faq";
-import FeatureDetailCard from "@/components/PageComponents/FeaturesPage/FeatureDetailCard";
 import FeatureDetailInfo from "@/components/PageComponents/FeaturesPage/FeatureDetailInfo";
 import FeatureDetailTitle from "@/components/PageComponents/FeaturesPage/FeatureDetailTitle";
 import PageLayout from "@/components/PageLayout";
-import InstallButton from "@/components/Buttons/InstallButton";
 import SectionBreak from "@/components/PageLayout/SectionBreak";
-import SectionTitle from "@/components/PageLayout/SectionTitle";
 import VideoPlayer from "@/components/PageLayout/VideoPlayer";
-import Head from "next/head";
+import dynamic from "next/dynamic";
+import FeatureDetailCards from "@/components/PageComponents/FeaturesPage/FeatureDetailCards";
+
+const Faqs = dynamic(() => import("@/components/PageComponents/FeaturesPage/Faq"), { ssr: false });
 
 export default function FeatureDetail() {
 
@@ -108,133 +107,6 @@ export default function FeatureDetail() {
 
     return (
         <>
-            <Head>
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify(
-                            {
-                                "@context": "https://schema.org",
-                                "@type": "FAQPage",
-                                "mainEntity": [
-                                    {
-                                        "@type": "Question",
-                                        "name": "Will Patronum break my email security?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "No, Patronum is designed with security as a top priority and integrates seamlessly within your Google Workspace environment without compromising email security. It operates under Google's stringent security protocols to manage email signatures, ensuring that your data remains secure and private."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "How does Patronum update the email signatures of my Google Workspace users?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Patronum updates email signatures by utilizing its direct integration with Google Workspace. Changes made to signature templates or user information are automatically reflected in all users' email signatures."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "Will my email signature appear in the correct format on all email clients?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Patronum ensures that email signatures are formatted correctly across various email clients, using responsive design principles to maintain consistency."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "Can I manage my Google Workspace user’s email signatures directly?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Yes, as an administrator, you can directly manage and customize email signatures for all Google Workspace users through Patronum's centralized management system."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "Can I speak to someone to discuss my requirements further?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Absolutely, you can schedule a consultation or demo through our website to discuss your specific email signature management needs."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "What types of email signature templates does Patronum offer?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Patronum offers a wide range of customizable email signature templates to meet your branding needs."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "Can I include social media icons in my email signatures?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Yes, Patronum allows you to include social media icons and links in email signatures to enhance your brand's online presence."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "Is it possible to automatically include legal disclaimers in email signatures?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Yes, Patronum can automatically append legal disclaimers to email signatures, ensuring compliance with regulations."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "How do I ensure that all employees use the updated email signature?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Once you update an email signature template in Patronum, all users’ signatures are automatically updated in real-time, ensuring uniformity."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "Can email signatures be personalized for each user?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Yes, while maintaining a consistent brand image, Patronum allows for personalization of specific fields such as name, title, and contact information for each user."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "Does Patronum support dynamic content in email signatures?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Yes, Patronum supports dynamic content, such as promotional banners that can be regularly updated to reflect current marketing campaigns."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "Can Patronum manage email signatures for large organizations?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Patronum is scalable and capable of managing email signatures for organizations of any size, from small teams to large enterprises."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "Is training required to use Patronum for email signature management?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "No, Patronum is designed for ease of use with an intuitive interface, minimizing the need for extensive training."
-                                        }
-                                    },
-                                    {
-                                        "@type": "Question",
-                                        "name": "What if I encounter issues while using Patronum?",
-                                        "acceptedAnswer": {
-                                            "@type": "Answer",
-                                            "text": "Patronum provides comprehensive support to address any issues or questions, ensuring a smooth experience for all users."
-                                        }
-                                    }
-                                ]
-                            }
-                        )
-                    }}
-                />
-            </Head>
             <PageLayout
                 pageTitle1={'Email Signature'}
                 pageTitle2={'Management'}
@@ -260,53 +132,13 @@ export default function FeatureDetail() {
                     sectionParaBig="Patronum simplifies email signature management, offering features like marketing team control and an advanced HTML editor for custom designs. Integrate seamlessly into your Google Workspace without the hassle of complex settings, ensuring your team always presents a unified brand image."
                 />
 
-                <section id="feature-detail-info">
-                    <div className="container">
-                        <div className="content">
-                            <div className="section-list-container">
-                                {featuresDetail.map((feature, index) => (
-                                    <FeatureDetailInfo
-                                        key={index}
-                                        featureDetailInfoTitle={feature.title}
-                                        featureDetailInfoPara={feature.para}
-                                        imgSrc={feature.img}
-                                    />
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <FeatureDetailInfo content={featuresDetail} />
 
                 <SectionBreak
                     sectionBreakText="Transform how your organization presents itself with Patronum&#39;s cutting-edge email signature management. It isn’t just about how you create email signatures; it&#39;s about embodying your brand&#39;s professionalism, presenting a unified brand image and transforming every email into a brand-building opportunity."
                 />
 
-                <section id="feature-detail-card">
-                    <div className="container">
-                        <div className="content">
-                            <SectionTitle
-                                sectionTitle1="Additional Email Signature"
-                                sectionTitle2="Management Features"
-                            />
-
-                            <div className="feature-detail-card-wrapper">
-                                {featuresDetailCard.map((featureDetail, index) => (
-                                    <FeatureDetailCard
-                                        key={index}
-                                        id={featureDetail.id}
-                                        title={featureDetail.title}
-                                        content={featureDetail.para}
-                                        img={featureDetail.img}
-                                    />
-                                ))}
-                            </div>
-
-                            <div className="section-btn-container">
-                                <InstallButton />
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <FeatureDetailCards content={featuresDetailCard} />
 
                 <Faqs featureName="email_signature_management" />
 

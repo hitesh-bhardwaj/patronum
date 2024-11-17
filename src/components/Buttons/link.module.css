@@ -17,7 +17,7 @@
 .linkBtn .btnText {
   width: 100%;
   position: relative;
-  transition: var(--transition-2);
+  transition: color .75s cubic-bezier(.19,1,.22,1);
 }
 
 .btnText:after {
@@ -26,15 +26,16 @@
   bottom: 0;
   left: 0;
   height: 2px;
-  width: 95%;
+  width: 100%;
   transform: scaleX(0);
   transform-origin: center;
-  background: var(--primary);
-  transition: var(--transition-2);
+  background: var(--text-head);
+  transition: all .75s cubic-bezier(.19,1,.22,1);
 }
 
 .linkBtn:hover .btnText:after {
   transform: scaleX(1);
+  background: var(--primary);
 }
 
 .linkBtn .btnImages {
@@ -46,10 +47,10 @@
   gap: 6px;
   width: 200%;
   transition: var(--transition-2);
-  transform: translateX(-50%);
+  transform: translateX(-45%);
 }
 .linkBtn:hover .btnImages .div {
-  transform: translateX(0%);
+  transform: translateX(5%);
 }
 .linkBtn .img {
   width: 1.2vw;

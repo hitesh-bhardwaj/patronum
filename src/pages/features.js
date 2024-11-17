@@ -1,8 +1,10 @@
-import Faqs from "@/components/PageComponents/FeaturesPage/Faq";
 import Testimonial from "@/components/PageLayout/Testimonial";
 import PageLayout from "@/components/PageLayout";
 import SectionTitle from "@/components/PageLayout/SectionTitle";
 import FeatureCard from "@/components/PageLayout/FeatureCard";
+import dynamic from "next/dynamic";
+
+const Faqs = dynamic(() => import("@/components/PageComponents/FeaturesPage/Faq"), { ssr: false });
 
 const featuresData = [
     {

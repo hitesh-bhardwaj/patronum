@@ -1,34 +1,66 @@
 import PageLayout from "@/components/PageLayout";
-import LinkButton from "@/components/PageLayout/Button/LinkButton";
-
-const LegalCard = ({link, img, title, id}) => {
-    return (
-        <div className="legal-card fadeUp group">
-            <div className="cards-num">
-                <span className="aeonik">
-                    {id}
-                </span>
-            </div>
-            <div className="img group-hover:scale-[1.05] duration-300">
-                <img 
-                    src={`/assets/legal/${img}.svg`} 
-                    alt={title} 
-                    title={title}
-                />
-            </div>
-            <div className="info">
-                <span className="hr-1p" />
-                <h3 className="title-2xl aeonik">
-                    {title}
-                </h3>
-                <span className="hr-1p" />
-                <LinkButton link={link} btnText="Read More" target="_blank"/>
-            </div>
-        </div>
-    )
-}
+import LinkButton from "@/components/Buttons/LinkButton";
 
 export default function Legal() {
+
+    const legalContent = [
+        {
+            id: 1,
+            title: "Master Subscription Agreement",
+            img: "master-subscription-agreement",
+            link: "https://docs.google.com/document/d/1w_SjHlAx6H31A0AYARI_lVhHxDh-CZKWertRKANQT-U/edit?pli=1",
+            taregt: "_blank"
+        },
+        {
+            id: "02",
+            title: "Standard Contractual Clauses", 
+            img: "standard-contractual-clauses",
+            link: "https://docs.google.com/document/d/1C3PqmGvh1jItmMvN2FrL13V8V-rOestnw0QkWkNFIvc/edit?pli=1#heading=h.l01ylpj06ssx",
+            taregt: "_blank"
+        },
+        {
+            id: "03",
+            title: "Data Processing Agreement",
+            img: "data-processing-agreement",
+            link: "https://docs.google.com/document/d/1v197Nm8LzqHIRTx4pQEVAGlENpr0t8yFIyVAg48mNH4/edit#heading=h.gjdgxs",
+            taregt: "_blank"
+        },
+        {
+            id: "04",
+            title: "Standard Terms and Conditions",
+            img: "standard-terms-and-conditions",
+            link: "https://docs.google.com/document/d/19ie2gkbs2fv2kQ6gwyPwaEYpU2mg4t0eyvSKNgDF-bE/edit",
+            taregt: "_blank"
+        },
+        {
+            id: "05",
+            title: "Partner Agreement",
+            img: "partner-agreement",
+            link: "https://docs.google.com/document/d/1UfaCFOtQfOLWkHHmR0p0iAHWqG7xEuh4ESWj5cCvy2c/edit#heading=h.30j0zll",
+            taregt: "_blank"
+        },
+        {
+            id: "06",
+            title: "Cookie Policy",
+            img: "cookie-policy",
+            link: "/cookie-policy",
+            taregt: "_self"
+        },
+        {
+            id: "07",
+            title: "Privacy Policy",
+            img: "privacy-policy",
+            link: "/privacy-policy",
+            taregt: "_self",
+        },
+        {
+            id: "08",
+            title: "Environmental Policy",
+            img: "environmental-policy",
+            link: "/environmental-policy",
+            taregt: "_self",
+        }
+    ]
 
     return (
         <>
@@ -43,7 +75,7 @@ export default function Legal() {
                 date_published={"2020-12-21T12:00"}
                 date_modified={"2024-04-04T12:00"}
                 keywords={"Patronum Google Workspace Manager"}
-                > 
+            >
 
                 <section id="second-section">
                     <div className="container">
@@ -72,102 +104,16 @@ export default function Legal() {
                     <div className="container">
                         <div className="content">
                             <div className="legal-cards-wrapper">
+                            {legalContent.map((item, index) => (
                                 <LegalCard
-                                    id={"01"}
-                                    title={"Master Subscription Agreement"}
-                                    img={"master-subscription-agreement"}
-                                    link="https://docs.google.com/document/d/1w_SjHlAx6H31A0AYARI_lVhHxDh-CZKWertRKANQT-U/edit?pli=1"
+                                    key={index}
+                                    id={item.id}
+                                    title={item.title}
+                                    link={item.link}
+                                    img={item.img}
+                                    target={item.taregt}
                                 />
-                                <LegalCard 
-                                    id={"02"}
-                                    title={"Standard Contractual Clauses"}
-                                    img={"standard-contractual-clauses"}
-                                    link="https://docs.google.com/document/d/1C3PqmGvh1jItmMvN2FrL13V8V-rOestnw0QkWkNFIvc/edit?pli=1#heading=h.l01ylpj06ssx"
-                                />
-                                <LegalCard 
-                                    id={"03"}
-                                    title={"Data Processing Agreement"}
-                                    img={"data-processing-agreement"}
-                                    link="https://docs.google.com/document/d/1v197Nm8LzqHIRTx4pQEVAGlENpr0t8yFIyVAg48mNH4/edit#heading=h.gjdgxs"
-                                />
-                                <LegalCard 
-                                    id={"04"}
-                                    title={"Standard Terms and Conditions"}
-                                    img={"standard-terms-and-conditions"}
-                                    link="https://docs.google.com/document/d/19ie2gkbs2fv2kQ6gwyPwaEYpU2mg4t0eyvSKNgDF-bE/edit"
-                                />
-                                <LegalCard 
-                                    id={"05"}
-                                    title={"Partner Agreement"}
-                                    img={"partner-agreement"}
-                                    link="https://docs.google.com/document/d/1UfaCFOtQfOLWkHHmR0p0iAHWqG7xEuh4ESWj5cCvy2c/edit#heading=h.30j0zll"
-                                />
-                                <div className="legal-card fadeUp group">
-                                    <div className="cards-num">
-                                        <span className="aeonik">
-                                            06
-                                        </span>
-                                    </div>
-                                    <div className="img group-hover:scale-[1.05] duration-300">
-                                        <img 
-                                            src="/assets/legal/cookie-policy.svg" 
-                                            alt="Cookie Policy"
-                                            title="Cookie Policy"
-                                        />
-                                    </div>
-                                    <div className="info">
-                                        <span className="hr-1p" />
-                                        <h3 className="title-2xl aeonik">
-                                            Cookie Policy
-                                        </h3>
-                                        <span className="hr-1p" />
-                                        <LinkButton link="/cookie-policy" btnText="Read More"/>
-                                    </div>
-                                </div>
-                                <div className="legal-card fadeUp group">
-                                    <div className="cards-num">
-                                        <span className="aeonik">
-                                            07
-                                        </span>
-                                    </div>
-                                    <div className="img group-hover:scale-[1.05] duration-300">
-                                        <img 
-                                            src="/assets/legal/privacy-policy.svg" 
-                                            alt="Privacy Policy"
-                                            title="Privacy Policy"
-                                        />
-                                    </div>
-                                    <div className="info">
-                                        <span className="hr-1p" />
-                                        <h3 className="title-2xl aeonik">
-                                            Privacy Policy
-                                        </h3>
-                                        <span className="hr-1p" />
-                                        <LinkButton link="/privacy-policy" btnText="Read More"/>
-                                    </div>
-                                </div>
-                                <div className="legal-card fadeUp group">
-                                    <div className="cards-num">
-                                        <span className="aeonik">
-                                            08
-                                        </span>
-                                    </div>
-                                    <div className="img group-hover:scale-[1.05] duration-300">
-                                        <img 
-                                            src="/assets/legal/environmental-policy.svg" 
-                                            alt="Environmental Policy Image"
-                                            title="Environmental Policy"
-                                        />
-                                    </div>
-                                    <div className="info">
-                                        <span className="hr-1p" />
-                                        <h3 className="title-2xl aeonik">
-                                            Environmental Policy
-                                        </h3>
-                                        <span className="hr-1p" />
-                                        <LinkButton link="/environmental-policy" btnText="Read More"/>
-                                    </div>
-                                </div>
+                            ))}
                             </div>
                         </div>
                     </div>
@@ -175,5 +121,34 @@ export default function Legal() {
 
             </PageLayout>
         </>
+    )
+}
+
+const LegalCard = ({ link, img, title, id, target }) => {
+    return (
+        <div className="legal-card fadeUp group">
+            <div className="cards-num">
+                <span className="aeonik">
+                    {id}
+                </span>
+            </div>
+            <div className="img group-hover:scale-[1.05] duration-300">
+                <img
+                    src={`/assets/legal/${img}.svg`}
+                    alt={title}
+                    title={title}
+                />
+            </div>
+            <div className="info">
+                <span className="hr-1p" />
+                <h3 className="title-2xl aeonik">
+                    {title}
+                </h3>
+                <span className="hr-1p" />
+                <LinkButton
+                    href={link} btnText="Read More" target={target} className="link-btn"
+                />
+            </div>
+        </div>
     )
 }

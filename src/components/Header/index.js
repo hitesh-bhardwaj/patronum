@@ -32,7 +32,7 @@ const Header = () => {
                                 className='w-full h-auto'
                                 src="/logo.svg"
                                 width={200}
-                                height={200}
+                                height={50}
                                 alt='Patronum Logo'
                                 title='Patronum Logo'
                                 priority={true}

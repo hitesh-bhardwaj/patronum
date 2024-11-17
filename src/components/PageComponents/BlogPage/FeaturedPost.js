@@ -1,6 +1,5 @@
-// components/WpBlogs/FeaturedPost.js
+import LinkButton from '@/components/Buttons/LinkButton';
 import { format } from 'date-fns';
-import LinkButton from '@/components/PageLayout/Button/LinkButton';
 
 const FeaturedPost = ({ post }) => {
   if (!post) {
@@ -49,7 +48,7 @@ const FeaturedPost = ({ post }) => {
                                 }} 
                                 className='content-p lg:mb-[2vw] mb-[3vw]'
                             />
-                            <LinkButton link={`/${post.slug}`} btnText={"Read More"}/>
+                            <LinkButton href={`/${post.slug}`} btnText="Read More"/>
                         </div>
                     </div>
                 </div>

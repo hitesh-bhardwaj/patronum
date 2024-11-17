@@ -33,7 +33,7 @@ export default function CountrySelector({
       <div className="mt-1 relative">
         <button
           type="button"
-          className="relative lg:h-10 md:h-[8vw] h-10 w-full border-b border-[#a1a1a1] bg-[#fdfdfd] px-3 py-2 lg:text-[1vw] text-[4vw] focus:outline-none placeholder:text-gray-300 focus:outline-none focus:border-primary disabled:cursor-not-allowed disabled:opacity-50"
+          className="relative lg:h-10 md:h-[8vw] h-10 w-full border-b border-[#a1a1a1] bg-[#fdfdfd] px-3 py-2 lg:text-[1vw] text-[4vw] placeholder:text-gray-300 focus:outline-none focus:border-primary disabled:cursor-not-allowed disabled:opacity-50"
           aria-haspopup="listbox"
           aria-expanded="true"
           aria-labelledby="listbox-label"

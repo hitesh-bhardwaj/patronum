@@ -300,7 +300,7 @@ export default function Page() {
                   your computer or device, nor will it provide us with any
                   personally identifiable information. You can also choose to
                   opt out of any third party use of cookies at -
-                  <a href=" http://www.networkadvertising.org/choices/" target="_blank">
+                  <a href=" http://www.networkadvertising.org/choices/" target="_blank" rel="noopener">
                     {" "}
                     http://www.networkadvertising.org/choices/
                   </a>
@@ -320,7 +320,7 @@ export default function Page() {
                   collected will be done so in line with our own privacy policy.
                   You can opt out of this tailored experience by visiting
                   Google’s Ads Preferences Manager at -
-                  <a href="https://adssettings.google.com/authenticated" target="_blank">
+                  <a href="https://adssettings.google.com/authenticated" target="_blank" rel="noopener">
                     https://adssettings.google.com/authenticated
                   </a>
                 </p>
@@ -342,7 +342,7 @@ export default function Page() {
                 <p>
                   We use Twilio SendGrid to send emails securely and reliably
                   from websites. More details at -
-                  <a href="https://www.twilio.com/en-us/legal/privacy" target="_blank">
+                  <a href="https://www.twilio.com/en-us/legal/privacy" target="_blank" rel="noopener">
                     {" "}
                     https://www.twilio.com/en-us/legal/privacy
                   </a>
@@ -374,7 +374,7 @@ export default function Page() {
                   Google’s Application Programming Interfaces (APIs) will adhere
                   to Google API Services User Data Policy, including the Limited
                   Use requirements. Details at -
-                  <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank">
+                  <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">
                     https://developers.google.com/terms/api-services-user-data-policy
                   </a>
                   .
@@ -396,17 +396,17 @@ export default function Page() {
                 <p><strong>bespinslabs.com</strong></p>
                 <ul>
                     <li>
-                      <a href="https://www.weareenigma.com" target="_blank">
+                      <a href="https://www.weareenigma.com" target="_blank" rel="noopener">
                       https://www.weareenigma.com
                     </a>
                     </li>
                     <li>
-                      <a href="https://www.cloudways.com/en" target="_blank">
+                      <a href="https://www.cloudways.com/en" target="_blank" rel="noopener">
                         https://www.cloudways.com/en
                       </a>
                     </li>
                     <li>
-                      <a href="https://www.digitalocean.com" target="_blank">
+                      <a href="https://www.digitalocean.com" target="_blank" rel="noopener">
                         https://www.digitalocean.com (infrastructure)
                       </a>
                     </li>
@@ -414,27 +414,27 @@ export default function Page() {
                   <p><strong>patronum.io</strong></p>
                 <ul>
                     <li>
-                      <a href="https://www.weareenigma.com" target="_blank">
+                      <a href="https://www.weareenigma.com" target="_blank" rel="noopener">
                       https://www.weareenigma.com
                     </a>
                     </li>
                     <li>
-                      <a href="https://vercel.com" target="_blank">
+                      <a href="https://vercel.com" target="_blank" rel="noopener">
                         https://vercel.com
                       </a>
                     </li>
                     <li>
-                      <a href="https://aws.amazon.com" target="_blank">
+                      <a href="https://aws.amazon.com" target="_blank" rel="noopener">
                         https://aws.amazon.com (infrastructure)
                       </a>
                     </li>
                     <li>
-                      <a href="https://azure.microsoft.com" target="_blank">
+                      <a href="https://azure.microsoft.com" target="_blank" rel="noopener">
                         https://azure.microsoft.com (infrastructure)
                       </a>
                     </li>
                     <li>
-                      <a href="https://cloud.google.com" target="_blank">
+                      <a href="https://cloud.google.com" target="_blank" rel="noopener">
                         https://cloud.google.com (infrastructure)
                       </a>
                     </li>

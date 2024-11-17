@@ -1,3 +1,4 @@
+import LinkButton from '@/components/Buttons/LinkButton';
 import { format } from 'date-fns';
 import Link from 'next/link';
 

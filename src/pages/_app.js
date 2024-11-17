@@ -15,20 +15,32 @@ const Cookie = dynamic(() => import("@/components/Cookie"), { ssr: false });
 
 export default function App({ Component, pageProps, router }) {
 
+  // useEffect(() => {
+  //   const handleRouteChange = () => {
+  //     window.scrollTo(0, 0);
+  //     document.body.style.pointerEvents = 'none';
+  //     const enablePointerEvents = () => {
+  //       document.body.style.pointerEvents = 'auto';
+  //       document.removeEventListener('mousemove', enablePointerEvents);
+  //     };
+  //     document.addEventListener('mousemove', enablePointerEvents);
+  //   };
+  //   router.events.on('routeChangeStart', handleRouteChange);
+  //   return () => {
+  //     router.events.off('routeChangeStart', handleRouteChange);
+  //     document.removeEventListener('mousemove', handleRouteChange);
+  //   };
+  // }, [router]);
+
   useEffect(() => {
     const handleRouteChange = () => {
       window.scrollTo(0, 0);
-      document.body.style.pointerEvents = 'none';
-      const enablePointerEvents = () => {
-        document.body.style.pointerEvents = 'auto';
-        document.removeEventListener('mousemove', enablePointerEvents);
-      };
-      document.addEventListener('mousemove', enablePointerEvents);
     };
+    
     router.events.on('routeChangeStart', handleRouteChange);
+    
     return () => {
       router.events.off('routeChangeStart', handleRouteChange);
-      document.removeEventListener('mousemove', handleRouteChange);
     };
   }, [router]);
 

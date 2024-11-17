@@ -37,7 +37,7 @@ const Pagination = ({ pagesCount, currentPage, basePath, addCanonical = true }) 
             <div className={styles.pagiContainer}>
                 <div className={styles.pagiMain}>
                     <Link className={`${styles.pagiButtons} ${styles.previous} ${!hasPreviousPage ? styles.disabled : ''}`}
-                        href={hasPreviousPage ? `${path}page/${currentPage - 1}` : '#!'} // Using '#!' as a fallback for disabled links
+                        href={hasPreviousPage ? `${path}page/${currentPage - 1}` : '#'} // Using '#!' as a fallback for disabled links
                         aria-label="Go to Previous Page"
                         tabIndex={hasPreviousPage ? 0 : -1} // Disable tab focusing for disabled links
                     >
@@ -69,7 +69,7 @@ const Pagination = ({ pagesCount, currentPage, basePath, addCanonical = true }) 
                     </ul>
 
                     <Link className={`${styles.pagiButtons} ${styles.next} ${!hasNextPage ? styles.disabled : ''}`}
-                        href={hasNextPage ? `${path}page/${currentPage + 1}` : '#!'} // Using '#!' as a fallback for disabled links
+                        href={hasNextPage ? `${path}page/${currentPage + 1}` : '#'} // Using '#!' as a fallback for disabled links
                         aria-label="Go to Next Page"
                         tabIndex={hasNextPage ? 0 : -1} // Disable tab focusing for disabled links
                     >

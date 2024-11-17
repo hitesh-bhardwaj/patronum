@@ -1,8 +1,8 @@
-import Faqs from '@/components/PageComponents/FeaturesPage/Faq';
 import Pricing from '@/components/PageComponents/PricePage/Pricing';
 import ProductFeatures from '@/components/PageComponents/PricePage/ProductFeature';
 import PageLayout from '@/components/PageLayout';
-import Head from 'next/head';
+import dynamic from "next/dynamic";
+const Faqs = dynamic(() => import("@/components/PageComponents/FeaturesPage/Faq"), { ssr: false });
 
 export default function PricePage() {
 

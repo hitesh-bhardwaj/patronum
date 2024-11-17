@@ -2,7 +2,6 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import { useEffect } from "react";
-import Link from "next/link";
 import LinkButton from "@/components/Buttons/LinkButton";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
