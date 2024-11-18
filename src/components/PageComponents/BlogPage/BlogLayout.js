@@ -9,6 +9,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import BreadcrumbComponent from "@/components/PageLayout/BreadCrumb";
 import Layout from "@/components/Layout";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -130,8 +131,9 @@ export default function BlogLayout({
                       </div>
                   </div>
                 </div>
-                <div className="featured-image overflow-hidden lg:rounded-3xl rounded-2xl lg:h-[35vw] h-[full] fadeUp">
-                  <img
+                <div className="featured-image relative overflow-hidden lg:rounded-3xl rounded-2xl lg:h-[35vw] w-full md:h-[45vw] h-[50vw] fadeUp">
+                  <Image
+                    fill
                     className="w-full h-full object-cover object-center"
                     src={featImg}
                     alt={`${postTitle} image`}
