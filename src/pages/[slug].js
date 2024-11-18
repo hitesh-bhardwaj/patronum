@@ -3,15 +3,16 @@ import { format } from 'date-fns';
 import { getApolloClient } from '@/lib/apollo-client';
 import { QUERY_ALL_POST_SLUGS } from '@/data/posts';
 import { getPostBySlug, getHomePagePosts } from '@/lib/posts';
-import BlogLayout from '@/components/PageComponents/BlogPage/BlogLayout';
 
 import parse from 'html-react-parser';
 import parameterize from 'parameterize';
-import styles from '@/styles/blog.module.css';
 
 import Head from 'next/head';
-import { NextSeo } from 'next-seo';
+import { ArticleJsonLd, NextSeo } from 'next-seo';
 import dynamic from 'next/dynamic';
+import styles from '@/styles/blog.module.css';
+import BlogHero from '@/components/PageComponents/BlogPage/BlogHero';
+import Layout from '@/components/Layout';
 
 const ProgressBar = dynamic(() => import('@/components/PageComponents/BlogPage/ProgressBar'), { ssr: false });
 const RelatedPosts = dynamic(() => import('@/components/PageComponents/BlogPage/RelatedPosts'), { ssr: false });
@@ -107,7 +108,25 @@ function PostDetail({ post, recentPosts }) {
         }}
       />
 
-      <Head>
+      <ArticleJsonLd 
+        type="BlogPosting"
+        headline={post.seo.title}
+        keywords={post.seo.keywords}
+        datePublished={post.date}
+        dateModified={post.modified}
+        authorName="Patronum"
+        name={ post.seo.title}
+        description={post.seo.description}
+        url={`https://www.patronum.io/${post.slug}`}
+        isPartOf={`https://www.patronum.io/${post.slug}#website`}
+        images={post.seo.image}
+        publisherName="Patronum"
+        publisher="https://www.patronum.io/#organization"
+        inLanguage="en-US"
+        mainEntityOfPage={`https://www.patronum.io/${post.slug}#webpage`}
+      />
+
+      {/* <Head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -144,48 +163,17 @@ function PostDetail({ post, recentPosts }) {
             ),
           }}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
-              {
-                "@context": "https://schema.org",
-                "@type": "WebPage",
-                "@id": `https://www.patronum.io/${post.slug}#webpage`,
-                "url": `https://www.patronum.io/${post.slug}`,
-                "name": post.seo.title,
-                "description": post.seo.description,
-                "datePublished": post.date,
-                "dateModified": post.modified,
-                "publisher": {
-                  "@type": "Organization",
-                  "name": "Patronum",
-                  "logo": {
-                    "@type": "ImageObject",
-                    "url": "https://www.patronum.io/logo.svg",
-                  }
-                },
-                "about": {
-                  "@id": `https://www.www.patronum.io/${post.slug}#organization`
-                },
-                "isPartOf": {
-                  "@id": `https://www.www.patronum.io/${post.slug}#website`
-                },
-                "inLanguage": "en_US",
-              }
-            ),
-          }}
-        />
-      </Head>
+      </Head> */}
 
-      <BlogLayout
-        postTitle={post.title}
-        postAuthor={post.author.name}
-        postDate={formattedDate}
-        shareLink={post.slug}
-        featImg={post.featuredImage.sourceUrl}
-        readingTime={post.readingTime}
-      >
+      <Layout>
+        <BlogHero
+          postTitle={post.title}
+          postAuthor={post.author.name}
+          postDate={formattedDate}
+          shareLink={post.slug}
+          featImg={post.featuredImage.sourceUrl}
+          readingTime={post.readingTime}
+        />
         <section className="container">
           <div className="content blog-content">
             <div className="flex w-full justify-between items-start" id="blog-container">
@@ -196,11 +184,9 @@ function PostDetail({ post, recentPosts }) {
             </div>
           </div>
         </section>
-
         <ProgressBar />
-
         <RelatedPosts sectionTitle="Related Blogs" recentPosts={recentPosts} currentSlug={post.slug} />
-      </BlogLayout>
+      </Layout>
     </>
   );
 }
