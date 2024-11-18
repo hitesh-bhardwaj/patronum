@@ -1,3 +1,4 @@
+const feed = require('./plugins/feed');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
@@ -130,6 +131,13 @@ const nextConfig = {
       },
     ]
   },
+  env: {
+    WORDPRESS_GRAPHQL_ENDPOINT: process.env.WORDPRESS_GRAPHQL_ENDPOINT,
+  },
 }
 
-module.exports = withBundleAnalyzer(nextConfig)
+// export default nextConfig;
+module.exports = () => {
+  const plugins = [feed, withBundleAnalyzer];
+  return plugins.reduce((acc, plugin) => plugin(acc), nextConfig);
+};
