@@ -14,11 +14,11 @@ import { fadeRight, fadeUp, lineAnim, titleAnim } from "@/utils/gsapAnimations";
 import dynamic from "next/dynamic";
 import MetaData from "@/components/PageComponents/HomePage/MetaData";
 
-const SideMenu = dynamic(() => import("@/components/SideMenu", {ssr: false}));
-const UseCases = dynamic(() => import("@/components/PageComponents/HomePage/UseCases", {ssr: false}));
-const Faqs = dynamic(() => import("@/components/PageComponents/HomePage/Faqs", {ssr: false}));
-const RelatedPosts = dynamic(() => import("@/components/PageComponents/BlogPage/RelatedPosts", {ssr: false}));
-const Testimonial = dynamic(() => import("@/components/PageLayout/Testimonial", {ssr: false}));
+const SideMenu = dynamic(() => import("@/components/SideMenu"));
+const UseCases = dynamic(() => import("@/components/PageComponents/HomePage/UseCases"));
+const Faqs = dynamic(() => import("@/components/PageComponents/HomePage/Faqs"));
+const RelatedPosts = dynamic(() => import("@/components/PageComponents/BlogPage/RelatedPosts"));
+const Testimonial = dynamic(() => import("@/components/PageLayout/Testimonial"));
 
 export default function Home({ recentPosts }) {
   const { isDesktop } = useDevice();
