@@ -8,111 +8,109 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 export default function UseCases() {
 
-    if (globalThis.innerWidth > 1024) {
-        useEffect(() => {
-            let ctx = gsap.context(() => {
-                const sectionLength = document.getElementsByClassName('useCase-item').length;
-                const foc_container = document.querySelector('.useCases-items');
-                const newWidth = sectionLength * 100;
-                foc_container.style.width = newWidth + "%";
-                const foc_sections = gsap.utils.toArray(".useCases-items .useCase-item");
+    useEffect(() => {
+        let ctx = gsap.context(() => {
+            const sectionLength = document.getElementsByClassName('useCase-item').length;
+            const foc_container = document.querySelector('.useCases-items');
+            const newWidth = sectionLength * 100;
+            foc_container.style.width = newWidth + "%";
+            const foc_sections = gsap.utils.toArray(".useCases-items .useCase-item");
 
-                const navbarLinks = document.querySelectorAll(".use-cases-list li a");
-                const sections = gsap.utils.toArray('.useCase-item');
+            const navbarLinks = document.querySelectorAll(".use-cases-list li a");
+            const sections = gsap.utils.toArray('.useCase-item');
 
-                const scrollTween = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: "#use-cases",
-                        pin: true,
-                        scrub: 1,
-                        start: '20% top',
-                        markers: false,
-                        snap: {
-                            snapTo: 1 / (foc_sections.length - 1),
-                            inertia: false,
-                            duration: { min: 0.1, max: 0.5 }
-                        },
-                        end: "+=" + (foc_container.offsetWidth - innerWidth),
-                        invalidateOnRefresh: true,
+            const scrollTween = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#use-cases",
+                    pin: true,
+                    scrub: 1,
+                    start: '200 top',
+                    markers: false,
+                    snap: {
+                        snapTo: 1 / (foc_sections.length - 1),
+                        inertia: false,
+                        duration: { min: 0.1, max: 0.5 }
+                    },
+                    end: "5000px bottom",
+                    invalidateOnRefresh: true,
+                }
+            });
+
+            scrollTween.to(sections, {
+                xPercent: -100 * (sections.length - 1),
+                ease: 'none',
+            });
+
+            sections.forEach((section, i) => {
+
+                let relatedLink = document.querySelector(`[data-section="${section.id}"]`);
+
+                ScrollTrigger.create({
+                    trigger: section,
+                    start: "left 90%",
+                    end: "right 90%",
+                    containerAnimation: scrollTween,
+                    markers: false,
+                    id: `section-${i + 1}`,
+                    onToggle: self => { // Use self to access trigger element within onToggle
+                        const currentActive = document.querySelector('.use-cases-list .active');
+                        if (self.isActive) {
+                            relatedLink.classList.add('active');
+                            if (currentActive && currentActive !== relatedLink) {
+                                currentActive.classList.remove('active');
+                            }
+                        } else {
+                            relatedLink.classList.remove('active');
+                        }
+                    },
+                });
+            });
+
+            navbarLinks.forEach(anchor => {
+                anchor.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    let targetElem = document.querySelector(e.target.getAttribute("href")),
+                        y = targetElem;
+                    if (targetElem && foc_container.isSameNode(targetElem.parentElement)) {
+                        // Ensure scrollTrigger and its properties are defined
+                        if (scrollTween.scrollTrigger && 'end' in scrollTween.scrollTrigger && 'start' in scrollTween.scrollTrigger) {
+                            let totalScroll = scrollTween.scrollTrigger.end - scrollTween.scrollTrigger.start,
+                                totalMovement = (foc_sections.length - 1) * targetElem.offsetWidth;
+                            y = Math.round(scrollTween.scrollTrigger.start + (targetElem.offsetLeft / totalMovement) * totalScroll);
+                        }
+                        gsap.to(window, {
+                            scrollTo: {
+                                y: y,
+                                autoKill: false
+                            },
+                            duration: 1
+                        });
                     }
                 });
-
-                scrollTween.to(sections, {
-                    xPercent: -100 * (sections.length - 1),
-                    ease: 'none',
-                });
-
-                sections.forEach((section, i) => {
-
-                    let relatedLink = document.querySelector(`[data-section="${section.id}"]`);
-
-                    ScrollTrigger.create({
-                        trigger: section,
-                        start: "left 90%",
-                        end: "right 90%",
-                        containerAnimation: scrollTween,
-                        markers: false,
-                        id: `section-${i + 1}`,
-                        onToggle: self => { // Use self to access trigger element within onToggle
-                            const currentActive = document.querySelector('.use-cases-list .active');
-                            if (self.isActive) {
-                                relatedLink.classList.add('active');
-                                if (currentActive && currentActive !== relatedLink) {
-                                    currentActive.classList.remove('active');
-                                }
-                            } else {
-                                relatedLink.classList.remove('active');
-                            }
-                        },
-                    });
-                });
-
-                navbarLinks.forEach(anchor => {
-                    anchor.addEventListener("click", function (e) {
-                        e.preventDefault();
-                        let targetElem = document.querySelector(e.target.getAttribute("href")),
-                            y = targetElem;
-                        if (targetElem && foc_container.isSameNode(targetElem.parentElement)) {
-                            // Ensure scrollTrigger and its properties are defined
-                            if (scrollTween.scrollTrigger && 'end' in scrollTween.scrollTrigger && 'start' in scrollTween.scrollTrigger) {
-                                let totalScroll = scrollTween.scrollTrigger.end - scrollTween.scrollTrigger.start,
-                                    totalMovement = (foc_sections.length - 1) * targetElem.offsetWidth;
-                                y = Math.round(scrollTween.scrollTrigger.start + (targetElem.offsetLeft / totalMovement) * totalScroll);
-                            }
-                            gsap.to(window, {
-                                scrollTo: {
-                                    y: y,
-                                    autoKill: false
-                                },
-                                duration: 1
-                            });
-                        }
-                    });
-                });
             });
-            return () => ctx.revert();
-        }, []);
+        });
+        return () => ctx.revert();
+    }, []);
 
-        useEffect(() => {
-            let ctx = gsap.context(() => {
-                const UseCaseList = document.querySelectorAll('.use-cases-list li')
+    useEffect(() => {
+        let ctx = gsap.context(() => {
+            const UseCaseList = document.querySelectorAll('.use-cases-list li')
 
-                gsap.fromTo(UseCaseList, {
-                    scrollTrigger: {
-                        trigger: '.use-cases-list',
-                        start: 'top 80%',
-                    },
-                    opacity: 0,
-                }, {
-                    opacity: 1,
-                    duration: 0.5,
-                    stagger: 0.1,
-                    ease: 'power2.out'
-                });
+            gsap.fromTo(UseCaseList, {
+                scrollTrigger: {
+                    trigger: '.use-cases-list',
+                    start: 'top 80%',
+                },
+                opacity: 0,
+            }, {
+                opacity: 1,
+                duration: 0.5,
+                stagger: 0.1,
+                ease: 'power2.out'
             });
-            return () => ctx.revert();
-        }, []);
-    }
+        });
+        return () => ctx.revert();
+    }, []);
 
     return (
         <>
@@ -232,7 +230,7 @@ export default function UseCases() {
                                                     Patronum is like having a digital wizard at your fingertips, ensuring your team remains in the fast lane, fully equipped and ready from day one.
                                                 </span>
                                             </p>
-                                            <LinkButton href="patronum-for-sales-marketing" btnText="Learn More"/>
+                                            <LinkButton href="patronum-for-sales-marketing" btnText="Learn More" />
                                         </div>
                                     </div>
                                 </div>
@@ -258,7 +256,7 @@ export default function UseCases() {
                                                 <span>
                                                     Patronum is as an indispensable ally for educational institutions leveraging Google Workspace. From the precise alignment of staff in Google Groups to the strategic distribution of resources, Patronum ensures that everyone is on the same page.                                       </span>
                                             </p>
-                                            <LinkButton href="patronum-for-education" btnText="Learn More"/>
+                                            <LinkButton href="patronum-for-education" btnText="Learn More" />
                                         </div>
                                     </div>
                                 </div>
@@ -284,7 +282,7 @@ export default function UseCases() {
                                                 <span>
                                                     Patronum eliminates the common hurdles of document access and schedule coordination, enabling your all team members to focus on productivity. Patronum also enhances organizational connectivity, with the ability to search for colleagues by department, location, or skillset via the Organization Chart and People Finder.                                        </span>
                                             </p>
-                                            <LinkButton href="patronum-for-users" btnText="Learn More"/>
+                                            <LinkButton href="patronum-for-users" btnText="Learn More" />
                                         </div>
                                     </div>
                                 </div>

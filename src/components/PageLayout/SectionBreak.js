@@ -11,7 +11,7 @@ export default function SectionBreak( {sectionBreakText} ) {
     let ctx = gsap.context(() => {
       const sectionBreakAnimations = document.querySelectorAll('.section-break-text');
         sectionBreakAnimations.forEach((sectionBreakAnimation) => {
-          const sectionBreakAnim = new SplitType(sectionBreakAnimation, {types: 'line'});
+          const sectionBreakAnim = new SplitType(sectionBreakAnimation, {types: 'line word'});
           let sectionBreakAnimWord = sectionBreakAnimation.querySelectorAll('.line');
 
         gsap.to(sectionBreakAnimWord, {

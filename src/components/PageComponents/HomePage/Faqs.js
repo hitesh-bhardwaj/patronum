@@ -1,3 +1,4 @@
+import { scaleAnim } from '@/utils/gsapAnimations';
 import { FAQPageJsonLd } from 'next-seo';
 import React, { useState } from 'react';
 
@@ -12,6 +13,8 @@ export default function Faqs(){
             setAccordionOpen(index); // Open accordion
         }
     };
+
+    scaleAnim();
 
     const faqData = [
         {
