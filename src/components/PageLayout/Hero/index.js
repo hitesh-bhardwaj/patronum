@@ -86,13 +86,15 @@ export default function Hero({ pageTitle1, pageTitle2, pagePara, imgSrc, breadcr
                                 {pagePara}
                             </p>
                         </div>
-
-                        <div className="page-hero-right lg:w-[35%] text-center w-full flex justify-center">
-                            <div className="page-hero-img lg:w-full md:w-[60%] w-[70%]">
-                                <Image width={400} height={500} className="w-full h-full" src={`/assets/heroSections/${imgSrc}`} alt={`${pageTitle1} Image`} title={`${pageTitle1} Image`} />
+                        {imgSrc && (
+                            <div className="page-hero-right lg:w-[35%] text-center w-full flex justify-center">
+                                <div className="page-hero-img lg:w-full md:w-[60%] w-[70%]">
+                                    <Image width={400} height={500} className="w-full h-full" src={`/assets/heroSections/${imgSrc}`} alt={`${pageTitle1} Image`} title={`${pageTitle1} Image`} />
+                                </div>
                             </div>
-                        </div>
+                        )}
                     </div>
+
 
                     <div className="lg:mb-[4%] md:mb-[4vw] mb-[5vw] breadanim">
                         <BreadcrumbComponent
