@@ -19,7 +19,8 @@ const Comparison = ({ data, product, productprice, productpriceInfo }) => {
                                     <th className="border border-gray-300 lg:p-3 p-5 text-left"></th>
                                     <th className="border border-gray-300 lg:p-3 p-5 text-left lg:text-[1.2vw] font-light leading-[1.2] lg:px-[1vw] px-[2vw] text-[6vw] md:text-[4vw]">Patronum</th>
                                     <th className="border border-gray-300 lg:p-3 p-5 text-left lg:text-[1.2vw] font-light leading-[1.2] lg:px-[1vw] px-[2vw] text-[6vw] md:text-[4vw]">{product}</th>
-                                </tr>
+                                </tr> 
+                                
                             </thead>
                             <thead>
                                 <tr>
