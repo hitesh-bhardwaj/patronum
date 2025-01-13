@@ -4,6 +4,8 @@ import React from 'react'
 import gsap from "gsap";
 import styles from "@/components/PageLayout/Button/primary.module.css";
 import Layout from "@/components/Layout";
+import PrimaryButton from "@/components/Buttons/PrimaryButton";
+import Head from "next/head";
 
 export default function Thankyou() {
   const [countdown, setCountdown] = useState(10);
@@ -75,8 +77,11 @@ export default function Thankyou() {
 
   return (
     <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <Layout>
-        <section id="hero">
+        <section id="hero" className="h-screen">
           <div className="container h-screen">
             <div className="flex w-full items-center justify-center h-full ">
               <div className="text-center">
@@ -97,20 +102,7 @@ export default function Thankyou() {
                 </div>
 
                 <div className="flex justify-center flex-col-reverse lg:flex-row items-center gap-[1vw] mt-[5vw] lg:mt-[1vw]">
-                  <Link data-thankyou id="link1" href="/" className={`${styles.btn} fadeUp`}>
-                    <span className={styles.btnText}>
-                      Back To Home
-                    </span>
-                    <div aria-hidden="true" className={styles.btnCircle}>
-                      <div className={styles.btnCircleText}>
-                        Back To Home
-                        <svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.btnIcon}>
-                          <path d="M3.82475e-07 5.625L7.625 5.625L4.125 9.125L5 10L10 5L5 -4.37114e-07L4.125 0.874999L7.625 4.375L4.91753e-07 4.375L3.82475e-07 5.625Z" className={styles.btnPath} />
-                          <path d="M3.82475e-07 5.625L7.625 5.625L4.125 9.125L5 10L10 5L5 -4.37114e-07L4.125 0.874999L7.625 4.375L4.91753e-07 4.375L3.82475e-07 5.625Z" className={styles.btnPath} />
-                        </svg>
-                      </div>
-                    </div>
-                  </Link>
+                  <PrimaryButton data-thankyou href="/" btnText="Back To Home"/>
                   <Link data-secondary data-thankyou id="link2" target="_blank" href="https://workspace.google.com/marketplace/app/patronum/824001351376" className={`${styles.btn} fadeUp`}>
                     <span className={styles.btnText}>
                       Proceed To Installation

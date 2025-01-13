@@ -1,48 +1,59 @@
 import {
-    LinkedinShareButton,
-    FacebookShareButton,
-    TwitterShareButton,
-    WhatsappShareButton,
-  } from "next-share";
+  LinkedinShareButton,
+  FacebookShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+} from "next-share";
 import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import BreadcrumbComponent from "@/components/PageLayout/BreadCrumb";
+import Layout from "@/components/Layout";
 import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const BlogHero = ({ postTitle, postAuthor, postDate, shareLink, featImg, readingTime }) => {
+export default function BlogLayout({
+  children,
+  postTitle,
+  postAuthor,
+  postDate,
+  shareLink,
+  featImg,
+  readingTime,
+}) {
+  useEffect(() => {
+    const fadeUps = document.querySelectorAll(".fadeUp");
 
-    useEffect(() => {
-        const fadeUps = document.querySelectorAll(".fadeUp");
-    
-        let ctx = gsap.context(() => {
-          fadeUps.forEach((fadeUp) => {
-            gsap.fromTo(
-              fadeUp,
-              {
-                opacity: 0,
-                y: 50,
-              },
-              {
-                opacity: 1,
-                y: 0,
-                duration: 0.6,
-                ease: "Power3.out",
-                scrollTrigger: {
-                  trigger: fadeUp,
-                  start: "top 85%",
-                },
-              }
-            );
-          });
-        });
-        return () => ctx.revert();
-      }, []);
+    let ctx = gsap.context(() => {
+      fadeUps.forEach((fadeUp) => {
+        gsap.fromTo(
+          fadeUp,
+          {
+            opacity: 0,
+            y: 50,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: "Power3.out",
+            scrollTrigger: {
+              trigger: fadeUp,
+              start: "top 85%",
+            },
+          }
+        );
+      });
+    });
+    return () => ctx.revert();
+  }, []);
 
-    return (
-        <section id="blog-hero">
+  return (
+    <>
+      <Layout>
+        <main>
+          <section id="blog-hero">
             <div className="w-[88%] mx-auto">
               <div className="content blog-content-1">
                 <div className="lg:w-[88%] w-full mx-auto lg:mt-[6.5vw] md:mt-[3vw] mt-[6vw] lg:mb-[0vw] mb-[6vw]">
@@ -132,7 +143,9 @@ const BlogHero = ({ postTitle, postAuthor, postDate, shareLink, featImg, reading
               </div>
             </div>
           </section>
-    )
+          {children}
+        </main>
+      </Layout>
+    </>
+  );
 }
-
-export default BlogHero;

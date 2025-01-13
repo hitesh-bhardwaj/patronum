@@ -1,48 +1,13 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { format } from 'date-fns';
 import LinkButton from '@/components/Buttons/LinkButton';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 function RelatedPosts({ recentPosts, currentSlug, sectionTitle, sectionPara }) {
 
     const filteredPosts = recentPosts.filter(post => post.slug !== currentSlug).slice(0, 3);
 
     const formattedDates = filteredPosts.map(post => format(new Date(post.date), 'MMMM dd, yyyy'));
-
-    const container = useRef();
-
-    useEffect(() => {
-        let ctx = gsap.context(() => {
-            const blogCards = container.current.querySelectorAll('.blog-cards');
-            let tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: container.current,
-                    start: "top 85%",
-                    markers: false,
-                }
-            });
-
-            tl.fromTo(
-                blogCards,
-                {
-                    opacity: 0,
-                    y: 100,
-                },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.6,
-                    stagger: 0.1,
-                    ease: 'Power2.out',
-                }
-            );
-        });
-        return () => ctx.revert();
-    }, []);
 
     return (
         <>
@@ -62,7 +27,7 @@ function RelatedPosts({ recentPosts, currentSlug, sectionTitle, sectionPara }) {
                             )}
                         </div>
 
-                        <div ref={container} className='blog-card-wrapper mb-16'>
+                        <div className='blog-card-wrapper mb-16'>
                             {filteredPosts.map((post, index) => (
                                 <div key={index} className="blog-cards">
                                     <div className="blog-card hover:shadow-lg">
@@ -86,7 +51,7 @@ function RelatedPosts({ recentPosts, currentSlug, sectionTitle, sectionPara }) {
                                                 <h5 className="blog-card-title aeonik">
                                                     {post.title}
                                                 </h5>
-                                                <LinkButton href={post.slug} btnText="Read More" className='!absolute lg:bottom-[2.5vw] bottom-[5vw]' />
+                                                <LinkButton href={post.slug} btnText="Read More" className='!absolute lg:bottom-[2.5vw] bottom-[5vw]'/>
                                             </div>
                                         </div>
                                     </div>

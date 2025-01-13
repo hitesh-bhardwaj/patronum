@@ -1,12 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PricingCard from './PricingCard';
 import PriceDropDown from './PriceDropDown';
 import { Switch } from "@/components/ui/switch"
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Pricing = () => {
     const [isAnnual, setIsAnnual] = useState(true);
@@ -19,31 +15,6 @@ const Pricing = () => {
     const handleCurrencyChange = (currency) => {
         setSelectedCurrency(currency);
     };
-
-    useEffect(() => {
-        const pricingCards = document.querySelectorAll('.pricing-card-wrapper .pricing-card');
-        let tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".pricing-card-wrapper",
-                start: "top 85%",
-            }
-        });
-
-        tl.fromTo(
-            pricingCards,
-            {
-                opacity: 0,
-                y: 100,
-            },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 0.6,
-                stagger: 0.1,
-                ease: 'Power2.out',
-            }
-        );
-    }, []);
 
     return (
         <>
