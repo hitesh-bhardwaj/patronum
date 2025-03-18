@@ -124,6 +124,12 @@ export default function Webinars() {
 
 const Details = [
     {
+        title: "One Tool To Rule Them All - The Easy Way To Manage Google Workspace",
+        img: "https://wordpress-213572-4463644.cloudwaysapps.com/wp-content/uploads/2024/12/the-easy-way-to-manage-google-workspace.png",
+        content: "In this webinar, we explore all the current features within Patronum that help manage your Google Workspace environment.",
+        videoId: "dPXBVDFe_h8"
+    },
+    {
         title: "2 Ways To Share Google Contacts",
         img: "https://wordpress-213572-4463644.cloudwaysapps.com/wp-content/uploads/2024/10/2-Ways-To-Share-Google-Contacts.png",
         content: "In this webinar we explain the difference between Google Profiles, Google Domain Contacts (Domain Shared Domains) and Google Contacts. We go into depth about how, using Patronum, workflows can be configured to automatically share Google Contacts with other users.",
@@ -135,12 +141,12 @@ const Details = [
         content: "This webinar explores how Patronum can help simplify and secure user offboarding within Google Workspace. By watching, you'll learn new approaches to: Declutter calendar events, Keep your contact database up to date, Manage Google Drive file access.",
         videoId: "cLMtzYrI6as"
     },
-    // {
-    //     title: "3 Ways to Keep Google Drive Content Under Control",
-    //     img: "https://wordpress-213572-4463644.cloudwaysapps.com/wp-content/uploads/2024/10/3-Ways-to-Keep-Google-Drive-Content-Under-Control.png",
-    //     content: "In this webinar we explore how Patronum can help Google Workspace administrators keep their Google Drive data under control. We explore who to set alerts around storage limits and item restrictions.",
-    //     videoId: "v3Xlz8ExUzI"
-    // },
+    {
+        title: "3 Ways to Keep Google Drive Content Under Control",
+        img: "https://wordpress-213572-4463644.cloudwaysapps.com/wp-content/uploads/2024/10/3-Ways-to-Keep-Google-Drive-Content-Under-Control.png",
+        content: "In this webinar we explore how Patronum can help Google Workspace administrators keep their Google Drive data under control. We explore who to set alerts around storage limits and item restrictions.",
+        videoId: "v3Xlz8ExUzI"
+    },
     {
         title: "5 Ways to Simplify Onboarding within Google Workspace",
         img: "https://wordpress-213572-4463644.cloudwaysapps.com/wp-content/uploads/2024/10/onboarding.png",

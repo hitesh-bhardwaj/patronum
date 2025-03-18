@@ -1,7 +1,8 @@
 import React from 'react';
 import { format } from 'date-fns';
-import LinkButton from '@/components/Buttons/LinkButton';
 import PrimaryButton from '@/components/Buttons/PrimaryButton';
+import Link from 'next/link';
+import styles from "@/components/Buttons/link.module.css";
 
 function RelatedPosts({ recentPosts, currentSlug, sectionTitle, sectionPara }) {
 
@@ -29,7 +30,7 @@ function RelatedPosts({ recentPosts, currentSlug, sectionTitle, sectionPara }) {
 
                         <div className='blog-card-wrapper mb-16'>
                             {filteredPosts.map((post, index) => (
-                                <div key={index} className="blog-cards">
+                                <Link href={post.slug} key={index} className="blog-cards">
                                     <div className="blog-card hover:shadow-lg">
                                         <div className="blog-card-content">
                                             {post.featuredImage && (
@@ -45,17 +46,26 @@ function RelatedPosts({ recentPosts, currentSlug, sectionTitle, sectionPara }) {
                                             )}
                                             <div className="blog-card-details">
                                                 <div className="blog-card-author">
-                                                    <p className="head">By {post.author.node.name}</p>
+                                                    <p className="head">By Patronum</p>
                                                     <p className="date">{formattedDates[index]}</p>
                                                 </div>
                                                 <h5 className="blog-card-title aeonik">
                                                     {post.title}
                                                 </h5>
-                                                <LinkButton href={post.slug} btnText="Read More" className='!absolute lg:bottom-[2.5vw] bottom-[5vw]'/>
+                                                <div className={`${styles.linkBtn} !absolute lg:bottom-[2.5vw] bottom-[5vw]`}>
+                                                    <span className={styles.btnText}>Read More</span>
+                                                    <span className="screen-reader-text">{" "}About This</span>
+                                                    <span className={styles.btnImages}>
+                                                        <div className={styles.div}>
+                                                            <img alt="arrow-icon" className={styles.img} src="/assets/icons/link-arrow-blue.svg" width={27} height={15} />
+                                                            <img alt="arrow-icon" className={styles.img} src="/assets/icons/link-arrow-black.svg" width={27} height={15} />
+                                                        </div>
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </Link>
                             ))}
                         </div>
                         <div className="section-btn-container">

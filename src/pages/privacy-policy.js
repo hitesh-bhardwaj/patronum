@@ -300,9 +300,9 @@ export default function Page() {
                   your computer or device, nor will it provide us with any
                   personally identifiable information. You can also choose to
                   opt out of any third party use of cookies at -
-                  <a href=" http://www.networkadvertising.org/choices/" target="_blank" rel="noopener">
+                  <a href="https://optout.networkadvertising.org/?c=1" target="_blank" rel="noopener">
                     {" "}
-                    http://www.networkadvertising.org/choices/
+                    https://optout.networkadvertising.org/?c=1
                   </a>
                 </p>
                 <p>

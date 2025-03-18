@@ -126,8 +126,7 @@ export default function Thankyou() {
                 </div>
                 <div className="lg:mt-[4vw] mt-[10vw]" id="anim">
                   <p className="content-p">
-                    You'll be redirected to Installation page in {countdown}{" "}
-                    seconds.
+                    You'll be redirected to Installation page in {countdown}{" "}seconds.
                   </p>
                 </div>
               </div>

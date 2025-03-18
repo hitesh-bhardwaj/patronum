@@ -1,6 +1,4 @@
 import { getApolloClient } from './apollo-client';
-
-import { updateUserAvatar } from './users';
 import { sortObjectsByDate } from './datetime';
 
 import {
@@ -8,9 +6,6 @@ import {
   QUERY_ALL_POSTS_ARCHIVE,
   QUERY_ALL_POSTS,
   QUERY_POST_BY_SLUG,
-  QUERY_POSTS_BY_AUTHOR_SLUG_INDEX,
-  QUERY_POSTS_BY_AUTHOR_SLUG_ARCHIVE,
-  QUERY_POSTS_BY_AUTHOR_SLUG,
   QUERY_POSTS_BY_CATEGORY_ID_INDEX,
   QUERY_POSTS_BY_CATEGORY_ID_ARCHIVE,
   QUERY_POSTS_BY_CATEGORY_ID,
@@ -76,44 +71,6 @@ export async function getPostBySlug(slug) {
     post.metaTitle = seo.title;
     post.metaDescription = seo.metaDesc;
     post.readingTime = seo.readingTime;
-
-    // The SEO plugin by default includes a canonical link, but we don't want to use that
-    // because it includes the WordPress host, not the site host. We manage the canonical
-    // link along with the other metadata, but explicitly check if there's a custom one
-    // in here by looking for the API's host in the provided canonical link
-
-    if (seo.canonical && !seo.canonical.includes(apiHost)) {
-      post.canonical = seo.canonical;
-    }
-
-    post.og = {
-      author: seo.opengraphAuthor,
-      description: seo.opengraphDescription,
-      image: seo.opengraphImage,
-      modifiedTime: seo.opengraphModifiedTime,
-      publishedTime: seo.opengraphPublishedTime,
-      publisher: seo.opengraphPublisher,
-      title: seo.opengraphTitle,
-      type: seo.opengraphType,
-    };
-
-    post.article = {
-      author: post.og.author,
-      modifiedTime: post.og.modifiedTime,
-      publishedTime: post.og.publishedTime,
-      publisher: post.og.publisher,
-    };
-
-    post.robots = {
-      nofollow: seo.metaRobotsNofollow,
-      noindex: seo.metaRobotsNoindex,
-    };
-
-    post.twitter = {
-      description: seo.twitterDescription,
-      image: seo.twitterImage,
-      title: seo.twitterTitle,
-    };
   }
 
   return {
@@ -141,42 +98,6 @@ export async function getAllPosts(options = {}) {
   });
 
   const posts = data?.data.posts.edges.map(({ node = {} }) => node);
-
-  return {
-    posts: Array.isArray(posts) && posts.map(mapPostData),
-  };
-}
-
-/**
- * getPostsByAuthorSlug
- */
-
-const postsByAuthorSlugIncludesTypes = {
-  all: QUERY_POSTS_BY_AUTHOR_SLUG,
-  archive: QUERY_POSTS_BY_AUTHOR_SLUG_ARCHIVE,
-  index: QUERY_POSTS_BY_AUTHOR_SLUG_INDEX,
-};
-
-export async function getPostsByAuthorSlug({ slug, ...options }) {
-  const { queryIncludes = 'index' } = options;
-
-  const apolloClient = getApolloClient();
-
-  let postData;
-
-  try {
-    postData = await apolloClient.query({
-      query: postsByAuthorSlugIncludesTypes[queryIncludes],
-      variables: {
-        slug,
-      },
-    });
-  } catch (e) {
-    console.log(`[posts][getPostsByAuthorSlug] Failed to query post data: ${e.message}`);
-    throw e;
-  }
-
-  const posts = postData?.data.posts.edges.map(({ node = {} }) => node);
 
   return {
     posts: Array.isArray(posts) && posts.map(mapPostData),
@@ -220,18 +141,6 @@ export async function getPostsByCategoryId({ categoryId, ...options }) {
 }
 
 /**
- * getRecentPosts
- */
-
-export async function getRecentPosts({ count, ...options }) {
-  const { posts } = await getAllPosts(options);
-  const sorted = sortObjectsByDate(posts);
-  return {
-    posts: sorted.slice(0, count),
-  };
-}
-
-/**
  * sanitizeExcerpt
  */
 
@@ -266,24 +175,6 @@ export function sanitizeExcerpt(excerpt) {
 export function mapPostData(post = {}) {
   const data = { ...post };
 
-  // Clean up the author object to avoid someone having to look an extra
-  // level deeper into the node
-
-  if (data.author) {
-    data.author = {
-      ...data.author.node,
-    };
-  }
-
-  // The URL by default that comes from Gravatar / WordPress is not a secure
-  // URL. This ends up redirecting to https, but it gives mixed content warnings
-  // as the HTML shows it as http. Replace the url to avoid those warnings
-  // and provide a secure URL by default
-
-  if (data.author?.avatar) {
-    data.author.avatar = updateUserAvatar(data.author.avatar);
-  }
-
   // Clean up the categories to make them more easy to access
 
   if (data.categories) {
@@ -299,11 +190,6 @@ export function mapPostData(post = {}) {
   if (data.featuredImage) {
     data.featuredImage = data.featuredImage.node;
   }
-
-  // Map tags data   
-  if (post.tags) {
-    data.tags = post.tags.edges.map(({ node }) => node);
-  }
   
   return data;
 }
@@ -313,7 +199,6 @@ export function mapPostData(post = {}) {
  */
 
 export async function getRelatedPosts(categories, postId, count = 3) {
-  console.log('Input parameters:', categories, postId, count);
 
   if (!Array.isArray(categories) || categories.length === 0) return;
 
@@ -326,8 +211,6 @@ export async function getRelatedPosts(categories, postId, count = 3) {
       categoryId: related.category.databaseId,
       queryIncludes: 'archive',
     });
-
-    console.log('Related posts from GraphQL:', posts);
 
     const filtered = posts.filter(({ postId: id }) => id !== postId);
     const sorted = sortObjectsByDate(filtered);

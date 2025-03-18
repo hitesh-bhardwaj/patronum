@@ -7,7 +7,7 @@ class WebpackPlugin {
     this.options = options;
   }
 
-  async index(options) {
+  async index(outputLocation, options) {
     const { url, plugin, verbose = false, nextConfig } = options;
 
     try {
@@ -47,7 +47,6 @@ class WebpackPlugin {
   apply(compiler) {
     const { plugin } = this.options;
 
-    // Value to ensure that the plugins only run once and not continuously on every page request
     let hasRun = false;
 
     compiler.hooks.run.tap(plugin.name, async (compiler) => {

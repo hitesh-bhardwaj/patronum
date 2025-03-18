@@ -1,4 +1,3 @@
-// const path = require('path');
 const { getFeedData, generateFeed } = require('./util');
 
 const WebpackPluginCompiler = require('./plugin-compiler');
@@ -18,10 +17,6 @@ module.exports = function feed(nextConfig = {}) {
 
   return Object.assign({}, nextConfig, {
     webpack(config, options) {
-      // if (config.watchOptions) {
-      //   config.watchOptions.ignored.push(path.join('**', plugin.outputDirectory, plugin.outputName));
-      // }
-
       config.plugins.push(
         new WebpackPluginCompiler({
           url: WORDPRESS_GRAPHQL_ENDPOINT,

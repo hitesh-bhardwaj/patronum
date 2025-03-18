@@ -39,27 +39,27 @@ const Footer = () => {
                                 <div className={`${styles.socialLinks} fadeUp`}>
                                     <ul className=''>
                                         <li>
-                                            <Link href='https://www.facebook.com/patronum.io' target="_blank" rel="noopener">
+                                            <Link href='https://www.facebook.com/patronum.io' target="_blank" rel="noopener" prefetch={false}>
                                                 <img width="25" height="25" src='/assets/footer/facebook.svg' alt='social icons' />
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href='https://www.linkedin.com/company/wearepatronum/' target="_blank" rel="noopener">
+                                            <Link href='https://www.linkedin.com/company/wearepatronum/' target="_blank" rel="noopener" prefetch={false}>
                                                 <img width="25" height="25" src='/assets/footer/linkedin.svg' alt='social icons' />
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href='https://twitter.com/Patronum_io' target="_blank" rel="noopener">
+                                            <Link href='https://twitter.com/Patronum_io' target="_blank" rel="noopener" prefetch={false}>
                                                 <img width="25" height="25" src='/assets/footer/twitter.svg' alt='social icons' />
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href='https://www.instagram.com/patronum.io/' target="_blank" rel="noopener">
+                                            <Link href='https://www.instagram.com/patronum.io/' target="_blank" rel="noopener" prefetch={false}>
                                                 <img width="25" height="25" src='/assets/footer/instagram.svg' alt='social icons' />
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href='https://www.youtube.com/@wearepatronum' target="_blank" rel="noopener">
+                                            <Link href='https://www.youtube.com/@wearepatronum' target="_blank" rel="noopener" prefetch={false}>
                                                 <img width="25" height="25" src='/assets/footer/youtube.svg' alt='social icons' />
                                             </Link>
                                         </li>
@@ -74,32 +74,32 @@ const Footer = () => {
                                         <h6 className={styles.footerLinkHead}>Important Links</h6>
                                         <ul className={styles.footerLinks}>
                                             <li className={styles.py2}>
-                                                <Link href="/features" className="text-xl">
+                                                <Link href="/features" className="text-xl" prefetch={false}>
                                                     Features
                                                 </Link>
                                             </li>
                                             <li className={styles.py2}>
-                                                <Link href="/use-cases" className="text-xl">
+                                                <Link href="/use-cases" className="text-xl" prefetch={false}>
                                                     Use Cases
                                                 </Link>
                                             </li>
                                             <li className={styles.py2}>
-                                                <Link href="/privacy-policy" className="text-xl">
+                                                <Link href="/privacy-policy" className="text-xl" prefetch={false}>
                                                     Privacy Policy
                                                 </Link>
                                             </li>
                                             <li className={styles.py2}>
-                                                <Link href="/security-and-compliance" className="text-xl">
+                                                <Link href="/security-and-compliance" className="text-xl" prefetch={false}>
                                                     Compliance
                                                 </Link>
                                             </li>
                                             <li className={styles.py2}>
-                                                <Link href="https://help.patronum.io" target="_blank" rel="nofollow" className="text-xl">
+                                                <Link href="https://help.patronum.io" target="_blank" rel="nofollow" className="text-xl" prefetch={false}>
                                                     Help
                                                 </Link>
                                             </li>
                                             <li className={styles.py2}>
-                                                <Link href="/legal" className="text-xl">
+                                                <Link href="/legal" className="text-xl" prefetch={false}>
                                                     Legal
                                                 </Link>
                                             </li>
@@ -110,32 +110,32 @@ const Footer = () => {
                                         <h6 className={styles.footerLinkHead}>Other Links</h6>
                                         <ul className={styles.footerLinks}>
                                             <li className={styles.py2}>
-                                                <Link href="/about-us" className="text-xl">
+                                                <Link href="/about-us" className="text-xl" prefetch={false}>
                                                     About
                                                 </Link>
                                             </li>
                                             <li className={styles.py2}>
-                                                <Link href="/pricing" className="text-xl">
+                                                <Link href="/pricing" className="text-xl" prefetch={false}>
                                                     Pricing
                                                 </Link>
                                             </li>
                                             <li className={styles.py2}>
-                                                <Link href="/partner-with-us" className="text-xl">
+                                                <Link href="/partner-with-us" className="text-xl" prefetch={false}>
                                                     Partners
                                                 </Link>
                                             </li>
                                             <li className={styles.py2}>
-                                                <Link href="/support" className="text-xl">
+                                                <Link href="/support" className="text-xl" prefetch={false}>
                                                     Support
                                                 </Link>
                                             </li>
                                             <li className={styles.py2}>
-                                                <Link href="/blog" className="text-xl">
+                                                <Link href="/blog" className="text-xl" prefetch={false}>
                                                     Blog
                                                 </Link>
                                             </li>
                                             <li className={styles.py2}>
-                                                <Link href="https://community.patronum.io" target="_blank" rel="nofollow" className="text-xl">
+                                                <Link href="https://community.patronum.io" target="_blank" rel="nofollow" className="text-xl" prefetch={false}>
                                                     Community
                                                 </Link>
                                             </li>
@@ -154,9 +154,9 @@ const Footer = () => {
 
                         <span className="drawLine h-[1px] bg-white/50 w-full block" />
 
-                        <div className="py-6 lg:text-[0.9vw] md:text-[2.5vw] lg:pr-0 md:pr-[8vw] text-[2.8vw] flex justify-between text-center tracking-[0.5px]">
-                            <span>© 2024 <Link href="https://www.bespinlabs.com/" target="_blank" className="relative after:absolute after:bg-white after:h-[1px] after:left-0 after:bottom-[-2px] after:scale-0 hover:after:scale-100 after:duration-300 after:w-full">Bespin Labs Ltd.</Link> All rights reserved.</span>
-                            <Link href='https://weareenigma.com' target="_blank" title="We Create Magic">By: <span className="relative after:absolute after:bg-white after:h-[1px] after:left-0 after:bottom-[-2px] after:scale-0 hover:after:scale-100 after:duration-300 after:w-full">Enigma</span></Link>
+                        <div className="py-6 lg:text-[0.9vw] md:text-[2.5vw] lg:pr-0 md:pr-[8vw] text-[2.8vw] flex justify-center text-center tracking-[0.5px]">
+                            <span>© 2025 <Link href="https://www.bespinlabs.com/" target="_blank" className="relative after:absolute after:bg-white after:h-[1px] after:left-0 after:bottom-[-2px] after:scale-0 hover:after:scale-100 after:duration-300 after:w-full">Bespin Labs Ltd.</Link> All rights reserved.</span>
+                            {/* <Link href='https://weareenigma.com' target="_blank" title="We Create Magic">By: <span className="relative after:absolute after:bg-white after:h-[1px] after:left-0 after:bottom-[-2px] after:scale-0 hover:after:scale-100 after:duration-300 after:w-full">Enigma</span></Link> */}
                         </div>
                     </div>
                 </div>

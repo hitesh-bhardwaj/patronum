@@ -151,18 +151,6 @@ async function getAllSearchPosts(apolloClient, process, verbose = false) {
             title
             slug
             date
-            categories {
-              edges {
-                node {
-                  name
-                }
-              }
-            }
-            contentType {
-              node {
-                label
-              }
-            }
           }
         }
       }
@@ -181,13 +169,6 @@ async function getAllSearchPosts(apolloClient, process, verbose = false) {
 
     posts = allNodes.map((post) => {
       const data = { ...post };
-
-      if (data.excerpt) {
-        // Sanitize the excerpt by removing all HTML tags
-        const regExHtmlTags = /(<([^>]+)>)/g;
-        data.excerpt = data.excerpt.replace(regExHtmlTags, '');
-      }
-
       return data;
     });
 
@@ -218,8 +199,6 @@ function generateIndexSearch({ posts }) {
       title,
       slug: post.slug,
       date: post.date,
-      excerpt: post.excerpt,
-      contentType: post.contentType.node.label,
     };
   });
 
@@ -236,10 +215,8 @@ function generateIndexSearch({ posts }) {
  */
 
 async function getFeedData(apolloClient, process, verbose = false) {
-  const metadata = await getSiteMetadata(apolloClient, process, verbose);
   const posts = await getAllPosts(apolloClient, process, verbose);
   return {
-    ...metadata,
     ...posts,
   };
 }
@@ -252,11 +229,11 @@ function generateFeed({ posts = [], metadata = {} }) {
   const { homepage = '' } = config;
 
   const feed = new RSS({
-    title: metadata.title || '',
-    description: metadata.description,
+    title: 'Patronum - Best Platform for Google Workspace (GSuite) Management',
+    description: 'Patronum provides a better way to manage Google Workspace (GSuite). Patronum is your Google Workspace (GSuite) manager that fully automates all administrator and user tasks to ensure an efficient, effective, and secure process.',
     site_url: homepage,
     feed_url: `${homepage}/feed.xml`,
-    copyright: `${new Date().getFullYear()} ${metadata.title}`,
+    copyright: `${new Date().getFullYear()} Patronum`,
     language: metadata.language,
     pubDate: new Date(),
   });

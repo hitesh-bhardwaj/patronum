@@ -41,7 +41,7 @@ const Newsletter = () => {
                 const domain = email.split("@")[1];
                 // Check if the domain is not in the blocked list
                 return !blockedDomains.includes(domain);
-            }, { message: "Please enter a valid email." }),
+            }, { message: "Please enter a business email." }),
         pageURL: z.string(),
     });
 
@@ -65,18 +65,19 @@ const Newsletter = () => {
         try {
             // Send data to Mailchimp
             await axios.post('/api/newsletter', formData);
-    
+
             form.reset();
             setSubmitting(false);
             setSubmissionSuccess(true);
-    
+
             setTimeout(() => {
                 setSubmissionSuccess(false);
             }, 3000);
         } catch (error) {
             setSubmitting(false);
-            setSubmissionError('Please try again later.');
-    
+            const errorMessage = error.response?.data?.error || 'Please try again later.';
+            setSubmissionError(errorMessage);
+
             setTimeout(() => {
                 setSubmissionError(null);
             }, 3000);
@@ -101,7 +102,7 @@ const Newsletter = () => {
                         )}
                     />
                     <button className={`bg-head text-white h-full items-center group lg:min-w-[3vw] md:min-w-[10vw] lg:py-2 text-center flex justify-center lg:px-4 md:px-6 px-2 rounded-lg hover:bg-white hover:text-primary duration-200 autofill:bg-transparent lg:text-lg md:text-2xl text-base min-w-[16vw]`} type="submit" disabled={submitting}>
-                        {submitting ? <img className="w-6 h-6 invert animate-spin group-hover:invert-0" src="/assets/icons/loading.png" alt="loading icon" loading="lazy"/> : <img className="w-6 h-6 invert -rotate-90 group-hover:invert-0 group-hover:rotate-[-135deg] duration-200 transition-all" src="/assets/icons/arrow-down-big.svg" alt="arrow icon" loading="lazy"/>}
+                        {submitting ? <img className="w-6 h-6 invert animate-spin group-hover:invert-0" src="/assets/icons/loading.png" alt="loading icon" loading="lazy" /> : <img className="w-6 h-6 invert -rotate-90 group-hover:invert-0 group-hover:rotate-[-135deg] duration-200 transition-all" src="/assets/icons/arrow-down-big.svg" alt="arrow icon" loading="lazy" />}
                     </button>
                 </form>
                 {submissionError && <p className="text-red-500 absolute md:text-lg text-sm text-left mt-2 ml-2">{submissionError}</p>}

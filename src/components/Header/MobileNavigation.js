@@ -55,6 +55,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
     const [isFeaturesDropdownOpen, setFeaturesDropdownOpen] = useState(false);
     const [isUsecasesDropdownOpen, setUsecasesDropdownOpen] = useState(false);
     const [isResourcesDropdownOpen, setResourcesDropdownOpen] = useState(false);
+    const [isPricesDropdownOpen, setPricesDropdownOpen] = useState(false);
 
     return (
         <LazyMotion features={domAnimation}>
@@ -77,14 +78,14 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                         <m.li
                             variants={NavChildren}
                             className='px-4'>
-                            <Link href="/about-us" className="flex items-center py-4 text-2xl font-normal text-gray-900 border-b" aria-label='About' >
+                            <Link href="/about-us" className="flex items-center py-4 text-2xl font-normal text-gray-900 border-b" aria-label='About' prefetch={false}>
                                 <span className="ml-3">About</span>
                             </Link>
                         </m.li>
                         <m.li variants={NavChildren}>
                             <div className='px-4'>
                                 <div className='flex justify-between border-b'>
-                                    <Link href="/features" className="flex items-center w-[80%] py-4 text-2xl font-normal text-gray-900" aria-label='Features' >
+                                    <Link href="/features" className="flex items-center w-[80%] py-4 text-2xl font-normal text-gray-900" aria-label='Features' prefetch={false}>
                                         <span className="ml-3">Features</span>
                                     </Link>
                                     <button onClick={() => setFeaturesDropdownOpen(!isFeaturesDropdownOpen)} type="button" className={`flex items-center justify-center py-4 w-[20%] text-base font-normal text-gray-900 transition duration-500 ${isFeaturesDropdownOpen ? "-rotate-90" : "rotate-0"}`} aria-label='Open Features Dropdown'>
@@ -96,7 +97,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                             </div>
                             <ul id="dropdown-features" className={`px-4 flex flex-col justify-center space-y-4 bg-gray-100 transition-all duration-500 overflow-hidden ${isFeaturesDropdownOpen ? "h-[730px]" : "h-0"}`}>
                                 <li className=''>
-                                    <Link href='/on-boarding' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Onboarding' >
+                                    <Link href='/on-boarding' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Onboarding' prefetch={false}>
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/onboarding.svg' alt='feature icon' />
                                         </div>
@@ -107,7 +108,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </Link>
                                 </li>
                                 <li className=''>
-                                    <Link href='/email-signature-management' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Email Signature' >
+                                    <Link href='/email-signature-management' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Email Signature' prefetch={false}>
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/email-signature.svg' alt='feature icon' />
                                         </div>
@@ -118,7 +119,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </Link>
                                 </li>
                                 <li className=''>
-                                    <Link href='/google-workspace-backup' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Workspace Backup' >
+                                    <Link href='/google-workspace-backup' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Workspace Backup' prefetch={false}>
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/workspace-backup.svg' alt='feature icon' />
                                         </div>
@@ -129,7 +130,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </Link>
                                 </li>
                                 <li className=''>
-                                    <Link href='/google-drive-management' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Google Drive Management' >
+                                    <Link href='/google-drive-management' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Google Drive Management' prefetch={false}>
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/drive-management.svg' alt='feature icon' />
                                         </div>
@@ -140,7 +141,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </Link>
                                 </li>
                                 <li className=''>
-                                    <Link href='/google-drive-compliance' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - File Unsharing' >
+                                    <Link href='/google-drive-compliance' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - File Unsharing' prefetch={false}>
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/file-sharing.svg' alt='feature icon' />
                                         </div>
@@ -151,7 +152,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </Link>
                                 </li>
                                 <li className=''>
-                                    <Link href='/google-contact-sharing' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Contact Sharing' >
+                                    <Link href='/google-contact-sharing' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Contact Sharing' prefetch={false}>
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/contact-sharing.svg' alt='feature icon' />
                                         </div>
@@ -162,7 +163,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </Link>
                                 </li>
                                 <li className=''>
-                                    <Link href='/organisational-chart' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Organizational Chart' >
+                                    <Link href='/organisational-chart' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Organizational Chart' prefetch={false}>
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/organisational-chart.svg' alt='use case icon' />
                                         </div>
@@ -177,7 +178,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                         <m.li variants={NavChildren}>
                             <div className='px-4'>
                                 <div className='flex justify-between border-b'>
-                                    <Link href="/use-cases" className="flex w-[80%] items-center py-4 text-2xl font-normal text-gray-900" aria-label='Use Cases' >
+                                    <Link href="/use-cases" className="flex w-[80%] items-center py-4 text-2xl font-normal text-gray-900" aria-label='Use Cases' prefetch={false}>
                                         <span className="ml-3">Use Cases</span>
                                     </Link>
                                     <button onClick={() => setUsecasesDropdownOpen(!isUsecasesDropdownOpen)} type="button" className={`flex items-center justify-center py-4 w-[20%] text-base font-normal text-gray-900 transition duration-500 ${isUsecasesDropdownOpen ? "-rotate-90" : "rotate-0"}`} aria-label='Open UseCases Dropdown'>
@@ -189,7 +190,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                             </div>
                             <ul id="dropdown-usecases" className={`px-4 flex flex-col justify-center space-y-4 bg-gray-100 transition-all duration-500 overflow-hidden ${isUsecasesDropdownOpen ? "h-[650px]" : "h-0"}`}>
                                 <li className=''>
-                                    <Link href='/patronum-for-business' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Business' >
+                                    <Link href='/patronum-for-business' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Business' prefetch={false}>
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/for-business.svg' alt='use case icon' />
                                         </div>
@@ -200,7 +201,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </Link>
                                 </li>
                                 <li className=''>
-                                    <Link href='/patronum-for-hr' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For HR' >
+                                    <Link href='/patronum-for-hr' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For HR' prefetch={false}>
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/for-hr.svg' alt='use case icon' />
                                         </div>
@@ -211,7 +212,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </Link>
                                 </li>
                                 <li className=''>
-                                    <Link href='/patronum-for-sales-marketing' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Sales & Marketing' >
+                                    <Link href='/patronum-for-sales-marketing' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Sales & Marketing' prefetch={false}>
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/for-sales-marketing.svg' alt='use case icon' />
                                         </div>
@@ -222,7 +223,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </Link>
                                 </li>
                                 <li className=''>
-                                    <Link href='/patronum-for-education' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Education' >
+                                    <Link href='/patronum-for-education' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Education' prefetch={false}>
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/for-education.svg' alt='use case icon' />
                                         </div>
@@ -233,7 +234,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </Link>
                                 </li>
                                 <li className=''>
-                                    <Link href='/patronum-for-users' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Users' >
+                                    <Link href='/patronum-for-users' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Users' prefetch={false}>
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/for-users.svg' alt='use case icon' />
                                         </div>
@@ -244,7 +245,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </Link>
                                 </li>
                                 <li className=''>
-                                    <Link href='#' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For IT Admins' >
+                                    <Link href='#' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For IT Admins' prefetch={false}>
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/for-it-admins.svg' alt='use case icon' />
                                         </div>
@@ -256,13 +257,45 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                 </li>
                             </ul>
                         </m.li>
-                        <m.li
-                            variants={NavChildren}
-                            className='px-4'>
-                            <Link href="/pricing" className="flex items-center py-4 border-b text-2xl font-normal text-gray-900" aria-label='Pricing' >
-                                <span className="ml-3">Pricing</span>
-                            </Link>
+                        <m.li variants={NavChildren}>
+                        <div className='px-4'>
+                                <button onClick={() => setPricesDropdownOpen(!isPricesDropdownOpen)} type="button" className="flex items-center py-4 border-b w-full text-2xl font-normal text-gray-900" aria-label='Open Resources Dropdown'>
+                                    <span className="flex-1 ml-3 text-left w-4/5 whitespace-nowrap">Pricing</span>
+                                    <span className='w-1/5 flex items-center justify-center'>
+                                        <svg aria-hidden="true" className={`w-7 h-7 transition duration-500 ${isPricesDropdownOpen ? "-rotate-90" : "rotate-0"}`} fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                            
+                            <ul id="dropdown-usecases" className={`px-4 flex flex-col justify-center space-y-4 bg-gray-100 transition-all duration-500 overflow-hidden ${isPricesDropdownOpen ? "h-[65vw] md:h-[30vw]" : "h-0"}`}>
+                                <li className=''>
+                                    <Link href='/pricing-for-business' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Business' prefetch={false}>
+                                        <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                            <Image width={30} height={30} loading='lazy' src='/assets/menu/for-business.svg' alt='use case icon' />
+                                        </div>
+                                        <div>
+                                            <p className='text-xl font-500'>Pricing For Business</p>
+                                            <p className='text-base'>Optimize Operations, Maximize Potential</p>
+                                        </div>
+                                    </Link>
+                                </li>
+                                <li className=''>
+                                    <Link href='/pricing-for-education' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For HR' prefetch={false}>
+                                        <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                            <Image width={30} height={30} loading='lazy' src='/assets/menu/for-hr.svg' alt='use case icon' />
+                                        </div>
+                                        <div>
+                                            <p className='text-xl font-500'>Pricing For Non-Profits & Education</p>
+                                            <p className='text-base'>Human Resources: Digitally Empowered</p>
+                                        </div>
+                                    </Link>
+                                </li>
+                               
+                            </ul>
                         </m.li>
+                       
                         <m.li variants={NavChildren}>
                             <div className='px-4'>
                                 <button onClick={() => setResourcesDropdownOpen(!isResourcesDropdownOpen)} type="button" className="flex items-center py-4 border-b w-full text-2xl font-normal text-gray-900" aria-label='Open Resources Dropdown'>
@@ -276,7 +309,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                             </div>
                             <ul id="dropdown-resources" className={`px-4 space-y-4 bg-gray-100 transition-all duration-500 overflow-hidden flex flex-col justify-center ${isResourcesDropdownOpen ? "h-[680px]" : "h-0"}`}>
                                 <li className=''>
-                                    <Link href='/blog' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Blog' >
+                                    <Link href='/blog' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Blog' prefetch={false}>
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/resource-blog.svg' alt='resource icon' />
                                         </div>
@@ -287,7 +320,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </Link>
                                 </li>
                                 <li className=''>
-                                    <Link href='/webinars' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Webinars' >
+                                    <Link href='/webinars' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Webinars' prefetch={false}>
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/resource-webinars.svg' alt='resource icon' />
                                         </div>
@@ -298,7 +331,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </Link>
                                 </li>
                                 <li className=''>
-                                    <Link href='/security-and-compliance' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Compliance' >
+                                    <Link href='/security-and-compliance' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Compliance' prefetch={false}>
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/resource-compliance.svg' alt='resource icon' />
                                         </div>
@@ -309,7 +342,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </Link>
                                 </li>
                                 <li className=''>
-                                    <Link href='https://help.patronum.io' target='_blank' rel="nofollow" className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Help'>
+                                    <Link href='https://help.patronum.io' target='_blank' rel="nofollow" className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Help' prefetch={false}>
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/resource-help.svg' alt='resource icon' />
                                         </div>
@@ -320,7 +353,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </Link>
                                 </li>
                                 <li className=''>
-                                    <Link href='https://community.patronum.io' target='_blank' rel="nofollow" className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Community'>
+                                    <Link href='https://community.patronum.io' target='_blank' rel="nofollow" className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Community' prefetch={false}>
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/resource-community.svg' alt='resource icon' />
                                         </div>
@@ -331,7 +364,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </Link>
                                 </li>
                                 <li className=''>
-                                    <Link href='/legal' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Legal' >
+                                    <Link href='/legal' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Legal' prefetch={false}>
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/resource-legal.svg' alt='resource icon' />
                                         </div>
@@ -342,7 +375,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </Link>
                                 </li>
                                 <li className=''>
-                                    <Link href='/contact-us' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Contact' >
+                                    <Link href='/contact-us' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Contact' prefetch={false}>
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/resource-contact.svg' alt='resource icon' />
                                         </div>
@@ -357,14 +390,14 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                         <m.li
                             variants={NavChildren}
                             className='px-4'>
-                            <Link href="/partner-with-us" className="flex items-center py-4 border-b text-2xl font-normal text-gray-900" >
+                            <Link href="/partner-with-us" className="flex items-center py-4 border-b text-2xl font-normal text-gray-900" prefetch={false}>
                                 <span className="ml-3">Partners</span>
                             </Link>
                         </m.li>
                         <m.li
                             variants={NavChildren}
                             className='px-4'>
-                            <Link href="/support" className="flex items-center py-4 border-b text-2xl font-normal text-gray-900">
+                            <Link href="/support" className="flex items-center py-4 border-b text-2xl font-normal text-gray-900" prefetch={false}>
                                 <span className="ml-3">Support</span>
                             </Link>
                         </m.li>

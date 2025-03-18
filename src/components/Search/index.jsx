@@ -1,43 +1,23 @@
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
-import Fuse from 'fuse.js';
+import useSearch from '@/hooks/use-search';
+import { postPathBySlug } from "@/lib/posts";
+import { useRef, useState } from "react";
+import Link from "next/link";
 
-const Search = ({ posts }) => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [filteredPosts, setFilteredPosts] = useState([]);
-  const [showSuggestions, setShowSuggestions] = useState(false);
+const Search = () => {
+
+  const formRef = useRef();
+  const { query, results, search } = useSearch({
+    maxResults: 5,
+  });
+
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const router = useRouter();
+  const showSuggestions = query && results.length > 0;
 
-  useEffect(() => {
-    if (searchQuery) {
-      const fuse = new Fuse(posts, {
-        keys: ['title', 'excerpt', 'content'],
-        threshold: 0.3,
-      });
-      const results = fuse.search(searchQuery).map(result => result.item);
-      setFilteredPosts(results.slice(0, 5));
-      setShowSuggestions(true);
-    } else {
-      setFilteredPosts([]);
-      setShowSuggestions(false);
-    }
-  }, [searchQuery, posts]);
-
-  const handleSearchChange = (event) => {
-    setSearchQuery(event.target.value);
-  };
-
-  const handleSearchSubmit = (event) => {
-    event.preventDefault();
-    setIsSearchOpen(false);
-    router.push(`/search?query=${searchQuery}`);
-  };
-
-  const handleSuggestionClick = (slug) => {
-    setIsSearchOpen(false);
-    router.push(`/${slug}`);
-  };
+  function handleOnSearch({ currentTarget }) {
+    search({
+      query: currentTarget.value,
+    });
+  }
 
   const handleOpenSearch = () => {
     setIsSearchOpen(true);
@@ -45,9 +25,6 @@ const Search = ({ posts }) => {
 
   const handleCloseSearch = () => {
     setIsSearchOpen(false);
-    setSearchQuery('');
-    setFilteredPosts([]);
-    setShowSuggestions(false);
   };
 
   return (
@@ -64,40 +41,40 @@ const Search = ({ posts }) => {
       </button>
 
       {/* {isSearchOpen && ( */}
-        <div className={`absolute z-[100] lg:right-0 lg:left-auto left-0 top-full lg:mt-[1.5vw] mt-[4vw] transition-all duration-500 ease-out ${isSearchOpen ? "opacity-100 lg:w-[30vw] w-[90vw]" : "w-[0vw] opacity-0"}`}>
-          <form onSubmit={handleSearchSubmit} className='w-full relative'>
-            <input
-              type="text"
-              className="search-input lg:text-[1.1vw] text-[3.5vw] w-full lg:p-[1vw] p-[2vw] bg-transparent lg:border-b border-b-2 text-[#444444] border-primary focus-visible:outline-0"
-              placeholder="Enter your text to search"
-              value={searchQuery}
-              onChange={handleSearchChange}
-            />
-            <span
-              aria-label='Close Search Input'
-              className='absolute cursor-pointer lg:h-[1.2vw] lg:w-[1.2vw] w-[3vw] h-[3vw] lg:right-[1vw] right-[2vw] top-1/2 -translate-y-1/2 hover:rotate-180 hover:scale-80 transition duration-500'
-              onClick={handleCloseSearch}
-            >
-              <img src='/assets/icons/close.svg' alt='close icon' className='w-full h-full' />
-            </span>
-          </form>
-          {showSuggestions && (
-            <ul className="suggestions-list bg-white rounded shadow-md lg:mt-2 mt-[2vw]">
-              {filteredPosts.map((post) => (
-                <li
-                  key={post.slug}
-                  className="suggestion-item lg:p-[1vw] p-[2vw] lg:text-[1.1vw] text-[3.5vw] cursor-pointer hover:bg-gray-100 duration-200 hover:text-primary"
-                  onClick={() => handleSuggestionClick(post.slug)}
-                >
-                  {post.title}
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-      {/* )} */}
+      <div className={`absolute z-[100] lg:right-0 lg:left-auto left-0 top-full lg:mt-[1.5vw] mt-[4vw] transition-all duration-500 ease-out ${isSearchOpen ? "opacity-100 lg:w-[30vw] w-[90vw]" : "w-[0vw] opacity-0"}`}>
+        <form ref={formRef} action="/search" data-search-is-active={!!query} className='w-full relative'>
+          <input
+            type="search"
+            className="search-input lg:text-[1.1vw] text-[3.5vw] w-full lg:p-[1vw] p-[2vw] bg-transparent lg:border-b border-b-2 text-[#444444] border-primary focus-visible:outline-0"
+            placeholder="Enter your text to search"
+            value={query || ''}
+            name="q"
+            autoComplete="off"
+            onChange={handleOnSearch}
+          />
+          <span
+            aria-label='Close Search Input'
+            className='absolute cursor-pointer lg:h-[1.2vw] lg:w-[1.2vw] w-[3vw] h-[3vw] lg:right-[1vw] right-[2vw] top-1/2 -translate-y-1/2 hover:rotate-180 hover:scale-80 transition duration-500'
+            onClick={handleCloseSearch}
+          >
+            <img src='/assets/icons/close.svg' alt='close icon' className='w-full h-full' />
+          </span>
+        </form>
+        {showSuggestions && (
+          <ul className="suggestions-list bg-white rounded shadow-md lg:mt-2 mt-[2vw]">
+            {results.map((result, index) => (
+              <li key={index} className="suggestion-item lg:p-[1vw] p-[2vw] lg:text-[1.1vw] text-[3.5vw] cursor-pointer hover:bg-gray-100 duration-200 hover:text-primary">
+                <Link href={postPathBySlug(result.slug)}>
+                  {result.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
-  );
-};
+  )
+}
 
 export default Search;
+

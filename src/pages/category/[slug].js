@@ -65,6 +65,21 @@ const Category = ({ category, posts, categories }) => {
 
 export default Category;
 
+export async function getStaticPaths() {
+  const { categories } = await getAllCategories();
+
+  const paths = categories.map((category) => ({
+    params: {
+      slug: category.slug,
+    },
+  }));
+
+  return {
+    paths,
+    fallback: 'blocking',
+  };
+}
+
 export async function getStaticProps({ params = {} } = {}) {
   const { category } = await getCategoryBySlug(params?.slug);
 
@@ -89,20 +104,5 @@ export async function getStaticProps({ params = {} } = {}) {
       categories,
     },
     revalidate: 500,
-  };
-}
-
-export async function getStaticPaths() {
-  const { categories } = await getAllCategories();
-
-  const paths = categories.map((category) => ({
-    params: {
-      slug: category.slug,
-    },
-  }));
-
-  return {
-    paths,
-    fallback: 'blocking',
   };
 }

@@ -16,12 +16,12 @@ export const ModalProvider = ({ children }) => {
   const openModal = (type) => {
     setModalType(type);
     setModalOpen(true);
-    lenis.stop();
+    lenis && lenis.stop();
   };
 
   const closeModal = () => {
     setModalOpen(false);
-    lenis.start();
+    lenis && lenis.start();
   };
 
   return (

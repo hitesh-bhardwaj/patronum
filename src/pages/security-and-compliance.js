@@ -17,7 +17,7 @@ function security() {
       contentTop: "Patronum is certified under ISO 27001:2013, a premier global standard for information security management systems (ISMS).",
       description: "This certification demonstrates our commitment to maintaining the highest standards of data security. The ISO 27001:2013 standard provides a systematic approach to managing sensitive company information so that it remains secure. It includes people, processes, and IT systems by applying a risk management process. It helps small, medium, and large businesses in any sector keep information assets secure. Following this standard, we ensure the confidentiality, integrity, and availability of information through a set of policies, procedures, and technical and physical controls. These measures are critical in safeguarding the security of the systems and technology that process, store, and transmit this information.",
       imgSrc: "iso-27001_2013.svg",
-      link: "https://drive.google.com/file/d/1r12v9qhhUep1NgLMpVC74Hjn4RPhQBI0/view",
+      link: "https://drive.google.com/file/d/1JheIsdSCdAcXR6Hc6GPYtwjfDcMBJAYd/view",
       btnText: "View Certificate"
     },
     {
@@ -26,7 +26,7 @@ function security() {
       contentTop: "As a privacy extension to ISO 27001, ISO 27701:2019 enhances our ISMS to include management of privacy risks associated with personally identifiable information (PII).",
       description: "This standard outlines the requirements for establishing, implementing, maintaining, and continuously improving a Privacy Information Management System (PIMS). By adhering to ISO 27701:2019, Patronum ensures that the privacy rights of individuals are respected and protected, reducing the risk to the privacy of data. This certification is especially crucial as it addresses the need to manage privacy through data processing or technology, ensuring compliance with privacy regulations like the GDPR. For organizations acting as PII controllers or processors, it provides clarity on roles and responsibilities in the protection of personal data.",
       imgSrc: "iso-27701_2019.svg",
-      link: "https://drive.google.com/file/d/19sKqx7LB1my_gFbLTgmwZZVOGWxJ8uze/view",
+      link: "https://drive.google.com/file/d/1UfvIC0dhmegETihBmlAkW8DJ8OGTSVDt/view",
       btnText: "View Certificate"
     },
     {
@@ -35,7 +35,7 @@ function security() {
       contentTop: "Our compliance with ISO 22301:2019 underlines our readiness to safeguard against, respond to, and recover from disruptive incidents.",
       description: "This business continuity management standard helps organizations prepare for, and deal with, potential threats to the business. The standard demands a documented management system for implementing and managing an effective business continuity plan. It ensures continuity and recovery during times of crisis, thus minimizing the impact on business operations. Patronum's adherence to ISO 22301:2019 reflects our commitment to resilience and our ability to operate under adverse conditions, thereby protecting our stakeholders' interests.",
       imgSrc: "iso-22301_2019.svg",
-      link: "https://drive.google.com/file/d/12zct82LDdKzKJdkL21Pv2gCFFaeChCa_/view",
+      link: "https://drive.google.com/file/d/1C4S5dI5WGtmvTfZ_VMBanb4R9DDNkx3w/view",
       btnText: "View Certificate"
     },
     {
@@ -44,7 +44,7 @@ function security() {
       contentTop: "ISO 9001:2015 sets out the criteria for a quality management system and is the only standard in the ISO 9000 family that can be certified to.",
       description: "It focuses on various aspects of quality management and contains some of ISO’s best-known standards. The standards provide guidance and tools for companies and organizations who want to ensure that their products and services consistently meet customer’s requirements, and that quality is consistently improved. This standard is based on a number of quality management principles including a strong customer focus, the motivation and implication of top management, the process approach, and continual improvement. By meeting these standards, Patronum demonstrates its ability to consistently provide products and services that meet customer and regulatory requirements.",
       imgSrc: "iso-9001_2015.svg",
-      link: "https://drive.google.com/file/d/1v-yqisbyNLGYvEx2E9qjB8o8o4p7dz_t/view",
+      link: "https://drive.google.com/file/d/16ll3xpO9gHPYei9OfkpqA7ffuGKfTl72/view",
       btnText: "View Certificate"
     },
     {

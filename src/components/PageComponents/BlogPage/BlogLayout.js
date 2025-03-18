@@ -131,7 +131,7 @@ export default function BlogLayout({
                     </div>
                   </div>
                 </div>
-                <div className="featured-image relative overflow-hidden lg:rounded-3xl rounded-2xl lg:h-[35vw] w-full md:h-[45vw] h-[50vw] fadeUp">
+                <div className="featured-image relative overflow-hidden lg:rounded-3xl border border-gray-200 rounded-2xl lg:h-[35vw] w-full md:h-[45vw] h-[50vw] fadeUp">
                   <Image
                     fill
                     className="w-full h-full object-cover object-center"

@@ -64,7 +64,8 @@
     width: 5vw;
   }
   .linkBtn .img {
-    width: 5vw;
+    width: 3vw;
+    margin-top: -1vw;
   }
 }
 

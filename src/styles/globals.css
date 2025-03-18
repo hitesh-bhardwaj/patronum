@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("./fonts.css");
-
 * {
   margin: 0;
   padding: 0;
@@ -188,10 +186,6 @@ section{
   font-family: 'Aeonik';
   text-rendering: geometricPrecision;
 }
-.ageo{
-  font-family: 'Ageo';
-  text-rendering: geometricPrecision;
-}
 
 .section-head{
   margin-bottom: 5vw;
@@ -268,14 +262,6 @@ section{
   width: 1.5vw;
 }
 /* Link Button END */
-
-/*table*/
-.comparison-table tbody tr:nth-child(odd) {
-  background-color: #f6faff;
-}
-.comparison-table tbody tr:nth-child(even) {
-  background-color: #fdfdfd;
-}
 
 /* Button CSS Main END */
 
@@ -1678,6 +1664,7 @@ input[type=number] {
 }
 .content{
   padding: 15% 0;
+  padding-bottom: 5%;
 }
 .title-4xl {
   font-size: 7.8vw;
@@ -1855,7 +1842,7 @@ input[type=number] {
     top: 3vw;
   }
   .faq-item-content .feat-accordion-btn{
-    top: 3vw;
+    top: 5vw;
   }
 
   .content-p.features{
@@ -2380,30 +2367,10 @@ input[type=number] {
 
 
 /* New CSS for Blog and Classes which can be grabbed by module css files.*/
-.blog_blogContent__Tf9Rv .wp-block-table{
-  border: 1px solid #CACACA;
-  border-radius: 20px;
-  overflow: hidden;
-  margin: 5% 0 !important;
-}
-
-@media screen and (max-width: 640px) {
-  .blog_blogContent__Tf9Rv .wp-block-table{
-    border-radius: 10px;
-    overflow-y: hidden;
-    overflow-x: auto;
-  }
-
-  .blog_blogContent__Tf9Rv .wp-block-table table{
-    width: max-content;
-  }
-}
-
 /* Link Class */
 .link-href{
   color: var(--primary);
 }
-
 [data-news]:-webkit-autofill {
   -webkit-box-shadow:0 0 0 50px #1069df inset;
   box-shadow: 0 0 0 50px #1069df inset;

@@ -2,11 +2,10 @@ import { gql } from '@apollo/client';
 
 export const QUERY_ALL_CATEGORIES = gql`
   query AllCategories {
-    categories(first: 10000) {
+    categories(first: 10000, where: {exclude: "dGVybToxODQ"}) {
       edges {
         node {
           databaseId
-          description
           id
           name
           slug
@@ -24,56 +23,6 @@ export const QUERY_CATEGORY_BY_SLUG = gql`
       id
       name
       slug
-      seo {
-        canonicalUrl
-        description
-        title
-        openGraph {
-          image {
-            url
-          }
-        }
-      }
-    }
-  }
-`;
-
-export const QUERY_CATEGORY_SEO_BY_SLUG = gql`
-  query CategorySEOBySlug($slug: ID!) {
-    category(id: $slug, idType: SLUG) {
-      id
-      seo {
-        canonical
-        metaDesc
-        metaRobotsNofollow
-        metaRobotsNoindex
-        opengraphAuthor
-        opengraphDescription
-        opengraphModifiedTime
-        opengraphPublishedTime
-        opengraphPublisher
-        opengraphTitle
-        opengraphType
-        title
-        twitterDescription
-        twitterTitle
-        twitterImage {
-          altText
-          sourceUrl
-          mediaDetails {
-            width
-            height
-          }
-        }
-        opengraphImage {
-          altText
-          sourceUrl
-          mediaDetails {
-            height
-            width
-          }
-        }
-      }
     }
   }
 `;

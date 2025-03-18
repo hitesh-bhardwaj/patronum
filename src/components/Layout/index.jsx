@@ -1,15 +1,14 @@
 import { useDevice } from "@/utils/useDevice";
 import Transition from "../Transition";
 import dynamic from "next/dynamic";
-import { ModalProvider } from "../Modals/ModalContext";
 import Header from "../Header";
 import PreLoader from "../PreLoader";
 import { useEffect, useState } from "react";
 
-const Background = dynamic(() => import("../Background"), { ssr: false });
 const Footer = dynamic(() => import("../Footer"), { ssr: false });
 const DemoModal = dynamic(() => import("@/components/Modals/DemoModal"), { ssr: false });
 const InstallModal = dynamic(() => import("@/components/Modals/InstallModal"), { ssr: false });
+const BgVideo = dynamic(() => import("./BgVideo"), { ssr: false });
 
 const Layout = ({ children }) => {
     const { isDesktop } = useDevice();
@@ -32,15 +31,14 @@ const Layout = ({ children }) => {
     return (
         <>
             {showPreloader && <PreLoader />}
-            <ModalProvider>
                 <Header />
                 {children}
                 <Footer />
                 <DemoModal />
                 <InstallModal />
-            </ModalProvider>
             <Transition />
-            {isDesktop && <Background />}
+            {/* {isDesktop && <Background />} */}
+            {isDesktop && <BgVideo />}
         </>
     );
 };

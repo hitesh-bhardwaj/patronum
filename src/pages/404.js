@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import { Check, CheckCircle } from "lucide-react";
 import { NextSeo } from "next-seo";
 
 export default function Page404() {
@@ -21,7 +22,7 @@ export default function Page404() {
                         <p className="content-p">
                             We could not find the page you're looking for.
                         </p>
-                        <p className="content-p">Don’t Worry! We can Take You{" "}
+                        <p className="content-p">Don't Worry! We can Take You{" "}
                             <a href="/" className="relative after:absolute after:bg-primary after:h-[2px] after:left-0 after:bottom-[-2%] after:scale-0 hover:after:scale-100 after:duration-300 after:w-full text-primary">Home</a>
                         </p>
                     </div>

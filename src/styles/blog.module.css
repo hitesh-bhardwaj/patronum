@@ -1,296 +1,345 @@
 .blogContent h2:hover .anchor {
-    visibility: visible;
+  visibility: visible;
 }
-  
+
 .anchor {
-    float: left;
-    margin-left: -30px;
-    padding-right: 8px;
+  float: left;
+  margin-left: -30px;
+  padding-right: 8px;
 }
-  
+
 .anchor:before {
-    visibility: hidden;
-    color: gray;
-    content: '#'
+  visibility: hidden;
+  color: gray;
+  content: "#";
 }
 .anchor::after {
-    content: none !important;
+  content: none !important;
 }
-  
-.blogContent{
-    width: 80%;
-    padding-left: 5%;
+
+.blogContent {
+  width: 80%;
+  padding-left: 5%;
 }
 
 .blogContent h2:hover .anchor:before {
-    visibility: visible;
+  visibility: visible;
 }
 
-.blogContent h2{
-    font-size: 2.3vw;
-    font-weight: 500;
-    color: var(--text-head);
-    padding-top: 2%;
-    scroll-behavior: smooth;
-    scroll-margin-top: 7vw;
+.blogContent h2 {
+  font-size: 2.3vw;
+  font-weight: 500;
+  color: var(--text-head);
+  padding-top: 2%;
+  scroll-behavior: smooth;
+  scroll-margin-top: 7vw;
 }
 
-.blogContent h2 strong{
-    font-weight: 500;
+.blogContent h2 strong {
+  font-weight: 500;
 }
 
-.blogContent h3{
-    font-size: 1.8vw;
-    font-weight: 400;
-    line-height: 1.4;
-    color: var(--text-head);
-    margin: 2% 0;
+.blogContent h3 {
+  font-size: 1.8vw;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--text-head);
+  margin: 2% 0;
 }
 
-.blogContent h3 strong{
-    font-weight: 500;
+.blogContent h3 strong {
+  font-weight: 500;
 }
 
-.blogContent h4{
-    font-size: 1.3vw;
-    font-weight: 500;
-    color: var(--text-head);
-    margin: 2.5% 0 -1%;
+.blogContent h4 {
+  font-size: 1.3vw;
+  font-weight: 500;
+  color: var(--text-head);
+  margin: 2.5% 0 -1%;
 }
 
-.blogContent h4 strong{
-    font-weight: 500;
+.blogContent h4 strong {
+  font-weight: 500;
 }
 
 .blogContent h5 {
-    font-size: 1.2vw;
-    font-weight: 400;
-    color: var(--text-head);
+  font-size: 1.2vw;
+  font-weight: 400;
+  color: var(--text-head);
 }
 
 .blogContent h5 strong {
-    font-weight: 500;
+  font-weight: 500;
 }
-.blogContent h6{
-    font-size: 1.15vw;
-    font-weight: 400;
-    color: var(--text-head);
+.blogContent h6 {
+  font-size: 1.15vw;
+  font-weight: 400;
+  color: var(--text-head);
 }
 .blogContent h6 strong {
-    font-weight: 500;
+  font-weight: 500;
 }
 
-.blogContent p{
-    font-size: 1.2vw;
-    font-family: 'Ageo';
-    text-rendering: geometricPrecision;
-    font-weight: 500;
-    line-height: 1.5;
-    letter-spacing: 0.5px;
-    margin: 2% 0 2%;
+.blogContent p {
+  font-size: 1.2vw;
+  font-family: "Ageo";
+  text-rendering: geometricPrecision;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  margin: 2% 0 2%;
 }
-.blogContent.mb-0{
-    margin-bottom: 0;
+.blogContent.mb-0 {
+  margin-bottom: 0;
 }
-.blogContent p:first-child{
-    margin-top: 0;
+.blogContent p:first-child {
+  margin-top: 0;
 }
-.blogContent ul,.blogContent ol{
-    margin-left: 1.5vw;
-    margin-top: 1%;
-    padding-bottom: 1.5%;
+.blogContent ul,
+.blogContent ol {
+  margin-left: 1.5vw;
+  margin-top: 1%;
+  padding-bottom: 1.5%;
 }
-.blogContent li{
-    font-family: 'Ageo';
-    text-rendering: geometricPrecision;
-    font-weight: 500;
-    font-size: 1.2vw;
-    letter-spacing: 0.5px;
-    line-height: 1.5;
-    color: var(--text-body);
-    margin-bottom: 0.4%;
+.blogContent li {
+  font-family: "Ageo";
+  text-rendering: geometricPrecision;
+  font-weight: 500;
+  font-size: 1.2vw;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  color: var(--text-body);
+  margin-bottom: 0.4%;
 }
-.blogContent li:last-child{
-    margin-bottom: 0;
+.blogContent li:last-child {
+  margin-bottom: 0;
 }
-.blogContent ol li{
-    list-style: auto;
+.blogContent ol li {
+  list-style: auto;
 }
-.blogContent ul li{
-    list-style: disc;
+.blogContent ul li {
+  list-style: disc;
 }
-.blogContent li strong{
-    font-family: 'Ageo' !important;
-    text-rendering: geometricPrecision !important;
-    font-weight: 600 !important;
-    color: var(--text-head) !important;
+.blogContent li strong {
+  font-family: "Ageo" !important;
+  text-rendering: geometricPrecision !important;
+  font-weight: 600 !important;
+  color: var(--text-head) !important;
 }
 .blogContent figure {
-    margin: 6% 0;
+  margin: 6% 0;
 }
-.blogContent img{
-    object-fit: cover;
-    border-radius: 20px;
-    margin: auto;
+.blogContent img {
+  object-fit: cover;
+  border-radius: 20px;
+  margin: auto;
+  border: 1px solid #e5e7eb;
 }
 .blogContent figcaption {
-    text-align: center;
-    width: 80%;
-    margin: auto;
-    font-size: 14px;
-    margin-top: 1rem;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  font-size: 14px;
+  margin-top: 1rem;
 }
-.blogContent a{
-    color: var(--primary);
-    position: relative;
-    transition: all 200ms ease;
+.blogContent a {
+  color: var(--primary);
+  position: relative;
+  transition: all 200ms ease;
 }
-.blogContent a::after{
-    content: '';
-    position: absolute;
-    display: block;
-    left: 0;
-    bottom: -5%;
-    height: 1px;
-    width: 100%;
-    transform: scaleX(0);
-    background: #2b87ff;
-    transition: all 150ms ease;
+.blogContent a::after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 0;
+  bottom: -5%;
+  height: 1px;
+  width: 100%;
+  transform: scaleX(0);
+  background: #2b87ff;
+  transition: all 150ms ease;
 }
-.blogContent a:hover{
-    color: #2b87ff;
+.blogContent a:hover {
+  color: #2b87ff;
 }
-.blogContent a:hover::after{
-    transform: scaleX(1);
+.blogContent a:hover::after {
+  transform: scaleX(1);
 }
 
 /* Blog Table */
+.blogContent :global(.wp-block-table) {
+  overflow-x: auto;
+}
+.blogContent table {
+  table-layout: fixed;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 5% 0 !important;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #cacaca;
+}
 .blogContent tbody tr:nth-child(odd) {
-    background-color: #f6faff;
+  background-color: #f6faff;
 }
 .blogContent tbody tr:nth-child(even) {
-    background-color: #fdfdfd;
+  background-color: #fdfdfd;
 }
-.blogContent th{
-    background: var(--primary);
-    color: white;
-    padding: 1vw;
-    font-size: 1.3vw;
-    font-weight: 400;
-    border-right: 1px solid #CACACA;
+.blogContent th {
+  background: var(--primary);
+  color: white;
+  padding: 1vw;
+  font-size: 1.3vw;
+  font-weight: 400;
+  border-right: 1px solid #cacaca;
 }
-.blogContent th:first-child{
-    width: auto;
+.blogContent th:first-child {
+  width: auto;
 }
-.blogContent td{
-    border-right: 1px solid #CACACA;
-    border-bottom: 1px solid #CACACA;
-    padding: 1vw 1vw;
-    font-size: 1.2vw;
-    color: var(--text-head);
+.blogContent td {
+  border-right: 1px solid #cacaca;
+  border-bottom: 1px solid #cacaca;
+  padding: 1vw 1vw;
+  font-size: 1.2vw;
+  color: var(--text-head);
 }
-.blogContent tr:last-child td{
-    border-bottom: none;
+.blogContent tr:last-child td {
+  border-bottom: none;
 }
-.blogContent tr:last-child td:last-child, 
+.blogContent tr:last-child td:last-child,
 .blogContent td:last-child,
-.blogContent th:last-child{
-    border-right: none;
+.blogContent th:last-child {
+  border-right: none;
 }
 
 /* Blockquote */
-.blogContent blockquote{
-    position: relative;
-    padding-left: 15px;
-    margin-left: 15px;
+.blogContent blockquote {
+  position: relative;
+  padding-left: 30px;
+  margin-left: 25px;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
 }
-.blogContent blockquote::before{
-    content: '';
-    position: absolute;
-    display: block;
-    height: 100%;
-    width: 4px;
-    top: 0;
-    left: 0;
-    background: var(--text-head);
+.blogContent blockquote::before {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 3px;
+  top: 0;
+  left: 0;
+  background: var(--text-head);
 }
 
-.blogContent blockquote p{
-    font-weight: 400;
+.blogContent blockquote p {
+  font-weight: 400;
+  margin: 1% 0 1%;
+}
+.blogContent :global(.big-para) {
+  font-size: 1.5vw;
+}
+.blogContent :global(.wp-block-code) {
+  background: var(--sky);
+  border: 1px solid var(--card-gray);
+  padding: 1rem 2rem;
+  line-height: 1.8;
+  border-radius: 10px;
+  margin: 2% 0 2%;
+  text-wrap: wrap;
+}
+.blogContent kbd {
+  background: var(--sky);
+  border: 1px solid var(--card-gray);
+  padding: 0.1rem 0.5rem;
+  border-radius: 5px;
+  font-weight: 600;
 }
 
 /* Media 1024px */
 @media screen and (max-width: 1024px) {
-    .blogContent{
-        width: 100%;
-        padding: 0 2%;
-    }
-    .blogContent p{
-        font-size: 3.5vw;
-        line-height: 1.5;
-        letter-spacing: 0;
-    }
-    .blogContent h2{
-        font-size: 5vw;
-    }
-    .blogContent h3{
-        font-size: 4.5vw;
-    }
-    .blogContent h4{
-        font-size: 4vw;
-    }
-    .blogContent h5 {
-        font-size: 3.7vw;
-    }
-    .blogContent h6{
-        font-size: 3.5vw;
-    }
-    .blogContent li{
-        font-size: 3.5vw;
-    }
-    .blogContent img{
-        border-radius: 1rem;
-    }
-    .blogContent th{
-        font-size: 3vw;
-    }
-    .blogContent td{
-        font-size: 2.7vw;
-    }
-    /* Blockquote */
-    .blogContent blockquote{
-        position: relative;
-        padding-left: 15px;
-        margin-left: 0px;
-    }
+  .blogContent {
+    width: 100%;
+    padding: 0 2%;
+  }
+  .blogContent p {
+    font-size: 3.5vw;
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
+  .blogContent h2 {
+    font-size: 5vw;
+  }
+  .blogContent h3 {
+    font-size: 4.5vw;
+  }
+  .blogContent h4 {
+    font-size: 4vw;
+  }
+  .blogContent h5 {
+    font-size: 3.7vw;
+  }
+  .blogContent h6 {
+    font-size: 3.5vw;
+  }
+  .blogContent li {
+    font-size: 3.5vw;
+  }
+  .blogContent img {
+    border-radius: 1rem;
+  }
+  .blogContent th {
+    font-size: 3vw;
+  }
+  .blogContent td {
+    font-size: 2.7vw;
+  }
+  /* Blockquote */
+  .blogContent blockquote {
+    position: relative;
+    padding-left: 15px;
+    margin-left: 0px;
+  }
+  .blogContent :global(.wp-block-code) {
+    font-size: 1.5rem;
+    margin: 5% 0 5%;
+  }
 }
 
 @media screen and (max-width: 640px) {
-    .blogContent h2{
-        font-size: 6vw;
-    }
-    .blogContent h3{
-        font-size: 5.2vw;
-    }
-    .blogContent h4{
-        font-size: 4.8vw;
-    }
-    .blogContent h5 {
-        font-size: 4.5vw;
-    }
-    .blogContent h6{
-        font-size: 4.2vw;
-    }
-    .blogContent p{
-        font-size: 4.5vw;
-    }
-    .blogContent li{
-        font-size: 4.5vw;
-    }
-    .blogContent th{
-        font-size: 4vw;
-    }
-    .blogContent td{
-        font-size: 3vw;
-    }
+  .blogContent h2 {
+    font-size: 6vw;
+  }
+  .blogContent h3 {
+    font-size: 5.2vw;
+  }
+  .blogContent h4 {
+    font-size: 4.8vw;
+  }
+  .blogContent h5 {
+    font-size: 4.5vw;
+  }
+  .blogContent h6 {
+    font-size: 4.2vw;
+  }
+  .blogContent p {
+    font-size: 4.5vw;
+  }
+  .blogContent li {
+    font-size: 4.5vw;
+  }
+  .blogContent th {
+    font-size: 4vw;
+  }
+  .blogContent td {
+    font-size: 3vw;
+  }
+  .blogContent :global(.wp-block-code) {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin: 5% 0 8%;
+  }
+  .blogContent table {
+    border-radius: 10px;
+  }
 }

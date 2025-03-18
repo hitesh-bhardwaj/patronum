@@ -82,7 +82,7 @@ const Faqs = ({ featureName }) => {
               <Accordion type="single" collapsible>
                 {filteredFaqData.slice(0, visibleFaqs).map((item, index) => (
                   <AccordionItem value={`item-${item.id}`} key={index} className="faq-item-content scaleAnim">
-                    <AccordionTrigger className="title-2xl pb-2 relative px-[2vw] py-[2vw] w-[90%]">
+                    <AccordionTrigger className="title-2xl pb-2 relative px-[2vw] lg:py-[2vw] py-[5vw] w-[90%] flex items-center">
                       <div className='faq-number'>
                         <span className='aeonik'>
                           {item.id}{" "}

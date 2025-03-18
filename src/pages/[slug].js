@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { format } from 'date-fns';
 import { getApolloClient } from '@/lib/apollo-client';
 import { QUERY_ALL_POST_SLUGS } from '@/data/posts';
@@ -12,15 +12,20 @@ import styles from '@/styles/blog.module.css';
 import Head from 'next/head';
 import { NextSeo } from 'next-seo';
 import dynamic from 'next/dynamic';
+import { useModal } from "@/components/Modals/ModalContext";
 
 const ProgressBar = dynamic(() => import('@/components/PageComponents/BlogPage/ProgressBar'), { ssr: false });
 const RelatedPosts = dynamic(() => import('@/components/PageComponents/BlogPage/RelatedPosts'), { ssr: false });
 const TableOfContents = dynamic(() => import('@/components/PageComponents/BlogPage/TableOfContents'), { ssr: false });
 
 function PostDetail({ post, recentPosts }) {
+  
   if (!post) {
     return <div>Loading...</div>;
   }
+
+  const contentContainer = useRef(null);
+  const { openModal } = useModal();
 
   const formattedDate = format(new Date(post.date), 'MMMM dd, yyyy');
   const [activeSection, setActiveSection] = useState(null);
@@ -75,6 +80,24 @@ function PostDetail({ post, recentPosts }) {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [toc]);
+
+  useEffect(() => {
+    const formOpenButtons = contentContainer.current.querySelectorAll(".open-contact-form");
+
+    const handleClick = () => {
+      openModal('contact');
+    };
+
+    formOpenButtons.forEach(button => {
+      button.addEventListener("click", handleClick);
+    });
+
+    return () => {
+      formOpenButtons.forEach(button => {
+        button.removeEventListener("click", handleClick);
+      });
+    };
+  }, []);
 
   return (
     <>
@@ -180,7 +203,7 @@ function PostDetail({ post, recentPosts }) {
 
       <BlogLayout
         postTitle={post.title}
-        postAuthor={post.author.name}
+        postAuthor="Patronum"
         postDate={formattedDate}
         shareLink={post.slug}
         featImg={post.featuredImage.sourceUrl}
@@ -190,7 +213,7 @@ function PostDetail({ post, recentPosts }) {
           <div className="content blog-content">
             <div className="flex w-full justify-between items-start" id="blog-container">
               <TableOfContents toc={toc} activeSection={activeSection} />
-              <div id="blog-content" className={styles.blogContent}>
+              <div ref={contentContainer} id="blog-content" className={styles.blogContent}>
                 {contentWithIds}
               </div>
             </div>
@@ -212,6 +235,7 @@ export async function getStaticPaths() {
 
   const { data } = await apolloClient.query({
     query: QUERY_ALL_POST_SLUGS,
+    fetchPolicy: 'no-cache',
   });
 
   const paths = data.posts.edges.map(({ node }) => ({
@@ -241,7 +265,7 @@ export async function getStaticProps({ params }) {
         post,
         recentPosts,
       },
-      revalidate: 500,
+      revalidate: 60,
     };
   } catch (error) {
     console.error('Error fetching data:', error);
