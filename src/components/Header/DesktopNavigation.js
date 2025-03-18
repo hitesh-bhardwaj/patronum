@@ -168,21 +168,20 @@ const DesktopNavigation = () => {
                                 </div>
                             </Link>
                             {isPriceDropdownOpen && (
-                                <m.div
+                            <m.div
                                 initial={{ y: -30, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ duration: 0.4 }}
-                                className={styles.navDropdown}>
-                                <ul className={`${styles.navDropdownList} !w-[60%] !grid-cols-2`}>
+                                className={`${styles.navDropdown}`}>
+                                <ul className={`${styles.navDropdownList} !w-[60%] !grid-cols-1`}>
                                     <NavItem
-                                        title={'Pricing For Business'}
+                                        title={'For Business'}
                                         disc={'Optimize Operations, Maximize Potential'}
                                         link={'/pricing-for-business'}
                                         img={'pricing-for-business.svg'}
                                     />
                                     <NavItem
-                                        className='w-[20vw]'
-                                        title={'Pricing For Non-Profits & Education'}
+                                        title={'For Non-Profits & Education'}
                                         disc={'Human Resources: Digitally Empowered'}
                                         link={'/pricing-for-education'}
                                         img={'pricing-for-education.svg'}
@@ -296,7 +295,7 @@ const DesktopNavigation = () => {
     );
 };
 
-const NavItem = ({ link, img, title, disc, className="" }) => {
+const NavItem = ({ link, img, title, disc, className = "" }) => {
     return (
         <li className={`${styles.navDropListItem}`}>
             <Link href={link} className={styles.navDropListHover} prefetch={false}>

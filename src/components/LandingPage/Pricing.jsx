@@ -2,10 +2,19 @@ import React, { useState } from 'react';
 import PricingCard from './PricingCard';
 import PriceDropDown from './PriceDropDown';
 import { Switch } from "@/components/ui/switch"
+import gsap from 'gsap';
 
 const Pricing = () => {
     const [isAnnual, setIsAnnual] = useState(true);
     const [selectedCurrency, setSelectedCurrency] = useState('$ USD');
+
+      const handleSmoothScroll = () => {
+        gsap.to(window, {
+            duration: 1.5,
+            scrollTo: { y: "#hero", offsetY: 0 },
+            ease: "power3.inOut",
+        });
+    };
 
     const handleToggle = () => {
         setIsAnnual(!isAnnual);
@@ -128,6 +137,7 @@ const Pricing = () => {
                                         pricingImage={pricing.img} 
                                         features={pricing.features} 
                                         className={pricing.className}
+                                        onClick={handleSmoothScroll}
                                     />
                                 ))}
                             </div>

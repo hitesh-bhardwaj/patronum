@@ -23,22 +23,22 @@ const Pricing = () => {
       'Email Signature Management',
       'Google Drive Management',
       'Contact Sharing',
-      'Automated File Unsharing',
       'Organizations Chart',
+      'And Much More...'
     ],
     'Non-Profit': [
       'Email Signature Management',
       'Google Drive Management',
       'Contact Sharing',
-      'Automated File Unsharing',
       'Organizations Chart',
+      'And Much More...'
     ],
     Business: [
       'Email Signature Management',
       'Google Drive Management',
       'Contact Sharing',
-      'Automated File Unsharing',
       'Organizations Chart',
+      'And Much More...'
     ]
   };
 
@@ -61,55 +61,24 @@ const Pricing = () => {
             </div>
 
             <div className='pricing-main'>
-
-              <div className='pricing-selectors flex items-center justify-between w-full'>
-
-                <div className="pricing-toggle fadeUp">
-                  <span className={`pricing-selector-type ${isAnnual ? '' : 'active'}`}>
-                    Monthly
-                  </span>
-                  <Switch
-                    className="price-switch"
-                    checked={isAnnual}
-                    onCheckedChange={handleToggle}
-                    id="price-toggle"
-                    aria-label="Annual/Monthly Price Toggle"
-                  />
-                  <span className={`pricing-selector-type ${isAnnual ? 'active' : ''}`}>
-                    Yearly
-                  </span>
-                </div>
-
-                <div className='relative z-10'>
-                  <PriceDropDown
-                    options={['$ USD', '£ GBP', '€ EUR', 'A$ AUD']}
-                    value={selectedCurrency}
-                    onChange={handleCurrencyChange}
-                  />
-                </div>
-              </div>
-
               <div className='pricing-card-wrapper fadeUp'>
                 <PricingCard
                   category="Education"
-                  isAnnual={isAnnual}
-                  selectedCurrency={selectedCurrency}
                   pricingImage='/assets/pricing/education.svg'
                   features={features.Education}
+                  href="/pricing-for-education"
                 />
                 <PricingCard
                   category="Non-Profit"
-                  isAnnual={isAnnual}
-                  selectedCurrency={selectedCurrency}
                   pricingImage='/assets/pricing/non-profit.svg'
                   features={features['Non-Profit']}
+                  href="/pricing-for-education"
                 />
                 <PricingCard
                   category="Business"
-                  isAnnual={isAnnual}
-                  selectedCurrency={selectedCurrency}
                   pricingImage='/assets/pricing/business.svg'
                   features={features.Business}
+                  href="/pricing-for-business"
                 />
               </div>
             </div>

@@ -4,6 +4,7 @@ import PriceDropDown from "../LandingPage/PriceDropDown";
 import { Switch } from "@/components/ui/switch";
 import LinkButton from "../Buttons/LinkButton";
 import Image from "next/image";
+import { useModal } from "@/components/Modals/ModalContext";
 
 const EducationPricing = () => {
   const [isAnnual, setIsAnnual] = useState(true);
@@ -16,6 +17,8 @@ const EducationPricing = () => {
   const handleCurrencyChange = (currency) => {
     setSelectedCurrency(currency);
   };
+
+  const { openModal } = useModal();
 
   const PricingList = [
     {
@@ -94,7 +97,7 @@ const EducationPricing = () => {
                 </div>
               </div>
 
-              <div className="grid lg:grid-cols-2 lg:gap-x-[2vw] lg:gap-y-[4vw]">
+              <div className="grid lg:w-[90%] lg:mx-auto lg:grid-cols-2 lg:gap-x-[4vw] lg:gap-y-[4vw]">
                 {PricingList.map((pricing) => (
                   <PricingCard
                     key={pricing.id}
@@ -104,6 +107,7 @@ const EducationPricing = () => {
                     selectedCurrency={selectedCurrency}
                     pricingImage={pricing.img}
                     features={pricing.features}
+                    onClick={() => openModal('contact')}
                   />
                 ))}
               </div>
@@ -166,7 +170,11 @@ const EducationPricing = () => {
                     </span>
                   </p>
                   <div>
-                    <LinkButton href="/contact-us" btnText="Get Started" />
+                    <LinkButton             
+                      href={"javascript:void(0)"} 
+                      btnText="Get Started" 
+                      onClick={() => openModal('contact')}
+                      />
                   </div>
                 </div>
               </div>

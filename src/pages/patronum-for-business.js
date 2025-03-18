@@ -4,7 +4,6 @@ import SectionTitle from "@/components/PageLayout/SectionTitle";
 import dynamic from "next/dynamic";
 const Faqs = dynamic(() => import("@/components/PageComponents/FeaturesPage/Faq"), { ssr: false });
 
-
 const UseCasesInfo = [
     {
         id: "01",

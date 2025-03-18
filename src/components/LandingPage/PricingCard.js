@@ -1,19 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import styles from '@/styles/pricing.module.css';
 import LinkButton from '@/components/Buttons/LinkButton';
-import { useModal } from '../Modals/ModalContext';
-import gsap from 'gsap';
 
-const PricingCard = ({ features, category, isAnnual, selectedCurrency, pricingImage, title, className=""}) => {
+const PricingCard = ({ features, category, isAnnual, selectedCurrency, pricingImage, title, onClick, className=""}) => {
 
   const [isVisible, setIsVisible] = useState(true);
-  const handleSmoothScroll = () => {
-    gsap.to(window, {
-        duration: 1.5,
-        scrollTo: { y: "#hero", offsetY: 0 },
-        ease: "power3.inOut",
-    });
-};
 
   useEffect(() => {
     setIsVisible(true); // Ensure the pricing card is initially visible
@@ -75,10 +66,10 @@ const PricingCard = ({ features, category, isAnnual, selectedCurrency, pricingIm
         </p>
         <div>
           <LinkButton 
-            onClick={handleSmoothScroll}
-            // onClick={() => openModal('contact')} 
+            onClick={onClick}
+            // onClick={() => openModal('contact')}
             href={"javascript:void(0)"} 
-            btnText="Get Started"   
+            btnText="Get Started"
           />
         </div>
       </div>
