@@ -23,6 +23,7 @@ const BusinessPricing = () => {
       category: "Business",
       title: "Patronum",
       features: [
+        'Onboarding & Offboarding',
         "Email Signature Management",
         "Google Drive Management",
         "Contact Sharing",
@@ -33,7 +34,7 @@ const BusinessPricing = () => {
     {
       id: 2,
       category: "Business_Plus",
-      title: "Patronum +",
+      title: "Patronum+",
       features: [
         "Everything in Patronum and:",
         "Automated file sharing governance",

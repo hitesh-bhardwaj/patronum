@@ -22,14 +22,9 @@ export default function BusinessPricingPage() {
                 date_modified={"2024-04-04T12:00"}
                 keywords={"Google Workspace"}
             >
-
-                
                 <BusinessPricing/>
-
                 <ProductFeatures />
-
                 <Faqs featureName="pricing" />
-
             </PageLayout>
         </>
     )

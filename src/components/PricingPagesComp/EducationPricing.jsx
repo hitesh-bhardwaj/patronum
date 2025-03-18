@@ -21,8 +21,7 @@ const EducationPricing = () => {
     {
       id: 1,
       category: "Education",
-      title:
-        '<span class="text-[#2a2a2a]">Patronum</span> For Education & Non-Profits',
+      title: 'Patronum',
       features: [
         "Onboarding & Offboarding",
         "Email Signature Management",
@@ -35,8 +34,7 @@ const EducationPricing = () => {
     {
       id: 2,
       category: "Education_Plus",
-      title:
-        '<span class="text-[#2a2a2a]">Patronum+</span> For Education & Non-Profits',
+      title: 'Patronum+',
       features: [
         "Everything in Patronum and:",
         "Automated file sharing governance",

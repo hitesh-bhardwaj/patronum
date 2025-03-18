@@ -28,6 +28,7 @@ const Pricing = () => {
                 'Organizations Chart',
             ],
             img: '/assets/pricing/education-plus.svg',
+            className: "lg:h-[5vw]"
         },
         {
             id: 2,
@@ -41,6 +42,7 @@ const Pricing = () => {
                 'Organizations Chart',
             ],
             img: '/assets/pricing/business-plus.svg',
+            className: "lg:h-[5vw]"
         },
         {
             id: 3,
@@ -54,6 +56,7 @@ const Pricing = () => {
                 'Customise File Governance policies',
             ],
             img: '/assets/pricing/education.svg',
+            className: "lg:h-[5vw]"
         },
         {
             id: 4,
@@ -67,6 +70,7 @@ const Pricing = () => {
                 'Customise File Governance policies',
             ],
             img: '/assets/pricing/business.svg',
+            className: "lg:h-[5vw]"
         },
     ]
 
@@ -123,6 +127,7 @@ const Pricing = () => {
                                         selectedCurrency={selectedCurrency} 
                                         pricingImage={pricing.img} 
                                         features={pricing.features} 
+                                        className={pricing.className}
                                     />
                                 ))}
                             </div>

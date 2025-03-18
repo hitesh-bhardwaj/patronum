@@ -4,7 +4,7 @@ import LinkButton from '@/components/Buttons/LinkButton';
 import { useModal } from '../Modals/ModalContext';
 import gsap from 'gsap';
 
-const PricingCard = ({ features, category, isAnnual, selectedCurrency, pricingImage, title }) => {
+const PricingCard = ({ features, category, isAnnual, selectedCurrency, pricingImage, title, className=""}) => {
 
   const [isVisible, setIsVisible] = useState(true);
   const handleSmoothScroll = () => {
@@ -57,7 +57,7 @@ const PricingCard = ({ features, category, isAnnual, selectedCurrency, pricingIm
 
       </div>
       <h3
-        className={`${styles.pricingCategory} !text-center w-full lg:h-[5vw] md:h-fit`}
+        className={`${styles.pricingCategory} ${className} !text-center w-full md:h-fit`}
         dangerouslySetInnerHTML={{ __html: title }}
       />
       <span className={styles.hr} />

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { m, domAnimation, LazyMotion } from 'framer-motion';
-import PrimaryButton from '../Buttons/PrimaryButton';
 import InstallButton from '../Buttons/InstallButton';
 import styles from "./desktop.module.css";
 
@@ -158,8 +157,8 @@ const DesktopNavigation = () => {
                             onMouseEnter={() => setPriceDropdownOpen(true)}
                             onMouseLeave={() => setPriceDropdownOpen(false)}
                         >
-                            <Link href='/pricing' className={`${styles.pageLink} ${styles.dropdown}`} prefetch={false}>
-                                <div >
+                            <Link href="javascript:void(0)" className={`${styles.pageLink} ${styles.dropdown}`} prefetch={false}>
+                                <div>
                                     <span>
                                         Pricing
                                     </span>
@@ -174,23 +173,22 @@ const DesktopNavigation = () => {
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ duration: 0.4 }}
                                 className={styles.navDropdown}>
-                                <ul className={styles.navDropdownList}>
+                                <ul className={`${styles.navDropdownList} !w-[60%] !grid-cols-2`}>
                                     <NavItem
                                         title={'Pricing For Business'}
                                         disc={'Optimize Operations, Maximize Potential'}
                                         link={'/pricing-for-business'}
-                                        img={'for-business.svg'}
+                                        img={'pricing-for-business.svg'}
                                     />
                                     <NavItem
+                                        className='w-[20vw]'
                                         title={'Pricing For Non-Profits & Education'}
                                         disc={'Human Resources: Digitally Empowered'}
                                         link={'/pricing-for-education'}
-                                        img={'for-hr.svg'}
+                                        img={'pricing-for-education.svg'}
                                     />
-                                    
                                 </ul>
                             </m.div>
-                               
                             )}
                         </li>
                         <li className={styles.navListItem}
@@ -298,14 +296,14 @@ const DesktopNavigation = () => {
     );
 };
 
-const NavItem = ({ link, img, title, disc }) => {
+const NavItem = ({ link, img, title, disc, className="" }) => {
     return (
-        <li className={styles.navDropListItem}>
+        <li className={`${styles.navDropListItem}`}>
             <Link href={link} className={styles.navDropListHover} prefetch={false}>
                 <div className={styles.img}>
                     <img loading='lazy' src={`/assets/menu/${img}`} alt='menu icon' />
                 </div>
-                <div className='w-[16vw]'>
+                <div className={`w-[16vw] ${className}`}>
                     <p className={styles.navDropTitle}>{title}</p>
                     <p className={styles.navDropText}>{disc}</p>
                 </div>
