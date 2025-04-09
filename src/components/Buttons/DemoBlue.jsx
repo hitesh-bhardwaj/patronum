@@ -6,7 +6,7 @@ const DemoBlue = ({ className="" }) => {
 
     return (
         <>
-            <button data-secondary onClick={() => openModal('video')} className={`${styles.btn} ${className}`}>
+            <button data-secondary onClick={() => openModal('contact')} className={`${styles.btn} ${className}`}>
                 <span className={styles.btnText}>
                     Watch Demo
                 </span>

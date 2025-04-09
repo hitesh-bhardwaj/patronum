@@ -6,7 +6,7 @@ const DemoButton = ({ className="" }) => {
 
     return (
         <>
-            <button onClick={() => openModal('video')} className={`${styles.btn} ${className}`}>
+            <button onClick={() => openModal('contact')} className={`${styles.btn} ${className}`}>
                 <span data-primary className={styles.btnText}>
                     Start Free Trial
                 </span>

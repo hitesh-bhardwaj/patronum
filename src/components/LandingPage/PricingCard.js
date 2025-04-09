@@ -53,12 +53,9 @@ const PricingCard = ({ features, category, isAnnual, selectedCurrency, pricingIm
       />
       <span className={styles.hr} />
       <div className={styles.featureList}>
-        <div>
         {features.map((feature, index) => (
           <h4 key={index}><span>✓</span><span className='ml-[1vw]'>{feature}</span></h4>
         ))}
-
-        </div>
       </div>
       <span className={styles.hr} />
       <div className='flex justify-between items-center w-full lg:mt-0 mt-[5vw]'>

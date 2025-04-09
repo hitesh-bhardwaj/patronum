@@ -97,7 +97,7 @@ const BusinessPricing = () => {
                 </div>
               </div>
 
-              <div className="grid lg:w-full lg:mx-auto lg:grid-cols-2 lg:gap-x-[4vw] lg:gap-y-[4vw]">
+              <div className="grid lg:w-[90%] lg:mx-auto lg:grid-cols-2 lg:gap-x-[4vw] lg:gap-y-[4vw]">
                 {PricingList.map((pricing) => (
                   <PricingCard
                     key={pricing.id}

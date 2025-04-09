@@ -45,7 +45,7 @@ const Pricing = () => {
             </div>
 
             <div className='pricing-main'>
-              <div className='pricing-card-wrapper fadeUp !flex'>
+              <div className='grid lg:w-[90%] lg:mx-auto lg:grid-cols-2 lg:gap-x-[4vw] lg:gap-y-[4vw]'>
                 <PricingCard
                   category="Education & Non-Profit"
                   pricingImage='/assets/pricing/pricing-illustration-1.svg'

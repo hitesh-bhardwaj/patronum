@@ -32,7 +32,7 @@ export default function App({ Component, pageProps, router }) {
 
   return (
     <>
-      <DefaultSeo {...nextSeoConfig} />
+      <DefaultSeo {...nextSeoConfig} dangerouslySetAllPagesToNoFollow={true} dangerouslySetAllPagesToNoIndex={true} />
 
       <Head>
         <script
