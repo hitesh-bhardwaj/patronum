@@ -6,7 +6,6 @@ const Sitemap = () => {
 
 export const getServerSideProps = async ({ res }) => {
   const BASE_URL = frontendUrl;
-
   // Static paths manually defined
   const staticPaths = [
     "about-us",
