@@ -51,7 +51,7 @@ const PricingCard = ({ category, isAnnual, selectedCurrency, pricingImage, title
       />
       <span className={styles.hr} />
       <div className='flex justify-between items-center w-full lg:mt-0 mt-[5vw] flex-col gap-[1vw]'>
-        <p className={`${styles.pricingPrice} text-center lg:text-left w-[65%] lg:w-full lg:!leading-[1]  !leading-[1.5] `}>
+        <p className={`${styles.pricingPrice} text-center lg:text-center w-[65%] lg:w-full lg:!leading-[1]  !leading-[1.5] `}>
         <span className='font-light'>Free for 30 days then </span> 
           <span >{getCurrencySymbol(selectedCurrency)} </span>
           

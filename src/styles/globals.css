@@ -391,7 +391,7 @@ section{
 }
 
 .feat-accordion-btn .plus, .feat-accordion-btn .minus{
-  background: var(--text-head);
+  background: var(--primary);
   height: 3px;
   width: 40%;
   position: absolute;
@@ -403,8 +403,8 @@ section{
 }
 
 .feat-accordion-item.open .feat-accordion-btn{
-  background-color: var(--text-head);
-  border-color: var(--text-head);
+  background-color: var(--primary);
+  border-color: var(--primary);
 }
 
 .feat-accordion-item.open .feat-accordion-btn .minus{
@@ -943,8 +943,8 @@ section{
   top: 2.2vw;
 }
 .faq-item.open .feat-accordion-btn{
-  background-color: var(--text-head);
-  border-color: var(--text-head);
+  background-color: var(--primary);
+  border-color: var(--primary);
 }
 .faq-item.open .feat-accordion-btn .minus{
   background: white;
@@ -955,8 +955,8 @@ section{
   right: 1.5vw;
 }
 .faq-item-content[data-state='open'] .feat-accordion-btn{
-  background-color: var(--text-head);
-  border-color: var(--text-head);
+  background-color: var(--primary);
+  border-color: var(--primary);
 }
 .faq-item-content[data-state='open'] .feat-accordion-btn .minus{
   background: white;

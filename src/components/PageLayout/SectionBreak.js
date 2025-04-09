@@ -32,7 +32,7 @@ export default function SectionBreak( {sectionBreakText} ) {
   }, []);
 
     return (
-        <section className="section-break">
+        <section className="section-break pt-[7%]">
             <div className="container">
                 <div className="content">
                     <p className="section-break-text aeonik textbreak">{sectionBreakText}</p>

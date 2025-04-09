@@ -8,7 +8,7 @@ export default function Transform() {
 
     return(
             <div>
-                <div className="w-[90%] mx-auto py-[5%] pb-[10%]">
+                <div className="w-full px-[5%] mx-auto py-[5%] pb-[10%] bg-[#f8f8f8]">
                     <div className="flex flex-col lg:flex-row justify-between w-full items-center gap-[7vw] lg:gap-0">
                         <div className="w-[65%] h-fit px-[7vw] ">
                            <Image src={"/assets/features/email-signature-management/feature-transform.svg"} alt="" width={300} height={300} className="w-full h-full object-contain"/>

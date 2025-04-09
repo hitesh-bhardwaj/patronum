@@ -6,6 +6,7 @@ import VideoPlayer from "@/components/PageLayout/VideoPlayer";
 import dynamic from "next/dynamic";
 import FeatureDetailCards from "@/components/PageComponents/FeaturesPage/FeatureDetailCards";
 import BackupCard from "@/components/PageComponents/FeaturesPage/BackupCard";
+import Transform from "@/components/PageComponents/FeaturesPage/Transform";
 
 const Faqs = dynamic(() => import("@/components/PageComponents/FeaturesPage/Faq"), { ssr: false });
 
@@ -108,6 +109,7 @@ export default function FeatureDetail() {
                     sectionParaBig="Protect your Google Workspace environment from accidental and malicious deletion. From crucial Files and Shared Drives to essential Emails, every piece of data is securely backed up, guaranteeing comprehensive point-in-time restores or the option for instant offline exports whenever the need arises. This means no piece of information is ever out of reach, providing a fail-safe against data loss incidents."
                 />
                 <FeatureDetailInfo content={featuresDetail} />
+                <Transform/>
                 <SectionBreak
                     sectionBreakText="Patronum Backup transforms how your organization approaches Google Workspace data protection, marrying speed, reliability, and user empowerment in a single, powerful solution. Secure your digital workspace with Patronum, and navigate the digital landscape with confidence, knowing that your data is protected by the pinnacle of backup innovation."
                 />

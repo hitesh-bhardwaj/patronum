@@ -1,5 +1,6 @@
 import FeatureDetailInfo from "@/components/PageComponents/FeaturesPage/FeatureDetailInfo";
 import FeatureDetailTitle from "@/components/PageComponents/FeaturesPage/FeatureDetailTitle";
+import Transform from "@/components/PageComponents/FeaturesPage/Transform";
 import PageLayout from "@/components/PageLayout";
 import SectionBreak from "@/components/PageLayout/SectionBreak";
 import VideoPlayer from "@/components/PageLayout/VideoPlayer";
@@ -70,6 +71,7 @@ export default function FeatureDetail() {
                 />
 
                 <FeatureDetailInfo content={featuresDetail} />
+                <Transform/>
 
                 <SectionBreak
                     sectionBreakText="Patronum's 'Organizational Chart' feature is designed to support seamless onboarding, promote transparency, and facilitate collaboration, thereby improving decision-making and fostering a more cohesive organizational culture."

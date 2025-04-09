@@ -4,13 +4,13 @@
         <description><![CDATA[Patronum provides a better way to manage Google Workspace (GSuite). Patronum is your Google Workspace (GSuite) manager that fully automates all administrator and user tasks to ensure an efficient, effective, and secure process.]]></description>
         <link>https://www.patronum.io</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 09 Apr 2025 12:18:35 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 09 Apr 2025 14:34:24 GMT</lastBuildDate>
         <atom:link href="https://www.patronum.io/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Wed, 09 Apr 2025 12:18:35 GMT</pubDate>
+        <pubDate>Wed, 09 Apr 2025 14:34:24 GMT</pubDate>
         <copyright><![CDATA[2025 Patronum]]></copyright>
         <item>
             <title><![CDATA[Insecure File Sharing and How to Prevent Data Loss]]></title>
-            <description><![CDATA[In today’s fast-paced digital world, file sharing has become an integral part of how businesses collaborate and operate. Whether it’s exchanging documents with colleagues, sharing reports with clients, or transferring sensitive company data, the ability to quickly and securely share files is crucial. However, insecure file sharing poses a major security risk that can lead&hellip; Continue reading Insecure File Sharing and How to Prevent Data Loss
+            <description><![CDATA[In today’s fast-paced digital world, file sharing has become an integral part of how businesses collaborate and operate.
 ]]></description>
             <link>https://www.patronum.io/insecure-file-sharing-and-how-to-prevent-data-loss</link>
             <guid isPermaLink="false">https://www.patronum.io/insecure-file-sharing-and-how-to-prevent-data-loss</guid>
@@ -38,11 +38,11 @@
         </item>
         <item>
             <title><![CDATA[Mastering Data Loss Prevention in Google Workspace: The Complete Guide for IT Managers]]></title>
-            <description><![CDATA[Why Every Google Workspace Manager Needs to Take Data Loss Seriously Every day, employees send emails, upload files, and collaborate in real time — often without thinking twice about where the data ends up. But what happens when a Gmail is sent to the wrong recipient, or a Google Drive file with sensitive financial info&hellip; Continue reading Mastering Data Loss Prevention in Google Workspace: The Complete Guide for IT Managers
+            <description><![CDATA[Every day, employees send emails, upload files, and collaborate in real time — often without thinking twice about where the data ends up.
 ]]></description>
             <link>https://www.patronum.io/mastering-data-loss-prevention-in-google-workspace-the-complete-guide-for-it-managers</link>
             <guid isPermaLink="false">https://www.patronum.io/mastering-data-loss-prevention-in-google-workspace-the-complete-guide-for-it-managers</guid>
-            <category><![CDATA[Uncategorized]]></category>
+            <category><![CDATA[All]]></category>
             <pubDate>Wed, 02 Apr 2025 08:19:36 GMT</pubDate>
         </item>
         <item>
@@ -58,7 +58,7 @@ daily, it’s also one of the most exploited entry points for cyberattacks
         </item>
         <item>
             <title><![CDATA[Google improves the email signature experience for the Gmail app on Android devices]]></title>
-            <description><![CDATA[This week, Google seems to have quietly rolled out an amazing new update to the Gmail app for Android users. 🤫 Email Signature for Mobile Users You can now get your web email signature on your smartphone. If no email signature is set in the Gmail app on your Android device, your web email signature&hellip; Continue reading Google improves the email signature experience for the Gmail app on Android devices
+            <description><![CDATA[This week, Google seems to have quietly rolled out an amazing new update to the Gmail app for Android users. 🤫
 ]]></description>
             <link>https://www.patronum.io/google-improves-the-email-signature-experience-for-the-gmail-app-on-android-devices</link>
             <guid isPermaLink="false">https://www.patronum.io/google-improves-the-email-signature-experience-for-the-gmail-app-on-android-devices</guid>

@@ -5,6 +5,7 @@ import SectionBreak from "@/components/PageLayout/SectionBreak";
 import VideoPlayer from "@/components/PageLayout/VideoPlayer";
 import dynamic from "next/dynamic";
 import FeatureDetailCards from "@/components/PageComponents/FeaturesPage/FeatureDetailCards";
+import Transform from "@/components/PageComponents/FeaturesPage/Transform";
 
 const Faqs = dynamic(() => import("@/components/PageComponents/FeaturesPage/Faq"), { ssr: false });
 
@@ -110,6 +111,7 @@ export default function FeatureDetail() {
                 />
 
                 <FeatureDetailInfo content={featuresDetail} />
+                <Transform/>
 
                 <SectionBreak
                     sectionBreakText="Patronum's Google Drive management feature streamlines data handling by facilitating efficient file organization, seamless sharing, and secure access control. This enhances collaboration and productivity across organization, by fostering a collaborative environment for all users."

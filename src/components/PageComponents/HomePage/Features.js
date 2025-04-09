@@ -143,7 +143,7 @@ export default function Features() {
                                                         <LinkButton href={item.link} btnText="Learn More" />
                                                     </div>
                                                 </div>
-                                                <div className="feat-accordion-btn">
+                                                <div className="feat-accordion-btn ">
                                                     <span className="plus" />
                                                     <span className="minus" />
                                                 </div>

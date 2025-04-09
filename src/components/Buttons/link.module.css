@@ -5,13 +5,13 @@
   align-items: center;
   font-weight: 500;
   position: relative;
-  color: var(--text-head);
+  color: var(--primary);
   font-family: "Aeonik";
   gap: 0.2vw;
 }
 
 .linkBtn:hover {
-  color: var(--primary);
+  color: var(--text-head);
 }
 
 .linkBtn .btnText {
@@ -29,13 +29,13 @@
   width: 100%;
   transform: scaleX(0);
   transform-origin: center;
-  background: var(--text-head);
+  background: var(--primary);
   transition: all .75s cubic-bezier(.19,1,.22,1);
 }
 
 .linkBtn:hover .btnText:after {
   transform: scaleX(1);
-  background: var(--primary);
+  background: var(--text-head);
 }
 
 .linkBtn .btnImages {

@@ -5,6 +5,7 @@ import SectionBreak from "@/components/PageLayout/SectionBreak";
 import VideoPlayer from "@/components/PageLayout/VideoPlayer";
 import dynamic from "next/dynamic";
 import FeatureDetailCards from "@/components/PageComponents/FeaturesPage/FeatureDetailCards";
+import Transform from "@/components/PageComponents/FeaturesPage/Transform";
 
 const Faqs = dynamic(() => import("@/components/PageComponents/FeaturesPage/Faq"), { ssr: false });
 
@@ -105,6 +106,7 @@ export default function FeatureDetail() {
                 />
 
                 <FeatureDetailInfo content={featuresDetail} />
+                <Transform/>
 
                 <SectionBreak
                     sectionBreakText="With Patronum, users gain access to unlimited contact labels and sharing capabilities, along with effortless synchronization across Outlook and various devices. It stands as a singular solution for navigating the complexities of Google contact sharing, enhancing connectivity within and beyond your organization."
