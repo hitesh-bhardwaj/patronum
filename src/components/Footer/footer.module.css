@@ -21,6 +21,7 @@
 .footerContact__content .left {
   padding: 6vw 0;
   display: flex;
+  width: 70vw;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
@@ -47,7 +48,7 @@
 }
 .footerCtaContainer {
   display: flex;
-  width: 100%;
+  width: fit-content;
   gap: 2.5vw;
 }
 
@@ -78,19 +79,20 @@
   }
   .footerLottie {
     text-align: center;
-    width: 70vw;
+    width: 61vw;
   }
   .footerContact__content .left {
     padding: 10vw 5vw;
     align-items: center;
     text-align: center;
+    width: 100%;
     gap: 4vw;
   }
   .footerContact__content .left p {
     width: 100%;
   }
   .footerCtaContainer {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 4vw;
   }
@@ -98,6 +100,15 @@
 
 @media screen and (max-width: 540px) {
   .footerContactBg {
-    height: 100vw;
+    height: 115vw;
+  }
+  .footerContact__content .left {
+
+    width: 100%;
+
+  }
+  .footerCtaContainer {
+    flex-direction: column;
+   
   }
 }

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Button } from "@/components/ui/button";
+import styles from "@/components/Buttons/primary.module.css";
 import {
   Form,
   FormControl,
@@ -242,8 +243,23 @@ export default function ContactForm() {
         />
 
         {/* Submit button */}
-        <Button id="submit_install" type="submit" disabled={submitting}>
-            {submitting ? 'Submitting...' : 'Submit'}
+        <Button id="submit_install" type="submit" className="bg-transparent" disabled={submitting}>
+        <button aria-label="pop-up form open button" className={styles.btn} onClick={() => openModal('contact')}>
+                <span className={styles.btnText}>
+                    Submit
+                </span>
+                <div aria-hidden="true" className={styles.btnCircle}>
+                    <div className={styles.btnCircleText}>
+                    Submit
+                        <svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.btnIcon}>
+                        <path data-v-f4363f2a fillRule="evenodd" clipRule="evenodd" d="M3.82475e-07 5.625L7.625 5.625L4.125 9.125L5 10L10 5L5 -4.37114e-07L4.125 0.874999L7.625 4.375L4.91753e-07 4.375L3.82475e-07 5.625Z" className={`${styles.btnPath}`}/>
+                        <path data-v-f4363f2a fillRule="evenodd" clipRule="evenodd" d="M3.82475e-07 5.625L7.625 5.625L4.125 9.125L5 10L10 5L5 -4.37114e-07L4.125 0.874999L7.625 4.375L4.91753e-07 4.375L3.82475e-07 5.625Z" className={`${styles.btnPath}`} />
+                    </svg>
+                    </div>
+                </div>
+            </button>
+            {submitting?"submitting...":""}
+            
         </Button>
         {submissionError && <p className="text-red-500">{submissionError}</p>}
         {submissionSuccess && <p className="text-green-500">Email sent successfully!</p>}

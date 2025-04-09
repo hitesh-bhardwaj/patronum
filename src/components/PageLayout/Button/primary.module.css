@@ -8,7 +8,7 @@
   width: 14vw;
   max-width: 14vw;
   border-radius: 1000px;
-  background: var(--text-head);
+  background: var(--primary);
   color: white;
   font-size: 1.05vw;
   font-weight: 500;
@@ -24,7 +24,7 @@
   padding: 0 1.85vw;
   z-index: 2;
   background-color: white;
-  color: var(--text-head);
+  color: var(--primary);
   transition: all 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 .btn .btnCircle[data-demo] {
@@ -58,7 +58,7 @@
 }
 .btn:hover .btnCircle {
   clip-path: inset(0 round 4vw);
-  background-color: var(--primary);
+  background-color: var(--text-head);
   color: white;
 }
 

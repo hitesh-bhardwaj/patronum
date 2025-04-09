@@ -1,12 +1,12 @@
 .pricingCard {
     background: #FDFDFD;
-    width: 100%;
+    width: 40vw;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     border: 1px solid #e8e8e8;
     border-radius: 16px;
-    padding: 14% 10% 10%;
+    padding: 7% 7% 7%;
 }  
 .pricingImage{
     width: 100%;
@@ -23,7 +23,7 @@
 .pricingCategory{
     font-size: 2vw;
     color: var(--primary);
-    text-align: left;
+    text-align: center;
 }
 .hr{
     height: 1px;
@@ -32,11 +32,19 @@
     background-color: #C5C5C5;
     margin: 1.8vw 0;
 }
+.featureList{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .featureList h4{
     color: #2A2A2A;
     font-size: 1.25vw;
     line-height: 2.5;
-    display: flex;
+    
+    
     gap: 1vw;
 }
 .pricingPrice{
@@ -131,7 +139,9 @@
   /* Price Card */
 @media screen and (max-width: 900px) {
   .pricingCard{
+    width: 100%;
     margin-bottom: 10vw;
+    padding: 12% 10% 14%;
   }
   .pricingImage{
     height: 35vw;

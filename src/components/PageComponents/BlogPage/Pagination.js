@@ -12,18 +12,12 @@ const Pagination = ({ pagesCount, currentPage, basePath, addCanonical = true }) 
   function getPages() {
     let pages = pagesCount;
     let start = 0;
-    // If the number of pages exceeds the max
     if (pagesCount > MAX_NUM_PAGES) {
-      // Set number of pages to the max
       pages = MAX_NUM_PAGES;
       const half = Math.ceil(MAX_NUM_PAGES / 2);
       const isHead = currentPage <= half;
       const isTail = currentPage > pagesCount - half;
-      // If the current page is at the head, the start variable remains 0
       if (!isHead) {
-        // If the current page is at the tail, the start variable is set to
-        // the last chunk. Otherwise, the start variable will place the current
-        // page in the middle
         start = isTail ? pagesCount - MAX_NUM_PAGES : currentPage - half;
       }
     }
@@ -37,17 +31,12 @@ const Pagination = ({ pagesCount, currentPage, basePath, addCanonical = true }) 
             <div className={styles.pagiContainer}>
                 <div className={styles.pagiMain}>
                     <Link className={`${styles.pagiButtons} ${styles.previous} ${!hasPreviousPage ? styles.disabled : ''}`}
-                        href={hasPreviousPage ? `${path}page/${currentPage - 1}` : '#'} // Using '#!' as a fallback for disabled links
+                        href={hasPreviousPage ? `${path}page/${currentPage - 1}` : '#'}
                         aria-label="Go to Previous Page"
-                        tabIndex={hasPreviousPage ? 0 : -1} // Disable tab focusing for disabled links
+                        tabIndex={hasPreviousPage ? 0 : -1}
                     >
                         <img loading='lazy' src='/assets/icons/arrow-page-left.svg' alt='arrow-previous' />
                     </Link>
-                    {/* {hasPreviousPage && (
-                        <Link className={`${styles.pagiButtons} ${styles.previous}`} href={currentPage - 1 === 1 ? path : `${path}page/${currentPage - 1}`} aria-label="Goto Previous Page">
-                            <img loading='lazy' src='/assets/icons/arrow-page-left.svg' alt='arrow-previous'/>
-                        </Link>
-                    )} */}
 
                     <ul className={styles.pagiList}>
                         {pages.map((page) => {
@@ -69,9 +58,9 @@ const Pagination = ({ pagesCount, currentPage, basePath, addCanonical = true }) 
                     </ul>
 
                     <Link className={`${styles.pagiButtons} ${styles.next} ${!hasNextPage ? styles.disabled : ''}`}
-                        href={hasNextPage ? `${path}page/${currentPage + 1}` : '#'} // Using '#!' as a fallback for disabled links
+                        href={hasNextPage ? `${path}page/${currentPage + 1}` : '#'}
                         aria-label="Go to Next Page"
-                        tabIndex={hasNextPage ? 0 : -1} // Disable tab focusing for disabled links
+                        tabIndex={hasNextPage ? 0 : -1}
                     >
                         <img src='/assets/icons/arrow-page-right.svg' alt='arrow-next' />
                     </Link>

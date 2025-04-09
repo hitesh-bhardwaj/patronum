@@ -4,10 +4,58 @@
         <description><![CDATA[Patronum provides a better way to manage Google Workspace (GSuite). Patronum is your Google Workspace (GSuite) manager that fully automates all administrator and user tasks to ensure an efficient, effective, and secure process.]]></description>
         <link>https://www.patronum.io</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 18 Mar 2025 14:59:04 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 09 Apr 2025 12:18:35 GMT</lastBuildDate>
         <atom:link href="https://www.patronum.io/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Tue, 18 Mar 2025 14:59:04 GMT</pubDate>
+        <pubDate>Wed, 09 Apr 2025 12:18:35 GMT</pubDate>
         <copyright><![CDATA[2025 Patronum]]></copyright>
+        <item>
+            <title><![CDATA[Insecure File Sharing and How to Prevent Data Loss]]></title>
+            <description><![CDATA[In today’s fast-paced digital world, file sharing has become an integral part of how businesses collaborate and operate. Whether it’s exchanging documents with colleagues, sharing reports with clients, or transferring sensitive company data, the ability to quickly and securely share files is crucial. However, insecure file sharing poses a major security risk that can lead&hellip; Continue reading Insecure File Sharing and How to Prevent Data Loss
+]]></description>
+            <link>https://www.patronum.io/insecure-file-sharing-and-how-to-prevent-data-loss</link>
+            <guid isPermaLink="false">https://www.patronum.io/insecure-file-sharing-and-how-to-prevent-data-loss</guid>
+            <category><![CDATA[Google Drive]]></category>
+            <pubDate>Wed, 09 Apr 2025 05:07:34 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Global Mandates and Guidance for DMARC in 2025]]></title>
+            <description><![CDATA[In today&#8217;s interconnected digital landscape, email remains a primary vector for cyberattacks, including phishing, spoofing, and business email compromise (BEC).
+]]></description>
+            <link>https://www.patronum.io/global-mandates-and-guidance-for-dmarc-in-2025</link>
+            <guid isPermaLink="false">https://www.patronum.io/global-mandates-and-guidance-for-dmarc-in-2025</guid>
+            <category><![CDATA[Email Signature]]></category>
+            <pubDate>Mon, 07 Apr 2025 08:59:57 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Patronum+ File Sharing Governance]]></title>
+            <description><![CDATA[Today, we’re excited to announce the release of Patronum+, a major upgrade to our award-winning Google Workspace management platform.
+]]></description>
+            <link>https://www.patronum.io/patronum-file-sharing-governance</link>
+            <guid isPermaLink="false">https://www.patronum.io/patronum-file-sharing-governance</guid>
+            <category><![CDATA[All]]></category>
+            <category><![CDATA[Google Drive]]></category>
+            <pubDate>Wed, 02 Apr 2025 08:52:40 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Mastering Data Loss Prevention in Google Workspace: The Complete Guide for IT Managers]]></title>
+            <description><![CDATA[Why Every Google Workspace Manager Needs to Take Data Loss Seriously Every day, employees send emails, upload files, and collaborate in real time — often without thinking twice about where the data ends up. But what happens when a Gmail is sent to the wrong recipient, or a Google Drive file with sensitive financial info&hellip; Continue reading Mastering Data Loss Prevention in Google Workspace: The Complete Guide for IT Managers
+]]></description>
+            <link>https://www.patronum.io/mastering-data-loss-prevention-in-google-workspace-the-complete-guide-for-it-managers</link>
+            <guid isPermaLink="false">https://www.patronum.io/mastering-data-loss-prevention-in-google-workspace-the-complete-guide-for-it-managers</guid>
+            <category><![CDATA[Uncategorized]]></category>
+            <pubDate>Wed, 02 Apr 2025 08:19:36 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[What is DMARC Policy – None, Quarantine and Reject? How does DMARC Work]]></title>
+            <description><![CDATA[Email is the backbone of enterprise communication. But with over 330 billion emails sent
+daily, it’s also one of the most exploited entry points for cyberattacks
+]]></description>
+            <link>https://www.patronum.io/what-is-dmarc-policy-none-quarantine-and-reject-how-does-dmarc-work</link>
+            <guid isPermaLink="false">https://www.patronum.io/what-is-dmarc-policy-none-quarantine-and-reject-how-does-dmarc-work</guid>
+            <category><![CDATA[All]]></category>
+            <category><![CDATA[Email Signature]]></category>
+            <pubDate>Thu, 27 Mar 2025 09:29:37 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Google improves the email signature experience for the Gmail app on Android devices]]></title>
             <description><![CDATA[This week, Google seems to have quietly rolled out an amazing new update to the Gmail app for Android users. 🤫 Email Signature for Mobile Users You can now get your web email signature on your smartphone. If no email signature is set in the Gmail app on your Android device, your web email signature&hellip; Continue reading Google improves the email signature experience for the Gmail app on Android devices
@@ -25,6 +73,20 @@
             <guid isPermaLink="false">https://www.patronum.io/file-sharing-security-risks-google-drive-governance</guid>
             <category><![CDATA[Google Drive]]></category>
             <pubDate>Fri, 07 Feb 2025 15:05:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Patronum 2024: A Year In Review 🎉]]></title>
+            <description><![CDATA[2023 was a huge year for Patronum, rolling out an array of updates designed to enhance user interaction, streamline processes.
+]]></description>
+            <link>https://www.patronum.io/patronum-2024-a-year-in-review</link>
+            <guid isPermaLink="false">https://www.patronum.io/patronum-2024-a-year-in-review</guid>
+            <category><![CDATA[All]]></category>
+            <category><![CDATA[Contact Sharing]]></category>
+            <category><![CDATA[Email Signature]]></category>
+            <category><![CDATA[Google Drive]]></category>
+            <category><![CDATA[Offboarding]]></category>
+            <category><![CDATA[Onboarding]]></category>
+            <pubDate>Sun, 12 Jan 2025 13:36:05 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[The Ultimate DMARC Guide for Gmail Users]]></title>
@@ -189,7 +251,7 @@
             <pubDate>Mon, 09 Oct 2023 04:44:08 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Staying Ahead of Cyber Threats: Google Workspace Security Updates for 2023]]></title>
+            <title><![CDATA[Staying Ahead of Cyber Threats: Google Workspace Security Updates for 2024]]></title>
             <description><![CDATA[Cyber threats are evolving rapidly, presenting new risks to businesses using cloud collaboration platforms like Google Workspace. As cybercriminals become&#8230;
 ]]></description>
             <link>https://www.patronum.io/staying-ahead-of-cyber-threats-google-workspace-security-updates-for-2023</link>
@@ -300,7 +362,7 @@
             <pubDate>Wed, 10 May 2023 07:50:54 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[The Ultimate Guide to Using Google Contacts in 2023: Mastering Contact Management Like a Pro]]></title>
+            <title><![CDATA[The Ultimate Guide to Using Google Contacts in 2024: Mastering Contact Management Like a Pro]]></title>
             <description><![CDATA[In today&#8217;s digital world, effective contact management is crucial for businesses to maintain efficient communication and collaboration&#8230;
 ]]></description>
             <link>https://www.patronum.io/the-ultimate-guide-to-using-google-contacts-in-2023-mastering-contact-management-like-a-pro</link>
@@ -318,7 +380,7 @@
             <pubDate>Fri, 28 Apr 2023 07:20:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Key Google Workspace Statistics for 2023]]></title>
+            <title><![CDATA[Key Google Workspace Statistics for 2024]]></title>
             <description><![CDATA[According to Google&#8217;s own estimates, there are over 3 billion active users of Google Workspace per month. This number includes both personal and business&#8230;
 ]]></description>
             <link>https://www.patronum.io/key-google-workspace-statistics-for-2023</link>

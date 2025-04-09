@@ -9,8 +9,8 @@ export default function EducationPricingPage() {
     return (
         <>
             <PageLayout
-                pageTitle1="No Setup Fee,"
-                pageTitle2="No Surprises, No Worries"
+                 pageTitle1="Google Workspace "
+                pageTitle2="Management for Education"
                 pagePara="Honest, Transparent and Fair Pricing."
                 imgSrc="education-price-hero.svg"
                 title={"Pricing for Patronum: A Google Workspace Manager"}

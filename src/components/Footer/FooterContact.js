@@ -1,27 +1,28 @@
 import InstallButton from "../Buttons/InstallButton";
 import DemoButton from "../Buttons/DemoButton";
 import styles from "./footer.module.css"
+import FooterInstallButton from "../Buttons/FooterInstallButton";
 
 export default function FooterContact() {
 
     return(
             <div className={styles.footerContact}>
-                <div className="container">
+                <div className="w-[90%] mx-auto">
                     <div className={styles.footerContact__content}>
                         <span className={styles.footerContactBg} />
                         <div className={styles.left}>
-                            <h2 className="title-4xl text-anim">
+                            <h2 className="title-4xl text-anim w-[90%]">
                                 <span>
-                                    Get More from Patronum.
+                                Streamline Your Google Workspace Management Today!
                                 </span>
                             </h2>
                             <p className="content-p fadeUp">
-                                Talk to our experts and see how Patronum makes Google Workspace work for you.
+                            Automate User Onboarding & Offboarding, Email Signature Management, Google Drive Management, File Governance, Drive Data Compliance, Backups, and much more.
                             </p>
 
                             <div className={`${styles.footerCtaContainer} fadeUp`}>
                                 <DemoButton />
-                                <InstallButton />
+                                <FooterInstallButton />
                             </div>
                         </div>
 

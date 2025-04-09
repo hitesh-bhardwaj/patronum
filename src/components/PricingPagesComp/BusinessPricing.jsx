@@ -97,7 +97,7 @@ const BusinessPricing = () => {
                 </div>
               </div>
 
-              <div className="grid lg:w-[90%] lg:mx-auto lg:grid-cols-2 lg:gap-x-[4vw] lg:gap-y-[4vw]">
+              <div className="grid lg:w-full lg:mx-auto lg:grid-cols-2 lg:gap-x-[4vw] lg:gap-y-[4vw]">
                 {PricingList.map((pricing) => (
                   <PricingCard
                     key={pricing.id}
@@ -149,7 +149,7 @@ const BusinessPricing = () => {
                       $ 3.00
                     </span>{" "}
                     <span className="font-[400] text-[#999] lg:text-[18px] text-[3.5vw]">
-                      /Month
+                      /month/user
                     </span>
                   </p>
                   <div>

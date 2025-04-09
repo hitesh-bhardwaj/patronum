@@ -269,15 +269,15 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                 </button>
                             </div>
                             
-                            <ul id="dropdown-usecases" className={`px-4 flex flex-col justify-center space-y-4 bg-gray-100 transition-all duration-500 overflow-hidden ${isPricesDropdownOpen ? "h-[65vw] md:h-[30vw]" : "h-0"}`}>
+                            <ul id="dropdown-usecases" className={`px-4 flex flex-col justify-center space-y-4 bg-gray-100 transition-all duration-500 overflow-hidden ${isPricesDropdownOpen ? "h-[50vw] md:h-[25vw]" : "h-0"}`}>
                                 <li className=''>
                                     <Link href='/pricing-for-business' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Use Cases - For Business' prefetch={false}>
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/for-business.svg' alt='use case icon' />
                                         </div>
                                         <div>
-                                            <p className='text-xl font-500'>Pricing For Business</p>
-                                            <p className='text-base'>Optimize Operations, Maximize Potential</p>
+                                            <p className='text-xl font-500'>For Business</p>
+                                            <p className='text-base'>Scalable Business-Ready Plans</p>
                                         </div>
                                     </Link>
                                 </li>
@@ -287,12 +287,11 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/for-hr.svg' alt='use case icon' />
                                         </div>
                                         <div>
-                                            <p className='text-xl font-500'>Pricing For Non-Profits & Education</p>
-                                            <p className='text-base'>Human Resources: Digitally Empowered</p>
+                                            <p className='text-xl font-500'>For Education & Non-Profits</p>
+                                            <p className='text-base'>Affordable & Accessible Pricing</p>
                                         </div>
                                     </Link>
                                 </li>
-                               
                             </ul>
                         </m.li>
                        

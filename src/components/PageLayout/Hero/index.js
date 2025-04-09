@@ -8,7 +8,7 @@ import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Hero({ pageTitle1, pageTitle2, pagePara, imgSrc, breadcrumbTitle, breadcrumbLink }) {
+export default function Hero({ pageTitle1, pageTitle2,boldpara, pagePara, imgSrc, breadcrumbTitle, breadcrumbLink }) {
 
     useEffect(() => {
         const isFirstTimeLoading = sessionStorage.getItem('hasVisited') === null;
@@ -16,7 +16,7 @@ export default function Hero({ pageTitle1, pageTitle2, pagePara, imgSrc, breadcr
 
         let ctx = gsap.context(() => {
 
-            const heroPara = document.querySelector('.hero-para');
+            const heroPara = document.querySelectorAll('.hero-para');
             const title = new SplitType('.page-hero-anim', { types: 'words' });
             const titleAnim = document.querySelectorAll('.page-hero-anim span .word');
 
@@ -82,9 +82,10 @@ export default function Hero({ pageTitle1, pageTitle2, pagePara, imgSrc, breadcr
                                 )}
                             </h1>
 
-                            <p className="hero-para lg:w-[60%] lg:text-[1.25vw] lg:mb-0 font-medium text-[4vw] w-[95%] mb-[6vw]">
+                            <p className="hero-para lg:w-[60%] lg:text-[1.25vw] lg:mb-0 font-medium text-[4vw] w-[95%] mb-[2vw]">
                                 {pagePara}
                             </p>
+                            <p className="hero-para font-bold mt-[0.5vw]">{boldpara}</p>
                         </div>
 
                         <div className="page-hero-right lg:w-[35%] text-center w-full flex justify-center">

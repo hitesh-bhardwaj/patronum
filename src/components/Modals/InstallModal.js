@@ -1,6 +1,7 @@
 import React from "react";
 import { useModal } from './ModalContext'
 import ContactForm from "../Forms/ContactForm";
+import Link from "next/link";
 
 export default function InstallModal() {
     const { modalOpen, closeModal, modalType } = useModal();
@@ -14,14 +15,19 @@ export default function InstallModal() {
     if (modalOpen && modalType === 'contact') {
         return (
             <div id="install-modal" className={`install-modal-overlay relative ${modalOpen ? 'show' : 'hide'}`} onClick={handleModalClick}>
-                <div className="install-modal-container relative px-[9.5%] overflow-hidden lg:py-[5vh] py-[2vh]">
+                <div className="install-modal-container relative pr-[5.5%] pl-[3%] overflow-hidden lg:py-[5vh] py-[2vh]">
                     <div className="flex justify-between items-start relative z-10">
-                        <div className="install-left text-left flex flex-col justify-between h-full items-start mt-[4%]">
-                            <p className="aeonik lg:text-[2.5vw] text-[8vw] text-head">
-                                Let’s Get Started
+                        <div className="install-left text-left flex flex-col justify-between h-full items-start mt-[4%] w-[50%]">
+                            <p className="aeonik lg:text-[3vw] text-[8vw] text-head/90 font-light leading-[1.2]">
+                            Streamline Google Workspace Management
                             </p>
-                            <div className="w-[80%] mt-[10%]">
-                                <img loading="lazy" className="w-full h-full" src="/assets/contact/install-modal.svg" alt="install-modal Image"/>
+                            <p className="mt-[1vw]">
+                            Sign Up To Get 30 Days of <Link href={"/"} className="text-primary">
+                            Patronum+
+                            </Link> for <span className="font-bold">FREE</span> for all your users!
+                            </p>
+                            <div className="w-[80%] mt-[10%] h-[20vw]">
+                                <img loading="lazy" className="w-full h-full" src="/assets/contact/new-install-modal.svg" alt="install-modal Image"/>
                             </div>
                         </div>
                         <div className="install-right">

@@ -4,7 +4,7 @@ import styles from "./primary.module.css";
 const PrimaryButton = ({link, btnText, className="", ...props }) => {
     return(
         <Link {...props} href={link} className={`${styles.btn} fadeUp ${className}`}>
-            <span data-primary className={styles.btnText}>
+            <span  className={styles.btnText}>
                 {btnText}
             </span>
             <span className="screen-reader-text">About This</span>
