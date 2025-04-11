@@ -27,6 +27,11 @@
   color: var(--primary);
   transition: all 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
+.btn .btnCircle[data-pink] {
+  clip-path: inset(0.8vw 0.9vw 0.8vw calc(100% - 3.4vw) round 4vw);
+  color: #ff00aa;
+  padding: 0 1.65vw 0 2vw;
+}
 .btn .btnCircle[data-demo] {
   padding: 0 1.75vw;
 }

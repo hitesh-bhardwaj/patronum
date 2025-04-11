@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { m, domAnimation, LazyMotion } from 'framer-motion';
-import InstallButton from '../Buttons/InstallButton';
 import styles from "./desktop.module.css";
 import LinkButton from '../Buttons/LinkButton';
+import PinkButton from '../Buttons/PinkButton';
 
 const DesktopNavigation = () => {
     const [isFeaturesDropdownOpen, setFeaturesDropdownOpen] = useState(false);
@@ -324,7 +324,7 @@ const DesktopNavigation = () => {
                 </nav>
             </LazyMotion>
             <div className='header-anim lg:block md:hidden'>
-                <InstallButton btnText={"Try for free"} />
+                <PinkButton btnText={"Try for free"} />
             </div>
         </>
     );
