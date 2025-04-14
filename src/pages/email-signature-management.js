@@ -140,7 +140,7 @@ export default function FeatureDetail() {
                     sectionBreakText="Transform how your organization presents itself with Patronum&#39;s cutting-edge email signature management. It isn’t just about how you create email signatures; it&#39;s about embodying your brand&#39;s professionalism, presenting a unified brand image and transforming every email into a brand-building opportunity."
                 />
 
-                <FeatureDetailCards content={featuresDetailCard} />
+                <FeatureDetailCards title1={'Additional Email Signature'} title2={'Management Features'} content={featuresDetailCard} />
 
                 <Faqs featureName="email_signature_management" />
 

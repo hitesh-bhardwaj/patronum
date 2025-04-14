@@ -113,7 +113,7 @@ export default function FeatureDetail() {
                 <SectionBreak
                     sectionBreakText="Patronum Backup transforms how your organization approaches Google Workspace data protection, marrying speed, reliability, and user empowerment in a single, powerful solution. Secure your digital workspace with Patronum, and navigate the digital landscape with confidence, knowing that your data is protected by the pinnacle of backup innovation."
                 />
-                <FeatureDetailCards content={featuresDetailCard} />
+                <FeatureDetailCards title1={'Additional Google Workspace'} title2={'Backup Features'} content={featuresDetailCard} />
                 <BackupCard />
                 <Faqs featureName="google_workspace_backup" />
             </PageLayout>

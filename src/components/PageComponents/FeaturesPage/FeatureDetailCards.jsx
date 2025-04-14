@@ -3,15 +3,15 @@ import Image from "next/image";
 import styles from "./featureDetail.module.css";
 import InstallButton from "@/components/Buttons/InstallButton";
 
-const FeatureDetailCards = ({ content }) => {
+const FeatureDetailCards = ({ content, title1, title2 }) => {
     return (
         <>
             <section id="feature-detail-card">
                 <div className="container">
                     <div className="content">
                         <SectionTitle
-                            sectionTitle1="Additional User Lifecycle"
-                            sectionTitle2="Management Features"
+                            sectionTitle1={title1}
+                            sectionTitle2={title2}
                         />
                         <div className={styles.featureDetailCardWrapper}>
                             {content.map((item, index) => (

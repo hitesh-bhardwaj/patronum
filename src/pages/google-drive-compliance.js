@@ -76,8 +76,8 @@ export default function FeatureDetail() {
     return (
         <>
             <PageLayout
-                pageTitle1={'File Unsharing &'}
-                pageTitle2={'Google Drive Compliance'}
+                pageTitle1={'File Governance'}
+                // pageTitle2={'Google Drive Compliance'}
                 pagePara={"Transform Collaboration into Controlled Innovation"}
                 imgSrc={'google-drive-compliance.svg'}
                 title={"Manage and Unshare Google Drive Files, Folders and Docs with Patronum"}
@@ -107,7 +107,7 @@ export default function FeatureDetail() {
                     sectionBreakText="Patronum makes securing your Google Drive data effortless. With its advanced identification and access management capabilities, quickly revoking access becomes simple. Transform how you protect and manage your Google Drive data with Patronum, ensuring your sensitive information remains secure."
                 />
 
-                <FeatureDetailCards content={featuresDetailCard} />
+                <FeatureDetailCards title1={'Additional File'} title2={'Governance Features'} content={featuresDetailCard} />
 
                 <Faqs featureName="google_drive_compliance" />
 

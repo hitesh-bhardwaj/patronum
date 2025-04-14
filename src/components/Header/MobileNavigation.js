@@ -146,7 +146,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/file-sharing.svg' alt='feature icon' />
                                         </div>
                                         <div>
-                                            <p className='text-xl font-500'>File Unsharing</p>
+                                            <p className='text-xl font-500'>File Governance</p>
                                             <p className='text-base'>Automatically Unshare file & Stay Compliant</p>
                                         </div>
                                     </Link>

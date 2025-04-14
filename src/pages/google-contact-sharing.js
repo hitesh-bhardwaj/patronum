@@ -112,7 +112,7 @@ export default function FeatureDetail() {
                     sectionBreakText="With Patronum, users gain access to unlimited contact labels and sharing capabilities, along with effortless synchronization across Outlook and various devices. It stands as a singular solution for navigating the complexities of Google contact sharing, enhancing connectivity within and beyond your organization."
                 />
 
-                <FeatureDetailCards content={featuresDetailCard} />
+                <FeatureDetailCards title1={'Additional Google Contact'} title2={'Sharing Features'} content={featuresDetailCard} />
 
                 <Faqs featureName="contact_sharing" />
 

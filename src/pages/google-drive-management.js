@@ -117,7 +117,7 @@ export default function FeatureDetail() {
                     sectionBreakText="Patronum's Google Drive management feature streamlines data handling by facilitating efficient file organization, seamless sharing, and secure access control. This enhances collaboration and productivity across organization, by fostering a collaborative environment for all users."
                 />
 
-                <FeatureDetailCards content={featuresDetailCard} />
+                <FeatureDetailCards title1={'Additional Google Drive'} title2={'Management Features'} content={featuresDetailCard} />
 
                 <Faqs featureName="google_drive_management" />
 
