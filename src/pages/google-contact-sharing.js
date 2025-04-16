@@ -106,7 +106,7 @@ export default function FeatureDetail() {
                 />
 
                 <FeatureDetailInfo content={featuresDetail} />
-                <Transform/>
+                <Transform text={"Connect Seamlessly with Smart Contact Sharing!"} content={"Never lose a lead or contact again. Facilitate efficient communication by sharing contacts with the right people—always synced, always secure."} />
 
                 <SectionBreak
                     sectionBreakText="With Patronum, users gain access to unlimited contact labels and sharing capabilities, along with effortless synchronization across Outlook and various devices. It stands as a singular solution for navigating the complexities of Google contact sharing, enhancing connectivity within and beyond your organization."

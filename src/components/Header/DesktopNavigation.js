@@ -72,7 +72,7 @@ const DesktopNavigation = () => {
                                         />
                                         <NavItem
                                             title={'File Governance'}
-                                            disc={'Automatically Unshare file & Stay Compliant'}
+                                            disc={'Automated & Secure File Sharing for Seamless Collaboration'}
                                             link={'/google-drive-compliance'}
                                             img={'file-sharing.svg'}
                                         />

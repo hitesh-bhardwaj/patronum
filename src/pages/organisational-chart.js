@@ -71,7 +71,7 @@ export default function FeatureDetail() {
                 />
 
                 <FeatureDetailInfo content={featuresDetail} />
-                <Transform/>
+                <Transform text={"Visualise Your Team. Empower Your People!"} content={"Bring clarity to your workforce. Patronum's live org chart helps teams understand roles, relationships, and reporting lines to improve collaboration."}/>
 
                 <SectionBreak
                     sectionBreakText="Patronum's 'Organizational Chart' feature is designed to support seamless onboarding, promote transparency, and facilitate collaboration, thereby improving decision-making and fostering a more cohesive organizational culture."

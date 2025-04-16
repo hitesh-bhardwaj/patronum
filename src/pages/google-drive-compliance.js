@@ -76,8 +76,8 @@ export default function FeatureDetail() {
     return (
         <>
             <PageLayout
-                pageTitle1={'File Governance'}
-                // pageTitle2={'Google Drive Compliance'}
+                pageTitle1={'Google Drive File'}
+                pageTitle2={'Governance & Compliance'}
                 pagePara={"Transform Collaboration into Controlled Innovation"}
                 imgSrc={'google-drive-compliance.svg'}
                 title={"Manage and Unshare Google Drive Files, Folders and Docs with Patronum"}
@@ -90,27 +90,20 @@ export default function FeatureDetail() {
                 breadcrumbTitle={"Features"}
                 breadcrumbLink={"features"}
             >
-
                 <VideoPlayer disabled={false} videoId="RIoCiNzNqW0" videoCover={"/assets/features/google-drive-compliance/video-cover.webp"} />
-
                 <FeatureDetailTitle
                     sectionTitle1="Google Drive Compliance"
                     sectionTitle2="For Google Workspace"
                     sectionPara="Patronum is the ultimate solution for taking control of your Google Drive data and staying compliant with data protection & data security laws. Google Drive and Docs revolutionize collaboration, offering simplicity and efficiency at your fingertips. Yet, this simplicity can sometimes transform into complexity, turning vital company data into potential risks. "
                     sectionParaBig="Widespread sharing of docs, presentations, sheets etc. across employees, departments, and even with external entities like suppliers and customers makes data management a formidable challenge. Patronum is your beacon in this chaos, providing unparalleled visibility and control over your Google Drive information, ensuring your data remains secure and compliant."
                 />
-
                 <FeatureDetailInfo content={featuresDetail} />
-                <Transform/>
-
+                <Transform text={"Compliance Without the Complexity"} content={"Maintain data integrity and meet compliance standards with Patronum's policy-level control over Google Drive governance tools."}/>
                 <SectionBreak
                     sectionBreakText="Patronum makes securing your Google Drive data effortless. With its advanced identification and access management capabilities, quickly revoking access becomes simple. Transform how you protect and manage your Google Drive data with Patronum, ensuring your sensitive information remains secure."
                 />
-
                 <FeatureDetailCards title1={'Additional File'} title2={'Governance Features'} content={featuresDetailCard} />
-
                 <Faqs featureName="google_drive_compliance" />
-
             </PageLayout>
 
         </>

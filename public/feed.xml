@@ -4,10 +4,19 @@
         <description><![CDATA[Patronum provides a better way to manage Google Workspace (GSuite). Patronum is your Google Workspace (GSuite) manager that fully automates all administrator and user tasks to ensure an efficient, effective, and secure process.]]></description>
         <link>https://www.patronum.io</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 14 Apr 2025 10:09:53 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 16 Apr 2025 15:50:15 GMT</lastBuildDate>
         <atom:link href="https://www.patronum.io/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Mon, 14 Apr 2025 10:09:53 GMT</pubDate>
+        <pubDate>Wed, 16 Apr 2025 15:50:15 GMT</pubDate>
         <copyright><![CDATA[2025 Patronum]]></copyright>
+        <item>
+            <title><![CDATA[Microsoft’s New DMARC Enforcement: What It Means for Google Workspace Admins]]></title>
+            <description><![CDATA[In the evolving landscape of email security, 2024 marked a significant turning point. Following Google and Yahoo’s lead, Microsoft has announced it will begin enforcing email authentication standards—SPF, DKIM, and DMARC—for bulk senders starting 5 May 2025. For IT managers and Google Workspace administrators, this isn’t just a Microsoft problem—it’s a wake-up call to tighten&hellip; Continue reading Microsoft’s New DMARC Enforcement: What It Means for Google Workspace Admins
+]]></description>
+            <link>https://www.patronum.io/microsofts-new-dmarc-enforcement-what-it-means-for-google-workspace-admins</link>
+            <guid isPermaLink="false">https://www.patronum.io/microsofts-new-dmarc-enforcement-what-it-means-for-google-workspace-admins</guid>
+            <category><![CDATA[Email Signature]]></category>
+            <pubDate>Mon, 14 Apr 2025 09:59:47 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Insecure File Sharing and How to Prevent Data Loss]]></title>
             <description><![CDATA[In today’s fast-paced digital world, file sharing has become an integral part of how businesses collaborate and operate.

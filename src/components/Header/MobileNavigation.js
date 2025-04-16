@@ -95,13 +95,13 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </button>
                                 </div>
                             </div>
-                            <ul id="dropdown-features" className={`px-4 flex flex-col justify-center space-y-4 bg-gray-100 transition-all duration-500 overflow-hidden ${isFeaturesDropdownOpen ? "h-[730px]" : "h-0"}`}>
+                            <ul id="dropdown-features" className={`px-4 flex flex-col justify-center space-y-4 bg-gray-100 transition-all duration-500 overflow-hidden ${isFeaturesDropdownOpen ? "h-[750px]" : "h-0"}`}>
                                 <li className=''>
                                     <Link href='/on-boarding' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Onboarding' prefetch={false}>
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/onboarding.svg' alt='feature icon' />
                                         </div>
-                                        <div>
+                                        <div className='w-3/4'>
                                             <p className='text-xl font-500'>User Management</p>
                                             <p className='text-base'>Automated User Onboarding & Offboarding</p>
                                         </div>
@@ -112,7 +112,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/email-signature.svg' alt='feature icon' />
                                         </div>
-                                        <div>
+                                        <div className='w-3/4'>
                                             <p className='text-xl font-500'>Email Signatures</p>
                                             <p className='text-base'>Centrally Managed Gmail Email Signatures</p>
                                         </div>
@@ -123,7 +123,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/workspace-backup.svg' alt='feature icon' />
                                         </div>
-                                        <div>
+                                        <div className='w-3/4'>
                                             <p className='text-xl font-500'>Workspace Backup</p>
                                             <p className='text-base'>Best-in-Class Full Fidelity Backups</p>
                                         </div>
@@ -134,7 +134,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/drive-management.svg' alt='feature icon' />
                                         </div>
-                                        <div>
+                                        <div className='w-3/4'>
                                             <p className='text-xl font-500'>Google Drive Management</p>
                                             <p className='text-base'>Manage, Update, or Move User Files</p>
                                         </div>
@@ -145,9 +145,9 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/file-sharing.svg' alt='feature icon' />
                                         </div>
-                                        <div>
+                                        <div className='w-3/4'>
                                             <p className='text-xl font-500'>File Governance</p>
-                                            <p className='text-base'>Automatically Unshare file & Stay Compliant</p>
+                                            <p className='text-base'>Automated & Secure File Sharing for Seamless Collaboration</p>
                                         </div>
                                     </Link>
                                 </li>
@@ -156,7 +156,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/contact-sharing.svg' alt='feature icon' />
                                         </div>
-                                        <div>
+                                        <div className='w-3/4'>
                                             <p className='text-xl font-500'>Contact Sharing</p>
                                             <p className='text-base'> Seemless & Secure Contact Sharing</p>
                                         </div>
@@ -167,7 +167,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/organisational-chart.svg' alt='use case icon' />
                                         </div>
-                                        <div>
+                                        <div className='w-3/4'>
                                             <p className='text-xl font-500'>Organizational Chart</p>
                                             <p className='text-base'>Locate & view organization hierarchy</p>
                                         </div>
@@ -194,7 +194,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/for-business.svg' alt='use case icon' />
                                         </div>
-                                        <div>
+                                        <div className='w-3/4'>
                                             <p className='text-xl font-500'>For Business</p>
                                             <p className='text-base'>Optimize Operations, Maximize Potential</p>
                                         </div>
@@ -205,7 +205,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/for-hr.svg' alt='use case icon' />
                                         </div>
-                                        <div>
+                                        <div className='w-3/4'>
                                             <p className='text-xl font-500'>For HR</p>
                                             <p className='text-base'>Human Resources: Digitally Empowered</p>
                                         </div>
@@ -216,7 +216,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/for-sales-marketing.svg' alt='use case icon' />
                                         </div>
-                                        <div>
+                                        <div className='w-3/4'>
                                             <p className='text-xl font-500'>For Sales & Marketing</p>
                                             <p className='text-base'>Elevating Brand Through Unified Messaging</p>
                                         </div>
@@ -227,7 +227,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/for-education.svg' alt='use case icon' />
                                         </div>
-                                        <div>
+                                        <div className='w-3/4'>
                                             <p className='text-xl font-500'>For Education</p>
                                             <p className='text-base'>Empowering Education with Smart Administration</p>
                                         </div>
@@ -238,7 +238,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/for-users.svg' alt='use case icon' />
                                         </div>
-                                        <div>
+                                        <div className='w-3/4'>
                                             <p className='text-xl font-500'>For Users</p>
                                             <p className='text-base'>User Empowerment: Connect More, Do More</p>
                                         </div>
@@ -249,7 +249,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/for-it-admins.svg' alt='use case icon' />
                                         </div>
-                                        <div>
+                                        <div className='w-3/4'>
                                             <p className='text-xl font-500'>For IT Admins</p>
                                             <p className='text-base'>Administrate Smarter, Not Harder</p>
                                         </div>
@@ -275,7 +275,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/for-business.svg' alt='use case icon' />
                                         </div>
-                                        <div>
+                                        <div className='w-3/4'>
                                             <p className='text-xl font-500'>For Business</p>
                                             <p className='text-base'>Scalable Business-Ready Plans</p>
                                         </div>
@@ -286,7 +286,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/for-hr.svg' alt='use case icon' />
                                         </div>
-                                        <div>
+                                        <div className='w-3/4'>
                                             <p className='text-xl font-500'>For Education & Non-Profits</p>
                                             <p className='text-base'>Affordable & Accessible Pricing</p>
                                         </div>
@@ -312,7 +312,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/resource-blog.svg' alt='resource icon' />
                                         </div>
-                                        <div>
+                                        <div className='w-3/4'>
                                             <p className='text-xl font-500'>Blog</p>
                                             <p className='text-base'>Tips, Resources & Latest News</p>
                                         </div>
@@ -323,7 +323,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/resource-webinars.svg' alt='resource icon' />
                                         </div>
-                                        <div>
+                                        <div className='w-3/4'>
                                             <p className='text-xl font-500'>Webinars</p>
                                             <p className='text-base'>Engage With Experts Live</p>
                                         </div>
@@ -334,7 +334,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/resource-compliance.svg' alt='resource icon' />
                                         </div>
-                                        <div>
+                                        <div className='w-3/4'>
                                             <p className='text-xl font-500'>Compliance</p>
                                             <p className='text-base'>Our Security & Compliance Practices</p>
                                         </div>
@@ -345,7 +345,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/resource-help.svg' alt='resource icon' />
                                         </div>
-                                        <div>
+                                        <div className='w-3/4'>
                                             <p className='text-xl font-500'>Help</p>
                                             <p className='text-base'>Need Assistance? We're here!</p>
                                         </div>
@@ -356,7 +356,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/resource-community.svg' alt='resource icon' />
                                         </div>
-                                        <div>
+                                        <div className='w-3/4'>
                                             <p className='text-xl font-500'>Community</p>
                                             <p className='text-base'>Connect & Collaborate with Peers</p>
                                         </div>
@@ -367,7 +367,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/resource-legal.svg' alt='resource icon' />
                                         </div>
-                                        <div>
+                                        <div className='w-3/4'>
                                             <p className='text-xl font-500'>Legal</p>
                                             <p className='text-base'>Legal Information & Terms of Use</p>
                                         </div>
@@ -378,7 +378,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/resource-contact.svg' alt='resource icon' />
                                         </div>
-                                        <div>
+                                        <div className='w-3/4'>
                                             <p className='text-xl font-500'>Contact Us</p>
                                             <p className='text-base'>Get in Touch with Us</p>
                                         </div>

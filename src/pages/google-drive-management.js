@@ -111,7 +111,7 @@ export default function FeatureDetail() {
                 />
 
                 <FeatureDetailInfo content={featuresDetail} />
-                <Transform/>
+                <Transform text={"Take Back Control of Your Google Drive!"} content={"Stop letting unmanaged files create compliance risks. Patronum gives IT leaders full visibility and governance across every Drive—without micromanaging."}/>
 
                 <SectionBreak
                     sectionBreakText="Patronum's Google Drive management feature streamlines data handling by facilitating efficient file organization, seamless sharing, and secure access control. This enhances collaboration and productivity across organization, by fostering a collaborative environment for all users."
