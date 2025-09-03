@@ -40,6 +40,7 @@ const BreadcrumbComponent = ({ capitalizeLinks = true, middleLink, middleLinkNam
             position: (middleLinkName ? 3 : 2) + index,
             name: capitalizeAndFormat(link),
             item: `${homepage}/${pathNames.slice(0, index + 1).join('/')}`,
+            
         }))
     ];
 

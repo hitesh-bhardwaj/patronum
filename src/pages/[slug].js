@@ -15,8 +15,8 @@ import dynamic from 'next/dynamic';
 import { useModal } from "@/components/Modals/ModalContext";
 
 const ProgressBar = dynamic(() => import('@/components/PageComponents/BlogPage/ProgressBar'), { ssr: false });
-const RelatedPosts = dynamic(() => import('@/components/PageComponents/BlogPage/RelatedPosts'), { ssr: false });
-const TableOfContents = dynamic(() => import('@/components/PageComponents/BlogPage/TableOfContents'), { ssr: false });
+const RelatedPosts = dynamic(() => import('@/components/PageComponents/BlogPage/RelatedPosts'), { ssr: true });
+const TableOfContents = dynamic(() => import('@/components/PageComponents/BlogPage/TableOfContents'), { ssr: true });
 
 function PostDetail({ post, recentPosts }) {
   
@@ -157,6 +157,7 @@ function PostDetail({ post, recentPosts }) {
                   "@id": `https://www.patronum.io/${post.slug}#website`
                 },
                 "image": {
+                  url:post.featuredImage.sourceUrl,
                   "@id": post.seo.image,
                 },
                 "inLanguage": "en_US",
@@ -189,10 +190,10 @@ function PostDetail({ post, recentPosts }) {
                   }
                 },
                 "about": {
-                  "@id": `https://www.www.patronum.io/${post.slug}#organization`
+                  "@id": `https://www.patronum.io/${post.slug}#organization`
                 },
                 "isPartOf": {
-                  "@id": `https://www.www.patronum.io/${post.slug}#website`
+                  "@id": `https://www.patronum.io/${post.slug}#website`
                 },
                 "inLanguage": "en_US",
               }
