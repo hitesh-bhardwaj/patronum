@@ -13,7 +13,6 @@ const Pricing = () => {
       'Email Signature Management',
       'Google Drive Management',
       'Contact Sharing',
-      'Automated File Unsharing',
       'Organizations Chart',
     ],
   
@@ -21,7 +20,6 @@ const Pricing = () => {
       'Email Signature Management',
       'Google Drive Management',
       'Contact Sharing',
-      'Automated File Unsharing',
       'Organizations Chart',
     ]
   };

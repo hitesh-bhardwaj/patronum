@@ -73,13 +73,13 @@ const Pricing = () => {
 
                                 <div className='lg:pt-4'>
                                     <TabsContent value="business">
-                                        <div className='grid lg:w-full lg:mx-auto lg:grid-cols-2 lg:gap-x-[4vw] lg:gap-y-[4vw]'>
+                                        <div className='grid lg:w-[90%] lg:mx-auto lg:grid-cols-2 lg:gap-x-[4vw] lg:gap-y-[4vw]'>
                                             <PricingCard category="Business" href="/pricing-for-business" isAnnual={isAnnual} selectedCurrency={selectedCurrency} pricingImage='/assets/pricing/business.svg' title='<span class="text-[#2a2a2a]">Patronum</span> For Business' />
                                             <PricingCard category="Business_Plus" href="/pricing-for-business" isAnnual={isAnnual} selectedCurrency={selectedCurrency} pricingImage='/assets/businessPricing/patronum.svg' title='<span class="text-[#2a2a2a]">Patronum+</span> For Business' />
                                         </div>
                                     </TabsContent>
                                     <TabsContent value="education">
-                                        <div className='grid lg:w-full lg:mx-auto lg:grid-cols-2 lg:gap-x-[4vw] lg:gap-y-[4vw]'>
+                                        <div className='grid lg:w-[90%] lg:mx-auto lg:grid-cols-2 lg:gap-x-[4vw] lg:gap-y-[4vw]'>
                                             <PricingCard category="Education" href="/pricing-for-education" isAnnual={isAnnual} selectedCurrency={selectedCurrency} pricingImage='/assets/educationPricing/patronum.svg' title='<span class="text-[#2a2a2a]">Patronum</span> For Education & Non-Profits' />
                                             <PricingCard category="Education_Plus" href="/pricing-for-education" isAnnual={isAnnual} selectedCurrency={selectedCurrency} pricingImage='/assets/educationPricing/patronum-plus.svg' title='<span class="text-[#2a2a2a]">Patronum+</span> For Education & Non-Profits' />
                                         </div>

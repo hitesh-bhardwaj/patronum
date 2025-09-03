@@ -86,15 +86,15 @@ export default function Hero() {
                 <div className="container-lg relative lg:mb-0 mb-[10vw]">
                     <div className="lg:px-[4vw] lg:flex lg:items-center lg:justify-between h-full w-full lg:mb-0 mb-[10vw] md:mb-[15vw]">
                         <div className="pt-[25vw] gap-y-[7vw] flex-col w-full flex md:pt-[20vw] lg:pt-0 lg:gap-y-10 lg:w-[55%]">
-                            <h1 className='title-5xl hero-anim flex flex-wrap justify-start items-end space-y-[2vw] lg:space-y-0'>
+                            <h1 className='title-5xl hero-anim flex flex-wrap justify-start items-end space-y-[2vw] lg:space-y-0 !text-[13vw] lg:!text-[5vw]'>
                                 <div className='overflow-hidden lg:w-full mb-[1vw] w-fit'>
-                                    <span className="span block">Your{" "}</span>
+                                    <span className="span block">Your <span className="text-primary">Complete</span>{" "}</span>
                                 </div>
-                                <div className="overflow-hidden w-fit ml-[2.5vw] lg:ml-0">
-                                    <Image className="span lg:w-[15.5vw] md:w-[40vw] w-[43vw]" src="/assets/home/google.svg" priority={false} width={250} height={100} alt="google logo image" />
+                                <div className="overflow-hidden w-fit mr-2 lg:mr-0">
+                                    <Image className="span lg:w-[15.5vw] md:w-[32vw] w-[35vw]" src="/assets/home/google.svg" priority={false} width={250} height={100} alt="google logo image" />
                                 </div>
                                 <div className="overflow-hidden w-fit lg:ml-[1.4vw] tablet:ml-0">
-                                    <Image className="span lg:mt-[0.2vw] md:mt-[3vw] mt-[2.5vw] lg:w-[23vw] md:w-[62vw] w-[95%]" src="/assets/home/workspace.svg" priority={false} width={400} height={100} alt="google workspace image" />
+                                    <Image className="span lg:mt-[0.2vw] md:mt-[3vw] mt-[2.5vw] lg:w-[23vw] md:w-[50vw] w-[50vw]" src="/assets/home/workspace.svg" priority={false} width={400} height={100} alt="google workspace image" />
                                 </div>
                                 <span className="hidden">Google Workspace{" "}</span>
                                 <div className='overflow-hidden w-full'>
@@ -102,8 +102,8 @@ export default function Hero() {
                                 </div>
                             </h1>
 
-                            <p ref={para} className="lg:text-[1.25vw] lg:w-[24vw] md:mb-0 font-medium md:text-[4vw] md:w-full text-[5vw] mb-[5vw]">
-                                The only tool you'll ever need to streamline your Google Workspace management.
+                            <p ref={para} className="lg:text-[1.25vw] lg:w-[30vw] md:mb-0 font-medium md:text-[4vw] md:w-full text-[5vw] mb-[5vw]">
+                                The only tool you'll ever need to streamline your Google Workspace management and data security.
                             </p>
 
                             <div className="flex md:gap-[2vw] flex-col md:flex-row gap-[5vw]">

@@ -29,6 +29,7 @@ const Pricing = () => {
             id: 1,
             category: 'Education',
             title: '<span class="text-[#2a2a2a]">Patronum</span> For Education & Non-Profits',
+            fTitle: "Key Features:",
             features: [
                 'Onboarding & Offboarding',
                 'Email Signature Management',
@@ -43,6 +44,7 @@ const Pricing = () => {
             id: 2,
             category: 'Business',
             title: '<span class="text-[#2a2a2a]">Patronum</span> For Business',
+            fTitle: "Key Features:",
             features: [
                 'Onboarding & Offboarding',
                 'Email Signature Management',
@@ -57,8 +59,8 @@ const Pricing = () => {
             id: 3,
             category: 'Education_Plus',
             title: '<span class="text-[#2a2a2a]">Patronum+</span> For Education & Non-Profits',
+            fTitle: "Everything in Patronum and:",
             features: [
-                'Everything in Patronum and:',
                 'Automated file sharing governance',
                 'Empowering End-Users File Compliance',
                 'Automated File Expiry',
@@ -71,8 +73,8 @@ const Pricing = () => {
             id: 4,
             category: 'Business_Plus',
             title: '<span class="text-[#2a2a2a]">Patronum+</span> For Business',
+            fTitle: "Everything in Patronum and:",
             features: [
-                'Everything in Patronum and:',
                 'Automated file sharing governance',
                 'Empowering End-Users File Compliance',
                 'Automated File Expiry',
@@ -126,7 +128,7 @@ const Pricing = () => {
                                 </div>
                             </div>
 
-                            <div className='grid lg:w-full lg:mx-auto lg:grid-cols-2 lg:gap-x-[4vw] lg:gap-y-[4vw]'>
+                            <div className='grid lg:w-[90%] lg:mx-auto lg:grid-cols-2 lg:gap-x-[4vw] lg:gap-y-[4vw]'>
                                 {PricingList.map((pricing) => (
                                     <PricingCard 
                                         key={pricing.id} 
@@ -136,6 +138,7 @@ const Pricing = () => {
                                         selectedCurrency={selectedCurrency} 
                                         pricingImage={pricing.img} 
                                         features={pricing.features} 
+                                        featureTitle={pricing.fTitle}
                                         className={pricing.className}
                                         onClick={handleSmoothScroll}
                                     />

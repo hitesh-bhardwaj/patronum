@@ -15,7 +15,7 @@ const DesktopNavigation = () => {
         <>
             <LazyMotion features={domAnimation}>
                 <nav className='lg:block'>
-                    <ul className='flex center gap-[3vw] font-head font-medium'>
+                    <ul className='flex center font-head font-medium'>
                         <li className={styles.navListItem}>
                             <Link href='/about-us' className={styles.pageLink} prefetch={false}>
                                 <div>
@@ -29,7 +29,7 @@ const DesktopNavigation = () => {
                             onMouseEnter={() => setFeaturesDropdownOpen(true)}
                             onMouseLeave={() => setFeaturesDropdownOpen(false)}
                         >
-                            <Link href='/features' className={`${styles.pageLink} ${styles.dropdown}`} prefetch={false}>
+                            <Link href='/features' className={`${styles.pageLink} ${styles.dropdown} ${isFeaturesDropdownOpen?"before:h-[45px]":"before:h-[30px]"}`} prefetch={false}>
                                 <div >
                                     <span>
                                         Features
@@ -41,6 +41,8 @@ const DesktopNavigation = () => {
                             </Link>
                             {isFeaturesDropdownOpen && (
                                 <m.div
+                                    onMouseEnter={() => setFeaturesDropdownOpen(true)}
+                                    onMouseLeave={() => setFeaturesDropdownOpen(false)}
                                     initial={{ y: -30, opacity: 0 }}
                                     animate={{ y: 0, opacity: 1 }}
                                     transition={{ duration: 0.4 }}
@@ -90,14 +92,14 @@ const DesktopNavigation = () => {
                                         />
                                     </ul>
                                 </m.div>
-                            )}
+                             )} 
                         </li>
 
                         <li className={styles.navListItem}
                             onMouseEnter={() => setUsecasesDropdownOpen(true)}
                             onMouseLeave={() => setUsecasesDropdownOpen(false)}
                         >
-                            <Link href='/use-cases' className={`${styles.pageLink} ${styles.dropdown}`} prefetch={false}>
+                            <Link href='/use-cases' className={`${styles.pageLink} ${styles.dropdown} ${isUsecasesDropdownOpen?"before:h-[45px]":"before:h-[30px]"}`} prefetch={false}>
                                 <div >
                                     <span>
                                         Use Cases
@@ -158,7 +160,7 @@ const DesktopNavigation = () => {
                             onMouseEnter={() => setPriceDropdownOpen(true)}
                             onMouseLeave={() => setPriceDropdownOpen(false)}
                         >
-                            <Link href="/pricing" className={`${styles.pageLink} ${styles.dropdown}`} prefetch={false}>
+                            <Link href="/pricing" className={`${styles.pageLink} ${styles.dropdown} ${isPriceDropdownOpen?"before:h-[45px]":"before:h-[30px]"}`} prefetch={false}>
                                 <div>
                                     <span>
                                         Pricing
@@ -229,7 +231,7 @@ const DesktopNavigation = () => {
                             onMouseEnter={() => setResourcesDropdownOpen(true)}
                             onMouseLeave={() => setResourcesDropdownOpen(false)}
                         >
-                            <button className={`${styles.pageLink} ${styles.dropdown}`} aria-label="open resource dropdown">
+                            <button className={`${styles.pageLink} ${styles.dropdown} ${isResourcesDropdownOpen?"before:h-[45px]":"before:h-[30px]"}`} aria-label="open resource dropdown">
                                 <div>
                                     <span>
                                         Resources

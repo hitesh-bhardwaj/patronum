@@ -5,7 +5,7 @@ export default function Legal() {
 
     const legalContent = [
         {
-            id: 1,
+            id: '01',
             title: "Master Subscription Agreement",
             img: "master-subscription-agreement",
             link: "https://docs.google.com/document/d/1w_SjHlAx6H31A0AYARI_lVhHxDh-CZKWertRKANQT-U/edit?pli=1",
@@ -41,20 +41,34 @@ export default function Legal() {
         },
         {
             id: "06",
+            title: "Responsible Purchasing Charter",
+            img: "responsible-purchasing-charter",
+            link: "https://docs.google.com/document/d/1CiuKk2u9WV7z8G7Puiejs2tRVhsIZWp2OSm3L3AUVnQ/edit?tab=t.0",
+            taregt: "_blank",
+        },
+        {
+            id: "07",
+            title: "Anti-slavery and Human Trafficking Statement",
+            img: "anti-slavery-and-human-trafficking",
+            link: "https://docs.google.com/document/d/1mb7Rh5glrBbqTv_zYSQs9eniASpQp9OLq4vAojohGY4/edit?tab=t.0",
+            taregt: "_blank",
+        },
+        {
+            id: "08",
             title: "Cookie Policy",
             img: "cookie-policy",
             link: "/cookie-policy",
             taregt: "_self"
         },
         {
-            id: "07",
+            id: "09",
             title: "Privacy Policy",
             img: "privacy-policy",
             link: "/privacy-policy",
             taregt: "_self",
         },
         {
-            id: "08",
+            id: "10",
             title: "Environmental Policy",
             img: "environmental-policy",
             link: "/environmental-policy",

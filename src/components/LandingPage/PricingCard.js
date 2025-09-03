@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from '@/styles/pricing.module.css';
 import LinkButton from '@/components/Buttons/LinkButton';
 
-const PricingCard = ({ features, category, isAnnual, selectedCurrency, pricingImage, title, onClick, className=""}) => {
+const PricingCard = ({ features, category, isAnnual, selectedCurrency, pricingImage, title, onClick, featureTitle, className=""}) => {
 
   const [isVisible, setIsVisible] = useState(true);
 
@@ -53,6 +53,9 @@ const PricingCard = ({ features, category, isAnnual, selectedCurrency, pricingIm
       />
       <span className={styles.hr} />
       <div className={styles.featureList}>
+        {featureTitle && (
+          <h4 className='font-medium'>{featureTitle}</h4>
+        )}
         {features.map((feature, index) => (
           <h4 key={index}><span>✓</span><span className='ml-[1vw]'>{feature}</span></h4>
         ))}

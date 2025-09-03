@@ -72,6 +72,8 @@
   background: none;
   color: var(--primary);
   border: 1px solid var(--primary);
+  width: 15vw;
+  max-width: 15vw;
 }
 .btn[data-secondary] .btnCircle {
   clip-path: inset(0.7vw 0.9vw 0.7vw calc(100% - 3.7vw) round 4vw);
@@ -105,9 +107,9 @@
     width: 35vw;
     font-weight: 400;
   }
-  .btn[data-secondary] .btnCircle {
-    padding: 0 4vw;
-    clip-path: inset(14% 5% 15% calc(100% - 27%) round 10vw);
+  .btn[data-secondary] {
+    max-width: 40vw;
+    width: 40vw;
   }
   .btn[data-secondary]:hover .btnCircle {
     clip-path: inset(0 round 10vw);
@@ -133,7 +135,7 @@
 
   .btn[data-secondary] .btnCircle{
     padding: 0 4vw;
-    clip-path: inset(14% 5% 15% calc(100% - 27%) round 10vw);
+    clip-path: inset(14% 5% 15% calc(100% - 25%) round 10vw);
   }
   .btn[data-secondary]:hover .btnCircle{
     clip-path: inset(0 round 10vw);
@@ -159,9 +161,13 @@
     font-size: 4.2vw;
     font-weight: 400;
   }
+  .btn[data-secondary]{
+    width: 55vw;
+    max-width: 55vw;
+  }
   .btn[data-secondary] .btnCircle {
     padding: 0 4.5vw;
-    clip-path: inset(14% 5% 15% calc(100% - 27%) round 10vw);
+    clip-path: inset(14% 5% 15% calc(100% - 25%) round 10vw);
   }
   .btn[data-secondary]:hover .btnCircle {
     clip-path: inset(0 round 10vw);

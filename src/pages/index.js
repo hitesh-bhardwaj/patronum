@@ -27,8 +27,6 @@ import dynamic from "next/dynamic";
 const SideMenu = dynamic(() => import("@/components/SideMenu"));
 
 export default function Home({ recentPosts }) {
-  const { isDesktop } = useDevice();
-  const [isClient, setIsClient] = useState(false);
 
   const sections = [
     { id: '#hero', name: 'Introduction' },
@@ -41,7 +39,6 @@ export default function Home({ recentPosts }) {
   ];
 
   useEffect(() => {
-    setIsClient(true);
     const headings = document.querySelectorAll('.text-anim');
 
     headings.forEach((heading) => {
@@ -303,22 +300,58 @@ export default function Home({ recentPosts }) {
             ),
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              {
+                "@context": "https://schema.org",
+                "@type": "SoftwareApplication",
+                "name": "Patronum",
+                "url": "https://www.patronum.io/",
+                "description": "Patronum is a comprehensive Google Workspace management platform that automates user onboarding/offboarding, email signature management, Google Drive governance, contact sharing, backups, and more.",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Web-based (Google Workspace)",
+                "softwareVersion": "",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "8.00",
+                  "priceCurrency": "USD",
+                  "description": "Per-user, per-year licence; Patronum is $8.00/user/year"
+                },
+                "provider": {
+                  "@type": "Organization",
+                  "name": "Bespin Labs Ltd",
+                  "url": "https://www.patronum.io/"
+                },
+                "featureList": [
+                  "Automated Google Workspace user onboarding/offboarding",
+                  "Email signature management with centralized templates",
+                  "Google Drive file & sharing governance",
+                  "Shared contacts synchronization",
+                  "Backup & restore of Google Workspace data",
+                  "Organisational chart & Google Groups automation"
+                ],
+                "isAccessibleForFree": false,
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": "4.9",
+                  "reviewCount": "24"
+                }
+              }
+            ),
+          }}
+        />
+
       </Head>
-      {isClient && isDesktop && <SideMenu sections={sections} />}
+      <SideMenu sections={sections} />
       <Layout>
         <main>
           <Hero />
           <Ratings />
           <Features />
-          {isClient && (
-            <>
-              {isDesktop ? (
-                <UseCases />
-              ) : (
-                <UseCasesMobile />
-              )}
-            </>
-          )}
+          <UseCases />
+          <UseCasesMobile />
           <Pricing />
           <About />
           <Testimonial />

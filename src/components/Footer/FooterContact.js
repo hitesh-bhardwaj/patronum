@@ -2,6 +2,7 @@ import InstallButton from "../Buttons/InstallButton";
 import DemoButton from "../Buttons/DemoButton";
 import styles from "./footer.module.css"
 import FooterInstallButton from "../Buttons/FooterInstallButton";
+import CallButton from "../Buttons/CallButton";
 
 export default function FooterContact() {
 
@@ -22,7 +23,7 @@ export default function FooterContact() {
 
                             <div className={`${styles.footerCtaContainer} fadeUp`}>
                                 <DemoButton />
-                                <FooterInstallButton />
+                                <CallButton />
                             </div>
                         </div>
 

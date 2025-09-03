@@ -1,5 +1,6 @@
 .navListItem>.pageLink{
     font-size: 1.1vw;
+    padding: 0 1.5vw;
     color: var(--text-body);
     transition: all 0.3s ease;
     position: relative;
@@ -14,7 +15,7 @@
   }
   .navListItem>.pageLink.dropdown::before{
     content: '';
-    height: 70px;
+    /* height: 30px; */
     background: none;
     position: absolute;
     left: 0;

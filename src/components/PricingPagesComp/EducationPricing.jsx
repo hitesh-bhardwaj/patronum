@@ -25,6 +25,7 @@ const EducationPricing = () => {
       id: 1,
       category: "Education",
       title: 'Patronum',
+      fTitle: 'Key Features:',
       features: [
         "Onboarding & Offboarding",
         "Email Signature Management",
@@ -38,8 +39,8 @@ const EducationPricing = () => {
       id: 2,
       category: "Education_Plus",
       title: 'Patronum+',
+      fTitle: 'Everything in Patronum and:',
       features: [
-        "Everything in Patronum and:",
         "Automated file sharing governance",
         "Empowering End-Users File Compliance",
         "Automated File Expiry",
@@ -106,6 +107,7 @@ const EducationPricing = () => {
                     selectedCurrency={selectedCurrency}
                     pricingImage={pricing.img}
                     features={pricing.features}
+                    featureTitle={pricing.fTitle}
                     onClick={() => openModal('contact')}
                   />
                 ))}

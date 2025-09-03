@@ -4,7 +4,7 @@ import FeatureCard from "@/components/PageLayout/FeatureCard";
 import SectionBreakSmall from "@/components/PageLayout/SectionBreakSmall";
 import dynamic from "next/dynamic";
 
-const Faqs = dynamic(() => import("@/components/PageComponents/FeaturesPage/Faq"), { ssr: false });
+const Faqs = dynamic(() => import("@/components/PageComponents/FeaturesPage/Faq"), { ssr: true });
 
 const useCasesData = [
     {

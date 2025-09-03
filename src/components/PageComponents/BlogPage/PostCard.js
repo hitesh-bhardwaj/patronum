@@ -1,6 +1,7 @@
 import { format } from 'date-fns';
 import styles from "@/components/Buttons/link.module.css";
 import Link from 'next/link';
+import { sanitizeExcerpt } from '@/lib/posts';
 
 const PostCard = ({ post = {} }) => {
     const { title, featuredImage, date, excerpt, slug } = post;
@@ -33,7 +34,7 @@ const PostCard = ({ post = {} }) => {
                                     {title}
                                 </span>
                             </h3>
-                            {(post.excerpt) && (
+                            {(excerpt) && (
                                 <div dangerouslySetInnerHTML={{
                                     __html: excerpt,
                                 }}

@@ -8,8 +8,8 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 export default function UseCases() {
 
-    if (globalThis.innerWidth > 1024) {
-        useEffect(() => {
+    useEffect(() => {
+        if (globalThis.innerWidth > 1024) {
             let ctx = gsap.context(() => {
                 const sectionLength = document.getElementsByClassName('useCase-item').length;
                 const foc_container = document.querySelector('.useCases-items');
@@ -91,9 +91,11 @@ export default function UseCases() {
                 });
             });
             return () => ctx.revert();
-        }, []);
+        }
+    }, []);
 
-        useEffect(() => {
+    useEffect(() => {
+        if (globalThis.innerWidth > 1024) {
             let ctx = gsap.context(() => {
                 const UseCaseList = document.querySelectorAll('.use-cases-list li')
 
@@ -111,8 +113,8 @@ export default function UseCases() {
                 });
             });
             return () => ctx.revert();
-        }, []);
-    }
+        }
+    }, []);
 
     return (
         <>
@@ -232,7 +234,7 @@ export default function UseCases() {
                                                     Patronum is like having a digital wizard at your fingertips, ensuring your team remains in the fast lane, fully equipped and ready from day one.
                                                 </span>
                                             </p>
-                                            <LinkButton href="patronum-for-sales-marketing" btnText="Learn More"/>
+                                            <LinkButton href="patronum-for-sales-marketing" btnText="Learn More" />
                                         </div>
                                     </div>
                                 </div>
@@ -258,7 +260,7 @@ export default function UseCases() {
                                                 <span>
                                                     Patronum is as an indispensable ally for educational institutions leveraging Google Workspace. From the precise alignment of staff in Google Groups to the strategic distribution of resources, Patronum ensures that everyone is on the same page.                                       </span>
                                             </p>
-                                            <LinkButton href="patronum-for-education" btnText="Learn More"/>
+                                            <LinkButton href="patronum-for-education" btnText="Learn More" />
                                         </div>
                                     </div>
                                 </div>
@@ -284,7 +286,7 @@ export default function UseCases() {
                                                 <span>
                                                     Patronum eliminates the common hurdles of document access and schedule coordination, enabling your all team members to focus on productivity. Patronum also enhances organizational connectivity, with the ability to search for colleagues by department, location, or skillset via the Organization Chart and People Finder.                                        </span>
                                             </p>
-                                            <LinkButton href="patronum-for-users" btnText="Learn More"/>
+                                            <LinkButton href="patronum-for-users" btnText="Learn More" />
                                         </div>
                                     </div>
                                 </div>

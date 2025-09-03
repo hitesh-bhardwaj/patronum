@@ -8,25 +8,18 @@ gsap.registerPlugin(ScrollTrigger);
 
 const accordionData = [
     {
-        title: 'Onboarding & Offboarding',
-        content: 'Provisioning and de-provisioning users within Google Workspace can be time-consuming and costly. Let Patronum fully automate all the administrator and user tasks to ensure an effective and secure process.',
-        more: 'With Patronum, your team hits the ground running from day one. Automatic access to essential files, folders, calendars, and Google groups enables users to be productive from day one. Plus, our seamless integration with leading IDaaS providers like OneLogin, Namely, Okta, and PingIdentity ensures a smooth continuation of services.',
-        img: 'assets/home/features-1.svg',
-        link: '/on-boarding',
-    },
-    {
-        title: 'File Unsharing & Compliances',
+        title: 'File Unsharing & Compliance',
         content: "In a world where business information flows freely across employees, departments, and external entities, from suppliers to customers, managing your company's data effectively is crucial. Our intuitive policies enable you to effortlessly clean up file sharing with external organizations.",
         more: "With Patronum you can gain comprehensive insights into external access to your data and revoke it as necessary or you can easily set up policies that automate the clean-up of file sharing with external organizations.",
         img: 'assets/home/features-2.svg',
         link: '/google-drive-compliance',
     },
     {
-        title: 'Contact Sharing',
-        content: 'Patronum is the only enterprise-ready contact sharing application for Google Workspace. Patronum ensures your contacts and labels are in perfect sync with Google Contacts by capturing all changes made throughout the day and updating them across all user accounts.',
-        more: 'Our platform also allows users to effortlessly share specific contacts through labels, providing a seamless experience. Meanwhile, administrators gain unparalleled visibility and control over the entire process, ensuring efficient and secure contact management.',
-        img: 'assets/home/features-3.svg',
-        link: '/google-contact-sharing',
+        title: 'Onboarding & Offboarding',
+        content: 'Provisioning and de-provisioning users within Google Workspace can be time-consuming and costly. Let Patronum fully automate all the administrator and user tasks to ensure an effective and secure process.',
+        more: 'With Patronum, your team hits the ground running from day one. Automatic access to essential files, folders, calendars, and Google groups enables users to be productive from day one. Plus, our seamless integration with leading IDaaS providers like OneLogin, Namely, Okta, and PingIdentity ensures a smooth continuation of services.',
+        img: 'assets/home/features-1.svg',
+        link: '/on-boarding',
     },
     {
         title: 'Email Signature Management',
@@ -41,6 +34,13 @@ const accordionData = [
         more: 'Patronum provides an intuitive way for administrators to oversee and manage the vast amount of data stored in Google Drive and simplifies the complexities of file management.',
         img: 'assets/home/features-5.svg',
         link: '/google-drive-management',
+    },
+    {
+        title: 'Contact Sharing',
+        content: 'Patronum is the only enterprise-ready contact sharing application for Google Workspace. Patronum ensures your contacts and labels are in perfect sync with Google Contacts by capturing all changes made throughout the day and updating them across all user accounts.',
+        more: 'Our platform also allows users to effortlessly share specific contacts through labels, providing a seamless experience. Meanwhile, administrators gain unparalleled visibility and control over the entire process, ensuring efficient and secure contact management.',
+        img: 'assets/home/features-3.svg',
+        link: '/google-contact-sharing',
     },
     {
         title: 'Google Workspace Backup',

@@ -7,8 +7,9 @@ import dynamic from "next/dynamic";
 import FeatureDetailCards from "@/components/PageComponents/FeaturesPage/FeatureDetailCards";
 import BackupCard from "@/components/PageComponents/FeaturesPage/BackupCard";
 import Transform from "@/components/PageComponents/FeaturesPage/Transform";
+import Head from "next/head";
 
-const Faqs = dynamic(() => import("@/components/PageComponents/FeaturesPage/Faq"), { ssr: false });
+const Faqs = dynamic(() => import("@/components/PageComponents/FeaturesPage/Faq"), { ssr: true });
 
 export default function FeatureDetail() {
     const featuresDetail = [
@@ -86,6 +87,50 @@ export default function FeatureDetail() {
     ]
     return (
         <>
+            <Head>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(
+                            {
+                                "@context": "https://schema.org",
+                                "@type": "SoftwareApplication",
+                                "name": "Patronum",
+                                "url": "https://www.patronum.io/",
+                                "description": "Patronum is a comprehensive Google Workspace management platform that automates user onboarding/offboarding, email signature management, Google Drive governance, contact sharing, backups, and more.",
+                                "applicationCategory": "BusinessApplication",
+                                "operatingSystem": "Web-based (Google Workspace)",
+                                "softwareVersion": "",
+                                "offers": {
+                                    "@type": "Offer",
+                                    "price": "8.00",
+                                    "priceCurrency": "USD",
+                                    "description": "Per-user, per-year licence; Patronum is $8.00/user/year"
+                                },
+                                "provider": {
+                                    "@type": "Organization",
+                                    "name": "Bespin Labs Ltd",
+                                    "url": "https://www.patronum.io/"
+                                },
+                                "featureList": [
+                                    "Automated Google Workspace user onboarding/offboarding",
+                                    "Email signature management with centralized templates",
+                                    "Google Drive file & sharing governance",
+                                    "Shared contacts synchronization",
+                                    "Backup & restore of Google Workspace data",
+                                    "Organisational chart & Google Groups automation"
+                                ],
+                                "isAccessibleForFree": false,
+                                "aggregateRating": {
+                                    "@type": "AggregateRating",
+                                    "ratingValue": "4.9",
+                                    "reviewCount": "24"
+                                }
+                            }
+                        ),
+                    }}
+                />
+            </Head>
             <PageLayout
                 pageTitle1={'Google Workspace'}
                 pageTitle2={'Backup'}
@@ -98,8 +143,8 @@ export default function FeatureDetail() {
                 date_published={"2023-10-16T10:45"}
                 date_modified={"2024-04-04T12:00"}
                 keywords={"Google Workspace"}
-                breadcrumbTitle={"Features"}
-                breadcrumbLink={"features"}
+                // breadcrumbTitle={"Features"}
+                // breadcrumbLink={"features"}
             >
                 <VideoPlayer disabled={true} videoCover={"/assets/features/google-workspace-backup/video-cover.webp"} />
                 <FeatureDetailTitle

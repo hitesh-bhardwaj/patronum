@@ -368,6 +368,11 @@ export default function Page() {
                   the email account that you have contacted us through.
                 </p>
                 <p>
+                  <strong>Retention & Remarketing</strong>
+                  <br />
+                  When you visit or log in to our website, cookies and similar technologies may be used by our online data partners or vendors to associate these activities with other personal information they or others have about you, including by association with your email or home address. We (or service providers on our behalf) may then send communications and marketing to these email or home addresses. You may opt out of receiving this advertising by visiting <a href="https://app.retention.com/optout" target="_blank" rel="noopener">https://app.retention.com/optout</a>.
+                </p>
+                <p>
                   <strong>Bespin Labs Patronum</strong>
                   <br />
                   Patronum’s use and transfer of information received from
@@ -391,12 +396,12 @@ export default function Page() {
                   7. ABOUT OUR WEBSITE HOSTING
                 </h3>
                 <p>
-                  The webmasters of our public websites are Enigma who either use Cloudways or Vercel as front end hosting providers. Details of these and the infrastructure providers are as follows:
+                  The webmasters of our public websites are <a href="https://weareenigma.com" target="_blank" rel="dofollow">Enigma Digital</a> who either use Cloudways or Vercel as front end hosting providers. Details of these and the infrastructure providers are as follows:
                 </p>
                 <p><strong>bespinslabs.com</strong></p>
                 <ul>
                     <li>
-                      <a href="https://www.weareenigma.com" target="_blank" rel="noopener">
+                      <a href="https://weareenigma.com" target="_blank" rel="dofollow">
                       https://www.weareenigma.com
                     </a>
                     </li>
@@ -414,7 +419,7 @@ export default function Page() {
                   <p><strong>patronum.io</strong></p>
                 <ul>
                     <li>
-                      <a href="https://www.weareenigma.com" target="_blank" rel="noopener">
+                      <a href="https://www.weareenigma.com" target="_blank" rel="dofollow">
                       https://www.weareenigma.com
                     </a>
                     </li>
@@ -443,7 +448,7 @@ export default function Page() {
                   Our websites are represented worldwide in many data-centers in order to provide the best performance. You access our websites through a Content Delivery Network data center nearest to your location.
                 </p>
                 <p>
-                  All traffic (transferral of files) between our websites and your browser is encrypted and delivered over HTTPS. Bespin Labs, Enigma and the infrastructure providers are the only companies with access to the web server. None of your personal data is stored on our web servers.
+                  All traffic (transferral of files) between our websites and your browser is encrypted and delivered over HTTPS. Bespin Labs, Enigma Digital and the infrastructure providers are the only companies with access to the web server. None of your personal data is stored on our web servers.
                 </p>
                 <h4>8. YOUR RIGHT AS A DATA SUBJECT</h4>
                 <p>

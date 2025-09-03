@@ -25,6 +25,7 @@ const BusinessPricing = () => {
       id: 1,
       category: "Business",
       title: "Patronum",
+      fTitle: "Key Features:",
       features: [
         'Onboarding & Offboarding',
         "Email Signature Management",
@@ -38,8 +39,8 @@ const BusinessPricing = () => {
       id: 2,
       category: "Business_Plus",
       title: "Patronum+",
+      fTitle: "Everything in Patronum and:",
       features: [
-        "Everything in Patronum and:",
         "Automated file sharing governance",
         "Empowering End-Users File Compliance",
         "Automated File Expiry",
@@ -107,6 +108,7 @@ const BusinessPricing = () => {
                     selectedCurrency={selectedCurrency}
                     pricingImage={pricing.img}
                     features={pricing.features}
+                    featureTitle={pricing.fTitle}
                     onClick={() => openModal('contact')}
                   />
                 ))}

@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import PreLoader from "../PreLoader";
 import { useEffect, useState } from "react";
 
-const Footer = dynamic(() => import("./Footer"), { ssr: false });
+const Footer = dynamic(() => import("../Footer"), { ssr: false });
 const DemoModal = dynamic(() => import("@/components/Modals/DemoModal"), { ssr: false });
 const InstallModal = dynamic(() => import("@/components/Modals/InstallModal"), { ssr: false });
 const BgVideo = dynamic(() => import("../Layout/BgVideo"), { ssr: false });

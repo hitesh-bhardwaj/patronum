@@ -154,9 +154,9 @@ const Footer = () => {
 
                         <span className="drawLine h-[1px] bg-white/50 w-full block" />
 
-                        <div className="py-6 lg:text-[0.9vw] md:text-[2.5vw] lg:pr-0 md:pr-[8vw] text-[2.8vw] flex justify-center text-center tracking-[0.5px]">
+                        <div className="py-6 lg:text-[0.9vw] md:text-[2.5vw] lg:pr-0 md:pr-[8vw] text-[2.8vw] flex justify-between text-center tracking-[0.5px]">
                             <span>© 2025 <Link href="https://www.bespinlabs.com/" target="_blank" className="relative after:absolute after:bg-white after:h-[1px] after:left-0 after:bottom-[-2px] after:scale-0 hover:after:scale-100 after:duration-300 after:w-full">Bespin Labs Ltd.</Link> All rights reserved.</span>
-                            {/* <Link href='https://weareenigma.com' target="_blank" title="We Create Magic">By: <span className="relative after:absolute after:bg-white after:h-[1px] after:left-0 after:bottom-[-2px] after:scale-0 hover:after:scale-100 after:duration-300 after:w-full">Enigma</span></Link> */}
+                            <Link href='https://weareenigma.com' target="_blank" title="We Create Magic">By: <span className="relative after:absolute after:bg-white after:h-[1px] after:left-0 after:bottom-[-2px] after:scale-0 hover:after:scale-100 after:duration-300 after:w-full">Enigma</span></Link>
                         </div>
                     </div>
                 </div>

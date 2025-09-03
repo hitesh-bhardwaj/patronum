@@ -4,13 +4,61 @@
         <description><![CDATA[Patronum provides a better way to manage Google Workspace (GSuite). Patronum is your Google Workspace (GSuite) manager that fully automates all administrator and user tasks to ensure an efficient, effective, and secure process.]]></description>
         <link>https://www.patronum.io</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 16 Apr 2025 15:50:15 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 29 Aug 2025 13:01:19 GMT</lastBuildDate>
         <atom:link href="https://www.patronum.io/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Wed, 16 Apr 2025 15:50:15 GMT</pubDate>
+        <pubDate>Fri, 29 Aug 2025 13:01:19 GMT</pubDate>
         <copyright><![CDATA[2025 Patronum]]></copyright>
         <item>
+            <title><![CDATA[DMARC for Retailers: Protect Your Brand from Email Spoofing, Phishing & Fraud]]></title>
+            <description><![CDATA[It starts subtly, with a single click on what appears to be a routine promotional email from a trusted retailer. 
+]]></description>
+            <link>https://www.patronum.io/dmarc-for-retailers</link>
+            <guid isPermaLink="false">https://www.patronum.io/dmarc-for-retailers</guid>
+            <category><![CDATA[Uncategorized]]></category>
+            <pubDate>Mon, 04 Aug 2025 06:18:07 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Implementing the Principle of Least Privilege in Google Workspace: The Key to Secure Collaboration]]></title>
+            <description><![CDATA[Early morning light streams through frosted glass-walled offices. A lone IT admin, eyes glued to the Admin Console, hears an alert chime &#8211; someone, somewhere, has inadvertently opened a vault of files meant for executives only.
+]]></description>
+            <link>https://www.patronum.io/implementing-least-privilege-google-workspace</link>
+            <guid isPermaLink="false">https://www.patronum.io/implementing-least-privilege-google-workspace</guid>
+            <category><![CDATA[Uncategorized]]></category>
+            <pubDate>Fri, 25 Jul 2025 06:11:03 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[How to Remove “Anyone with the Link” Sharing in Google Drive]]></title>
+            <description><![CDATA[It was meant to be simple. A proposal to a client. A pitch deck to a collaborator. A spreadsheet shared with a friend of a colleague.
+]]></description>
+            <link>https://www.patronum.io/remove-anyone-link-sharing-google-drive</link>
+            <guid isPermaLink="false">https://www.patronum.io/remove-anyone-link-sharing-google-drive</guid>
+            <category><![CDATA[All]]></category>
+            <category><![CDATA[Google Drive]]></category>
+            <category><![CDATA[Uncategorized]]></category>
+            <pubDate>Tue, 15 Jul 2025 05:42:59 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Understanding Google Admin Roles: A Complete Guide for Workspace IT Managers]]></title>
+            <description><![CDATA[As businesses go cloud-first, Google Workspace has become the command center of modern work. 
+]]></description>
+            <link>https://www.patronum.io/google-workspace-admin-roles-management-guide</link>
+            <guid isPermaLink="false">https://www.patronum.io/google-workspace-admin-roles-management-guide</guid>
+            <category><![CDATA[All]]></category>
+            <category><![CDATA[Tutorial]]></category>
+            <pubDate>Thu, 03 Jul 2025 04:37:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Navigating the Future of Email Security: What Google, Microsoft, and Yahoo’s New DMARC Enforcement Requirements Mean for You]]></title>
+            <description><![CDATA[Email continues to be the leading vector for phishing, impersonation, and business email compromise (BEC).
+]]></description>
+            <link>https://www.patronum.io/dmarc-enforcement-google-microsoft-yahoo-email-security</link>
+            <guid isPermaLink="false">https://www.patronum.io/dmarc-enforcement-google-microsoft-yahoo-email-security</guid>
+            <category><![CDATA[Email Signature]]></category>
+            <pubDate>Mon, 12 May 2025 09:19:23 GMT</pubDate>
+        </item>
+        <item>
             <title><![CDATA[Microsoft’s New DMARC Enforcement: What It Means for Google Workspace Admins]]></title>
-            <description><![CDATA[In the evolving landscape of email security, 2024 marked a significant turning point. Following Google and Yahoo’s lead, Microsoft has announced it will begin enforcing email authentication standards—SPF, DKIM, and DMARC—for bulk senders starting 5 May 2025. For IT managers and Google Workspace administrators, this isn’t just a Microsoft problem—it’s a wake-up call to tighten&hellip; Continue reading Microsoft’s New DMARC Enforcement: What It Means for Google Workspace Admins
+            <description><![CDATA[In the evolving landscape of email security, 2024 marked a significant turning point.
 ]]></description>
             <link>https://www.patronum.io/microsofts-new-dmarc-enforcement-what-it-means-for-google-workspace-admins</link>
             <guid isPermaLink="false">https://www.patronum.io/microsofts-new-dmarc-enforcement-what-it-means-for-google-workspace-admins</guid>
@@ -30,8 +78,8 @@
             <title><![CDATA[Global Mandates and Guidance for DMARC in 2025]]></title>
             <description><![CDATA[In today&#8217;s interconnected digital landscape, email remains a primary vector for cyberattacks, including phishing, spoofing, and business email compromise (BEC).
 ]]></description>
-            <link>https://www.patronum.io/global-mandates-and-guidance-for-dmarc-in-2025</link>
-            <guid isPermaLink="false">https://www.patronum.io/global-mandates-and-guidance-for-dmarc-in-2025</guid>
+            <link>https://www.patronum.io/global-dmarc-mandates-and-guide</link>
+            <guid isPermaLink="false">https://www.patronum.io/global-dmarc-mandates-and-guide</guid>
             <category><![CDATA[Email Signature]]></category>
             <pubDate>Mon, 07 Apr 2025 08:59:57 GMT</pubDate>
         </item>
@@ -56,8 +104,7 @@
         </item>
         <item>
             <title><![CDATA[What is DMARC Policy – None, Quarantine and Reject? How does DMARC Work]]></title>
-            <description><![CDATA[Email is the backbone of enterprise communication. But with over 330 billion emails sent
-daily, it’s also one of the most exploited entry points for cyberattacks
+            <description><![CDATA[Email is the backbone of enterprise communication. But with over 330 billion emails sent daily, it’s also one of the most exploited entry points for cyberattacks.
 ]]></description>
             <link>https://www.patronum.io/what-is-dmarc-policy-none-quarantine-and-reject-how-does-dmarc-work</link>
             <guid isPermaLink="false">https://www.patronum.io/what-is-dmarc-policy-none-quarantine-and-reject-how-does-dmarc-work</guid>
@@ -76,7 +123,7 @@ daily, it’s also one of the most exploited entry points for cyberattacks
         </item>
         <item>
             <title><![CDATA[Common File Sharing Security Risks: Data Compliance & Governance for Google Drive Files]]></title>
-            <description><![CDATA[As businesses around the world embrace remote &#038; hybrid working models, file sharing has become an integral part of organizational workflows, enabling seamless collaboration and efficiency
+            <description><![CDATA[As businesses around the world embrace remote &#038; hybrid working models.
 ]]></description>
             <link>https://www.patronum.io/file-sharing-security-risks-google-drive-governance</link>
             <guid isPermaLink="false">https://www.patronum.io/file-sharing-security-risks-google-drive-governance</guid>
@@ -260,7 +307,7 @@ daily, it’s also one of the most exploited entry points for cyberattacks
             <pubDate>Mon, 09 Oct 2023 04:44:08 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Staying Ahead of Cyber Threats: Google Workspace Security Updates for 2024]]></title>
+            <title><![CDATA[Staying Ahead of Cyber Threats: Google Workspace Security Updates for 2025]]></title>
             <description><![CDATA[Cyber threats are evolving rapidly, presenting new risks to businesses using cloud collaboration platforms like Google Workspace. As cybercriminals become&#8230;
 ]]></description>
             <link>https://www.patronum.io/staying-ahead-of-cyber-threats-google-workspace-security-updates-for-2023</link>
@@ -371,7 +418,7 @@ daily, it’s also one of the most exploited entry points for cyberattacks
             <pubDate>Wed, 10 May 2023 07:50:54 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[The Ultimate Guide to Using Google Contacts in 2024: Mastering Contact Management Like a Pro]]></title>
+            <title><![CDATA[The Ultimate Guide to Using Google Contacts in 2025: Mastering Contact Management Like a Pro]]></title>
             <description><![CDATA[In today&#8217;s digital world, effective contact management is crucial for businesses to maintain efficient communication and collaboration&#8230;
 ]]></description>
             <link>https://www.patronum.io/the-ultimate-guide-to-using-google-contacts-in-2023-mastering-contact-management-like-a-pro</link>
@@ -389,7 +436,7 @@ daily, it’s also one of the most exploited entry points for cyberattacks
             <pubDate>Fri, 28 Apr 2023 07:20:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Key Google Workspace Statistics for 2024]]></title>
+            <title><![CDATA[Key Google Workspace Statistics for 2025]]></title>
             <description><![CDATA[According to Google&#8217;s own estimates, there are over 3 billion active users of Google Workspace per month. This number includes both personal and business&#8230;
 ]]></description>
             <link>https://www.patronum.io/key-google-workspace-statistics-for-2023</link>
@@ -836,7 +883,7 @@ daily, it’s also one of the most exploited entry points for cyberattacks
             <pubDate>Mon, 31 Jan 2022 06:55:04 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[A Quick Guide To Email Signatures and Best Practices For 2022]]></title>
+            <title><![CDATA[A Quick Guide To Email Signatures and Best Practices For 2025]]></title>
             <description><![CDATA[Everyone wants to make a powerful first impression. Moreover, with email being used for decades, it’s really difficult to stand out in the recipient’s inbox.
 ]]></description>
             <link>https://www.patronum.io/a-quick-guide-to-email-signatures-and-best-practices-for-2022</link>
@@ -1210,7 +1257,7 @@ daily, it’s also one of the most exploited entry points for cyberattacks
             <pubDate>Tue, 06 Oct 2020 04:14:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Unlimited Google Meet video calls for all until March 2021]]></title>
+            <title><![CDATA[Unlimited Google Meet Video Calls For All]]></title>
             <description><![CDATA[In May 2020 Google announced that due to the global COVID-19 pandemic it would be offering it’s video conferencing service Google Meet to everyone for free.
 ]]></description>
             <link>https://www.patronum.io/unlimited-google-meet-video-calls-for-all-until-march-2021</link>

@@ -26,7 +26,7 @@ export default function Hero({ pageTitle1, pageTitle2,boldpara, pagePara, imgSrc
                 }
             });
             tl.from(titleAnim, 0.8, {
-                y: 100,
+                y: 125,
                 stagger: 0.02,
             }, `+=${delayTime}`)
             tl.from(heroPara, 0.8, {
@@ -68,7 +68,7 @@ export default function Hero({ pageTitle1, pageTitle2,boldpara, pagePara, imgSrc
                 <div className="container">
                     <div className="flex lg:flex-row items-center lg:justify-between lg:h-[72%] lg:pt-[10%] lg:mb-[4%] flex-col md:pt-[20%] justify-center h-auto md:mb-[10vw] pt-[30%] mb-[15vw]">
                         <div className="lg:w-[60%] w-full">
-                            <h1 className="title-4xl page-hero-anim lg:!mb-[1.5vw] !mb-[4vw]  !leading-[0.5]">
+                            <h1 className="title-4xl page-hero-anim lg:!mb-[1.5vw] !mb-[4vw] !leading-[0.5]">
                                 <span className="leading-[1.2] overflow-hidden span">
                                     {pageTitle1}
                                 </span>
