@@ -22,27 +22,40 @@ const BreadcrumbComponent = ({ capitalizeLinks = true, middleLink, middleLinkNam
             .join(' ');
     };
 
-    // Construct itemListElements for JSON-LD schema
-    const itemListElements = [
-        {
-            position: 1,
-            name: 'Home',
-            item: homepage || 'https://patronum.io',
-        },
-        ...(middleLinkName
-            ? [{
-                position: 2,
-                name: middleLinkName,
-                item: `${homepage}/${middleLink}`,
-            }]
-            : []),
-        ...pathNames.map((link, index) => ({
-            position: (middleLinkName ? 3 : 2) + index,
-            name: capitalizeAndFormat(link),
-            item: `${homepage}/${pathNames.slice(0, index + 1).join('/')}`,
-            
-        }))
-    ];
+    
+   const itemListElements = [
+  {
+    "@type": "ListItem",
+    position: 1,
+    item: {
+      "@id": homepage || "https://patronum.io",
+      "name": "Home"
+    }
+  },
+  ...(middleLinkName
+    ? [{
+        "@type": "ListItem",
+        position: 2,
+        item: {
+          "@id": `${homepage}/${middleLink}`,
+          "name": middleLinkName
+        }
+      }]
+    : []),
+  ...pathNames.map((link, index) => {
+    const pos = (middleLinkName ? 3 : 2) + index;
+    return {
+      "@type": "ListItem",
+      position: pos,
+      item: {
+        "@id": `${homepage}/${pathNames.slice(0, index + 1).join("/")}`,
+        "name": capitalizeAndFormat(link)
+      }
+    };
+  })
+];
+
+
 
     return (
         <>

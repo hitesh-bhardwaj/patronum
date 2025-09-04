@@ -91,6 +91,9 @@ export const QUERY_POST_BY_SLUG = gql`
         }
       }
       seo {
+      jsonLd {
+        raw
+      }
         description
         title
       }

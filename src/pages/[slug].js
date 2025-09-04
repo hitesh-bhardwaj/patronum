@@ -18,6 +18,7 @@ const ProgressBar = dynamic(() => import('@/components/PageComponents/BlogPage/P
 const RelatedPosts = dynamic(() => import('@/components/PageComponents/BlogPage/RelatedPosts'), { ssr: true });
 const TableOfContents = dynamic(() => import('@/components/PageComponents/BlogPage/TableOfContents'), { ssr: true });
 
+
 function PostDetail({ post, recentPosts }) {
   
   if (!post) {
@@ -99,6 +100,41 @@ function PostDetail({ post, recentPosts }) {
     };
   }, []);
 
+
+function sanitizeJsonLd(raw) {
+  if (!raw) return "";
+
+  const clean = raw.replace(/<\/?script[^>]*>/g, "").trim();
+
+  try {
+    const parsed = JSON.parse(clean);
+
+    if (Array.isArray(parsed["@graph"])) {
+      parsed["@graph"] = parsed["@graph"].filter(
+        (schema) =>
+          !["Organization", "WebSite", "ImageObject", "BreadcrumbList"].includes(
+            schema["@type"]
+          )
+      );
+    }
+
+    if (
+      parsed["@type"] &&
+      ["Organization", "WebSite", "ImageObject", "BreadcrumbList"].includes(
+        parsed["@type"]
+      )
+    ) {
+      return "";
+    }
+
+    return JSON.stringify(parsed);
+  } catch (err) {
+    console.error("Invalid JSON-LD from WordPress:", err);
+    return "";
+  }
+}
+
+
   return (
     <>
       <NextSeo
@@ -131,7 +167,7 @@ function PostDetail({ post, recentPosts }) {
       />
 
       <Head>
-        <script
+        {/* <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(
@@ -167,8 +203,8 @@ function PostDetail({ post, recentPosts }) {
               }
             ),
           }}
-        />
-        <script
+        /> */}
+        {/* <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(
@@ -186,7 +222,7 @@ function PostDetail({ post, recentPosts }) {
                   "name": "Patronum",
                   "logo": {
                     "@type": "ImageObject",
-                    "url": "https://www.patronum.io/logo.svg",
+                    "url": "https://www.patronum.io/logo.png",
                   }
                 },
                 "about": {
@@ -199,7 +235,15 @@ function PostDetail({ post, recentPosts }) {
               }
             ),
           }}
-        />
+        /> */}
+        {post?.seo?.jsonLd?.raw && (
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: sanitizeJsonLd(post.seo.jsonLd.raw),
+    }}
+  />
+)}
       </Head>
 
       <BlogLayout
