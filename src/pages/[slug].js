@@ -101,45 +101,6 @@ function PostDetail({ post, recentPosts }) {
     };
   }, []);
 
-
-// function sanitizeJsonLd(raw) {
-//   if (!raw) return "";
-
-//   const clean = raw.replace(/<\/?script[^>]*>/g, "").trim();
-
-//   try {
-//     const parsed = JSON.parse(clean);
-
-//     if (Array.isArray(parsed["@graph"])) {
-//       parsed["@graph"] = parsed["@graph"].filter(
-//         (schema) =>
-//           !["Organization", "WebSite", "ImageObject", "BreadcrumbList"].includes(
-//             schema["@type"]
-//           )
-//       );
-//     }
-
-//     if (
-//       parsed["@type"] &&
-//       ["Organization", "WebSite", "ImageObject", "BreadcrumbList"].includes(
-//         parsed["@type"]
-//       )
-//     ) {
-//       return "";
-//     }
-
-//     return JSON.stringify(parsed);
-//   } catch (err) {
-//     console.error("Invalid JSON-LD from WordPress:", err);
-//     return "";
-//   }
-// }
-
-// Safer JSON-LD sanitizer/de-duper
-
-
-
-
   return (
     <>
       <NextSeo
