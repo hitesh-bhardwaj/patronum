@@ -13,6 +13,7 @@ import Head from 'next/head';
 import { NextSeo } from 'next-seo';
 import dynamic from 'next/dynamic';
 import { useModal } from "@/components/Modals/ModalContext";
+import { sanitizeRankMathGraph } from '@/lib/util';
 
 const ProgressBar = dynamic(() => import('@/components/PageComponents/BlogPage/ProgressBar'), { ssr: false });
 const RelatedPosts = dynamic(() => import('@/components/PageComponents/BlogPage/RelatedPosts'), { ssr: true });
@@ -101,38 +102,42 @@ function PostDetail({ post, recentPosts }) {
   }, []);
 
 
-function sanitizeJsonLd(raw) {
-  if (!raw) return "";
+// function sanitizeJsonLd(raw) {
+//   if (!raw) return "";
 
-  const clean = raw.replace(/<\/?script[^>]*>/g, "").trim();
+//   const clean = raw.replace(/<\/?script[^>]*>/g, "").trim();
 
-  try {
-    const parsed = JSON.parse(clean);
+//   try {
+//     const parsed = JSON.parse(clean);
 
-    if (Array.isArray(parsed["@graph"])) {
-      parsed["@graph"] = parsed["@graph"].filter(
-        (schema) =>
-          !["Organization", "WebSite", "ImageObject", "BreadcrumbList"].includes(
-            schema["@type"]
-          )
-      );
-    }
+//     if (Array.isArray(parsed["@graph"])) {
+//       parsed["@graph"] = parsed["@graph"].filter(
+//         (schema) =>
+//           !["Organization", "WebSite", "ImageObject", "BreadcrumbList"].includes(
+//             schema["@type"]
+//           )
+//       );
+//     }
 
-    if (
-      parsed["@type"] &&
-      ["Organization", "WebSite", "ImageObject", "BreadcrumbList"].includes(
-        parsed["@type"]
-      )
-    ) {
-      return "";
-    }
+//     if (
+//       parsed["@type"] &&
+//       ["Organization", "WebSite", "ImageObject", "BreadcrumbList"].includes(
+//         parsed["@type"]
+//       )
+//     ) {
+//       return "";
+//     }
 
-    return JSON.stringify(parsed);
-  } catch (err) {
-    console.error("Invalid JSON-LD from WordPress:", err);
-    return "";
-  }
-}
+//     return JSON.stringify(parsed);
+//   } catch (err) {
+//     console.error("Invalid JSON-LD from WordPress:", err);
+//     return "";
+//   }
+// }
+
+// Safer JSON-LD sanitizer/de-duper
+
+
 
 
   return (
@@ -160,10 +165,9 @@ function sanitizeJsonLd(raw) {
           siteName: 'Patronum',
         }}
         canonical={`https://www.patronum.io/${post.slug}`}
-        languageAlternates={{
-          hreflang: "en_US",
-          href: `https://www.patronum.io/${post.slug}`,
-        }}
+        languageAlternates={[
+    { hrefLang: 'en-US', href: `https://www.patronum.io/${post.slug}` },
+  ]}
       />
 
       <Head>
@@ -238,9 +242,10 @@ function sanitizeJsonLd(raw) {
         /> */}
         {post?.seo?.jsonLd?.raw && (
   <script
+  key="rankmath-jsonld-sanitized"
     type="application/ld+json"
     dangerouslySetInnerHTML={{
-      __html: sanitizeJsonLd(post.seo.jsonLd.raw),
+      __html: sanitizeRankMathGraph(post.seo.jsonLd.raw),
     }}
   />
 )}
