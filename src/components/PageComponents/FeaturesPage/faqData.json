@@ -853,5 +853,45 @@
         "content": "Absolutely, its scalable features are designed to benefit organizations of any size, from small teams to large enterprises."
       }
     ]
+  },
+    {
+    "feature": "community",
+    "faqs": [
+      {
+        "id": "01",
+        "title": "I’m already part of several communities. What’s different about this one?",
+        "content": "Patronum’s community is laser-focused on Google Workspace. Every discussion, webinar, and resource is tailored to IT leaders, admins, and partners so you’ll always find relevant, actionable insights without the noise."
+      },
+      {
+        "id": "02",
+        "title": "I’m super busy. Will this take up much time?",
+        "content": "Patronum’s community is laser-focused on Google Workspace. Every discussion, webinar, and resource is tailored to IT leaders, admins, and partners so you’ll always find relevant, actionable insights without the noise."
+      },
+      {
+        "id": "03",
+        "title": "How often do you run webinars?",
+        "content": "Patronum’s community is laser-focused on Google Workspace. Every discussion, webinar, and resource is tailored to IT leaders, admins, and partners so you’ll always find relevant, actionable insights without the noise."
+      },
+      {
+        "id": "04",
+        "title": "How many members do you have?",
+        "content": "Patronum’s community is laser-focused on Google Workspace. Every discussion, webinar, and resource is tailored to IT leaders, admins, and partners so you’ll always find relevant, actionable insights without the noise."
+      },
+      {
+        "id": "05",
+        "title": "What email should I use to sign up?",
+        "content": "Patronum’s community is laser-focused on Google Workspace. Every discussion, webinar, and resource is tailored to IT leaders, admins, and partners so you’ll always find relevant, actionable insights without the noise."
+      },
+      {
+        "id": "06",
+        "title": "Do I have to be a Patronum customer to join?",
+        "content": "Patronum’s community is laser-focused on Google Workspace. Every discussion, webinar, and resource is tailored to IT leaders, admins, and partners so you’ll always find relevant, actionable insights without the noise."
+      },
+      {
+        "id": "07",
+        "title": "Will I be sold to in the group?",
+        "content": "Patronum’s community is laser-focused on Google Workspace. Every discussion, webinar, and resource is tailored to IT leaders, admins, and partners so you’ll always find relevant, actionable insights without the noise."
+      }
+    ]
   }
 ]
