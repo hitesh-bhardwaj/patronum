@@ -17,24 +17,24 @@ const JoinCommunity = () => {
 
                     <div className='flex lg:flex-row items-center justify-center lg:gap-[1.5vw] lg:mt-[6vw] mt-[7vw] flex-col gap-[5vw]'>
                         <div className='fadeUp flex flex-col items-center justify-center gap-[3vw] bg-white  duration-300 lg:w-[32%] lg:min-h-[28vw] overflow-hidden rounded-[18px]  border border-[#E8E8E8] text-center hover:shadow-xl w-full min-h-[80vw]'>
-                        <div className="flex flex-col items-center justify-center gap-[3vw]  duration-300 w-full lg:min-h-[28vw] overflow-hidden rounded-[18px]  hover:shadow-xl  min-h-[80vw]">
-                            <div className="image-container lg:h-[6vw] lg:w-[6vw] h-[20vw] w-[20vw]">
-                                <img src="/assets/community/visit.svg" className="h-full w-full object-cover" alt="Webinar Image" title="Webinar Image" />
-                            </div>
-                            <div className='lg:space-y-[2vw] space-y-[5vw]'>
-                                <h3 className="lg:text-[1.57vw] text-[5vw]  leading-[1.3]">
-                                    Visit the Group Page
-                                </h3>
-                                <div className="">
-                                    <PrimaryButton btnText={"Visit"} link={"#"} />
+                            <div className="flex flex-col items-center justify-center gap-[3vw]  duration-300 w-full lg:min-h-[28vw] overflow-hidden rounded-[18px] min-h-[80vw]">
+                                <div className="image-container lg:h-[6vw] lg:w-[6vw] h-[20vw] w-[20vw]">
+                                    <img src="/assets/community/visit.svg" className="h-full w-full object-cover" alt="Webinar Image" title="Webinar Image" />
                                 </div>
-                            </div>
+                                <div className='lg:space-y-[2vw] space-y-[5vw]'>
+                                    <h3 className="lg:text-[1.57vw] text-[5vw]  leading-[1.3]">
+                                        Visit the Group Page
+                                    </h3>
+                                    <div className="">
+                                        <PrimaryButton btnText={"Visit"} link={"#"} />
+                                    </div>
+                                </div>
 
+                            </div>
                         </div>
-                        </div>
-                        
-                       <div className='fadeUp flex flex-col items-center justify-center gap-[3vw] bg-white  duration-300 lg:w-[32%] lg:min-h-[28vw] overflow-hidden rounded-[18px]  border border-[#E8E8E8] text-center hover:shadow-xl w-full min-h-[80vw]'>
-                        <div className="flex flex-col items-center justify-center gap-[3vw]  duration-300 w-full lg:min-h-[28vw] overflow-hidden rounded-[18px]  hover:shadow-xl  min-h-[80vw] lg:mt-[-6vw]">
+
+                        <div className='fadeUp flex flex-col items-center justify-center gap-[3vw] bg-white  duration-300 lg:w-[32%] lg:min-h-[28vw] overflow-hidden rounded-[18px]  border border-[#E8E8E8] text-center hover:shadow-xl w-full min-h-[80vw]'>
+                            <div className="flex flex-col items-center justify-center gap-[3vw]  duration-300 w-full lg:min-h-[28vw] overflow-hidden rounded-[18px] min-h-[80vw] lg:mt-[-6vw]">
                                 <div className="image-container lg:h-[6vw] lg:w-[6vw] h-[20vw] w-[20vw]">
                                     <img src="/assets/community/wait.svg" className="h-full w-full object-contain" alt="Webinar Image" title="Webinar Image" />
                                 </div>
@@ -47,29 +47,29 @@ const JoinCommunity = () => {
                             </div>
 
                         </div>
-                        
-                        
+
+
                         <div className='fadeUp flex flex-col items-center justify-center gap-[3vw] bg-white  duration-300 lg:w-[32%] lg:min-h-[28vw] overflow-hidden rounded-[18px]  border border-[#E8E8E8] text-center hover:shadow-xl w-full min-h-[80vw]'>
-                        <div className="flex flex-col items-center justify-center gap-[3vw]  duration-300 w-full lg:min-h-[28vw] overflow-hidden rounded-[18px]  hover:shadow-xl  min-h-[80vw]">
-                            <div className="image-container lg:h-[6vw] lg:w-[6vw] h-[20vw] w-[20vw]">
-                                <img src="/assets/community/join.svg" className="h-full w-full object-cover" alt="Webinar Image" title="Webinar Image" />
-                            </div>
-                            <div className='lg:space-y-[2vw] space-y-[5vw]'>
-                                <h3 className="lg:text-[1.57vw] text-[5vw]  leading-[1.3]">
-                                    Join the Chat Space
-                                </h3>
-                                <div className="">
-                                    <PrimaryButton btnText={"Join"} link={"#"} />
+                            <div className="flex flex-col items-center justify-center gap-[3vw]  duration-300 w-full lg:min-h-[28vw] overflow-hidden rounded-[18px] min-h-[80vw]">
+                                <div className="image-container lg:h-[6vw] lg:w-[6vw] h-[20vw] w-[20vw]">
+                                    <img src="/assets/community/join.svg" className="h-full w-full object-cover" alt="Webinar Image" title="Webinar Image" />
                                 </div>
+                                <div className='lg:space-y-[2vw] space-y-[5vw]'>
+                                    <h3 className="lg:text-[1.57vw] text-[5vw]  leading-[1.3]">
+                                        Join the Chat Space
+                                    </h3>
+                                    <div className="">
+                                        <PrimaryButton btnText={"Join"} link={"#"} />
+                                    </div>
+                                </div>
+
+
                             </div>
 
-                        
                         </div>
 
                     </div>
-
                 </div>
-            </div>
             </div>
         </section>
     )
