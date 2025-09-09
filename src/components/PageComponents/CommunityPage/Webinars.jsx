@@ -105,43 +105,38 @@ export default Webinars
 const webinars = [
   {
     id: 1,
-    imgSrc: "/assets/community/webinar-1.png",
+    imgSrc: "/assets/community/patronum-plus-introduction-google-workspace-file-governance.jpg",
     title: "Patronum+ Introduction Google Workspace File Governance",
     videoId: "8-QdeYK78Dk"
   },
   {
     id: 2,
-    imgSrc: "/assets/community/webinar-2.png",
+    imgSrc: "/assets/community/the-importance-of-dmarc-within-a-google-workspace.jpg",
     title: "The Importance of DMARC within a Google Workspace environment",
     videoId: "zhx1Ov9ujPc"
-
   },
   {
     id: 3,
-    imgSrc: "/assets/community/webinar-3.png",
+    imgSrc: "/assets/community/patronum-roadmap-q1-2025.jpg",
     title: "The 2025 Patronum Roadmap",
     videoId: "NE1hmP6X2I0"
-
   },
   {
     id: 4,
-    imgSrc: "/assets/community/webinar-4.png",
+    imgSrc: "/assets/community/11-way-to-rule-them-all.jpg",
     title: "One Tool To Rule Them All - The Easy Way To Manage Google Workspace",
     videoId: "dPXBVDFe_h8"
-
   },
   {
     id: 5,
-    imgSrc: "/assets/community/webinar-5.png",
+    imgSrc: "/assets/community/2-ways-to-share-google-contacts.webp",
     title: "2 Ways To Share Google Contacts",
     videoId: "_oiMzVIhizM"
-
   },
   {
     id: 6,
-    imgSrc: "/assets/community/webinar-6.png",
+    imgSrc: "/assets/community/3-ways-to-keep-drive-content-under-control.jpg",
     title: "3 Ways to Keep Google Drive Content Under Control",
     videoId: "v3Xlz8ExUzI"
-
   },
 ];

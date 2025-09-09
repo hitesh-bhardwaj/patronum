@@ -15,9 +15,8 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-
 const page = () => {
-    useEffect(() => {
+  useEffect(() => {
     const headings = document.querySelectorAll('.text-anim');
 
     headings.forEach((heading) => {
@@ -39,7 +38,7 @@ const page = () => {
     });
   }, []);
 
-  
+
 
   useEffect(() => {
     const pricingCards = document.querySelectorAll('.pricing-card-wrapper .pricing-card');
@@ -150,48 +149,48 @@ const page = () => {
     });
     return () => ctx.revert();
   }, []);
-   useEffect(() => {
-      const fadeUps = document.querySelectorAll('.fadeUp');
-  
-      let ctx = gsap.context(() => {
-        fadeUps.forEach((fadeUp) => {
-          gsap.fromTo(
-            fadeUp,
-            {
-              opacity: 0,
-              y: 40,
+  useEffect(() => {
+    const fadeUps = document.querySelectorAll('.fadeUp');
+
+    let ctx = gsap.context(() => {
+      fadeUps.forEach((fadeUp) => {
+        gsap.fromTo(
+          fadeUp,
+          {
+            opacity: 0,
+            y: 40,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: 'Power3.out',
+            scrollTrigger: {
+              trigger: fadeUp,
+              start: 'top 85%',
             },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.6,
-              ease: 'Power3.out',
-              scrollTrigger: {
-                trigger: fadeUp,
-                start: 'top 85%',
-              },
-            }
-          );
-        });
+          }
+        );
       });
-      return () => ctx.revert();
-    }, []);
+    });
+    return () => ctx.revert();
+  }, []);
   return (
     <>
-    <Layout>
+      <Layout>
         <main>
-             <Hero/>
-             <Network/>
-             <Webinars/>
-             <UpcomingWebinars/>
-             <Features/>
-             <Testimonial/>
-             <JoinCommunity/>
-             <Group/>
-             <Hosting/>
-             <Faqs featureName={"community"}/>
+          <Hero />
+          <Network />
+          <Webinars />
+          <UpcomingWebinars />
+          <Features />
+          <Testimonial />
+          <JoinCommunity />
+          <Group />
+          <Hosting />
+          <Faqs featureName={"community"} />
         </main>
-    </Layout>
+      </Layout>
     </>
   )
 }
