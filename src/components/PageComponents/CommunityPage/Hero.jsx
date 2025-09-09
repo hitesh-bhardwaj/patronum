@@ -24,7 +24,7 @@ export default function Hero() {
             const tl = gsap.timeline();
 
              tl.from(titleAnim, 0.8, {
-                yPercent: 200,
+                yPercent: 280,
                 stagger: 0.02,
                 ease: "Power2.out",
             }, `+=${delayTime}`)
@@ -72,9 +72,9 @@ export default function Hero() {
             <section ref={section} id="hero" className="lg:h-screen w-screen h-fit">
                 <div className="container-lg relative lg:mb-0 mb-[10vw]">
                     <div className="lg:px-[4vw] lg:flex lg:items-center lg:justify-between h-full w-full lg:mb-0 mb-[10vw] md:mb-[15vw]">
-                        <div className="pt-[25vw] gap-y-[7vw] flex-col w-full flex md:pt-[20vw] lg:pt-0 lg:gap-y-10 lg:w-[55%]">
-                            <h1 className="title-5xl page-hero-anim lg:!mb-[1.5vw] !mb-[4vw] !leading-[0.5]">
-                                <span className="leading-[1.2] overflow-hidden span">
+                        <div className="pt-[25vw] gap-y-[7vw] flex-col w-full flex md:pt-[20vw] lg:pt-0 lg:gap-y-7 lg:w-[55%]">
+                            <h1 className="title-5xl page-hero-anim lg:!mb-0 !mb-[4vw] ">
+                                <span className="overflow-hidden span leading-[1.2]">
                                 Google Workspace Community
                                 </span>
                                

@@ -1,4 +1,5 @@
 
+import SectionTitle from '@/components/PageLayout/SectionTitle'
 import Image from 'next/image'
 import React from 'react'
 
@@ -6,12 +7,11 @@ const UpcomingWebinars = () => {
     return (
         <section id="second-section">
             <div className="container">
-                <div className="content-2 lg:space-y-[5vw] space-y-[10vw]">
-                    <h2 className="title-4xl text-anim">
-                        <span>
-                            Upcoming Webinars
-                        </span>
-                    </h2>
+                <div className="content-2 ">
+                    <SectionTitle
+                        sectionTitle1={"Upcoming Webinars"}
+                                sectionTitle2={" "}
+                                sectionPara={""}/>
                     <div className='lg:space-y-[0.5vw] space-y-[3vw]'>
                         <div className='h-full w-full rounded-[0.8vw] overflow-hidden fadeUp lg:block hidden'>
                             <Image src={"/assets/community/webinar-banner.png"} alt='Webinar Banner' height={650} width={1440} className='object-cover' />

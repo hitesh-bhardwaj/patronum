@@ -31,7 +31,7 @@ export default function Network() {
                         </div>
 
                         <div className="lg:w-[35%] lg:block text-end relative lg:mt-0  fadeUp w-[80%] mx-auto mt-[7vw]">
-                            <Image src={"/assets/community/network.png"} height={480} width={472} alt="Network"/>
+                            <Image src={"/assets/community/community-network.svg"} height={480} width={472} alt="Network"/>
                            
                         </div>
                     </div>

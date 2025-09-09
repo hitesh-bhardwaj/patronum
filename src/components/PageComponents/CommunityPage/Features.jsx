@@ -35,14 +35,14 @@ const Features = () => {
             <section id="features">
                 <div className="container">
                     <div className="content">
-                        <div className="section-head lg:w-[80%] w-full">
+                        <div className="section-head lg:w-[80%] w-full ">
                             <SectionTitle
                                 sectionTitle1={"A free, global hub for IT leaders, admins, and partners to:"}
                                 sectionTitle2={" "}
                                 sectionPara={""}
                             />
                         </div>
- <span className="h-[1px] bg-[#1a1a1a] w-full block mt-4 lineDraw" />
+ <span className="h-[1px] bg-[#1a1a1a] w-full block mt-2 lineDraw" />
                         <div className="w-full">
                             <div >
                                 {features.map((item, index) => (

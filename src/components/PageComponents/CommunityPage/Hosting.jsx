@@ -96,8 +96,8 @@ export default function Hosting() {
                     
                         </div>
 
-                        <div className="lg:w-[30%] lg:block text-end relative w-[80%] mx-auto mt-[10vw]">
-                            <Image src={"/assets/community/network.png"} height={480} width={472} alt="Network"/>
+                        <div className="lg:w-[35%] lg:block text-end relative w-[80%] mx-auto mt-[10vw]">
+                            <Image src={"/assets/community/community-hosting.svg"} height={480} width={472} alt="Network"/>
                            
                         </div>
                     </div>
