@@ -7,14 +7,23 @@ const Group = () => {
     return (
         <section id="second-section">
             <div className="container">
-                <div className="content-2 lg:space-y-[7vw] ">
-                    <h2 className="title-4xl text-anim w-[80%]">
-                        <span>
-                            This isn’t just another group- it's a working community to grow, build and empower IT professionals just like you.
+                <div className="content-2 lg:space-y-[7vw] space-y-[10vw]">
+                    <h2 className="title-4xl text-anim lg:w-[80%] w-full md:w-full">
+                        <span className='span lg:block overflow-hidden'>
+                            This isn’t just another group- it's a 
+                        </span>
+                        <span className='span lg:block overflow-hidden'>
+                            working community to grow, build 
+                        </span>
+                        <span className='span lg:block overflow-hidden'>
+                            and empower IT professionals just 
+                        </span>
+                        <span className='span lg:block overflow-hidden'>
+                            like you.
                         </span>
                     </h2>
-                    <div className='space-y-[2vw] '>
-                        <div className='h-full w-full rounded-[1.5vw] overflow-hidden'>
+                    <div className='lg:space-y-[2vw] space-y-[5vw]'>
+                        <div className='h-full w-full rounded-[1.5vw] overflow-hidden fadeUp'>
                             <Image src={"/assets/community/group.png"} alt='Webinar Banner' height={650} width={1440} className='object-cover' />
                         </div>
                         <div className='h-full w-full flex flex-col items-center justify-center text-center py-[1vw] space-y-[1vw]'>

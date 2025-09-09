@@ -35,26 +35,26 @@ const Features = () => {
             <section id="features">
                 <div className="container">
                     <div className="content">
-                        <div className="section-head">
+                        <div className="section-head lg:w-[80%] w-full">
                             <SectionTitle
-                                sectionTitle1={"A free, global hub for IT leaders,"}
-                                sectionTitle2={" admins, and partners to:"}
+                                sectionTitle1={"A free, global hub for IT leaders, admins, and partners to:"}
+                                sectionTitle2={" "}
                                 sectionPara={""}
                             />
                         </div>
- <span className="h-[1px] bg-[#1a1a1a] w-full block mt-4" />
+ <span className="h-[1px] bg-[#1a1a1a] w-full block mt-4 lineDraw" />
                         <div className="w-full">
                             <div >
                                 {features.map((item, index) => (
-                                    <div key={index} className="w-full ">
-                                        <div className="flex items-center justify-between w-full  px-[1vw] py-[2vw]">
+                                    <div key={index} className="w-full scaleAnim">
+                                        <div className="flex items-center justify-between w-full  lg:px-[1vw] lg:py-[2vw] py-[5vw] px-[2vw]">
 
-                                            <h5 className="text-[1.9vw]  capitalize aeonik">
+                                            <h5 className="lg:text-[1.9vw] lg:w-full capitalize  aeonik text-[6vw] w-[75%] md:text-[5vw]">
                                                 {item.title}
                                             </h5>
 
 
-                                            <div className="h-[4.5vw] w-auto">
+                                            <div className="lg:h-[4.5vw] w-auto h-[15vw] md:h-[12vw]">
                                                 <img
                                                     src={item.img}
                                                     loading="lazy"
@@ -65,7 +65,7 @@ const Features = () => {
                                         </div>
 
 
-                                        <span className="h-[1px] bg-[#1a1a1a] w-full block " />
+                                        <span className="h-[1px] bg-[#1a1a1a] w-full block lineDraw" />
                                     </div>
                                 ))}
 

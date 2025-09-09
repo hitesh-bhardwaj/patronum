@@ -1,8 +1,12 @@
 import PrimaryButton from '@/components/PageLayout/Button/PrimaryButton'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const Webinars = () => {
+   
      const [modalOpen, setModalOpen] = useState({});
     
         const openModal = (videoId) => {
@@ -27,17 +31,17 @@ const Webinars = () => {
         const WebinarCard = ({ imgSrc, title,videoId}) => {
     return (
         <>
-        <div onClick={() => openModal(videoId)}  className="fadeUp guide-card  duration-300 w-[30%]   min-h-[20vw] h-full overflow-hidden rounded-[18px]  border-[0.67px] border-[#E8E8E8] bg-white">
+        <div onClick={() => openModal(videoId)}  className="fadeUp guide-card  duration-300 w-[30%]   min-h-[20vw] h-full overflow-hidden rounded-[18px]  border-[0.67px] border-[#E8E8E8] bg-white  hover:shadow-xl cursor-pointer ">
             <div className="image-container w-full h-[50%] relative">
                 <img src={imgSrc} className="h-full w-full object-cover" alt="Webinar Image" title="Webinar Image" />
-                <div className='absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-[4vw] w-[4vw] rounded-full bg-white z-[10] flex items-center justify-center'>
+                <div className='absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 lg:h-[4vw] lg:w-[4vw] rounded-full bg-white z-[10] flex items-center justify-center h-[15vw] w-[15vw]'>
                     <img src='/assets/community/triangle.png' height={15} width={15} alt='triangle'/>
 
 
                 </div>
             </div>
             <div className="text-container px-[5%] py-[4%] lg:pb-[8%] pb-[8%] ">
-                <h3 className="lg:text-[1.57vw] text-[5vw]  leading-[1.3] lg:w-[88%] lg:h-[7vw]">
+                <h3 className="lg:text-[1.57vw] text-[6vw]  leading-[1.3] lg:w-[88%] lg:h-[7vw] h-[28vw] md:text-[4.5vw] md:h-[15vw]">
                     {title}
                 </h3>
                 <div className="">
@@ -68,14 +72,14 @@ const Webinars = () => {
     return (
         <section id="second-section">
             <div className="container-lg">
-                <div className="content-2 flex flex-col  justify-center gap-[3vw]">
-                    <h2 className="title-4xl text-anim ">
+                <div className="content-2 flex flex-col  justify-center lg:gap-[3vw] gap-[12vw]">
+                    <h2 className="title-4xl text-anim w-[80%] lg:w-full">
                         <span>
                             Watch Recent Webinars
                         </span>
                     </h2>
 
-                    <div className=" w-full flex flex-wrap gap-[1.5vw] gap-y-[2vw]">
+                    <div className=" w-full flex flex-wrap gap-[1.5vw] lg:gap-y-[2vw] gap-y-[3vw] md:gap-y-[1.5vw]">
                         {webinars.map((card,index)=>(
                            
                         <WebinarCard
@@ -102,7 +106,7 @@ const webinars = [
   {
     id: 1,
     imgSrc: "/assets/community/webinar-1.png",
-    title: "Patronum+ Introduction Google Workspace File Governance 2 days ago",
+    title: "Patronum+ Introduction Google Workspace File Governance",
     videoId: "8-QdeYK78Dk"
   },
   {
