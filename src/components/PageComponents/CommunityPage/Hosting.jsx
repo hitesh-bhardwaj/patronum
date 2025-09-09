@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react"
 import Image from "next/image";
 import LinkButton from "@/components/PageLayout/Button/LinkButton";
 import PrimaryButton from "@/components/PageLayout/Button/PrimaryButton";
+import SectionTitle from "@/components/PageLayout/SectionTitle";
 
 
 export default function Hosting() {
@@ -70,13 +71,17 @@ export default function Hosting() {
             <section ref={section} id="hosting" className="lg:h-full pb-[7vw] pt-[4vw] w-screen h-fit">
                 <div className="container-lg relative lg:mb-0 mb-[10vw]">
                     <div className="lg:px-[4vw] lg:flex lg:items-center lg:justify-between h-full w-full lg:mb-0 mb-[10vw] md:mb-[15vw]">
-                        <div className="pt-[25vw] gap-y-[7vw] flex-col w-full flex md:pt-[20vw] lg:pt-0 lg:gap-y-10 lg:w-[53%]">
-                            <h2 className='title-4xl text-anim  leading-[1.2] flex flex-wrap justify-start items-end space-y-[2vw] lg:space-y-0 text-[13vw] lg:!text-[4vw] !md:text-[1vw]'>
+                        <div className="pt-[25vw] gap-y-[7vw] flex-col w-full flex md:pt-[20vw] lg:pt-0 lg:gap-y-0 lg:w-[53%]">
+                             <SectionTitle
+                                                    sectionTitle1={" Fancy Hosting your own Webinar Session?"}
+                                                    sectionTitle2={" "}
+                                                    sectionPara={""} />
+                            {/* <h2 className='title-4xl text-anim  leading-[1.2] flex flex-wrap justify-start items-end space-y-[2vw] lg:space-y-0 text-[13vw] lg:!text-[4vw] !md:text-[1vw]'>
                                 <span className='overflow-hidden lg:w-full w-fit span block'>
                                 Fancy Hosting your own Webinar Session?
                                 </span>
                                
-                            </h2>
+                            </h2> */}
 
 <div className="lg:space-y-[1.5vw]">
                             <p  className="lg:text-[1.25vw] lg:w-[35vw] md:mb-0 font-medium md:text-[4vw] md:w-full text-[5vw] mb-[5vw] fadeUp">
