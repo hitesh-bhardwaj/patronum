@@ -31,8 +31,8 @@ const Webinars = () => {
         const WebinarCard = ({ imgSrc, title,videoId}) => {
     return (
         <>
-        <div className='fadeUp group lg:w-[31.5%] lg:min-h-[20vw] h-full rounded-[10px] border border-[#e8e8e8] cursor-pointer'>
-        <div onClick={() => openModal(videoId)}  className=" guide-card hover:shadow-xl duration-300 w-full h-full overflow-hidden rounded-[10px]  border-[0.67px] border-[#E8E8E8] bg-white  cursor-pointer ">
+        <div className='fadeUp group lg:w-[31.5%] lg:min-h-[20vw] h-full rounded-[10px]  cursor-pointer'>
+        <div onClick={() => openModal(videoId)}  className=" guide-card hover:shadow-xl duration-300 w-full h-full overflow-hidden rounded-[10px]  border-[0.67px]   cursor-pointer border border-[#e8e8e8] bg-white ">
             <div className='hover:shadow-xl duration-300'>
             <div className="image-container w-full h-[50%] relative object-cover group-hover:scale-[1.03] scale-[1] duration-300">
                 <img src={imgSrc} className="h-full w-full object-cover" alt="Webinar Image" title="Webinar Image" />
@@ -83,7 +83,7 @@ const Webinars = () => {
                         </span>
                     </h2>
 
-                    <div className=" w-full flex flex-wrap gap-[1.5vw] lg:gap-y-[2vw] gap-y-[3vw] md:gap-y-[1.5vw]">
+                    <div className=" w-full flex flex-wrap gap-[1.5vw] lg:gap-y-[2vw] gap-y-[0vw] md:gap-y-[1.5vw]">
                         {webinars.map((card,index)=>(
                            
                         <WebinarCard

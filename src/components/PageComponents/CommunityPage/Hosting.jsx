@@ -70,8 +70,8 @@ export default function Hosting() {
         <>
             <section ref={section} id="hosting" className="lg:h-full pb-[7vw] pt-[4vw] w-screen h-fit">
                 <div className="container-lg relative lg:mb-0 mb-[10vw]">
-                    <div className="lg:px-[4vw] lg:flex lg:items-center lg:justify-between h-full w-full lg:mb-0 mb-[10vw] md:mb-[15vw]">
-                        <div className="pt-[10vw] gap-y-[7vw] flex-col w-full flex md:pt-[20vw] lg:pt-0 lg:gap-y-7 lg:w-[53%]">
+                    <div className="lg:px-[4vw] lg:flex lg:items-center lg:justify-between h-full w-full lg:mb-0 mb-[10vw] md:!mb-[0vw]">
+                        <div className="pt-[10vw] gap-y-[7vw] flex-col w-full flex md:pt-[10vw] lg:pt-0 lg:gap-y-7 lg:w-[53%]">
                            
                             <h2 className='title-4xl lg:mb-8 mb-6 text-anim  leading-[1.2] flex flex-wrap justify-start items-end space-y-[2vw] lg:space-y-0 '>
                                 <span className='overflow-hidden lg:w-full w-fit span block'>

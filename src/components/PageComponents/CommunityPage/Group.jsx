@@ -7,7 +7,7 @@ const Group = () => {
     return (
         <section id="second-section">
             <div className="container">
-                <div className="content-2 lg:space-y-[7vw] space-y-[10vw]">
+                <div className="content-2 lg:space-y-[7vw] space-y-[10vw] md:!py-0">
                     <h2 className="title-4xl text-anim lg:w-[80%] w-full md:w-full">
                         <span className='span lg:block overflow-hidden'>
                             This isn’t just another group- it's a 
