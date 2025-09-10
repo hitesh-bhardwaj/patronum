@@ -8,12 +8,12 @@ import Network from '@/components/PageComponents/CommunityPage/Network'
 import UpcomingWebinars from '@/components/PageComponents/CommunityPage/UpcomingWebinars'
 import Webinars from '@/components/PageComponents/CommunityPage/Webinars'
 import Faqs from '@/components/PageComponents/FeaturesPage/Faq'
-import Testimonial from '@/components/PageLayout/Testimonial'
 import React, { useEffect } from 'react'
 import SplitType from "split-type";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import MetaData from '@/components/PageLayout/MetaData'
+import Testimonial from '@/components/PageComponents/CommunityPage/Testimonial'
 gsap.registerPlugin(ScrollTrigger);
 
 const page = () => {

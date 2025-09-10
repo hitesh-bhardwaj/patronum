@@ -278,7 +278,7 @@ const DesktopNavigation = () => {
                                             </Link>
                                         </li>
                                         <li className={styles.navDropListItem}>
-                                            <Link href='https://community.patronum.io' target='_blank' rel="nofollow" className={styles.navDropListHover} prefetch={false}>
+                                            <Link href='/google-workspace-community'  rel="nofollow" className={styles.navDropListHover} prefetch={false}>
                                                 <div className={styles.img}>
                                                     <img loading='lazy' src='/assets/menu/resource-community.svg' alt='menu icon' />
                                                 </div>

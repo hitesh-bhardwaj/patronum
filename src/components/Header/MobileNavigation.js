@@ -352,7 +352,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </Link>
                                 </li>
                                 <li className=''>
-                                    <Link href='https://community.patronum.io' target='_blank' rel="nofollow" className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Community' prefetch={false}>
+                                    <Link href='/google-workspace-community' rel="nofollow" className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Resources - Community' prefetch={false}>
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/resource-community.svg' alt='resource icon' />
                                         </div>
