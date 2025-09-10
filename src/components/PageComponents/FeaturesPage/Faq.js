@@ -18,11 +18,11 @@ const Faqs = ({ featureName }) => {
   // Get the FAQs for the specific feature
   const filteredFaqData = faqData.find((item) => item.feature === featureName)?.faqs || [];
   const totalFaqs = filteredFaqData.length;
-  const initialVisibleFaqs = Math.min(7, totalFaqs);
+  const initialVisibleFaqs = Math.min(8, totalFaqs);
   const [visibleFaqs, setVisibleFaqs] = useState(initialVisibleFaqs);
 
   const handleViewMore = () => {
-    setVisibleFaqs(prevVisibleFaqs => Math.min(prevVisibleFaqs + 7, totalFaqs));
+    setVisibleFaqs(prevVisibleFaqs => Math.min(prevVisibleFaqs + 8, totalFaqs));
   };
 
   useEffect(() => {

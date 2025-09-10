@@ -865,32 +865,37 @@
       {
         "id": "02",
         "title": "I’m super busy. Will this take up much time?",
-        "content": "Patronum’s community is laser-focused on Google Workspace. Every discussion, webinar, and resource is tailored to IT leaders, admins, and partners so you’ll always find relevant, actionable insights without the noise."
+        "content": "You control your level of involvement. You can dip in to grab quick solutions, catch our monthly webinars, or fully engage in discussions; it's all at your pace."
       },
       {
         "id": "03",
         "title": "How often do you run webinars?",
-        "content": "Patronum’s community is laser-focused on Google Workspace. Every discussion, webinar, and resource is tailored to IT leaders, admins, and partners so you’ll always find relevant, actionable insights without the noise."
+        "content": "We host <strong>one exclusive webinar each month</strong> which typically runs on the last <strong>Thursday</strong> of the month at <strong>1600hrs BST.</strong> These feature industry experts, plus occasional bonus sessions for breaking updates and community focus."
       },
       {
         "id": "04",
         "title": "How many members do you have?",
-        "content": "Patronum’s community is laser-focused on Google Workspace. Every discussion, webinar, and resource is tailored to IT leaders, admins, and partners so you’ll always find relevant, actionable insights without the noise."
+        "content": "Our community is growing every week, with members from across the globe ranging from small business admins to enterprise IT leaders. You’ll be in good company."
       },
       {
         "id": "05",
         "title": "What email should I use to sign up?",
-        "content": "Patronum’s community is laser-focused on Google Workspace. Every discussion, webinar, and resource is tailored to IT leaders, admins, and partners so you’ll always find relevant, actionable insights without the noise."
+        "content": "Any Google Workspace-enabled email works best so you can easily access our Google Chat Space and shared resources."
       },
       {
         "id": "06",
         "title": "Do I have to be a Patronum customer to join?",
-        "content": "Patronum’s community is laser-focused on Google Workspace. Every discussion, webinar, and resource is tailored to IT leaders, admins, and partners so you’ll always find relevant, actionable insights without the noise."
+        "content": "Not at all! This community is open to anyone in the Google Workspace ecosystem."
       },
       {
         "id": "07",
         "title": "Will I be sold to in the group?",
-        "content": "Patronum’s community is laser-focused on Google Workspace. Every discussion, webinar, and resource is tailored to IT leaders, admins, and partners so you’ll always find relevant, actionable insights without the noise."
+        "content": "Absolutely not. We have a strict no-pitch policy. Anyone caught promoting products or services will be removed from the community. Our goal is knowledge-sharing, networking, and professional growth not selling."
+      },
+      {
+        "id": "08",
+        "title": "Is it really free?",
+        "content": "Yes! There’s no cost to join. All discussions, webinars, and resources are completely free to members."
       }
     ]
   }

@@ -42,7 +42,7 @@ const Features = () => {
                                 sectionPara={""}
                             />
                         </div>
- <span className="h-[1px] bg-[#1a1a1a] w-full block mt-2 lineDraw" />
+                        <span className="h-[1px] bg-[#1a1a1a] w-full block mt-2 lineDraw" />
                         <div className="w-full">
                             <div >
                                 {features.map((item, index) => (
