@@ -69,7 +69,7 @@ const JoinCommunity = () => {
                                         Visit the Group Page
                                     </h3>
                                     <div className="">
-                                        <PrimaryButton btnText={"Visit"} link={"https://groups.google.com/a/bespinlabs.com/g/google-workspace-hangout?utm_source=news.bespinlabs.com&utm_medium=newsletter&utm_campaign=heres-what-you-missed-in-july-2025"} target="_blank" className='!w-[10vw]' />
+                                        <PrimaryButton btnText={"Visit"} link={"https://groups.google.com/a/bespinlabs.com/g/google-workspace-hangout?utm_source=news.bespinlabs.com&utm_medium=newsletter&utm_campaign=heres-what-you-missed-in-july-2025"} target="_blank" className='lg:!w-[10vw] ' />
                                     </div>
                                 </div>
 
@@ -118,7 +118,7 @@ const JoinCommunity = () => {
                                         Join the Chat Space
                                     </h3>
                                     <div className="">
-                                        <PrimaryButton btnText={"Join"} link={"https://mail.google.com/chat/u/0/#chat/space/AAAAzKv8Cm0"} target="_blank" className='!w-[10vw]' />
+                                        <PrimaryButton btnText={"Join"} link={"https://mail.google.com/chat/u/0/#chat/space/AAAAzKv8Cm0"} target="_blank" className='lg:!w-[10vw]' />
                                     </div>
                                 </div>
 
