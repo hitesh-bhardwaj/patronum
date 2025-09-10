@@ -6,6 +6,15 @@ import ScrollButton from "@/components/Buttons/ScrollButton";
 import SplitType from "split-type";
 
 
+const scrollToId = (id) => {
+  const target = document.querySelector(id);
+  if (target) {
+    target.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+};
 
 export default function Hero() {
     const section = useRef(null);
@@ -93,7 +102,10 @@ export default function Hero() {
                             </p>
 
                             <div className="flex md:gap-[2vw] flex-col md:flex-row gap-[5vw] hero-button-anim">
-                                <PrimaryButton btnText={"Join Community"} link={"#"}/>
+                                <PrimaryButton  onClick={(e) => {
+        e.preventDefault();
+        scrollToId("#join-community");
+      }} btnText={"Join Community"} link={"#join-community"}/>
                                
                             </div>
                         </div>

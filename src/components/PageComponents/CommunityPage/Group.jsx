@@ -3,6 +3,15 @@ import PrimaryButton from '@/components/PageLayout/Button/PrimaryButton'
 import Image from 'next/image'
 import React from 'react'
 
+const scrollToId = (id) => {
+  const target = document.querySelector(id);
+  if (target) {
+    target.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+};
 const Group = () => {
     return (
         <section id="second-section">
@@ -27,7 +36,10 @@ const Group = () => {
                             <Image src={"/assets/community/group.png"} alt='Webinar Banner' height={650} width={1440} className='object-cover' />
                         </div>
                         <div className='h-full w-full flex flex-col items-center justify-center text-center py-[1vw] space-y-[1vw]'>
-                          <PrimaryButton btnText={"Join Community"} link={"#"}/>
+                          <PrimaryButton onClick={(e) => {
+        e.preventDefault();
+        scrollToId("#join-community");
+      }}  btnText={"Join Community"} link={"#join-community"}/>
 
                         </div>
                     </div>
