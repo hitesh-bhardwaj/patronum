@@ -13,6 +13,7 @@ import React, { useEffect } from 'react'
 import SplitType from "split-type";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import MetaData from '@/components/PageLayout/MetaData'
 gsap.registerPlugin(ScrollTrigger);
 
 const page = () => {
@@ -177,6 +178,15 @@ const page = () => {
   }, []);
   return (
     <>
+     <MetaData 
+                title="Google Workspace Community: Webinars, Networking & Insights | Patronum"
+                description="Join Patronum's exclusive Google Workspace Community for IT admins and partners. Access free webinars, expert discussions, real-world solutions, and networking opportunities to optimize your Workspace management. Sign up today!"
+                url="google-workspace-community"
+                img={"google-workspace-community.png"}
+                date_published="2025-09-10T12:00"
+                date_modified="2025-09-10T12:00"
+                keywords={"Patronum,Google Workspace Community"}
+              />
       <Layout>
         <main>
           <Hero />
