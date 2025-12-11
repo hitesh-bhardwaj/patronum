@@ -7,10 +7,10 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
-import BreakDownCard from "./BreakdownCard";
 import { formatMoney, formatNumber } from "@/lib/roi-math";
 import LinkButton from "../Buttons/LinkButton";
 import gsap from "gsap";
+import RoiBreakDownCards from "./RoiBreakDownCards";
 
 function BreakDown({ roi, currency }) {
   const {
@@ -111,7 +111,7 @@ function BreakDown({ roi, currency }) {
             {rows.map((row, rowIndex) => (
               <div key={rowIndex} className="flex lg:flex-row flex-col lg:gap-[2vw] gap-[4vw] w-full ">
                 {row.map((card) => (
-                  <BreakDownCard
+                  <RoiBreakDownCards
                     key={card.id}
                     value={card.value}
                     title={card.title}

@@ -2,7 +2,7 @@
 
 import React from "react";
 
-function BreakDownCard({ value, title }) {
+export default function RoiBreakDownCards({ value, title }) {
   return (
     <div className="lg:w-[50%] lg:h-[19vw] w-full h-[55vw] lg:rounded-[0.8vw] rounded-[2.5vw] bg-white/40 backdrop-blur-md border border-black/10 lg:p-[2vw] lg:pb-[2vw] p-[4vw] pb-[7vw] flex flex-col justify-between">
       <div className="flex gap-[2vw] p-[1vw]">
@@ -46,4 +46,4 @@ function BreakDownCard({ value, title }) {
   );
 }
 
-export default BreakDownCard;
+
