@@ -4,10 +4,57 @@
         <description><![CDATA[Patronum provides a better way to manage Google Workspace (GSuite). Patronum is your Google Workspace (GSuite) manager that fully automates all administrator and user tasks to ensure an efficient, effective, and secure process.]]></description>
         <link>https://www.patronum.io</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 10 Sep 2025 13:02:58 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 11 Dec 2025 12:57:15 GMT</lastBuildDate>
         <atom:link href="https://www.patronum.io/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Wed, 10 Sep 2025 13:02:58 GMT</pubDate>
+        <pubDate>Thu, 11 Dec 2025 12:57:15 GMT</pubDate>
         <copyright><![CDATA[2025 Patronum]]></copyright>
+        <item>
+            <title><![CDATA[Patronum – ISO Certification 2025-28]]></title>
+            <description><![CDATA[At Bespin Labs, we are committed to the privacy and security of our customers&#8217; data and we take our responsibility for this extremely seriously.
+]]></description>
+            <link>https://www.patronum.io/patronum-iso-certification-2025-28</link>
+            <guid isPermaLink="false">https://www.patronum.io/patronum-iso-certification-2025-28</guid>
+            <category><![CDATA[All]]></category>
+            <pubDate>Tue, 25 Nov 2025 10:52:41 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Patronum: The Ultimate Google Workspace Management Solution]]></title>
+            <description><![CDATA[Managing a Google Workspace can be a daunting task for organizations, especially when it comes to maintaining efficiency, security, and compliance.
+]]></description>
+            <link>https://www.patronum.io/patronum-the-ultimate-google-workspace-management-solution</link>
+            <guid isPermaLink="false">https://www.patronum.io/patronum-the-ultimate-google-workspace-management-solution</guid>
+            <category><![CDATA[Uncategorized]]></category>
+            <pubDate>Tue, 07 Oct 2025 08:30:37 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Online Cyber Security Safeguards Enterprise Google Workspace From Human Error]]></title>
+            <description><![CDATA[In an age when business operations are increasingly cloud-centric, even the smallest slip by a single employee can unleash a cascade of consequences. 
+]]></description>
+            <link>https://www.patronum.io/online-cyber-security-safeguards-enterprise-google-workspace-from-human-error</link>
+            <guid isPermaLink="false">https://www.patronum.io/online-cyber-security-safeguards-enterprise-google-workspace-from-human-error</guid>
+            <category><![CDATA[Uncategorized]]></category>
+            <pubDate>Mon, 06 Oct 2025 06:04:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[How to Organize Google Drive Efficiently: A Complete Step-by-Step Guide for 2025]]></title>
+            <description><![CDATA[In the physical world, clutter is visible. Paper stacks, overloaded shelves, misplaced folders. But in the digital world, chaos wears a smile. 
+]]></description>
+            <link>https://www.patronum.io/how-to-organize-google-drive</link>
+            <guid isPermaLink="false">https://www.patronum.io/how-to-organize-google-drive</guid>
+            <category><![CDATA[All]]></category>
+            <category><![CDATA[Google Drive]]></category>
+            <pubDate>Fri, 05 Sep 2025 08:36:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[How to Store Email Signature Images In Google Drive]]></title>
+            <description><![CDATA[In the quiet theater of modern business, an email signature isn’t just formatting. It’s your brand’s final impression, your digital business card, your silent ambassador in the inbox arena.
+]]></description>
+            <link>https://www.patronum.io/how-to-store-email-signature-images-in-google-drive</link>
+            <guid isPermaLink="false">https://www.patronum.io/how-to-store-email-signature-images-in-google-drive</guid>
+            <category><![CDATA[All]]></category>
+            <category><![CDATA[Email Signature]]></category>
+            <pubDate>Thu, 14 Aug 2025 09:04:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[DMARC for Retailers: Protect Your Brand from Email Spoofing, Phishing & Fraud]]></title>
             <description><![CDATA[It starts subtly, with a single click on what appears to be a routine promotional email from a trusted retailer. 
@@ -46,6 +93,16 @@
             <category><![CDATA[All]]></category>
             <category><![CDATA[Tutorial]]></category>
             <pubDate>Thu, 03 Jul 2025 04:37:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Summer Out-Of-Office Email Templates That Actually Set Boundaries with a Charm & a Smile]]></title>
+            <description><![CDATA[It begins with a sigh..! Not the weary sigh of inbox fatigue, but the long, contented exhale of sun-warmed skin, ocean breeze, or the quiet clink of ice in a glass. Around the world, summer strikes its chord.
+]]></description>
+            <link>https://www.patronum.io/global-summer-out-of-office-email-templates</link>
+            <guid isPermaLink="false">https://www.patronum.io/global-summer-out-of-office-email-templates</guid>
+            <category><![CDATA[All]]></category>
+            <category><![CDATA[Email Signature]]></category>
+            <pubDate>Mon, 23 Jun 2025 08:01:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Navigating the Future of Email Security: What Google, Microsoft, and Yahoo’s New DMARC Enforcement Requirements Mean for You]]></title>
@@ -1266,15 +1323,6 @@
             <pubDate>Tue, 29 Sep 2020 04:42:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[How to Store Email Signature Images In Google Drive]]></title>
-            <description><![CDATA[Back in 2014 Google made it much easier to add images store to Google Drive to Gmail signatures. However, we still get asked if it’s possible to use images store in Google Drive.
-]]></description>
-            <link>https://www.patronum.io/how-to-store-email-signature-images-in-google-drive</link>
-            <guid isPermaLink="false">https://www.patronum.io/how-to-store-email-signature-images-in-google-drive</guid>
-            <category><![CDATA[All]]></category>
-            <pubDate>Wed, 09 Sep 2020 09:04:00 GMT</pubDate>
-        </item>
-        <item>
             <title><![CDATA[Long Term Strategy for Remote Working]]></title>
             <description><![CDATA[When it comes to creating an effective remote working regime you needs to start with policy, process and then training. All of which should be regularly reviewed and updated if required.
 ]]></description>
@@ -1363,15 +1411,6 @@
             <guid isPermaLink="false">https://www.patronum.io/how-to-use-multiple-email-signatures-in-gmail</guid>
             <category><![CDATA[Email Signature]]></category>
             <pubDate>Mon, 04 May 2020 05:26:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Get Your Google Drive Organised]]></title>
-            <description><![CDATA[We’ve been using Google Drive for almost a decade, and unfortunately in the early years, we believed all the hype about searching for files as a pose to organising them.
-]]></description>
-            <link>https://www.patronum.io/get-your-google-drive-organised</link>
-            <guid isPermaLink="false">https://www.patronum.io/get-your-google-drive-organised</guid>
-            <category><![CDATA[All]]></category>
-            <pubDate>Sat, 18 Apr 2020 08:07:44 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Top 10 Email Signature Management Tips-Patronum]]></title>

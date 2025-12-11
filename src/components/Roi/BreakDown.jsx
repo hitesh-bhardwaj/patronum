@@ -7,7 +7,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
-import BreakdownCard from "./BreakdownCard";
+import BreakDownCard from "./BreakdownCard";
 import { formatMoney, formatNumber } from "@/lib/roi-math";
 import LinkButton from "../Buttons/LinkButton";
 import gsap from "gsap";
@@ -111,7 +111,7 @@ function BreakDown({ roi, currency }) {
             {rows.map((row, rowIndex) => (
               <div key={rowIndex} className="flex lg:flex-row flex-col lg:gap-[2vw] gap-[4vw] w-full ">
                 {row.map((card) => (
-                  <BreakdownCard
+                  <BreakDownCard
                     key={card.id}
                     value={card.value}
                     title={card.title}

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import SplitType from "split-type";
 import gsap from "gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
+// import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Layout from "@/components/Layout";
 import Ratings from "@/components/PageComponents/HomePage/Ratings";
 import Testimonial from "@/components/PageLayout/Testimonial";
