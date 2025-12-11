@@ -228,7 +228,7 @@ function Hero({
                       className="rounded-full lg:w-[2.5vw] lg:h-[2.5vw] lg:p-[1vw] md:w-[8vw] md:h-[8vw]"
                       onClick={decrementEmployees}
                     >
-                      <div className="lg:text-2xl text-2xl md:text-4xl">-</div>
+                      <div className="lg:text-2xl text-2xl md:text-4xl leading-[1] lg:mt-[-0.2vw] mt-[-0.7vw]">-</div>
                     </Button>
                     <Button
                       type="button"
@@ -237,7 +237,7 @@ function Hero({
                       size="icon"
                       className="rounded-full lg:w-[2.5vw] lg:h-[2.5vw] lg:p-[1vw] md:w-[8vw] md:h-[8vw]"
                     >
-                      <div className="lg:text-2xl text-2xl md:text-4xl">+</div>
+                      <div className="lg:text-2xl text-2xl md:text-4xl lg:mt-[-0.2vw] mt-[-0.7vw]">+</div>
                     </Button>
                   </div>
                 </div>
@@ -280,7 +280,7 @@ function Hero({
                       size="icon"
                       className="rounded-full lg:w-[2.5vw] lg:h-[2.5vw] lg:p-[1vw] md:w-[8vw] md:h-[8vw]"
                     >
-                      <div className="lg:text-2xl text-2xl md:text-4xl">-</div>
+                      <div className="lg:text-2xl text-2xl md:text-4xl lg:mt-[-0.2vw] mt-[-0.7vw]">-</div>
                     </Button>
                     <Button
                       onClick={incrementChurn}
@@ -289,7 +289,7 @@ function Hero({
                       size="icon"
                       className="rounded-full lg:w-[2.5vw] lg:h-[2.5vw] lg:p-[1vw] md:w-[8vw] md:h-[8vw]"
                     >
-                      <div className="lg:text-2xl text-2xl md:text-4xl">+</div>
+                      <div className="lg:text-2xl text-2xl md:text-4xl lg:mt-[-0.2vw] mt-[-0.7vw]">+</div>
                     </Button>
                   </div>
                 </div>
