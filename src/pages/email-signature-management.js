@@ -145,8 +145,8 @@ export default function FeatureDetail() {
                                 "isAccessibleForFree": false,
                                 "aggregateRating": {
                                     "@type": "AggregateRating",
-                                    "ratingValue": "4.9",
-                                    "reviewCount": "24"
+                                    "ratingValue": "5.0",
+                                    "reviewCount": "30"
                                 }
                             }
                         ),
@@ -158,8 +158,8 @@ export default function FeatureDetail() {
                 pageTitle2={'Management'}
                 pagePara={"Centrally managed Google Workspace Email Signatures for Your Brand's Professional Image"}
                 imgSrc={'email-signature-management.svg'}
-                title={"Gmail Email Signature Management for Google Workspace with Patronum"}
-                description={"Patronum is one of the best solutions on the marketplace for email signature management as you can give your users consistent, dynamic, and centrally managed Google Workspace and Gmail signatures."}
+                title={"Gmail Email Signature Management Tool for Google Workspace"}
+                description={"Patronum is one of the best Gmail email signature management tools for Google Workspace. IT admins can easily create and manage Gmail signatures across the organization."}
                 url={"email-signature-management"}
                 img={"email-signature-management.jpg"}
                 date_published={"2020-12-21T12:27"}

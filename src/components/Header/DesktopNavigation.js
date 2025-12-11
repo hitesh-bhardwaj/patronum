@@ -170,28 +170,7 @@ const DesktopNavigation = () => {
                                     </svg>
                                 </div>
                             </Link>
-                            {/* {isPriceDropdownOpen && ( */}
-                            {/* <m.div
-                                initial={{ y: -30, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ duration: 0.4 }}
-                                className={`${styles.navDropdown}`}>
-                                <ul className={`${styles.navDropdownList} !w-[60%] !grid-cols-1`}>
-                                    <NavItem
-                                        title={'For Business'}
-                                        disc={'Scalable Business-Ready Plans'}
-                                        link={'/pricing-for-business'}
-                                        img={'pricing-for-business.svg'}
-                                    />
-                                    <NavItem
-                                        title={'For Education & Non-Profits'}
-                                        disc={'Affordable & Accessible Pricing'}
-                                        link={'/pricing-for-education'}
-                                        img={'pricing-for-education.svg'}
-                                    />
-                                </ul>
-                            </m.div> */}
-                            {/* )} */}
+                    
                             {isPriceDropdownOpen && (
                             <m.div
                                 initial={{ y: -30, opacity: 0 }}

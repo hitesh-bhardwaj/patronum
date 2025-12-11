@@ -1,7 +1,6 @@
-
-import PrimaryButton from '@/components/PageLayout/Button/PrimaryButton'
-import SectionTitle from '@/components/PageLayout/SectionTitle'
-import React from 'react'
+import PrimaryButton from "@/components/PageLayout/Button/PrimaryButton";
+import SectionTitle from "@/components/PageLayout/SectionTitle";
+import React from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
@@ -11,43 +10,50 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin, useGSAP);
 
 const JoinCommunity = () => {
-    //  const svgRefs = [useRef(null), useRef(null), useRef(null)];
+  //  const svgRefs = [useRef(null), useRef(null), useRef(null)];
 
-//     useGSAP(() => {
-//   svgRefs.forEach((ref) => {
-//     const paths = ref.current?.querySelectorAll(".draw-path");
-//     if (paths) {
-//       gsap.from(paths, {
-//         scrollTrigger: {
-//           trigger: ref.current,
-//           start: "top 80%",
-//           once: true, 
-//         },
-//         duration: 2,
-//         drawSVG: 0,
-//         ease: "power2.out"
-//       });
-//     }
-//   });
+  //     useGSAP(() => {
+  //   svgRefs.forEach((ref) => {
+  //     const paths = ref.current?.querySelectorAll(".draw-path");
+  //     if (paths) {
+  //       gsap.from(paths, {
+  //         scrollTrigger: {
+  //           trigger: ref.current,
+  //           start: "top 80%",
+  //           once: true,
+  //         },
+  //         duration: 2,
+  //         drawSVG: 0,
+  //         ease: "power2.out"
+  //       });
+  //     }
+  //   });
 
-// }, []);
-    return (
-        <section id="join-community">
-            <div className="container">
-                <div className="content-2">
-                    <SectionTitle
-                        sectionTitle1={"Want to join the community?"}
-                        sectionTitle2={" "}
-                        sectionPara={"Once you're a part of the community you will gain access to our exclusive Google Chat Space where you can attend valuable webinars and be a part of the community conversation"} />
+  // }, []);
+  return (
+    <section id="join-community">
+      <div className="container">
+        <div className="content-2">
+          <SectionTitle
+            sectionTitle1={"Want to join the community?"}
+            sectionTitle2={" "}
+            sectionPara={
+              "Once you're a part of the community you will gain access to our exclusive Google Chat Space where you can attend valuable webinars and be a part of the community conversation"
+            }
+          />
 
-                    {/* <p className='content-p lg:mt-[0vw] lg:w-[50%] fadeUp mt-[-5vw] w-full'></p> */}
+          {/* <p className='content-p lg:mt-[0vw] lg:w-[50%]  mt-[-5vw] w-full'></p> */}
 
-                    <div className='flex lg:flex-row items-center justify-center lg:gap-[1.5vw] lg:mt-[6vw] mt-[7vw] flex-col gap-[5vw]'>
-                        <div className='fadeUp flex flex-col items-center justify-center gap-[3vw] bg-white  duration-300 lg:w-[32%] lg:min-h-[28vw] overflow-hidden rounded-[18px]  border border-[#E8E8E8] text-center hover:shadow-xl w-full min-h-[80vw]'>
-                            <div className="flex flex-col items-center justify-center gap-[3vw]  duration-300 w-full lg:min-h-[28vw] overflow-hidden rounded-[18px] min-h-[80vw]">
-                                <div className="image-container lg:h-[6vw] lg:w-[6vw] h-[20vw] w-[20vw]">
-                                    <img src="/assets/community/visit.svg" className="h-full w-full object-cover" alt="Visit"/>
-                                    {/* <svg ref={svgRefs[0]} className='h-full w-full' width="113" height="113" viewBox="0 0 113 113" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div className="flex lg:flex-row items-center justify-center lg:gap-[1.5vw] lg:mt-[6vw] mt-[7vw] flex-col gap-[5vw] fadeUp">
+            <div className=" flex flex-col items-center justify-center gap-[3vw] bg-white  duration-300 lg:w-[32%] lg:min-h-[28vw] overflow-hidden rounded-[18px]  border border-[#E8E8E8] text-center hover:shadow-xl w-full min-h-[80vw]">
+              <div className="flex flex-col items-center justify-center gap-[3vw]  duration-300 w-full lg:min-h-[28vw] overflow-hidden rounded-[18px] min-h-[80vw]">
+                <div className="image-container lg:h-[6vw] lg:w-[6vw] h-[20vw] w-[20vw]">
+                  <img
+                    src="/assets/community/visit.svg"
+                    className="h-full w-full object-cover"
+                    alt="Visit"
+                  />
+                  {/* <svg ref={svgRefs[0]} className='h-full w-full' width="113" height="113" viewBox="0 0 113 113" fill="none" xmlns="http://www.w3.org/2000/svg">
 <mask id="mask0_5564_1309" maskUnits="userSpaceOnUse" x="0" y="0" width="113" height="113">
 <path className='draw-path' d="M0 0.605782H112.286V112.9H0V0.605782Z" fill="white"/>
 </mask>
@@ -62,76 +68,85 @@ const JoinCommunity = () => {
 <path className='draw-path' d="M20.2969 73.1027H67.6819" stroke="#2A2A2A" strokeWidth="4.38619" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
 </g>
 </svg> */}
+                </div>
+                <div className="lg:space-y-[2vw] space-y-[5vw]">
+                  <h3 className="lg:text-[1.57vw] text-[5vw]  leading-[1.3]">
+                    Visit the Group Page
+                  </h3>
+                  <div className="">
+                    <PrimaryButton
+                      btnText={"Visit"}
+                      link={
+                        "https://groups.google.com/a/bespinlabs.com/g/google-workspace-hangout?utm_source=news.bespinlabs.com&utm_medium=newsletter&utm_campaign=heres-what-you-missed-in-july-2025"
+                      }
+                      target="_blank"
+                      className="lg:!w-[10vw] "
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                                </div>
-                                <div className='lg:space-y-[2vw] space-y-[5vw]'>
-                                    <h3 className="lg:text-[1.57vw] text-[5vw]  leading-[1.3]">
-                                        Visit the Group Page
-                                    </h3>
-                                    <div className="">
-                                        <PrimaryButton btnText={"Visit"} link={"https://groups.google.com/a/bespinlabs.com/g/google-workspace-hangout?utm_source=news.bespinlabs.com&utm_medium=newsletter&utm_campaign=heres-what-you-missed-in-july-2025"} target="_blank" className='lg:!w-[10vw] ' />
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div className='fadeUp flex flex-col items-center justify-center gap-[3vw] bg-white  duration-300 lg:w-[32%] lg:min-h-[28vw] overflow-hidden rounded-[18px]  border border-[#E8E8E8] text-center hover:shadow-xl w-full min-h-[80vw]'>
-                            <div className="flex flex-col items-center justify-center gap-[3vw]  duration-300 w-full lg:min-h-[28vw] overflow-hidden rounded-[18px] min-h-[80vw] lg:mt-[-6vw]">
-                                <div className="image-container lg:h-[6vw] lg:w-[6vw] h-[20vw] w-[20vw]">
-                                    <img src="/assets/community/wait.svg" className="h-full w-full object-contain" alt="Wait"  />
-                                    {/* <svg ref={svgRefs[1]}  className='h-full w-full' width="96" height="102" viewBox="0 0 96 102" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div className=" flex flex-col items-center justify-center gap-[3vw] bg-white  duration-300 lg:w-[32%] lg:min-h-[28vw] overflow-hidden rounded-[18px]  border border-[#E8E8E8] text-center hover:shadow-xl w-full min-h-[80vw]">
+              <div className="flex flex-col items-center justify-center gap-[3vw]  duration-300 w-full lg:min-h-[28vw] overflow-hidden rounded-[18px] min-h-[80vw] lg:mt-[-6vw]">
+                <div className="image-container lg:h-[6vw] lg:w-[6vw] h-[20vw] w-[20vw]">
+                  <img
+                    src="/assets/community/wait.svg"
+                    className="h-full w-full object-contain"
+                    alt="Wait"
+                  />
+                  {/* <svg ref={svgRefs[1]}  className='h-full w-full' width="96" height="102" viewBox="0 0 96 102" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path className='draw-path' d="M2.24424 51.5451C2.79682 51.5473 3.33048 51.3439 3.7414 50.9744C4.15231 50.6049 4.41112 50.0957 4.46746 49.546C5.33606 40.7832 8.82257 32.4849 14.4731 25.7315C20.1236 18.9781 27.6763 14.0825 36.148 11.682L33.1523 14.3809C32.9335 14.5783 32.7557 14.8168 32.6291 15.0829C32.5025 15.349 32.4295 15.6374 32.4143 15.9317C32.3992 16.2259 32.4421 16.5203 32.5407 16.798C32.6393 17.0757 32.7916 17.3312 32.989 17.55C33.1863 17.7688 33.4248 17.9466 33.6909 18.0732C33.957 18.1999 34.2453 18.2728 34.5396 18.288C34.8339 18.3032 35.1282 18.2602 35.4059 18.1616C35.6835 18.063 35.9391 17.9107 36.1578 17.7133L45.04 9.70804C45.2651 9.50827 45.447 9.26465 45.5746 8.99209C45.7022 8.71954 45.7729 8.42379 45.7822 8.12298C45.7915 7.82216 45.7393 7.52261 45.6288 7.24267C45.5183 6.96274 45.3518 6.70831 45.1396 6.49499C44.9422 6.29164 44.712 6.12299 44.4586 5.99611L33.556 1.08546C33.0152 0.850978 32.4038 0.838853 31.854 1.0517C31.3043 1.26456 30.8605 1.68527 30.6186 2.22285C30.3766 2.76043 30.356 3.37165 30.5612 3.92431C30.7664 4.47696 31.1809 4.92662 31.715 5.17603L35.9793 7.09614C26.4072 9.57596 17.826 14.9326 11.3939 22.4433C4.96173 29.954 0.988147 39.2571 0.00934754 49.0974C-0.0190981 49.408 0.0175498 49.7211 0.11695 50.0168C0.21635 50.3125 0.376317 50.5841 0.586634 50.8145C0.79695 51.0448 1.05299 51.2288 1.33841 51.3546C1.62382 51.4804 1.93233 51.5452 2.24424 51.5451Z" fill="#2A2A2A"/>
 <path className='draw-path' d="M52.2435 10.2507C62.3252 11.2484 71.7497 15.709 78.9131 22.8734C86.0765 30.0378 90.5361 39.4633 91.533 49.5458C91.6185 50.1155 91.9198 50.6304 92.3745 50.984C92.8293 51.3375 93.4026 51.5026 93.9757 51.4449C94.5488 51.3872 95.0778 51.1113 95.453 50.6742C95.8282 50.2371 96.0209 49.6725 95.9911 49.0972C94.8897 37.9873 89.9745 27.6019 82.0811 19.707C74.1878 11.8121 63.8037 6.89512 52.6948 5.79227C52.1195 5.76252 51.5549 5.95522 51.1179 6.33045C50.6808 6.70569 50.4049 7.23468 50.3472 7.80783C50.2895 8.38098 50.4546 8.95435 50.8081 9.40913C51.1616 9.86392 51.6765 10.1653 52.2462 10.2507H52.2435Z" fill="#2A2A2A"/>
 <path className='draw-path' d="M43.7585 97.3246C33.6772 96.327 24.253 91.8668 17.0896 84.7029C9.92628 77.5391 5.46639 68.1142 4.46892 58.0322C4.38347 57.4625 4.08215 56.9475 3.6274 56.594C3.17265 56.2404 2.59932 56.0754 2.02622 56.1331C1.45311 56.1907 0.924155 56.4667 0.548952 56.9038C0.173749 57.3408 -0.0189408 57.9055 0.0108086 58.4808C1.1132 69.59 6.02905 79.9745 13.9225 87.8685C21.8159 95.7626 32.1996 100.679 43.3081 101.781C43.8833 101.811 44.4479 101.618 44.885 101.243C45.322 100.868 45.5979 100.339 45.6556 99.7657C45.7133 99.1925 45.5483 98.6192 45.1947 98.1644C44.8412 97.7096 44.3263 97.4082 43.7567 97.3228L43.7585 97.3246Z" fill="#2A2A2A"/>
 <path className='draw-path' d="M93.755 56.0311C93.2023 56.0292 92.6687 56.233 92.2579 56.6028C91.8471 56.9726 91.5886 57.4821 91.5327 58.032C90.5352 68.1142 86.0752 77.5392 78.9116 84.7031C71.7481 91.867 62.3237 96.3271 52.2423 97.3244C51.6726 97.4099 51.1577 97.7112 50.8042 98.166C50.4507 98.6208 50.2856 99.1942 50.3433 99.7673C50.401 100.34 50.6769 100.869 51.1139 101.245C51.551 101.62 52.1156 101.813 52.6908 101.783C63.7996 100.681 74.1838 95.7648 82.0776 87.8707C89.9714 79.9767 94.8875 69.592 95.9899 58.4824C96.0189 58.1715 95.9826 57.858 95.8835 57.5619C95.7843 57.2658 95.6244 56.9937 95.4141 56.7629C95.2037 56.5322 94.9475 56.3479 94.6618 56.2219C94.3761 56.0959 94.0673 56.0309 93.755 56.0311Z" fill="#2A2A2A"/>
 <path className='draw-path' d="M66.0503 66.756C66.3934 66.27 66.5295 65.6677 66.4285 65.0815C66.3276 64.4952 65.9979 63.9731 65.512 63.6299L50.2437 52.8656V39.2678C50.2437 38.6729 50.0074 38.1023 49.5868 37.6817C49.1662 37.261 48.5956 37.0247 48.0008 37.0247C47.4059 37.0247 46.8354 37.261 46.4148 37.6817C45.9941 38.1023 45.7578 38.6729 45.7578 39.2678V54.2653C45.7578 54.5529 45.8269 54.8363 45.9593 55.0916C46.0917 55.3469 46.2835 55.5667 46.5186 55.7323L62.9255 67.297C63.4116 67.6396 64.0139 67.775 64.5999 67.6735C65.1859 67.5721 65.7076 67.242 66.0503 66.756Z" fill="#1069DF"/>
 </svg> */}
+                </div>
+                <div className="lg:space-y-[2vw] space-y-[5vw]">
+                  <h3 className="lg:text-[1.57vw] text-[5vw]  leading-[1.3]">
+                    Wait for Approval
+                  </h3>
+                </div>
+              </div>
+            </div>
 
-
-                                </div>
-                                <div className='lg:space-y-[2vw] space-y-[5vw]'>
-                                    <h3 className="lg:text-[1.57vw] text-[5vw]  leading-[1.3]">
-                                        Wait for Approval
-                                    </h3>
-
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                        <div className='fadeUp flex flex-col items-center justify-center gap-[3vw] bg-white  duration-300 lg:w-[32%] lg:min-h-[28vw] overflow-hidden rounded-[18px]  border border-[#E8E8E8] text-center hover:shadow-xl w-full min-h-[80vw]'>
-                            <div className="flex flex-col items-center justify-center gap-[3vw]  duration-300 w-full lg:min-h-[28vw] overflow-hidden rounded-[18px] min-h-[80vw]">
-                                <div className="image-container lg:h-[6vw] lg:w-[6vw] h-[20vw] w-[20vw]">
-                                    <img src="/assets/community/join.svg" className="h-full w-full object-cover" alt="Join"  />
-                                    {/* <svg ref={svgRefs[2]} className='h-full w-full' width="139" height="98" viewBox="0 0 139 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div className=" flex flex-col items-center justify-center gap-[3vw] bg-white  duration-300 lg:w-[32%] lg:min-h-[28vw] overflow-hidden rounded-[18px]  border border-[#E8E8E8] text-center hover:shadow-xl w-full min-h-[80vw]">
+              <div className="flex flex-col items-center justify-center gap-[3vw]  duration-300 w-full lg:min-h-[28vw] overflow-hidden rounded-[18px] min-h-[80vw]">
+                <div className="image-container lg:h-[6vw] lg:w-[6vw] h-[20vw] w-[20vw]">
+                  <img
+                    src="/assets/community/join.svg"
+                    className="h-full w-full object-cover"
+                    alt="Join"
+                  />
+                  {/* <svg ref={svgRefs[2]} className='h-full w-full' width="139" height="98" viewBox="0 0 139 98" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path className='draw-path' d="M136 50.143C135.213 53.0525 133.246 54.6395 130.467 55.5124C127.818 56.3588 125.248 57.4432 122.626 58.4219C118.797 59.8238 115.808 58.5541 114.024 54.8247C113.946 54.6924 113.841 54.5602 113.5 54.4544C113.5 54.7982 113.474 55.1421 113.5 55.4859C113.736 57.5755 113.552 59.6122 112.608 61.5166C111.035 64.7964 107.888 66.3041 104.348 65.4048C104.059 65.3254 103.771 65.2461 103.299 65.1138C103.535 68.4465 102.591 71.2503 99.9946 73.3134C97.3984 75.3765 94.4614 75.6939 91.2096 74.6888C91.3932 77.4132 90.7376 79.7937 88.9281 81.7775C87.1187 83.7877 84.7847 84.6077 82.0575 84.7135C82.4508 88.0462 81.5068 90.8764 78.727 92.7808C75.8162 94.7646 72.9315 94.1033 70.0207 92.3312C68.185 95.7697 65.7462 98.4412 61.5242 97.8064C57.5381 97.198 55.2304 94.5265 53.893 90.7441C51.5329 91.7228 49.1727 91.9344 46.7863 90.9293C44.4524 89.9506 42.9052 88.1785 41.9874 85.7979C38.6307 87.7817 35.3265 87.8875 32.1796 85.6657C28.9803 83.391 28.1936 80.0847 28.8754 76.3287C27.9051 76.2229 26.9348 76.2229 26.017 76.0113C20.5624 74.8211 17.7303 69.002 20.1166 63.9236C20.7984 62.4952 21.6114 61.1463 22.2932 59.718C22.503 59.2948 22.6079 58.7922 22.8439 58.0251C22.3457 58.2896 22.1359 58.3425 21.9785 58.4748C20.1428 59.8238 18.1761 60.0883 16.0257 59.4006C12.8788 58.369 9.70574 57.3903 6.5851 56.3323C2.83508 55.0627 1.18298 51.7829 2.38927 47.974C5.40502 38.4519 8.47322 28.9298 11.5152 19.4077C12.6953 15.7311 13.8753 12.0546 15.0554 8.37797C16.3928 4.33108 19.5921 2.69116 23.6831 3.98722C26.5939 4.91298 29.4523 5.94454 32.3894 6.8174C35.1691 7.63736 36.8737 9.40953 37.4768 12.6629C39.9419 12.372 42.4332 12.1075 44.9244 11.7636C47.337 11.4198 49.7234 10.8643 52.136 10.6262C56.9612 10.1766 61.4717 11.3404 65.6413 13.8532C66.2445 14.2235 66.664 14.2499 67.2934 13.8796C73.5871 10.0708 80.1956 9.72693 86.9875 12.3191C89.4788 13.2713 91.9176 14.3293 94.4089 15.2286C95.9823 15.784 97.6607 16.2601 99.3914 15.5195C99.2603 14.7789 99.103 14.1177 99.0243 13.43C98.7883 10.7056 100.204 8.21927 102.722 7.18771C106.183 5.78584 109.697 4.43688 113.238 3.24661C116.542 2.0828 119.767 3.88142 121.052 7.34641C123.963 15.2021 126.822 23.0579 129.732 30.9136C131.804 36.5475 133.902 42.155 136 47.7624C136 48.5559 136 49.3494 136 50.143ZM65.5889 77.0958C65.6151 77.0164 65.6413 76.9371 65.6675 76.8577C65.3528 76.6726 65.0119 76.4874 64.6972 76.2758C63.8319 75.6675 63.5172 74.8475 64.0416 73.8689C64.5661 72.9431 65.3791 72.6521 66.3756 73.1018C66.6903 73.234 67.0049 73.4192 67.2934 73.5779C71.4892 75.8262 75.6588 78.0745 79.8809 80.2963C83.0015 81.9362 86.5155 80.455 87.4071 77.2016C88.0627 74.7946 87.0138 72.467 84.4963 71.0651C80.8774 69.0549 77.206 67.124 73.5609 65.1667C73.1675 64.9551 72.7742 64.77 72.4333 64.5055C71.6203 63.9235 71.3319 63.13 71.7777 62.2043C72.2497 61.1992 73.1151 61.014 74.0854 61.3314C74.4525 61.4372 74.7934 61.6753 75.1343 61.8604C80.6676 64.8493 86.2008 67.8382 91.7079 70.8271C93.1239 71.5941 94.5925 71.8586 96.1135 71.3296C98.1589 70.6419 99.3915 69.1872 99.6275 66.9918C99.8897 64.6642 98.9194 62.8655 96.9002 61.7546C91.5767 58.8186 86.2533 55.9356 80.9298 53.026C80.5102 52.788 79.9071 52.6028 79.776 52.2325C79.5137 51.5713 79.304 50.7249 79.5137 50.0901C79.8022 49.2436 80.6676 48.9262 81.5854 49.2701C81.9526 49.4023 82.2935 49.6139 82.6344 49.7991C87.276 52.3383 91.8914 54.8776 96.533 57.3903C99.103 58.7922 101.647 60.2205 104.269 61.5166C106.787 62.7597 108.727 61.8869 109.593 59.189C110.405 56.6762 110.065 54.2692 108.045 52.5499C105.869 50.6984 103.509 48.9527 101.017 47.5508C96.2708 44.8793 91.3669 42.4724 86.5417 39.9596C85.3879 39.3512 84.2603 38.69 83.1326 38.0023C80.7725 36.5475 78.2812 36.6798 75.8162 37.4468C71.9088 38.6635 68.0801 40.1712 64.1728 41.3086C58.8493 42.8427 53.893 42.1814 49.6972 38.1345C46.3667 34.934 46.2094 34.0347 49.2776 30.5433C51.7164 27.7396 54.3913 25.1474 57.0136 22.5024C58.9804 20.5186 60.9997 18.6142 62.9927 16.6834C62.914 16.5776 62.8878 16.4982 62.8353 16.4453C62.7042 16.3395 62.5469 16.2602 62.3895 16.1808C58.1937 14.0119 53.7881 13.8267 49.2514 14.6731C45.344 15.3873 41.4891 16.3924 37.4768 16.1544C37.1622 16.1279 36.6377 16.6834 36.5328 17.0537C33.1761 27.3957 29.8457 37.7378 26.5939 48.1063C26.0432 49.852 25.9121 51.73 25.5974 53.5286C25.7285 53.5815 25.8597 53.6079 25.9646 53.6608C28.6918 51.3597 31.76 50.4604 35.0642 51.8887C38.3422 53.317 40.1255 56.0414 40.6237 59.5857C47.5468 59.427 49.4874 60.9082 51.4804 67.7059C56.8825 66.5421 62.5207 70.0336 62.3633 77.0958C63.4123 77.0958 64.5137 77.0958 65.5889 77.0958ZM51.0346 34.0612C53.421 37.1823 56.4629 38.7429 60.0294 38.2932C62.4682 37.9758 64.8546 37.2352 67.2147 36.5211C70.0994 35.6482 72.8791 34.5108 75.7637 33.6909C78.7795 32.8445 81.7952 33.0032 84.6274 34.6166C87.2236 36.0714 89.8197 37.4468 92.4421 38.8487C99.0768 42.393 106.183 45.1703 111.481 50.8836C111.612 51.0158 111.979 51.1216 112.136 51.0158C112.294 50.9365 112.372 50.5926 112.346 50.381C112.32 50.1165 112.189 49.8785 112.084 49.6404C108.465 39.8274 104.82 29.9878 101.201 20.1748C101.044 19.778 100.886 19.3813 100.729 19.0374C97.2935 19.7251 95.6939 19.6193 92.311 18.3497C90.2393 17.5827 88.1938 16.7098 86.1222 15.8634C79.1204 13.0068 72.4857 13.8267 66.7165 18.6407C62.0224 22.5553 57.8266 27.0254 53.421 31.2839C52.608 32.1303 51.8738 33.109 51.0346 34.0612ZM5.64104 49.9578C5.61481 51.5184 6.27041 52.3912 7.73895 52.8673C10.7809 53.8989 13.8491 54.904 16.9173 55.8827C19.0152 56.5439 20.1953 55.9091 20.9033 53.7402C25.0992 40.6473 29.295 27.5544 33.4908 14.4351C34.1989 12.2397 33.5695 11.023 31.3667 10.3088C28.5083 9.38308 25.6499 8.45732 22.7915 7.53156C20.3264 6.73805 19.225 7.29351 18.4383 9.75338C14.2687 22.714 10.1253 35.7011 5.95572 48.6617C5.8246 49.1908 5.71971 49.6933 5.64104 49.9578ZM114.785 6.57935C114.523 6.6587 114.051 6.73805 113.605 6.9232C110.694 8.00766 107.809 9.09213 104.898 10.1766C102.748 10.9965 102.171 12.2133 102.958 14.3822C107.704 27.3164 112.451 40.2241 117.224 53.1318C118.01 55.2479 119.217 55.7769 121.341 55.0098C124.173 53.9782 126.979 52.9202 129.785 51.8622C132.302 50.91 132.801 49.8256 131.883 47.3128C128.998 39.4835 126.114 31.6807 123.255 23.8514C121.393 18.7994 119.531 13.7209 117.67 8.66892C117.224 7.39931 116.411 6.57935 114.785 6.57935ZM32.1272 78.577C32.2583 81.0369 33.6219 82.862 35.9296 83.4703C38.1062 84.0522 40.309 83.1 41.4629 80.984C43.351 77.519 45.1867 74.0276 47.0223 70.5361C48.386 67.9175 47.573 65.008 45.1867 63.6855C42.7216 62.3101 39.837 63.2358 38.3947 65.8809C36.559 69.2665 34.7496 72.6786 32.9926 76.1171C32.5992 76.8842 32.4156 77.757 32.1272 78.577ZM28.2985 72.5992C29.531 72.5992 31.0258 71.8586 31.9436 70.2452C33.4908 67.4943 34.9856 64.7171 36.3754 61.8869C37.5555 59.4799 36.5066 56.7291 34.0415 55.4066C31.9436 54.2957 29.1114 55.0363 27.8527 57.2052C26.253 59.9825 24.732 62.7862 23.3684 65.6693C21.8212 68.9227 24.1551 72.5463 28.2985 72.5992ZM50.0905 87.914C51.7426 87.914 53.185 87.3056 53.9979 85.9037C55.5451 83.2587 57.0136 80.5608 58.2986 77.7835C59.3214 75.5352 58.1937 72.8902 55.9909 71.7264C53.8143 70.589 51.0084 71.2238 49.7496 73.3134C48.2549 75.8262 46.8388 78.4183 45.6325 81.0898C44.1377 84.3696 46.5503 87.914 50.0905 87.914ZM64.2514 80.693C60.8686 80.693 56.7776 85.8508 57.3808 89.3952C57.407 89.6068 57.4332 89.8448 57.5119 90.03C58.2986 92.1724 59.636 93.7859 61.97 94.1827C64.3301 94.5794 65.5364 92.9395 66.5067 91.1409C67.241 89.7919 67.949 88.443 68.5259 87.0146C69.9158 83.6555 67.8966 80.693 64.2514 80.693ZM70.5976 79.4499C73.4822 82.4123 73.0889 85.6657 71.6728 89.1571C72.5906 89.5274 73.4036 90.0035 74.269 90.2151C75.9997 90.5854 77.5994 89.6068 78.2812 87.8346C79.0155 85.9566 78.4386 83.8935 76.6291 82.7826C74.6623 81.5923 72.6169 80.5608 70.5976 79.4499Z" fill="#2A2A2A"/>
 <rect className='draw-path' x="18.0919" y="4.42836" width="19.1997" height="50.9112" rx="3.98005" transform="rotate(17.6033 18.0919 4.42836)" stroke="#1069DF" stroke-width="3.98005"/>
 <rect className='draw-path' x="-1.17888" y="2.56664" width="19.2687" height="51.0941" rx="3.99435" transform="matrix(-0.937706 0.34743 0.34743 0.937706 115.816 1.46986)" stroke="#1069DF" stroke-width="3.99434"/>
 </svg> */}
-
-
-                                </div>
-                                <div className='lg:space-y-[2vw] space-y-[5vw]'>
-                                    <h3 className="lg:text-[1.57vw] text-[5vw]  leading-[1.3]">
-                                        Join the Chat Space
-                                    </h3>
-                                    <div className="">
-                                        <PrimaryButton btnText={"Join"} link={"https://mail.google.com/chat/u/0/#chat/space/AAAAzKv8Cm0"} target="_blank" className='lg:!w-[10vw]' />
-                                    </div>
-                                </div>
-
-
-                            </div>
-
-                        </div>
-
-                    </div>
                 </div>
+                <div className="lg:space-y-[2vw] space-y-[5vw]">
+                  <h3 className="lg:text-[1.57vw] text-[5vw]  leading-[1.3]">
+                    Join the Chat Space
+                  </h3>
+                  <div className="">
+                    <PrimaryButton
+                      btnText={"Join"}
+                      link={
+                        "https://mail.google.com/chat/u/0/#chat/space/AAAAzKv8Cm0"
+                      }
+                      target="_blank"
+                      className="lg:!w-[10vw]"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
-        </section>
-    )
-}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
-export default JoinCommunity
+export default JoinCommunity;

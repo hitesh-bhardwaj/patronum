@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patronum ROI Calculator</title>
+    <!-- Tailwind CSS for utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        
+        /* Custom Range Slider Styling */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #2563eb;
+            cursor: pointer;
+            margin-top: -8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: #e2e8f0;
+            border-radius: 2px;
+        }
+
+        /* Risk Radio Button Custom Styling */
+        .risk-radio:checked + div {
+            border-color: #2563eb;
+            background-color: #eff6ff;
+            color: #1e40af;
+            box-shadow: 0 0 0 2px #2563eb;
+        }
+
+        .transition-width {
+            transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="text-slate-900 antialiased min-h-screen flex flex-col items-center justify-center p-4">
+
+    <div class="max-w-5xl w-full bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
+        
+        <!-- Header -->
+        <div class="bg-slate-900 text-white p-8 text-center">
+            <h1 class="text-3xl font-bold mb-2 tracking-tight">ROI Calculator</h1>
+            <p class="text-slate-400 text-lg">Calculate your annual savings with automated governance</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2">
+            
+            <!-- Inputs Section -->
+            <div class="p-8 border-b md:border-b-0 md:border-r border-slate-200 bg-slate-50/50">
+                <h2 class="text-xl font-semibold mb-6 text-slate-800">Your Organization</h2>
+                
+                <!-- Employees Input -->
+                <div class="mb-8">
+                    <label class="block text-sm font-semibold text-slate-700 mb-2">Number of Employees</label>
+                    <div class="relative">
+                        <input type="number" id="employees" value="150" min="50" step="50" 
+                            class="w-full pl-4 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-lg font-medium"
+                            oninput="calculate()">
+                    </div>
+                </div>
+
+                <!-- Churn Input -->
+                <div class="mb-8">
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="block text-sm font-semibold text-slate-700">Annual Churn Rate</label>
+                        <span class="text-blue-600 font-bold bg-blue-50 px-2 py-1 rounded text-sm" id="churnDisplay">5%</span>
+                    </div>
+                    <div class="relative flex items-center gap-4">
+                        <input type="range" id="churnRange" min="1" max="50" value="5" step="1" 
+                            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                            oninput="updateChurnSync(this.value)">
+                        <div class="w-24 relative">
+                            <input type="number" id="churn" value="5" min="1" max="100" step="1" 
+                                class="w-full pl-3 pr-8 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none"
+                                oninput="updateChurnSync(this.value, 'number')">
+                            <span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Risk Level Input -->
+                <div class="mb-6">
+                    <label class="block text-sm font-semibold text-slate-700 mb-3">Compliance Risk Level</label>
+                    <div class="grid grid-cols-3 gap-3">
+                        <label class="cursor-pointer group relative">
+                            <input type="radio" name="risk" value="Low" class="risk-radio absolute opacity-0 w-full h-full cursor-pointer" onchange="calculate()">
+                            <div class="border border-slate-200 rounded-lg p-3 text-center hover:border-blue-400 transition-all bg-white group-hover:shadow-sm">
+                                <div class="font-bold text-sm mb-1">Low</div>
+                                <div class="text-xs text-slate-500">Standard</div>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer group relative">
+                            <input type="radio" name="risk" value="Medium" checked class="risk-radio absolute opacity-0 w-full h-full cursor-pointer" onchange="calculate()">
+                            <div class="border border-slate-200 rounded-lg p-3 text-center hover:border-blue-400 transition-all bg-white group-hover:shadow-sm">
+                                <div class="font-bold text-sm mb-1">Medium</div>
+                                <div class="text-xs text-slate-500">Regulated</div>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer group relative">
+                            <input type="radio" name="risk" value="High" class="risk-radio absolute opacity-0 w-full h-full cursor-pointer" onchange="calculate()">
+                            <div class="border border-slate-200 rounded-lg p-3 text-center hover:border-blue-400 transition-all bg-white group-hover:shadow-sm">
+                                <div class="font-bold text-sm mb-1">High</div>
+                                <div class="text-xs text-slate-500">Critical</div>
+                            </div>
+                        </label>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 italic">
+                        *Higher risk levels (e.g., Healthcare, Finance) increase the value of automated compliance and error prevention.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="p-8 bg-white flex flex-col justify-center relative">
+                <div class="text-center mb-8">
+                    <!-- Money Total -->
+                    <div class="mb-6">
+                        <div class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Total Estimated Annual Savings</div>
+                        <div class="text-5xl md:text-6xl font-extrabold text-blue-600 tracking-tight" id="totalValue">$0</div>
+                    </div>
+                    
+                    <!-- Time Total -->
+                    <div class="inline-flex items-center bg-amber-50 rounded-lg px-4 py-2 border border-amber-100 shadow-sm">
+                        <svg class="w-5 h-5 text-amber-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span class="text-xl font-bold text-amber-700" id="hoursValue">0</span>
+                        <span class="text-sm text-amber-800 ml-1.5 font-medium">hours saved annually</span>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    
+                    <!-- Breakdown Item: License -->
+                    <div class="group">
+                        <div class="flex justify-between items-end mb-2">
+                            <div>
+                                <div class="text-sm font-semibold text-slate-800">License Optimization</div>
+                                <div class="text-xs text-slate-500">Reclaiming unused licenses ($16/user)</div>
+                            </div>
+                            <div class="font-bold text-slate-700" id="licenseValue">$0</div>
+                        </div>
+                        <div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+                            <div id="licenseBar" class="h-full bg-emerald-500 rounded-full transition-width w-0"></div>
+                        </div>
+                    </div>
+
+                    <!-- Breakdown Item: Staff -->
+                    <div class="group">
+                        <div class="flex justify-between items-end mb-2">
+                            <div>
+                                <div class="text-sm font-semibold text-slate-800">Staff Cost Savings</div>
+                                <div class="text-xs text-slate-500">IT & HR time reclaimed (~10h/user)</div>
+                            </div>
+                            <div class="font-bold text-slate-700" id="staffValue">$0</div>
+                        </div>
+                        <div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+                            <div id="staffBar" class="h-full bg-amber-500 rounded-full transition-width w-0"></div>
+                        </div>
+                    </div>
+
+                    <!-- Breakdown Item: Risk -->
+                    <div class="group">
+                        <div class="flex justify-between items-end mb-2">
+                            <div>
+                                <div class="text-sm font-semibold text-slate-800">Compliance Risk Mitigation</div>
+                                <div class="text-xs text-slate-500">Data breach prevention & security value</div>
+                            </div>
+                            <div class="font-bold text-slate-700" id="riskValue">$0</div>
+                        </div>
+                        <div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+                            <div id="riskBar" class="h-full bg-blue-600 rounded-full transition-width w-0"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-slate-100 text-center">
+                    <p class="text-xs text-slate-400">
+                        Based on industry standard analysis: $16 license cost, 10h administrative time saved per offboarding event ($84/hr effective rate), and tiered risk mitigation base values ($31.5k - $52.5k).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    // --- Logic Constants ---
+    // Reverse-engineered from Patronum & User Request
+    const LICENSE_COST = 16.0;
+    
+    // UPDATED: 10 hours * $84/hr = $840
+    const LABOR_SAVINGS = 840.0;
+    const HOURS_PER_USER = 10; // Hours saved per churned user
+    
+    const RISK_CONSTANTS = {
+        'Low': { base: 31500, perEmp: 63 },
+        'Medium': { base: 42000, perEmp: 84 },
+        'High': { base: 52500, perEmp: 105 }
+    };
+
+    function formatMoney(amount) {
+        return new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            maximumFractionDigits: 0
+        }).format(amount);
+    }
+    
+    function formatNumber(num) {
+        return new Intl.NumberFormat('en-US', {
+             maximumFractionDigits: 0
+        }).format(num);
+    }
+
+    function updateChurnSync(val, source) {
+        // Sync range and number inputs
+        if (source === 'number') {
+            document.getElementById('churnRange').value = val;
+        } else {
+            document.getElementById('churn').value = val;
+        }
+        document.getElementById('churnDisplay').innerText = val + '%';
+        calculate();
+    }
+
+    function calculate() {
+        // 1. Get Inputs
+        const employees = parseInt(document.getElementById('employees').value) || 0;
+        const churnPercent = parseFloat(document.getElementById('churn').value) || 0;
+        
+        // Safe radio button selection
+        const riskRadio = document.querySelector('input[name="risk"]:checked');
+        const riskLevel = riskRadio ? riskRadio.value : 'Medium';
+
+        // 2. Calculations
+        const churnedUsers = employees * (churnPercent / 100);
+
+        // Pillar 1: License Optimization (Churned users * $16)
+        const licenseSavings = churnedUsers * LICENSE_COST;
+
+        // Pillar 2: Staff Cost Savings (Churned users * $444)
+        const staffSavings = churnedUsers * LABOR_SAVINGS;
+        
+        // Time Savings Calculation (Churned users * 10 hours)
+        const timeSavings = churnedUsers * HOURS_PER_USER;
+
+        // Pillar 3: Compliance Risk Mitigation (Base + (Emp * Factor))
+        const riskConst = RISK_CONSTANTS[riskLevel];
+        const riskSavings = riskConst.base + (employees * riskConst.perEmp);
+
+        // Total
+        const totalSavings = licenseSavings + staffSavings + riskSavings;
+
+        // 3. Update DOM Text
+        requestAnimationFrame(() => {
+            document.getElementById('totalValue').innerText = formatMoney(totalSavings);
+            document.getElementById('hoursValue').innerText = formatNumber(timeSavings); // New Update
+            
+            document.getElementById('licenseValue').innerText = formatMoney(licenseSavings);
+            document.getElementById('staffValue').innerText = formatMoney(staffSavings);
+            document.getElementById('riskValue').innerText = formatMoney(riskSavings);
+
+            // 4. Update Progress Bars
+            const licensePct = totalSavings > 0 ? (licenseSavings / totalSavings) * 100 : 0;
+            const staffPct = totalSavings > 0 ? (staffSavings / totalSavings) * 100 : 0;
+            const riskPct = totalSavings > 0 ? (riskSavings / totalSavings) * 100 : 0;
+
+            document.getElementById('licenseBar').style.width = `${licensePct}%`;
+            document.getElementById('staffBar').style.width = `${staffPct}%`;
+            document.getElementById('riskBar').style.width = `${riskPct}%`;
+        });
+    }
+
+    // Initial calculation on load
+    window.onload = calculate;
+</script>
+
+</body>
+</html>

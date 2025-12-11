@@ -35,10 +35,10 @@ const Features = () => {
             <section id="features">
                 <div className="container">
                     <div className="content">
-                        <div className="section-head lg:w-[80%] w-full ">
+                        <div className="section-head lg:w-full w-full ">
                             <SectionTitle
-                                sectionTitle1={"A free, global hub for IT leaders, admins, and partners to:"}
-                                sectionTitle2={" "}
+                                sectionTitle1={"A free, global hub for IT leaders, admins,"}
+                                sectionTitle2={"  and partners to:"}
                                 sectionPara={""}
                             />
                         </div>

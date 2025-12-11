@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import Header from "../Header";
 import PreLoader from "../PreLoader";
 import { useEffect, useState } from "react";
+import ExitIntentModal from "../MicroConversionModal";
 
 const Footer = dynamic(() => import("../Footer"), { ssr: false });
 const DemoModal = dynamic(() => import("@/components/Modals/DemoModal"), { ssr: false });
@@ -31,11 +32,13 @@ const Layout = ({ children }) => {
     return (
         <>
             {showPreloader && <PreLoader />}
+
                 <Header />
                 {children}
                 <Footer />
                 <DemoModal />
                 <InstallModal />
+                <ExitIntentModal/>
             <Transition />
             {/* {isDesktop && <Background />} */}
             {isDesktop && <BgVideo />}

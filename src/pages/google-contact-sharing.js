@@ -117,8 +117,8 @@ export default function FeatureDetail() {
                                 "isAccessibleForFree": false,
                                 "aggregateRating": {
                                     "@type": "AggregateRating",
-                                    "ratingValue": "4.9",
-                                    "reviewCount": "24"
+                                    "ratingValue": "5.0",
+                                    "reviewCount": "30"
                                 }
                             }
                         ),

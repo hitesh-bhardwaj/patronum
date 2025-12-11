@@ -1,5 +1,5 @@
 import PrimaryButton from '@/components/PageLayout/Button/PrimaryButton'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -21,7 +21,7 @@ const Webinars = () => {
             [videoId]: false
         }));
     };
-
+ 
     const handleModalClick = (e, videoId) => {
         if (e.target.classList.contains("video-modal-overlay")) {
             closeModal(videoId);
@@ -106,49 +106,44 @@ export default Webinars
 const webinars = [
     {
         id: 1,
+        imgSrc: "/assets/community/how-to-webinar-20-nov.png",
+        title: "‘How to’ Webinar Series Fireside Chat- Email Signature Management",
+        videoId: "eZZ4Nf3ee0k",
+        date: "November 20, 2025"
+    },
+    {
+        id: 2,
+        imgSrc: "/assets/community/how-to-webinar-28-oct.png",
+        title: "‘How to’ Webinar Series Drive Compliance",
+        videoId: "gd1xciPwVSY",
+        date: "October 28, 2025"
+    },
+    {
+        id: 3,
+        imgSrc: "/assets/community/how-to-webinar-9-oct.png",
+        title: "‘How to’ Webinar Series Dashboard Walkthrough",
+        videoId: "zyb4xO-Swvg",
+        date: "October 9, 2025"
+    },
+    {
+        id: 4,
+        imgSrc: "/assets/community/how-to-webinar-25.png",
+        title: "‘How to’ Webinar Series Offboarding Policy",
+        videoId: "i8LqMLuo-WU",
+        date: "September 25, 2025"
+    },
+    {
+        id: 5,
+        imgSrc: "/assets/community/how-to-webinar-thumbnail.png",
+        title: "‘How to’ Webinar Series Email Signature Management",
+        videoId: "Cp1QN7e89ns",
+        date: "September 11, 2025"
+    },
+    {
+        id: 6,
         imgSrc: "/assets/community/using-app-script-with-appsheet.png",
         title: " Using App Script with AppSheet- Going Beyond No Code",
         videoId: "hLdzMmhQlLc",
         date: "September 5, 2025"
-    },
-    {
-        id: 2,
-        imgSrc: "/assets/community/automate-your-blog.png",
-        title: "Automate Your Blog with AI Agents",
-        videoId: "xQ8T79DgmA4",
-        date: "August 29, 2025"
-
-    },
-    {
-        id: 3,
-        imgSrc: "/assets/community/start-ups-and-downs.png",
-        title: "Start Ups and Downs: Parachutes that Worked/Failed",
-        videoId: "ai2uaL3fIVE",
-        date: "July 28, 2025"
-
-    },
-    {
-        id: 4,
-        imgSrc: "/assets/community/spotlight-with-paul.png",
-        title: " Spotlight with Paul Barnes from MAP",
-        videoId: "b08GZk8fZ30",
-        date: "May 31, 2025"
-
-    },
-    {
-        id: 5,
-        imgSrc: "/assets/community/appsheet.png",
-        title: " AppSheet with Steegle.com",
-        videoId: "rNwUo-g2TgI",
-        date: "May 27, 2025"
-
-    },
-    {
-        id: 6,
-        imgSrc: "/assets/community/gemini-for-google-workspace.png",
-        title: " Gemini for Google Workspace",
-        videoId: "8sivbRpPeyM",
-        date: "April 3, 2025"
-
     },
 ];

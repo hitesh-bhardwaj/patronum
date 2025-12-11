@@ -1,34 +1,34 @@
-import Layout from '@/components/Layout'
-import Features from '@/components/PageComponents/CommunityPage/Features'
-import Group from '@/components/PageComponents/CommunityPage/Group'
-import Hero from '@/components/PageComponents/CommunityPage/Hero'
-import Hosting from '@/components/PageComponents/CommunityPage/Hosting'
-import JoinCommunity from '@/components/PageComponents/CommunityPage/JoinCommunity'
-import Network from '@/components/PageComponents/CommunityPage/Network'
-import UpcomingWebinars from '@/components/PageComponents/CommunityPage/UpcomingWebinars'
-import Webinars from '@/components/PageComponents/CommunityPage/Webinars'
-import Faqs from '@/components/PageComponents/FeaturesPage/Faq'
-import React, { useEffect } from 'react'
+import Layout from "@/components/Layout";
+import Features from "@/components/PageComponents/CommunityPage/Features";
+import Group from "@/components/PageComponents/CommunityPage/Group";
+import Hero from "@/components/PageComponents/CommunityPage/Hero";
+import Hosting from "@/components/PageComponents/CommunityPage/Hosting";
+import JoinCommunity from "@/components/PageComponents/CommunityPage/JoinCommunity";
+import Network from "@/components/PageComponents/CommunityPage/Network";
+import UpcomingWebinars from "@/components/PageComponents/CommunityPage/UpcomingWebinars";
+import Webinars from "@/components/PageComponents/CommunityPage/Webinars";
+import Faqs from "@/components/PageComponents/FeaturesPage/Faq";
+import React, { useEffect } from "react";
 import SplitType from "split-type";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import MetaData from '@/components/PageLayout/MetaData'
-import Testimonial from '@/components/PageComponents/CommunityPage/Testimonial'
+import MetaData from "@/components/PageLayout/MetaData";
+import Testimonial from "@/components/PageComponents/CommunityPage/Testimonial";
 gsap.registerPlugin(ScrollTrigger);
 
 const page = () => {
   useEffect(() => {
-    const headings = document.querySelectorAll('.text-anim');
+    const headings = document.querySelectorAll(".text-anim");
 
     headings.forEach((heading) => {
       let ctx = gsap.context(() => {
-        const textAnim = new SplitType(heading, { types: 'words' });
-        let animWord = heading.querySelectorAll('.word');
+        const textAnim = new SplitType(heading, { types: "words" });
+        let animWord = heading.querySelectorAll(".word");
 
         gsap.from(animWord, {
           scrollTrigger: {
             trigger: heading,
-            start: 'top 80%',
+            start: "top 80%",
           },
           duration: 0.6,
           yPercent: 100,
@@ -39,15 +39,15 @@ const page = () => {
     });
   }, []);
 
-
-
   useEffect(() => {
-    const pricingCards = document.querySelectorAll('.pricing-card-wrapper .pricing-card');
+    const pricingCards = document.querySelectorAll(
+      ".pricing-card-wrapper .pricing-card"
+    );
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".pricing-card-wrapper",
         start: "top 85%",
-      }
+      },
     });
 
     tl.fromTo(
@@ -61,13 +61,13 @@ const page = () => {
         y: 0,
         duration: 0.6,
         stagger: 0.1,
-        ease: 'Power2.out',
+        ease: "Power2.out",
       }
     );
   }, []);
 
   useEffect(() => {
-    const fadeRights = document.querySelectorAll('.fadeRight');
+    const fadeRights = document.querySelectorAll(".fadeRight");
 
     let ctx = gsap.context(() => {
       fadeRights.forEach((fadeRight) => {
@@ -82,10 +82,10 @@ const page = () => {
             x: 0,
             duration: 0.6,
             stagger: 0.05,
-            ease: 'Power3.out',
+            ease: "Power3.out",
             scrollTrigger: {
               trigger: fadeRight,
-              start: 'top 85%',
+              start: "top 85%",
             },
           }
         );
@@ -95,7 +95,7 @@ const page = () => {
   }, []);
 
   useEffect(() => {
-    const lineDraws = document.querySelectorAll('.lineDraw');
+    const lineDraws = document.querySelectorAll(".lineDraw");
 
     let ctx = gsap.context(() => {
       lineDraws.forEach((lineDraw) => {
@@ -103,15 +103,15 @@ const page = () => {
           lineDraw,
           {
             scaleX: 0,
-            transformOrigin: 'left'
+            transformOrigin: "left",
           },
           {
             scaleX: 1,
             duration: 1,
-            ease: 'Power4.out',
+            ease: "Power4.out",
             scrollTrigger: {
               trigger: lineDraw,
-              start: 'top 90%',
+              start: "top 90%",
             },
           }
         );
@@ -121,7 +121,7 @@ const page = () => {
   }, []);
 
   useEffect(() => {
-    const scaleAnims = document.querySelectorAll('.scaleAnim');
+    const scaleAnims = document.querySelectorAll(".scaleAnim");
 
     let ctx = gsap.context(() => {
       scaleAnims.forEach((scaleAnim) => {
@@ -131,18 +131,18 @@ const page = () => {
             scale: 1.1,
             y: 40,
             opacity: 0,
-            transformOrigin: 'bottom center'
+            transformOrigin: "bottom center",
           },
           {
             y: 0,
             scale: 1,
             opacity: 1,
             duration: 0.8,
-            ease: 'Power4.out',
+            ease: "Power4.out",
             scrollTrigger: {
               trigger: scaleAnim,
-              start: 'top bottom',
-              end: 'bottom 85%',
+              start: "top bottom",
+              end: "bottom 85%",
             },
           }
         );
@@ -151,7 +151,7 @@ const page = () => {
     return () => ctx.revert();
   }, []);
   useEffect(() => {
-    const fadeUps = document.querySelectorAll('.fadeUp');
+    const fadeUps = document.querySelectorAll(".fadeUp");
 
     let ctx = gsap.context(() => {
       fadeUps.forEach((fadeUp) => {
@@ -165,10 +165,10 @@ const page = () => {
             opacity: 1,
             y: 0,
             duration: 0.6,
-            ease: 'Power3.out',
+            ease: "Power3.out",
             scrollTrigger: {
               trigger: fadeUp,
-              start: 'top 85%',
+              start: "top 85%",
             },
           }
         );
@@ -178,15 +178,15 @@ const page = () => {
   }, []);
   return (
     <>
-     <MetaData 
-                title="Google Workspace Community: Webinars, Networking & Insights | Patronum"
-                description="Join Patronum's exclusive Google Workspace Community for IT admins and partners. Access free webinars, expert discussions, real-world solutions, and networking opportunities to optimize your Workspace management. Sign up today!"
-                url="google-workspace-community"
-                img={"google-workspace-community.png"}
-                date_published="2025-09-10T12:00"
-                date_modified="2025-09-10T12:00"
-                keywords={"Patronum,Google Workspace Community"}
-              />
+      <MetaData
+        title="Google Workspace Community: Webinars, Networking & Insights | Patronum"
+        description="Join Patronum's exclusive Google Workspace Community for IT admins and partners. Access free webinars, expert discussions, real-world solutions, and networking opportunities to optimize your Workspace management. Sign up today!"
+        url="google-workspace-community"
+        img={"google-workspace-community.png"}
+        date_published="2025-09-10T12:00"
+        date_modified="2025-09-10T12:00"
+        keywords={"Patronum,Google Workspace Community"}
+      />
       <Layout>
         <main>
           <Hero />
@@ -202,7 +202,7 @@ const page = () => {
         </main>
       </Layout>
     </>
-  )
-}
+  );
+};
 
-export default page
+export default page;

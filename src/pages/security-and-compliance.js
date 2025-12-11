@@ -71,8 +71,8 @@ function security() {
       contentTop: "The General Data Protection Regulation (GDPR) represents a significant overhaul of data protection legislation in the European Union.",
       description: "Compliance with GDPR is crucial for any organization that processes the data of EU citizens, regardless of its location. At Patronum, GDPR compliance is paramount, ensuring that personal data is processed transparently, securely, and in a manner that preserves the privacy of the individuals. This regulation empowers individuals to have control over their personal data, with strict guidelines on processing personal information. Our compliance helps in building trust with our customers by enhancing our reputation as a secure and trustworthy data processor.",
       imgSrc: "gdpr-compliance.svg",
-      link: "https://www.gdpreu.org/gdpr-requirements/",
-      btnText: "View Guidelines"
+      link: "https://docs.google.com/document/d/1pSC34pf93sM81LImK9HIcs70R-0JHykKWwdmlrzWvX4/edit?tab=t.0",
+      btnText: "View Policy"
     },
     {
       id: "8",
