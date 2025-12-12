@@ -68,15 +68,16 @@ function BreakDown({ roi, currency }) {
   const chartConfig = {
     chrome: {
       label: "Compliance Risk Mitigation",
-      color: "#FFBB32",
+      color: "#1069DF",
     },
+    
     safari: {
       label: "Staff Cost Savings",
-      color: "#1069DF",
+      color: "#FE002F",
     },
     firefox: {
       label: "License Optimization",
-      color: "#FE002F",
+      color: "#FFBB32",
     },
   };
 
@@ -209,15 +210,15 @@ function BreakDown({ roi, currency }) {
 
             <div className="w-full flex lg:gap-[2vw] gap-x-[5vw] gap-y-[4vw] flex-wrap justify-center mt-4">
               <div className="flex gap-[0.5vw] items-center fadeUp">
-                <div className="w-4 h-4 bg-[#FFBB32] rounded-full" />
+                <div className="w-4 h-4 bg-[#1069DF] rounded-full" />
                 Compliance Risk Mitigation
               </div>
               <div className="flex gap-[0.5vw] items-center fadeUp">
-                <div className="w-4 h-4 bg-[#1069DF] rounded-full" />
+                <div className="w-4 h-4 bg-[#FE002F] rounded-full" />
                 Staff Cost Savings
               </div>
               <div className="flex gap-[0.5vw] items-center fadeUp">
-                <div className="w-4 h-4 bg-[#FE002F] rounded-full" />
+                <div className="w-4 h-4 bg-[#FFBB32] rounded-full" />
                 License Optimization
               </div>
             </div>
