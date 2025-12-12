@@ -8,6 +8,7 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 import { formatMoney, formatNumber } from "@/lib/roi-math";
+import { convertCurrency } from "@/lib/currency-data";
 import LinkButton from "../Buttons/LinkButton";
 import gsap from "gsap";
 import RoiBreakDownCards from "./RoiBreakDownCards";
@@ -21,35 +22,45 @@ function BreakDown({ roi, currency }) {
     riskSavings,
   } = roi;
 
+  // ✅ Convert ALL money values from USD → selected currency
+  const converted = {
+    totalSavings: convertCurrency(totalSavings, currency),
+    timeSavings, // hours stay the same, no conversion needed
+    licenseSavings: convertCurrency(licenseSavings, currency),
+    staffSavings: convertCurrency(staffSavings, currency),
+    riskSavings: convertCurrency(riskSavings, currency),
+  };
+
   const summaryCards = [
     {
       id: "total-savings",
-      value: formatMoney(totalSavings, currency),
+      value: formatMoney(converted.totalSavings, currency),
       title: "Total Annual Savings",
     },
     {
       id: "time-saved",
-      value: `${formatNumber(timeSavings)} hours`,
+      value: `${formatNumber(converted.timeSavings)} hours`,
       title: "Time Saved Annually",
     },
   ];
 
   const rows = [summaryCards];
 
+  // ✅ Pie chart also uses converted values
   const chartData = [
     {
       browser: "Compliance Risk Mitigation",
-      visitors: riskSavings,
+      visitors: converted.riskSavings,
       fill: "var(--color-chrome)",
     },
     {
       browser: "Staff Cost Savings",
-      visitors: staffSavings,
+      visitors: converted.staffSavings,
       fill: "var(--color-safari)",
     },
     {
       browser: "License Optimization",
-      visitors: licenseSavings,
+      visitors: converted.licenseSavings,
       fill: "var(--color-firefox)",
     },
   ];
@@ -70,7 +81,6 @@ function BreakDown({ roi, currency }) {
   };
 
   const handleScrollToBreakdown = (e) => {
-    // if LinkButton renders an <a>, prevent navigation jump
     if (e && e.preventDefault) e.preventDefault();
     const el = document.getElementById("breakdown");
     if (el) {
@@ -89,7 +99,7 @@ function BreakDown({ roi, currency }) {
       });
     });
     return () => ctx.revert();
-  });
+  }, []);
 
   return (
     <>
@@ -98,7 +108,7 @@ function BreakDown({ roi, currency }) {
         className="lg:min-h-fit lg:pb-[7%] lg:py-0 py-[10%] pb-[7%] lg:h-full w-screen h-fit flex items-center text-[#111111]"
         id="roi"
       >
-        <div className="flex flex-col items-end w-full container-lg lg:px-[7vw] lg:gap-[3vw] gap-[7vw]">
+        <div className="flex flex-col items-end w-full container-lg lg:px-[5vw] lg:gap-[3vw] gap-[7vw]">
           <div className="w-fit linkbtn">
             <LinkButton
               btnText="View Details"
@@ -109,7 +119,10 @@ function BreakDown({ roi, currency }) {
 
           <div className="w-full flex flex-col gap-[2vw] fadeUp">
             {rows.map((row, rowIndex) => (
-              <div key={rowIndex} className="flex lg:flex-row flex-col lg:gap-[2vw] gap-[4vw] w-full ">
+              <div
+                key={rowIndex}
+                className="flex lg:flex-row flex-col lg:gap-[2vw] gap-[4vw] w-full "
+              >
                 {row.map((card) => (
                   <RoiBreakDownCards
                     key={card.id}
@@ -128,7 +141,7 @@ function BreakDown({ roi, currency }) {
         className="lg:min-h-fit lg:h-full w-screen h-fit flex items-center text-[#111111] lg:pb-[7%] lg:py-0 py-[15%]"
         id="breakdown"
       >
-        <div className="w-full flex lg:flex-row flex-col justify-between container-lg lg:px-[7vw] h-full items-center ">
+        <div className="w-full flex lg:flex-row flex-col justify-between container-lg lg:px-[5vw] h-full items-center ">
           <div className="lg:w-[45%] lg:space-y-[4vw] space-y-[10vw]">
             <h2 className="title-4xl text-anim">
               <span>Savings breakdown</span>
@@ -138,7 +151,7 @@ function BreakDown({ roi, currency }) {
               {/* Risk */}
               <div className="w-full h-fit lg:rounded-[0.8vw] rounded-[2.5vw] bg-white/40 backdrop-blur-md border border-black/10 lg:p-[2vw] p-[4vw] flex flex-col justify-between lg:py-[10%] lg:gap-[2vw] gap-[6vw] fadeUp">
                 <p className="text-4xl font-head">
-                  {formatMoney(riskSavings, currency)}
+                  {formatMoney(converted.riskSavings, currency)}
                 </p>
                 <div className="lg:space-y-[1vw] space-y-[4vw]">
                   <h3 className="title-3xl">Compliance Risk Mitigation</h3>
@@ -152,7 +165,7 @@ function BreakDown({ roi, currency }) {
               {/* Staff */}
               <div className="w-full h-fit lg:rounded-[0.8vw] rounded-[2.5vw] bg-white/40 backdrop-blur-md border border-black/10 lg:p-[2vw] p-[4vw] flex flex-col justify-between py-[10%] lg:gap-[2vw] gap-[6vw] fadeUp">
                 <p className="text-4xl font-head">
-                  {formatMoney(staffSavings, currency)}
+                  {formatMoney(converted.staffSavings, currency)}
                 </p>
                 <div className="lg:space-y-[1vw] space-y-[4vw]">
                   <h3 className="title-3xl">Staff Cost Savings</h3>
@@ -166,7 +179,7 @@ function BreakDown({ roi, currency }) {
               {/* License */}
               <div className="w-full h-fit lg:rounded-[0.8vw] rounded-[2.5vw] bg-white/40 backdrop-blur-md border border-black/10 lg:p-[2vw] p-[4vw] flex flex-col justify_between py-[10%] lg:gap-[2vw] gap-[6vw] fadeUp">
                 <p className="text-4xl font-head">
-                  {formatMoney(licenseSavings, currency)}
+                  {formatMoney(converted.licenseSavings, currency)}
                 </p>
                 <div className="lg:space-y-[1vw] space-y-[4vw]">
                   <h3 className="title-3xl">License Optimization</h3>

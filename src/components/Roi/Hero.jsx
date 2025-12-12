@@ -70,7 +70,7 @@ function Hero({
       typeof window !== "undefined" &&
       window.sessionStorage.getItem("hasVisited") === null;
 
-    const delay = isFirstTimeLoading ? 3.4 : 0.6;
+    const delay = 0.6;
 
     const ctx = gsap.context(() => {
       const heroPara = para.current;
@@ -166,12 +166,12 @@ function Hero({
     <section
       ref={section}
       id="hero"
-      className="lg:h-[80vh] lg:py-[10%] w-screen h-fit flex items-center"
+      className="lg:h-[90vh] lg:py-[10%] w-screen h-fit flex items-center lg:pt-[12%]"
     >
-      <div className="container-lg lg:px-[7vw] relative lg:mb-0 mb-[10vw]">
+      <div className="container-lg lg:px-[5vw] relative lg:mb-0 mb-[10vw]">
         <div className="flex lg:flex-row lg:justify-between lg:gap-[4vw] flex-col gap-[8vw]">
           {/* LEFT SECTION */}
-          <div className="w-full lg:w-[40%] flex flex-col gap-y-10 pt-[25vw] md:pt-[20vw] lg:pt-0">
+          <div className="w-full lg:w-[35%] flex flex-col gap-y-10 pt-[25vw] md:pt-[20vw] lg:pt-0">
             <h1 className="title-4xl hero-anim flex gap-[2vw] lg:gap-0 flex-wrap items-end">
               <div className="overflow-hidden">
                 <span className="span block">Calculate your </span>
