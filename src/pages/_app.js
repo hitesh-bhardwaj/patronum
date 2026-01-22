@@ -96,7 +96,7 @@ export default function App({ Component, pageProps, router }) {
           }}
         />
 
-        <script
+        {/* <script
           defer
           dangerouslySetInnerHTML={{
             __html: `!function () {
@@ -128,7 +128,7 @@ export default function App({ Component, pageProps, router }) {
         reb2b.load("7N850HQ11KN1");
       }();`,
           }}
-        />
+        /> */}
       </Head>
 
       <Cookie />

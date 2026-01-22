@@ -40,6 +40,7 @@
     "crisp-sdk-web": "^1.0.22",
     "critters": "^0.0.22",
     "cross-env": "^7.0.3",
+    "cross-fetch": "^4.1.0",
     "crypto": "^1.0.1",
     "date-fns": "^3.0.6",
     "debounce": "^2.0.0",

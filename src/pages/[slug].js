@@ -260,28 +260,53 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  try {
-    const { slug } = params;
-    const { post } = await getPostBySlug(slug);
-    const recentPosts = await getHomePagePosts();
+  const { slug } = params;
+  const maxRetries = 3;
+  let lastError;
 
-    if (!post) {
+  // Retry logic for failed API calls to prevent 404s during ISR
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      const { post } = await getPostBySlug(slug);
+
+      if (!post) {
+        console.warn(`[ISR] Post not found in WordPress: ${slug}`);
+        return {
+          notFound: true,
+          revalidate: 3600, // Try again in 1 hour
+        };
+      }
+
+      const recentPosts = await getHomePagePosts();
+
+      console.log(`[ISR] Successfully generated page for: ${slug} (attempt ${attempt})`);
+
       return {
-        notFound: true,
+        props: {
+          post,
+          recentPosts
+        },
+        revalidate: 3600, // 1 hour - reduced from 60s to prevent frequent ISR failures
       };
-    }
+    } catch (error) {
+      lastError = error;
+      console.error(`[ISR] Attempt ${attempt}/${maxRetries} failed for ${slug}:`, error.message);
 
-    return {
-      props: {
-        post,
-        recentPosts,
-      },
-      revalidate: 60,
-    };
-  } catch (error) {
-    console.error('Error fetching data:', error);
-    return {
-      notFound: true,
-    };
+      // Wait before retry with exponential backoff
+      if (attempt < maxRetries) {
+        const delay = 1000 * attempt; // 1s, 2s, 3s
+        console.log(`[ISR] Retrying ${slug} in ${delay}ms...`);
+        await new Promise(resolve => setTimeout(resolve, delay));
+      }
+    }
   }
+
+  // After all retries failed, log error and return 404 with shorter revalidate
+  console.error(`[ISR] All ${maxRetries} retries failed for ${slug}. Last error:`, lastError?.message);
+  console.error(`[ISR] Stack trace:`, lastError?.stack);
+
+  return {
+    notFound: true,
+    revalidate: 300, // Retry failed pages sooner (5 minutes)
+  };
 }
