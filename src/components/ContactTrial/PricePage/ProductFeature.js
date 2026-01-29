@@ -1,10 +1,5 @@
-
-
-
-
 import SectionTitle from '@/components/PageLayout/SectionTitle';
 import React, { useState } from 'react';
-import styles from '@/styles/pricing.module.css';
 import {
     Accordion,
     AccordionContent,
@@ -197,22 +192,22 @@ const ProductFeatures = () => {
                             />
                         </div>
 
-                        <div className={`${styles.wrapper} w-full`}>
+                        <div className={` w-full`}>
                             <Accordion type="single" collapsible>
                                 {features.map((item, index) => (
                                     <>
-                                        <AccordionItem value={`item-${index}`} key={index} className={`${styles.featureItem} w-full px-[2vw] py-[20px] relative cursor-pointer scaleAnim`}>
-                                            <AccordionTrigger className={`${styles.featureMainContent} w-[90%]`}>
-                                                <h5 className={`${styles.contentHead} text-[2.5vw] font-medium text-[#616161] pb-[10px]`}>
+                                        <AccordionItem value={`item-${index}`} key={index} className={` w-full lg:py-[2vw] lg:px-[20px] relative cursor-pointer scaleAnim p-[4vw]`}>
+                                            <AccordionTrigger className={`w-[90%]`}>
+                                                <h5 className={`lg:text-[2.5vw] text-[5vw] font-medium text-[#616161] pb-[10px]`}>
                                                     {item.title}
                                                 </h5>
-                                                <div className={`${styles.featureImg} absolute right-[3vw] top-[2.5vw]`}>
-                                                    <img src={item.img} loading='lazy' alt={`${item.title} Image`} className='w-[3.5vw] transition-all duration-300' />
+                                                <div className={`absolute right-[3vw] lg:top-[2.5vw] top-[5vw]`}>
+                                                    <img src={item.img} loading='lazy' alt={`${item.title} Image`} className=' lg:w-[3.5vw] transition-all duration-300 w-[8vw]' />
                                                 </div>
                                             </AccordionTrigger>
-                                            <AccordionContent className={styles.content}>
+                                            <AccordionContent className={`my-[1vw]`}>
                                                 {item.description.map((feature, index) => (
-                                                    <span key={index} className='block' >{feature}</span>
+                                                    <span key={index} className='block lg:mx-[0.3vw] my-0  py-[0.2%] text-[#2A2A2A] lg:text-[1.25vw] before:content-["•"] before:lg:mr-[0.8vw] before:lg:ml-[10px] text-[3.5vw] mx-[2vw] before:mr-[2vw] before:ml-[1vw]' >{feature}</span>
                                                 ))}
                                             </AccordionContent>
                                         </AccordionItem>

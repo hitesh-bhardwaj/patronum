@@ -3,13 +3,11 @@ import gsap from "gsap";
 import SplitType from "split-type";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import ScrollButton from "@/components/Buttons/ScrollButton";
-import Image from "next/image";
 import BreadcrumbComponent from "../PageLayout/BreadCrumb";
-import { Contact } from "./Illustrations";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Hero({ pageTitle1, pageTitle2,boldpara, pagePara, imgSrc, breadcrumbTitle, breadcrumbLink }) {
+export default function Hero({ pageTitle1, pageTitle2,boldpara, pagePara, svgElement, breadcrumbTitle, breadcrumbLink }) {
 
     useEffect(() => {
         const isFirstTimeLoading = sessionStorage.getItem('hasVisited') === null;
@@ -270,8 +268,7 @@ export default function Hero({ pageTitle1, pageTitle2,boldpara, pagePara, imgSrc
                         <div className="page-hero-right lg:w-[35%] text-center w-full flex justify-center">
                             <div className="page-hero-img lg:w-full md:w-[60%] w-[70%]">
                                 {/* <Image width={400} height={500} className="w-full h-full" src={`/assets/heroSections/${imgSrc}`} alt={`${pageTitle1} Image`} title={`${pageTitle1} Image`} /> */}
-                                <Contact className={"w-full h-full"}/>
-
+                                {svgElement}
                             </div>
                         </div>
                     </div>

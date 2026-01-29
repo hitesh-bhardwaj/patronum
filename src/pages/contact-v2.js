@@ -1,5 +1,6 @@
 import FormSection from "@/components/ContactTrial/FormSection";
 import Hero from "@/components/ContactTrial/Hero";
+import { ContactHero } from "@/components/Illustrations/ContactHero";
 import Layout from "@/components/Layout";
 import MetaData from "@/components/PageLayout/MetaData";
 
@@ -20,6 +21,7 @@ export default function Contact() {
                 <main>
                     <Hero pageTitle1={'Contact Us'}
                         pagePara={"Say Hello! We Promise Good Vibes and Great Coffee! ☕"}
+                        svgElement={<ContactHero className={"h-full w-full"} />}
                         imgSrc={'contact.svg'} />
                     <FormSection />
                 </main>

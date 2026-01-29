@@ -48,8 +48,8 @@ const FormSection = () => {
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href='https://twitter.com/Patronum_io' target="_blank" rel="noopener" prefetch={false}>
-                                            <Twitter className={"h-6 w-6"} aria-label="Patronum's Twitter Account"/>
+                                            <Link href='https://twitter.com/Patronum_io' target="_blank" rel="noopener" prefetch={false} aria-label="Patronum's Twitter Account">
+                                            <Twitter className={"h-6 w-6"} />
                                             </Link>
                                         </li>
                                         <li>

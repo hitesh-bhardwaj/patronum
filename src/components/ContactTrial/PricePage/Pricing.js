@@ -30,7 +30,7 @@ const Pricing = () => {
         <div className='container'>
           <div className='content-2'>
 
-            <div className='pricing-head'>
+            <div className=''>
               <h2 className='title-4xl text-anim lg:mb-[3vw]'>
                 <span>
                   Find the Plan that is right
@@ -42,8 +42,8 @@ const Pricing = () => {
               </h2>
             </div>
 
-            <div className='pricing-main'>
-              <div className='grid lg:w-[90%] lg:mx-auto lg:grid-cols-2 lg:gap-x-[4vw] lg:gap-y-[4vw]'>
+            <div className=''>
+              <div className='grid lg:w-[90%] lg:mx-auto lg:grid-cols-2 lg:gap-x-[4vw] lg:gap-y-[4vw] mt-[10vw] lg:mt-0'>
                 <PricingCard
                   category="Education & Non-Profit"
                   pricingImage='/assets/pricing/pricing-illustration-1.svg'

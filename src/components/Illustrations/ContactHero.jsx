@@ -1,4 +1,4 @@
-export const Contact=({className})=>{
+export const ContactHero=({className})=>{
 return(
     <>
     <svg className={className} width="500" height="369" viewBox="0 0 500 369" fill="none" xmlns="http://www.w3.org/2000/svg">
