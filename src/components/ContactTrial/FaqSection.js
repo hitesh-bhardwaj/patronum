@@ -77,26 +77,26 @@ const Faqs = ({ featureName }) => {
               </h2>
             </div>
 
-            <div className='faq-wrapper'>
+            <div className=' w-full mt-[10vw] lg:mt-0'>
               <span className='h-[1px] bg-[#1a1a1a] w-full lineDraw block' />
               <Accordion type="single" collapsible>
                 {filteredFaqData.slice(0, visibleFaqs).map((item, index) => (
-                  <AccordionItem value={`item-${item.id}`} key={index} className="faq-item-content scaleAnim">
-                    <AccordionTrigger className="title-2xl pb-2 relative px-[2vw] lg:py-[2vw] py-[5vw] w-[90%] flex items-center">
-                      <div className='faq-number'>
+                  <AccordionItem value={`item-${item.id}`} key={index} className="scaleAnim w-full">
+                    <AccordionTrigger className="group title-2xl pb-2 relative px-[2vw] lg:!py-[2vw]  py-[4vw] w-[90%] flex items-center md:!py-[4vw]">
+                      <div className=' mt-[2vw] text-[11px] w-[24px] h-[24px] lg:!text-[1vw] font-normal border border-[#2a2a2a] rounded-full lg:!w-[2.3vw] lg:!h-[2.3vw] flex items-center justify-center lg:mt-[0.7vw] md:!text-[2.5vw] md:!w-[5vw] md:!h-[5vw]'>
                         <span className='aeonik'>
                           {item.id}{" "}
                         </span>
                       </div>
-                      <div className='faq-main-content'>
+                      <div className='lg:w-[85%] w-[76%] md:!w-[76%]'>
                         {item.title}
                       </div>
-                      <div className="feat-accordion-btn">
-                        <span className="plus" />
-                        <span className="minus" />
+                      <div className="absolute lg:!w-[3vw] lg:!h-[3vw] bg-[#FDFDFD] lg:!right-[10px] lg:!top-[2.5vw] border border-[#E2E2E2] rounded-full transiton-all duration-300 ease-linear flex items-center justify-center pointer-events-none group-data-[state=open]:bg-primary group-data-[state=open]:border-primary w-[8vw] h-[8vw] top-[5vw] right-[1vw] md:!top-[4vw] md:!w-[7vw] md:!h-[7vw]">
+                        <span className=" bg-primary lg:h-[3px] w-[40%] absolute transition-all duration-300 ease-linear  rotate-90 h-[2px] md:h-[3px]"/>
+                        <span className=" bg-primary lg:h-[3px] w-[40%] absolute transition-all duration-300 ease-linear group-data-[state=open]:bg-white h-[2px] md:h-[3px]" />
                       </div>
                     </AccordionTrigger>
-                    <AccordionContent className="content-p faq-main-content ml-[7vw] features">
+                    <AccordionContent className="lg:text-[1.15vw] lg:!ml-[7vw]  lg:w-[80%] w-[80%] text-[3.5vw] ml-[10vw] mt-[2vw] lg:!mt-0 md:text-[3.5vw] md:!w-[70%] md:!ml-[11vw]">
                       <span dangerouslySetInnerHTML={{ __html: item.content }} />
                     </AccordionContent>
                     <span className='h-[1px] bg-[#1a1a1a] w-full lineDraw block' />

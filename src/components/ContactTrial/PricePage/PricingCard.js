@@ -13,7 +13,7 @@ const PricingCard = ({ features, category, pricingImage,price, href }) => {
       <div className={` h-full`}>
         <div>
         {features.map((feature, index) => (
-          <h4 key={index}><span>✓</span><span className='ml-[1vw] text-[#2A2A2A] lg:text-[1.25vw] leading-[2.5] text-[4.5vw] gap-[2vw] lg:gap-0 md:gap-0'>{feature}</span></h4>
+          <h4 key={index}><span className='ml-[1vw] text-[#2A2A2A] lg:text-[1.25vw] leading-[2.5] text-[4.5vw] gap-[2vw] lg:gap-0 md:gap-0'>✓</span><span className='ml-[1vw] text-[#2A2A2A] lg:text-[1.25vw] leading-[2.5] text-[4.5vw] gap-[2vw] lg:gap-0 md:gap-0'>{feature}</span></h4>
         ))}
 
         </div>
