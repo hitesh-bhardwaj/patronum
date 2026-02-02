@@ -106,6 +106,13 @@ export default Webinars
 const webinars = [
     {
         id: 1,
+        imgSrc: "/assets/community/how-to-webinar-thumbnail-18-dec.png",
+        title: "‘How to’ Webinar Series : 12 Days of Patronum",
+        videoId: "imk_dE6doCc",
+        date: "December 18, 2025"
+    },
+    {
+        id: 1,
         imgSrc: "/assets/community/how-to-webinar-20-nov.png",
         title: "‘How to’ Webinar Series Fireside Chat- Email Signature Management",
         videoId: "eZZ4Nf3ee0k",
@@ -139,11 +146,5 @@ const webinars = [
         videoId: "Cp1QN7e89ns",
         date: "September 11, 2025"
     },
-    {
-        id: 6,
-        imgSrc: "/assets/community/using-app-script-with-appsheet.png",
-        title: " Using App Script with AppSheet- Going Beyond No Code",
-        videoId: "hLdzMmhQlLc",
-        date: "September 5, 2025"
-    },
+    
 ];

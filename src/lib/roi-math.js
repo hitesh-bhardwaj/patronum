@@ -5,7 +5,7 @@
 // such that for: employees=150, churn=5, risk=Medium
 // Staff = $3,330 and Total = $58,050
 
-export const LICENSE_COST = 26.40;
+export const LICENSE_COST = 16.0;
 
 // Use 444 here to match your working HTML behavior
 export const LABOR_SAVINGS = 840.0;

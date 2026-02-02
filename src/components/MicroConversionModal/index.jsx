@@ -5,79 +5,40 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import PrimaryButton from "../Buttons/PrimaryButton";
 import { useModal } from "../Modals/ModalContext";
-
-const NORMAL_KEY = "roi-exit-intent-shown";
-const COMMUNITY_KEY = "community-exit-intent-contact-shown";
+// import { useModal } from "@/context/modal-context"; // 🔁 change path if needed
 
 function ExitIntentModal() {
   const [open, setOpen] = useState(false);
-  const [hasScrolledEnough, setHasScrolledEnough] = useState(false);
   const pathname = usePathname();
-  const { openModal } = useModal();
+  const { openModal } = useModal(); // from your ModalProvider
 
-  // Track scroll depth (50vh)
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    const handleScroll = () => {
-      const scrollY = window.scrollY || window.pageYOffset;
-      const viewportHeight = window.innerHeight || 0;
-      if (viewportHeight && scrollY >= viewportHeight * 1.0) {
-        setHasScrolledEnough(true);
-        window.removeEventListener("scroll", handleScroll);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  // Exit-intent logic
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    if (!hasScrolledEnough) return; // only after 50vh scroll
-
-    const isCommunity = pathname === "/google-workspace-community";
+    // Only show once per session (for both variants)
+    const hasShown = window.sessionStorage.getItem("roi-exit-intent-shown");
+    if (hasShown) return;
 
     const handleMouseOut = (e) => {
       const toElement = e.relatedTarget || e.toElement;
 
-      // Exit at top of viewport
+      // Exit intent: cursor leaves viewport at the top
       if (!toElement && e.clientY <= 10) {
-        const normalShown =
-          window.sessionStorage.getItem(NORMAL_KEY) === "true";
-        const communityShown =
-          window.sessionStorage.getItem(COMMUNITY_KEY) === "true";
+        window.sessionStorage.setItem("roi-exit-intent-shown", "true");
 
-        if (isCommunity) {
-          // /google-workspace-community → show contact modal ONCE
-          if (!communityShown) {
-            window.sessionStorage.setItem(COMMUNITY_KEY, "true");
-            openModal && openModal("contact");
-          }
+        // 🔹 Special case: community page → open context modal
+        if (pathname === "/google-workspace-community") {
+          openModal && openModal("contact");
         } else {
-          // All other routes → normal microconversion modal ONCE
-          if (!normalShown) {
-            window.sessionStorage.setItem(NORMAL_KEY, "true");
-            setOpen(true);
-          }
+          // 🔹 All other routes → show this microconversion modal
+          setOpen(true);
         }
 
         document.removeEventListener("mouseout", handleMouseOut);
       }
     };
 
-    // Avoid adding listener if this route's modal is already shown
-    // const isCommunity = pathname === "/google-workspace-community";
-    const alreadyShown = isCommunity
-      ? window.sessionStorage.getItem(COMMUNITY_KEY) === "true"
-      : window.sessionStorage.getItem(NORMAL_KEY) === "true";
-
-    if (alreadyShown) return;
-
+    // Desktop only to avoid weird mobile behavior
     if (window.innerWidth >= 768) {
       document.addEventListener("mouseout", handleMouseOut);
     }
@@ -85,20 +46,20 @@ function ExitIntentModal() {
     return () => {
       document.removeEventListener("mouseout", handleMouseOut);
     };
-  }, [pathname, hasScrolledEnough, openModal]);
+  }, [pathname, openModal]);
 
   const handleClose = () => {
     setOpen(false);
     if (typeof window !== "undefined") {
-      window.sessionStorage.setItem(NORMAL_KEY, "true");
+      window.sessionStorage.setItem("roi-exit-intent-shown", "true");
     }
   };
 
-  // This modal never actually opens on /google-workspace-community
-  // because there we only trigger openModal("contact")
+  // On /google-workspace-community we *only* use context modal,
+  // so this JSX will never be shown there (open stays false).
   return (
     <div
-      className={`w-screen h-screen z-[900] fixed inset-0 bg-black/30 backdrop-blur-md duration-500 ease-out justify-center items-center hidden lg:flex ${
+      className={`w-screen h-screen z-[900] fixed inset-0 bg-black/30 backdrop-blur-md duration-500 ease-out  justify-center items-center hidden lg:flex ${
         open ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >

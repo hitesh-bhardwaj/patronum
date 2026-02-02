@@ -279,6 +279,13 @@ const DesktopNavigation = () => {
                                             link={'/contact-us'}
                                             img={'resource-contact.svg'}
                                         />
+                                        <NavItem
+                                            title={'ROI Calculator'}
+                                            disc={'Engage With Experts Live'}
+                                            link={'/roi-calculator'}
+                                            img={'resource-webinars.svg'}
+                                        />
+                                        
                                     </ul>
                                 </m.div>
                             )}

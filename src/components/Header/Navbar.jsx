@@ -381,6 +381,12 @@ const Navbar = ({setActive,active}) => {
                     link={"/contact-us"}
                     img={"resource-contact.svg"}
                   />
+                  <NavItem
+                    title={"ROI Calculator"}
+                    disc={"Calculate Your SaaS ROI"}
+                    link={"/roi-calculator"}
+                    img={"roi-calc.svg"}
+                  />
                 </ul>
               </div>
             </MenuItem>

@@ -135,7 +135,6 @@ export default function App({ Component, pageProps, router }) {
       <Crispchat />
       <SearchProvider>
         <ModalProvider>
-
           <ReactLenis root options={{ lerp: 0.08 }}>
             <AnimatePresence mode="wait">
               <Component {...pageProps} key={router.route} />
@@ -148,11 +147,12 @@ export default function App({ Component, pageProps, router }) {
       {/* Google Tag Manager */}
       <GoogleTagManager gtmId="GTM-MDWM3Z7J" />
 
-      {/* Vercel Analytics */}
+      {/* Vercel Speed Insights */}
       <SpeedInsights
         strategy="afterInteractive"
       />
-
+      
+      {/* Vercel Analytics */}
       <Analytics
         strategy="afterInteractive"
       />

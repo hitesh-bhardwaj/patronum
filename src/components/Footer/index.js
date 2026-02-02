@@ -2,8 +2,6 @@ import Link from "next/link";
 import FooterContact from "./FooterContact";
 import styles from "./styles.module.css";
 import Newsletter from "./Newsletter";
-import Image from "next/image";
-import { Facebook, Instagram, LinkedIn, Twitter, Youtube } from "../Illustrations/SocialIcons";
 
 const Footer = () => {
 
@@ -17,58 +15,52 @@ const Footer = () => {
                     <div className='w-full h-full'>
                         <div className={styles.footerTop}>
                             <div className={`${styles.footerTopLeft} fadeUp`}>
-                                <Image className="lg:w-[50%] w-[50%]" width="311" height="75" loading='lazy' src="/logo-white.svg" alt="patronum logo" title="patronum logo" />
+                                <img className="lg:w-[50%] w-[50%]" width="311" height="75" loading='lazy' src="/logo-white.svg" alt="patronum logo" title="patronum logo" />
                                 <p className="lg:w-[85%] lg:text-[1.2vw] lg:mb-[0.5vw] font-normal leading-[1.5] md:text-[3.5vw] md:mb-[1vw] text-[4.6vw] mb-[6vw]">Your Google Workspace Manager Providing a better way to manage your Google Workspace.</p>
 
                                 <div className={`flex gap-6 ${styles.footerIso}`}>
-                                   
-                                   <Image src={"/assets/footer/ISO-1.svg"} alt="ISO Certificate" width={76} height={76}/>
-                                   <Image src={"/assets/footer/ISO-2.svg"} alt="ISO Certificate" width={76} height={76}/>
-                                   <Image src={"/assets/footer/ISO-3.svg"} alt="ISO Certificate" width={76} height={76}/>
-                                    <Image src={"/assets/footer/ISO-4.svg"} alt="ISO Certificate" width={76} height={76}/>
+                                    <img width="76" height="76" src='/assets/footer/ISO-1.svg' loading='lazy' alt='ISO Certficates' />
+                                    <img width="76" height="76" src='/assets/footer/ISO-2.svg' loading='lazy' alt='ISO Certficates' />
+                                    <img width="76" height="76" src='/assets/footer/ISO-3.svg' loading='lazy' alt='ISO Certficates' />
+                                    <img width="76" height="76" src='/assets/footer/ISO-4.svg' loading='lazy' alt='ISO Certficates' />
                                 </div>
 
                                 <div className={`flex gap-6 lg:w-[90%] md:flex-nowrap flex-wrap md:w-[70%] w-full items-center md:justify-normal justify-center ${styles.footerAward}`}>
-                                    <Image className="lg:w-[15%] md:w-[16%] w-[20%] object-contain h-auto" loading='lazy' src="/assets/footer/award-2.png" alt="Award for best ease of use image" title="Award for best ease of use image" height={70} width={78} />
-                                    <Image className="lg:w-[15%] md:w-[16%] w-[20%] object-contain h-auto" src="/assets/footer/award-1.png" alt="Award for best value image" title="Award for best value image" height={70} width={78} />
+                                    <img className="lg:w-[15%] md:w-[16%] w-[20%] object-contain h-auto" loading='lazy' src="/assets/footer/award-2.png" alt="Award for best ease of use image" title="Award for best ease of use image" />
+                                    <img className="lg:w-[15%] md:w-[16%] w-[20%] object-contain h-auto" loading='lazy' src="/assets/footer/award-1.png" alt="Award for best value image" title="Award for best value image" />
                                     <a className="lg:w-[27%] md:w-[30%] w-[30%]" href="https://cloud.google.com/find-a-partner/partner/bespin-labs-ltd" target="_blank">
-                                        <Image className="w-full h-full object-contain"  src="/assets/footer/google-partner-white.svg" alt="Patronum Google Patrner" title="Patronum Google Patrner" width={140} height={60}/>
+                                        <img className="w-full h-full object-contain" loading='lazy' src="/assets/footer/google-partner-white.svg" alt="Patronum Google Patrner" title="Patronum Google Patrner" />
                                     </a>
                                     <a className="lg:w-[27%] md:w-[28%] w-[35%]" href="https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud/services/160164702246842" target="_blank">
-                                        <Image className="object-contain h-full w-full" loading="lazy" src="/assets/footer/GOV.UK-2.png" alt="UK GOV digital marketplace logo" title="UK GOV digital marketplace logo"  width={140} height={57}/>
+                                        <img className="object-contain h-full w-full" loading="lazy" src="/assets/footer/GOV.UK-2.png" alt="UK GOV digital marketplace logo" title="UK GOV digital marketplace logo" />
                                     </a>
                                 </div>
 
                                 <div className={`${styles.socialLinks} fadeUp`}>
                                     <ul className=''>
                                         <li>
-                                            <Link href='https://www.facebook.com/patronum.io' target="_blank" rel="noopener" prefetch={false} aria-label="Patronum's Facebook Account">
-                                           <Facebook className={"h-6 w-6"}/>
-                                                {/* <img width="25" height="25" src='/assets/footer/facebook.svg' alt='social icons' /> */}
+                                            <Link href='https://www.facebook.com/patronum.io' target="_blank" rel="noopener" prefetch={false}>
+                                                <img width="25" height="25" src='/assets/footer/facebook.svg' alt='social icons' />
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href='https://www.linkedin.com/company/wearepatronum/' target="_blank" rel="noopener" prefetch={false} aria-label="Patronum's LinkedIn Account">
-                                            <LinkedIn className={"h-6 w-6"}/>
-                                                {/* <img width="25" height="25" src='/assets/footer/linkedin.svg' alt='social icons' /> */}
+                                            <Link href='https://www.linkedin.com/company/wearepatronum/' target="_blank" rel="noopener" prefetch={false}>
+                                                <img width="25" height="25" src='/assets/footer/linkedin.svg' alt='social icons' />
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href='https://twitter.com/Patronum_io' target="_blank" rel="noopener" prefetch={false} aria-label="Patronum's Twitter Account">
-                                            <Twitter className={"h-6 w-6"} />
-                                                {/* <img width="25" height="25" src='/assets/footer/twitter.svg' alt='social icons' /> */}
+                                            <Link href='https://twitter.com/Patronum_io' target="_blank" rel="noopener" prefetch={false}>
+                                                <img width="25" height="25" src='/assets/footer/twitter.svg' alt='social icons' />
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href='https://www.instagram.com/patronum.io/' target="_blank" rel="noopener" prefetch={false} aria-label="Patronum's Instagram Account">
-                                            <Instagram className={"h-6 w-6"}/>
-                                                {/* <img width="25" height="25" src='/assets/footer/instagram.svg' alt='social icons' /> */}
+                                            <Link href='https://www.instagram.com/patronum.io/' target="_blank" rel="noopener" prefetch={false}>
+                                                <img width="25" height="25" src='/assets/footer/instagram.svg' alt='social icons' />
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href='https://www.youtube.com/@wearepatronum' target="_blank" rel="noopener" prefetch={false} aria-label="Patronum's YouTube Account">
-                                            <Youtube className={"h-6 w-6"}/>
-                                                {/* <img width="25" height="25" src='/assets/footer/youtube.svg' alt='social icons' /> */}
+                                            <Link href='https://www.youtube.com/@wearepatronum' target="_blank" rel="noopener" prefetch={false}>
+                                                <img width="25" height="25" src='/assets/footer/youtube.svg' alt='social icons' />
                                             </Link>
                                         </li>
                                     </ul>
@@ -163,7 +155,7 @@ const Footer = () => {
                         <span className="drawLine h-[1px] bg-white/50 w-full block" />
 
                         <div className="py-6 lg:text-[0.9vw] md:text-[2.5vw] lg:pr-0 md:pr-[8vw] text-[2.8vw] flex justify-between text-center tracking-[0.5px]">
-                            <span>© 2025 <Link href="https://www.bespinlabs.com/" target="_blank" className="relative after:absolute after:bg-white after:h-[1px] after:left-0 after:bottom-[-2px] after:scale-0 hover:after:scale-100 after:duration-300 after:w-full">Bespin Labs Ltd.</Link> All rights reserved.</span>
+                            <span>© 2026 <Link href="https://www.bespinlabs.com/" target="_blank" className="relative after:absolute after:bg-white after:h-[1px] after:left-0 after:bottom-[-2px] after:scale-0 hover:after:scale-100 after:duration-300 after:w-full">Bespin Labs Ltd.</Link> All rights reserved.</span>
                             <Link href='https://weareenigma.com' target="_blank" title="We Create Magic">By: <span className="relative after:absolute after:bg-white after:h-[1px] after:left-0 after:bottom-[-2px] after:scale-0 hover:after:scale-100 after:duration-300 after:w-full">Enigma</span></Link>
                         </div>
                     </div>

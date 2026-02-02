@@ -12,6 +12,7 @@ import {
   SelectContent,
   SelectItem,
 } from "@/components/ui/select";
+import LinkButton from "../Buttons/LinkButton";
 
 function Hero({
   employees,
@@ -64,13 +65,22 @@ function Hero({
     setChurn(String(Math.max(1, val - 1)));
   };
 
+  const handleScrollToBreakdown = (e) => {
+    // if LinkButton renders an <a>, prevent navigation jump
+    if (e && e.preventDefault) e.preventDefault();
+    const el = document.getElementById("breakdown");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   // GSAP animation
   useEffect(() => {
     const isFirstTimeLoading =
       typeof window !== "undefined" &&
       window.sessionStorage.getItem("hasVisited") === null;
 
-    const delay = 0.6;
+    const delay = isFirstTimeLoading ? 3.4 : 0.6;
 
     const ctx = gsap.context(() => {
       const heroPara = para.current;
@@ -87,7 +97,7 @@ function Hero({
           stagger: 0.1,
           ease: "power2.out",
         },
-        `+=${delay}`
+        `+=${delay}`,
       )
         .fromTo(
           heroPara,
@@ -101,7 +111,7 @@ function Hero({
             duration: 0.8,
             ease: "power2.out",
           },
-          "-=0.6"
+          "-=0.6",
         )
         .from(
           ".hero-button-anim",
@@ -111,7 +121,7 @@ function Hero({
             duration: 0.8,
             ease: "power2.out",
           },
-          "-=0.6"
+          "-=0.6",
         )
         .fromTo(
           ".hero-svg-circle",
@@ -121,7 +131,7 @@ function Hero({
             duration: 1.5,
             ease: "power2.out",
           },
-          "-=0.8"
+          "-=0.8",
         )
         .from(
           ".scroll-img-container",
@@ -130,7 +140,7 @@ function Hero({
             opacity: 0,
             duration: 0.8,
           },
-          "-=0.5"
+          "-=0.5",
         )
         .fromTo(
           ".hero-img",
@@ -144,15 +154,15 @@ function Hero({
             duration: 2,
             ease: "expo.out",
           },
-          "-=2"
+          "-=2",
         );
-        gsap.from(".calculater,.linkbtn",{
-            yPercent:20,
-            opacity:0,
-            duration:0.8,
-            delay:0.6,
-            ease:"power2.out"
-        })
+      gsap.from(".calculater,.linkbtn", {
+        yPercent: 20,
+        opacity: 0,
+        duration: 0.8,
+        delay: 0.6,
+        ease: "power2.out",
+      });
     }, section);
 
     if (isFirstTimeLoading && typeof window !== "undefined") {
@@ -166,39 +176,41 @@ function Hero({
     <section
       ref={section}
       id="hero"
-      className="lg:h-[90vh] lg:py-[10%] w-screen h-fit flex items-center lg:pt-[12%]"
+      className="lg:h-[80vh] lg:py-[10%] w-screen h-fit flex items-center"
     >
-      <div className="container-lg lg:px-[5vw] relative lg:mb-0 mb-[10vw]">
+      <div className="container-lg lg:px-[7vw] relative lg:mb-0 mb-[10vw]">
         <div className="flex lg:flex-row lg:justify-between lg:gap-[4vw] flex-col gap-[8vw]">
           {/* LEFT SECTION */}
-          <div className="w-full lg:w-[35%] flex flex-col gap-y-10 pt-[25vw] md:pt-[20vw] lg:pt-0">
+          <div className="w-full lg:w-[40%] flex flex-col gap-y-10 pt-[25vw] md:pt-[20vw] lg:pt-0">
             <h1 className="title-4xl hero-anim flex gap-[2vw] lg:gap-0 flex-wrap items-end">
               <div className="overflow-hidden">
-                <span className="span block">Calculate your </span>
-              </div>
-              <div className="overflow-hidden">
-                <span className="span block">ROI with </span>
-              </div>
-              <div className="overflow-hidden">
-                <span className="span block">Patronum</span>
+                <span className="span block"> Quantify Your Google Workspace Efficiency</span>
               </div>
             </h1>
 
-            <p ref={para} className="lg:text-[1.25vw] text-[5vw] md:text-[4vw] font-medium">
-              Understand how much time, cost, and operational effort you can
-              save by automating user lifecycle management.
+            <p
+              ref={para}
+              className="lg:text-[1.25vw] text-[5vw] md:text-[4vw] font-medium"
+            >
+              Stop guessing your IT costs. Use our interactive calculator to see
+              how much time, risk, and budget you can recover with Patronum’s
+              automated management.
             </p>
           </div>
 
           {/* RIGHT SECTION – inputs */}
-          <div className="flex flex-col lg:gap-[0.5vw] gap-[4vw] calculater">
-            <div className="flex flex-col lg:flex-row lg:gap-[0.5vw] gap-[4vw] ">
+          <div className="flex flex-col lg:gap-[0.5vw] gap-[4vw] calculater items-end">
+            <div className="flex flex-col lg:flex-row lg:gap-[0.5vw] gap-[4vw] w-full ">
               {/* EMPLOYEES CARD */}
               <div className="lg:w-[22vw] lg:h-[13vw]  w-full h-[40vw] lg:rounded-[2.2vw] rounded-[4vw] border border-black/10 bg-white/40 backdrop-blur-md lg:p-[2vw] lg:pb-[2vw] p-[4vw] pb-[7vw] flex flex-col justify-between">
                 <div className="flex justify-between">
                   <div>
-                    <h3 className="lg:text-xl text-xl font-medium md:text-4xl">Number of employees</h3>
-                    <p className="lg:text-sm text-sm text-black/60 md:text-xl">(minimum 50)</p>
+                    <h3 className="lg:text-xl text-xl font-medium md:text-4xl">
+                      Number of employees
+                    </h3>
+                    <p className="lg:text-sm text-sm text-black/60 md:text-xl">
+                      (minimum 50)
+                    </p>
                   </div>
                   <div className="lg:w-[2.5vw] lg:h-[2.5vw] w-[7vw] h-[7vw]">
                     <Image
@@ -228,7 +240,7 @@ function Hero({
                       className="rounded-full lg:w-[2.5vw] lg:h-[2.5vw] lg:p-[1vw] md:w-[8vw] md:h-[8vw]"
                       onClick={decrementEmployees}
                     >
-                      <div className="lg:text-2xl text-2xl md:text-4xl leading-[1] lg:mt-[-0.2vw] mt-[-0.7vw]">-</div>
+                      <div className="lg:text-2xl text-2xl md:text-4xl">-</div>
                     </Button>
                     <Button
                       type="button"
@@ -237,7 +249,7 @@ function Hero({
                       size="icon"
                       className="rounded-full lg:w-[2.5vw] lg:h-[2.5vw] lg:p-[1vw] md:w-[8vw] md:h-[8vw]"
                     >
-                      <div className="lg:text-2xl text-2xl md:text-4xl lg:mt-[-0.2vw] mt-[-0.7vw]">+</div>
+                      <div className="lg:text-2xl text-2xl md:text-4xl">+</div>
                     </Button>
                   </div>
                 </div>
@@ -250,7 +262,9 @@ function Hero({
                     <h3 className="lg:text-xl text-xl font-medium md:text-4xl">
                       Annual staff churn (%)
                     </h3>
-                    <p className="lg:text-sm text-sm text-black/60 md:text-xl">(minimum 1%)</p>
+                    <p className="lg:text-sm text-sm text-black/60 md:text-xl">
+                      (minimum 1%)
+                    </p>
                   </div>
                   <div className="lg:w-[1.5vw] lg:h-[2.5vw] w-[6vw] h-[6vw]">
                     <Image
@@ -280,7 +294,7 @@ function Hero({
                       size="icon"
                       className="rounded-full lg:w-[2.5vw] lg:h-[2.5vw] lg:p-[1vw] md:w-[8vw] md:h-[8vw]"
                     >
-                      <div className="lg:text-2xl text-2xl md:text-4xl lg:mt-[-0.2vw] mt-[-0.7vw]">-</div>
+                      <div className="lg:text-2xl text-2xl md:text-4xl">-</div>
                     </Button>
                     <Button
                       onClick={incrementChurn}
@@ -289,14 +303,14 @@ function Hero({
                       size="icon"
                       className="rounded-full lg:w-[2.5vw] lg:h-[2.5vw] lg:p-[1vw] md:w-[8vw] md:h-[8vw]"
                     >
-                      <div className="lg:text-2xl text-2xl md:text-4xl lg:mt-[-0.2vw] mt-[-0.7vw]">+</div>
+                      <div className="lg:text-2xl text-2xl md:text-4xl">+</div>
                     </Button>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="flex flex-col lg:flex-row lg:gap-[0.5vw] gap-[4vw]">
+            <div className="flex flex-col lg:flex-row lg:gap-[0.5vw] gap-[4vw] w-full">
               {/* COMPLIANCE RISK */}
               <div className="lg:w-[22vw] lg:h-[13vw]  w-full h-[40vw] lg:rounded-[2.2vw] rounded-[4vw] border border-black/10 bg-white/40 backdrop-blur-md lg:p-[2vw] lg:pb-[2vw] p-[4vw] pb-[7vw] flex flex-col justify-between">
                 <div className="w-full flex justify-between">
@@ -334,7 +348,9 @@ function Hero({
               <div className="lg:w-[22vw] lg:h-[13vw]  w-full h-[40vw] lg:rounded-[2.2vw] rounded-[4vw] border border-black/10 bg-white/40 backdrop-blur-md lg:p-[2vw] lg:pb-[2vw] p-[4vw] pb-[7vw] flex flex-col justify-between">
                 <div className="flex justify-between">
                   <div>
-                    <h3 className="lg:text-xl text-xl font-medium md:text-4xl">Currency</h3>
+                    <h3 className="lg:text-xl text-xl font-medium md:text-4xl">
+                      Currency
+                    </h3>
                   </div>
                   <div className="lg:w-[2vw] lg:h-[2.5vw] w-[7vw] h-[7vw]">
                     <Image
@@ -365,8 +381,14 @@ function Hero({
                 </div>
               </div>
             </div>
+            <div className="w-fit mt-6">
+              <LinkButton
+                btnText="View Details"
+                href="#breakdown"
+                onClick={handleScrollToBreakdown}
+              />
+            </div>
           </div>
-
         </div>
       </div>
     </section>

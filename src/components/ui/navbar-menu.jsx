@@ -21,7 +21,6 @@ export const MenuItem = ({  active, item, children, setActive }) => {
     }
     setActive(null);
   };
-
   return (
     <div
       className={`w-screen fixed !left-0 !top-0 pt-[5.5%] bg-white shadow-lg`}
