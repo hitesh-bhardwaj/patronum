@@ -3,7 +3,6 @@ import Layout from "@/components/Layout";
 import Hero from "@/components/ContactTrial/Hero";
 import Head from "next/head";
 import MetaData from "@/components/PageLayout/MetaData";
-import { GoogleWorkspaceBackup } from "@/components/Illustrations/GoogleWorkspaceBackup";
 import VideoPlayer from "@/components/ContactTrial/OnBoarding/OnBoardingVideoV2";
 import FeatureDetailTitle from "@/components/ContactTrial/OnBoarding/FeatureDetailTitle";
 import FeatureDetailInfo from "@/components/ContactTrial/OnBoarding/FeaturesDetailInfo";
@@ -11,6 +10,7 @@ import TransformV2 from "@/components/ContactTrial/OnBoarding/TransformV2";
 import SectionBreak from "@/components/PageLayout/SectionBreak";
 import FeatureDetailCards from "@/components/ContactTrial/OnBoarding/FeatureDetailCard";
 import Faqs from "@/components/ContactTrial/FaqSection";
+import { GoogleDriveCompliance } from "@/components/Illustrations/GoogleDriveCompliance";
 
 const GoogleWorkspaceBackupV2 = () => {
   return (
@@ -76,7 +76,7 @@ const GoogleWorkspaceBackupV2 = () => {
                 pagePara={"Transform Collaboration into Controlled Innovation"}
                 imgSrc={'google-drive-compliance.svg'}
             svgElement={
-              <GoogleWorkspaceBackup
+              <GoogleDriveCompliance
                 className={"h-full w-full"}
               />
             }

@@ -8,7 +8,7 @@ export default function FeatureDetailTitle({
     <section>
       <div className="mx-auto w-[90%] lg:w-[80%]  max-w-full">
         <div className="py-[5vw]">
-          
+
           {/* Title */}
           <h2
             className="
@@ -24,7 +24,7 @@ export default function FeatureDetailTitle({
 
           {/* Content */}
           <div className="block items-start justify-between lg:flex">
-            
+
             {/* Left paragraph */}
             <div>
               <p

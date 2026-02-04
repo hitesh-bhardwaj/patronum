@@ -7,7 +7,7 @@ const FeatureDetailCards = ({ content, title1, title2 }) => {
     <section id="">
       <div className="mx-auto w-[90%] max-w-full lg:w-[80%] lg:px-[50px]">
         <div className="py-[5vw]">
-          
+
           <SectionTitle
             sectionTitle1={title1}
             sectionTitle2={title2}

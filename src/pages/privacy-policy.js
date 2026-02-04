@@ -45,7 +45,7 @@ export default function Page() {
                 </p>
               
                
-                <h4 className="wp-block-heading">1. IMPORTANT INFORMATION</h4>
+                <h4 className=" ">1. IMPORTANT INFORMATION</h4>
 
                 <p>
                   This Policy explains how we look after your personal data when
@@ -67,7 +67,7 @@ export default function Page() {
                   technologies, business practices and our customers’ needs, and
                   regularly updated.
                 </p>
-                <h4 className="wp-block-heading">2. INFORMATION WE COLLECT</h4>
+                <h4 className=" ">2. INFORMATION WE COLLECT</h4>
                 <p>
                   When you visit our websites, use our products or where we
                   carry out related activities you may knowingly provide us with
@@ -98,7 +98,7 @@ export default function Page() {
                   communication preferences.
                 </p>
 
-                <h4 className="wp-block-heading">
+                <h4 className=" ">
                   3. PERSONAL INFORMATION YOU CHOOSE TO PROVIDE:
                 </h4>
                 <p>
@@ -143,7 +143,7 @@ export default function Page() {
                   telephone.
                 </p>
 
-                <h4 className="wp-block-heading">
+                <h4 className=" ">
                   4. KEEPING YOUR INFORMATION SAFE & CONFIDENTIAL
                 </h4>
                 <p>
@@ -191,7 +191,7 @@ export default function Page() {
                   personal data and to treat it in accordance with the law.
                 </p>
 
-                <h4 className="wp-block-heading">
+                <h4 className=" ">
                   5. LIABILITY FOR CONTENT, LINKS AND COPYRIGHT
                 </h4>
                 <p>
@@ -230,7 +230,7 @@ export default function Page() {
                   require the prior written consent of Bespin Labs or its
                   respective author or creator.
                 </p>
-                <h4 className="wp-block-heading">
+                <h4 className=" ">
                   6. HOW WE COLLECT YOUR DATA
                 </h4>
                 <p>
@@ -392,7 +392,7 @@ export default function Page() {
                   “unsubscribe” on the bottom of one of the emails.
                 </p>
 
-                <h3 className="wp-block-heading">
+                <h3 className=" ">
                   7. ABOUT OUR WEBSITE HOSTING
                 </h3>
                 <p>
@@ -547,7 +547,7 @@ export default function Page() {
                   <br />• Processing involves automated decision-making and profiling
                 </p>
 
-                <h4 className="wp-block-heading">
+                <h4 className=" ">
                   9. DATA CONTROLLER DETAILS
                 </h4>
                 <p>
@@ -557,7 +557,7 @@ export default function Page() {
                 Bespin Labs Limited is incorporated in England and Wales (company number: 11068628). Our registered office is First Floor Office Suite, Mill B Colne Road Buildings, Colne Road, Huddersfield, HD1 3AG United Kingdom.
                 </p>
               
-                <h4 className="wp-block-heading">
+                <h4 className=" ">
                   10. DATA PROTECTION OFFICER & CONTACT DETAILS
                 </h4>
                 <p>

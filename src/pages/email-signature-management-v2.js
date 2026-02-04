@@ -7,8 +7,6 @@ import SectionBreak from "@/components/PageLayout/SectionBreak";
 import FeatureDetailInfo from "@/components/ContactTrial/OnBoarding/FeaturesDetailInfo";
 import TransformV2 from "@/components/ContactTrial/OnBoarding/TransformV2";
 import MetaData from '@/components/PageLayout/MetaData';
-
-
 import Faqs from "@/components/ContactTrial/FaqSection";
 import { EmailSignatureManagementIllustration } from "@/components/Illustrations/EmailSignatureManagement";
 import Head from "next/head";

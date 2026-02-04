@@ -1,5 +1,6 @@
+import Hero from "@/components/ContactTrial/Hero";
+import { CookiePolicyHero } from "@/components/Illustrations/CookiePolicyHero";
 import Layout from "@/components/Layout";
-import Hero from "@/components/PageLayout/Hero";
 import MetaData from "@/components/PageLayout/MetaData";
 import styles from "@/styles/cookie-policy.module.css";
 
@@ -17,18 +18,18 @@ export default function Page() {
         img={"homepage.jpg"}
       />
       <Layout>
-        <Hero
-          pageTitle1={"Cookie Policy"}
+        <Hero 
+         pageTitle1={"Cookie Policy"}
           pagePara={
             "This policy explains the way in which cookies are used on our website."
           }
-          imgSrc={"cookie-policy.svg"}
           breadcrumbTitle={"Legal"}
           breadcrumbLink={"legal"}
+          svgElement={<CookiePolicyHero className={"h-full w-full"}/>}
         />
         <section className="" id="second-section">
           <div className="container">
-            <div className="content-2">
+            <div className=" lg:py-[7vw] py-[15%]">
               <div className="lg:mb-[2vw] md:mb-[5vw] mb-[6vw]">
                 <h2 className="title-4xl text-anim">
                   <span>Cookie Policy</span>
@@ -41,7 +42,7 @@ export default function Page() {
                 <p>
                     This policy explains the way in which cookies are used on our websites. Please ensure as the user of our websites you have read and understood this policy before continuing to use them. If you have any questions about our use of cookies, you can contact us at <a href="mailto:privacy@bespinlabs.com">privacy@bespinlabs.com</a>.
                 </p>
-                <h3 className="wp-block-heading">
+                <h3 className=" ">
                   <span lang="EN-GB">1. WHAT ARE COOKIES?</span>
                 </h3>
                 <p>
@@ -53,7 +54,7 @@ export default function Page() {
                 <p>
                     Cookies do lots of different jobs, like letting you navigate between pages efficiently, remembering your preferences, and generally improving the user experience. They can also help to ensure that adverts you see online are more relevant to you and your interests.
                 </p>
-                <h3 className="wp-block-heading">
+                <h3 className=" ">
                   <span lang="EN-GB">
                     2. WHICH COOKIES ARE USED ON THIS WEBSITE?
                   </span>
@@ -66,7 +67,7 @@ export default function Page() {
                   A list of all the cookie types used on this website by
                   category is set out below.
                 </p>
-                <h4 className="wp-block-heading">
+                <h4 className=" ">
                   <span lang="EN-GB">2.1 Strictly necessary cookies</span>
                 </h4>
                 <p>
@@ -75,7 +76,7 @@ export default function Page() {
                   secure areas of the website. Without these cookies, services
                   you have asked for cannot be provided.
                 </p>
-                <h4 className="wp-block-heading">
+                <h4 className=" ">
                   2.2 <span lang="EN-GB">Performance cookies</span>
                 </h4>
                 <p>
@@ -86,7 +87,7 @@ export default function Page() {
                   information these cookies collect is aggregated and therefore
                   anonymous. It is only used to improve how a website works.
                 </p>
-                <h4 className="wp-block-heading">
+                <h4 className=" ">
                   2.3 <span lang="EN-GB">Functional cookies</span>
                 </h4>
                 <p>
@@ -100,7 +101,7 @@ export default function Page() {
                   The information these cookies collect may be anonymized and
                   they cannot track your browsing activity on other websites.
                 </p>
-                <h4 className="wp-block-heading">2.4 Google Analytics</h4>
+                <h4 className=" ">2.4 Google Analytics</h4>
                 <p>
                   These cookies are used to collect information about how
                   visitors use our site. We use the information to compile
@@ -118,7 +119,7 @@ export default function Page() {
                   </a>
                   .
                 </p>
-                <h3 className="wp-block-heading">
+                <h3 className=" ">
                   <span lang="EN-GB">3. HOW CAN THE COOKIES BE REMOVED?</span>
                 </h3>
                 <p>
