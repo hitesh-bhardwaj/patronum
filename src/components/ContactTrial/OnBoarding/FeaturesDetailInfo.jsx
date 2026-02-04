@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const FeatureDetailInfo = ({ content }) => {
   return (
-    <section id="feature-detail-info">
+    <section id="">
       <div className="mx-auto w-[100%] lg:w-[80%] px-5 max-w-full">
         <div className="py-[5vw]">
           <div>

@@ -4,7 +4,7 @@ import InstallButton from "@/components/Buttons/InstallButton";
 
 const FeatureDetailCards = ({ content, title1, title2 }) => {
   return (
-    <section id="feature-detail-card">
+    <section id="">
       <div className="mx-auto w-[90%] max-w-full lg:w-[80%] lg:px-[50px]">
         <div className="py-[5vw]">
           
