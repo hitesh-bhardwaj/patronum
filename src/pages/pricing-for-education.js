@@ -1,11 +1,10 @@
-import PageLayout from '@/components/PageLayout';
 import dynamic from "next/dynamic";
-import EducationPricing from '@/components/PricingPagesComp/EducationPricing';
 import MetaData from '@/components/PageLayout/MetaData';
 import Layout from '@/components/Layout';
 import Hero from '@/components/ContactTrial/Hero';
 import ProductFeatures from '@/components/ContactTrial/PricePage/ProductFeature'
 import { PricingEducationHero } from '@/components/Illustrations/PricingEducationHero';
+import EducationPricing from "@/components/ContactTrial/EducationPricingV2";
 const Faqs = dynamic(() => import("@/components/ContactTrial/FaqSection"), { ssr: true });
 
 export default function EducationPricingPage() {
