@@ -18,7 +18,7 @@ const VideoPlayer = ({ videoId, videoCover, disabled }) => {
   };
 
   return (
-    <section id="">
+    <section id="second-section">
       <div className="container-lg">
         <div className="px-0 pt-[15%] pb-[5%] lg:pt-[7.5vw] lg:pb-[5vw]">
           
@@ -46,10 +46,10 @@ const VideoPlayer = ({ videoId, videoCover, disabled }) => {
               "
             >
               {/* Ping Ring */}
-              <span className="absolute inset-0 rounded-full border border-[var(--primary)] opacity-75 animate-ping" />
+              <span className="absolute inset-0 rounded-full border border-primary opacity-75 animate-ping" />
 
               {/* Solid Circle */}
-              <span className="absolute inset-0 rounded-full bg-[var(--primary)]" />
+              <span className="absolute inset-0 rounded-full bg-primary" />
 
               {/* Play Icon */}
               <img
