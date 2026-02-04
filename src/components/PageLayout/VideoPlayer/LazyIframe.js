@@ -4,7 +4,10 @@ const LazyIframe = ({ videoId }) => (
         height="390" 
         src={`https://www.youtube.com/embed/${videoId}`}
         title="YouTube video player"
-        allowFullScreen>
+        allowFullScreen
+        className="rounded-lg w-full h-full"
+
+        >
     </iframe>
 );
 
