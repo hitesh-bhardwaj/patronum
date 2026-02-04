@@ -1,9 +1,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
+// import LazyIframe from "./LazyIFrame";
 
 const LazyIframe = dynamic(
-  () => import("./Lazyframe").then((mod) => mod.default),
+  () => import("./LazyIFrame").then((mod) => mod.default),
   { ssr: false }
 );
 
@@ -73,6 +74,7 @@ const VideoPlayer = ({ videoId, videoCover, disabled }) => {
               "
             >
               <div className="relative w-[80%] h-[80vh]">
+                {/* <LazyIframe videoId={videoId} /> */}
                 <LazyIframe videoId={videoId} />
 
                 {/* Close Button */}
