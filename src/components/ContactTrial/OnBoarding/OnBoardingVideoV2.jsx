@@ -3,7 +3,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 
 const LazyIframe = dynamic(
-  () => import("./LazyIframe").then((mod) => mod.default),
+  () => import("./Lazyframe").then((mod) => mod.default),
   { ssr: false }
 );
 
