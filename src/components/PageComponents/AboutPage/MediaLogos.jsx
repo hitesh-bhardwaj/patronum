@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import SectionTitle from '@/components/PageLayout/SectionTitle';
 import styles from "./media.module.css";
-
-// Import images statically
 import associatedPressLogo from '/public/assets/about/associated-press.png';
 import cbsLogo from '/public/assets/about/cbs.png';
 import techBullionLogo from '/public/assets/about/tech-bullion.png';
