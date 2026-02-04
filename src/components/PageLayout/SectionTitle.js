@@ -1,7 +1,7 @@
 export default function SectionTitle({ sectionTitle1, sectionTitle2, sectionPara }) {
 
     return (
-        <div className="sectionTitle">
+        <div className="mb-[15vw]">
             <h2 className="title-4xl lg:mb-8 mb-6 text-anim">
                 <span>
                     {sectionTitle1}{" "}
