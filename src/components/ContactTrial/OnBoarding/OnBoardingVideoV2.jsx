@@ -2,7 +2,6 @@ import { useState } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 
-
 const LazyIframe = dynamic(
   () => import("@/components/PageLayout/VideoPlayer/LazyIframe").then((mod) => mod.default),
   { ssr: false }
@@ -11,7 +10,11 @@ const LazyIframe = dynamic(
 const VideoPlayer = ({ videoId, videoCover, disabled }) => {
   const [modalOpen, setModalOpen] = useState(false);
 
-  const openModal = () => setModalOpen(true);
+  const openModal = () => {
+  if (disabled) return;
+  setModalOpen(true);
+};
+
   const closeModal = () => setModalOpen(false);
 
   const handleModalClick = (e) => {
@@ -41,7 +44,7 @@ const VideoPlayer = ({ videoId, videoCover, disabled }) => {
             {/* Play Button */}
             <button
               type="button"
-              disabled={disabled}
+              // disabled={disabled}
               onClick={openModal}
               aria-label="Play Tutorial Video"
               className="
@@ -78,7 +81,6 @@ const VideoPlayer = ({ videoId, videoCover, disabled }) => {
               "
             >
               <div className="relative w-[80%] h-[80vh]">
-               
 
                 <LazyIframe videoId={videoId} />
 
