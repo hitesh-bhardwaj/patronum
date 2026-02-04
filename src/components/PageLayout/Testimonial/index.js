@@ -43,18 +43,18 @@ export default function Testimonial() {
                 <div className="content">
                     <div className="container">
                         <div className="section-head">
-                            <h2 className="title-4xl text-anim">
-                                <span>
+                            <h2 className="title-4xl leading-[0.5]">
+                                <span className="overflow-hidden leading-[1.2]">
                                     Client Speak:{" "}
                                 </span>
                                 <br />
-                                <span>
+                                <span className="overflow-hidden leading-[1.2]">
                                     Real Stories, Real Impact!
                                 </span>
                             </h2>
                         </div>
                     </div>
-                    <div className="testi-slider">
+                    <div className="mt-[10vw] lg:mt-0">
                         <Slider />
                     </div>
                 </div>

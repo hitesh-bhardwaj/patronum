@@ -1,15 +1,13 @@
 import { useEffect } from "react"
 import SplitType from "split-type";
 import gsap from "gsap"
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 
-gsap.registerPlugin(ScrollTrigger);
 
 export default function SectionBreakSmall( {sectionBreakText} ) {
 
     useEffect(() => {
       let ctx = gsap.context(() => {
-        const sectionBreakAnimations = document.querySelectorAll('.section-break-text');
+        const sectionBreakAnimations = document.querySelectorAll('.section-break-text-anim');
           sectionBreakAnimations.forEach((sectionBreakAnimation) => {
             const sectionBreakAnim = new SplitType(sectionBreakAnimation, {types: 'line word'});
             let sectionBreakAnimWord = sectionBreakAnimation.querySelectorAll('.line');
@@ -35,7 +33,7 @@ export default function SectionBreakSmall( {sectionBreakText} ) {
       <section className="section-break" id="second-section">
         <div className="container">
           <div className="content-2">
-            <p className="section-break-text small aeonik fadeUp textbreak">{sectionBreakText}</p>
+            <p className="section-break-text-anim aeonik fadeUp textbreak lg:text-[3.85vw] text-[#2a2a2a] lg:mb-0 lg:w-[65%] leading-[1.35] font-normal text-[8vw] w-full">{sectionBreakText}</p>
           </div>
         </div>
       </section>      

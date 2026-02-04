@@ -13,13 +13,13 @@ export default function Transform({ text, content }) {
                         <Image src={"/assets/features/email-signature-management/feature-transform.svg"} alt="" width={300} height={300} className="w-full h-full object-contain" />
                     </div>
                    
-                    <div className="flex flex-col gap-[4vw] justify-center items-center w-full px-[5vw] py-[10vw] text-center lg:w-[70vw] lg:px-0 lg:py-[6vw] lg:items-start lg:text-left lg:gap-[0.8vw]">
+                    <div className="flex flex-col gap-[4vw] justify-center items-center w-full px-[5vw] py-[10vw] text-center lg:w-[90%] lg:px-0 lg:py-[6vw] lg:items-start lg:text-left lg:gap-[0.8vw]">
                         <h2 className="title-4xl text-anim w-full text-center lg:text-left m-0">
                             <span>
                                {text}
                             </span>
                         </h2>
-                        <p className="content-p fadeUp text-center lg:text-left w-full lg:w-[60%] mb-[2.5vw]">
+                        <p className="content-p fadeUp text-center lg:text-left w-full lg:w-[100%] mb-[2.5vw]">
                            {content}
                         </p>
                        
