@@ -1,8 +1,31 @@
 import React from 'react'
+import Layout from "@/components/Layout";
+import Hero from '@/components/ContactTrial/Hero'
+import { EmailSignatureManagementIllustration } from '@/components/Illustrations/EmailSignatureManagement';
 
 const GoogleWorkspaceBackupV2 = () => {
   return (
-    <div>google-workspace-backup-v2</div>
+   <>
+   <Layout>
+    <main>
+
+      
+              <Hero
+                pageTitle1={"Email Signature"}
+                pageTitle2={"Management"}
+                pagePara={
+                    "Centrally managed Google Workspace Email Signatures for Your Brand's Professional Image"
+                  }
+                  boldpara=""
+                  imgSrc={"feature-email-signature-management.svg"}
+                  svgElement={
+                      <EmailSignatureManagementIllustration className={"h-full w-full"} />
+                  }
+                  />
+      
+    </main>
+   </Layout>
+   </>
   )
 }
 
