@@ -9,12 +9,70 @@ import TransformV2 from "@/components/ContactTrial/OnBoarding/TransformV2";
 import SectionBreak from "@/components/PageLayout/SectionBreak";
 import FeatureDetailInfo from "@/components/ContactTrial/OnBoarding/FeaturesDetailInfo";
 import Faqs from "@/components/ContactTrial/FaqSection";
+import MetaData from '@/components/PageLayout/MetaData';
+
 
 
 const OnBoardingV2 = () => {
   return (
     <>
+    
+     <MetaData
+                    title={"Automate User Onboarding and Offboarding in Google Workspace with Patronum"}
+                description={"Achieve a unified experience with Google Workspace by using automated onboarding and offboarding platform. Manage users in bulk, cut costs, and streamline operations with **Google Workspace automation."}
+                url={"on-boarding"}
+                img={"onboarding.jpg"}
+                date_published={"2020-12-21T06:37"}
+                date_modified={"2024-04-01T00:00"}
+                keywords={"Google Workspace"}
+                />
+                            <Head>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(
+                            {
+                                "@context": "https://schema.org",
+                                "@type": "SoftwareApplication",
+                                "name": "Patronum",
+                                "url": "https://www.patronum.io/",
+                                "description": "Patronum is a comprehensive Google Workspace management platform that automates user onboarding/offboarding, email signature management, Google Drive governance, contact sharing, backups, and more.",
+                                "applicationCategory": "BusinessApplication",
+                                "operatingSystem": "Web-based (Google Workspace)",
+                                "softwareVersion": "",
+                                "offers": {
+                                    "@type": "Offer",
+                                    "price": "8.00",
+                                    "priceCurrency": "USD",
+                                    "description": "Per-user, per-year licence; Patronum is $8.00/user/year"
+                                },
+                                "provider": {
+                                    "@type": "Organization",
+                                    "name": "Bespin Labs Ltd",
+                                    "url": "https://www.patronum.io/"
+                                },
+                                "featureList": [
+                                    "Automated Google Workspace user onboarding/offboarding",
+                                    "Email signature management with centralized templates",
+                                    "Google Drive file & sharing governance",
+                                    "Shared contacts synchronization",
+                                    "Backup & restore of Google Workspace data",
+                                    "Organisational chart & Google Groups automation"
+                                ],
+                                "isAccessibleForFree": false,
+                                "aggregateRating": {
+                                    "@type": "AggregateRating",
+                                    "ratingValue": "5.0",
+                                    "reviewCount": "30"
+                                }
+                            }
+                        ),
+                    }}
+                />
+            </Head>
       <Layout>
+        <main>
+
         <Hero
           pageTitle1={"User Lifecycle"}
           pageTitle2={"Management"}
@@ -24,29 +82,30 @@ const OnBoardingV2 = () => {
           boldpara=""
           imgSrc={"feature-onboarding.svg"}
           svgElement={<Onboarding className={"h-full w-full"} />}
-        />
+          />
         <VideoPlayer
           disabled={false}
           videoId="POIX6FiWaN0"
           videoCover={"/assets/features/onboarding/video-cover.webp"}
-        />
+          />
         <FeatureDetailTitle
           sectionTitle1="Onboarding & Offboarding"
           sectionTitle2="For Google Workspace"
           sectionPara="Patronum redefines user lifecycle management by providing a consistent and unified experience within Google Workspace while significantly reducing IT expenditure in managing users and resources."
           sectionParaBig="From the moment users join, they are granted access to files, folders, calendars, and Google groups, enabling productivity from day one. This streamlined approach ensures that every new team member is equipped with the necessary tools and information, fostering a welcoming and efficient start."
-        />
+          />
         <FeatureDetailInfo content={featuresDetail} />
         <TransformV2
           text={"Automate Onboarding. Eliminate Chaos."}
           content={
             "Say goodbye to manual setups and delayed provisioning. Patronum ensures every user starts with the right tools, policies, and data—right from day one."
           }
-        />
+          />
         <SectionBreak sectionBreakText="Patronum redefines User Lifecycle Management in Google Workspace by using automation, delivering unparalleled security and productivity, freeing you to focus on innovation and strategic growth." />
         <FeatureDetailCards content={featuresDetailCard} />
 
         <Faqs featureName="on_boarding" />
+          </main>
       </Layout>
     </>
   );

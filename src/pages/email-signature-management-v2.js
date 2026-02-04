@@ -6,6 +6,8 @@ import FeatureDetailCards from "@/components/ContactTrial/OnBoarding/FeatureDeta
 import SectionBreak from "@/components/PageLayout/SectionBreak";
 import FeatureDetailInfo from "@/components/ContactTrial/OnBoarding/FeaturesDetailInfo";
 import TransformV2 from "@/components/ContactTrial/OnBoarding/TransformV2";
+import MetaData from '@/components/PageLayout/MetaData';
+
 
 import Faqs from "@/components/ContactTrial/FaqSection";
 import { EmailSignatureManagementIllustration } from "@/components/Illustrations/EmailSignatureManagement";
@@ -14,6 +16,15 @@ import Head from "next/head";
 export default function FeatureDetail() {
   return (
     <>
+    <MetaData 
+        title={"Gmail Email Signature Management Tool for Google Workspace"}
+                description={"Patronum is one of the best Gmail email signature management tools for Google Workspace. IT admins can easily create and manage Gmail signatures across the organization."}
+                url={"email-signature-management"}
+                img={"email-signature-management.jpg"}
+                date_published={"2020-12-21T12:27"}
+                date_modified={"2024-04-04T12:00"}
+                keywords={"Google Workspace"}
+    />
       <Head>
         <script
           type="application/ld+json"
@@ -59,41 +70,43 @@ export default function FeatureDetail() {
         />
       </Head>
       <Layout>
+        <main>
+
         <Hero
           pageTitle1={"Email Signature"}
           pageTitle2={"Management"}
           pagePara={
-            "Centrally managed Google Workspace Email Signatures for Your Brand's Professional Image"
-          }
-          boldpara=""
-          imgSrc={"feature-email-signature-management.svg"}
-          svgElement={
-            <EmailSignatureManagementIllustration className={"h-full w-full"} />
-          }
-        />
+              "Centrally managed Google Workspace Email Signatures for Your Brand's Professional Image"
+            }
+            boldpara=""
+            imgSrc={"feature-email-signature-management.svg"}
+            svgElement={
+                <EmailSignatureManagementIllustration className={"h-full w-full"} />
+            }
+            />
 
         <VideoPlayer
           disabled={false}
           videoId="HnoMlb97PjE"
           videoCover={
-            "/assets/features/email-signature-management/video-cover.webp"
-          }
-        />
+              "/assets/features/email-signature-management/video-cover.webp"
+            }
+            />
 
         <FeatureDetailTitle
           sectionTitle1="Email Signature Management"
           sectionTitle2="For Google Workspace"
           sectionPara="Transform your email communication with Patronum’s sophisticated email signature management. This powerful feature of Patronum allows for the creation of centrally managed, dynamic, brand-aligned signatures effortlessly, even without HTML knowledge."
           sectionParaBig="Patronum simplifies email signature management, offering features like marketing team control and an advanced HTML editor for custom designs. Integrate seamlessly into your Google Workspace without the hassle of complex settings, ensuring your team always presents a unified brand image."
-        />
+          />
 
         <FeatureDetailInfo content={featuresDetail} />
         <TransformV2
           text={"Stay on Brand & Manage Email Signatures Effortlessly!"}
           content={
-            "Centralised, consistent, and on-brand - Ensure your team always looks professional with Patronum's centralized email signature management"
-          }
-        />
+              "Centralised, consistent, and on-brand - Ensure your team always looks professional with Patronum's centralized email signature management"
+            }
+            />
 
         <SectionBreak sectionBreakText="Transform how your organization presents itself with Patronum&#39;s cutting-edge email signature management. It isn’t just about how you create email signatures; it&#39;s about embodying your brand&#39;s professionalism, presenting a unified brand image and transforming every email into a brand-building opportunity." />
 
@@ -101,9 +114,10 @@ export default function FeatureDetail() {
           title1={"Additional Email Signature"}
           title2={"Management Features"}
           content={featuresDetailCard}
-        />
+          />
 
         <Faqs featureName="email_signature_management" />
+          </main>
       </Layout>
     </>
   );
