@@ -32,7 +32,7 @@ const VideoPlayer = ({ videoId, videoCover, disabled }) => {
               height={80}
               src={videoCover}
               alt="feature-tutorial"
-              loading="lazy"
+               priority
               className="h-full w-full object-contain"
               />
 
