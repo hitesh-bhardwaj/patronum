@@ -37,11 +37,9 @@ const page = () => {
       });
       return () => ctx.revert();
     });
-  }, []);
 
-  useEffect(() => {
     const pricingCards = document.querySelectorAll(
-      ".pricing-card-wrapper .pricing-card"
+      ".pricing-card-wrapper .pricing-card",
     );
     let tl = gsap.timeline({
       scrollTrigger: {
@@ -62,119 +60,79 @@ const page = () => {
         duration: 0.6,
         stagger: 0.1,
         ease: "Power2.out",
-      }
+      },
     );
-  }, []);
 
-  useEffect(() => {
     const fadeRights = document.querySelectorAll(".fadeRight");
 
-    let ctx = gsap.context(() => {
-      fadeRights.forEach((fadeRight) => {
-        gsap.fromTo(
-          fadeRight,
-          {
-            opacity: 0,
-            x: 100,
+    fadeRights.forEach((fadeRight) => {
+      gsap.fromTo(
+        fadeRight,
+        {
+          opacity: 0,
+          x: 100,
+        },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.6,
+          stagger: 0.05,
+          ease: "Power3.out",
+          scrollTrigger: {
+            trigger: fadeRight,
+            start: "top 85%",
           },
-          {
-            opacity: 1,
-            x: 0,
-            duration: 0.6,
-            stagger: 0.05,
-            ease: "Power3.out",
-            scrollTrigger: {
-              trigger: fadeRight,
-              start: "top 85%",
-            },
-          }
-        );
-      });
+        },
+      );
     });
-    return () => ctx.revert();
-  }, []);
 
-  useEffect(() => {
-    const lineDraws = document.querySelectorAll(".lineDraw");
-
-    let ctx = gsap.context(() => {
-      lineDraws.forEach((lineDraw) => {
-        gsap.fromTo(
-          lineDraw,
-          {
-            scaleX: 0,
-            transformOrigin: "left",
-          },
-          {
-            scaleX: 1,
-            duration: 1,
-            ease: "Power4.out",
-            scrollTrigger: {
-              trigger: lineDraw,
-              start: "top 90%",
-            },
-          }
-        );
-      });
-    });
-    return () => ctx.revert();
-  }, []);
-
-  useEffect(() => {
     const scaleAnims = document.querySelectorAll(".scaleAnim");
 
-    let ctx = gsap.context(() => {
-      scaleAnims.forEach((scaleAnim) => {
-        gsap.fromTo(
-          scaleAnim,
-          {
-            scale: 1.1,
-            y: 40,
-            opacity: 0,
-            transformOrigin: "bottom center",
+    scaleAnims.forEach((scaleAnim) => {
+      gsap.fromTo(
+        scaleAnim,
+        {
+          scale: 1.1,
+          y: 40,
+          opacity: 0,
+          transformOrigin: "bottom center",
+        },
+        {
+          y: 0,
+          scale: 1,
+          opacity: 1,
+          duration: 0.8,
+          ease: "Power4.out",
+          scrollTrigger: {
+            trigger: scaleAnim,
+            start: "top bottom",
+            end: "bottom 85%",
           },
-          {
-            y: 0,
-            scale: 1,
-            opacity: 1,
-            duration: 0.8,
-            ease: "Power4.out",
-            scrollTrigger: {
-              trigger: scaleAnim,
-              start: "top bottom",
-              end: "bottom 85%",
-            },
-          }
-        );
-      });
+        },
+      );
     });
-    return () => ctx.revert();
-  }, []);
-  useEffect(() => {
+
     const fadeUps = document.querySelectorAll(".fadeUp");
 
-    let ctx = gsap.context(() => {
-      fadeUps.forEach((fadeUp) => {
-        gsap.fromTo(
-          fadeUp,
-          {
-            opacity: 0,
-            y: 40,
+    fadeUps.forEach((fadeUp) => {
+      gsap.fromTo(
+        fadeUp,
+        {
+          opacity: 0,
+          y: 40,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "Power3.out",
+          scrollTrigger: {
+            trigger: fadeUp,
+            start: "top 85%",
           },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            ease: "Power3.out",
-            scrollTrigger: {
-              trigger: fadeUp,
-              start: "top 85%",
-            },
-          }
-        );
-      });
+        },
+      );
     });
-    return () => ctx.revert();
   }, []);
   return (
     <>
