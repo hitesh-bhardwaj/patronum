@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import PricingCard from "../LandingPage/PricingCard";
-import PriceDropDown from "../LandingPage/PriceDropDown";
+import PricingCard from "../LandingPage/PricingCardV2";
 import { Switch } from "@/components/ui/switch";
 import LinkButton from "../Buttons/LinkButton";
 import Image from "next/image";
 import { useModal } from "@/components/Modals/ModalContext";
+import PriceDropDown from "../LandingPage/PriceDropDownV2";
 
 const BusinessPricing = () => {
   const [isAnnual, setIsAnnual] = useState(true);
@@ -61,29 +61,40 @@ const BusinessPricing = () => {
               </h2>
             </div>
 
-            <div className="pricing-head">
-              <h2 className="title-4xl text-anim">
+            <div className="">
+              <h2 className="title-4xl text-anim mb-[3vw]">
                 <span>Patronum</span>
               </h2>
             </div>
 
             <div className="pricing-main">
-              <div className="pricing-selectors flex items-center justify-between w-full">
-                <div className="pricing-toggle">
+              <div className=" flex items-center justify-between w-full lg:mb-[2.5vw] mb-[10vw] my-[7vw] lg:mx-0">
+                <div className=" flex items-center justify-between gap-[10px]">
                   <span
-                    className={`pricing-selector-type ${isAnnual ? "" : "active"}`}
+                    className={` ${isAnnual ? "" : "active !text-black"} lg:text-[1.2vw] text-[#A9A9A9] transition-all duration-300 text-[4vw] `}
                   >
                     Monthly
                   </span>
                   <Switch
-                    className="price-switch"
+                    className=" lg:w-[4.1vw] lg:h-[1.9vw] w-[10vw] h-[5vw] !bg-[#F9FBFF] border !border-[#CDDEF5] rounded-[30px]  [&>span[data-state='unchecked']]:translate-x-[15%]
+    [&>span[data-state='checked']]:lg:translate-x-[170%]  [&>span]:mt-[0.4%]
+    [&>span]:lg:h-[1.4vw]
+    [&>span]:lg:w-[1.4vw]
+    [&>span]:transition-all
+    [&>span]:duration-300
+    [&>span]:ease-out
+    [&>span]:bg-[#1069DF]
+    [&>span]:rounded-full
+    [&>span]:h-[3.6vw]
+    [&>span]:w-[3.6vw]
+    [&>span[data-state='checked']]:translate-x-[155%]"
                     checked={isAnnual}
                     onCheckedChange={handleToggle}
                     id="price-toggle"
                     aria-label="Annual/Monthly Price Toggle"
                   />
                   <span
-                    className={`pricing-selector-type ${isAnnual ? "active" : ""}`}
+                    className={` ${isAnnual ? "active !text-black" : ""} lg:text-[1.2vw] text-[#A9A9A9]  text-[4vw] `}
                   >
                     Yearly
                   </span>
@@ -115,8 +126,8 @@ const BusinessPricing = () => {
               </div>
             </div>
           </div>
-          <div className="pricing-head pt-[2vw]">
-            <h2 className="title-4xl text-anim">
+          <div className="pt-[2vw]">
+            <h2 className="title-4xl text-anim mb-[3vw]">
               <span>Add-Ons</span>
             </h2>
           </div>
