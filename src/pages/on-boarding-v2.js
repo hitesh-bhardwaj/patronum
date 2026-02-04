@@ -10,7 +10,7 @@ import SectionBreak from "@/components/PageLayout/SectionBreak";
 import FeatureDetailInfo from "@/components/ContactTrial/OnBoarding/FeaturesDetailInfo";
 import Faqs from "@/components/ContactTrial/FaqSection";
 import MetaData from '@/components/PageLayout/MetaData';
-
+import Head from "next/head";
 
 
 const OnBoardingV2 = () => {
