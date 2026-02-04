@@ -3,7 +3,7 @@ import Image from "next/image";
 // import LazyIframe from "./LazyyFrame";
 
 const LazyIframe = dynamic(
-  () => import("././LazyyFrame").then((mod) => mod.default),
+  () => import("./LazyyFrame").then((mod) => mod.default),
   { ssr: false }
 );
 
