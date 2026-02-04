@@ -31,6 +31,8 @@ const VideoPlayer = ({ videoId, videoCover, disabled }) => {
               width={700}
               height={80}
               src={videoCover}
+              priority
+              sizes="(max-width: 768px)  100vw, 80vw"
               alt="feature-tutorial"
               className="h-full w-full object-contain"
               />
