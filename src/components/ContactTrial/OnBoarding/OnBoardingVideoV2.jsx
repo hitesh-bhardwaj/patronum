@@ -25,15 +25,18 @@ const VideoPlayer = ({ videoId, videoCover, disabled }) => {
           
           {/* Video Cover */}
           <div className="fadeUp relative flex h-full w-full items-center justify-center">
+            <div className="w-full h-full">
+
             <Image
-              width={1600}
-              height={760}
+              width={700}
+              height={80}
               src={videoCover}
               alt="feature-tutorial"
               loading="lazy"
               className="h-full w-full object-contain"
-            />
+              />
 
+              </div>
             {/* Play Button */}
             <button
               type="button"
