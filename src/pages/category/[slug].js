@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { getAllCategories, getCategoryBySlug } from '@/lib/categories';
 import { getPostsByCategoryId } from '@/lib/posts';
-
 import CategoryList from '@/components/PageComponents/BlogPage/CategoryList';
 import CategoryPosts from '@/components/PageComponents/BlogPage/CategoryPosts';
 import MetaData from '@/components/PageLayout/MetaData';
@@ -51,9 +50,7 @@ const Category = ({ category, posts, categories }) => {
                   <CategoryList categories={categories} activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
                   <Search posts={posts} />
                 </div>
-
                 <CategoryPosts posts={posts} />
-
               </div>
             </div>
           </section>

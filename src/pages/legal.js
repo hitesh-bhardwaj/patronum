@@ -1,5 +1,9 @@
 import PageLayout from "@/components/PageLayout";
 import LinkButton from "@/components/Buttons/LinkButton";
+import MetaData from "@/components/PageLayout/MetaData";
+import Layout from "@/components/Layout";
+import Hero from "@/components/ContactTrial/Hero";
+import { LegalHero } from "@/components/Illustrations/LegalHero";
 
 export default function Legal() {
 
@@ -13,7 +17,7 @@ export default function Legal() {
         },
         {
             id: "02",
-            title: "Standard Contractual Clauses", 
+            title: "Standard Contractual Clauses",
             img: "standard-contractual-clauses",
             link: "https://docs.google.com/document/d/1C3PqmGvh1jItmMvN2FrL13V8V-rOestnw0QkWkNFIvc/edit?pli=1#heading=h.l01ylpj06ssx",
             taregt: "_blank"
@@ -78,46 +82,47 @@ export default function Legal() {
 
     return (
         <>
-            <PageLayout
-                pageTitle1="Legal"
-                pagePara="Navigate & Understand Your Rights with Patronum"
-                imgSrc="legal.svg"
-                title={"Legal- Patronum"}
+            <MetaData title={"Legal- Patronum"}
                 description={"Legal - Patronum: Stay informed about your rights and responsibilities as a Patronum user with comprehensive access to our terms of use, privacy policies, compliance documentation, and legal disclaimers."}
                 url={"legal"}
                 img={"homepage.jpg"}
                 date_published={"2020-12-21T12:00"}
                 date_modified={"2024-04-04T12:00"}
-                keywords={"Patronum Google Workspace Manager"}
-            >
+                keywords={"Patronum Google Workspace Manager"} />
 
-                <section id="second-section">
-                    <div className="container">
-                        <div className="content-2">
-                            <div className="lg:flex items-start justify-between">
-                                <h2 className="title-4xl text-anim">
-                                    <span>
-                                        Patronum{" "}
-                                    </span>
-                                    <br />
-                                    <span>
-                                        Legal Hub
-                                    </span>
-                                </h2>
-                                <p className="content-p lg:w-1/3 w-[95%] lg:mt-[1vw] mt-[5vw] text-anim-2">
-                                    <span>
-                                        Stay informed about your rights and responsibilities as a Patronum user with comprehensive access to our terms of use, privacy policies, compliance documentation, and legal disclaimers.
-                                    </span>
-                                </p>
-                            </div>
+            <Layout>
+                <main>
+                    <Hero pageTitle1="Legal"
+                        pagePara="Navigate & Understand Your Rights with Patronum"
+                        svgElement={<LegalHero className={"h-full w-full"}/>} />
+
+                         <section id="second-section">
+                <div className="container">
+                    <div className="content-2">
+                        <div className="lg:flex items-start justify-between">
+                            <h2 className="title-4xl text-anim">
+                                <span>
+                                    Patronum{" "}
+                                </span>
+                                <br />
+                                <span>
+                                    Legal Hub
+                                </span>
+                            </h2>
+                            <p className="content-p lg:w-1/3 w-[95%] lg:mt-[1vw] mt-[5vw] text-anim-2">
+                                <span>
+                                    Stay informed about your rights and responsibilities as a Patronum user with comprehensive access to our terms of use, privacy policies, compliance documentation, and legal disclaimers.
+                                </span>
+                            </p>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section id="legal">
-                    <div className="container">
-                        <div className="content">
-                            <div className="legal-cards-wrapper">
+            <section id="legal">
+                <div className="container">
+                    <div className="content">
+                        <div className="flex items-stretch justify-center flex-wrap gap-[5vw]">
                             {legalContent.map((item, index) => (
                                 <LegalCard
                                     key={index}
@@ -128,37 +133,41 @@ export default function Legal() {
                                     target={item.taregt}
                                 />
                             ))}
-                            </div>
                         </div>
                     </div>
-                </section>
-
-            </PageLayout>
+                </div>
+            </section>
+                </main>
+            </Layout>
+           
         </>
     )
 }
 
 const LegalCard = ({ link, img, title, id, target }) => {
     return (
-        <div className="legal-card fadeUp group">
+        <div className="fadeUp group lg:grid grid-rows-[auto_17vw_auto] lg:w-[45%] border border-[#e2e2e2] rounded-[10px] bg-[#fdfdfd] lg:py-[1.4vw] lg:px-[1vw] h-auto w-full block px-[4vw] py-[6vw]">
             <div className="cards-num">
                 <span className="aeonik">
                     {id}
                 </span>
             </div>
-            <div className="img group-hover:scale-[1.05] duration-300">
+            <div className="group-hover:scale-[1.05] duration-300 w-full text-center flex justify-center items-start mb-[10vw] lg:mb-0">
                 <img
                     src={`/assets/legal/${img}.svg`}
                     alt={title}
                     title={title}
+                    className="w-[60%]"
                 />
             </div>
-            <div className="info">
-                <span className="hr-1p" />
-                <h3 className="title-2xl aeonik">
+            <div className=" space-y-[2vw] mb-[1vw]">
+                <div>
+                <span className="h-[1px] w-full lg:block bg-[#1a1a1a] none" />
+                <h3 className="lg:text-[2vw] aeonik my-[1vw] mx-0 pr-[7.5vw] pb-[0.8vw] mb-[5vw] lg:mb-0 text-[6vw] leading-[1.2]">
                     {title}
                 </h3>
-                <span className="hr-1p" />
+                <span className="h-[1px] w-full lg:block bg-[#1a1a1a] none" />
+                </div>
                 <LinkButton
                     href={link} btnText="Read More" target={target} className="link-btn"
                 />
