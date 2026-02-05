@@ -1,69 +1,10 @@
-import gsap from "gsap";
 import { useEffect, useRef } from "react"
 import Image from "next/image";
-import LinkButton from "@/components/PageLayout/Button/LinkButton";
 import PrimaryButton from "@/components/PageLayout/Button/PrimaryButton";
-import SectionTitle from "@/components/PageLayout/SectionTitle";
 
 
 export default function Hosting() {
     const section = useRef(null);
-    const para = useRef(null);
-
-    // useEffect(() => {
-    //     const isFirstTimeLoading = sessionStorage.getItem('hasVisited') === null;
-    //     let delayTime = isFirstTimeLoading ? 3.4 : 0.6;
-
-    //     let ctx = gsap.context(() => {
-    //         const heroPara = para.current;
-    //         const heroAnim = section.current.querySelectorAll(".hero-anim .span");
-
-    //         const tl = gsap.timeline();
-
-    //         tl.fromTo(heroAnim, 0.8, {
-    //             yPercent: 105,
-    //         }, {
-    //             yPercent: 0,
-    //             stagger: 0.1,
-    //             ease: 'power2.out',
-    //         }, `+=${delayTime}`)
-    //             .fromTo(heroPara, 0.4, {
-    //                 yPercent: 100,
-    //                 opacity: 0
-    //             }, {
-    //                 yPercent: 0,
-    //                 opacity: 1,
-    //                 ease: "Power2.out",
-    //                 stagger: 0.1,
-    //             }, '-=0.8')
-    //             .from('.hero-button-anim', 0.8, {
-    //                 y: 30,
-    //                 opacity: 0,
-    //                 ease: "power2.out",
-    //             }, '-=0.8')
-    //             .fromTo(".hero-svg-circle", {
-    //                 strokeDasharray: "0% 300%",
-    //             }, {
-    //                 strokeDasharray: "310% 300%",
-    //                 duration: 1.5,
-    //                 ease: "power2.out",
-    //             }, '-=0.8')
-    //             .from(".scroll-img-container", {
-    //                 y: -10,
-    //                 opacity: 0,
-    //                 duration: 0.8
-    //             }, '-=0.5')
-    //             .fromTo('.hero-img', 2, {
-    //                 x: 100,
-    //                 opacity: 0
-    //             }, {
-    //                 x: 0,
-    //                 opacity: 1,
-    //                 ease: "expo.out",
-    //             }, '-=2');
-    //     });
-    //     return () => ctx.revert();
-    // }, []);
 
 
     return (
