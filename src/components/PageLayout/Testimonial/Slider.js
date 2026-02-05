@@ -114,7 +114,7 @@ export default function Slider() {
         <div className='testimonial-card'>
             <div className='testicard-content'>
                 <div>
-                    <img width="64" height="57" src='/assets/icons/quote-icon.webp' alt='quote icon' className='testi-quote-icon'/>
+                    <Image width={64} height={57} src='/assets/icons/quote-icon.webp' alt='quote icon' className='testi-quote-icon'/>
                     <p className='testimonial-para'>
                         {content}
                     </p>
