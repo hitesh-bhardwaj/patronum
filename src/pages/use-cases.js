@@ -72,7 +72,6 @@ const useCasesData = [
 export default function useCases() {
   return (
     <>
-      
       <MetaData
         title={"Patronum - One stop destination for G Suite management"}
         description={
@@ -86,40 +85,41 @@ export default function useCases() {
       />
       <Layout>
         <main>
-        <Hero
-          pageTitle1="Unlocking Efficiency"
-          pageTitle2="Across Departments"
-          pagePara="Break Barriers, Build Bridges & Harness the Full Potential of Google Workspace Across Your Organization"
-          imgSrc="use-cases.jpg"
-          svgElement={<Usecases className={"h-full w-full"} />}
-        />
-        <SectionBreakSmall
-          sectionBreakText={
-            "Patronum gives you full control over how Google Workspace is managed with intelligent automation and delegation"
-          }
-        />
+          <Hero
+            pageTitle1="Unlocking Efficiency"
+            pageTitle2="Across Departments"
+            pagePara="Break Barriers, Build Bridges & Harness the Full Potential of Google Workspace Across Your Organization"
+            imgSrc="use-cases.jpg"
+            svgElement={<Usecases className={"h-full w-full"} />}
+          />
+          <SectionBreakSmall
+            sectionBreakText={
+              "Patronum gives you full control over how Google Workspace is managed with intelligent automation and delegation"
+            }
+          />
 
-        <section className="features-main useCases-main">
-          <div className="container">
-            <div className="content">
-              {useCasesData.map((useCase, index) => (
-                <FeatureCard
-                  key={index}
-                  featTitle={useCase.title}
-                  featPara1={useCase.para1}
-                  featPara2={useCase.para2}
-                  featImg={useCase.img}
-                  featLink={useCase.link}
-                  btnText="Learn More"
-                />
-              ))}
+          <section className="">
+            <div className="container">
+              <div className="content">
+                {useCasesData.map((useCase, index) => (
+                  <FeatureCard
+                    id={index+1}
+                    key={index}
+                    featTitle={useCase.title}
+                    featPara1={useCase.para1}
+                    featPara2={useCase.para2}
+                    featImg={useCase.img}
+                    featLink={useCase.link}
+                    btnText="Learn More"
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <Testimonial />
+          <Testimonial />
 
-        <Faqs featureName="use_cases" />
+          <Faqs featureName="use_cases" />
         </main>
       </Layout>
     </>

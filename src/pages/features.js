@@ -126,7 +126,7 @@ export default function Features() {
           }}
         />
       </Head>
-      
+
       <MetaData
         title={"Patronum - Most Feature Rich Google Workspace Manager"}
         description={
@@ -170,11 +170,12 @@ export default function Features() {
             </div>
           </section>
 
-          <section className="features-main">
+          <section className="">
             <div className="container">
               <div className="content">
                 {featuresData.map((feature, index) => (
                   <FeatureCard
+                    id={index}
                     key={index}
                     featTitle={feature.title}
                     featPara1={feature.para1}
@@ -193,7 +194,6 @@ export default function Features() {
           <Faqs featureName="on_boarding" />
         </main>
       </Layout>
-
     </>
   );
 }
