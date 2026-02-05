@@ -6,7 +6,7 @@ import RegisterAnOppHero from "@/components/Illustrations/RegisterAnOppHero";
 import dynamic from "next/dynamic";
 
 
-const RegisterOpportunityForm = dynamic(
+const RegisterOpportunityFormComp = dynamic(
   () => import("@/components/Forms/RegisterOpportunityForm"),
   { ssr: true },
 );
@@ -49,7 +49,7 @@ export default function PartnersDetail() {
 
                   <div className="lg:w-[50%] w-full h-full">
                     <div className="bg-[#FDFDFD] rounded-[15px] px-[11%] py-[7.6%] border-[#E2E2E2] border fadeUp">
-                      <RegisterOpportunityForm />
+                      <RegisterOpportunityFormComp />
                     </div>
                   </div>
                 </div>
