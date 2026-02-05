@@ -1,27 +1,34 @@
-import React, { useState, useEffect, useMemo, useRef } from 'react';
-import { format } from 'date-fns';
-import { getApolloClient } from '@/lib/apollo-client';
-import { QUERY_ALL_POST_SLUGS } from '@/data/posts';
-import { getPostBySlug, getHomePagePosts } from '@/lib/posts';
-import BlogLayout from '@/components/PageComponents/BlogPage/BlogLayout';
+import React, { useState, useEffect, useMemo, useRef } from "react";
+import { format } from "date-fns";
+import { getApolloClient } from "@/lib/apollo-client";
+import { QUERY_ALL_POST_SLUGS } from "@/data/posts";
+import { getPostBySlug, getHomePagePosts } from "@/lib/posts";
+import BlogLayout from "@/components/PageComponents/BlogPage/BlogLayout";
 
-import parse from 'html-react-parser';
-import parameterize from 'parameterize';
-import styles from '@/styles/blog.module.css';
+import parse from "html-react-parser";
+import parameterize from "parameterize";
+import styles from "@/styles/blog.module.css";
 
-import Head from 'next/head';
-import { NextSeo } from 'next-seo';
-import dynamic from 'next/dynamic';
+import Head from "next/head";
+import { NextSeo } from "next-seo";
+import dynamic from "next/dynamic";
 import { useModal } from "@/components/Modals/ModalContext";
-import { sanitizeRankMathGraph } from '@/lib/util';
+import { sanitizeRankMathGraph } from "@/lib/util";
 
-const ProgressBar = dynamic(() => import('@/components/PageComponents/BlogPage/ProgressBar'), { ssr: false });
-const RelatedPosts = dynamic(() => import('@/components/PageComponents/BlogPage/RelatedPosts'), { ssr: true });
-const TableOfContents = dynamic(() => import('@/components/PageComponents/BlogPage/TableOfContents'), { ssr: true });
-
+const ProgressBar = dynamic(
+  () => import("@/components/PageComponents/BlogPage/ProgressBar"),
+  { ssr: false },
+);
+const RelatedPosts = dynamic(
+  () => import("@/components/PageComponents/BlogPage/RelatedPosts"),
+  { ssr: true },
+);
+const TableOfContents = dynamic(
+  () => import("@/components/PageComponents/BlogPage/TableOfContents"),
+  { ssr: true },
+);
 
 function PostDetail({ post, recentPosts }) {
-  
   if (!post) {
     return <div>Loading...</div>;
   }
@@ -29,12 +36,12 @@ function PostDetail({ post, recentPosts }) {
   const contentContainer = useRef(null);
   const { openModal } = useModal();
 
-  const formattedDate = format(new Date(post.date), 'MMMM dd, yyyy');
+  const formattedDate = format(new Date(post.date), "MMMM dd, yyyy");
   const [activeSection, setActiveSection] = useState(null);
 
   const getTextContent = (domNode) => {
-    let text = '';
-    if (domNode.type === 'text') {
+    let text = "";
+    if (domNode.type === "text") {
       text += domNode.data;
     } else if (domNode.children && domNode.children.length > 0) {
       domNode.children.forEach((child) => {
@@ -48,7 +55,7 @@ function PostDetail({ post, recentPosts }) {
     const toc = [];
     const contentWithIds = parse(post.content, {
       replace: (domNode) => {
-        if (domNode.type === 'tag' && domNode.name === 'h2') {
+        if (domNode.type === "tag" && domNode.name === "h2") {
           const textContent = getTextContent(domNode);
           const id = parameterize(textContent);
           domNode.attribs.id = id;
@@ -74,28 +81,29 @@ function PostDetail({ post, recentPosts }) {
       setActiveSection(null);
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     handleScroll();
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [toc]);
 
   useEffect(() => {
-    const formOpenButtons = contentContainer.current.querySelectorAll(".open-contact-form");
+    const formOpenButtons =
+      contentContainer.current.querySelectorAll(".open-contact-form");
 
     const handleClick = () => {
-      openModal('contact');
+      openModal("contact");
     };
 
-    formOpenButtons.forEach(button => {
+    formOpenButtons.forEach((button) => {
       button.addEventListener("click", handleClick);
     });
 
     return () => {
-      formOpenButtons.forEach(button => {
+      formOpenButtons.forEach((button) => {
         button.removeEventListener("click", handleClick);
       });
     };
@@ -107,7 +115,7 @@ function PostDetail({ post, recentPosts }) {
         title={post.seo.title}
         description={post.seo.description}
         openGraph={{
-          type: 'article',
+          type: "article",
           article: {
             publishedTime: post.date,
             modifiedTime: post.modified,
@@ -123,93 +131,24 @@ function PostDetail({ post, recentPosts }) {
               alt: post.title,
             },
           ],
-          siteName: 'Patronum',
+          siteName: "Patronum",
         }}
         canonical={`https://www.patronum.io/${post.slug}`}
         languageAlternates={[
-    { hrefLang: 'en-US', href: `https://www.patronum.io/${post.slug}` },
-  ]}
+          { hrefLang: "en-US", href: `https://www.patronum.io/${post.slug}` },
+        ]}
       />
 
       <Head>
-        {/* <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
-              {
-                "@context": "https://schema.org",
-                "@type": "BlogPosting",
-                "headline": post.seo.title,
-                "keywords": post.seo.keywords,
-                "datePublished": post.date,
-                "dateModified": post.modified,
-                "author": {
-                  "name": "Patronum",
-                  "@id": "https://www.patronum.io/admin/",
-                },
-                "publisher": {
-                  "@id": "https://www.patronum.io/#organization"
-                },
-                "name": post.seo.title,
-                "description": post.seo.description,
-                "@id": `https://www.patronum.io/${post.slug}#richSnippet`,
-                "url": `https://www.patronum.io/${post.slug}`,
-                "isPartOf": {
-                  "@id": `https://www.patronum.io/${post.slug}#website`
-                },
-                "image": {
-                  url:post.featuredImage.sourceUrl,
-                  "@id": post.seo.image,
-                },
-                "inLanguage": "en_US",
-                "mainEntityOfPage": {
-                  "@id": `https://www.patronum.io/${post.slug}#webpage`
-                },
-              }
-            ),
-          }}
-        /> */}
-        {/* <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
-              {
-                "@context": "https://schema.org",
-                "@type": "WebPage",
-                "@id": `https://www.patronum.io/${post.slug}#webpage`,
-                "url": `https://www.patronum.io/${post.slug}`,
-                "name": post.seo.title,
-                "description": post.seo.description,
-                "datePublished": post.date,
-                "dateModified": post.modified,
-                "publisher": {
-                  "@type": "Organization",
-                  "name": "Patronum",
-                  "logo": {
-                    "@type": "ImageObject",
-                    "url": "https://www.patronum.io/logo.png",
-                  }
-                },
-                "about": {
-                  "@id": `https://www.patronum.io/${post.slug}#organization`
-                },
-                "isPartOf": {
-                  "@id": `https://www.patronum.io/${post.slug}#website`
-                },
-                "inLanguage": "en_US",
-              }
-            ),
-          }}
-        /> */}
         {post?.seo?.jsonLd?.raw && (
-  <script
-  key="rankmath-jsonld-sanitized"
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: sanitizeRankMathGraph(post.seo.jsonLd.raw),
-    }}
-  />
-)}
+          <script
+            key="rankmath-jsonld-sanitized"
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: sanitizeRankMathGraph(post.seo.jsonLd.raw),
+            }}
+          />
+        )}
       </Head>
 
       <BlogLayout
@@ -222,9 +161,16 @@ function PostDetail({ post, recentPosts }) {
       >
         <section className="container">
           <div className="content blog-content">
-            <div className="flex w-full justify-between items-start" id="blog-container">
+            <div
+              className="flex w-full justify-between items-start"
+              id="blog-container"
+            >
               <TableOfContents toc={toc} activeSection={activeSection} />
-              <div ref={contentContainer} id="blog-content" className={styles.blogContent}>
+              <div
+                ref={contentContainer}
+                id="blog-content"
+                className={styles.blogContent}
+              >
                 {contentWithIds}
               </div>
             </div>
@@ -233,7 +179,11 @@ function PostDetail({ post, recentPosts }) {
 
         <ProgressBar />
 
-        <RelatedPosts sectionTitle="Related Blogs" recentPosts={recentPosts} currentSlug={post.slug} />
+        <RelatedPosts
+          sectionTitle="Related Blogs"
+          recentPosts={recentPosts}
+          currentSlug={post.slug}
+        />
       </BlogLayout>
     </>
   );
@@ -246,7 +196,7 @@ export async function getStaticPaths() {
 
   const { data } = await apolloClient.query({
     query: QUERY_ALL_POST_SLUGS,
-    fetchPolicy: 'no-cache',
+    fetchPolicy: "no-cache",
   });
 
   const paths = data.posts.edges.map(({ node }) => ({
@@ -255,7 +205,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: 'blocking',
+    fallback: "blocking",
   };
 }
 
@@ -279,30 +229,38 @@ export async function getStaticProps({ params }) {
 
       const recentPosts = await getHomePagePosts();
 
-      console.log(`[ISR] Successfully generated page for: ${slug} (attempt ${attempt})`);
+      console.log(
+        `[ISR] Successfully generated page for: ${slug} (attempt ${attempt})`,
+      );
 
       return {
         props: {
           post,
-          recentPosts
+          recentPosts,
         },
         revalidate: 3600, // 1 hour - reduced from 60s to prevent frequent ISR failures
       };
     } catch (error) {
       lastError = error;
-      console.error(`[ISR] Attempt ${attempt}/${maxRetries} failed for ${slug}:`, error.message);
+      console.error(
+        `[ISR] Attempt ${attempt}/${maxRetries} failed for ${slug}:`,
+        error.message,
+      );
 
       // Wait before retry with exponential backoff
       if (attempt < maxRetries) {
         const delay = 1000 * attempt; // 1s, 2s, 3s
         console.log(`[ISR] Retrying ${slug} in ${delay}ms...`);
-        await new Promise(resolve => setTimeout(resolve, delay));
+        await new Promise((resolve) => setTimeout(resolve, delay));
       }
     }
   }
 
   // After all retries failed, log error and return 404 with shorter revalidate
-  console.error(`[ISR] All ${maxRetries} retries failed for ${slug}. Last error:`, lastError?.message);
+  console.error(
+    `[ISR] All ${maxRetries} retries failed for ${slug}. Last error:`,
+    lastError?.message,
+  );
   console.error(`[ISR] Stack trace:`, lastError?.stack);
 
   return {

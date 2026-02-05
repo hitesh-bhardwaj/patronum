@@ -1,5 +1,4 @@
 import LinkButton from "@/components/Buttons/LinkButton";
-import PageLayout from "@/components/PageLayout";
 import SectionTitle from "@/components/PageLayout/SectionTitle";
 import {
   Accordion,
@@ -7,6 +6,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import Layout from "@/components/Layout";
+import MetaData from "@/components/PageLayout/MetaData";
+import Hero from "@/components/ContactTrial/Hero";
+import SecurityHero from "@/components/Illustrations/SecurityHero";
 
 function security() {
 
@@ -124,19 +127,26 @@ function security() {
   ] 
 
   return (
-    <>
-      <PageLayout
-        pageTitle1={"Security & Compliance"}
-        pagePara={"Our unwavering commitment to ensure your data is always protected"}
-        imgSrc={"security-hero.svg"}
+    <>          
+      <MetaData
         title={"Data Security & Compliance at Patronum"}
-        description={"Patronum ensures top-notch data security for its customers with industry-leading certifications and secure practices. Learn about our compliance measures and commitment to protecting your data."}
+        description={
+          "Patronum ensures top-notch data security for its customers with industry-leading certifications and secure practices. Learn about our compliance measures and commitment to protecting your data."
+        }
         url={"security-and-compliance"}
         img={"homepage.jpg"}
-        date_published={"2024-05-22T12:00"}
-        date_modified={"2024-05-22T12:00"}
+        date_published={"2023-04-24T12:00"}
+        date_modified={"2024-04-04T12:00"}
         keywords={"Google Workspace, Google Compliance, ISO Certificates"}
-      >
+      />
+      <Layout>
+        <main>
+          <Hero
+            pageTitle1="Security & Compliance"
+            pagePara="Our unwavering commitment to ensure your data is always protected"
+            imgSrc="security-hero.svg"
+            svgElement={<SecurityHero className={"h-full w-full"} />}
+          />
         <section id="second-section">
           <div className="container">
             <div className="content-2">
@@ -238,7 +248,7 @@ function security() {
                 </div>
 
                 <div className="lg:mt-[5vw] mt-[5vh]">
-                  <p className="paraSectionHead text-anim-2">
+                  <p className="lg:w-[40%] lg:text-[1.6vw] text-[4.8vw] text-anim-2">
                     <span className="aeonik font-[400]">
                       These comprehensive practices and certifications highlight Patronum&#39;s unwavering commitment to security and compliance, ensuring that our customers&#39; data is protected by the most rigorous standards in the industry.
                     </span>
@@ -247,7 +257,9 @@ function security() {
             </div>
           </div>
         </section>
-      </PageLayout>
+          </main>
+          </Layout>
+          
     </>
   );
 }

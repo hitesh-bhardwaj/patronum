@@ -6,12 +6,10 @@ import {
 } from "next-share";
 import { useEffect } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import BreadcrumbComponent from "@/components/PageLayout/BreadCrumb";
 import Layout from "@/components/Layout";
 import Image from "next/image";
 
-gsap.registerPlugin(ScrollTrigger);
 
 export default function BlogLayout({
   children,

@@ -69,7 +69,7 @@ export default function About() {
                 </p>
               </div>
               <div className="fadeUp">
-                <ul className="lg:w-[85%] w-full text-[4vw] leading-[1.8] space-y-[5vw] list-decimal font-body font-medium lg:text-[1.5vw] lg:leading-[1.7] lg:ml-[2vw] lg:space-y-0">
+                <ul className="lg:w-[85%] w-[95%] text-[4vw] leading-[1.8] space-y-[5vw] list-decimal font-body font-medium lg:text-[1.5vw] lg:leading-[1.7] lg:ml-[2vw] ml-[5vw] lg:space-y-0">
                   <li className="">Accusative singular of patrōnus.</li>
                   <li>
                     A protector, guardian, defender, patron – a person who
