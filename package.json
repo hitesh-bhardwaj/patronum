@@ -76,6 +76,7 @@
     "rehype-stringify": "^10.0.0",
     "rss": "^1.2.2",
     "simplex-noise": "^3.0.0",
+    "smooothy": "^0.0.35",
     "split-type": "^0.3.4",
     "swiper": "^11.0.5",
     "tailwind-merge": "^2.2.1",

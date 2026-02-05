@@ -1,6 +1,6 @@
 import Layout from '@/components/Layout'
 import Image from 'next/image';
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import SmoothySlider, { Slide } from '@/components/SmoothSlider';
@@ -22,6 +22,8 @@ export default trial
 
  function Testimonial() {
      const sliderRef = useRef(null);
+     const [progress, setProgress] = useState(0);
+     const progressAnimRef = useRef(0);
 
     useEffect(() => {
         let ctx = gsap.context(() => {
@@ -53,10 +55,29 @@ export default trial
         return () => ctx.revert();
     }, []);
 
+    useEffect(() => {
+        let raf;
+
+        const update = () => {
+            if (sliderRef.current && sliderRef.current.getProgress) {
+                const targetProgress = sliderRef.current.getProgress() * 100;
+                
+                // Smooth interpolation
+                progressAnimRef.current += (targetProgress - progressAnimRef.current) * 0.1;
+                setProgress(progressAnimRef.current);
+            }
+            raf = requestAnimationFrame(update);
+        };
+
+        raf = requestAnimationFrame(update);
+        return () => cancelAnimationFrame(raf);
+    }, []);
+
+
     return(
         <>
             <section id="testimonial">
-                <div className="content">
+                <div className="content !w-fit">
                     <div className="container">
                         <div className="section-head">
                             <h2 className="title-4xl leading-[0.5]">
@@ -70,24 +91,45 @@ export default trial
                             </h2>
                         </div>
                     </div>
-                    <div className="mt-[10vw] lg:mt-0">
+                    <div className="mt-[10vw] lg:mt-0 ">
                         <SmoothySlider
-        ref={sliderRef}
-        className="py-4 md:px-0 w-screen  cursor-grab active:cursor-grabbing"
-        config={{ infinite: true, snap: false }}
-      >
-        {data.map((testimonial, index) => (
-          <Slide key={testimonial.id || index} className={`w-[40vw] lg:w-[24vw] px-3 ${index === 0 ? 'ml-[5vw]' : ''}`}>
-            <TestimonialCard
-                        content={testimonial.content}
-                        clientImage={testimonial.clientImage}
-                        clientName={testimonial.clientName}
-                        clientCompany={testimonial.clientCompany}
-                        index={index}
-                    />
-          </Slide>
-        ))}
-      </SmoothySlider>
+                            ref={sliderRef}
+                            className="py-4 cursor-grab active:cursor-grabbing "
+                            // config={{ infinite: false, snap: false }}
+                           config={{
+  snap: false,
+  infinite: false,
+  slidesOffsetBefore: '0vw',
+  slidesOffsetAfter: '0vw',  // Change this from '1vw' to '0vw' for no spacing at the end
+}}
+
+                        >
+                            {data.map((testimonial, index) => (
+                                <Slide key={index} className={`w-fit  lg:w-fit px-3 ${index === 0 ? 'ml-[5vw]' : ''} ${index === data.length - 1 ? 'mr-[1vw]' : ''}`}>
+                                    <TestimonialCard
+                                        content={testimonial.content}
+                                        clientImage={testimonial.clientImage}
+                                        clientName={testimonial.clientName}
+                                        clientCompany={testimonial.clientCompany}
+                                        index={index}
+                                    />
+                                </Slide>
+                            ))}
+                        </SmoothySlider>
+      
+                        {/* Progress Bar */}
+                        <div className="w-full px-[5vw] mt-8">
+                            <div className="relative w-full h-[2px] bg-[#E5E5E5]">
+                                <div 
+                                    className="absolute top-0 left-0 h-full bg-black"
+                                    style={{ 
+                                        width: `${100 / data.length}%`,
+                                        transform: `translateX(${progress * (data.length - 1)}%)`,
+                                        transition: 'none'
+                                    }}
+                                />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>        
@@ -98,20 +140,20 @@ export default trial
 
   const TestimonialCard = ({ content, clientImage, clientName, clientCompany, index }) => {
     return (
-        <div className={` w-[95%] bg-[#FDFDFD] border border-[#e2e2e2] rounded-[16px] lg:py-[1.5vw] lg:px-[2vw] lg:h-[28vw] mb-[5vw] h-[110vw] py-[5vw] px-[5vw] `}>
+        <div className={` w-[65vw] md:w-[50vw] lg:w-[22vw] bg-[#FDFDFD] border border-[#e2e2e2] rounded-[16px] lg:py-[1.5vw] lg:px-[2vw] lg:h-[28vw] md:h-[70vh] mb-[5vw] h-full  py-[5vw] px-[5vw] `}>
             <div className='flex flex-col justify-between h-full'>
                 <div>
                     <Image width={64} height={57} src='/assets/icons/quote-icon.webp' alt='quote icon' className='lg:w-[3.2vw] lg:mb-[1vw] object-contain w-[10vw] mb-[4vw]'/>
-                    <p className=' lg:text-[1vw] text-left mb-0 text-[4vw]'>
+                    <p className=' lg:text-[1vw] md:text-[3vw] text-left mb-0 text-[4vw]'>
                         {content}
                     </p>
                 </div>
                 <div className='border-t border-[#A5A5A5] flex items-center justify-start pl-[20px] py-[10px] lg:gap-[1.5vw]  gap-[3vw] text-left lg:py-[15px]'>
-                    <div className='border-2 border-primary rounded-full overflow-hidden lg:w-[5vw]  lg:h-[5vw] w-[17vw] h-[17vw]'>
+                    <div className='border-2 border-primary rounded-full overflow-hidden lg:w-[5vw] md:h-[7vw] md:w-[7vw]  lg:h-[5vw] w-[17vw] h-[17vw]'>
                         <Image width={100} height={100} src={clientImage} priority={false} alt={`${clientName} Image`} className='h-full w-full object-cover'/>
                     </div>
                     <div className=''>
-                        <h5  className='lg:text-[1.16vw] text-[5vw]'>
+                        <h5  className='lg:text-[1.16vw] md:text-[3vw] text-[5vw]'>
                             {clientName}
                         </h5>
                         <p className='lg:text-[0.8vw] aeonik text-[#444444] text-[3.5vw] leading-[1] font-normal lg:leading-[1.2]'>{clientCompany}</p>
@@ -185,5 +227,3 @@ export default trial
           clientCompany: "Room 8 Gallery"
         },
       ];
-
-  
