@@ -1,150 +1,172 @@
-import PrimaryButton from '@/components/PageLayout/Button/PrimaryButton'
-import React, { useState } from 'react'
+import PrimaryButton from "@/components/PageLayout/Button/PrimaryButton";
+import React, { useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 
 const Webinars = () => {
+  const [modalOpen, setModalOpen] = useState({});
 
-    const [modalOpen, setModalOpen] = useState({});
+  const openModal = (videoId) => {
+    setModalOpen((prevState) => ({
+      ...prevState,
+      [videoId]: true,
+    }));
+  };
 
-    const openModal = (videoId) => {
-        setModalOpen(prevState => ({
-            ...prevState,
-            [videoId]: true
-        }));
-    };
+  const closeModal = (videoId) => {
+    setModalOpen((prevState) => ({
+      ...prevState,
+      [videoId]: false,
+    }));
+  };
 
-    const closeModal = (videoId) => {
-        setModalOpen(prevState => ({
-            ...prevState,
-            [videoId]: false
-        }));
-    };
- 
-    const handleModalClick = (e, videoId) => {
-        if (e.target.classList.contains("video-modal-overlay")) {
-            closeModal(videoId);
-        }
-    };
-    const WebinarCard = ({ imgSrc, title, videoId, date }) => {
-        return (
-            <>
-                <div className='fadeUp group lg:w-[31.5%] lg:min-h-[20vw] h-full rounded-[10px] cursor-pointer'>
-                    <div onClick={() => openModal(videoId)} className="guide-card hover:shadow-xl duration-300 w-full h-full overflow-hidden rounded-[10px] border cursor-pointer border-[#e8e8e8] bg-white hover:border-2 hover:border-primary">
-                        <div className='hover:shadow-xl duration-300'>
-                            <div className="image-container w-full h-[50%] relative">
-                                <img src={imgSrc} className="h-full w-full object-cover brightness-95 group-hover:scale-[1.03] scale-[1] duration-300" alt="Webinar Image" title="Webinar Image" />
-                                <div className='absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 lg:h-[4vw] lg:w-[4vw] rounded-full bg-primary z-[10] flex items-center justify-center h-[15vw] w-[15vw]'>
-                                    <img src='/assets/community/triangle.png' height={15} width={15} alt='play icon' />
-                                </div>
-                            </div>
-                            <div className="text-container px-[5%] py-[4%] lg:pb-[8%] pb-[8%] ">
-                                <h3 className="lg:text-[1.57vw] text-[6vw] group-hover:text-primary duration-300  leading-[1.3] lg:w-[88%] w-[95%] lg:h-[7vw] h-[28vw] md:text-[4.5vw] md:h-[15vw]">
-                                    {title}
-                                </h3>
-                                <div className="">
-                                    <p className='content-p text-[#666666]'>{date}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {modalOpen[videoId] && (
-                    <div className={`video-modal-overlay ${modalOpen[videoId] ? 'show' : 'hide'}`} onClick={(e) => handleModalClick(e, videoId)}>
-                        <div className="modal">
-                            <iframe
-                                width="640"
-                                height="390"
-                                src={`https://www.youtube.com/embed/${videoId}`}
-                                title="YouTube video player"
-                                allowFullScreen>
-                            </iframe>
-                            <button className="modal-close" onClick={() => closeModal(videoId)} aria-label="Close Video Modal">
-                                <span className="close-plus modal-btn" />
-                                <span className="close-minus modal-btn" />
-                            </button>
-                        </div>
-                    </div>
-                )}
-            </>
-        )
+  const handleModalClick = (e, videoId) => {
+    if (e.target.classList.contains("video-modal-overlay")) {
+      closeModal(videoId);
     }
+  };
+  const WebinarCard = ({ imgSrc, title, videoId, date }) => {
     return (
-        <section id="second-section">
-            <div className="container">
-                <div className="content-2 flex flex-col  justify-center lg:gap-[5vw] gap-[12vw]">
-                    <h2 className="title-4xl text-anim w-[80%] lg:w-full">
-                        <span>
-                            Watch Recent Webinars
-                        </span>
-                    </h2>
-
-                    <div className=" w-full flex flex-wrap gap-[1.5vw] lg:gap-y-[2vw] gap-y-[0vw] md:gap-y-[1.5vw]">
-                        {webinars.map((card, index) => (
-                            <WebinarCard
-                                key={index}
-                                imgSrc={card.imgSrc}
-                                title={card.title}
-                                videoId={card.videoId}
-                                date={card.date}
-                            />
-                        ))}
-
-                    </div>
-                    <div className='flex flex-col items-center'>
-                        <PrimaryButton btnText={"See All Webinars"} link={"https://www.youtube.com/@wearepatronum/videos"} target="_blank" />
-                    </div>
+      <>
+        <div className="fadeUp group lg:w-[31.5%] lg:min-h-[20vw] h-full rounded-[10px] cursor-pointer">
+          <div
+            onClick={() => openModal(videoId)}
+            className="guide-card hover:shadow-xl duration-300 w-full h-full overflow-hidden rounded-[10px] border cursor-pointer border-[#e8e8e8] bg-white hover:border-2 hover:border-primary"
+          >
+            <div className="hover:shadow-xl duration-300">
+              <div className="image-container w-full h-[50%] relative">
+                <Image
+                  width={300}
+                  height={250}
+                  src={imgSrc}
+                  className="w-full object-cover brightness-95 group-hover:scale-[1.03] scale-[1] duration-300"
+                  alt="Webinar Image"
+                  title="Webinar Image"
+                />
+                <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 lg:h-[4vw] lg:w-[4vw] rounded-full bg-primary z-[10] flex items-center justify-center h-[15vw] w-[15vw]">
+                  <Image
+                    src="/assets/community/triangle.png"
+                    height={15}
+                    width={15}
+                    alt="play icon"
+                  />
                 </div>
+              </div>
+              <div className="text-container px-[5%] py-[4%] lg:pb-[8%] pb-[8%] ">
+                <h3 className="lg:text-[1.57vw] text-[6vw] group-hover:text-primary duration-300  leading-[1.3] lg:w-[88%] w-[95%] lg:h-[7vw] h-[28vw] md:text-[4.5vw] md:h-[15vw]">
+                  {title}
+                </h3>
+                <div className="">
+                  <p className="content-p text-[#666666]">{date}</p>
+                </div>
+              </div>
             </div>
-        </section>
-    )
-}
+          </div>
+        </div>
+        {modalOpen[videoId] && (
+          <div
+            className={`video-modal-overlay ${modalOpen[videoId] ? "show" : "hide"}`}
+            onClick={(e) => handleModalClick(e, videoId)}
+          >
+            <div className="modal">
+              <iframe
+                width="640"
+                height="390"
+                src={`https://www.youtube.com/embed/${videoId}`}
+                title="YouTube video player"
+                allowFullScreen
+              ></iframe>
+              <button
+                className="modal-close"
+                onClick={() => closeModal(videoId)}
+                aria-label="Close Video Modal"
+              >
+                <span className="close-plus modal-btn" />
+                <span className="close-minus modal-btn" />
+              </button>
+            </div>
+          </div>
+        )}
+      </>
+    );
+  };
+  return (
+    <section id="second-section">
+      <div className="container">
+        <div className="content-2 flex flex-col  justify-center lg:gap-[5vw] gap-[12vw]">
+          <h2 className="title-4xl text-anim w-[80%] lg:w-full">
+            <span>Watch Recent Webinars</span>
+          </h2>
 
-export default Webinars
+          <div className=" w-full flex flex-wrap gap-[1.5vw] lg:gap-y-[2vw] gap-y-[0vw] md:gap-y-[1.5vw]">
+            {webinars.map((card, index) => (
+              <WebinarCard
+                key={index}
+                imgSrc={card.imgSrc}
+                title={card.title}
+                videoId={card.videoId}
+                date={card.date}
+              />
+            ))}
+          </div>
+          <div className="flex flex-col items-center">
+            <PrimaryButton
+              btnText={"See All Webinars"}
+              link={"https://www.youtube.com/@wearepatronum/videos"}
+              target="_blank"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Webinars;
 
 const webinars = [
-    {
-        id: 1,
-        imgSrc: "/assets/community/how-to-webinar-thumbnail-18-dec.png",
-        title: "‘How to’ Webinar Series : 12 Days of Patronum",
-        videoId: "imk_dE6doCc",
-        date: "December 18, 2025"
-    },
-    {
-        id: 1,
-        imgSrc: "/assets/community/how-to-webinar-20-nov.png",
-        title: "‘How to’ Webinar Series Fireside Chat- Email Signature Management",
-        videoId: "eZZ4Nf3ee0k",
-        date: "November 20, 2025"
-    },
-    {
-        id: 2,
-        imgSrc: "/assets/community/how-to-webinar-28-oct.png",
-        title: "‘How to’ Webinar Series Drive Compliance",
-        videoId: "gd1xciPwVSY",
-        date: "October 28, 2025"
-    },
-    {
-        id: 3,
-        imgSrc: "/assets/community/how-to-webinar-9-oct.png",
-        title: "‘How to’ Webinar Series Dashboard Walkthrough",
-        videoId: "zyb4xO-Swvg",
-        date: "October 9, 2025"
-    },
-    {
-        id: 4,
-        imgSrc: "/assets/community/how-to-webinar-25.png",
-        title: "‘How to’ Webinar Series Offboarding Policy",
-        videoId: "i8LqMLuo-WU",
-        date: "September 25, 2025"
-    },
-    {
-        id: 5,
-        imgSrc: "/assets/community/how-to-webinar-thumbnail.png",
-        title: "‘How to’ Webinar Series Email Signature Management",
-        videoId: "Cp1QN7e89ns",
-        date: "September 11, 2025"
-    },
-    
+  {
+    id: 1,
+    imgSrc: "/assets/community/how-to-webinar-thumbnail-18-dec.png",
+    title: "‘How to’ Webinar Series : 12 Days of Patronum",
+    videoId: "imk_dE6doCc",
+    date: "December 18, 2025",
+  },
+  {
+    id: 1,
+    imgSrc: "/assets/community/how-to-webinar-20-nov.png",
+    title: "‘How to’ Webinar Series Fireside Chat- Email Signature Management",
+    videoId: "eZZ4Nf3ee0k",
+    date: "November 20, 2025",
+  },
+  {
+    id: 2,
+    imgSrc: "/assets/community/how-to-webinar-28-oct.png",
+    title: "‘How to’ Webinar Series Drive Compliance",
+    videoId: "gd1xciPwVSY",
+    date: "October 28, 2025",
+  },
+  {
+    id: 3,
+    imgSrc: "/assets/community/how-to-webinar-9-oct.png",
+    title: "‘How to’ Webinar Series Dashboard Walkthrough",
+    videoId: "zyb4xO-Swvg",
+    date: "October 9, 2025",
+  },
+  {
+    id: 4,
+    imgSrc: "/assets/community/how-to-webinar-25.png",
+    title: "‘How to’ Webinar Series Offboarding Policy",
+    videoId: "i8LqMLuo-WU",
+    date: "September 25, 2025",
+  },
+  {
+    id: 5,
+    imgSrc: "/assets/community/how-to-webinar-thumbnail.png",
+    title: "‘How to’ Webinar Series Email Signature Management",
+    videoId: "Cp1QN7e89ns",
+    date: "September 11, 2025",
+  },
 ];

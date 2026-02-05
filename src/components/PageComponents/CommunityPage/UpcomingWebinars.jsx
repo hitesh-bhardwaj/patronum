@@ -33,8 +33,8 @@ const UpcomingWebinars = () => {
                   quality={100}
                   src={"/assets/community/upcoming-webinar-29-jan.png"}
                   alt="Upcoming Webinar Banner"
-                  height={650}
-                  width={1440}
+                  height={487}
+                  width={1078}
                   className="object-cover"
                 />
               </div>
