@@ -1,33 +1,29 @@
 import PageLayout from "@/components/PageLayout";
 import SectionBreakSmall from "@/components/PageLayout/SectionBreakSmall";
 import PrimaryButton from "@/components/PageLayout/Button/PrimaryButton";
-import MetaData from "@/components/PageLayout/MetaData";
-import Layout from "@/components/Layout";
-import Hero from "@/components/ContactTrial/Hero";
-import { SupportHero } from "@/components/Illustrations/SupportHero";
 
-function openCrispChat() {
-    if (window.$crisp) {
+    function openCrispChat() {
+        if (window.$crisp) {
         window.$crisp.push(['do', 'chat:open']);
-    } else {
+        } else {
         console.error('Crisp chat script not loaded.');
+        }
     }
-}
 
-export default function Support() {
+export default function Support(){
 
-    const SupportCard = ({ featTitle, featImg, featPara1, btnText }) => {
-        return (
+    const SupportCard = ( {featTitle, featImg, featPara1, btnText} ) => {
+        return ( 
             <>
                 <div className="section-list-item">
                     <div className="section-list-head">
-                        <span className="section-list-hr lineDraw" />
+                        <span className="section-list-hr lineDraw"/>
                         <h3 className="title-3xl fadeRight">
                             <span>
                                 {featTitle}
                             </span>
                         </h3>
-                        <span className="section-list-hr lineDraw" />
+                        <span className="section-list-hr lineDraw"/>
                     </div>
                     <div className="section-list-body">
                         <div className="section-list-body-right">
@@ -39,32 +35,29 @@ export default function Support() {
                             </div>
                         </div>
                         <div className="section-list-body-left fadeUp">
-                            <img width="520" height="423" loading="lazy" src={featImg} alt={featTitle} title={featTitle} />
+                            <img width="520" height="423" loading="lazy" src={featImg} alt={featTitle} title={featTitle}/>
                         </div>
                     </div>
                 </div>
             </>
         )
     }
-
+    
     return (
         <>
-            <MetaData title={"Patronum - Expert Google Workspace support within few minutes"}
+            <PageLayout
+                pageTitle1={'Support'} 
+                pagePara={"Contact Our Experts for Personalized Support & Find Solutions Quickly"} 
+                imgSrc={'support.svg'}
+                title={"Patronum - Expert Google Workspace support within few minutes"}
                 description={"You no longer have to wait for any expert help and get direct support for G Suite Management with Patronum. We offer support through video call, chat and even screen sharing."}
                 url={"support"}
                 img={"support.jpg"}
                 date_published={"2020-12-21T12:00"}
                 date_modified={"2024-04-04T12:00"}
-                keywords={"Patronum Google Workspace Manager"} />
-            <Layout>
-                <main>
-                    <Hero
-                        pageTitle1={'Support'}
-                        pagePara={"Contact Our Experts for Personalized Support & Find Solutions Quickly"}
-                        svgElement={<SupportHero />}
-                    />
-
-                    <SectionBreakSmall
+                keywords={"Patronum Google Workspace Manager"}
+                >
+                    <SectionBreakSmall 
                         sectionBreakText="With Patronum you get expert help and support directly from within the application."
                     />
                     <section className="features-main useCases-main">
@@ -91,9 +84,7 @@ export default function Support() {
                             </div>
                         </div>
                     </section>
-                </main>
-            </Layout>
-
+            </PageLayout>
         </>
     )
 }
