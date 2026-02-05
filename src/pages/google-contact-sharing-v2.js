@@ -100,7 +100,7 @@ const GoogleWorkspaceBackupV2 = () => {
 
                 <FeatureDetailCards title1={'Additional Google Contact'} title2={'Sharing Features'} content={featuresDetailCard} />
 
-                         <Faqs featureName="google_workspace_backup" />
+                        <Faqs featureName="contact_sharing" />
         </main>
       </Layout>
     </>

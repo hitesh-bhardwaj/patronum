@@ -99,7 +99,7 @@ const GoogleWorkspaceBackupV2 = () => {
 
                          <FeatureDetailCards title1={'Additional Google Drive'} title2={'Management Features'} content={featuresDetailCard} />
 
-                         <Faqs featureName="google_workspace_backup" />
+                         <Faqs featureName="google_drive_management" />
         </main>
       </Layout>
     </>
