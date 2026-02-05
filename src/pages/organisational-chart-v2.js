@@ -3,7 +3,6 @@ import Layout from "@/components/Layout";
 import Hero from "@/components/ContactTrial/Hero";
 import Head from "next/head";
 import MetaData from "@/components/PageLayout/MetaData";
-import { GoogleWorkspaceBackup } from "@/components/Illustrations/GoogleWorkspaceBackup";
 import VideoPlayer from "@/components/ContactTrial/OnBoarding/OnBoardingVideoV2";
 import FeatureDetailTitle from "@/components/ContactTrial/OnBoarding/FeatureDetailTitle";
 import FeatureDetailInfo from "@/components/ContactTrial/OnBoarding/FeaturesDetailInfo";
@@ -97,7 +96,7 @@ const GoogleWorkspaceBackupV2 = () => {
                     sectionBreakText="Patronum's 'Organizational Chart' feature is designed to support seamless onboarding, promote transparency, and facilitate collaboration, thereby improving decision-making and fostering a more cohesive organizational culture."
                 />
 
-                         <Faqs featureName="google_workspace_backup" />
+                <Faqs featureName="organizational_chart" />
         </main>
       </Layout>
     </>
