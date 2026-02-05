@@ -1,0 +1,189 @@
+import Layout from '@/components/Layout'
+import Image from 'next/image';
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import SmoothySlider, { Slide } from '@/components/SmoothSlider';
+gsap.registerPlugin(ScrollTrigger);
+
+
+const trial = () => {
+  return (
+    <Layout>
+        <main>
+<Testimonial/>
+        </main>
+    </Layout>
+  )
+}
+
+export default trial
+
+
+ function Testimonial() {
+     const sliderRef = useRef(null);
+
+    useEffect(() => {
+        let ctx = gsap.context(() => {
+
+            const testicard = document.querySelectorAll('.testi-slider .mySwiper');
+            
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".testi-slider",
+                    start: "top 90%",
+                }
+            });
+        
+            tl.fromTo(
+                testicard,
+                {
+                    opacity: 0,
+                    x: 200,
+                },
+                {
+                    opacity: 1,
+                    x: 0,
+                    duration: 0.6,
+                    stagger: 0.1,
+                    ease: 'Power1.out',
+                }
+            );
+        });
+        return () => ctx.revert();
+    }, []);
+
+    return(
+        <>
+            <section id="testimonial">
+                <div className="content">
+                    <div className="container">
+                        <div className="section-head">
+                            <h2 className="title-4xl leading-[0.5]">
+                                <span className="overflow-hidden leading-[1.2]">
+                                    Client Speak:{" "}
+                                </span>
+                                <br />
+                                <span className="overflow-hidden leading-[1.2]">
+                                    Real Stories, Real Impact!
+                                </span>
+                            </h2>
+                        </div>
+                    </div>
+                    <div className="mt-[10vw] lg:mt-0">
+                        <SmoothySlider
+        ref={sliderRef}
+        className="py-4 md:px-0 w-screen  cursor-grab active:cursor-grabbing"
+        config={{ infinite: true, snap: false }}
+      >
+        {data.map((testimonial, index) => (
+          <Slide key={testimonial.id || index} className={`w-[40vw] lg:w-[24vw] px-3 ${index === 0 ? 'ml-[5vw]' : ''}`}>
+            <TestimonialCard
+                        content={testimonial.content}
+                        clientImage={testimonial.clientImage}
+                        clientName={testimonial.clientName}
+                        clientCompany={testimonial.clientCompany}
+                        index={index}
+                    />
+          </Slide>
+        ))}
+      </SmoothySlider>
+                    </div>
+                </div>
+            </section>        
+        </>
+    )
+}
+
+
+  const TestimonialCard = ({ content, clientImage, clientName, clientCompany, index }) => {
+    return (
+        <div className={` w-[95%] bg-[#FDFDFD] border border-[#e2e2e2] rounded-[16px] lg:py-[1.5vw] lg:px-[2vw] lg:h-[28vw] mb-[5vw] h-[110vw] py-[5vw] px-[5vw] `}>
+            <div className='flex flex-col justify-between h-full'>
+                <div>
+                    <Image width={64} height={57} src='/assets/icons/quote-icon.webp' alt='quote icon' className='lg:w-[3.2vw] lg:mb-[1vw] object-contain w-[10vw] mb-[4vw]'/>
+                    <p className=' lg:text-[1vw] text-left mb-0 text-[4vw]'>
+                        {content}
+                    </p>
+                </div>
+                <div className='border-t border-[#A5A5A5] flex items-center justify-start pl-[20px] py-[10px] lg:gap-[1.5vw]  gap-[3vw] text-left lg:py-[15px]'>
+                    <div className='border-2 border-primary rounded-full overflow-hidden lg:w-[5vw]  lg:h-[5vw] w-[17vw] h-[17vw]'>
+                        <Image width={100} height={100} src={clientImage} priority={false} alt={`${clientName} Image`} className='h-full w-full object-cover'/>
+                    </div>
+                    <div className=''>
+                        <h5  className='lg:text-[1.16vw] text-[5vw]'>
+                            {clientName}
+                        </h5>
+                        <p className='lg:text-[0.8vw] aeonik text-[#444444] text-[3.5vw] leading-[1] font-normal lg:leading-[1.2]'>{clientCompany}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+  }
+
+
+  const data = [
+        {
+          content: "Patronum has been a great tool for us to use for Drive management! Highly recommend working with Paul Lees and the Patronum team!",
+          clientImage: "/assets/testimonial/issac-musselwhite.webp",
+          clientName: "Isaac Musselwhite",
+          clientCompany: "Block"
+        },
+        {
+          content: "The people at Patronum are amazing. they are always willing to help proactively and respectfully even though the needs might be due to a lack of in-house skills. The Patronum product is amazing too and they improve it all the time.",
+          clientImage: "/assets/testimonial/virgil-chelu.webp",
+          clientName: "Virgil Chelu",
+          clientCompany: "HIT Training"
+        },
+        {
+          content: "Patronum makes it easy to manage Google Workspace instances!  I love being able to create onboarding and offboarding policies, as well as shared contacts, and signature management.",
+          clientImage: "/assets/testimonial/robby-barnes.webp",
+          clientName: "Robby Barnes",
+          clientCompany: "215 Tech"
+        },
+        {
+          content: "It's great, Only system I'm aware of that does sync of all user attributes including custom ones. With that pricing it's positioned to be another 'must have' for Workspace admins.",
+          clientImage: "/assets/testimonial/mateusz-bijakowski.webp",
+          clientName: "Mateusz Bijakowski",
+          clientCompany: "Iwoca"
+        },
+        {
+          content: "Patronum makes managing our Google Workspace environment effortless. I especially like the Contact Sharing feature, before Patronum we tried many other solutions and nothing is quite like Patronum for ease of use and functionality. A must-have for any Google Workspace administrator.",
+          clientImage: "/assets/testimonial/john-knott.webp",
+          clientName: "John Knott",
+          clientCompany: "Zola Systems Limited"
+        },
+        {
+          content: "Being a Patronum partner is a really great opportunity to offer our clients a top-class Workspace management tool, that works really well with our Workspace consulting offering.",
+          clientImage: "/assets/testimonial/dominik-kugelmann.webp",
+          clientName: "Dominik Kugelmann",
+          clientCompany: "22d consulting"
+        },
+        {
+          content: "Patronum is a great tool allows us to do things that are not available in the Google Administration Console, such as calendar sharing and management, plus its policies and signatures feature is amazing. Their customer service and support are of the highest level. We are very pleased with Patronum, they provide a real bang for your buck!",
+          clientImage: "/assets/testimonial/juan-marquez.webp",
+          clientName: "Juan Marquez",
+          clientCompany: "RiskOptics"
+        },
+        {
+          content: "Easy tool to help with some basic stuff, which should be part of Google Workspace.",
+          clientImage: "/assets/testimonial/ruben-hauser.webp",
+          clientName: "Ruben Hauser",
+          clientCompany: "Buerohauser"
+        },
+        {
+          content: "Patronum has been a game-changer for me in managing my Google Workspace. I was struggling with a major problem that Google couldn't solve, but Patronum came to the rescue. The product is power-packed and has exceeded my expectations. It has made my work much easier and more efficient.",
+          clientImage: "/assets/testimonial/jeyo-sargunam.webp",
+          clientName: "Jeyo Sargunam",
+          clientCompany: "Measured"
+        },
+        {
+          content: "Working with the Patronum and the team was quick and simple. They took my initial designs and created an extremely attractive and engaging email signature for my business and also several promotional campaigns. 5 stars!!",
+          clientImage: "/assets/testimonial/garry-holt.webp",
+          clientName: "Garry Holt",
+          clientCompany: "Room 8 Gallery"
+        },
+      ];
+
+  

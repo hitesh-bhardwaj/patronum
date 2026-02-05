@@ -74,7 +74,7 @@ export default function Support() {
             pagePara={
               "Contact Our Experts for Personalized Support & Find Solutions Quickly"
             }
-            svgElement={<SupportHero />}
+            svgElement={<SupportHero className={"h-full w-full"}/>}
           />
 
           <SectionBreakSmall sectionBreakText="With Patronum you get expert help and support directly from within the application." />
