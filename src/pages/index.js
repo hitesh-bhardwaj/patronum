@@ -18,7 +18,6 @@ import UseCasesMobile from "@/components/PageComponents/HomePage/UseCasesMobile"
 import Head from "next/head";
 import Ratings from "@/components/PageComponents/HomePage/Ratings";
 import Layout from "@/components/Layout";
-import { useDevice } from "@/utils/useDevice";
 
 gsap.registerPlugin(ScrollTrigger);
 

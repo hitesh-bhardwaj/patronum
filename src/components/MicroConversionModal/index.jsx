@@ -5,12 +5,28 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import PrimaryButton from "../Buttons/PrimaryButton";
 import { useModal } from "../Modals/ModalContext";
-// import { useModal } from "@/context/modal-context"; // 🔁 change path if needed
+
 
 function ExitIntentModal() {
   const [open, setOpen] = useState(false);
+  const [hasScrolled100vh, setHasScrolled100vh] = useState(false);
   const pathname = usePathname();
   const { openModal } = useModal(); // from your ModalProvider
+
+  // Track if user has scrolled 100vh
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const handleScroll = () => {
+      if (window.scrollY >= window.innerHeight) {
+        setHasScrolled100vh(true);
+        window.removeEventListener("scroll", handleScroll);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -18,6 +34,9 @@ function ExitIntentModal() {
     // Only show once per session (for both variants)
     const hasShown = window.sessionStorage.getItem("roi-exit-intent-shown");
     if (hasShown) return;
+
+    // Don't attach exit intent listener until user has scrolled 100vh
+    if (!hasScrolled100vh) return;
 
     const handleMouseOut = (e) => {
       const toElement = e.relatedTarget || e.toElement;
@@ -46,7 +65,7 @@ function ExitIntentModal() {
     return () => {
       document.removeEventListener("mouseout", handleMouseOut);
     };
-  }, [pathname, openModal]);
+  }, [pathname, openModal, hasScrolled100vh]);
 
   const handleClose = () => {
     setOpen(false);
