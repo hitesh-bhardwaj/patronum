@@ -1,14 +1,13 @@
 import { useEffect, useMemo, useState } from "react";
 import SplitType from "split-type";
 import gsap from "gsap";
-// import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Layout from "@/components/Layout";
 import Ratings from "@/components/PageComponents/HomePage/Ratings";
-import Testimonial from "@/components/PageLayout/Testimonial";
 import Hero from "@/components/Roi/Hero";
 import React from "react";
 import BreakDown from "@/components/Roi/BreakDown";
 import { calculateRoi } from "@/lib/roi-math";
+import TestimonialSmoothy from "@/components/TestimonialSmoothy";
 
 const ROI = () => {
   const [employees, setEmployees] = useState("150");
@@ -99,7 +98,7 @@ const ROI = () => {
 
         <BreakDown roi={roi} currency={currency} />
         <Ratings />
-        <Testimonial />
+        <TestimonialSmoothy/>
       </Layout>
     </>
   );

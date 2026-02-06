@@ -1,4 +1,3 @@
-import Testimonial from "@/components/PageLayout/Testimonial";
 import FeatureCard from "@/components/PageLayout/FeatureCard";
 import SectionBreakSmall from "@/components/PageLayout/SectionBreakSmall";
 import dynamic from "next/dynamic";
@@ -6,6 +5,7 @@ import Layout from "@/components/Layout";
 import MetaData from "@/components/PageLayout/MetaData";
 import Hero from "@/components/ContactTrial/Hero";
 import Usecases from "@/components/Illustrations/Usecases";
+import TestimonialSmoothy from "@/components/TestimonialSmoothy";
 
 const Faqs = dynamic(
   () => import("@/components/PageComponents/FeaturesPage/Faq"),
@@ -117,7 +117,7 @@ export default function useCases() {
             </div>
           </section>
 
-          <Testimonial />
+          <TestimonialSmoothy/>
 
           <Faqs featureName="use_cases" />
         </main>

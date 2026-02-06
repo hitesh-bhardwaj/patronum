@@ -13,7 +13,7 @@ import SplitType from "split-type";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import MetaData from "@/components/PageLayout/MetaData";
-import Testimonial from "@/components/PageComponents/CommunityPage/Testimonial";
+import TestimonialSmoothy from "@/components/TestimonialSmoothy";
 gsap.registerPlugin(ScrollTrigger);
 
 const page = () => {
@@ -152,7 +152,7 @@ const page = () => {
           <Webinars />
           <UpcomingWebinars />
           <Features />
-          <Testimonial />
+          <TestimonialSmoothy/>
           <JoinCommunity />
           <Group />
           <Hosting />

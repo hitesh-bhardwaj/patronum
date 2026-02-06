@@ -61,7 +61,7 @@ export default function SideMenu({ sections }) {
     }, []);
 
     return (
-        <div className='fixed z-10 left-10 top-1/2 -translate-y-1/2 flex gap-5 items-center h-[11vw]' id='toc'>
+        <div className='fixed z-10 left-10 top-1/2 -translate-y-1/2 gap-5 items-center h-[11vw] hidden lg:flex' id='toc'>
             <div className="progress-container h-full w-full overflow-hidden rounded">
                 {sections.map((_, index) => (
                     <div

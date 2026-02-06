@@ -6,12 +6,12 @@ import SplitType from "split-type";
 import gsap from "gsap";
 import Layout from "@/components/Layout";
 import Ratings from "@/components/PageComponents/HomePage/Ratings";
-import Testimonial from "@/components/PageLayout/Testimonial";
 import Hero from "@/components/Roi/Hero";
 import React from "react";
 import BreakDown from "@/components/Roi/BreakDown";
 import { calculateRoi } from "@/lib/roi-math";
 import MetaData from "@/components/PageLayout/MetaData";
+import TestimonialSmoothy from "@/components/TestimonialSmoothy";
 
 // ✅ Small helper to inject JSON-LD only on this page
 function JsonLd({ data }) {
@@ -267,7 +267,7 @@ const ROI = () => {
         />
         <BreakDown roi={roi} currency={currency} />
         <Ratings />
-        <Testimonial />
+        <TestimonialSmoothy/>
       </Layout>
     </>
   );

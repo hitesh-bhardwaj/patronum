@@ -1,24 +1,12 @@
-import Layout from "@/components/Layout";
+import React from "react";
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import SmoothySlider, { Slide } from "@/components/SmoothSlider";
 gsap.registerPlugin(ScrollTrigger);
 
-const trial = () => {
-  return (
-    <Layout>
-      <main>
-        <Testimonial />
-      </main>
-    </Layout>
-  );
-};
-
-export default trial;
-
-function Testimonial() {
+const TestimonialSmoothy = () => {
   const sliderRef = useRef(null);
   const [progress, setProgress] = useState(0);
   const progressAnimRef = useRef(0);
@@ -98,7 +86,7 @@ function Testimonial() {
                 infinite: false,
                 setOffset: ({ wrapperWidth, vertical, wrapperHeight }) => {
                   const w = vertical ? wrapperHeight : wrapperWidth;
-                  return w - w*0.19; // ~5% of wrapper as end padding
+                  return w - w * 0.19; // ~5% of wrapper as end padding
                 },
                 slidesOffsetBefore: "0vw",
                 slidesOffsetAfter: "0vw", // Change this from '1vw' to '0vw' for no spacing at the end
@@ -138,18 +126,19 @@ function Testimonial() {
       </section>
     </>
   );
-}
+};
+
+export default TestimonialSmoothy;
 
 const TestimonialCard = ({
   content,
   clientImage,
   clientName,
   clientCompany,
-  index,
 }) => {
   return (
     <div
-      className={` w-[80vw] md:w-[50vw] lg:w-[22vw] bg-[#FDFDFD] border border-[#e2e2e2] rounded-[16px] lg:py-[1.5vw] lg:px-[2vw] lg:h-[28vw] md:h-[70vh] mb-[5vw] h-full  py-[5vw] px-[5vw] `}
+      className={` w-[80vw] md:w-[70vw] lg:w-[22vw] bg-[#FDFDFD] border border-[#e2e2e2] rounded-[16px] lg:py-[1.5vw] lg:px-[2vw] lg:h-[28vw] md:h-[70vh] mb-[5vw] h-full  py-[5vw] px-[5vw] `}
     >
       <div className="flex flex-col justify-between h-full">
         <div>
@@ -164,8 +153,8 @@ const TestimonialCard = ({
             {content}
           </p>
         </div>
-        <div className="border-t border-[#A5A5A5] flex items-center justify-start pl-[20px] py-[10px] lg:gap-[1.5vw]  gap-[3vw] text-left lg:py-[15px]">
-          <div className="border-2 border-primary rounded-full overflow-hidden lg:w-[5vw] md:h-[7vw] md:w-[7vw]  lg:h-[5vw] w-[17vw] h-[17vw]">
+        <div className="border-t border-[#A5A5A5] flex items-center justify-start pl-[20px] py-[10px] lg:gap-[1.5vw]  gap-[3vw] text-left lg:py-[15px] md:py-[20px]">
+          <div className="border-2 border-primary rounded-full overflow-hidden lg:w-[5vw] md:h-[10vw] md:w-[10vw]  lg:h-[5vw] w-[17vw] h-[17vw]">
             <Image
               width={100}
               height={100}

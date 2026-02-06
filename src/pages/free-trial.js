@@ -3,13 +3,12 @@ import SplitType from "split-type";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { NextSeo } from "next-seo";
-
-import Testimonial from '@/components/PageLayout/Testimonial';
 import Ratings from "@/components/PageComponents/HomePage/Ratings";
 import Hero from "@/components/LandingPage/Hero";
 import Layout from "@/components/LandingPage/Layout";
 import Features from "@/components/LandingPage/Features";
 import Pricing from "@/components/LandingPage/Pricing";
+import TestimonialSmoothy from "@/components/TestimonialSmoothy";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -189,7 +188,7 @@ export default function Home() {
                     <Ratings />
                     <Features />
                     <Pricing />
-                    <Testimonial />
+                    <TestimonialSmoothy/>
                 </main>
                 </Layout>
         </>
