@@ -33,6 +33,39 @@ const BackupCard = () => {
                                     <h5>Recovery Capabilities</h5>
                                 </div>
                             </div>
+                             <div className={`${styles.backupTabCard} ${styles.table4} ${styles.active} fadeUp`}>
+                                <div className={styles.tabCardRow1}>
+                                    <img
+                                        src="/assets/features/google-workspace-backup/compare-p.png"
+                                        loading="lazy"
+                                        alt="Patronum Logo"
+                                    />
+                                    <h4 className="">
+                                        Patronum Backup
+                                    </h4>
+                                </div>
+                                <div>
+                                    <p>
+                                        Cloud-native Google Workspace backup service purpose-built for SaaS data protection.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h5><span className={`${styles.tabRadioBtn} ${styles.full}`}></span>Full</h5>
+                                    <p>Gmail backup with 1-24x daily frequency, preserving nested Gmail label structures, full text search, instant online preview and PST/MBOX/EML export.</p>
+                                </div>
+                                <div>
+                                    <h5><span className={`${styles.tabRadioBtn} ${styles.full}`}></span>Full</h5>
+                                    <p>Full fidelity backup (only vendor to backup/recover Drive document IDs), accurate backup of shared files &amp; unlimited versioning.</p>
+                                </div>
+                                <div>
+                                    <h5><span className={`${styles.tabRadioBtn} ${styles.full}`}></span>Full</h5>
+                                    <p>Full support of Google Workspace apps and metadata with flexible export (MBOX, PST, EML, VFS, ICS).</p>
+                                </div>
+                                <div>
+                                    <h5><span className={`${styles.tabRadioBtn} ${styles.full}`}></span>Full</h5>
+                                    <p>Only solution with full-text search, instant backup preview, in- place/non-destructive restore &amp; offline export via direct download.</p>
+                                </div>
+                            </div>
 
                             {/* <!--Table Card 2--> */}
                             <div className={`${styles.backupTabCard} ${styles.table1} fadeUp`}>
@@ -135,39 +168,7 @@ const BackupCard = () => {
                             </div>
 
                             {/* <!--Table Card 5--> */}
-                            <div className={`${styles.backupTabCard} ${styles.table4} ${styles.active} fadeUp`}>
-                                <div className={styles.tabCardRow1}>
-                                    <img
-                                        src="/assets/features/google-workspace-backup/compare-p.png"
-                                        loading="lazy"
-                                        alt="Patronum Logo"
-                                    />
-                                    <h4>
-                                        Patronum Backup
-                                    </h4>
-                                </div>
-                                <div>
-                                    <p>
-                                        Cloud-native Google Workspace backup service purpose-built for SaaS data protection.
-                                    </p>
-                                </div>
-                                <div>
-                                    <h5><span className={`${styles.tabRadioBtn} ${styles.full}`}></span>Full</h5>
-                                    <p>Gmail backup with 1-24x daily frequency, preserving nested Gmail label structures, full text search, instant online preview and PST/MBOX/EML export.</p>
-                                </div>
-                                <div>
-                                    <h5><span className={`${styles.tabRadioBtn} ${styles.full}`}></span>Full</h5>
-                                    <p>Full fidelity backup (only vendor to backup/recover Drive document IDs), accurate backup of shared files &amp; unlimited versioning.</p>
-                                </div>
-                                <div>
-                                    <h5><span className={`${styles.tabRadioBtn} ${styles.full}`}></span>Full</h5>
-                                    <p>Full support of Google Workspace apps and metadata with flexible export (MBOX, PST, EML, VFS, ICS).</p>
-                                </div>
-                                <div>
-                                    <h5><span className={`${styles.tabRadioBtn} ${styles.full}`}></span>Full</h5>
-                                    <p>Only solution with full-text search, instant backup preview, in- place/non-destructive restore &amp; offline export via direct download.</p>
-                                </div>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>

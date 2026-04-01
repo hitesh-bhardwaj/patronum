@@ -36,12 +36,12 @@ const Webinars = () => {
             className="guide-card hover:shadow-xl duration-300 w-full h-full overflow-hidden rounded-[10px] border cursor-pointer border-[#e8e8e8] bg-white hover:border-2 hover:border-primary"
           >
             <div className="hover:shadow-xl duration-300">
-              <div className="image-container w-full h-[50%] relative">
+              <div className="image-container w-full h-[50%] relative overflow-hidden">
                 <Image
                   width={300}
                   height={250}
                   src={imgSrc}
-                  className="w-full object-cover brightness-95 group-hover:scale-[1.03] scale-[1] duration-300"
+                  className="w-full object-cover brightness-95 group-hover:scale-[1.05] scale-[1.02] duration-300"
                   alt="Webinar Image"
                   title="Webinar Image"
                 />
@@ -129,44 +129,46 @@ export default Webinars;
 const webinars = [
   {
     id: 1,
+    imgSrc: "/assets/community/google-workspace-hangout-thumbnail.png",
+    title: "Google Workspace Hangout - Top Tips for Google Workspace Security",
+    videoId: "MMEbPOXNS5g",
+    date: "February 27, 2026",
+  },
+  {
+    id: 2,
+    imgSrc: "/assets/community/dmarc-matters-thumbnail.png",
+    title: "Why DMARC matters: Protecting your brand from BEC matters",
+    videoId: "OKeXznGYEwc",
+    date: "January 29, 2026",
+  },
+  {
+    id: 3,
     imgSrc: "/assets/community/how-to-webinar-thumbnail-18-dec.png",
     title: "‘How to’ Webinar Series : 12 Days of Patronum",
     videoId: "imk_dE6doCc",
     date: "December 18, 2025",
   },
   {
-    id: 1,
+    id: 4,
     imgSrc: "/assets/community/how-to-webinar-20-nov.png",
     title: "‘How to’ Webinar Series Fireside Chat- Email Signature Management",
     videoId: "eZZ4Nf3ee0k",
     date: "November 20, 2025",
   },
   {
-    id: 2,
+    id: 5,
     imgSrc: "/assets/community/how-to-webinar-28-oct.png",
     title: "‘How to’ Webinar Series Drive Compliance",
     videoId: "gd1xciPwVSY",
     date: "October 28, 2025",
   },
   {
-    id: 3,
+    id: 6,
     imgSrc: "/assets/community/how-to-webinar-9-oct.png",
     title: "‘How to’ Webinar Series Dashboard Walkthrough",
     videoId: "zyb4xO-Swvg",
     date: "October 9, 2025",
   },
-  {
-    id: 4,
-    imgSrc: "/assets/community/how-to-webinar-25.png",
-    title: "‘How to’ Webinar Series Offboarding Policy",
-    videoId: "i8LqMLuo-WU",
-    date: "September 25, 2025",
-  },
-  {
-    id: 5,
-    imgSrc: "/assets/community/how-to-webinar-thumbnail.png",
-    title: "‘How to’ Webinar Series Email Signature Management",
-    videoId: "Cp1QN7e89ns",
-    date: "September 11, 2025",
-  },
+  
+ 
 ];

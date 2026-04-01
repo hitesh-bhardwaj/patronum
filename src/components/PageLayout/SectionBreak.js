@@ -17,7 +17,7 @@ export default function SectionBreak( {sectionBreakText} ) {
         gsap.to(sectionBreakAnimWord, {
           scrollTrigger: {
             trigger: sectionBreakAnimation,
-            start: 'top 100%',
+            start: 'top 60%',
             scrub: 1,
             end: 'bottom 60%'
           },

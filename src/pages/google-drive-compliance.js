@@ -1,18 +1,111 @@
-import FeatureDetailInfo from "@/components/PageComponents/FeaturesPage/FeatureDetailInfo";
-import FeatureDetailTitle from "@/components/PageComponents/FeaturesPage/FeatureDetailTitle";
-import PageLayout from "@/components/PageLayout";
-import SectionBreak from "@/components/PageLayout/SectionBreak";
-import VideoPlayer from "@/components/PageLayout/VideoPlayer";
-import dynamic from "next/dynamic";
-import FeatureDetailCards from "@/components/PageComponents/FeaturesPage/FeatureDetailCards";
-import Transform from "@/components/PageComponents/FeaturesPage/Transform";
+import React from "react";
+import Layout from "@/components/Layout";
+import Hero from "@/components/ContactTrial/Hero";
 import Head from "next/head";
+import MetaData from "@/components/PageLayout/MetaData";
+import VideoPlayer from "@/components/ContactTrial/OnBoarding/OnBoardingVideoV2";
+import FeatureDetailTitle from "@/components/ContactTrial/OnBoarding/FeatureDetailTitle";
+import FeatureDetailInfo from "@/components/ContactTrial/OnBoarding/FeaturesDetailInfo";
+import TransformV2 from "@/components/ContactTrial/OnBoarding/TransformV2";
+import SectionBreak from "@/components/PageLayout/SectionBreak";
+import FeatureDetailCards from "@/components/ContactTrial/OnBoarding/FeatureDetailCard";
+import Faqs from "@/components/ContactTrial/FaqSection";
+import { GoogleDriveCompliance } from "@/components/Illustrations/GoogleDriveCompliance";
 
-const Faqs = dynamic(() => import("@/components/PageComponents/FeaturesPage/Faq"), { ssr: true });
+const GoogleWorkspaceBackupV2 = () => {
+  return (
+    <>
+     <MetaData 
+           title={"Manage and Unshare Google Drive Files, Folders and Docs with Patronum"}
+                description={"Patronum simplifies Google Workspace by unifying user lifecycle management and reducing IT costs. Easily unshare Google Drive and Docs, manage compliance, and streamline user access."}
+                url={"google-drive-compliance"}
+                img={"google-drive-compliance.jpg"}
+                date_published={"2022-11-29T18:00"}
+                date_modified={"2024-04-04T00:00"}
+                keywords={"Google Workspace"}
+        />
+        <Head>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(
+                            {
+                                "@context": "https://schema.org",
+                                "@type": "SoftwareApplication",
+                                "name": "Patronum",
+                                "url": "https://www.patronum.io/",
+                                "description": "Patronum is a comprehensive Google Workspace management platform that automates user onboarding/offboarding, email signature management, Google Drive governance, contact sharing, backups, and more.",
+                                "applicationCategory": "BusinessApplication",
+                                "operatingSystem": "Web-based (Google Workspace)",
+                                "softwareVersion": "",
+                                "offers": {
+                                    "@type": "Offer",
+                                    "price": "8.00",
+                                    "priceCurrency": "USD",
+                                    "description": "Per-user, per-year licence; Patronum is $8.00/user/year"
+                                },
+                                "provider": {
+                                    "@type": "Organization",
+                                    "name": "Bespin Labs Ltd",
+                                    "url": "https://www.patronum.io/"
+                                },
+                                "featureList": [
+                                    "Automated Google Workspace user onboarding/offboarding",
+                                    "Email signature management with centralized templates",
+                                    "Google Drive file & sharing governance",
+                                    "Shared contacts synchronization",
+                                    "Backup & restore of Google Workspace data",
+                                    "Organisational chart & Google Groups automation"
+                                ],
+                                "isAccessibleForFree": false,
+                                "aggregateRating": {
+                                    "@type": "AggregateRating",
+                                    "ratingValue": "5.0",
+                                    "reviewCount": "30"
+                                }
+                            }
+                        ),
+                    }}
+                />
+            </Head>
+      <Layout>
+        <main>
+          <Hero
+            pageTitle1={'Google Drive File'}
+                pageTitle2={'Governance & Compliance'}
+                pagePara={"Transform Collaboration into Controlled Innovation"}
+                imgSrc={'google-drive-compliance.svg'}
+            svgElement={
+              <GoogleDriveCompliance
+                className={"h-full w-full"}
+              />
+            }
+          />
+         <VideoPlayer disabled={false} videoId="RIoCiNzNqW0" videoCover={"/assets/features/google-drive-compliance/video-cover.webp"} />
+                <FeatureDetailTitle
+                    sectionTitle1="Google Drive Compliance"
+                    sectionTitle2="For Google Workspace"
+                    sectionPara="Patronum is the ultimate solution for taking control of your Google Drive data and staying compliant with data protection & data security laws. Google Drive and Docs revolutionize collaboration, offering simplicity and efficiency at your fingertips. Yet, this simplicity can sometimes transform into complexity, turning vital company data into potential risks. "
+                    sectionParaBig="Widespread sharing of docs, presentations, sheets etc. across employees, departments, and even with external entities like suppliers and customers makes data management a formidable challenge. Patronum is your beacon in this chaos, providing unparalleled visibility and control over your Google Drive information, ensuring your data remains secure and compliant."
+                />
 
-export default function FeatureDetail() {
+       <FeatureDetailInfo content={featuresDetail} />
+                <TransformV2 text={"Compliance Without the Complexity"} content={"Maintain data integrity and meet compliance standards with Patronum's policy-level control over Google Drive governance tools."} />
+                <SectionBreak
+                    sectionBreakText="Patronum makes securing your Google Drive data effortless. With its advanced identification and access management capabilities, quickly revoking access becomes simple. Transform how you protect and manage your Google Drive data with Patronum, ensuring your sensitive information remains secure."
+                />
+                <FeatureDetailCards title1={'Additional File'} title2={'Governance Features'} content={featuresDetailCard} />
 
-    const featuresDetail = [
+                         <Faqs featureName="google_drive_compliance" />
+        </main>
+      </Layout>
+    </>
+  );
+};
+
+export default GoogleWorkspaceBackupV2;
+
+ const featuresDetail = [
         {
             title: 'Identify & Limit Personal Access ',
             para: "The convenience of Google Drive often leads to users sharing critical files with personal accounts. Such practices, while seemingly harmless, can create lingering access issues long after an employee's departure. Traditional offboarding processes fall short, merely transferring file ownership while ignoring external access. Patronum elegantly addresses this gap, ensuring personal accesses are identified and revoked, safeguarding your data's integrity.",
@@ -73,84 +166,3 @@ export default function FeatureDetail() {
             img: "/assets/features/google-drive-compliance/detail-6.svg",
         },
     ]
-
-    return (
-        <>
-            <Head>
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify(
-                            {
-                                "@context": "https://schema.org",
-                                "@type": "SoftwareApplication",
-                                "name": "Patronum",
-                                "url": "https://www.patronum.io/",
-                                "description": "Patronum is a comprehensive Google Workspace management platform that automates user onboarding/offboarding, email signature management, Google Drive governance, contact sharing, backups, and more.",
-                                "applicationCategory": "BusinessApplication",
-                                "operatingSystem": "Web-based (Google Workspace)",
-                                "softwareVersion": "",
-                                "offers": {
-                                    "@type": "Offer",
-                                    "price": "8.00",
-                                    "priceCurrency": "USD",
-                                    "description": "Per-user, per-year licence; Patronum is $8.00/user/year"
-                                },
-                                "provider": {
-                                    "@type": "Organization",
-                                    "name": "Bespin Labs Ltd",
-                                    "url": "https://www.patronum.io/"
-                                },
-                                "featureList": [
-                                    "Automated Google Workspace user onboarding/offboarding",
-                                    "Email signature management with centralized templates",
-                                    "Google Drive file & sharing governance",
-                                    "Shared contacts synchronization",
-                                    "Backup & restore of Google Workspace data",
-                                    "Organisational chart & Google Groups automation"
-                                ],
-                                "isAccessibleForFree": false,
-                                "aggregateRating": {
-                                    "@type": "AggregateRating",
-                                    "ratingValue": "5.0",
-                                    "reviewCount": "30"
-                                }
-                            }
-                        ),
-                    }}
-                />
-            </Head>
-            <PageLayout
-                pageTitle1={'Google Drive File'}
-                pageTitle2={'Governance & Compliance'}
-                pagePara={"Transform Collaboration into Controlled Innovation"}
-                imgSrc={'google-drive-compliance.svg'}
-                title={"Manage and Unshare Google Drive Files, Folders and Docs with Patronum"}
-                description={"Patronum simplifies Google Workspace by unifying user lifecycle management and reducing IT costs. Easily unshare Google Drive and Docs, manage compliance, and streamline user access."}
-                url={"google-drive-compliance"}
-                img={"google-drive-compliance.jpg"}
-                date_published={"2022-11-29T18:00"}
-                date_modified={"2024-04-04T00:00"}
-                keywords={"Google Workspace"}
-                // breadcrumbTitle={"Features"}
-                // breadcrumbLink={"features"}
-            >
-                <VideoPlayer disabled={false} videoId="RIoCiNzNqW0" videoCover={"/assets/features/google-drive-compliance/video-cover.webp"} />
-                <FeatureDetailTitle
-                    sectionTitle1="Google Drive Compliance"
-                    sectionTitle2="For Google Workspace"
-                    sectionPara="Patronum is the ultimate solution for taking control of your Google Drive data and staying compliant with data protection & data security laws. Google Drive and Docs revolutionize collaboration, offering simplicity and efficiency at your fingertips. Yet, this simplicity can sometimes transform into complexity, turning vital company data into potential risks. "
-                    sectionParaBig="Widespread sharing of docs, presentations, sheets etc. across employees, departments, and even with external entities like suppliers and customers makes data management a formidable challenge. Patronum is your beacon in this chaos, providing unparalleled visibility and control over your Google Drive information, ensuring your data remains secure and compliant."
-                />
-                <FeatureDetailInfo content={featuresDetail} />
-                <Transform text={"Compliance Without the Complexity"} content={"Maintain data integrity and meet compliance standards with Patronum's policy-level control over Google Drive governance tools."} />
-                <SectionBreak
-                    sectionBreakText="Patronum makes securing your Google Drive data effortless. With its advanced identification and access management capabilities, quickly revoking access becomes simple. Transform how you protect and manage your Google Drive data with Patronum, ensuring your sensitive information remains secure."
-                />
-                <FeatureDetailCards title1={'Additional File'} title2={'Governance Features'} content={featuresDetailCard} />
-                <Faqs featureName="google_drive_compliance" />
-            </PageLayout>
-
-        </>
-    )
-}

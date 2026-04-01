@@ -42,9 +42,9 @@ export default function FeatureDetailTitle({
 
             {/* Right big paragraph */}
             <div className="mt-[1vw]  w-full text-[4.5vw]  text-neutral-800 lg:w-[40%]">
-              <p className="text-anim-2 text-[5vw] lg:text-[1.6vw] font-[400]">
+              <h4 className="text-anim-2 text-[5vw] lg:text-[1.6vw] font-[400]">
                 <span>{sectionParaBig}</span>
-              </p>
+              </h4>
             </div>
 
           </div>

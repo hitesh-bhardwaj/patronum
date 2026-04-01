@@ -1,4 +1,3 @@
-import Search from '@/components/Search';
 import Link from 'next/link';
 
 const CategoryList = ({ categories, activeCategory, setActiveCategory }) => {

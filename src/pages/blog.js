@@ -50,14 +50,19 @@ export default function Blogs({ posts, featuredPost, pagination, categories }) {
                     <span>Latest Blogs</span>
                   </h4>
                 </div>
-
-                <div className="2xl:w-[112%] 2xl:ml-[-6%] gap-y-[2vw] lg:w-[105%] lg:ml-[-2.5%] ml-0 w-full flex justify-between flex-wrap">
+                <div className="flex flex-col gap-[2vw] relative w-full mb-[5vw] ">
+                <div className="2xl:w-[112%] 2xl:ml-[-6%] gap-y-[2vw] lg:w-[90%] lg:ml-[-2.5%] ml-0 w-full flex justify-between flex-wrap">
                   <CategoryList
                     categories={categories}
                     activeCategory={activeCategory}
                     setActiveCategory={setActiveCategory}
                   />
+                </div>
+                <div className="lg:absolute right-0  ">
+
                   <Search />
+                </div>
+
                 </div>
 
                 <div className="blog-main-container">

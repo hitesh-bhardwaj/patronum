@@ -75,6 +75,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/patronum-iso-certification-2022-25',
+        destination: 'https://www.patronum.io/patronum-iso-certification-2025-28',
+        permanent: true,
+      },
+      {
         source: '/blog/page/1',
         destination: '/blog',
         permanent: true,

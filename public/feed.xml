@@ -4,10 +4,56 @@
         <description><![CDATA[Patronum provides a better way to manage Google Workspace (GSuite). Patronum is your Google Workspace (GSuite) manager that fully automates all administrator and user tasks to ensure an efficient, effective, and secure process.]]></description>
         <link>https://www.patronum.io</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 06 Feb 2026 06:06:05 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 20 Mar 2026 13:42:57 GMT</lastBuildDate>
         <atom:link href="https://www.patronum.io/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Fri, 06 Feb 2026 06:06:05 GMT</pubDate>
+        <pubDate>Fri, 20 Mar 2026 13:42:57 GMT</pubDate>
         <copyright><![CDATA[2026 Patronum]]></copyright>
+        <item>
+            <title><![CDATA[The Forensic Offboarding Checklist: Ensuring Zero Data Leakage]]></title>
+            <description><![CDATA[Someone resigns at 4:00 p.m. HR updates the record. IT disables the laptop by 5:00. Everyone goes home believing the company acted swiftly and professionally.
+]]></description>
+            <link>https://www.patronum.io/user-offboarding-checklist-for-zero-data-leakage</link>
+            <guid isPermaLink="false">https://www.patronum.io/user-offboarding-checklist-for-zero-data-leakage</guid>
+            <category><![CDATA[Offboarding]]></category>
+            <pubDate>Thu, 12 Mar 2026 18:30:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Managing Multiple Google Workspace Tenants: A Guide for MSPs]]></title>
+            <description><![CDATA[The first ten Google Workspace customers feel manageable. By customer twenty, the cracks show. One tenant has clean groups and disciplined admin roles.
+]]></description>
+            <link>https://www.patronum.io/managing-multiple-google-workspace-tenants-msp-guide</link>
+            <guid isPermaLink="false">https://www.patronum.io/managing-multiple-google-workspace-tenants-msp-guide</guid>
+            <category><![CDATA[Google Workspace]]></category>
+            <pubDate>Thu, 05 Mar 2026 18:30:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The IT Admin’s Guide to Google Workspace Management at Scale]]></title>
+            <description><![CDATA[A new office opens. A contractor cohort arrives. HR wants same-day onboarding. Security wants tighter sharing rules.
+]]></description>
+            <link>https://www.patronum.io/google-workspace-management-at-scale</link>
+            <guid isPermaLink="false">https://www.patronum.io/google-workspace-management-at-scale</guid>
+            <category><![CDATA[Google Workspace]]></category>
+            <pubDate>Thu, 19 Feb 2026 18:30:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Google Workspace Compliance 101: Preparing for a Security Audit]]></title>
+            <description><![CDATA[The panic never starts in the audit itself. It starts a week earlier, when someone asks a simple question that should have had a simple answer: who has super admin, what changed in the Admin console last month, which files are externally shared, what exceptions were approved, and where the evidence lives. 
+]]></description>
+            <link>https://www.patronum.io/google-workspace-compliance-security-audit-guide</link>
+            <guid isPermaLink="false">https://www.patronum.io/google-workspace-compliance-security-audit-guide</guid>
+            <category><![CDATA[Google Workspace]]></category>
+            <pubDate>Thu, 12 Feb 2026 18:30:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Google Drive File Governance: How to Audit External Sharing in Real Time]]></title>
+            <description><![CDATA[A file does not need to be stolen to become a liability. It only needs to be shared, forgotten, and left exposed long enough for nobody to notice.
+]]></description>
+            <link>https://www.patronum.io/google-drive-file-governance-audit-external-sharing-real-time</link>
+            <guid isPermaLink="false">https://www.patronum.io/google-drive-file-governance-audit-external-sharing-real-time</guid>
+            <category><![CDATA[All]]></category>
+            <category><![CDATA[Google Drive]]></category>
+            <pubDate>Thu, 05 Feb 2026 18:30:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Why DMARC Matters: Protecting Your Brand From Business Email Compromise in Google Workspace]]></title>
             <description><![CDATA[A senior accountant receives a message late on a Thursday afternoon. It’s short, professional, and marked Sent from my iPhone. The sender is the CEO and the request is urgent: a $45,000 vendor payment needed immediately to secure a confidential deal. The email appears completely legitimate and it comes from the company’s domain, lands directly&hellip; Continue reading Why DMARC Matters: Protecting Your Brand From Business Email Compromise in Google Workspace

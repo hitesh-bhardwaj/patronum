@@ -1,18 +1,115 @@
-import FeatureDetailInfo from "@/components/PageComponents/FeaturesPage/FeatureDetailInfo";
-import FeatureDetailTitle from "@/components/PageComponents/FeaturesPage/FeatureDetailTitle";
-import PageLayout from "@/components/PageLayout";
-import SectionBreak from "@/components/PageLayout/SectionBreak";
-import VideoPlayer from "@/components/PageLayout/VideoPlayer";
-import dynamic from "next/dynamic";
-import FeatureDetailCards from "@/components/PageComponents/FeaturesPage/FeatureDetailCards";
-import Transform from "@/components/PageComponents/FeaturesPage/Transform";
+import React from "react";
+import Layout from "@/components/Layout";
+import Hero from "@/components/ContactTrial/Hero";
 import Head from "next/head";
+import MetaData from "@/components/PageLayout/MetaData";
+import { GoogleWorkspaceBackup } from "@/components/Illustrations/GoogleWorkspaceBackup";
+import VideoPlayer from "@/components/ContactTrial/OnBoarding/OnBoardingVideoV2";
+import FeatureDetailTitle from "@/components/ContactTrial/OnBoarding/FeatureDetailTitle";
+import FeatureDetailInfo from "@/components/ContactTrial/OnBoarding/FeaturesDetailInfo";
+import TransformV2 from "@/components/ContactTrial/OnBoarding/TransformV2";
+import SectionBreak from "@/components/PageLayout/SectionBreak";
+import FeatureDetailCards from "@/components/ContactTrial/OnBoarding/FeatureDetailCard";
+import Faqs from "@/components/ContactTrial/FaqSection";
+import {ContactSharing} from "@/components/Illustrations/ContactSharing";
 
-const Faqs = dynamic(() => import("@/components/PageComponents/FeaturesPage/Faq"), { ssr: true });
+const GoogleWorkspaceBackupV2 = () => {
+  return (
+    <>
+     <MetaData 
+           title={"Google Contacts Sharing & Management with Patronum"}
+                description={"Patronum's app seamless integration with Google Workspace, Gmail, and Google Contacts revolutionizes contact management by embedding directly into your daily tools. Lets the users use Google / Gmail Contact with Patronum."}
+                url={"google-contact-sharing"}
+                img={"contact-sharing.jpg"}
+                date_published={"2020-12-21T13:41"}
+                date_modified={"2024-04-04T12:00"}
+                keywords={"google contact sharing,Google Workspace contact sharing"}
+        />
+        <Head>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(
+                            {
+                                "@context": "https://schema.org",
+                                "@type": "SoftwareApplication",
+                                "name": "Patronum",
+                                "url": "https://www.patronum.io/",
+                                "description": "Patronum is a comprehensive Google Workspace management platform that automates user onboarding/offboarding, email signature management, Google Drive governance, contact sharing, backups, and more.",
+                                "applicationCategory": "BusinessApplication",
+                                "operatingSystem": "Web-based (Google Workspace)",
+                                "softwareVersion": "",
+                                "offers": {
+                                    "@type": "Offer",
+                                    "price": "8.00",
+                                    "priceCurrency": "USD",
+                                    "description": "Per-user, per-year licence; Patronum is $8.00/user/year"
+                                },
+                                "provider": {
+                                    "@type": "Organization",
+                                    "name": "Bespin Labs Ltd",
+                                    "url": "https://www.patronum.io/"
+                                },
+                                "featureList": [
+                                    "Automated Google Workspace user onboarding/offboarding",
+                                    "Email signature management with centralized templates",
+                                    "Google Drive file & sharing governance",
+                                    "Shared contacts synchronization",
+                                    "Backup & restore of Google Workspace data",
+                                    "Organisational chart & Google Groups automation"
+                                ],
+                                "isAccessibleForFree": false,
+                                "aggregateRating": {
+                                    "@type": "AggregateRating",
+                                    "ratingValue": "5.0",
+                                    "reviewCount": "30"
+                                }
+                            }
+                        ),
+                    }}
+                />
+            </Head>
+      <Layout>
+        <main>
+          <Hero
+            pageTitle1={'Google Contact'}
+                pageTitle2={'Sharing'}
+                pagePara={"Unified Contact Sharing for Powerful & efficient collaboration"}
+                imgSrc={'contact-sharing.svg'}
+            svgElement={
+              <ContactSharing
+                className={"h-full w-full"}
+              />
+            }
+          />
+         <VideoPlayer disabled={false} videoId="ibhxOj9-qGQ" videoCover={"/assets/features/contact-sharing/video-cover.webp"} />
 
-export default function FeatureDetail() {
+                <FeatureDetailTitle
+                    sectionTitle1="Contact Sharing"
+                    sectionTitle2="For Google Workspace"
+                    sectionPara="Patronum is the only enterprise-ready application designed for contact sharing within Google Workspace."
+                    sectionParaBig="Patronum facilitates contact sharing in Google Workspace by streamlining contact group creation, ensuring your team always has access to the most current and relevant contact information. Seamless daily syncs with Google Contacts keep your entire organization connected and up-to-date."
+                />
 
-    const featuresDetail = [
+                <FeatureDetailInfo content={featuresDetail} />
+                <TransformV2 text={"Connect Seamlessly with Smart Contact Sharing!"} content={"Never lose a lead or contact again. Facilitate efficient communication by sharing contacts with the right people—always synced, always secure."} />
+
+                <SectionBreak
+                    sectionBreakText="With Patronum, users gain access to unlimited contact labels and sharing capabilities, along with effortless synchronization across Outlook and various devices. It stands as a singular solution for navigating the complexities of Google contact sharing, enhancing connectivity within and beyond your organization."
+                />
+
+                <FeatureDetailCards title1={'Additional Google Contact'} title2={'Sharing Features'} content={featuresDetailCard} />
+
+                        <Faqs featureName="contact_sharing" />
+        </main>
+      </Layout>
+    </>
+  );
+};
+
+export default GoogleWorkspaceBackupV2;
+
+ const featuresDetail = [
         {
             title: 'Seamless Gmail Integration',
             para: "Patronum's seamless integration with Google Workspace, Gmail, and Google Contacts revolutionizes contact management by embedding directly into your daily tools. With a user-friendly Google Chrome extension, managing and sharing contacts becomes a natural part of your workflow, eliminating the need to switch between applications. This integration not only streamlines operations but also enhances the efficiency of communication within teams, ensuring that everyone has access to the most updated contact information without extra effort. Experience the power of a unified system that keeps your contacts synchronized, whether you're sending emails, scheduling meetings, or collaborating on projects.",
@@ -78,91 +175,3 @@ export default function FeatureDetail() {
             img: "/assets/features/contact-sharing/detail-8.svg",
         },
     ]
-
-    return (
-        <>
-            <Head>
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify(
-                            {
-                                "@context": "https://schema.org",
-                                "@type": "SoftwareApplication",
-                                "name": "Patronum",
-                                "url": "https://www.patronum.io/",
-                                "description": "Patronum is a comprehensive Google Workspace management platform that automates user onboarding/offboarding, email signature management, Google Drive governance, contact sharing, backups, and more.",
-                                "applicationCategory": "BusinessApplication",
-                                "operatingSystem": "Web-based (Google Workspace)",
-                                "softwareVersion": "",
-                                "offers": {
-                                    "@type": "Offer",
-                                    "price": "8.00",
-                                    "priceCurrency": "USD",
-                                    "description": "Per-user, per-year licence; Patronum is $8.00/user/year"
-                                },
-                                "provider": {
-                                    "@type": "Organization",
-                                    "name": "Bespin Labs Ltd",
-                                    "url": "https://www.patronum.io/"
-                                },
-                                "featureList": [
-                                    "Automated Google Workspace user onboarding/offboarding",
-                                    "Email signature management with centralized templates",
-                                    "Google Drive file & sharing governance",
-                                    "Shared contacts synchronization",
-                                    "Backup & restore of Google Workspace data",
-                                    "Organisational chart & Google Groups automation"
-                                ],
-                                "isAccessibleForFree": false,
-                                "aggregateRating": {
-                                    "@type": "AggregateRating",
-                                    "ratingValue": "5.0",
-                                    "reviewCount": "30"
-                                }
-                            }
-                        ),
-                    }}
-                />
-            </Head>
-            <PageLayout
-                pageTitle1={'Google Contact'}
-                pageTitle2={'Sharing'}
-                pagePara={"Unified Contact Sharing for Powerful & efficient collaboration"}
-                imgSrc={'contact-sharing.svg'}
-                title={"Google Contacts Sharing & Management with Patronum"}
-                description={"Patronum's app seamless integration with Google Workspace, Gmail, and Google Contacts revolutionizes contact management by embedding directly into your daily tools. Lets the users use Google / Gmail Contact with Patronum."}
-                url={"google-contact-sharing"}
-                img={"contact-sharing.jpg"}
-                date_published={"2020-12-21T13:41"}
-                date_modified={"2024-04-04T12:00"}
-                keywords={"google contact sharing,Google Workspace contact sharing"}
-                // breadcrumbTitle={"Features"}
-                // breadcrumbLink={"features"}
-            >
-
-                <VideoPlayer disabled={false} videoId="ibhxOj9-qGQ" videoCover={"/assets/features/contact-sharing/video-cover.webp"} />
-
-                <FeatureDetailTitle
-                    sectionTitle1="Contact Sharing"
-                    sectionTitle2="For Google Workspace"
-                    sectionPara="Patronum is the only enterprise-ready application designed for contact sharing within Google Workspace."
-                    sectionParaBig="Patronum facilitates contact sharing in Google Workspace by streamlining contact group creation, ensuring your team always has access to the most current and relevant contact information. Seamless daily syncs with Google Contacts keep your entire organization connected and up-to-date."
-                />
-
-                <FeatureDetailInfo content={featuresDetail} />
-                <Transform text={"Connect Seamlessly with Smart Contact Sharing!"} content={"Never lose a lead or contact again. Facilitate efficient communication by sharing contacts with the right people—always synced, always secure."} />
-
-                <SectionBreak
-                    sectionBreakText="With Patronum, users gain access to unlimited contact labels and sharing capabilities, along with effortless synchronization across Outlook and various devices. It stands as a singular solution for navigating the complexities of Google contact sharing, enhancing connectivity within and beyond your organization."
-                />
-
-                <FeatureDetailCards title1={'Additional Google Contact'} title2={'Sharing Features'} content={featuresDetailCard} />
-
-                <Faqs featureName="contact_sharing" />
-
-            </PageLayout>
-
-        </>
-    )
-}
