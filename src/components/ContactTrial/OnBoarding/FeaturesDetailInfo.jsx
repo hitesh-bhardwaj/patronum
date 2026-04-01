@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const FeatureDetailInfo = ({ content }) => {
+const FeatureDetailInfo = ({ content, archive }) => {
   return (
     <section id="">
       <div className="mx-auto w-[100%] lg:w-[80%] px-5 max-w-full">
@@ -12,11 +12,11 @@ const FeatureDetailInfo = ({ content }) => {
                 {/* Head */}
                 <div className="flex flex-col justify-between px-[1vw] lg:gap-2 py-4 lg:py-[1.5vw]">
                   <h3
-                    className="
+                    className={`
                       fadeRight
                       lg:text-[2.4vw] text-[6vw] 
-                      text-neutral-800
-                    "
+                      text-neutral-800 ${archive ? 'lg:w-[70%] w-[100%]' : 'w-full'}
+                    `}
                   >
                     <span>{feature.title}</span>
                   </h3>

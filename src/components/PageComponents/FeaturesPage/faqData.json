@@ -898,5 +898,45 @@
         "content": "Yes! There’s no cost to join. All discussions, webinars, and resources are completely free to members."
       }
     ]
+  },
+  {
+    "feature": "archive",
+    "faqs": [
+      {
+        "id": "01",
+        "title": "What is the benefit of Patronum Archive?",
+        "content": "It might seem a bit 'hoarder-ish' for a company to hang onto the digital ghost of an employee who has long since moved on, but it’s rarely about nostalgia. In most cases, it’s a strategic move to protect the business or comply with the law. "
+      },
+      {
+        "id": "02",
+        "title": "Is Archiving part of the standard Patronum offering or Patronum+?",
+        "content": "Archive is part of standard Patronum, you are only charged $2 per year per archived account."
+      },
+      {
+        "id": "03",
+        "title": "Can the Google Workspace user be deleted after archiving?",
+        "content": "Yes, you can delete the Google Workspace user, and the archive data will remain within your cloud storage bucket."
+      },
+      {
+        "id": "04",
+        "title": "What data is stored within Patronum Archive?",
+        "content": "Patronum Archive currently supports emails from Google Gmail and Google Vault."
+      },
+      {
+        "id": "05",
+        "title": "How do I restore from Patronum Archive?",
+        "content": "You can perform a full or partial restore of any mailbox stored within the archive."
+      },
+      {
+        "id": "06",
+        "title": "What are the benefits of using my own cloud storage to host the archive data?",
+        "content": "Storing the archive within your own Google Cloud storage bucket means you have complete control over the data. It also reduces your running costs and avoids vendor lock-in."
+      },
+      {
+        "id": "07",
+        "title": "Is Patronum Archive secure?",
+        "content": "Yes, at Patronum security is paramount. Patronum is certified under ISO 27001:2013, ISO 27701:2019, ISO 22301:2019, ISO 9001:2015. Patronum also holds certification in Cyber Essentials and CSA Star Security. All Patronum security certifications are available on our <a href='/security-and-compliance' class='text-primary underline'> Security and Compliance</a> page."
+      }
+    ]
   }
 ]

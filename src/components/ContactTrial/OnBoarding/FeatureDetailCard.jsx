@@ -2,7 +2,7 @@ import SectionTitle from "@/components/PageLayout/SectionTitle";
 import Image from "next/image";
 import InstallButton from "@/components/Buttons/InstallButton";
 
-const FeatureDetailCards = ({ content, title1, title2 }) => {
+const FeatureDetailCards = ({ content, title1, title2 , archive}) => {
   return (
     <section id="">
       <div className="mx-auto w-[90%] max-w-full lg:w-[85%] lg:px-[50px]">
@@ -18,15 +18,15 @@ const FeatureDetailCards = ({ content, title1, title2 }) => {
             {content.map((item, index) => (
               <div
                 key={index}
-                className="
+                className={`
                   fadeUp
                   mb-[8vw]
                   flex flex-col items-center
                   rounded-[10px] text-center
                   px-[4vw] pt-[4vw] pb-[12vw]
                   bg-[#fdfdfd] border border-[#e2e2e2]
-                  lg:mb-0 lg:px-[1.5vw] lg:pt-[1.5vw] lg:pb-[4vw]
-                "
+                  lg:mb-0 lg:px-[1.5vw] lg:pt-[1.5vw]
+                ${archive?"lg:pb-[2vw]":"lg:pb-[4vw]"} `}
               >
                 {/* Number badge */}
                 <div

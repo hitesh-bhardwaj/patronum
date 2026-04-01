@@ -101,6 +101,12 @@ const Navbar = ({setActive,active}) => {
                     link={"/organisational-chart"}
                     img={"organisational-chart.svg"}
                   />
+                   <NavItem
+                    title={"Archive Savings"}
+                    disc={"Smart Email Archiving with Cost Control"}
+                    link={"/archive"}
+                    img={"archive.svg"}
+                  />
                 </ul>
               </div>
             </MenuItem>

@@ -95,7 +95,7 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                     </button>
                                 </div>
                             </div>
-                            <ul id="dropdown-features" className={`px-4 flex flex-col justify-center space-y-4 bg-gray-100 transition-all duration-500 overflow-hidden ${isFeaturesDropdownOpen ? "h-[750px]" : "h-0"}`}>
+                            <ul id="dropdown-features" className={`px-4 flex flex-col justify-center space-y-4 bg-gray-100 transition-all duration-500 overflow-hidden ${isFeaturesDropdownOpen ? "h-[800px]" : "h-0"}`}>
                                 <li className=''>
                                     <Link href='/on-boarding' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Onboarding' prefetch={false}>
                                         <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
@@ -170,6 +170,17 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                         <div className='w-3/4'>
                                             <p className='text-xl font-500'>Organizational Chart</p>
                                             <p className='text-base'>Locate & view organization hierarchy</p>
+                                        </div>
+                                    </Link>
+                                </li>
+                                <li className=''>
+                                    <Link href='/archive' className='py-2 px-4 rounded flex gap-4 items-center' aria-label='Features - Archive Savings' prefetch={false}>
+                                        <div className='w-[4rem] h-[4rem] p-4 bg-head flex justify-center items-center rounded-full overflow-hidden'>
+                                            <Image width={30} height={30} loading='lazy' src='/assets/menu/archive.svg' alt='use case icon' />
+                                        </div>
+                                        <div className='w-3/4'>
+                                            <p className='text-xl font-500'>Archive Savings</p>
+                                            <p className='text-base'>Smart Email Archiving with Cost Control</p>
                                         </div>
                                     </Link>
                                 </li>

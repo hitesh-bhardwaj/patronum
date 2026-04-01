@@ -3,6 +3,7 @@ export default function FeatureDetailTitle({
   sectionTitle2,
   sectionPara,
   sectionParaBig,
+  sectionParaWidth
 }) {
   return (
     <section>
@@ -28,13 +29,14 @@ export default function FeatureDetailTitle({
             {/* Left paragraph */}
             <div>
               <p
-                className="
+                className={`
                   fadeUp
                   mt-[5vw] mb-[10vw] w-full text-[4vw]
                   md:text-[1.15vw] leading-[1.5] font-[500]
                   text-neutral-700
-                  lg:mt-[1vw] lg:mb-0 lg:w-[30.7vw]
-                "
+                  lg:mt-[1vw] lg:mb-0 
+                  ${sectionParaWidth ? `lg:w-[${sectionParaWidth}]` : 'lg:w-[30.7vw]'}
+                `}
               >
                 {sectionPara}
               </p>
