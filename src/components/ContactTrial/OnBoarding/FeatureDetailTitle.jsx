@@ -32,7 +32,7 @@ export default function FeatureDetailTitle({
                 className={`
                   fadeUp
                   mt-[5vw] mb-[10vw] w-full text-[4vw]
-                  md:text-[1.15vw] leading-[1.5] font-[500]
+                   leading-[1.5] font-[500]
                   text-neutral-700
                   lg:mt-[1vw] lg:mb-0 
                   ${sectionParaWidth ? `lg:w-[${sectionParaWidth}]` : 'lg:w-[30.7vw]'}
