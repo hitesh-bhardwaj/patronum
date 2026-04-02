@@ -35,6 +35,7 @@ export default function FeatureDetailTitle({
                    leading-[1.5] font-[500]
                   text-neutral-700
                   lg:mt-[1vw] lg:mb-0 
+                  lg:text-[1.15vw]
                   ${sectionParaWidth ? `lg:w-[${sectionParaWidth}]` : 'lg:w-[30.7vw]'}
                 `}
               >
