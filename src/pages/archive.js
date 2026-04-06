@@ -90,9 +90,9 @@ const Archive = () => {
             videoCover={"/assets/features/archive/video-cover.webp"}
           />
           <FeatureDetailTitle
-            sectionTitle1="Save on your monthly"
-            sectionTitle2="licensing with Patronum Archive"
-            sectionPara="Google Archive User license costs spiralling out of control?"
+            sectionTitle1="Google Archive User license"
+            sectionTitle2="costs spiralling out of control?"
+            sectionPara="Save on your monthly licensing with Patronum Archive"
             sectionParaBig="Eliminate Google archive user license costs with our built-in email archiving feature. Use your own storage and our automation features to meet your organization's data retention requirements."
             sectionParaWidth="22vw"
           />

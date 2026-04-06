@@ -179,8 +179,8 @@ const MobileNavigation = ({ isOpen, setSideNavOpen }) => {
                                             <Image width={30} height={30} loading='lazy' src='/assets/menu/archive.svg' alt='use case icon' />
                                         </div>
                                         <div className='w-3/4'>
-                                            <p className='text-xl font-500'>Archive Savings</p>
-                                            <p className='text-base'>Smart Email Archiving with Cost Control</p>
+                                            <p className='text-xl font-500'>Archive User Data</p>
+                                            <p className='text-base'>Save on monthly licensing with smart archive</p>
                                         </div>
                                     </Link>
                                 </li>

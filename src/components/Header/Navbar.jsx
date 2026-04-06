@@ -102,8 +102,8 @@ const Navbar = ({setActive,active}) => {
                     img={"organisational-chart.svg"}
                   />
                    <NavItem
-                    title={"Archive Savings"}
-                    disc={"Smart Email Archiving with Cost Control"}
+                    title={"Archive User Data"}
+                    disc={"Save on monthly licensing with smart archive"}
                     link={"/archive"}
                     img={"archive.svg"}
                   />

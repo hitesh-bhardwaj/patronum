@@ -82,7 +82,7 @@ const featuresData = [
     para1:
       " Patronum Archive helps organizations reduce Google Workspace costs by eliminating Archive User licenses. It enables secure email archiving to your own cloud storage while keeping data searchable and accessible when needed.",
     para2:
-      "It also highlights automation features like offboarding workflows and retention policies, allowing businesses to manage data efficiently, stay compliant, and avoid unnecessary licensing expenses over time.",
+      "",
     img: "/assets/home/features-8.svg",
     link: "/archive",
   },
