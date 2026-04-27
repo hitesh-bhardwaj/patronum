@@ -276,7 +276,7 @@ export default function UseCases() {
                                                 <span>Patronum For Users</span>
                                             </h4>
                                             <p className="para-italic mb-[1.5vw]">
-                                                Transform the way your team works—with every document, contact, & calendar at their fingertips.
+                                                Transform the way your team works-with every document, contact, & calendar at their fingertips.
                                             </p>
                                             <p className="content-p mb-[1.5vw]">
                                                 <span>

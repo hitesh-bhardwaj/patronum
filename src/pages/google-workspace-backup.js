@@ -25,7 +25,7 @@ export default function FeatureDetail() {
         },
         {
             title: 'Empowering Simple Self-Service',
-            para: "Patronum Backup goes beyond just safeguarding your data—it also simplifies the restoration process. With its user-friendly self-service feature, end users gain the autonomy to restore their own data, including files and emails, swiftly and efficiently. This empowerment significantly reduces the workload on IT staff, streamlining the recovery process and allowing for immediate access to lost or deleted data without the typical delays. By democratizing data restoration, Patronum Backup not only enhances data security but also fosters a more efficient and resilient organizational workflow.",
+            para: "Patronum Backup goes beyond just safeguarding your data-it also simplifies the restoration process. With its user-friendly self-service feature, end users gain the autonomy to restore their own data, including files and emails, swiftly and efficiently. This empowerment significantly reduces the workload on IT staff, streamlining the recovery process and allowing for immediate access to lost or deleted data without the typical delays. By democratizing data restoration, Patronum Backup not only enhances data security but also fosters a more efficient and resilient organizational workflow.",
             img: "/assets/features/google-workspace-backup/main-3.svg",
         },
     ]
@@ -154,7 +154,7 @@ export default function FeatureDetail() {
                     sectionParaBig="Protect your Google Workspace environment from accidental and malicious deletion. From crucial Files and Shared Drives to essential Emails, every piece of data is securely backed up, guaranteeing comprehensive point-in-time restores or the option for instant offline exports whenever the need arises. This means no piece of information is ever out of reach, providing a fail-safe against data loss incidents."
                 />
                 <FeatureDetailInfo content={featuresDetail} />
-                <Transform text={"Sleep Easy. Your Data’s Always Protected."} content={"Human error? Malicious deletion? No problem. Patronum gives you ironclad full-fidelity Google Workspace backups—because second chances shouldn’t be optional."}/>
+                <Transform text={"Sleep Easy. Your Data’s Always Protected."} content={"Human error? Malicious deletion? No problem. Patronum gives you ironclad full-fidelity Google Workspace backups-because second chances shouldn’t be optional."}/>
                 <SectionBreak
                     sectionBreakText="Patronum Backup transforms how your organization approaches Google Workspace data protection, marrying speed, reliability, and user empowerment in a single, powerful solution. Secure your digital workspace with Patronum, and navigate the digital landscape with confidence, knowing that your data is protected by the pinnacle of backup innovation."
                 />

@@ -52,7 +52,7 @@ const useCasesData = [
   {
     title: "Patronum for Users",
     para1:
-      "Patronum enhances the workspace experience for general users by simplifying access to necessary resources from day one. It goes beyond simplifying tasks—it transforms the way users interact with the digital workspace. Instantly accessible resources, streamlined file management, and a connected contact system empower users to work smarter, not harder.",
+      "Patronum enhances the workspace experience for general users by simplifying access to necessary resources from day one. It goes beyond simplifying tasks-it transforms the way users interact with the digital workspace. Instantly accessible resources, streamlined file management, and a connected contact system empower users to work smarter, not harder.",
     para2:
       "Seamless integration ensures that every user, regardless of tech savviness, can navigate the digital landscape with ease, making every workday more efficient and every collaboration more effective.",
     img: "/assets/home/patronum-for-users.svg",

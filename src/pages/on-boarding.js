@@ -99,7 +99,7 @@ const OnBoardingV2 = () => {
           <TransformV2
             text={"Automate Onboarding. Eliminate Chaos."}
             content={
-              "Say goodbye to manual setups and delayed provisioning. Patronum ensures every user starts with the right tools, policies, and data—right from day one."
+              "Say goodbye to manual setups and delayed provisioning. Patronum ensures every user starts with the right tools, policies, and data-right from day one."
             }
           />
           <SectionBreak sectionBreakText="Patronum redefines User Lifecycle Management in Google Workspace by using automation, delivering unparalleled security and productivity, freeing you to focus on innovation and strategic growth." />

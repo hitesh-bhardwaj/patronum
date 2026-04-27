@@ -98,6 +98,12 @@
   width: 17.5vw;
 }
 
+.btnDownload {
+  width: 19vw !important;
+  max-width: 19vw !important;
+}
+ 
+
 @media screen and (max-width: 1024px) {
   .btn {
     height: 11vw;
@@ -149,6 +155,14 @@
   .btn[data-thankyou] .btnCircle{
     clip-path: inset(1.6vw 2vw 1.6vw calc(100% - 10vw) round 4vw);
   }
+  .btnDownload {
+    width: 50vw !important;
+    max-width: 50vw !important;
+  }
+  .btnDownload .btnCircle {
+    padding: 0 4vw;
+    clip-path: inset(16% 4% 16% calc(100% - 20%) round 4vw);
+  }
 
 }
 
@@ -197,5 +211,13 @@
   }
   .btn[data-thankyou] .btnCircle{
     clip-path: inset(2vw 2.5vw 2vw calc(100% - 14vw) round 1000px);
+  }
+  .btnDownload {
+    width: 70vw !important;
+    max-width: 70vw !important;
+  }
+  .btnDownload .btnCircle {
+    padding: 0 4.5vw;
+    clip-path: inset(18% 6% 18% calc(100% - 20%) round 10vw);
   }
 }

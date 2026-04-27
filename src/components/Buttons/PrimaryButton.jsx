@@ -1,9 +1,12 @@
 import Link from "next/link";
 import styles from "./primary.module.css";
 
-const PrimaryButton = ({btnText, className="", ...props }) => {
+const PrimaryButton = ({btnText, className="", width, maxWidth, ...props }) => {
+    const widthClass = width ? `w-[${width}]` : '';
+    const maxWidthClass = maxWidth ? `max-w-[${maxWidth}]` : '';
+
     return(
-        <Link {...props} className={`${styles.btn} fadeUp ${className}`}>
+        <Link {...props} className={`${styles.btn} fadeUp ${widthClass} ${maxWidthClass} ${className}`}>
             <span data-primary className={styles.btnText}>
                 {btnText}
             </span>

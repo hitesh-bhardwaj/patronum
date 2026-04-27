@@ -113,7 +113,7 @@ export default GoogleWorkspaceBackupV2;
         },
         {
             title: 'Link Sharing, Refined with security',
-            para: "Link-based sharing in Google Drive, though convenient, is a double-edged sword—it exposes your data to risks by making files accessible to anyone with the link. Patronum offers a sophisticated solution to refine or remove link-based sharing, allowing you to maintain the privacy of your internal information without sacrificing collaboration ease.",
+            para: "Link-based sharing in Google Drive, though convenient, is a double-edged sword-it exposes your data to risks by making files accessible to anyone with the link. Patronum offers a sophisticated solution to refine or remove link-based sharing, allowing you to maintain the privacy of your internal information without sacrificing collaboration ease.",
             img: "/assets/features/google-drive-compliance/main-2.svg",
         },
         {
