@@ -18,12 +18,12 @@ const Migrate = () => {
     <>
       <MetaData
         title={
-          "Reduce Google Archive Costs with Patronum Archive"
+          "Patronum Migrate - Your Google Workspace Migration Companion"
         }
         description={
-          "Cut Google Archive license costs with Patronum. Archive emails to your own storage, automate offboarding, and keep data searchable and secure."
+          "Patronum runs every workload from your own machine, keeps jobs on track through interruptions, and gives you a clear view from start to finish"
         }
-        url={"archive"}
+        url={"patronum-migrate"}
         img={"archive.webp"}
         date_published={"2026-04-01T06:37"}
         date_modified={"2026-04-01T00:00"}
@@ -79,7 +79,7 @@ const Migrate = () => {
             pageTitle1={"Every Workload, Fully Under Control "}
             pageTitle2={""}
             pagePara={
-              "Patronum runs every workload from your own machine, keeps jobs on track through interruptions, and gives you a clear view from start to finish"
+              "Patronum runs every workload from your own machine, keeps jobs on track through interruptions, and gives you a clear view from start to finish."
             }
             boldpara=""
             imgSrc={"feature-onboarding.svg"}
