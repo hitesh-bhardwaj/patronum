@@ -274,7 +274,7 @@ export default function Hero({ pageTitle1, pageTitle2, boldpara, pagePara, svgEl
                                 {pagePara}
                             </p>
                             <p className="hero-para font-bold mt-[0.5vw]">{boldpara}</p>
-                            <div className="flex md:gap-[2vw] flex-col md:flex-row gap-[5vw] hero-button-anim">
+                            {/* <div className="flex md:gap-[2vw] flex-col md:flex-row gap-[5vw] hero-button-anim">
                                 <PrimaryButton
                                     // onClick={(e) => {
                                     //     e.preventDefault();
@@ -284,7 +284,7 @@ export default function Hero({ pageTitle1, pageTitle2, boldpara, pagePara, svgEl
                                     btnText={"Request a Demo"}
                                     target="_blank"
                                 />
-                            </div>
+                            </div> */}
                         </div>
 
                         <div className="page-hero-right lg:w-[35%] text-center w-full flex justify-center mt-5">
