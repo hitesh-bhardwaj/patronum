@@ -38,7 +38,7 @@ const steps = [
   {
     title: 'Restart Any Time, Pick Up Where You Left Off',
     description:
-      'If the app closes mid-run - or your machine restarts - job state is already saved. Open Patronum again and it reconciles any interrupted work automatically. Long transfers also handle credential refreshes on their own.',
+      'If the app closes mid-run - or your machine restarts - job state is already saved. Open Patronum Migrate again and it reconciles any interrupted work automatically. Long transfers also handle credential refreshes on their own.',
     tags: ['Saved state', 'Auto-recovery'],
   },
 ]

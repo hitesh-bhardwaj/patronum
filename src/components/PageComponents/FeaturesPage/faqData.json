@@ -944,43 +944,48 @@
     "faqs": [
       {
         "id": "01",
-        "title": "Does Patronum send my data to a cloud service?",
-        "content": "No. Patronum is installed and runs entirely on your machine. The web interface is only accessible locally - it's never reachable from the internet. Your credentials and job logs stay on your machine. Files move directly between Microsoft and Google - not through any Patronum server."
+        "title": "How much is Patronum Migrate?",
+        "content": "Patronum Migrate is licensed $10 per user or $10 per 25GB for file-only migrations."
       },
       {
         "id": "02",
+        "title": "How is Patronum Migrate licensed?",
+        "content": "Like all Patronum products, Patronum Migrate offers simple and transparent pricing. Our pay-as-you-migrate license model allows organisations to pay for what they use. No need to purchase in advance or have licenses left over."
+      },
+      {
+        "id": "03",
+        "title": "Does Patronum Migrate send my data to a cloud service?",
+        "content": "No. Patronum Migrate is installed and runs entirely on your machine. The web interface is only accessible locally - it's never reachable from the internet. Your credentials and job logs stay on your machine. Files move directly between Microsoft and Google - not through any Patronum server."
+      },
+      {
+        "id": "04",
         "title": "What happens if the app closes while a migration is running?",
         "content": "Progress is saved continuously. When you reopen Patronum, it finds any interrupted jobs and resumes automatically. You don't need to start anything over."
       },
       {
-        "id": "03",
+        "id": "05",
         "title": "What can it actually migrate?",
         "content": "SharePoint document libraries → Google Shared Drives, email (Microsoft 365 or Google Workspace → Google Workspace), calendar including secondary calendars, contacts, OneDrive, and Google Drive → Google Drive for GWS-to-GWS moves. Permissions discovery and apply are also included."
       },
       {
-        "id": "04",
-        "title": "Does it work on Mac and Linux, or just Windows?",
-        "content": "Windows is the primary release platform (installer + .exe). On macOS and Linux, Patronum can be built from source and run from the command line. On those platforms, closing the terminal doesn't stop a running migration - the worker keeps going in the background until you stop it."
-      },
-      {
-        "id": "05",
+        "id": "06",
         "title": "Are my API credentials safe ? ",
         "content": "Yes. Credentials are encrypted before being saved to the local database. They're never included in exports or shown through any list view - only decrypted in memory at the moment a job actually needs to use them."
       },
       {
-        "id": "06",
+        "id": "07",
         "title": "Can I run multiple jobs at the same time?",
-        "content": "Yes. PatronumAI runs multiple jobs in parallel - email and SharePoint jobs each default to 10 concurrent. The limits are configurable if you need to tune for your environment."
+        "content": "Yes. Patronum Migrate runs multiple jobs in parallel - email and SharePoint jobs each default to 10 concurrent. The limits are configurable if you need to tune for your environment."
       },
       {
-        "id": "07",
+        "id": "08",
         "title": "What is the AI Discovery Report?",
         "content": "After running discovery on a project, the Discovery Report button sends your aggregate snapshot data - counts and byte totals only, no individual email addresses or file names - to an AI model via the licensing relay. It returns a structured report with an executive summary, data volumes table, estimated migration duration, findings, recommendations, and a next-steps table. You can view it in the app or download a formatted PDF. No data ever leaves without the snapshot being computed locally first."
       },
       {
-        "id": "08",
+        "id": "09",
         "title": "Can I see an example report before running discovery?",
-        "content": "Yes - you can download a sample report generated from a real discovery run to see exactly what your report will look like. It includes an executive summary, data volumes by workload, estimated migration duration, key findings, prioritized recommendations, and a next steps table. <a href=\"/sample-report\" target=\"_blank\" class=\"text-primary underline\">View a sample report</a>"
+        "content": "Yes - you can download a sample report generated from a real discovery run to see exactly what your report will look like. It includes an executive summary, data volumes by workload, estimated migration duration, key findings, prioritized recommendations, and a next steps table."
       }
     ]
   }

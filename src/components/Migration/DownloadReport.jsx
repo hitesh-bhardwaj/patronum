@@ -18,7 +18,7 @@ const DownloadReport = () => {
       <div className="container">
         <div className="">
           <div className="fadeUp mx-auto relative flex  flex-col items-start  gap-[8vw] rounded-[1.5vw] bg-white px-[2rem] py-[3rem] shadow-[0_30px_80px_rgba(15,23,42,0.08)] lg:flex-row lg:px-[4rem] lg:py-[4vw] border border-[#e8e8e8] lg:h-[35vw] h-[70vh] md:h-[85vh]">
-            <div className="lg:w-[30%] w-full flex justify-center ">
+            <div className="lg:w-[30%] w-[80%] flex justify-center mx-auto md:w-[50%]">
               <Image
                 width={500}
                 height={460}
@@ -31,7 +31,7 @@ const DownloadReport = () => {
             <div className="lg:w-[60%] w-full text-center lg:text-left">
               <h2 className="lg:text-[3.4vw] leading-[1.2] mb-[1.5rem] text-[6vw]">See what your migration report looks like</h2>
               <p className="content-p mb-[2rem] max-w-[38rem] mx-auto lg:mx-0">
-                Generated automatically after discovery — no manual analysis, no spreadsheets.
+                Generated automatically after discovery - no manual analysis, no spreadsheets.
               </p>
               <PrimaryButton
                 href="#"

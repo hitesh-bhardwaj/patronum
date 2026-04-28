@@ -107,6 +107,12 @@ const Navbar = ({setActive,active}) => {
                     link={"/archive"}
                     img={"archive.svg"}
                   />
+                  <NavItem
+                    title={"Smart Workspace Migration"}
+                    disc={"Simplify your Google Workspace migration journey"}
+                    link={"/patronum-migrate"}
+                    img={"migrate.svg"}
+                  />
                 </ul>
               </div>
             </MenuItem>

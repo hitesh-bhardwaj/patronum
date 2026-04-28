@@ -43,7 +43,7 @@ const Properties = () => {
                         </h2>
                         <p className="content-p lg:w-1/3 w-[95%] lg:mt-[1vw] mt-[5vw] text-anim-2">
                             <span>
-                                Patronum is built for operators who need to know exactly where their data is at every step.
+                                Patronum Migrate is built for operators who need to know exactly where their data is at every step.
                             </span>
                         </p>
                     </div>
@@ -114,7 +114,7 @@ const Details = [
     title: "Nothing Gets Lost on Restart",
     img: "/assets/features/migration/restart.svg",
     content:
-      "Every job transition is recorded as it happens. If Patronum closes mid-migration, the next launch finds exactly where things were and continues cleanly - no silent failures, no lost",
+      "Every job transition is recorded as it happens. If Patronum Migrate closes mid-migration, the next launch finds exactly where things were and continues cleanly - no silent failures, no lost.",
     
   }
 ];

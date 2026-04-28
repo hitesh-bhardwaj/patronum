@@ -21,13 +21,13 @@ const Migrate = () => {
           "Patronum Migrate - Your Google Workspace Migration Companion"
         }
         description={
-          "Patronum runs every workload from your own machine, keeps jobs on track through interruptions, and gives you a clear view from start to finish"
+          "Migrate to Google Workspace with ease using Patronum Migrate. AI-powered, secure, and scalable migration from Microsoft 365 or Google environments with full control and accuracy."
         }
         url={"patronum-migrate"}
-        img={"archive.webp"}
-        date_published={"2026-04-01T06:37"}
-        date_modified={"2026-04-01T00:00"}
-        keywords={"Google Workspace"}
+        img={"patronum-migrate.webp"}
+        date_published={"2026-04-28T06:37"}
+        date_modified={"2026-04-28T00:00"}
+        keywords={"Google Workspace Migration"}
       />
       <Head>
         <script
@@ -79,7 +79,7 @@ const Migrate = () => {
             pageTitle1={"Every Workload, Fully Under Control "}
             pageTitle2={""}
             pagePara={
-              "Patronum runs every workload from your own machine, keeps jobs on track through interruptions, and gives you a clear view from start to finish."
+              "Patronum Migrate runs every workload from your own machine, keeps jobs on track through interruptions, and gives you a clear view from start to finish."
             }
             boldpara=""
             imgSrc={"feature-onboarding.svg"}
@@ -87,10 +87,7 @@ const Migrate = () => {
           />
           <About/>
           <FeatureDetailInfo content={featuresDetail} archive={true} />
-          <DownloadReport
-            disabled={false}
-            videoId=""
-          />
+          <DownloadReport/>
           <Steps/>
           <Properties/>
           <Faqs featureName="migrate" />
@@ -120,7 +117,7 @@ const featuresDetail = [
   },
   {
     title: "One File to Download and Run",
-    para: "Patronum is a single executable with everything built in - the web Ul, the job engine, the database. No Node, no Python, no Docker required.",
+    para: "Patronum Migrate is a single executable with everything built in - the web Ul, the job engine, the database. No Node, no Python, no Docker required.",
     img: "/assets/features/migration/one-file.svg",
   },
   {

@@ -86,6 +86,15 @@ const featuresData = [
     img: "/assets/home/features-8.svg",
     link: "/archive",
   },
+  {
+    title: "Seamless Google Workspace Migration with Patronum Migrate",
+    para1:
+      " Moving to Google Workspace doesn’t have to be complex or risky. Patronum Migrate is an AI-powered migration solution designed to simplify the entire process - from planning to execution. Whether you're switching from Microsoft 365 or consolidating Google environments, it ensures a smooth, secure, and efficient transition with minimal disruption.",
+    para2:
+      "With intelligent automation and built-in AI agents, Patronum Migrate helps you confidently move emails, files, and data at scale. It reduces manual effort, improves accuracy, and gives IT teams full visibility and control - so your organization can migrate faster and start realizing value from Google Workspace sooner.",
+    img: "/assets/home/features-9.svg",
+    link: "/patronum-migrate",
+  },
 ];
 
 export default function Features() {
