@@ -4,15 +4,6 @@ import styles from "../Buttons/primary.module.css";
 
 
 const DownloadReport = () => {
-  const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = '/assets/sample-report.pdf';
-    link.download = 'Sample-Report.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
     <section id="second-section" className="">
       <div className="container">
@@ -34,9 +25,10 @@ const DownloadReport = () => {
                 Generated automatically after discovery - no manual analysis, no spreadsheets.
               </p>
               <PrimaryButton
-                href="#"
-                onClick={handleDownload}
-                btnText="Download Sample Report"
+                href="/assets/features/migration/Project-SH_CD-AI-Discovery-Report.pdf"
+                target="_blank"
+                rel="noreferrer noopener"
+                btnText="View Sample Report"
                 className={styles.btnDownload}
               />
             </div>

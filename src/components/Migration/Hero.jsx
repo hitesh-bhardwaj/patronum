@@ -280,8 +280,9 @@ export default function Hero({ pageTitle1, pageTitle2, boldpara, pagePara, svgEl
                                     //     e.preventDefault();
                                     //     scrollToId("#join-community");
                                     // }}
-                                    href="/"
+                                    href="https://calendly.com/d/cyry-97y-ssp/patronum-demo-call"
                                     btnText={"Request a Demo"}
+                                    target="_blank"
                                 />
                             </div>
                         </div>

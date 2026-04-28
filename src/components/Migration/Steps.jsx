@@ -14,13 +14,13 @@ const steps = [
   {
     title: 'Create A Project',
     description:
-      'A project ties together your source and destination. Set domain name rules for cross-Patronum moves. Projects can be archived when complete and reopened if you need to revisit them.',
+      'A project ties together your source and destination. Set domain name rules for cross-tenant/domain moves. Projects can be archived when complete and reopened if you need to revisit them.',
     tags: ['Source → Destination', 'Domain rules'],
   },
   {
     title: "Discover What's There",
     description:
-      "Run Discovery to pull the list of SharePoint sites, drives, and mailboxes from the source Patronum. Everything is saved as a snapshot so you're mapping against real data - not guesswork.",
+      "Run Discovery to pull the list of SharePoint sites, drives, and mailboxes from the source platform. Everything is saved as a snapshot so you're mapping against real data - not guesswork.",
     tags: ['SharePoint sites', 'Drives & mailboxes', 'User & permissions'],
   },
   {

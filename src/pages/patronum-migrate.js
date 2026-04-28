@@ -137,7 +137,7 @@ const featuresDetail = [
   },
   {
     title: "Your Data Stays on Your Machine",
-    para: "The web interface is only accessible from the machine running Patronum never exposed to the internet. Credentials are encrypted and never sent to a third party.",
+    para: "The web interface is only accessible from the machine running the migration. Patronum Migrate is never exposed to the internet. Credentials are encrypted and never sent to a third party.",
     img: "/assets/features/migration/data.svg",
   },
   {
@@ -147,7 +147,7 @@ const featuresDetail = [
   },
   {
     title: "Live Progress for Every Job",
-    para: "Watch file counts, transfer rates, and errors update in real time. A built-in metrics endpoint is also available for operators who monitor externally.",
+    para: "Watch file counts, transfer rates, and errors update in real time.",
     img: "/assets/features/migration/live-progress.svg",
   },
 ];

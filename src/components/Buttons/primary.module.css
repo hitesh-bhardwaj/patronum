@@ -213,11 +213,11 @@
     clip-path: inset(2vw 2.5vw 2vw calc(100% - 14vw) round 1000px);
   }
   .btnDownload {
-    width: 70vw !important;
-    max-width: 70vw !important;
+    width: 60vw !important;
+    max-width: 60vw !important;
   }
   .btnDownload .btnCircle {
     padding: 0 4.5vw;
-    clip-path: inset(18% 6% 18% calc(100% - 20%) round 10vw);
+    clip-path: inset(18% 6% 18% calc(100% - 22.5%) round 10vw);
   }
 }
