@@ -248,12 +248,13 @@
   margin: 2% 0 2%;
   text-wrap: wrap;
 }
+
 .blogContent kbd {
   background: var(--sky);
   border: 1px solid var(--card-gray);
   padding: 0.1rem 0.5rem;
   border-radius: 5px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 /* Media 1024px */
