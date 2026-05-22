@@ -325,6 +325,10 @@
   .blogContent p {
     font-size: 4.5vw;
   }
+  .blogContent ul,
+.blogContent ol {
+  margin-left: 5vw;
+}
   .blogContent li {
     font-size: 4.5vw;
   }

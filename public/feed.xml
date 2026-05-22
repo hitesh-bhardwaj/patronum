@@ -4,10 +4,28 @@
         <description><![CDATA[Patronum provides a better way to manage Google Workspace (GSuite). Patronum is your Google Workspace (GSuite) manager that fully automates all administrator and user tasks to ensure an efficient, effective, and secure process.]]></description>
         <link>https://www.patronum.io</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 28 Apr 2026 13:02:39 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 22 May 2026 07:47:35 GMT</lastBuildDate>
         <atom:link href="https://www.patronum.io/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Tue, 28 Apr 2026 13:02:39 GMT</pubDate>
+        <pubDate>Fri, 22 May 2026 07:47:35 GMT</pubDate>
         <copyright><![CDATA[2026 Patronum]]></copyright>
+        <item>
+            <title><![CDATA[Google Drive File Management: How to Find and Fix Orphaned Files]]></title>
+            <description><![CDATA[A folder disappears five minutes before a client call. The deck is gone. The spreadsheet is gone. The team Slack turns into a courtroom. One person blames Google
+]]></description>
+            <link>https://www.patronum.io/google-drive-file-management-how-to-find-and-fix-orphaned-files</link>
+            <guid isPermaLink="false">https://www.patronum.io/google-drive-file-management-how-to-find-and-fix-orphaned-files</guid>
+            <category><![CDATA[Google Drive]]></category>
+            <pubDate>Fri, 22 May 2026 01:52:43 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[DMARC Implementation Guide: Why Most Companies Fail Before Enforcement]]></title>
+            <description><![CDATA[A phishing email lands in your customer’s inbox. It looks perfect &#8211; your domain, your branding, your tone, your formatting, your authority, and even the footer matches your company’s latest corporate identity. 
+]]></description>
+            <link>https://www.patronum.io/dmarc-implementation-guide-why-most-companies-fail-before-enforcement</link>
+            <guid isPermaLink="false">https://www.patronum.io/dmarc-implementation-guide-why-most-companies-fail-before-enforcement</guid>
+            <category><![CDATA[All]]></category>
+            <pubDate>Tue, 28 Apr 2026 23:30:24 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[The Forensic Offboarding Checklist: Ensuring Zero Data Leakage]]></title>
             <description><![CDATA[Someone resigns at 4:00 p.m. HR updates the record. IT disables the laptop by 5:00. Everyone goes home believing the company acted swiftly and professionally.
